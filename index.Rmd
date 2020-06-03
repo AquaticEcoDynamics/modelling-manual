@@ -1,0 +1,13 @@
+--- 
+title: "ENVT3362 Book"
+author: "Giles Knight"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+description: "The online book for ENVT3362"
+---
+
+
+

@@ -1,0 +1,24 @@
+bookdown::gitbook:
+  css: css/style.css
+  config:
+    toc:
+      collapse: all
+      before: |
+        <li><a href="./">ENVT3362 Book</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    search: yes
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: no
+      github: no
+      twitter: no
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      all: no
+    info: yes
