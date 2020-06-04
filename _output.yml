@@ -4,7 +4,7 @@ bookdown::gitbook:
     toc:
       collapse: all
       before: |
-        <li><a href="./">ENVT3362 Book</a></li>
+        <li><a href="./">Environmental Dynamics Workbook</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     search: yes

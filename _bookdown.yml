@@ -1,13 +1,14 @@
-book_filename: ENVT3362-book
+book_filename: Environmental Dynamics Workbook
 delete_merged_file: true
 rmd_files: ["index.Rmd",
             "01-intro.Rmd",
-            "02-week1.Rmd",
-            "03-week2.Rmd",
-            "04-week3.Rmd",
-            "05-week4.Rmd",
-            "06-week5.Rmd",
-            "07-week6.Rmd",
-            "08-week7.Rmd",
-            "09-week8.Rmd",
-            "10-references.Rmd"]
+            "02-gettingstarted.Rmd",
+            "03-module1.Rmd",
+            "04-module2.Rmd",
+            "05-module3.Rmd",
+            "06-module4.Rmd",
+            "07-module5.Rmd",
+            "08-module6.Rmd",
+            "09-module7.Rmd",
+            "10-module8.Rmd",
+            "11-references.Rmd"]

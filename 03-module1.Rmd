@@ -1,4 +1,4 @@
-# Week 1: Modelling in Excel {-}
+# Module 1: Modelling in Excel {-}
 
 ## Environmental Flows to an Estuary {-}
 
@@ -10,11 +10,15 @@ Become familiar with basic spreadsheet commands in Excel by conducting an enviro
 
 Lakes, rivers and estuaries are adapted to receive water based on the natural hydrological condition, but often water is required upstream for other purposes. An environmental flow is water that is provided to the environment to maintain its health and natural diversity
 
+### Module resources {-}
+
+Download the Excel spreadsheet [here](./resources/module1/WEEK01_EnvFlowData.xls)
+
 ### Case study {-}
 
 <center>
 
-![Figure 1:](images/02-week1/picture1.png)
+![Figure 1:](images/03-module1/picture1.png)
 
 </center>
 
@@ -31,7 +35,7 @@ Use Nested “IF” statement in adjacent columns to partition flows
 
 <center>
 <video width="500" height="400" controls>
-  <source src="images/02-week1/video1.mp4" type="video/mp4">
+  <source src="images/03-module1/video1.mp4" type="video/mp4">
 </video>
 </center>
 

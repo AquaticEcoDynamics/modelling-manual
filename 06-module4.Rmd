@@ -1,4 +1,4 @@
-# Week 4: Oceanic pH Calculation {-} 
+# Module 4: Oceanic pH Calculation {-} 
 
 
 ```{r, chunk1, eval=FALSE}
