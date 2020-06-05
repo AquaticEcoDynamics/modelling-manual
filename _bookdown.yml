@@ -1,4 +1,5 @@
 book_filename: Environmental Dynamics Workbook
+output_dir: docs
 delete_merged_file: true
 rmd_files: ["index.Rmd",
             "01-intro.Rmd",
@@ -12,3 +13,4 @@ rmd_files: ["index.Rmd",
             "09-module7.Rmd",
             "10-module8.Rmd",
             "11-references.Rmd"]
+new_session: yes
