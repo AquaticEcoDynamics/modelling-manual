@@ -9,6 +9,6 @@ link-citations: yes
 description: "The online Environmental Dynamics Workbook"
 ---
 
+# Introduction {-}
 
-
-# test
+Welcome to the Environmental Dynamics Workbook!

@@ -18,7 +18,7 @@ Download the Excel spreadsheet [here](./resources/module1/WEEK01_EnvFlowData.xls
 
 <center>
 
-![Figure 1:](images/03-module1/picture1.png)
+![Figure 1:](images/02-module1/picture1.png)
 
 </center>
 
@@ -29,33 +29,18 @@ You are given a time-series of daily river flow and need to assess how different
 1. For this flow time-series, calculate the **volume of daily flow** within the following bands
 0-40; 40-80; 80-120; 120-200; 200-400; 400-1000; >1000
 
-```{block2, hint1, type='rmdtip'}
-Use Nested “IF” statement in adjacent columns to partition flows
-```
+\BeginKnitrBlock{rmdtip}<div class="rmdtip">Use Nested “IF” statement in adjacent columns to partition flows</div>\EndKnitrBlock{rmdtip}
 
 <center>
 <video width="500" height="400" controls>
-  <source src="images/03-module1/video1.mp4" type="video/mp4">
+  <source src="images/02-module1/video1.mp4" type="video/mp4">
 </video>
 </center>
-<br>
-<center>
-<video width="500" height="400" controls>
-  <source src="images/03-module1/video2.mov" type="video/mov">
-</video>
-</center>
-<br>
-<center>
-<video width="500" height="400" controls>
-  <source src="images/03-module1/video3.webm" type="video/webm">
-</video>
-</center>
+
 
 2. For this flow time-series, calculate the **number of days** daily flow within the above bands and work out **annual average number of days**
 
-```{block2, hint2, type='rmdtip'}
-Use COUNT() to get the number of entries in the column
-```
+\BeginKnitrBlock{rmdtip}<div class="rmdtip">Use COUNT() to get the number of entries in the column</div>\EndKnitrBlock{rmdtip}
 
 3. Calculate the **annual amount of flow** in total and in each band
 
