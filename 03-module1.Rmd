@@ -38,6 +38,18 @@ Use Nested “IF” statement in adjacent columns to partition flows
   <source src="images/03-module1/video1.mp4" type="video/mp4">
 </video>
 </center>
+<br>
+<center>
+<video width="500" height="400" controls>
+  <source src="images/03-module1/video2.mov" type="video/mov">
+</video>
+</center>
+<br>
+<center>
+<video width="500" height="400" controls>
+  <source src="images/03-module1/video3.webm" type="video/webm">
+</video>
+</center>
 
 2. For this flow time-series, calculate the **number of days** daily flow within the above bands and work out **annual average number of days**
 
