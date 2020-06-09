@@ -44,7 +44,7 @@ You are given a time-series of daily river flow and need to assess how different
 
 3) Calculate the **annual amount of flow** in total and in each band
 
-You may do the annual averaging manually or the pivot table method. For the pivot table method : Insert a new column B, Label it Year.
+You may do the annual averaging manually or the pivot table method. For the pivot table method: Insert a new column B, Label it Year.
 Type the year number into the first cell, make sure it is formatted as a number.
 
 Click two times on the little square in the corner of the box.  This will fill down the page.
@@ -52,7 +52,7 @@ Repeat this at each year change and you will have the year only information whic
 
 Highlight all the data.  It must have headings for each column or it won’t work.
 Go to “Insert” then “Pivot Table”. Click OK as you want the default settings.
-Then you just fiddle until you get what you want.  The following page is an example.
+Then you just fiddle until you get what you want.  The following is an example:
 
 4) **Sort the years** from highest to lowest flow:
     a. Add a new column next to the flows indexing the years sequentially 
