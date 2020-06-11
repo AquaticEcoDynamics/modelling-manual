@@ -64,3 +64,13 @@ h1.title {
 .book .book-body .page-wrapper .page-inner section.normal strong {
   font-weight: 600;
 }
+.redbox {
+  padding: 1em;
+  background: none;
+  border: 3.5px solid #ff0000;;
+  border-radius: 10px;
+}
+.centre {
+  text-align: center;
+  font-weight: 1000;
+}

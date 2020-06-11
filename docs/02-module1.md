@@ -10,9 +10,6 @@ Become familiar with basic spreadsheet commands in Excel by conducting an enviro
 
 Lakes, rivers and estuaries are adapted to receive water based on the natural hydrological condition, but often water is required upstream for other purposes. An environmental flow is water that is provided to the environment to maintain its health and natural diversity
 
-### Module resources {-}
-
-Download the Excel spreadsheet: [MODULE01_EnvFlowData.xls](./resources/module1/WEEK01_EnvFlowData.xls)
 
 ### Case study {-}
 
@@ -21,6 +18,10 @@ Download the Excel spreadsheet: [MODULE01_EnvFlowData.xls](./resources/module1/W
 ![Figure 1: Drain L inflows (yellow arrow) will be diverted (blue arrow)](images/02-module1/picture1.png){width=650px}
 
 </center>
+
+### Module resources {-}
+
+Download the Excel spreadsheet: [MODULE01_EnvFlowData.xls](./resources/module1/WEEK01_EnvFlowData.xls)
 
 ### Exercises {-}
 
@@ -32,7 +33,7 @@ You are given a time-series of daily river flow and need to assess how different
 \BeginKnitrBlock{rmdtip}<div class="rmdtip">Use Nested “IF” statement in adjacent columns to partition flows</div>\EndKnitrBlock{rmdtip}
 
 <center>
-<video width="500" height="400" controls>
+<video width="650" height="550" controls>
   <source src="images/02-module1/video1.mp4" type="video/mp4">
 </video>
 </center>
@@ -46,6 +47,14 @@ You are given a time-series of daily river flow and need to assess how different
 
 You may do the annual averaging manually or the pivot table method. For the pivot table method: Insert a new column B, Label it Year.
 Type the year number into the first cell, make sure it is formatted as a number.
+
+<center>
+<video width="650" height="550" controls>
+  <source src="images/02-module1/video2.mp4" type="video/mp4">
+</video>
+</center>
+
+\BeginKnitrBlock{rmdtip}<div class="rmdtip">Use YEAR() to speed this step up</div>\EndKnitrBlock{rmdtip}
 
 Click two times on the little square in the corner of the box.  This will fill down the page.
 Repeat this at each year change and you will have the year only information which you can then use to summarise data.  As the original date has day numbers and decimal time each one is unique so you end up with a record for each day.  This way you get a record for each year.
@@ -66,4 +75,42 @@ Then you just fiddle until you get what you want.  The following is an example:
 7) Create a scatter plot of historical salinity (as EC) collected from the site marked in the map (+) vs daily discharge from the drain (see sheet: Estuary – Salinity).
 8) Fit a trendline to the data and display equation and R^2^ – this is a statistical model.
 9) In a new time-series column in the previous sheet, use the statistical model from above to predict a salinity time-series for the above station in the estuary under the two diversion scenarios compared to the base case.
+
+
+### Submission {-}
+:::: {.redbox}
+
+**Submit properly formatted graphs and tables of the following sections of the lab:**
+
+- Q2: Table of the number of days daily flow within the above bands and annual average
+number of days
+- Q3: Table of the annual amount of flow in total and in each band
+- Q4: Table of annual flow by year with index and probability. Scatter plot of the flow vs
+probability curve
+- Q6: Table of the cumulative amount of diverted water
+- Q7 & 8: Scatterplot of the EC vs. daily discharge from the drain, with trendline, equation and
+R2 value
+- Q9: Plot of the salinity timeseries of the two diversion scenarios compared to the base case
+- In less than 100 words, discuss which is the most appropriate scenario choice for
+management of the estuary
+
+These are in a word doc or PDF format. No screenshots of figures from Excel/Excel
+spreadsheets to be uploaded
+
+**General professional formatting guidelines:**
+
+- All figures are to have adequate captions explaining them
+- For graphs, figure captions go below the plot
+- For tables, the caption goes above the table
+- Make sure figures and their text size is readable
+
+**Excel hints:**
+
+- When there is a caption for a plot, you remove the title
+- Remove the plot border and gridlines
+- Make sure both axes have visible lines and tick marks
+- Units need to be noted properly with the axis label - 'Temperature (°C)'
+- Round numbers to be reasonable
+::::
+
 
