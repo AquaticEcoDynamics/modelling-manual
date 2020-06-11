@@ -112,4 +112,3 @@ These are in a word doc or PDF format. No screenshots of figures from Excel/Exce
 - Round numbers to be reasonable
 ::::
 
-<span class="redbox">Pay attention to this!</span>

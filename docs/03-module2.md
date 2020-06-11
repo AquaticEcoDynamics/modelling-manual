@@ -83,8 +83,7 @@ Now we have a working process-based model. This was the hard and boring part, bu
 9) In either Excel or R, create a new environmental situation that involves organic matter oxidation. Consider the assumptions you are making and how important they are. Use the model to test the effect of this situation on concentrations and rates. For example, what would happen if there were regular organic matter deposition as a boundary condition? Or maybe what if there were a constant oxygen concentration? What conditions might be needed to minimise methanogenesis? How could you maximise denitrification? I will give higher marks if you do something original and creative. Write a brief description of your new situation and create one plot (**4**) to explain your result. 
 
 ### Submission {-}
-:::: {.redbox}
-
+<span class="redbox">
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 
 - Graph of concentration (y) against time (x) scatter plot, for all oxidants, made in Excel
@@ -108,6 +107,4 @@ These are in a word doc or PDF format. No screenshots of figures from Excel/Exce
 - Make sure both axes have visible lines and tick marks
 - Units need to be noted properly with the axis label - 'Temperature (°C)'
 - Round numbers to be reasonable
-::::
-
-<span class="redbox">Pay attention to this!</span>
+</span>
