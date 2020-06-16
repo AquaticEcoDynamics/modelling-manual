@@ -4,6 +4,7 @@ author: "Giles Knight"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
+bibliography:  ["references/references.bib"]
 biblio-style: apalike
 link-citations: yes
 description: "The online Environmental Dynamics Workbook"
