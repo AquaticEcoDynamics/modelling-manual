@@ -263,6 +263,7 @@ In this model, all energy terms are expressed as long-term average fluxes, all t
 
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:325px; overflow-x: scroll; width:725px; "><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:module3-4)Energy balance model of Earth's atmosphere</caption>
  <thead>
   <tr>
    <th style="text-align:center;"> Parameter </th>
@@ -335,15 +336,115 @@ constant of 1370Wm^-2^) </td>
 </tbody>
 </table></div>
 </center>
+<br>
+
+#### Exercise 1 {-}
+
+Using the chart above, draw the model yourself by hand, incorporating all fluxes.
+
+We can now formulate the three energy-balance equations needed: 
+
+**Energy-balance for the Earth-atmosphere system as a whole:**
+
+Energy enters the Earth–atmosphere system from above at the rate $S$ and from below at the rate $W$ (heat generated from nonrenewable energy sources: nuclear and fossil fuels).
+Energy leaves these the system by three routes:
+
+1. Reflected solar radiation: $a_{p}S$;
+2. Thermal radiation from the top of the atmosphere: $\sigma T_{u}^{4}$; and
+3. The portion of thermal radiation from the surface that is not absorbed in the atmosphere: $(1 − \varepsilon)\sigma T_{s}^{4}$.
+
+Here:
+$\varepsilon$ is the fraction of surface radiation absorbed in the atmosphere (emissivity), 
+$\sigma$ is the Stefan-Boltzmann constant, and
+$T_{u}$ is the surface temperature (absolute). Thus, the energy balance for the whole system is:
+
+<br>
+<center>
+\begin{equation}
+S + W = a_{p}S + \sigma T_{u}^{4} (1 − \varepsilon)\sigma T_{s}^{4}
+(\#eq:module3-5)
+\end{equation}
+</center>
+<br>
+
+**Energy-balance for the upper layer of the atmosphere:**
+
+The upper atmospheric layer absorbs a fraction, $k_{u}$, of the solar radiation that strikes it and also receives:
+
+1) Energy radiated **upward** from the lower layer: $\sigma T_{l}^{4}$, and
+2) One-half of the latent heat that accompanies evaporation from the surface (because this layer holds one-half the atmospheric water vapour): $0.5L$.
+The upper layer loses energy by thermal radiation upward to outer space **and** downward to the lower layer. Thus, the energy balance for the upper layer is:
+
+<br>
+<center>
+\begin{equation}
+k_{u} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
+(\#eq:module3-6)
+\end{equation}
+</center>
+<br>
+
+**Energy-balance for the lower layer of the atmosphere:**
+
+Energy enters the lower atmospheric layer from above as absorption of a fraction, $k_{l}$, of the solar radiation that enters it and as thermal radiation from the upper layer: $\sigma T_{u}^{4}$. From below, energy enters from:
+
+1) The absorbed portion of thermal radiation from the surface: $\varepsilon \sigma T_{s}^{4}$; 
+2) one-half the latent-heat flux from the surface: $0.5L$;
+3) The sensible-heat flux from the surface, $H$; and
+4) The anthropogenic heat flux: $W$
+.
+Energy is lost from this layer by upward and downward radiation. The energy balance for the lower layer is therefore:
+
+<br>
+<center>
+\begin{equation}
+k_{l}S + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigma T_{l}^{4}
+(\#eq:module3-7)
+\end{equation}
+</center>
+<br>
+
+#### Exercise 2 {-}
+
+**Solve these equations to find a formula for surface temperature $T_{s}$:**
+
+Equations \@ref(eq:module3-5) to \@ref(eq:module3-7) are a system of three equations in three unknowns: the temperatures $T_{l}$, $T_{u}$, and $T_{s}$. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:
+
+1) Solve Equation \@ref(eq:module3-5) for $T_{u}$ in terms of $T_{s}$ and parameters.
+2) Solve Equation \@ref(eq:module3-6) for $T_{l}$ in terms of $T_{u}$ and parameters.
+3) Substitute the results of step 1 into the results of step 2 to give an equation for $T_{l}$ in terms of $T_{s}$ and parameters.
+4) Solve Equation \@ref(eq:module3-7) for $T_{s}$ in terms $T_{l}$, $T_{u}$, and parameters.
+5) Put the results of steps 1 and 3 into the results of step 4 and simplify to give the equation for $T_{s}$ as a function of parameters:
+
+<br>
+<center>
+\begin{equation}
+T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\frac{1}{4}}
+(\#eq:module3-8)
+\end{equation}
+</center>
+<br>
+
+\BeginKnitrBlock{rmdtip}<div class="rmdtip">Show your workings!</div>\EndKnitrBlock{rmdtip}
+<br>
+
+Using the values given in Table \@ref(tab:module3-4), what value do you derive for $T_{s}$?
+
+How close is this to the actual value of 290K?
+
+#### Exercise 3 {-}
+
+Using Excel, test the sensitivity of this model to albedo. Compare your findings to those found in part 1 (A plot of $T_{s}$ for values of albedo between 0.3 and 0.7 might help here).
+
 
 ### Submission {-}
 :::: {.redbox}
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 
-1. Clear photograph or page scan of your **hand drawn conceptual model** of the *Harte 1-D Energy Balance Model*, including key explaining the terms.
-2. Clear photograph or page scan of your **handwritten workings** of the *Harte Model calculations*, with a clear answer of $T$s, the Earth’s temperature.
-3. **Summary plots** from Exercise 1, 2 & 3 assessing albedo and temperature of the three models, with a brief explanation of less than 150 words of which model you prefer.
+1) Clear photograph or page scan of your **hand drawn conceptual model** of the *Harte 1-D Energy Balance Model*, including key explaining the terms.
+2) Clear photograph or page scan of your handwritten workings of the *Harte Model* calculations, with a clear answer of $T_{s}$, the Earth’s temperature.
+3) **Summary plot** from Exercise 1, 2 & 3 assessing albedo and temperature of the three models, with a brief explanation of less than 150 words of which model you prefer.
 
 The submission is to be all together in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded.
 

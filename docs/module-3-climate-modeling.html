@@ -24,7 +24,7 @@
 <meta name="author" content="Giles Knight" />
 
 
-<meta name="date" content="2020-06-16" />
+<meta name="date" content="2020-06-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -112,7 +112,7 @@
 <ul>
 <li class="chapter" data-level="" data-path="module-4-oceanic-ph-calculation.html"><a href="module-4-oceanic-ph-calculation.html#objectives-3"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="module-4-oceanic-ph-calculation.html"><a href="module-4-oceanic-ph-calculation.html#overview"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="" data-path="module-4-oceanic-ph-calculation.html"><a href="module-4-oceanic-ph-calculation.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="module-4-oceanic-ph-calculation.html"><a href="module-4-oceanic-ph-calculation.html#exercise-1-1"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="module-4-oceanic-ph-calculation.html"><a href="module-4-oceanic-ph-calculation.html#appendix-equation-list"><i class="fa fa-check"></i>Appendix – Equation list</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="module-5-catchment-water-balance.html"><a href="module-5-catchment-water-balance.html"><i class="fa fa-check"></i>Module 5: Catchment Water Balance</a></li>
@@ -545,6 +545,9 @@ T (Celsius)
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:325px; overflow-x: scroll; width:725px; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:module3-4">Table 1: </span>Energy balance model of Earth’s atmosphere
+</caption>
 <thead>
 <tr>
 <th style="text-align:center;">
@@ -696,6 +699,96 @@ Infrared flux from surface (use black-body equation)
 </table>
 </div>
 </center>
+<p><br></p>
+<div id="exercise-1" class="section level4 unnumbered" number="">
+<h4>Exercise 1</h4>
+<p>Using the chart above, draw the model yourself by hand, incorporating all fluxes.</p>
+<p>We can now formulate the three energy-balance equations needed:</p>
+<p><strong>Energy-balance for the Earth-atmosphere system as a whole:</strong></p>
+<p>Energy enters the Earth–atmosphere system from above at the rate <span class="math inline">\(S\)</span> and from below at the rate <span class="math inline">\(W\)</span> (heat generated from nonrenewable energy sources: nuclear and fossil fuels).
+Energy leaves these the system by three routes:</p>
+<ol style="list-style-type: decimal">
+<li>Reflected solar radiation: <span class="math inline">\(a_{p}S\)</span>;</li>
+<li>Thermal radiation from the top of the atmosphere: <span class="math inline">\(\sigma T_{u}^{4}\)</span>; and</li>
+<li>The portion of thermal radiation from the surface that is not absorbed in the atmosphere: <span class="math inline">\((1 − \varepsilon)\sigma T_{s}^{4}\)</span>.</li>
+</ol>
+<p>Here:
+<span class="math inline">\(\varepsilon\)</span> is the fraction of surface radiation absorbed in the atmosphere (emissivity),
+<span class="math inline">\(\sigma\)</span> is the Stefan-Boltzmann constant, and
+<span class="math inline">\(T_{u}\)</span> is the surface temperature (absolute). Thus, the energy balance for the whole system is:</p>
+<br>
+<center>
+<span class="math display" id="eq:module3-5">\[\begin{equation}
+S + W = a_{p}S + \sigma T_{u}^{4} (1 − \varepsilon)\sigma T_{s}^{4}
+\tag{11}
+\end{equation}\]</span>
+</center>
+<p><br></p>
+<p><strong>Energy-balance for the upper layer of the atmosphere:</strong></p>
+<p>The upper atmospheric layer absorbs a fraction, <span class="math inline">\(k_{u}\)</span>, of the solar radiation that strikes it and also receives:</p>
+<ol style="list-style-type: decimal">
+<li>Energy radiated <strong>upward</strong> from the lower layer: <span class="math inline">\(\sigma T_{l}^{4}\)</span>, and</li>
+<li>One-half of the latent heat that accompanies evaporation from the surface (because this layer holds one-half the atmospheric water vapour): <span class="math inline">\(0.5L\)</span>.
+The upper layer loses energy by thermal radiation upward to outer space <strong>and</strong> downward to the lower layer. Thus, the energy balance for the upper layer is:</li>
+</ol>
+<br>
+<center>
+<span class="math display" id="eq:module3-6">\[\begin{equation}
+k_{u} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
+\tag{12}
+\end{equation}\]</span>
+</center>
+<p><br></p>
+<p><strong>Energy-balance for the lower layer of the atmosphere:</strong></p>
+<p>Energy enters the lower atmospheric layer from above as absorption of a fraction, <span class="math inline">\(k_{l}\)</span>, of the solar radiation that enters it and as thermal radiation from the upper layer: <span class="math inline">\(\sigma T_{u}^{4}\)</span>. From below, energy enters from:</p>
+<ol style="list-style-type: decimal">
+<li>The absorbed portion of thermal radiation from the surface: <span class="math inline">\(\varepsilon \sigma T_{s}^{4}\)</span>;</li>
+<li>one-half the latent-heat flux from the surface: <span class="math inline">\(0.5L\)</span>;</li>
+<li>The sensible-heat flux from the surface, <span class="math inline">\(H\)</span>; and</li>
+<li>The anthropogenic heat flux: <span class="math inline">\(W\)</span>
+.
+Energy is lost from this layer by upward and downward radiation. The energy balance for the lower layer is therefore:</li>
+</ol>
+<br>
+<center>
+<span class="math display" id="eq:module3-7">\[\begin{equation}
+k_{l}S + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigma T_{l}^{4}
+\tag{13}
+\end{equation}\]</span>
+</center>
+<p><br></p>
+</div>
+<div id="exercise-2" class="section level4 unnumbered" number="">
+<h4>Exercise 2</h4>
+<p><strong>Solve these equations to find a formula for surface temperature <span class="math inline">\(T_{s}\)</span>:</strong></p>
+<p>Equations <a href="module-3-climate-modeling.html#eq:module3-5">(11)</a> to <a href="module-3-climate-modeling.html#eq:module3-7">(13)</a> are a system of three equations in three unknowns: the temperatures <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and <span class="math inline">\(T_{s}\)</span>. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:</p>
+<ol style="list-style-type: decimal">
+<li>Solve Equation <a href="module-3-climate-modeling.html#eq:module3-5">(11)</a> for <span class="math inline">\(T_{u}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
+<li>Solve Equation <a href="module-3-climate-modeling.html#eq:module3-6">(12)</a> for <span class="math inline">\(T_{l}\)</span> in terms of <span class="math inline">\(T_{u}\)</span> and parameters.</li>
+<li>Substitute the results of step 1 into the results of step 2 to give an equation for <span class="math inline">\(T_{l}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
+<li>Solve Equation <a href="module-3-climate-modeling.html#eq:module3-7">(13)</a> for <span class="math inline">\(T_{s}\)</span> in terms <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and parameters.</li>
+<li>Put the results of steps 1 and 3 into the results of step 4 and simplify to give the equation for <span class="math inline">\(T_{s}\)</span> as a function of parameters:</li>
+</ol>
+<br>
+<center>
+<span class="math display" id="eq:module3-8">\[\begin{equation}
+T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\frac{1}{4}}
+\tag{14}
+\end{equation}\]</span>
+</center>
+<p><br></p>
+
+<div class="rmdtip">
+Show your workings!
+</div>
+<p><br></p>
+<p>Using the values given in Table <a href="module-3-climate-modeling.html#tab:module3-4">1</a>, what value do you derive for <span class="math inline">\(T_{s}\)</span>?</p>
+<p>How close is this to the actual value of 290K?</p>
+</div>
+<div id="exercise-3" class="section level4 unnumbered" number="">
+<h4>Exercise 3</h4>
+<p>Using Excel, test the sensitivity of this model to albedo. Compare your findings to those found in part 1 (A plot of <span class="math inline">\(T_{s}\)</span> for values of albedo between 0.3 and 0.7 might help here).</p>
+</div>
 </div>
 <div id="submission-2" class="section level3 unnumbered" number="">
 <h3>Submission</h3>
@@ -703,8 +796,8 @@ Infrared flux from surface (use black-body equation)
 <p><strong>Submit properly formatted graphs and tables of the following sections of the lab:</strong></p>
 <ol style="list-style-type: decimal">
 <li>Clear photograph or page scan of your <strong>hand drawn conceptual model</strong> of the <em>Harte 1-D Energy Balance Model</em>, including key explaining the terms.</li>
-<li>Clear photograph or page scan of your <strong>handwritten workings</strong> of the <em>Harte Model calculations</em>, with a clear answer of <span class="math inline">\(T\)</span>s, the Earth’s temperature.</li>
-<li><strong>Summary plots</strong> from Exercise 1, 2 &amp; 3 assessing albedo and temperature of the three models, with a brief explanation of less than 150 words of which model you prefer.</li>
+<li>Clear photograph or page scan of your handwritten workings of the <em>Harte Model</em> calculations, with a clear answer of <span class="math inline">\(T_{s}\)</span>, the Earth’s temperature.</li>
+<li><strong>Summary plot</strong> from Exercise 1, 2 &amp; 3 assessing albedo and temperature of the three models, with a brief explanation of less than 150 words of which model you prefer.</li>
 </ol>
 <p>The submission is to be all together in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded.</p>
 <p><strong>General professional formatting guidelines:</strong></p>
