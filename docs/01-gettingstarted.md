@@ -11,15 +11,45 @@ Functions in Excel always begin with an `=` sign.
 
 ### R {-}
 
-R is a programming language  
-
 To get started with R you must first download the base R system onto your computer. By itself, this provides a rudimentary console for interacting with the R programming language. For a more user-friendly experience, download the R Studio integrated development environment (IDE). 
 
 - R can be downloaded [here](https://cran.csiro.au)
 - R Studio can be downloaded [here](https://rstudio.com)
 
-In this unit you will largely be dealing with two kind of 'R files': script files and project files.
+#### Terminology {-}
 
+**File types** 
+
+In this unit you will largely be dealing with two kinds of 'R files': 
+
+- R script files (e.g. `Equations.R`) and,
+- R project files (e.g. `Module2Biogeochem.Rproj`) 
+
+R scripts are the raw instructions that tell the R programming language what to do. An R Rroject file simply creates an independent workplace environment for you to interact with and manage your scripts. It's wise to create a new R Project file whenever you start working on a new project. 
+
+**Functions and packages**
+
+Just like Excel, you can interact with your data using a variety of *functions* in R. Functions are the tools you use to get the job done. For example, the `plot()` function can be used to create graphs. R is an open source programming language, meaning anyone can create their own functions and bundle them up in a collection known as a *package*. 
+
+**Comments**
+
+All programming languages allow the user to write comments on their code to assist in user readability and structure. In R, a comment is defined as a line beginning with a `#`. Any characters written after the `#` are ignored by R and not executed. It's good practice to get into the habit of commenting your R code as it will likely save you (or someone else!) much angst when returning to old R scripts. 
+
+
+```r
+# This is a comment!
+
+# Create graph using the plot() function
+plot(my_data,variable1,col="red",ylab="My y-axis label")
+
+# Plot other variables onto the graph using the points() function
+points(my_data,variable1,col="blue")
+points(my_data,variable2,col="green")
+points(my_data,variable3,col="purple")
+```
+
+
+\BeginKnitrBlock{rmdtip}<div class="rmdtip">To comment multiple lines of code at once in R Studio, press`Command + Shift + C`on MacOS or`Control + Shift + C`on Windows</div>\EndKnitrBlock{rmdtip}
 
 ### Unzipping files {-}
 
