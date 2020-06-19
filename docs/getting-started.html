@@ -166,10 +166,10 @@
 <div id="r" class="section level3 unnumbered" number="">
 <h3>R</h3>
 <p>R is a programming language</p>
-<p>To get started with R you must first download R itself. R Studio is an integrated development environment (IDE) which allows for a more user-friendly way of interacting with the R programming language.</p>
+<p>To get started with R you must first download the base R system onto your computer. By itself, this provides a rudimentary console for interacting with the R programming language. For a more user-friendly experience, download the R Studio integrated development environment (IDE).</p>
 <ul>
 <li>R can be downloaded <a href="https://cran.csiro.au">here</a></li>
-<li>R Studio can be downloaded <a href="https://rstudio.com">here</a>.</li>
+<li>R Studio can be downloaded <a href="https://rstudio.com">here</a></li>
 </ul>
 <p>In this unit you will largely be dealing with two kind of ‘R files’: script files and project files.</p>
 </div>
@@ -246,6 +246,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
