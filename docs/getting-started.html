@@ -72,7 +72,15 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i>Getting Started</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i>Getting Started</a>
+<ul>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a>
+<ul>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#excel"><i class="fa fa-check"></i>Excel</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#r"><i class="fa fa-check"></i>R</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
 <ul>
 <li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#environmental-flows-to-an-estuary"><i class="fa fa-check"></i>Environmental Flows to an Estuary</a>
@@ -146,7 +154,39 @@
             <section class="normal" id="section-">
 <div id="getting-started" class="section level1 unnumbered" number="">
 <h1>Getting Started</h1>
+<div id="tools-youll-need" class="section level2 unnumbered" number="">
+<h2>Tools You’ll Need</h2>
+<div id="excel" class="section level3 unnumbered" number="">
+<h3>Excel</h3>
+<div id="using-functions" class="section level4 unnumbered" number="">
+<h4>Using functions</h4>
+<p>Functions in Excel always begin with an <code>=</code> sign.</p>
+</div>
+</div>
+<div id="r" class="section level3 unnumbered" number="">
+<h3>R</h3>
+<p>R is a programming language</p>
+<p>To get started with R you must first download R itself. R Studio is an integrated development environment (IDE) which allows for a more user-friendly way of interacting with the R programming language.</p>
+<ul>
+<li>R can be downloaded <a href="https://cran.csiro.au">here</a></li>
+<li>R Studio can be downloaded <a href="https://rstudio.com">here</a>.</li>
+</ul>
+<p>In this unit you will largely be dealing with two kind of ‘R files’: script files and project files.</p>
+</div>
+<div id="unzipping-files" class="section level3 unnumbered" number="">
+<h3>Unzipping files</h3>
+<p>Many of the module resources found in this workbook are downloaded as ‘zipped’ (i.e. compressed) files. ‘Unzipping’ (i.e. extracting) these files is simple.</p>
+On MacOS, simply double click the ‘zipped’ file:
+<center>
+<video width="768" height="433" controls>
+<source src="images/01-gettingstarted/video1.mp4" type="video/mp4">
+</video>
+</center>
+<p><br></p>
+<p>On Windows,</p>
 
+</div>
+</div>
 </div>
             </section>
 
@@ -206,20 +246,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

@@ -15,7 +15,7 @@ Lakes, rivers and estuaries are adapted to receive water based on the natural hy
 
 <center>
 
-![Figure 1: Drain L inflows (yellow arrow) will be diverted (blue arrow)](images/02-module1/picture1.png){width=650px}
+![Figure 1: Drain L inflows (yellow arrow) will be diverted (blue arrow)](images/02-module1/picture1.jpeg){width=750px}
 
 </center>
 
