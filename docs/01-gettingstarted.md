@@ -11,7 +11,7 @@ Functions in Excel always begin with an `=` sign.
 
 ### R {-}
 
-To get started with R you must first download the base R system onto your computer. By itself, this provides a rudimentary console for interacting with the R programming language. For a more user-friendly experience, download the R Studio integrated development environment (IDE). 
+To get started with R, first download the base R system onto your computer. By itself, this provides a rudimentary console for interacting with the R programming language. For a more user-friendly experience, download the R Studio integrated development environment (IDE). 
 
 - R can be downloaded [here](https://cran.csiro.au)
 - R Studio can be downloaded [here](https://rstudio.com)
@@ -25,7 +25,7 @@ In this unit you will largely be dealing with two kinds of 'R files':
 - R script files (e.g. `Equations.R`) and,
 - R project files (e.g. `Module2Biogeochem.Rproj`) 
 
-R scripts are the raw instructions that tell the R programming language what to do. An R Rroject file simply creates an independent workplace environment for you to interact with and manage your scripts. It's wise to create a new R Project file whenever you start working on a new project. 
+R scripts are the raw instructions that tell the R programming language what to do. While an R Rroject file simply creates an independent workplace environment for you to interact with and manage your scripts. It's wise to create a new R Project file whenever you start working on a new project. 
 
 **Functions and packages**
 
@@ -33,7 +33,7 @@ Just like Excel, you can interact with your data using a variety of *functions* 
 
 **Comments**
 
-All programming languages allow the user to write comments on their code to assist in user readability and structure. In R, a comment is defined as a line beginning with a `#`. Any characters written after the `#` are ignored by R and not executed. It's good practice to get into the habit of commenting your R code as it will likely save you (or someone else!) much angst when returning to old R scripts. 
+All programming languages allow the user to write comments on their code to assist in readability and structure. In R, a comment is defined as a line beginning with a `#`. Any characters written after the `#` are ignored by R and not executed. It's good practice to get into the habit of commenting your R code as it will likely save you (or someone else!) a lot of time later down the track. 
 
 
 ```r
@@ -63,4 +63,11 @@ On MacOS, simply double click the 'zipped' file:
 </center>
 <br>
 
-On Windows,
+On Windows, click 'Extract All' and follow the prompt:
+
+<center>
+<video width="850" height="538" controls>
+  <source src="images/01-gettingstarted/video2.mp4" type="video/mp4">
+</video>
+</center>
+<br>
