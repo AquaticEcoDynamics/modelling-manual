@@ -43,13 +43,22 @@ All programming languages allow the user to write comments on their code to assi
 plot(my_data,variable1,col="red",ylab="My y-axis label")
 
 # Plot other variables onto the graph using the points() function
-points(my_data,variable1,col="blue")
-points(my_data,variable2,col="green")
-points(my_data,variable3,col="purple")
+points(my_data,variable2,col="blue")
+points(my_data,variable3,col="green")
+points(my_data,variable4,col="purple")
 ```
 
 
 \BeginKnitrBlock{rmdtip}<div class="rmdtip">To comment multiple lines of code at once in R Studio, press`Command + Shift + C`on MacOS or`Control + Shift + C`on Windows</div>\EndKnitrBlock{rmdtip}
+
+
+**Further R resources**
+
+- Read the [Introduction to R and Statistics](https://jovial-stonebraker-82b147.netlify.app/) book for a more detailed coverage on the core data visualisation and statistics capabilities in R
+- Access UWA's [LinkedIn Learning](https://www.uwa.edu.au/education/educational-enhancement-unit/strategic-projects/linkedin-learning-at-uwa) portal the learn more about the basics of R 
+- Refer to some handy R cheatsheets   
+  - [R Studio cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+  - [ggplot2 data visualisation cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
 
 ### Unzipping files {-}
 

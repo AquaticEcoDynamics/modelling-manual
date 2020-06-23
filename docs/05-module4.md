@@ -251,7 +251,7 @@ K_{W} = \frac{[\color{#FF0000}{H^{+}}][OH^{-}]}{[H_{2}O]}
 (\#eq:module4-29) \\
 K_{H} = \frac{[\color{#C45911}{H_{2}CO_{3}}][OH^{-}]}{[CO_{2}]}
 (\#eq:module4-30) \\
-[\color{#ED7D31}{H_{2}CO{3}^{\ast}}] = K_{H}CO_{2} = C_{T}\alpha_{0}
+[\color{#ED7D31}{H_{2}CO_{3}^{\ast}}] = K_{H}CO_{2} = C_{T}\alpha_{0}
 (\#eq:module4-31) \\
 [\color{#00B050}{HCO{3}^{-}}] = \frac{K_{1}[\color{#ED7D31}{H_{2}CO_{3}]}}{[\color{#FF0000}{H^{+}}]} = C_{T}\alpha_{1} \text{ CHECK equation!}
 (\#eq:module4-32) \\

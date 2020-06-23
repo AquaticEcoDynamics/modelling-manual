@@ -61,7 +61,13 @@ Repeat this at each year change and you will have the year only information whic
 
 Highlight all the data.  It must have headings for each column or it won’t work.
 Go to “Insert” then “Pivot Table”. Click OK as you want the default settings.
-Then you just fiddle until you get what you want.  The following is an example:
+Then you just fiddle until you get what you want. The following is an example:
+
+<center>
+<video width="648.96" height="595.92" controls>
+  <source src="images/02-module1/video3.mp4" type="video/mp4">
+</video>
+</center>
 
 4) **Sort the years** from highest to lowest flow:
     a. Add a new column next to the flows indexing the years sequentially 
