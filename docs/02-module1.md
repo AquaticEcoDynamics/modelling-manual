@@ -70,9 +70,15 @@ Then you just fiddle until you get what you want. The following is an example:
 </center>
 
 4) **Sort the years** from highest to lowest flow:
-    a. Add a new column next to the flows indexing the years sequentially 
+    a. Add a new column next to the flows indexing the years sequentially (i.e. 1, 2, 3...)
     b. Add a new column next to the indices calculating the probability of meeting the annual flow: $P(Yri) =  \frac{i}{\text{number of years}+1}$
+    <center>
+    <video width="650.76" height="393.04" controls>
+      <source src="images/02-module1/video4.mp4" type="video/mp4">
+    </video>
+    </center>
     c. Scatter plot the flow vs probability curve.
+\BeginKnitrBlock{rmdtip}<div class="rmdtip">Sum each year</div>\EndKnitrBlock{rmdtip}
 5) Assess the amount of water available for **flow diversion for two scenarios** by adding a new time-series column for each option:
     a. Water below 50 ML/day and above 550 ML/day is NOT diverted
     b. Water below 150 ML/day and above 1000 ML/day is NOT diverted
