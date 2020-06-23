@@ -25,7 +25,7 @@ In this unit you will largely be dealing with two kinds of 'R files':
 - R script files (e.g. `Equations.R`) and,
 - R project files (e.g. `Module2Biogeochem.Rproj`) 
 
-R scripts are the raw instructions that tell the R programming language what to do. While an R Rroject file simply creates an independent workplace environment for you to interact with and manage your scripts. It's wise to create a new R Project file whenever you start working on a new project. 
+R scripts are the raw instructions that tell the R programming language what to do. While an R Project file simply creates an independent workplace environment for you to interact with and manage your scripts. It's wise to create a new R Project file whenever you start working on a new project. 
 
 **Functions and packages**
 
@@ -39,7 +39,7 @@ All programming languages allow the user to write comments on their code to assi
 ```r
 # This is a comment!
 
-# Create graph using the plot() function
+# Create a graph using the plot() function
 plot(my_data,variable1,col="red",ylab="My y-axis label")
 
 # Plot other variables onto the graph using the points() function
@@ -66,7 +66,7 @@ On MacOS, simply double click the 'zipped' file:
 On Windows, click 'Extract All' and follow the prompt:
 
 <center>
-<video width="850" height="538" controls>
+<video width="765" height="484.2" controls>
   <source src="images/01-gettingstarted/video2.mp4" type="video/mp4">
 </video>
 </center>
