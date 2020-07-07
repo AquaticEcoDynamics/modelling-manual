@@ -17,28 +17,28 @@ The major variables are given in Table \@ref(tab:module4-1). Given any two of th
 <caption>(\#tab:module4-1)Major variables</caption>
 <tbody>
   <tr>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;"> $CO_{2 (\text{gas})}$ </td>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;"> $CO_{2 (\text{dissolved})}$ </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;"> $CO_{2 (\text{gas})}$ </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;"> $CO_{2 (\text{dissolved})}$ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;"> $H^{+}$ </td>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;"> $Ca^{2+}$ </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;"> $H^{+}$ </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;"> $Ca^{2+}$ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;"> $HCO_{3}^{-}$ </td>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;"> $OH^{-}$ </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;"> $HCO_{3}^{-}$ </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;"> $OH^{-}$ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;"> $CO_{3}^{2-}$ </td>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;"> $H_{2}CO_{3}$ </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;"> $CO_{3}^{2-}$ </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;"> $H_{2}CO_{3}$ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;"> $C_{T} \text{ (total dissolved inorganic carbon)}$ </td>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;"> $H_{2}CO_{3}^{*}$ </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;"> $C_{T} \text{ (total dissolved inorganic carbon)}$ </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;"> $H_{2}CO_{3}^{*}$ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;"> $\text{Alkalinity}$ </td>
-   <td style="text-align:center;min-width: 10em; background-color: white !important;">  </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;"> $\text{Alkalinity}$ </td>
+   <td style="text-align:center;min-width: 10em; background-color: rgba(255, 255, 255, 0) !important;">  </td>
   </tr>
 </tbody>
 </table></div>

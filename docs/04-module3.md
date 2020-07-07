@@ -14,7 +14,7 @@ To simplify the model further, we assume the Earth emits outgoing (longwave) rad
 
 <center>
 
-![](images/04-module3/picture1.png){width=650px}
+![](images/04-module3/picture2.png){width=650px}
 
 </center>
 
@@ -73,34 +73,34 @@ E_{\text{abs}} = S\pi r^{2} (1-a)
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> Solar constant </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> 1367 </td>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> W/m^2^ </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> Solar constant </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> 1367 </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> W/m^2^ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> Albedo </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> 0.33 </td>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> NA </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> Albedo </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> 0.33 </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> NA </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> Stefan-Boltzmann constant </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> 5.67E-08 </td>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> NA </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> Stefan-Boltzmann constant </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> 5.67E-08 </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> NA </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> Mean temperature of Earth </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> ? </td>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> K </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> Mean temperature of Earth </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> K </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> Mean temperature of Earth </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> ? </td>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> °C </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> Mean temperature of Earth </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> °C </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> Mean temperature of Earth </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> ? </td>
-   <td style="text-align:center;min-width: 12em; background-color: white !important;"> °F </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> Mean temperature of Earth </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
+   <td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;"> °F </td>
   </tr>
 </tbody>
 </table></div>
@@ -131,39 +131,39 @@ Remember: $K = °C + 273.2$ and $°F = 1.8°C + 32$
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.3 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 1367 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.33 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 5.67e-08 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> ? </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.3 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 1367 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.33 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 5.67e-08 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.4 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 1367 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.33 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 5.67e-08 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> ? </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.4 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 1367 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.33 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 5.67e-08 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.5 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 1367 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.33 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 5.67e-08 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> ? </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.5 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 1367 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.33 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 5.67e-08 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.6 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 1367 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.33 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 5.67e-08 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> ? </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.6 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 1367 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.33 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 5.67e-08 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.7 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 1367 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.33 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 5.67e-08 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> ? </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.7 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 1367 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.33 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 5.67e-08 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
   </tr>
 </tbody>
 </table></div>
@@ -210,34 +210,34 @@ This gets inputted into the energy balance equation (energy in = energy out) to 
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.3 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 204 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 2.17 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> ? </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.3 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 204 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 2.17 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.4 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 204 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 2.17 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> ? </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.4 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 204 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 2.17 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.5 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 204 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 2.17 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> ? </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.5 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 204 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 2.17 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.6 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 204 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 2.17 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> ? </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.6 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 204 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 2.17 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 0.7 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 204 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> 2.17 </td>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> ? </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 0.7 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 204 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> 2.17 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> ? </td>
   </tr>
 </tbody>
 </table></div>
@@ -275,65 +275,65 @@ In this model, all energy terms are expressed as long-term average fluxes, all t
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $S_{\text{av}}$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Solar radiation intercepted by Earth ($=\frac{S}{4}$ where $S$ is the solar
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $S_{\text{av}}$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Solar radiation intercepted by Earth ($=\frac{S}{4}$ where $S$ is the solar
 constant of 1370Wm^-2^) </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> 342.5 Wm^-2^ </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> 342.5 Wm^-2^ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $W$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Heat generated from nonrenewable energy sources (fossil fuels + nuclear) </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> 0.021 Wm^-2^ </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $W$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Heat generated from nonrenewable energy sources (fossil fuels + nuclear) </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> 0.021 Wm^-2^ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $L$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Average latent heat flux from the surface </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> 80 Wm^-2^ </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $L$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Average latent heat flux from the surface </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> 80 Wm^-2^ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $H$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Average sensible heat flux at the surface </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> 17 Wm^-2^ </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $H$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Average sensible heat flux at the surface </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> 17 Wm^-2^ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $\sigma$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Stefan-Boltzmann constant </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> 5.67 x10^-8^ Wm^-2^ deg^-4^ </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $\sigma$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Stefan-Boltzmann constant </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> 5.67 x10^-8^ Wm^-2^ deg^-4^ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $a_{p}$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Planetary albedo </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> 0.3 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $a_{p}$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Planetary albedo </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> 0.3 </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $k_{u}$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Fraction of solar radiation absorbed in upper layer of atmosphere </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> 0.18 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $k_{u}$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Fraction of solar radiation absorbed in upper layer of atmosphere </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> 0.18 </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $k_{l}$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Fraction of solar radiation absorbed in upper lower of atmosphere </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> 0.075 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $k_{l}$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Fraction of solar radiation absorbed in upper lower of atmosphere </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> 0.075 </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $\varepsilon$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Emissivity ($= 1 - \text{reflectivity}$): the fraction of the infrared radiation emitted by the surface that is absorbed in the atmosphere and then re-emitted </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> 0.95 </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $\varepsilon$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Emissivity ($= 1 - \text{reflectivity}$): the fraction of the infrared radiation emitted by the surface that is absorbed in the atmosphere and then re-emitted </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> 0.95 </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $F_{u}$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Infrared flux from upper layer (use black-body equation) </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> $\varepsilon \sigma T_{u}^{4}$ </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $F_{u}$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Infrared flux from upper layer (use black-body equation) </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> $\varepsilon \sigma T_{u}^{4}$ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $F_{l}$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Infrared flux from lower layer (use black-body equation) </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> $\varepsilon \sigma T_{l}^{4}$ </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $F_{l}$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Infrared flux from lower layer (use black-body equation) </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> $\varepsilon \sigma T_{l}^{4}$ </td>
   </tr>
   <tr>
-   <td style="text-align:center;min-width: 5em; background-color: white !important;"> $F_{s}$ </td>
-   <td style="text-align:center;min-width: 15em; background-color: white !important;"> Infrared flux from surface (use black-body equation) </td>
-   <td style="text-align:center;min-width: 13em; background-color: white !important;"> $\varepsilon \sigma T_{s}^{4}$ </td>
+   <td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;"> $F_{s}$ </td>
+   <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;"> Infrared flux from surface (use black-body equation) </td>
+   <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;"> $\varepsilon \sigma T_{s}^{4}$ </td>
   </tr>
 </tbody>
 </table></div>

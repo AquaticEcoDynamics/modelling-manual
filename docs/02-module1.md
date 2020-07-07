@@ -35,7 +35,7 @@ You are given a time-series of daily river flow and need to assess how different
 
 
 <center>
-<video width="650" height="550" controls>
+<video width="100%" height="550" controls>
   <source src="images/02-module1/video1.mp4" type="video/mp4">
 </video>
 </center>
@@ -51,22 +51,22 @@ You may do the annual averaging manually or the pivot table method. For the pivo
 Type the year number into the first cell, make sure it is formatted as a number.
 
 <center>
-<video width="650" height="550" controls>
+<video width="100%" height="550" controls>
   <source src="images/02-module1/video2.mp4" type="video/mp4">
 </video>
 </center>
 
-\BeginKnitrBlock{rmdtip2}<div class="rmdtip2">Use `YEAR()` to speed this step up</div>\EndKnitrBlock{rmdtip2}
-
 Click two times on the little square in the corner of the box.  This will fill down the page.
 Repeat this at each year change and you will have the year only information which you can then use to summarise data.  As the original date has day numbers and decimal time each one is unique so you end up with a record for each day.  This way you get a record for each year.
+
+\BeginKnitrBlock{rmdtip2}<div class="rmdtip2">Use `YEAR()` to speed this step up</div>\EndKnitrBlock{rmdtip2}
 
 Highlight all the data.  It must have headings for each column or it won’t work.
 Go to “Insert” then “Pivot Table”. Click OK as you want the default settings.
 Then you just fiddle until you get what you want. The following is an example:
 
 <center>
-<video width="648.96" height="595.92" controls>
+<video width="100%" height="595.92" controls>
   <source src="images/02-module1/video3.mp4" type="video/mp4">
 </video>
 </center>
@@ -76,7 +76,7 @@ Then you just fiddle until you get what you want. The following is an example:
     b. Add a new column next to the indices calculating the probability of meeting the annual flow: $P(Yri) =  \frac{i}{\text{number of years}+1}$
 
 <center>
-  <video width="650.76" height="393.04" controls>
+  <video width="100%" height="393.04" controls>
     <source src="images/02-module1/video4.mp4" type="video/mp4">
   </video>
 </center>

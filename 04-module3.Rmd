@@ -14,7 +14,7 @@ To simplify the model further, we assume the Earth emits outgoing (longwave) rad
 
 <center>
 
-![](images/04-module3/picture1.png){width=650px}
+![](images/04-module3/picture2.png){width=650px}
 
 </center>
 
@@ -76,7 +76,7 @@ kable(module3_1, format = "html", escape = F, align = "c") %>%
   column_spec(1, width_min = "12em") %>%
   column_spec(2, width_min = "15em") %>%
   column_spec(3, width_min = "12em") %>%
-  row_spec(1:6, background = 'white') %>%
+  row_spec(1:6, background = '#ffffff00') %>%
   scroll_box(width = "725px",
              fixed_thead = FALSE) 
 ```
@@ -112,7 +112,7 @@ kable(module3_2, format = "html", escape = F, align = "c") %>%
   column_spec(3, width_min = "5em") %>%
   column_spec(4, width_min = "5em") %>%
   column_spec(5, width_min = "5em") %>%
-  row_spec(1:5, background = 'white') %>%
+  row_spec(1:5, background = '#ffffff00') %>%
   scroll_box(width = "725px",
              fixed_thead = FALSE) 
 ```
@@ -162,7 +162,7 @@ kable(module3_3, format = "html", escape = F, align = "c") %>%
   column_spec(2, width_min = "5em") %>%
   column_spec(3, width_min = "5em") %>%
   column_spec(4, width_min = "5em") %>%
-  row_spec(1:5, background = 'white') %>%
+  row_spec(1:5, background = '#ffffff00') %>%
   scroll_box(width = "350px",
              fixed_thead = FALSE) 
 ```
@@ -201,7 +201,7 @@ kable(module3_4, format = "html", escape = F, align = "c", caption = "Energy bal
   column_spec(1, width_min = "5em") %>%
   column_spec(2, width_min = "15em") %>%
   column_spec(3, width_min = "13em") %>%
-  row_spec(1:12, background = 'white') %>%
+  row_spec(1:12, background = '#ffffff00') %>%
   scroll_box(width = "725px", height = "325px",
              fixed_thead = FALSE) 
 ```
