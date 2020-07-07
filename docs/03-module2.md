@@ -60,7 +60,7 @@ Download the R scripts: [MODULE2_R_Biogeochem.zip](./resources/module2/MODULE2_R
 
 2) Complete the excel spreadsheet for iron reduction, sulfate reduction and methanogenesis. Oxygen, nitrate and manganese are done already, so copy the method and use the equations at the tops of the columns. It is tedious, fiddly and there is a good chance that you will introduce bugs that are hard to find. This is the nature of Excel.
 
-\BeginKnitrBlock{rmdtip}<div class="rmdtip">Note that the rate is dependent on the concentration in the previous time step – this is called an *explicit* solution (as opposed to *implicit*).</div>\EndKnitrBlock{rmdtip}
+\BeginKnitrBlock{rmdnote2}<div class="rmdnote2">The rate is dependent on the concentration in the previous time step – this is called an *explicit* solution (as opposed to *implicit*).</div>\EndKnitrBlock{rmdnote2}
 
 3) Complete the line plot (**1**) of relative oxidant concentration for iron and sulphate. Right click on the plot and use ‘Add data’, make the x axis time and the y axis relative concentration. It is easy to visualise if you keep the colours consistent, and choose the colours that you like. Adjust the values for the initial condition and the half-saturation constants and see how the lines move on your plot. Add more time steps underneath if you want to see what happens over the long term.
 
@@ -83,7 +83,7 @@ Now we have a working process-based model. This was the hard and boring part, bu
 9) In either Excel or R, create a new environmental situation that involves organic matter oxidation. Consider the assumptions you are making and how important they are. Use the model to test the effect of this situation on concentrations and rates. For example, what would happen if there were regular organic matter deposition as a boundary condition? Or maybe what if there were a constant oxygen concentration? What conditions might be needed to minimise methanogenesis? How could you maximise denitrification? I will give higher marks if you do something original and creative. Write a brief description of your new situation and create one plot (**4**) to explain your result. 
 
 ### Submission {-}
-:::: {.redbox}
+:::: {.redbox2}
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 

@@ -184,7 +184,7 @@ Open the IPCC image in Plot Digitizer. The program guides you through the steps 
 Compare these results with your own results. And make any plots that you feel help explain the environmental system behaviour. Big questions: which factors cause the differences between your results and those of the IPCC models?
 
 ### Submission {-}
-:::: {.redbox}
+:::: {.redbox2}
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 

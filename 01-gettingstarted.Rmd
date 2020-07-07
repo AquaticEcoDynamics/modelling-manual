@@ -49,7 +49,7 @@ points(my_data,variable4,col="purple")
 ```
 
 
-```{block2, hint0, type='rmdtip'}
+```{block2, hint0, type='rmdtip2'}
 To comment multiple lines of code at once in R Studio, press`Command + Shift + C`on MacOS or`Control + Shift + C`on Windows
 ```
 

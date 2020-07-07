@@ -108,7 +108,9 @@ E_{\text{abs}} = S\pi r^{2} (1-a)
 
 <br>
 
-\BeginKnitrBlock{rmdtip}<div class="rmdtip">Remember: $K = °C + 273.2$ and $°F = 1.8°C + 32$ </div>\EndKnitrBlock{rmdtip}
+\BeginKnitrBlock{rmdtip2}<div class="rmdtip2">
+Remember: $K = °C + 273.2$ and $°F = 1.8°C + 32$ 
+</div>\EndKnitrBlock{rmdtip2}
 
 |          a) The current mean temperature of the Earth is 288K (15°C). Does this simple model over or under
 |              predict the Earth’s temperature? What important factor is missing from this model?
@@ -425,7 +427,7 @@ T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\fr
 </center>
 <br>
 
-\BeginKnitrBlock{rmdtip}<div class="rmdtip">Show your workings!</div>\EndKnitrBlock{rmdtip}
+\BeginKnitrBlock{rmdnote2}<div class="rmdnote2">Show your workings!</div>\EndKnitrBlock{rmdnote2}
 <br>
 
 Using the values given in Table \@ref(tab:module3-4), what value do you derive for $T_{s}$?
@@ -438,7 +440,7 @@ Using Excel, test the sensitivity of this model to albedo. Compare your findings
 
 
 ### Submission {-}
-:::: {.redbox}
+:::: {.redbox2}
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 

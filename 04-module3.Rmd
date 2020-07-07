@@ -84,8 +84,10 @@ kable(module3_1, format = "html", escape = F, align = "c") %>%
 
 <br>
 
-```{block2, hint4, type='rmdtip'}
+```{block2, hint4, type='rmdtip2'}
+
 Remember: $K = °C + 273.2$ and $°F = 1.8°C + 32$ 
+
 ```
 
 |          a) The current mean temperature of the Earth is 288K (15°C). Does this simple model over or under
@@ -293,7 +295,7 @@ T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\fr
 </center>
 <br>
 
-```{block2, hint5, type='rmdtip'}
+```{block2, hint5, type='rmdnote2'}
 Show your workings!
 ```
 <br>
@@ -308,7 +310,7 @@ Using Excel, test the sensitivity of this model to albedo. Compare your findings
 
 
 ### Submission {-}
-:::: {.redbox}
+:::: {.redbox2}
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 

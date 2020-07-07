@@ -30,7 +30,9 @@ You are given a time-series of daily river flow and need to assess how different
 1) For this flow time-series, calculate the **volume of daily flow** within the following bands
 0-40; 40-80; 80-120; 120-200; 200-400; 400-1000; >1000
 
-\BeginKnitrBlock{rmdtip}<div class="rmdtip">Use Nested “IF” statement in adjacent columns to partition flows</div>\EndKnitrBlock{rmdtip}
+\BeginKnitrBlock{rmdtip2}<div class="rmdtip2">Use a nested `IF()` statement in adjacent columns to partition flows</div>\EndKnitrBlock{rmdtip2}
+
+
 
 <center>
 <video width="650" height="550" controls>
@@ -41,7 +43,7 @@ You are given a time-series of daily river flow and need to assess how different
 
 2) For this flow time-series, calculate the **number of days** daily flow within the above bands and work out **annual average number of days**
 
-\BeginKnitrBlock{rmdtip}<div class="rmdtip">Use COUNT() to get the number of entries in the column</div>\EndKnitrBlock{rmdtip}
+\BeginKnitrBlock{rmdtip2}<div class="rmdtip2">Use `COUNT()` to get the number of entries in the column</div>\EndKnitrBlock{rmdtip2}
 
 3) Calculate the **annual amount of flow** in total and in each band
 
@@ -54,7 +56,7 @@ Type the year number into the first cell, make sure it is formatted as a number.
 </video>
 </center>
 
-\BeginKnitrBlock{rmdtip}<div class="rmdtip">Use YEAR() to speed this step up</div>\EndKnitrBlock{rmdtip}
+\BeginKnitrBlock{rmdtip2}<div class="rmdtip2">Use `YEAR()` to speed this step up</div>\EndKnitrBlock{rmdtip2}
 
 Click two times on the little square in the corner of the box.  This will fill down the page.
 Repeat this at each year change and you will have the year only information which you can then use to summarise data.  As the original date has day numbers and decimal time each one is unique so you end up with a record for each day.  This way you get a record for each year.
@@ -81,7 +83,7 @@ Then you just fiddle until you get what you want. The following is an example:
 |            c. Scatter plot the flow vs probability curve
 
 
-\BeginKnitrBlock{rmdtip}<div class="rmdtip">Sum each year</div>\EndKnitrBlock{rmdtip}
+\BeginKnitrBlock{rmdtip2}<div class="rmdtip2">Sum each year</div>\EndKnitrBlock{rmdtip2}
 
 5) Assess the amount of water available for **flow diversion for two scenarios** by adding a new time-series column for each option:
     a. Water below 50 ML/day and above 550 ML/day is NOT diverted
@@ -92,10 +94,9 @@ Then you just fiddle until you get what you want. The following is an example:
 8) Fit a trendline to the data and display equation and R^2^ – this is a statistical model.
 9) In a new time-series column in the previous sheet, use the statistical model from above to predict a salinity time-series for the above station in the estuary under the two diversion scenarios compared to the base case.
 
-
 ### Submission {-}
-:::: {.redbox}
 
+:::: {.redbox2}
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 
 - Q2: Table of the number of days daily flow within the above bands and annual average

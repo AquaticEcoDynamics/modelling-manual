@@ -49,7 +49,7 @@ points(my_data,variable4,col="purple")
 ```
 
 
-\BeginKnitrBlock{rmdtip}<div class="rmdtip">To comment multiple lines of code at once in R Studio, press`Command + Shift + C`on MacOS or`Control + Shift + C`on Windows</div>\EndKnitrBlock{rmdtip}
+\BeginKnitrBlock{rmdtip2}<div class="rmdtip2">To comment multiple lines of code at once in R Studio, press`Command + Shift + C`on MacOS or`Control + Shift + C`on Windows</div>\EndKnitrBlock{rmdtip2}
 
 
 **Further R resources**

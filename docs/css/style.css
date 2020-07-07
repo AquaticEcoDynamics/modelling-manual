@@ -15,6 +15,21 @@
 .rmdtip {
   background-image: url("../images/tip.png");
 }
+.rmdtip2 {
+  border: 1px solid #34A853;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+}
+div.rmdtip2::before {
+  display: block;
+  content: "Tip: ";
+  color: #34A853;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+}
 .rmdwarning {
   background-image: url("../images/warning.png");
 }
@@ -70,7 +85,29 @@ h1.title {
   border: 3.5px solid #ff0000;;
   border-radius: 10px;
 }
+.redbox2 {
+  border: 1px solid #ff0000;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+}
 .centre {
   text-align: center;
   font-weight: 1000;
+}
+.rmdnote2 {
+  border: 1px solid #FBBC05;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+}
+div.rmdnote2::before {
+  display: block;
+  content: "Note: ";
+  color: #FBBC05;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.25em;
 }
