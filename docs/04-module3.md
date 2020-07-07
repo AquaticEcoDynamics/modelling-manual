@@ -63,7 +63,7 @@ E_{\text{abs}} = S\pi r^{2} (1-a)
 2) In Excel, construct a simple spreadsheet and fill in the blank cells to calculate the mean temperature of the Earth using the equation from Q1., assuming an albedo of 0.33 (including in °C and °F): 
 
 <center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:725px; "><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; "><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:center;"> Parameter </th>
@@ -119,7 +119,7 @@ Remember: $K = °C + 273.2$ and $°F = 1.8°C + 32$
 3) Test the sensitivity of this model to the choice of albedo. Using values from 0.3 to 0.7, calculate and plot T (°C)
 
 <center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:725px; "><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; "><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:center;"> Albedo </th>
@@ -199,7 +199,7 @@ This gets inputted into the energy balance equation (energy in = energy out) to 
 2) Set up a spreadsheet to estimate T for a range of albedo values. Different amounts of glacial ice cover on the Earth could produce albedos from 0.3 for minimal ice to 0.7 for a complete ice cover (this might seem unrealistic, but geologists have recently found evidence to suggest that the Earth was completely ice-covered during Neoproterozoic time 700 million years ago – a “snowball Earth”!)
 
 <center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:350px; "><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; "><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:center;"> Albedo </th>
@@ -264,7 +264,7 @@ This time we require three energy-balance equations:
 In this model, all energy terms are expressed as long-term average fluxes, all temperatures are absolute. We assume that emissivity =1 except at the surface, and (most importantly) that each of the three systems is in equilibrium.
 
 <center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:325px; overflow-x: scroll; width:725px; "><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:325px; overflow-x: scroll; width:100%; "><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:module3-4)Energy balance model of Earth's atmosphere</caption>
  <thead>
   <tr>
