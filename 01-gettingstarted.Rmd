@@ -65,7 +65,7 @@ Many of the module resources found in this workbook are downloaded as 'zipped' (
 
 On MacOS, simply double click the 'zipped' file:
 <center>
-<video width="768" height="433" controls>
+<video width="100%" height="100%" controls>
   <source src="images/01-gettingstarted/video1.mp4" type="video/mp4">
 </video>
 </center>
@@ -74,7 +74,7 @@ On MacOS, simply double click the 'zipped' file:
 On Windows, click 'Extract All' and follow the prompt:
 
 <center>
-<video width="765" height="484.2" controls>
+<video width="100%" height="100%" controls>
   <source src="images/01-gettingstarted/video2.mp4" type="video/mp4">
 </video>
 </center>
