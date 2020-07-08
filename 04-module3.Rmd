@@ -1,13 +1,13 @@
-# Module 3: Climate Modeling {-}
+# Module 3: Climate Modeling {#M3_1 -}
 
 <h2>Energy Balance Models</h2>
 
-### Objectives {-}
+### Objectives {#M3_2 -}
 
 - To construct a simple energy balance climate model for the earth in Excel
 - To understand the role of greenhouse gases, and incorporate them into an energy balance climate model 
 
-### Case Study 1: A “Zero-Dimensional” Energy Balance Model {-}
+### Case Study 1: A “Zero-Dimensional” Energy Balance Model {#M3_3 -}
 
 Here, we assume that the Earth is a sphere with uniform surface and no differences with latitude and longitude (i.e. everything receives the same amount of solar energy). We also assume that there is a balance, or equilibrium, between incoming short wavelength solar radiation absorbed by the ground and outgoing long wavelength radiation emitted by the ground.
 To simplify the model further, we assume the Earth emits outgoing (longwave) radiation like a “blackbody”, i.e. it is a perfectly efficient radiator - it gives off the maximum amount of radiation that an object of its temperature can emit. 
@@ -18,7 +18,7 @@ To simplify the model further, we assume the Earth emits outgoing (longwave) rad
 
 </center>
 
-#### Outgoing Radiation {-}
+#### Outgoing Radiation {#M3_4 -}
 
 The rate of the outgoing radiant energy (Joules per second = Watts) from a blackbody is given by the Stefan-Boltzmann equation:
 
@@ -43,7 +43,7 @@ E_{\text{out}} = \sigma 4\pi r^{2} T^{4}
 
 |         $r$: Radius of the Earth (in m)
 
-#### Incoming Radiation {-}
+#### Incoming Radiation {#M3_5 -}
 
 The energy absorbed by the earth is given by the amount of incoming solar radiation which is not reflected due to albedo. However, we have to take into account that solar energy is striking the Earth as a parallel beam of circular cross-section. So this incoming beam of radiation hits only a single “disc” of the Earth’s surface at any one time. This area has a surface area $\pi r^{2}$. 
 
@@ -56,7 +56,7 @@ E_{\text{abs}} = S\pi r^{2} (1-a)
 
 |         $S$:  Incoming solar radiation: the “solar constant” (1367 W/m^2^) 
 
-#### Exercises {-}
+#### Exercises {#M3_6 -}
 
 1) Using the concept of an energy balance (i.e. energy in = energy out), rearrange the equations to find the Earth’s temperature, $T$. 
 
@@ -118,7 +118,7 @@ kable(module3_2, format = "html", escape = F, align = "c") %>%
 ```
 </center>
 
-### Case Study 2: A “quick fix” {-}
+### Case Study 2: A “quick fix” {#M3_7 -}
 
 To try to reduce the error in the model estimates of Earth’s temperature, we can “parameterise” the model using observed or experimentally derived relationships between outgoing radiation and temperature. One such example is:
 
@@ -141,7 +141,7 @@ This gets inputted into the energy balance equation (energy in = energy out) to 
 \end{equation}
 </center>
 
-#### Exercises {-}
+#### Exercises {#M3_8 -}
 
 1) Solve the above equation for $T$ (note, this time, $T$ is in CELSIUS!)
 
@@ -176,7 +176,7 @@ kable(module3_3, format = "html", escape = F, align = "c") %>%
 |              involving ice cover, albedo, and mean temperature, and therefore move rapidly toward “snowball 
 |              Earth” with albedo = 0.7? Could it ever be deglaciated?
 
-### Case Study 3: Incorporating Greenhouse Gases {-}
+### Case Study 3: Incorporating Greenhouse Gases {#M3_9 -}
 
 This model is a modification of the one described by @harte1988. He showed that it is appropriate, based on the physics of radiation (as water is the major absolver of terrestrial radiation), to divide the Earth’s atmosphere into a lower layer (from the surface to 1.8km altitude, containing 20% of the air and 50% of the water vapour) and an upper layer (containing 80% of the air and 50% of the water vapour).
 
@@ -208,7 +208,7 @@ kable(module3_4, format = "html", escape = F, align = "c", caption = "Energy bal
 </center>
 <br>
 
-#### Exercise 1 {-}
+#### Exercise 1 {#M3_10 -}
 
 Using the chart above, draw the model yourself by hand, incorporating all fluxes.
 
@@ -274,7 +274,7 @@ k_{l}S + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigm
 </center>
 <br>
 
-#### Exercise 2 {-}
+#### Exercise 2 {#M3_11 -}
 
 **Solve these equations to find a formula for surface temperature $T_{s}$:**
 
@@ -304,12 +304,12 @@ Using the values given in Table \@ref(tab:module3-4), what value do you derive f
 
 How close is this to the actual value of 290K?
 
-#### Exercise 3 {-}
+#### Exercise 3 {#M3_12 -}
 
 Using Excel, test the sensitivity of this model to albedo. Compare your findings to those found in part 1 (A plot of $T_{s}$ for values of albedo between 0.3 and 0.7 might help here).
 
 
-### Submission {-}
+### Submission {#M3_13 -}
 :::: {.redbox2}
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**

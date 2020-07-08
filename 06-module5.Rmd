@@ -1,10 +1,10 @@
-# Module 5: Catchment Water Balance {-}
+# Module 5: Catchment Water Balance {#M5_1 -}
 
-### Objectives {-}
+### Objectives {#M5_2 -}
 
 To understand a simple multi-store catchment water balance model and implement within Excel. Using the supplied parameters and input data, run the model and plot the variability in key hydrological pathways.
 
-### The water balance approach {-}
+### The water balance approach {#M5_3 -}
 
 A water balance equation can be used to describe the flow of water in and out of a “system”. A system can be one of several hydrological domains depending on the context, such as a column of soil or a catchment basin. In the context of catchment, we assume the catchment area has a known ‘average’ depth, and the amount of soil is the catchment area multiplied by the depth. We treat this soil volume as our catchment ‘bucket’, and then estimate the inputs (rainfall) and outputs (evapotranspiration, runoff and baseflow).
 

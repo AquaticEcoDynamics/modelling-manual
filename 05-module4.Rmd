@@ -1,13 +1,13 @@
-# Module 4: Oceanic pH Calculation {-} 
+# Module 4: Oceanic pH Calculation {#M4_1 -} 
 
-### Objectives {-}
+### Objectives {#M4_2 -}
 
 - Calculate the carbonate species distribution given pH and CO~2~ (gas)
 - Build a double-log plot based on a range of pHs
 - Calculate the pH change and CaCO~3~ solubility given an increased atmospheric CO~2~.
 - Replot other published data for comparison with our data
 
-### Overview {-}
+### Overview {#M4_3 -}
 In this exercise, we create a simple model of the ocean, with a limited number of state variables. We examine the chemical interactions that result from atmospheric CO~2~ gas dissolving in water, along with calcium salts in the ocean fed by erosion of minerals on the land. The key overall process is that dissolved CO~2~ and Ca^2+^ are in equilibrium with solid CaCO3 (limestone).
 
 The major variables are given in Table \@ref(tab:module4-1). Given any two of the variables on the left hand column, the other four can be calculated. 
@@ -38,7 +38,7 @@ knitr::include_graphics("images/05-module4/picture1.jpg")
 ```
 </center>
 
-### Exercise 1 {-}
+### Exercise 1 {#M4_4 -}
 In the first exercise, we set pH to be 8.3 and atmospheric CO~2~ gas to be 3.5×10^-4^ atmospheres, and calculate the other variables based on these two. CO~2~ gas dissolves in water according to Equation \@ref(eq:module4-1). The dissolved CO~2~ easily dissociates into carbonic acid according to Equation \@ref(eq:module4-2). For simplicity, we will go straight from atmospheric CO~2~ to H~2~CO~3~*, which is the sum of dissolved CO~2~ and carbonic acid, using Equation \@ref(eq:module4-3). 
 
 <center>
@@ -114,7 +114,7 @@ If we assume that calcium ion concentration does not vary much in this system, w
 Have a good think about this: given these CO~2~ and pH, did your calculations lead to a system that favours CaCO~3~ dissolution or precipitation? 
 
 
-### Exercise 2 {-}
+### Exercise 2 {#M4_5 -}
 
 In this exercise you will construct a double-logarithmic plot of this system, holding CO2 constant and varying the pH. Go to the second tab in Excel and copy the equations over from the first tab. Or in R, you can run a *for loop* to calculate the different concentrations for each of the different pHs. Then you will have some of the major variables converted to logarithms. Next you can make an x y scatter plot. If you add the data correctly, you should get a plot that looks like Figure \@ref(fig:module4pic2).
 
@@ -127,7 +127,7 @@ knitr::include_graphics("images/05-module4/picture2.png")
 ```
 </center>
 
-### Exercise 3 {-}
+### Exercise 3 {#M4_6 -}
 
 This is the cool part. Here we are going to calculate a new pH given an increased atmospheric CO~2~ concentration. Given that we calculated the concentrations of all the other species according to the initial distribution in Exercise 1, we now hold them all constant, while increasing CO~2~ and calculating H^+^ (and therefore pH). This is not simple, because H^+^ concentration is tightly bound up with the concentrations of all other species, and so we cannot simply work backwards from any one equation alone. However, there is a quadratic equation \@ref(eq:module4-12) that we can solve for $H^{+}$ , using a fixed $C_{T}$, rearranged to Equation \@ref(eq:module4-13).
 
@@ -153,7 +153,7 @@ Don’t forget that your successive iterations, are not time steps, like we had 
 
 Big questions: if you increase CO~2~, does the pH rise or fall? Does CaCO~3~ precipitation become more or less favourable if CO~2~ increases?
 
-### Exercise 4 {-}
+### Exercise 4 {#M4_7 -}
 
 Last exercise. In this exercise, we will take someone else’s data from a plot and make our own plot.
 
@@ -167,7 +167,7 @@ Open the IPCC image in Plot Digitizer. The program guides you through the steps 
 
 Compare these results with your own results. And make any plots that you feel help explain the environmental system behaviour. Big questions: which factors cause the differences between your results and those of the IPCC models?
 
-### Submission {-}
+### Submission {#M4_8 -}
 :::: {.redbox2}
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**
