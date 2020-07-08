@@ -2,9 +2,9 @@ bookdown::gitbook:
   css: css/style.css
   config:
     toc:
-      collapse: all
+      collapse: none
       before: |
-        <li><a href="./">Environmental Dynamics Workbook</a></li>
+        <li><a href="./"><b>Environmental Dynamics Workbook</b></a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     search: yes

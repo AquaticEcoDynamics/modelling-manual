@@ -1,7 +1,7 @@
 --- 
 title: "Environmental Dynamics Workbook"
 author: "Giles Knight"
-date: "2020-07-07"
+date: "2020-07-08"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:  ["references/references.bib"]

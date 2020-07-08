@@ -12,4 +12,4 @@ rmd_files: ["index.Rmd",
             "08-module7.Rmd",
             "09-module8.Rmd",
             "10-references.Rmd"]
-new_session: yes
+new_session: no

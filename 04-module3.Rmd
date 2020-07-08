@@ -1,6 +1,6 @@
 # Module 3: Climate Modeling {-}
 
-## Energy Balance Models {-}
+<h2>Energy Balance Models</h2>
 
 ### Objectives {-}
 

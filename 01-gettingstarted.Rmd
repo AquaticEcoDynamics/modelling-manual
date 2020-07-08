@@ -1,13 +1,10 @@
-# Getting Started {-}
+# Getting Started {#GettingStarted -}
 
-## Tools You'll Need {-}
+<h2>Tools You'll Need</h2>
 
-### Excel {-}
+### Excel {-} 
 
-#### Using functions {-}
-
-Functions in Excel always begin with an `=` sign. 
-
+Excel is available on all computer laboratory PC's and can be freely downloaded to personal devices [here](http://www.it.uwa.edu.au/service-catalogue/software/office-365#availability-and-support). You should already feel confident using Excel from your previous units, however if you need further guidance please visit UWA's [LinkedIn Learning](https://www.uwa.edu.au/education/educational-enhancement-unit/strategic-projects/linkedin-learning-at-uwa) resources. 
 
 ### R {-}
 
@@ -25,7 +22,7 @@ In this unit you will largely be dealing with two kinds of 'R files':
 - R script files (e.g. `Equations.R`) and,
 - R project files (e.g. `Module2Biogeochem.Rproj`) 
 
-R scripts are the raw instructions that tell the R programming language what to do. While an R Project file simply creates an independent workplace environment for you to interact with and manage your scripts. It's wise to create a new R Project file whenever you start working on a new project. 
+R scripts are the raw instructions that tell the R programming language what to do. Meanwhile, an R Project file simply creates an independent workplace environment for you to interact with and manage your scripts. It's wise to create a new R Project file whenever you start working on a new project. 
 
 **Functions and packages**
 

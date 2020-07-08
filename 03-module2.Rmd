@@ -1,6 +1,6 @@
 # Module 2: Biogeochemistry {-}
 
-## Bacterially Mediated Organic Matter Oxidation Rates {-}
+<h2>Bacterially Mediated Organic Matter Oxidation Rates</h2>
 
 ### Objectives {-}
 Become familiar with basic spread sheet commands in excel by building a simple biogeochemical model from chemical and mathematical equations. Become familiar with the program R Studio and compare it to Excel.
