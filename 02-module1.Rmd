@@ -21,7 +21,7 @@ Lakes, rivers and estuaries are adapted to receive water based on the natural hy
 
 ### Module resources {-}
 
-Download the Excel spreadsheet: [MODULE01_EnvFlowData.xls](./resources/module1/WEEK01_EnvFlowData.xls)
+Download the Excel spreadsheet for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.
 
 ### Exercises {-}
 
