@@ -13,7 +13,7 @@ Organic matter (dead algae, leaves etc.) is oxidised by different bacteria that 
 
 We can construct a model to determine the rates at which the oxidation takes place, and use the rates to determine other processes such as oxygen consumption, denitrification or phosphate adsorption.
 
-The rate is dependent on the concentration of the organic matter, $\color{#E36C0A}{OM}$, and a rate constant, $\color{#00B0F0}{k_{OM}}$. The rate is not dependent on the concentration of the oxidant, until the oxidant concentration becomes very low: this process is included as a $\color{#76923C}{\text{limitation}}$ term (With more O~2~ you do not become super; with less O~2~ you get sleepy). A $\color{#76923C}{\text{Monod}}$ equation is used to limit the rate.
+The rate is dependent on the concentration of the organic matter, $\color{#E36C0A}{OM}$, and a rate constant, $\color{#00B0F0}{k_{OM}}$. The rate is not dependent on the concentration of the oxidant, until the oxidant concentration becomes very low: this process is included as a <span style="color: #76923C;">limitation</span> term (With more O~2~ you do not become super; with less O~2~ you get sleepy). A <span style="color: #76923C;">Monod</span> equation is used to limit the rate.
 
 <center>
 <br>
@@ -24,20 +24,20 @@ R_{O_{2}} = \color{#00B0F0}{K_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{O_{2
 </center>
 <br>
 
-The generally observed sequence of oxidants is modelled with an $\color{#FF0000}{\text{inhibition}}$ process, so that a higher energy yielding oxidant, such as oxygen, inhibits a lower energy oxidant such as iron.
+The generally observed sequence of oxidants is modelled with an <span style="color: #FF0000;">inhibition</span> process, so that a higher energy yielding oxidant, such as oxygen, inhibits a lower energy oxidant such as iron.
 
 <center>
 <br>
 \begin{align*}
-R_{NO_{3}} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{NO_{3}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}\\
+R_{NO_{3}} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{NO_{3}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 (\#eq:module2-2)\\
-R_{Mn} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Mn}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}\\
+R_{Mn} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Mn}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 (\#eq:module2-3)\\
-R_{Fe} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Fe}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}\\
+R_{Fe} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Fe}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 (\#eq:module2-4)\\
-R_{SO_{4}} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{SO_{4}^{2-}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}\\
+R_{SO_{4}} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{SO_{4}^{2-}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 (\#eq:module2-5)\\
-R_{Meth} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#FF0000}{\frac{K_{SO_{4}}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}\\
+R_{Meth} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#FF0000}{\frac{K_{SO_{4}}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 (\#eq:module2-6)\\
 \end{align*}
 </center>
@@ -47,9 +47,11 @@ In this lab, we simulate a blob of aquatic sediment. It is a closed system, so t
 
 ### Module resources {#M2_5 -}
 
-Download the Excel spreadsheet: [MODULE02_Biogeochemistry.xlsx](./resources/module2/MODULE02_Biogeochemistry.xlsx)
+<!-- Download the Excel spreadsheet: [MODULE02_Biogeochemistry.xlsx](./resources/module2/MODULE02_Biogeochemistry.xlsx) -->
 
-Download the R scripts: [MODULE2_R_Biogeochem.zip](./resources/module2/MODULE2_R_Biogeochem.zip)
+<!-- Download the R scripts: [MODULE2_R_Biogeochem.zip](./resources/module2/MODULE2_R_Biogeochem.zip) -->
+
+Download the Excel spreadsheet and R scripts for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.
 
 ### Exercises {#M2_6 -}
 
@@ -78,7 +80,13 @@ Now the excel spreadsheet is working, the next step is to repeat the process in 
 
 7) Enter the inputs, equations and plotting scripts for iron, sulfate and methanogenesis reactions, just as you did in the excel spreadsheet. Remember that you just need a rate of methanogenesis: methane is not an oxidant like sulfate.
 
-8) In the Plotting script, uncomment (remove the #s) the lines starting with `png` and `dev.off`. Now if you run the plot (**3**) again, it saves the plot to a .png file. You can edit the settings of the png line to create a high quality figure to put in the report.
+<center>
+<video width="85%" height="85%" controls>
+  <source src="images/03-module2/video1.mp4" type="video/mp4">
+</video>
+</center>
+
+8) In the Plotting script, uncomment (remove the `#`s) the lines starting with `png` and `dev.off`. Now if you run the plot (**3**) again, it saves the plot to a .png file. You can edit the settings of the png line to create a high quality figure to put in the report.
 
 Now we have a working process-based model. This was the hard and boring part, but now we can be creative. So far we have established an initial condition and let it run to completion, but next we can model a hypothetical environmental situation. For example, imagine there were an oxygen fluctuation, perhaps from algal photosynthesis occurring in the day but not at night in a lake, or from the tidal movement of hypoxic water.
 

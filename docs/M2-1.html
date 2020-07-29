@@ -24,7 +24,7 @@
 <meta name="author" content="Giles Knight, Matt Hipsey" />
 
 
-<meta name="date" content="2020-07-17" />
+<meta name="date" content="2020-07-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
 <ul>
 <li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#objectives"><i class="fa fa-check"></i>Objectives</a></li>
-<li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#what-is-an-environmental-flow"><i class="fa fa-check"></i>What is an environmental flow?</a></li>
+<li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#what-are-environmental-flows"><i class="fa fa-check"></i>What are environmental flows?</a></li>
 <li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#case-study"><i class="fa fa-check"></i>Case study</a></li>
 <li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#module-resources"><i class="fa fa-check"></i>Module resources</a></li>
 <li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
@@ -231,7 +231,7 @@ Bacterially Mediated Organic Matter Oxidation Rates
 <h3>Organic matter oxidation</h3>
 <p>Organic matter (dead algae, leaves etc.) is oxidised by different bacteria that use a range of oxidants. The bacteria simultaneously consume organic matter and an oxidant, in a similar way to how humans consume carbohydrate and oxygen. Scientists have observed that there is a general sequence of oxidants used, based on the energy available for each process. When all of the oxidants are consumed, methanogenesis takes place, where bacteria use the organic matter alone without any oxidant. This is similar to the lactic acid metabolic system that the human body uses when oxygen is in short supply, such as when you go for a run. Remember that methane is a reduced byproduct, not an oxidant. Other reduced by-products include N<sub>2</sub> gas, Mn<sup>2+</sup> and Fe<sup>2+</sup> metal ions, and the S<sup>2-</sup> anion.</p>
 <p>We can construct a model to determine the rates at which the oxidation takes place, and use the rates to determine other processes such as oxygen consumption, denitrification or phosphate adsorption.</p>
-<p>The rate is dependent on the concentration of the organic matter, <span class="math inline">\(\color{#E36C0A}{OM}\)</span>, and a rate constant, <span class="math inline">\(\color{#00B0F0}{k_{OM}}\)</span>. The rate is not dependent on the concentration of the oxidant, until the oxidant concentration becomes very low: this process is included as a <span class="math inline">\(\color{#76923C}{\text{limitation}}\)</span> term (With more O<sub>2</sub> you do not become super; with less O<sub>2</sub> you get sleepy). A <span class="math inline">\(\color{#76923C}{\text{Monod}}\)</span> equation is used to limit the rate.</p>
+<p>The rate is dependent on the concentration of the organic matter, <span class="math inline">\(\color{#E36C0A}{OM}\)</span>, and a rate constant, <span class="math inline">\(\color{#00B0F0}{k_{OM}}\)</span>. The rate is not dependent on the concentration of the oxidant, until the oxidant concentration becomes very low: this process is included as a <span style="color: #76923C;">limitation</span> term (With more O<sub>2</sub> you do not become super; with less O<sub>2</sub> you get sleepy). A <span style="color: #76923C;">Monod</span> equation is used to limit the rate.</p>
 <center>
 <br>
 <span class="math display" id="eq:module2-1">\[\begin{equation}
@@ -240,19 +240,19 @@ R_{O_{2}} = \color{#00B0F0}{K_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{O_{2
 \end{equation}\]</span>
 </center>
 <p><br></p>
-<p>The generally observed sequence of oxidants is modelled with an <span class="math inline">\(\color{#FF0000}{\text{inhibition}}\)</span> process, so that a higher energy yielding oxidant, such as oxygen, inhibits a lower energy oxidant such as iron.</p>
+<p>The generally observed sequence of oxidants is modelled with an <span style="color: #FF0000;">inhibition</span> process, so that a higher energy yielding oxidant, such as oxygen, inhibits a lower energy oxidant such as iron.</p>
 <center>
 <br>
 <span class="math display" id="eq:module2-6" id="eq:module2-5" id="eq:module2-4" id="eq:module2-3" id="eq:module2-2">\[\begin{align*}
-R_{NO_{3}} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{NO_{3}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}\\
+R_{NO_{3}} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{NO_{3}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 \tag{2}\\
-R_{Mn} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Mn}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}\\
+R_{Mn} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Mn}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 \tag{3}\\
-R_{Fe} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Fe}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}\\
+R_{Fe} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Fe}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 \tag{4}\\
-R_{SO_{4}} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{SO_{4}^{2-}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}\\
+R_{SO_{4}} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{SO_{4}^{2-}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 \tag{5}\\
-R_{Meth} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#FF0000}{\frac{K_{SO_{4}}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}\\
+R_{Meth} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#FF0000}{\frac{K_{SO_{4}}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 \tag{6}\\
 \end{align*}\]</span>
 </center>
@@ -261,8 +261,9 @@ R_{Meth} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#FF0000}{\frac{
 </div>
 <div id="M2_5" class="section level3 unnumbered">
 <h3>Module resources</h3>
-<p>Download the Excel spreadsheet: <a href="./resources/module2/MODULE02_Biogeochemistry.xlsx">MODULE02_Biogeochemistry.xlsx</a></p>
-<p>Download the R scripts: <a href="./resources/module2/MODULE2_R_Biogeochem.zip">MODULE2_R_Biogeochem.zip</a></p>
+<!-- Download the Excel spreadsheet: [MODULE02_Biogeochemistry.xlsx](./resources/module2/MODULE02_Biogeochemistry.xlsx) -->
+<!-- Download the R scripts: [MODULE2_R_Biogeochem.zip](./resources/module2/MODULE2_R_Biogeochem.zip) -->
+<p>Download the Excel spreadsheet and R scripts for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
 </div>
 <div id="M2_6" class="section level3 unnumbered">
 <h3>Exercises</h3>
@@ -288,7 +289,14 @@ The rate is dependent on the concentration in the previous time step – this is
 <li><p>Open the R project and the three scripts: there is one in which you set the input parameters and initial conditions; one which has the equations; and one which is used for plotting the outputs. Read through them and become familiar with what is in each.</p></li>
 <li><p>Run each script in sequence, starting with Inputs, then Equations, then Plotting. The plotting script should make a plot appear in the bottom right corner.</p></li>
 <li><p>Enter the inputs, equations and plotting scripts for iron, sulfate and methanogenesis reactions, just as you did in the excel spreadsheet. Remember that you just need a rate of methanogenesis: methane is not an oxidant like sulfate.</p></li>
-<li><p>In the Plotting script, uncomment (remove the #s) the lines starting with <code>png</code> and <code>dev.off</code>. Now if you run the plot (<strong>3</strong>) again, it saves the plot to a .png file. You can edit the settings of the png line to create a high quality figure to put in the report.</p></li>
+</ol>
+<center>
+<video width="85%" height="85%" controls>
+<source src="images/03-module2/video1.mp4" type="video/mp4">
+</video>
+</center>
+<ol start="8" style="list-style-type: decimal">
+<li>In the Plotting script, uncomment (remove the <code>#</code>s) the lines starting with <code>png</code> and <code>dev.off</code>. Now if you run the plot (<strong>3</strong>) again, it saves the plot to a .png file. You can edit the settings of the png line to create a high quality figure to put in the report.</li>
 </ol>
 <p>Now we have a working process-based model. This was the hard and boring part, but now we can be creative. So far we have established an initial condition and let it run to completion, but next we can model a hypothetical environmental situation. For example, imagine there were an oxygen fluctuation, perhaps from algal photosynthesis occurring in the day but not at night in a lake, or from the tidal movement of hypoxic water.</p>
 <ol start="9" style="list-style-type: decimal">
@@ -380,7 +388,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": [["Module 1 Resources.zip", "Module 1 Resources"]],
 "toc": {
 "collapse": "none"
 },
