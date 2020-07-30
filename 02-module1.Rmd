@@ -44,6 +44,9 @@ You are given a time-series of daily river flow and need to assess how different
 
 ```{block2, hint1, type='rmdtip2'}
 Use a nested `IF()` statement in adjacent columns to partition flows
+<center>
+![](images/02-module1/picture2.png){width=100%}
+</center>
 ```
 
 <center>
@@ -106,6 +109,14 @@ Sum each year
 5) Assess the amount of water available for **flow diversion for two scenarios** by adding a new time-series column for each option:
     a. Water below 50 ML/day and above 550 ML/day is NOT diverted
     b. Water below 150 ML/day and above 1000 ML/day is NOT diverted
+
+```{block2, hint1_5, type='rmdtip2'}
+Construct a nested `IF()` that solves the following:
+<center>
+![](images/02-module1/picture3.png){width=100%}
+</center>
+```
+
 6) Add two new columns for each of the above to work out **cumulative amount** of diverted water
     a. $X^{+1} = X +dX$
 7) Create a scatter plot of historical salinity (as EC) collected from the site marked in the map (+) vs daily discharge from the drain (see sheet: Estuary – Salinity).
