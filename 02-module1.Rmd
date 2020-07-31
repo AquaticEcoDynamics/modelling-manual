@@ -117,8 +117,8 @@ Construct a nested `IF()` that solves the following:
 </center>
 ```
 
-6) Add two new columns for each of the above to work out **cumulative amount** of diverted water
-    a. $X^{+1} = X +dX$
+6) Add two new columns for each of the above to work out **cumulative amount** (running total) of diverted water
+    a. $\text{Cumulative discharge} = \text{Current discharge}+\text{Previous discharge}$
 7) Create a scatter plot of historical salinity (as EC) collected from the site marked in the map (+) vs daily discharge from the drain (see sheet: Estuary – Salinity).
 8) Fit a trendline to the data and display equation and R^2^ – this is a statistical model.
 9) In a new time-series column in the previous sheet, use the statistical model from above to predict a salinity time-series for the above station in the estuary under the two diversion scenarios compared to the base case.
@@ -134,7 +134,7 @@ number of days
 - Q4: Table of annual flow by year with index and probability. Scatter plot of the flow vs
 probability curve
 - Q6: Table of the cumulative amount of diverted water
-- Q7 & 8: Scatterplot of the EC vs. daily discharge from the drain, with trendline, equation and
+- Q7 & 8: Scatterplot of the EC vs. daily discharge from the drain, with trendline (hint: exponential), equation and
 R2 value
 - Q9: Plot of the salinity timeseries of the two diversion scenarios compared to the base case
 - In less than 100 words, discuss which is the most appropriate scenario choice for

@@ -24,7 +24,7 @@
 <meta name="author" content="Giles Knight, Matt Hipsey" />
 
 
-<meta name="date" content="2020-07-30" />
+<meta name="date" content="2020-07-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -287,9 +287,9 @@ Construct a nested <code>IF()</code> that solves the following:
 </center>
 </div>
 <ol start="6" style="list-style-type: decimal">
-<li>Add two new columns for each of the above to work out <strong>cumulative amount</strong> of diverted water
+<li>Add two new columns for each of the above to work out <strong>cumulative amount</strong> (running total) of diverted water
 <ol style="list-style-type: lower-alpha">
-<li><span class="math inline">\(X^{+1} = X +dX\)</span></li>
+<li><span class="math inline">\(\text{Cumulative discharge} = \text{Current discharge}+\text{Previous discharge}\)</span></li>
 </ol></li>
 <li>Create a scatter plot of historical salinity (as EC) collected from the site marked in the map (+) vs daily discharge from the drain (see sheet: Estuary – Salinity).</li>
 <li>Fit a trendline to the data and display equation and R<sup>2</sup> – this is a statistical model.</li>
@@ -307,7 +307,7 @@ number of days</li>
 <li>Q4: Table of annual flow by year with index and probability. Scatter plot of the flow vs
 probability curve</li>
 <li>Q6: Table of the cumulative amount of diverted water</li>
-<li>Q7 &amp; 8: Scatterplot of the EC vs. daily discharge from the drain, with trendline, equation and
+<li>Q7 &amp; 8: Scatterplot of the EC vs. daily discharge from the drain, with trendline (hint: exponential), equation and
 R2 value</li>
 <li>Q9: Plot of the salinity timeseries of the two diversion scenarios compared to the base case</li>
 <li>In less than 100 words, discuss which is the most appropriate scenario choice for
