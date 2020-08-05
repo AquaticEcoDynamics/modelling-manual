@@ -34,7 +34,7 @@ R_{NO_{3}} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{NO
 R_{Mn} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Mn}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 (\#eq:module2-3)\\
 R_{Fe} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Fe}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
-(\#eq:module2-4) \\
+(\#eq:module2-4)\\
 R_{SO_{4}} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{SO_{4}^{2-}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 (\#eq:module2-5)\\
 R_{Meth} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#FF0000}{\frac{K_{SO_{4}}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
@@ -62,20 +62,6 @@ Download the Excel spreadsheet and R scripts for this module by clicking the dow
 
 2) Complete the excel spreadsheet for iron reduction, sulfate reduction and methanogenesis. Oxygen, nitrate and manganese are done already, so copy the method and use the equations at the tops of the columns. It is tedious, fiddly and there is a good chance that you will introduce bugs that are hard to find. This is the nature of Excel.
 
-<!-- <center> -->
-<!-- <video width="90%" height="90%" controls> -->
-<!--   <source src="images/03-module2/video2.mp4" type="video/mp4"> -->
-<!--   <p>Test</p> -->
-<!-- </video> -->
-<!-- </center> -->
-
-
-<center>
-
-![Video 1: Match your Excel equations to the formulas on the sheet (Tip: Make this video fullscreen for better viewing).](images/03-module2/video1.mp4){width=100%}
-
-</center>
-
 ```{block2, hint3, type='rmdnote2'}
 The rate is dependent on the concentration in the previous time step – this is called an *explicit* solution (as opposed to *implicit*).
 ```
@@ -92,28 +78,12 @@ Now the excel spreadsheet is working, the next step is to repeat the process in 
 
 6) Run each script in sequence, starting with Inputs, then Equations, then Plotting. The plotting script should make a plot appear in the bottom right corner.
 
-```{block2, hint2_1, type='rmdtip2'}
-You can press `Cmd+Enter` on MacOS, or `Ctrl+Enter` on Windows instead of clicking the 'Run' button.
-```
-
 7) Enter the inputs, equations and plotting scripts for iron, sulfate and methanogenesis reactions, just as you did in the excel spreadsheet. Remember that you just need a rate of methanogenesis: methane is not an oxidant like sulfate.
 
 <center>
-
-![Step 1: Enter the inputs for Iron. Don't forget to 'run' these!](images/03-module2/video2.mp4){width=100%}
-
-</center>
-<br>
-<center>
-
-![Step 2: Write the equation. It should match Equation \@ref(eq:module2-4).](images/03-module2/video3.mp4){width=100%}
-
-</center>
-<br>
-<center>
-
-![Step 3: Graph it and repeat previous steps for the other oxidants.](images/03-module2/video4.mp4){width=100%}
-
+<video width="85%" height="85%" controls>
+  <source src="images/03-module2/video1.mp4" type="video/mp4">
+</video>
 </center>
 
 8) In the Plotting script, uncomment (remove the `#`s) the lines starting with `png` and `dev.off`. Now if you run the plot (**3**) again, it saves the plot to a .png file. You can edit the settings of the png line to create a high quality figure to put in the report.
