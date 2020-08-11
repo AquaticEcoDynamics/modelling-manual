@@ -8,7 +8,7 @@ $\sigma$,Stefan-Boltzmann constant,5.67 x10^-8^ Wm^-2^ deg^-4^
 $a_{p}$,Planetary albedo,0.3
 $k_{u}$,Fraction of solar radiation absorbed in upper layer of atmosphere,0.18
 $k_{l}$,Fraction of solar radiation absorbed in upper lower of atmosphere,0.075
-$\varepsilon$,Emissivity ($= 1 - \text{reflectivity}$): the fraction of the infrared radiation emitted by the surface that is absorbed in the atmosphere and then re-emitted,0.95
+$\varepsilon$,Emissivity (= 1 - reflectivity): the fraction of the infrared radiation emitted by the surface that is absorbed in the atmosphere and then re-emitted,0.95
 $F_{u}$,Infrared flux from upper layer (use black-body equation),$\varepsilon \sigma T_{u}^{4}$
 $F_{l}$,Infrared flux from lower layer (use black-body equation),$\varepsilon \sigma T_{l}^{4}$
 $F_{s}$,Infrared flux from surface (use black-body equation),$\varepsilon \sigma T_{s}^{4}$

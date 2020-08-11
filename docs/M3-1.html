@@ -24,7 +24,7 @@
 <meta name="author" content="Giles Knight, Matt Hipsey" />
 
 
-<meta name="date" content="2020-08-09" />
+<meta name="date" content="2020-08-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,7 +165,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="M3-1.html"><a href="M3-1.html#M3_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M3-1.html"><a href="M3-1.html#M3_3"><i class="fa fa-check"></i>Case Study 1: A “Zero-Dimensional” Energy Balance Model</a></li>
-<li class="chapter" data-level="" data-path="M3-1.html"><a href="M3-1.html#M3_7"><i class="fa fa-check"></i>Case Study 2: A “quick fix”</a></li>
+<li class="chapter" data-level="" data-path="M3-1.html"><a href="M3-1.html#M3_7"><i class="fa fa-check"></i>Case Study 2: A “Quick Fix”</a></li>
 <li class="chapter" data-level="" data-path="M3-1.html"><a href="M3-1.html#M3_9"><i class="fa fa-check"></i>Case Study 3: Incorporating Greenhouse Gases</a></li>
 <li class="chapter" data-level="" data-path="M3-1.html"><a href="M3-1.html#M3_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
@@ -218,17 +218,15 @@ E = \sigma T^{4}
 \tag{7}
 \end{equation}\]</span>
 </center>
-<div class="line-block">        <span class="math inline">\(\sigma\)</span>: Stefan-Boltzmann constant (5.67x10<sup>-8</sup>)<br />
-        <span class="math inline">\(T\)</span>: Temperature (in degrees Kelvin)</div>
-<p><br>
-However, for the Earth, this is being emitted over the full surface area of the Earth:</p>
+<p>Where, <span class="math inline">\(\sigma\)</span> = Stefan-Boltzmann constant (5.67x10<sup>-8</sup>), and <span class="math inline">\(T\)</span> = Temperature (in degrees Kelvin).</p>
+<p>However, for the Earth, this is being emitted over the full surface area of the Earth:</p>
 <center>
 <span class="math display" id="eq:module3-2">\[\begin{equation}
 E_{\text{out}} = \sigma 4\pi r^{2} T^{4}
 \tag{8}
 \end{equation}\]</span>
 </center>
-<div class="line-block">        <span class="math inline">\(r\)</span>: Radius of the Earth (in m)</div>
+<p>Where, <span class="math inline">\(r\)</span> = Radius of the Earth (in m).</p>
 </div>
 <div id="M3_5" class="section level4 unnumbered">
 <h4>Incoming Radiation</h4>
@@ -239,17 +237,23 @@ E_{\text{abs}} = S\pi r^{2} (1-a)
 \tag{9}
 \end{equation}\]</span>
 </center>
-<div class="line-block">        <span class="math inline">\(S\)</span>: Incoming solar radiation: the “solar constant” (1367 W/m<sup>2</sup>)</div>
+<p>Where, <span class="math inline">\(S\)</span> = incoming solar radiation: the “solar constant” (1367 W/m<sup>2</sup>) .</p>
 </div>
 <div id="M3_6" class="section level4 unnumbered">
 <h4>Exercises</h4>
 <ol style="list-style-type: decimal">
 <li><p>Using the concept of an energy balance (i.e. energy in = energy out), rearrange the equations to find the Earth’s temperature, <span class="math inline">\(T\)</span>.</p></li>
-<li><p>In Excel, construct a simple spreadsheet and fill in the blank cells to calculate the mean temperature of the Earth using the equation from Q1., assuming an albedo of 0.33 (including in °C and °F):</p></li>
+<li><p>In Excel, construct a simple spreadsheet and fill in the blank cells of Table <a href="M3-1.html#tab:module3-1">1</a> to calculate the mean temperature of the Earth using the equation from Q1, assuming an albedo of 0.33 (including in °C and °F):</p>
+<ol style="list-style-type: lower-alpha">
+<li>The current mean temperature of the Earth is 288K (15°C). Does this simple model over or under predict the Earth’s temperature? What important factor is missing from this model?</li>
+</ol></li>
 </ol>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:module3-1">Table 1: </span>Fill in the blank cells to calculate the mean temperature of the Earth.
+</caption>
 <thead>
 <tr>
 <th style="text-align:center;">
@@ -265,68 +269,65 @@ Units
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 Solar constant
 </td>
-<td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 1367
 </td>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 W/m<sup>2</sup>
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 Albedo
 </td>
-<td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.33
 </td>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
-NA
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
+No Units
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 Stefan-Boltzmann constant
 </td>
-<td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;">
-5.67E-08
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
+5.67e-08
 </td>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
-NA
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
+No Units
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 Mean temperature of Earth
 </td>
-<td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 K
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 Mean temperature of Earth
 </td>
-<td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 °C
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 Mean temperature of Earth
 </td>
-<td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
-<td style="text-align:center;min-width: 12em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 15.5em; background-color: rgba(255, 255, 255, 0) !important;">
 °F
 </td>
 </tr>
@@ -339,13 +340,15 @@ Mean temperature of Earth
 <div class="rmdtip2">
 <p>Remember: <span class="math inline">\(K = °C + 273.2\)</span> and <span class="math inline">\(°F = 1.8°C + 32\)</span></p>
 </div>
-<div class="line-block">         a) The current mean temperature of the Earth is 288K (15°C). Does this simple model over or under<br />
-             predict the Earth’s temperature? What important factor is missing from this model?</div>
-<p><br>
-3) Test the sensitivity of this model to the choice of albedo. Using values from 0.3 to 0.7, calculate and plot T (°C)</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Test the sensitivity of this model to the choice of albedo. Using values from 0.3 to 0.7 in Table <a href="M3-1.html#tab:module3-2">2</a>, calculate and plot T (°C)</li>
+</ol>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:module3-2">Table 2: </span>Test the sensitivity of this model.
+</caption>
 <thead>
 <tr>
 <th style="text-align:center;">
@@ -361,94 +364,89 @@ Assumed Albedo
 Stefan-Boltzmann constant
 </th>
 <th style="text-align:center;">
-T (Celsius)
+<span class="math inline">\(T\)</span> (˚C)
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.3
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 1367
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.33
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 5.67e-08
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.4
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 1367
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.33
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 5.67e-08
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.5
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 1367
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.33
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 5.67e-08
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.6
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 1367
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.33
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 5.67e-08
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.7
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 1367
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.33
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 5.67e-08
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 6.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
 </tr>
 </tbody>
@@ -458,7 +456,7 @@ T (Celsius)
 </div>
 </div>
 <div id="M3_7" class="section level3 unnumbered">
-<h3>Case Study 2: A “quick fix”</h3>
+<h3>Case Study 2: A “Quick Fix”</h3>
 <p>To try to reduce the error in the model estimates of Earth’s temperature, we can “parameterise” the model using observed or experimentally derived relationships between outgoing radiation and temperature. One such example is:</p>
 <center>
 <span class="math display" id="eq:module3-4">\[\begin{equation}
@@ -466,24 +464,30 @@ E_{\text{out}} = x + yT
 \tag{10}
 \end{equation}\]</span>
 </center>
-<div class="line-block">        <span class="math inline">\(x = 204\)</span> W/m<sup>2</sup><br />
-        <span class="math inline">\(y = 2.17\)</span> W/m<sup>2</sup>/°C</div>
+<p>Where, <span class="math inline">\(x = 204\)</span> W/m<sup>2</sup>, and <span class="math inline">\(y = 2.17\)</span> W/m<sup>2</sup>/°C.</p>
 <p>This gets inputted into the energy balance equation (energy in = energy out) to give:</p>
 <center>
-<span class="math display" id="eq:module3-4">\[\begin{equation}
+<span class="math display" id="eq:module3-5">\[\begin{equation}
 \pi r^{2} S (1-a) = 4\pi r^{2}(X+yT)
-\tag{10}
+\tag{11}
 \end{equation}\]</span>
 </center>
 <div id="M3_8" class="section level4 unnumbered">
 <h4>Exercises</h4>
 <ol style="list-style-type: decimal">
 <li><p>Solve the above equation for <span class="math inline">\(T\)</span> (note, this time, <span class="math inline">\(T\)</span> is in CELSIUS!)</p></li>
-<li><p>Set up a spreadsheet to estimate T for a range of albedo values. Different amounts of glacial ice cover on the Earth could produce albedos from 0.3 for minimal ice to 0.7 for a complete ice cover (this might seem unrealistic, but geologists have recently found evidence to suggest that the Earth was completely ice-covered during Neoproterozoic time 700 million years ago – a “snowball Earth”!)</p></li>
+<li><p>Set up a spreadsheet to estimate <span class="math inline">\(T\)</span> for a range of albedo values. Different amounts of glacial ice cover on the Earth could produce albedos from 0.3 for minimal ice to 0.7 for a complete ice cover (this might seem unrealistic, but geologists have recently found evidence to suggest that the Earth was completely ice-covered during Neoproterozoic time 700 million years ago – a “snowball Earth”!)</p>
+<ol style="list-style-type: lower-alpha">
+<li>Are your results reasonably close for the present-day Earth mean temperature? What is the sensitivity of this model to small changes in albedo?</li>
+<li>Expanding a bit from your model (you might need to consider smaller steps in albedo), at what value of albedo do you think thissimplified Earth would experience strong positive feedback involving ice cover, albedo, and mean temperature, and therefore move rapidly toward “snowball Earth” with albedo = 0.7? Could it ever be deglaciated?</li>
+</ol></li>
 </ol>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:module3-3">Table 3: </span>Estimate <span class="math inline">\(T\)</span> for a range of albedo values.
+</caption>
 <thead>
 <tr>
 <th style="text-align:center;">
@@ -496,91 +500,80 @@ x
 y
 </th>
 <th style="text-align:center;">
-T (Celsius)
+<span class="math inline">\(T\)</span> (˚C)
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.3
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 204
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 2.17
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.4
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 204
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 2.17
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.5
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 204
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 2.17
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.6
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 204
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 2.17
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 0.7
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 204
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 2.17
 </td>
-<td style="text-align:center;min-width: 5em; background-color: rgba(255, 255, 255, 0) !important;">
-?
+<td style="text-align:center;min-width: 11.5em; background-color: rgba(255, 255, 255, 0) !important;">
 </td>
 </tr>
 </tbody>
 </table>
 </div>
 </center>
-<div class="line-block">         a) Are your results reasonably close for the present-day Earth mean temperature? What is the<br />
-             sensitivity of this model to small changes in albedo?</div>
-<div class="line-block">         b) Expanding a bit from your model (you might need to consider smaller steps in albedo), at what<br />
-             value of albedo do you think thissimplified Earth would experience strong positive feedback<br />
-             involving ice cover, albedo, and mean temperature, and therefore move rapidly toward “snowball<br />
-             Earth” with albedo = 0.7? Could it ever be deglaciated?</div>
 </div>
 </div>
 <div id="M3_9" class="section level3 unnumbered">
@@ -592,12 +585,12 @@ T (Celsius)
 <li>For the upper layer of the atmosphere;</li>
 <li>For the lower layer of the atmosphere.</li>
 </ol>
-<p>In this model, all energy terms are expressed as long-term average fluxes, all temperatures are absolute. We assume that emissivity =1 except at the surface, and (most importantly) that each of the three systems is in equilibrium.</p>
+<p>In this model, all energy terms are expressed as long-term average fluxes, all temperatures are absolute. We assume that emissivity = 1 except at the surface, and (most importantly) that each of the three systems is in equilibrium.</p>
 <center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:325px; overflow-x: scroll; width:100%; ">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:435px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:module3-4">Table 1: </span>Energy balance model of Earth’s atmosphere
+<span id="tab:module3-4">Table 4: </span>Energy balance model of Earth’s atmosphere.
 </caption>
 <thead>
 <tr>
@@ -707,7 +700,7 @@ Fraction of solar radiation absorbed in upper lower of atmosphere
 <span class="math inline">\(\varepsilon\)</span>
 </td>
 <td style="text-align:center;min-width: 15em; background-color: rgba(255, 255, 255, 0) !important;">
-Emissivity (<span class="math inline">\(= 1 - \text{reflectivity}\)</span>): the fraction of the infrared radiation emitted by the surface that is absorbed in the atmosphere and then re-emitted
+Emissivity (= 1 - reflectivity): the fraction of the infrared radiation emitted by the surface that is absorbed in the atmosphere and then re-emitted
 </td>
 <td style="text-align:center;min-width: 13em; background-color: rgba(255, 255, 255, 0) !important;">
 0.95
@@ -763,30 +756,32 @@ Energy leaves these the system by three routes:</p>
 <li>Thermal radiation from the top of the atmosphere: <span class="math inline">\(\sigma T_{u}^{4}\)</span>; and</li>
 <li>The portion of thermal radiation from the surface that is not absorbed in the atmosphere: <span class="math inline">\((1 − \varepsilon)\sigma T_{s}^{4}\)</span>.</li>
 </ol>
-<p>Here:
-<span class="math inline">\(\varepsilon\)</span> is the fraction of surface radiation absorbed in the atmosphere (emissivity),
-<span class="math inline">\(\sigma\)</span> is the Stefan-Boltzmann constant, and
-<span class="math inline">\(T_{u}\)</span> is the surface temperature (absolute). Thus, the energy balance for the whole system is:</p>
+<p>Here:</p>
+<ul>
+<li><span class="math inline">\(\varepsilon\)</span> is the fraction of surface radiation absorbed in the atmosphere (emissivity),</li>
+<li><span class="math inline">\(\sigma\)</span> is the Stefan-Boltzmann constant, and,</li>
+<li><span class="math inline">\(T_{u}\)</span> is the surface temperature (absolute). Thus, the energy balance for the whole system is:</li>
+</ul>
 <br>
 <center>
-<span class="math display" id="eq:module3-5">\[\begin{equation}
+<span class="math display" id="eq:module3-6">\[\begin{equation}
 S + W = a_{p}S + \sigma T_{u}^{4} (1 − \varepsilon)\sigma T_{s}^{4}
-\tag{11}
+\tag{12}
 \end{equation}\]</span>
 </center>
 <p><br></p>
 <p><strong>Energy-balance for the upper layer of the atmosphere:</strong></p>
 <p>The upper atmospheric layer absorbs a fraction, <span class="math inline">\(k_{u}\)</span>, of the solar radiation that strikes it and also receives:</p>
 <ol style="list-style-type: decimal">
-<li>Energy radiated <strong>upward</strong> from the lower layer: <span class="math inline">\(\sigma T_{l}^{4}\)</span>, and</li>
+<li>Energy radiated <strong>upward</strong> from the lower layer: <span class="math inline">\(\sigma T_{l}^{4}\)</span>, and,</li>
 <li>One-half of the latent heat that accompanies evaporation from the surface (because this layer holds one-half the atmospheric water vapour): <span class="math inline">\(0.5L\)</span>.
 The upper layer loses energy by thermal radiation upward to outer space <strong>and</strong> downward to the lower layer. Thus, the energy balance for the upper layer is:</li>
 </ol>
 <br>
 <center>
-<span class="math display" id="eq:module3-6">\[\begin{equation}
+<span class="math display" id="eq:module3-7">\[\begin{equation}
 k_{u} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
-\tag{12}
+\tag{13}
 \end{equation}\]</span>
 </center>
 <p><br></p>
@@ -794,7 +789,7 @@ k_{u} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
 <p>Energy enters the lower atmospheric layer from above as absorption of a fraction, <span class="math inline">\(k_{l}\)</span>, of the solar radiation that enters it and as thermal radiation from the upper layer: <span class="math inline">\(\sigma T_{u}^{4}\)</span>. From below, energy enters from:</p>
 <ol style="list-style-type: decimal">
 <li>The absorbed portion of thermal radiation from the surface: <span class="math inline">\(\varepsilon \sigma T_{s}^{4}\)</span>;</li>
-<li>one-half the latent-heat flux from the surface: <span class="math inline">\(0.5L\)</span>;</li>
+<li>One-half the latent-heat flux from the surface: <span class="math inline">\(0.5L\)</span>;</li>
 <li>The sensible-heat flux from the surface, <span class="math inline">\(H\)</span>; and</li>
 <li>The anthropogenic heat flux: <span class="math inline">\(W\)</span>
 .
@@ -802,9 +797,9 @@ Energy is lost from this layer by upward and downward radiation. The energy bala
 </ol>
 <br>
 <center>
-<span class="math display" id="eq:module3-7">\[\begin{equation}
+<span class="math display" id="eq:module3-8">\[\begin{equation}
 k_{l}S + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigma T_{l}^{4}
-\tag{13}
+\tag{14}
 \end{equation}\]</span>
 </center>
 <p><br></p>
@@ -812,19 +807,19 @@ k_{l}S + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigm
 <div id="M3_11" class="section level4 unnumbered">
 <h4>Exercise 2</h4>
 <p><strong>Solve these equations to find a formula for surface temperature <span class="math inline">\(T_{s}\)</span>:</strong></p>
-<p>Equations <a href="M3-1.html#eq:module3-5">(11)</a> to <a href="M3-1.html#eq:module3-7">(13)</a> are a system of three equations in three unknowns: the temperatures <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and <span class="math inline">\(T_{s}\)</span>. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:</p>
+<p>Equations <a href="M3-1.html#eq:module3-6">(12)</a> to <a href="M3-1.html#eq:module3-8">(14)</a> are a system of three equations in three unknowns: the temperatures <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and <span class="math inline">\(T_{s}\)</span>. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:</p>
 <ol style="list-style-type: decimal">
-<li>Solve Equation <a href="M3-1.html#eq:module3-5">(11)</a> for <span class="math inline">\(T_{u}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
-<li>Solve Equation <a href="M3-1.html#eq:module3-6">(12)</a> for <span class="math inline">\(T_{l}\)</span> in terms of <span class="math inline">\(T_{u}\)</span> and parameters.</li>
+<li>Solve Equation <a href="M3-1.html#eq:module3-6">(12)</a> for <span class="math inline">\(T_{u}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
+<li>Solve Equation <a href="M3-1.html#eq:module3-7">(13)</a> for <span class="math inline">\(T_{l}\)</span> in terms of <span class="math inline">\(T_{u}\)</span> and parameters.</li>
 <li>Substitute the results of step 1 into the results of step 2 to give an equation for <span class="math inline">\(T_{l}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
-<li>Solve Equation <a href="M3-1.html#eq:module3-7">(13)</a> for <span class="math inline">\(T_{s}\)</span> in terms <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and parameters.</li>
+<li>Solve Equation <a href="M3-1.html#eq:module3-8">(14)</a> for <span class="math inline">\(T_{s}\)</span> in terms <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and parameters.</li>
 <li>Put the results of steps 1 and 3 into the results of step 4 and simplify to give the equation for <span class="math inline">\(T_{s}\)</span> as a function of parameters:</li>
 </ol>
 <br>
 <center>
-<span class="math display" id="eq:module3-8">\[\begin{equation}
+<span class="math display" id="eq:module3-9">\[\begin{equation}
 T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\frac{1}{4}}
-\tag{14}
+\tag{15}
 \end{equation}\]</span>
 </center>
 <p><br></p>
@@ -833,12 +828,12 @@ T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\fr
 Show your workings!
 </div>
 <p><br></p>
-<p>Using the values given in Table <a href="M3-1.html#tab:module3-4">1</a>, what value do you derive for <span class="math inline">\(T_{s}\)</span>?</p>
+<p>Using the values given in Table <a href="M3-1.html#tab:module3-4">4</a>, what value do you derive for <span class="math inline">\(T_{s}\)</span>?</p>
 <p>How close is this to the actual value of 290K?</p>
 </div>
 <div id="M3_12" class="section level4 unnumbered">
 <h4>Exercise 3</h4>
-<p>Using Excel, test the sensitivity of this model to albedo. Compare your findings to those found in part 1 (A plot of <span class="math inline">\(T_{s}\)</span> for values of albedo between 0.3 and 0.7 might help here).</p>
+<p>Using Excel, test the sensitivity of this model to albedo. Compare your findings to those found in <a href="M3-1.html#M3_3">Case Study 1</a> (a plot of <span class="math inline">\(T_{s}\)</span> for values of albedo between 0.3 and 0.7 might help here).</p>
 </div>
 </div>
 <div id="M3_13" class="section level3 unnumbered">

@@ -29,9 +29,8 @@ E = \sigma T^{4}
 \end{equation}
 </center>
 
-|         $\sigma$: Stefan-Boltzmann constant (5.67x10^-8^)
-|         $T$: Temperature (in degrees Kelvin)
-<br> 
+Where, $\sigma$ = Stefan-Boltzmann constant (5.67x10^-8^), and $T$ = Temperature (in degrees Kelvin).
+
 However, for the Earth, this is being emitted over the full surface area of the Earth:
 
 <center>
@@ -41,7 +40,7 @@ E_{\text{out}} = \sigma 4\pi r^{2} T^{4}
 \end{equation}
 </center>
 
-|         $r$: Radius of the Earth (in m)
+Where, $r$ = Radius of the Earth (in m). 
 
 #### Incoming Radiation {#M3_5 -}
 
@@ -54,13 +53,14 @@ E_{\text{abs}} = S\pi r^{2} (1-a)
 \end{equation}
 </center>
 
-|         $S$:  Incoming solar radiation: the “solar constant” (1367 W/m^2^) 
+Where, $S$ = incoming solar radiation: the “solar constant” (1367 W/m^2^) . 
 
 #### Exercises {#M3_6 -}
 
 1) Using the concept of an energy balance (i.e. energy in = energy out), rearrange the equations to find the Earth’s temperature, $T$. 
 
-2) In Excel, construct a simple spreadsheet and fill in the blank cells to calculate the mean temperature of the Earth using the equation from Q1., assuming an albedo of 0.33 (including in °C and °F): 
+2) In Excel, construct a simple spreadsheet and fill in the blank cells of Table \@ref(tab:module3-1) to calculate the mean temperature of the Earth using the equation from Q1, assuming an albedo of 0.33 (including in °C and °F): 
+    a) The current mean temperature of the Earth is 288K (15°C). Does this simple model over or under predict the Earth’s temperature? What important factor is missing from this model?
 
 <center>
 ```{r module3-1, echo=FALSE, message=FALSE, warning=FALSE}
@@ -68,14 +68,14 @@ library(knitr)
 library(kableExtra)
 library(hablar)
 library(dplyr)
-#options(knitr.kable.NA = '')
+options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
 module3_1 <- read.csv("tables/module3/module3-1.csv", check.names=FALSE) %>% 
   convert(chr(Value, Units))
-kable(module3_1, format = "html", escape = F, align = "c") %>%
+kable(module3_1, format = "html", escape = F, align = "c", caption = "Fill in the blank cells to calculate the mean temperature of the Earth.") %>%
   kable_styling(full_width = F, position = "center") %>%
-  column_spec(1, width_min = "12em") %>%
-  column_spec(2, width_min = "15em") %>%
-  column_spec(3, width_min = "12em") %>%
+  column_spec(1, width_min = "15.5em") %>%
+  column_spec(2, width_min = "15.5em") %>%
+  column_spec(3, width_min = "15.5em") %>%
   row_spec(1:6, background = '#ffffff00') %>%
   scroll_box(width = "100%",
              fixed_thead = FALSE) 
@@ -90,11 +90,7 @@ Remember: $K = °C + 273.2$ and $°F = 1.8°C + 32$
 
 ```
 
-|          a) The current mean temperature of the Earth is 288K (15°C). Does this simple model over or under
-|              predict the Earth’s temperature? What important factor is missing from this model?
-
-<br>
-3) Test the sensitivity of this model to the choice of albedo. Using values from 0.3 to 0.7, calculate and plot T (°C)
+3) Test the sensitivity of this model to the choice of albedo. Using values from 0.3 to 0.7 in Table \@ref(tab:module3-2), calculate and plot T (°C)
 
 <center>
 ```{r module3-2, echo=FALSE, message=FALSE, warning=FALSE}
@@ -102,23 +98,23 @@ library(knitr)
 library(kableExtra)
 library(hablar)
 library(dplyr)
-#options(knitr.kable.NA = '')
+options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
 module3_2 <- read.csv("tables/module3/module3-2.csv", check.names=FALSE) %>%
   convert(chr("Stefan-Boltzmann constant"))
-kable(module3_2, format = "html", escape = F, align = "c") %>%
+kable(module3_2, format = "html", escape = F, align = "c", caption = "Test the sensitivity of this model.") %>%
   kable_styling(full_width = F, position = "center") %>%
-  column_spec(1, width_min = "5em") %>%
-  column_spec(2, width_min = "5em") %>%
-  column_spec(3, width_min = "5em") %>%
-  column_spec(4, width_min = "5em") %>%
-  column_spec(5, width_min = "5em") %>%
+  column_spec(1, width_min = "6.5em") %>%
+  column_spec(2, width_min = "6.5em") %>%
+  column_spec(3, width_min = "6.5em") %>%
+  column_spec(4, width_min = "6.5em") %>%
+  column_spec(5, width_min = "6.5em") %>%
   row_spec(1:5, background = '#ffffff00') %>%
   scroll_box(width = "100%",
              fixed_thead = FALSE) 
 ```
 </center>
 
-### Case Study 2: A “quick fix” {#M3_7 -}
+### Case Study 2: A “Quick Fix” {#M3_7 -}
 
 To try to reduce the error in the model estimates of Earth’s temperature, we can “parameterise” the model using observed or experimentally derived relationships between outgoing radiation and temperature. One such example is:
 
@@ -129,15 +125,14 @@ E_{\text{out}} = x + yT
 \end{equation}
 </center>
 
-|         $x = 204$ W/m^2^  
-|         $y = 2.17$ W/m^2^/°C
+Where, $x = 204$ W/m^2^, and  $y = 2.17$ W/m^2^/°C. 
 
 This gets inputted into the energy balance equation (energy in = energy out) to give:
 
 <center>
 \begin{equation}
 \pi r^{2} S (1-a) = 4\pi r^{2}(X+yT)
-(\#eq:module3-4)
+(\#eq:module3-5)
 \end{equation}
 </center>
 
@@ -145,7 +140,9 @@ This gets inputted into the energy balance equation (energy in = energy out) to 
 
 1) Solve the above equation for $T$ (note, this time, $T$ is in CELSIUS!)
 
-2) Set up a spreadsheet to estimate T for a range of albedo values. Different amounts of glacial ice cover on the Earth could produce albedos from 0.3 for minimal ice to 0.7 for a complete ice cover (this might seem unrealistic, but geologists have recently found evidence to suggest that the Earth was completely ice-covered during Neoproterozoic time 700 million years ago – a “snowball Earth”!)
+2) Set up a spreadsheet to estimate $T$ for a range of albedo values. Different amounts of glacial ice cover on the Earth could produce albedos from 0.3 for minimal ice to 0.7 for a complete ice cover (this might seem unrealistic, but geologists have recently found evidence to suggest that the Earth was completely ice-covered during Neoproterozoic time 700 million years ago – a “snowball Earth”!)
+    a) Are your results reasonably close for the present-day Earth mean temperature? What is the  sensitivity of this model to small changes in albedo?
+    b) Expanding a bit from your model (you might need to consider smaller steps in albedo), at what value of albedo do you think thissimplified Earth would experience strong positive feedback involving ice cover, albedo, and mean temperature, and therefore move rapidly toward “snowball Earth” with albedo = 0.7? Could it ever be deglaciated?
 
 <center>
 ```{r module3-3, echo=FALSE, message=FALSE, warning=FALSE}
@@ -153,28 +150,23 @@ library(knitr)
 library(kableExtra)
 library(hablar)
 library(dplyr)
-#options(knitr.kable.NA = '')
+options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
 module3_3 <- read.csv("tables/module3/module3-3.csv", check.names=FALSE) %>%
   convert(chr(Albedo, x, y))
-kable(module3_3, format = "html", escape = F, align = "c") %>%
+kable(module3_3, format = "html", escape = F, align = "c", caption = "Estimate $T$ for a range of albedo values.") %>%
   kable_styling(full_width = F, position = "center") %>%
-  column_spec(1, width_min = "5em") %>%
-  column_spec(2, width_min = "5em") %>%
-  column_spec(3, width_min = "5em") %>%
-  column_spec(4, width_min = "5em") %>%
+  column_spec(1, width_min = "11.5em") %>%
+  column_spec(2, width_min = "11.5em") %>%
+  column_spec(3, width_min = "11.5em") %>%
+  column_spec(4, width_min = "11.5em") %>%
   row_spec(1:5, background = '#ffffff00') %>%
   scroll_box(width = "100%",
              fixed_thead = FALSE) 
 ```
 </center>
 
-|          a) Are your results reasonably close for the present-day Earth mean temperature? What is the 
-|              sensitivity of this model to small changes in albedo?
 
-|          b) Expanding a bit from your model (you might need to consider smaller steps in albedo), at what 
-|              value of albedo do you think thissimplified Earth would experience strong positive feedback 
-|              involving ice cover, albedo, and mean temperature, and therefore move rapidly toward “snowball 
-|              Earth” with albedo = 0.7? Could it ever be deglaciated?
+
 
 ### Case Study 3: Incorporating Greenhouse Gases {#M3_9 -}
 
@@ -186,7 +178,7 @@ This time we require three energy-balance equations:
 2. For the upper layer of the atmosphere;
 3. For the lower layer of the atmosphere.
 
-In this model, all energy terms are expressed as long-term average fluxes, all temperatures are absolute. We assume that emissivity =1 except at the surface, and (most importantly) that each of the three systems is in equilibrium.
+In this model, all energy terms are expressed as long-term average fluxes, all temperatures are absolute. We assume that emissivity = 1 except at the surface, and (most importantly) that each of the three systems is in equilibrium.
 
 <center>
 ```{r module3-4, echo=FALSE, message=FALSE, warning=FALSE}
@@ -196,13 +188,13 @@ library(hablar)
 library(dplyr)
 #options(knitr.kable.NA = '')
 module3_4 <- read.csv("tables/module3/module3-4.csv", check.names=FALSE) 
-kable(module3_4, format = "html", escape = F, align = "c", caption = "Energy balance model of Earth's atmosphere") %>%
+kable(module3_4, format = "html", escape = F, align = "c", caption = "Energy balance model of Earth's atmosphere.") %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "5em") %>%
   column_spec(2, width_min = "15em") %>%
   column_spec(3, width_min = "13em") %>%
   row_spec(1:12, background = '#ffffff00') %>%
-  scroll_box(width = "100%", height = "325px",
+  scroll_box(width = "100%", height = "435px",
              fixed_thead = FALSE) 
 ```
 </center>
@@ -224,15 +216,16 @@ Energy leaves these the system by three routes:
 3. The portion of thermal radiation from the surface that is not absorbed in the atmosphere: $(1 − \varepsilon)\sigma T_{s}^{4}$.
 
 Here:
-$\varepsilon$ is the fraction of surface radiation absorbed in the atmosphere (emissivity), 
-$\sigma$ is the Stefan-Boltzmann constant, and
-$T_{u}$ is the surface temperature (absolute). Thus, the energy balance for the whole system is:
+
+- $\varepsilon$ is the fraction of surface radiation absorbed in the atmosphere (emissivity), 
+- $\sigma$ is the Stefan-Boltzmann constant, and, 
+- $T_{u}$ is the surface temperature (absolute). Thus, the energy balance for the whole system is:
 
 <br>
 <center>
 \begin{equation}
 S + W = a_{p}S + \sigma T_{u}^{4} (1 − \varepsilon)\sigma T_{s}^{4}
-(\#eq:module3-5)
+(\#eq:module3-6)
 \end{equation}
 </center>
 <br>
@@ -241,7 +234,7 @@ S + W = a_{p}S + \sigma T_{u}^{4} (1 − \varepsilon)\sigma T_{s}^{4}
 
 The upper atmospheric layer absorbs a fraction, $k_{u}$, of the solar radiation that strikes it and also receives:
 
-1) Energy radiated **upward** from the lower layer: $\sigma T_{l}^{4}$, and
+1) Energy radiated **upward** from the lower layer: $\sigma T_{l}^{4}$, and,
 2) One-half of the latent heat that accompanies evaporation from the surface (because this layer holds one-half the atmospheric water vapour): $0.5L$.
 The upper layer loses energy by thermal radiation upward to outer space **and** downward to the lower layer. Thus, the energy balance for the upper layer is:
 
@@ -249,7 +242,7 @@ The upper layer loses energy by thermal radiation upward to outer space **and** 
 <center>
 \begin{equation}
 k_{u} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
-(\#eq:module3-6)
+(\#eq:module3-7)
 \end{equation}
 </center>
 <br>
@@ -259,7 +252,7 @@ k_{u} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
 Energy enters the lower atmospheric layer from above as absorption of a fraction, $k_{l}$, of the solar radiation that enters it and as thermal radiation from the upper layer: $\sigma T_{u}^{4}$. From below, energy enters from:
 
 1) The absorbed portion of thermal radiation from the surface: $\varepsilon \sigma T_{s}^{4}$; 
-2) one-half the latent-heat flux from the surface: $0.5L$;
+2) One-half the latent-heat flux from the surface: $0.5L$;
 3) The sensible-heat flux from the surface, $H$; and
 4) The anthropogenic heat flux: $W$
 .
@@ -269,7 +262,7 @@ Energy is lost from this layer by upward and downward radiation. The energy bala
 <center>
 \begin{equation}
 k_{l}S + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigma T_{l}^{4}
-(\#eq:module3-7)
+(\#eq:module3-8)
 \end{equation}
 </center>
 <br>
@@ -278,19 +271,19 @@ k_{l}S + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigm
 
 **Solve these equations to find a formula for surface temperature $T_{s}$:**
 
-Equations \@ref(eq:module3-5) to \@ref(eq:module3-7) are a system of three equations in three unknowns: the temperatures $T_{l}$, $T_{u}$, and $T_{s}$. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:
+Equations \@ref(eq:module3-6) to \@ref(eq:module3-8) are a system of three equations in three unknowns: the temperatures $T_{l}$, $T_{u}$, and $T_{s}$. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:
 
-1) Solve Equation \@ref(eq:module3-5) for $T_{u}$ in terms of $T_{s}$ and parameters.
-2) Solve Equation \@ref(eq:module3-6) for $T_{l}$ in terms of $T_{u}$ and parameters.
+1) Solve Equation \@ref(eq:module3-6) for $T_{u}$ in terms of $T_{s}$ and parameters.
+2) Solve Equation \@ref(eq:module3-7) for $T_{l}$ in terms of $T_{u}$ and parameters.
 3) Substitute the results of step 1 into the results of step 2 to give an equation for $T_{l}$ in terms of $T_{s}$ and parameters.
-4) Solve Equation \@ref(eq:module3-7) for $T_{s}$ in terms $T_{l}$, $T_{u}$, and parameters.
+4) Solve Equation \@ref(eq:module3-8) for $T_{s}$ in terms $T_{l}$, $T_{u}$, and parameters.
 5) Put the results of steps 1 and 3 into the results of step 4 and simplify to give the equation for $T_{s}$ as a function of parameters:
 
 <br>
 <center>
 \begin{equation}
 T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\frac{1}{4}}
-(\#eq:module3-8)
+(\#eq:module3-9)
 \end{equation}
 </center>
 <br>
@@ -306,7 +299,7 @@ How close is this to the actual value of 290K?
 
 #### Exercise 3 {#M3_12 -}
 
-Using Excel, test the sensitivity of this model to albedo. Compare your findings to those found in part 1 (A plot of $T_{s}$ for values of albedo between 0.3 and 0.7 might help here).
+Using Excel, test the sensitivity of this model to albedo. Compare your findings to those found in [Case Study 1](#M3_3) (a plot of $T_{s}$ for values of albedo between 0.3 and 0.7 might help here).
 
 
 ### Submission {#M3_13 -}
