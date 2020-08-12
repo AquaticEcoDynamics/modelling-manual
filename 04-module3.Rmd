@@ -7,6 +7,11 @@
 - To construct a simple energy balance climate model for the earth in Excel
 - To understand the role of greenhouse gases, and incorporate them into an energy balance climate model 
 
+
+### Module resources {#M2_14 -}
+
+There are no module resources needed for these exercises!
+
 ### Case Study 1: A “Zero-Dimensional” Energy Balance Model {#M3_3 -}
 
 Here, we assume that the Earth is a sphere with uniform surface and no differences with latitude and longitude (i.e. everything receives the same amount of solar energy). We also assume that there is a balance, or equilibrium, between incoming short wavelength solar radiation absorbed by the ground and outgoing long wavelength radiation emitted by the ground.
@@ -144,6 +149,7 @@ This gets inputted into the energy balance equation (energy in = energy out) to 
     a) Are your results reasonably close for the present-day Earth mean temperature? What is the  sensitivity of this model to small changes in albedo?
     b) Expanding a bit from your model (you might need to consider smaller steps in albedo), at what value of albedo do you think thissimplified Earth would experience strong positive feedback involving ice cover, albedo, and mean temperature, and therefore move rapidly toward “snowball Earth” with albedo = 0.7? Could it ever be deglaciated?
 
+
 <center>
 ```{r module3-3, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -179,6 +185,10 @@ This time we require three energy-balance equations:
 3. For the lower layer of the atmosphere.
 
 In this model, all energy terms are expressed as long-term average fluxes, all temperatures are absolute. We assume that emissivity = 1 except at the surface, and (most importantly) that each of the three systems is in equilibrium.
+
+<center>
+![](images/04-module3/picture3.png){width=90%}
+</center>
 
 <center>
 ```{r module3-4, echo=FALSE, message=FALSE, warning=FALSE}
@@ -254,8 +264,8 @@ Energy enters the lower atmospheric layer from above as absorption of a fraction
 1) The absorbed portion of thermal radiation from the surface: $\varepsilon \sigma T_{s}^{4}$; 
 2) One-half the latent-heat flux from the surface: $0.5L$;
 3) The sensible-heat flux from the surface, $H$; and
-4) The anthropogenic heat flux: $W$
-.
+4) The anthropogenic heat flux: $W$.
+
 Energy is lost from this layer by upward and downward radiation. The energy balance for the lower layer is therefore:
 
 <br>
