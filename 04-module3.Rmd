@@ -147,7 +147,7 @@ This gets inputted into the energy balance equation (energy in = energy out) to 
 
 2) Set up a spreadsheet to estimate $T$ for a range of albedo values. Different amounts of glacial ice cover on the Earth could produce albedos from 0.3 for minimal ice to 0.7 for a complete ice cover (this might seem unrealistic, but geologists have recently found evidence to suggest that the Earth was completely ice-covered during Neoproterozoic time 700 million years ago – a “snowball Earth”!)
     a) Are your results reasonably close for the present-day Earth mean temperature? What is the  sensitivity of this model to small changes in albedo?
-    b) Expanding a bit from your model (you might need to consider smaller steps in albedo), at what value of albedo do you think thissimplified Earth would experience strong positive feedback involving ice cover, albedo, and mean temperature, and therefore move rapidly toward “snowball Earth” with albedo = 0.7? Could it ever be deglaciated?
+    b) Expanding a bit from your model (you might need to consider smaller steps in albedo), at what value of albedo do you think this simplified Earth would experience strong positive feedback involving ice cover, albedo, and mean temperature, and therefore move rapidly toward “snowball Earth” with albedo = 0.7? Could it ever be deglaciated?
 
 
 <center>
@@ -234,7 +234,7 @@ Here:
 <br>
 <center>
 \begin{equation}
-S + W = a_{p}S + \sigma T_{u}^{4} (1 − \varepsilon)\sigma T_{s}^{4}
+S + W = a_{p}S + \sigma T_{u}^{4} + (1 − \varepsilon)\sigma T_{s}^{4}
 (\#eq:module3-6)
 \end{equation}
 </center>
@@ -251,7 +251,7 @@ The upper layer loses energy by thermal radiation upward to outer space **and** 
 <br>
 <center>
 \begin{equation}
-k_{u} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
+k_{u}S + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
 (\#eq:module3-7)
 \end{equation}
 </center>
