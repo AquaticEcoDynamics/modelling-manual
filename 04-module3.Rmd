@@ -221,7 +221,7 @@ We can now formulate the three energy-balance equations needed:
 Energy enters the Earth–atmosphere system from above at the rate $S$ and from below at the rate $W$ (heat generated from nonrenewable energy sources: nuclear and fossil fuels).
 Energy leaves these the system by three routes:
 
-1. Reflected solar radiation: $a_{p}S$;
+1. Reflected solar radiation: $a_{p}S_{av}$;
 2. Thermal radiation from the top of the atmosphere: $\sigma T_{u}^{4}$; and
 3. The portion of thermal radiation from the surface that is not absorbed in the atmosphere: $(1 − \varepsilon)\sigma T_{s}^{4}$.
 
@@ -234,7 +234,7 @@ Here:
 <br>
 <center>
 \begin{equation}
-S + W = a_{p}S + \sigma T_{u}^{4} + (1 − \varepsilon)\sigma T_{s}^{4}
+S + W = a_{p}S_{av} + \sigma T_{u}^{4} + (1 − \varepsilon)\sigma T_{s}^{4}
 (\#eq:module3-6)
 \end{equation}
 </center>
@@ -251,7 +251,7 @@ The upper layer loses energy by thermal radiation upward to outer space **and** 
 <br>
 <center>
 \begin{equation}
-k_{u}S + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
+k_{u}S_{av} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
 (\#eq:module3-7)
 \end{equation}
 </center>
@@ -271,7 +271,7 @@ Energy is lost from this layer by upward and downward radiation. The energy bala
 <br>
 <center>
 \begin{equation}
-k_{l}S + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigma T_{l}^{4}
+k_{l}S_{av} + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigma T_{l}^{4}
 (\#eq:module3-8)
 \end{equation}
 </center>
@@ -283,16 +283,16 @@ k_{l}S + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigm
 
 Equations \@ref(eq:module3-6) to \@ref(eq:module3-8) are a system of three equations in three unknowns: the temperatures $T_{l}$, $T_{u}$, and $T_{s}$. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:
 
-1) Solve Equation \@ref(eq:module3-6) for $T_{u}$ in terms of $T_{s}$ and parameters.
-2) Solve Equation \@ref(eq:module3-7) for $T_{l}$ in terms of $T_{u}$ and parameters.
-3) Substitute the results of step 1 into the results of step 2 to give an equation for $T_{l}$ in terms of $T_{s}$ and parameters.
-4) Solve Equation \@ref(eq:module3-8) for $T_{s}$ in terms $T_{l}$, $T_{u}$, and parameters.
+1) Rearrange Equation \@ref(eq:module3-6) for $\sigma T_{u}^{4}$ in terms of $T_{s}$ and parameters.
+2) Rearrange Equation \@ref(eq:module3-7) for $\sigma T_{l}^{4}$ in terms of $T_{u}$ and parameters.
+3) Substitute the results of step 1 into the results of step 2 to give an equation for $\sigma T_{l}^{4}$ in terms of $T_{s}$ and parameters.
+4) Rearrange Equation \@ref(eq:module3-8) for $\sigma T_{s}^{4}$ in terms $T_{l}$, $T_{u}$, and parameters.
 5) Put the results of steps 1 and 3 into the results of step 4 and simplify to give the equation for $T_{s}$ as a function of parameters:
 
 <br>
 <center>
 \begin{equation}
-T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\frac{1}{4}}
+T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S_{av}-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\frac{1}{4}}
 (\#eq:module3-9)
 \end{equation}
 </center>

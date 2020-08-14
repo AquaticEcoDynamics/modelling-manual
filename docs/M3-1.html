@@ -24,7 +24,7 @@
 <meta name="author" content="Giles Knight, Matt Hipsey" />
 
 
-<meta name="date" content="2020-08-12" />
+<meta name="date" content="2020-08-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -760,7 +760,7 @@ Infrared flux from surface (use black-body equation)
 <p>Energy enters the Earth–atmosphere system from above at the rate <span class="math inline">\(S\)</span> and from below at the rate <span class="math inline">\(W\)</span> (heat generated from nonrenewable energy sources: nuclear and fossil fuels).
 Energy leaves these the system by three routes:</p>
 <ol style="list-style-type: decimal">
-<li>Reflected solar radiation: <span class="math inline">\(a_{p}S\)</span>;</li>
+<li>Reflected solar radiation: <span class="math inline">\(a_{p}S_{av}\)</span>;</li>
 <li>Thermal radiation from the top of the atmosphere: <span class="math inline">\(\sigma T_{u}^{4}\)</span>; and</li>
 <li>The portion of thermal radiation from the surface that is not absorbed in the atmosphere: <span class="math inline">\((1 − \varepsilon)\sigma T_{s}^{4}\)</span>.</li>
 </ol>
@@ -773,7 +773,7 @@ Energy leaves these the system by three routes:</p>
 <br>
 <center>
 <span class="math display" id="eq:module3-6">\[\begin{equation}
-S + W = a_{p}S + \sigma T_{u}^{4} + (1 − \varepsilon)\sigma T_{s}^{4}
+S + W = a_{p}S_{av} + \sigma T_{u}^{4} + (1 − \varepsilon)\sigma T_{s}^{4}
 \tag{12}
 \end{equation}\]</span>
 </center>
@@ -788,7 +788,7 @@ The upper layer loses energy by thermal radiation upward to outer space <strong>
 <br>
 <center>
 <span class="math display" id="eq:module3-7">\[\begin{equation}
-k_{u}S + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
+k_{u}S_{av} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
 \tag{13}
 \end{equation}\]</span>
 </center>
@@ -805,7 +805,7 @@ k_{u}S + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
 <br>
 <center>
 <span class="math display" id="eq:module3-8">\[\begin{equation}
-k_{l}S + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigma T_{l}^{4}
+k_{l}S_{av} + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigma T_{l}^{4}
 \tag{14}
 \end{equation}\]</span>
 </center>
@@ -816,16 +816,16 @@ k_{l}S + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigm
 <p><strong>Solve these equations to find a formula for surface temperature <span class="math inline">\(T_{s}\)</span>:</strong></p>
 <p>Equations <a href="M3-1.html#eq:module3-6">(12)</a> to <a href="M3-1.html#eq:module3-8">(14)</a> are a system of three equations in three unknowns: the temperatures <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and <span class="math inline">\(T_{s}\)</span>. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:</p>
 <ol style="list-style-type: decimal">
-<li>Solve Equation <a href="M3-1.html#eq:module3-6">(12)</a> for <span class="math inline">\(T_{u}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
-<li>Solve Equation <a href="M3-1.html#eq:module3-7">(13)</a> for <span class="math inline">\(T_{l}\)</span> in terms of <span class="math inline">\(T_{u}\)</span> and parameters.</li>
-<li>Substitute the results of step 1 into the results of step 2 to give an equation for <span class="math inline">\(T_{l}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
-<li>Solve Equation <a href="M3-1.html#eq:module3-8">(14)</a> for <span class="math inline">\(T_{s}\)</span> in terms <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and parameters.</li>
+<li>Rearrange Equation <a href="M3-1.html#eq:module3-6">(12)</a> for <span class="math inline">\(\sigma T_{u}^{4}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
+<li>Rearrange Equation <a href="M3-1.html#eq:module3-7">(13)</a> for <span class="math inline">\(\sigma T_{l}^{4}\)</span> in terms of <span class="math inline">\(T_{u}\)</span> and parameters.</li>
+<li>Substitute the results of step 1 into the results of step 2 to give an equation for <span class="math inline">\(\sigma T_{l}^{4}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
+<li>Rearrange Equation <a href="M3-1.html#eq:module3-8">(14)</a> for <span class="math inline">\(\sigma T_{s}^{4}\)</span> in terms <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and parameters.</li>
 <li>Put the results of steps 1 and 3 into the results of step 4 and simplify to give the equation for <span class="math inline">\(T_{s}\)</span> as a function of parameters:</li>
 </ol>
 <br>
 <center>
 <span class="math display" id="eq:module3-9">\[\begin{equation}
-T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\frac{1}{4}}
+T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S_{av}-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\frac{1}{4}}
 \tag{15}
 \end{equation}\]</span>
 </center>
