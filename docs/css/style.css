@@ -111,3 +111,18 @@ div.rmdnote2::before {
   font-weight: bold;
   margin-bottom: 0.25em;
 }
+.rmdquestion {
+  border: 1px solid #1d91c0;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+}
+div.rmdquestion::before {
+  display: block;
+  content: "Big Questions: ";
+  color: #1d91c0;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+}

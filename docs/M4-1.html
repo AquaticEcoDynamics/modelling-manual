@@ -24,7 +24,7 @@
 <meta name="author" content="Giles Knight, Matt Hipsey" />
 
 
-<meta name="date" content="2020-08-19" />
+<meta name="date" content="2020-08-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -385,7 +385,7 @@ Figure 2: Double logarithmic plot of the equilibrium composition of seawater in 
 \end{align*}\]</span>
 </center>
 <p><br></p>
-<p>Solving this quadratic would be fiendishly difficult. Instead, we will use trial and error, otherwise known as our iterative solution. We will do this to find a value for H+ that is the same on both sides of the equation.</p>
+<p>Solving this quadratic would be fiendishly difficult. Instead, we will use trial and error, otherwise known as our iterative solution. We will do this to find a value for H<sup>+</sup> that is the same on both sides of the equation.</p>
 <p>Go to the third tab and copy over all of the equations from Exercise 1. The <span style="color: #A5A5A5;">grey boxes</span> are the values that we will hold constant, and the first guess for H<sup>+</sup>, based on the H<sup>+</sup> in Exercise 1. You can alter the CO<sub>2</sub> concentration using the CO<sub>2</sub> multiplier cell and your rapidly developing Excel and R skills. If you want to double CO<sub>2</sub> concentration, type 2 into the multiplier cell. If you want to keep it at present levels, type 1. Repeat the calculation of Equation <a href="M4-1.html#eq:module4-13">(28)</a> over successive iterations, using the answer from the previous iteration as your guess for the next iteration. Eventually, the difference between your guesses will become very small and you can settle on a constant pH. (This is roughly how equilibrium-solving computer programs solve complex biogeochemical interactions, often with many more interacting variables than this.)
 Don’t forget that your successive iterations, are not time steps, like we had in previous weeks. Rather, they are just guesses at the right number that only exist in the model. Your final answer is the only one that has a real scientific meaning. If you want to determine the pH over a range of CO<sub>2</sub> concentrations, you will need to repeat the calculation over ~10 rows, and save your results each time.</p>
 <p>Big questions: if you increase CO<sub>2</sub>, does the pH rise or fall? Does CaCO<sub>3</sub> precipitation become more or less favourable if CO<sub>2</sub> increases?</p>
@@ -403,7 +403,7 @@ Figure 3: Changes in global average surface pH and saturation state with respect
 </div>
 </center>
 <p>Go to the <a href="https://sourceforge.net/projects/plotdigitizer/files/">Plot Digitizer website</a> and download the program.</p>
-<p>Open the IPCC image in Plot Digitizer. The program guides you through the steps you need to take: read the command at the bottom of the screen (for example, “Choose most negative end of x-axis”) and click “Done” when you have finished. It will be easiest if you make a point every 10 years. Save each dataset as a separate csv file and then combine the results in one sheet. If your x axis points line up nicely enough, you can re-plot the data.</p>
+<p>Open the IPCC image in Plot Digitizer. The program guides you through the steps you need to take: read the command at the bottom of the screen (for example, “Choose most negative end of x-axis”) and click “Done” when you have finished. It will be easiest if you make a point every 10 years. Save each dataset as a separate csv file and then combine the results in one sheet. If your x-axis points line up nicely enough, you can re-plot the data.</p>
 <center>
 <video width="70%" height="70%" controls>
 <source src="images/05-module4/video1.mp4" type="video/mp4">
