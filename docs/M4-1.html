@@ -24,7 +24,7 @@
 <meta name="author" content="Giles Knight, Matt Hipsey" />
 
 
-<meta name="date" content="2020-08-20" />
+<meta name="date" content="2020-08-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -358,11 +358,6 @@ C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2
 <div id="M4_5" class="section level3 unnumbered">
 <h3>Exercise 2</h3>
 <p>In this exercise you will construct a double-logarithmic plot of this system, holding CO2 constant and varying the pH. Go to the second tab in Excel and copy the equations over from the first tab. Or in R, you can run a <em>for loop</em> to calculate the different concentrations for each of the different pHs. Then you will have some of the major variables converted to logarithms. Next you can make an x y scatter plot. If you add the data correctly, you should get a plot that looks like Figure <a href="M4-1.html#fig:module4pic2">2</a>.</p>
-<div class="rmdquestion">
-<p>
-How similar is this plot to yours? At what pH do the OH<sup>-</sup> and H<sup>+</sup> lines cross? Make sure to format it nicely and add pK<sub>1</sub> etc.
-</p>
-</div>
 <center>
 <div class="figure"><span id="fig:module4pic2"></span>
 <img src="images/05-module4/picture2.png" alt="Double logarithmic plot of the equilibrium composition of seawater in our model [@stumm1996]" width="90%" />
@@ -388,7 +383,11 @@ Figure 2: Double logarithmic plot of the equilibrium composition of seawater in 
 <p>Solving this quadratic would be fiendishly difficult. Instead, we will use trial and error, otherwise known as our iterative solution. We will do this to find a value for H<sup>+</sup> that is the same on both sides of the equation.</p>
 <p>Go to the third tab and copy over all of the equations from Exercise 1. The <span style="color: #A5A5A5;">grey boxes</span> are the values that we will hold constant, and the first guess for H<sup>+</sup>, based on the H<sup>+</sup> in Exercise 1. You can alter the CO<sub>2</sub> concentration using the CO<sub>2</sub> multiplier cell and your rapidly developing Excel and R skills. If you want to double CO<sub>2</sub> concentration, type 2 into the multiplier cell. If you want to keep it at present levels, type 1. Repeat the calculation of Equation <a href="M4-1.html#eq:module4-13">(28)</a> over successive iterations, using the answer from the previous iteration as your guess for the next iteration. Eventually, the difference between your guesses will become very small and you can settle on a constant pH. (This is roughly how equilibrium-solving computer programs solve complex biogeochemical interactions, often with many more interacting variables than this.)
 Don’t forget that your successive iterations, are not time steps, like we had in previous weeks. Rather, they are just guesses at the right number that only exist in the model. Your final answer is the only one that has a real scientific meaning. If you want to determine the pH over a range of CO<sub>2</sub> concentrations, you will need to repeat the calculation over ~10 rows, and save your results each time.</p>
-<p>Big questions: if you increase CO<sub>2</sub>, does the pH rise or fall? Does CaCO<sub>3</sub> precipitation become more or less favourable if CO<sub>2</sub> increases?</p>
+<div class="rmdquestion">
+<p>
+Big questions: if you increase CO<sub>2</sub>, does the pH rise or fall? Does CaCO<sub>3</sub> precipitation become more or less favourable if CO<sub>2</sub> increases?
+</p>
+</div>
 </div>
 <div id="M4_7" class="section level3 unnumbered">
 <h3>Exercise 4</h3>
