@@ -78,12 +78,12 @@ You may have to convert between storage volumes (m^3^) and heights (m) by multip
 
 In Excel, there is an initial condition in a box given for you at time step 0. Your equations will start at time step 1. Your whole set of equations will not be finished until you have also completed the evaporation and flows, but you have to start somewhere.
 
-In RStudio, the initial condition is given in the `Inputs` section with the square brackets and the `[1]` (time step 1) and the loop starts at time step 2. For the equations, use the sequence that is given. The code reads from top to bottom so it is important that if a variable is referred to in an equation, it must already have been calculated in a previous line of code. Pay careful attention to the indices for t and t-1.
+In RStudio, the initial condition is given in the `Inputs` section with the square brackets and the `[1]` (time step 1) and the loop starts at time step 2. For the equations, use the sequence that is given. The code reads from top to bottom so it is important that if a variable is referred to in an equation, it must already have been calculated in a previous line of code. Pay careful attention to the indices for $t$ and $t-1$.
 
 ```{block2, hint6_4, type='rmdtip2'}
 In Excel, the timestep advances as you go down the page. The notation $t$ could refer to any timestep, with $t-1$ simply being the timestep before $t$, and $t+1$  being the timestep after $t$.
 
-If an equation is written entirely in terms of $t+1$ (e.g. $X^{t+1}= Y^{t+1}+Z^{t+1}$), it can be simplified to be written just in terms of $t$ because it's just referring to the same timestep (e.g. $X^{t}= Y^{t}+Z^{t}$). 
+If an equation is written entirely in terms of $t+1$ (e.g. $X^{t+1}= Y^{t+1}+Z^{t+1}$), it can be simplified to be written just in terms of $t$ (e.g. $X^{t}= Y^{t}+Z^{t}$). This is because $t$ is arbitrary and we're just referring to the same timestep for the entire equation. 
 
 <center>
 ![](images/06-module5/picture4.png){width=60%}
@@ -315,7 +315,7 @@ S_{us}^{t+1^\prime}=\ S_{us}^t+\ P^{t+1} A_{c}
 (\#eq:module5-7)
 \end{equation}
 \begin{equation}
-R_p^{t+1}=\ S_{us}^{t^\prime}-\ S_{us(fc)}^{t}  ,   \text{if}\ \ \ S_{us}^{t^\prime}>\ S_{us(fc)}^{t}
+R_p^{t+1}=\ S_{us}^{{t+1}^\prime}-\ S_{us(fc)}^{t+1}  ,   \text{if}\ \ \ S_{us}^{{t+1}^\prime}>\ S_{us(fc)}^{t+1}
 (\#eq:module5-8)
 \end{equation}
 </center>
