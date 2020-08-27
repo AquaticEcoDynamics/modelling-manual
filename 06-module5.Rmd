@@ -10,7 +10,7 @@ A water balance equation can be used to describe the flow of water in and out of
 
 Based on our understanding of soil physics, flow processes and transpiration, we can further partition water within the bucket into different sub-compartments. In this exercise we assume the catchment bucket can include a saturated and unsaturated layer, and even an optional deeper groundwater system.
 
-The water balance assumes an initial amount of water and then we sequentially estimate the fluxes of water as outlined in the below conceptual diagram.
+The water balance assumes an initial amount of water and then we sequentially estimate the fluxes of water as outlined below in the conceptual diagram.
 
 <center>
 ```{r module5-2, echo=FALSE, fig.cap="Conceptual model schematic of the 0D ‘bucket’ by Yasmina Elshafei and Matthew Hipsey, adapted from Farmer et al. (2003)", out.width = '90%'}
@@ -42,7 +42,7 @@ will learn how to make dates. Then delete the comments at the end of the section
 
 #### Climate {#M5_6 -}
 
-As boundary conditions, we have a precipitation dataset, and a function (equation 21) to simulate potential evaporation (Figure \@ref(fig:module5-fig1)).
+As boundary conditions, we have a precipitation dataset, and a function (Equation \@ref(eq:module5-28)) to simulate potential evaporation (Figure \@ref(fig:module5-fig1)).
 
 In Excel, the precipitation is in a column and has a value for every date. The potential evaporation is given by a sin wave function that makes potential evaporation increase in summer and decrease in winter. Copy this formula down the page.
 
@@ -69,12 +69,29 @@ ggplotly(plot) %>%
 
 #### Storage {#M5_7 -}
 
-Start to write in the equations for storage, using the equations given in the table at the end of this document. Note that there are two variables that have a prime ($‘$) sign. These variables only exist theoretically in the model, so that we can use them for our IF statements.
-Note that you may have to convert between storage volumes (m^3^) and heights (m) by multiplying or dividing by area (m^2^).
+Start to write in the equations for storage, using the equations given in the [Equations](#M5_12) section of this module. Note that there are two variables that have a prime ($\prime$) sign. These variables only exist theoretically in the model, so that we can use them for our IF statements.
+
+
+```{block2, hint6_1, type='rmdtip2'}
+You may have to convert between storage volumes (m^3^) and heights (m) by multiplying or dividing by area (m^2^).
+```
 
 In Excel, there is an initial condition in a box given for you at time step 0. Your equations will start at time step 1. Your whole set of equations will not be finished until you have also completed the evaporation and flows, but you have to start somewhere.
 
 In RStudio, the initial condition is given in the `Inputs` section with the square brackets and the `[1]` (time step 1) and the loop starts at time step 2. For the equations, use the sequence that is given. The code reads from top to bottom so it is important that if a variable is referred to in an equation, it must already have been calculated in a previous line of code. Pay careful attention to the indices for t and t-1.
+
+```{block2, hint6_4, type='rmdtip2'}
+In Excel, the timestep advances as you go down the page. The notation $t$ could refer to any timestep, with $t-1$ simply being the timestep before $t$, and $t+1$  being the timestep after $t$.
+
+If an equation is written entirely in terms of $t+1$ (e.g. $X^{t+1}= Y^{t+1}+Z^{t+1}$), it can be simplified to be written just in terms of $t$ because it's just referring to the same timestep (e.g. $X^{t}= Y^{t}+Z^{t}$). 
+
+<center>
+![](images/06-module5/picture4.png){width=60%}
+</center>
+
+```
+
+
 
 #### Evapotranspiration {#M5_8 -}
 
@@ -86,7 +103,7 @@ Type in the flow equations.
 
 #### Plots {#M5_10 -}
 
-When you have finished filling in all the columns, see the Submission section for what plots to create and submit.
+When you have finished filling in all the columns, see the [Submission](#M5_21) section for what plots to create and submit.
 
 ### Notation {#M5_11 -}
 
@@ -272,16 +289,16 @@ The volumetric water storage at field capacity is therefore the theoretical maxi
 
 <center>
 \begin{equation}
-S_{(t+1)}=\ S_t+\ P_t-\ e_t-\ Q_t
+S_{tot}^{t+1}= S_{tot}^{t}+(P^{t+1}- e_{tot}^{t+1})A_{c} - Q_{tot}^{t+1}
 (\#eq:module5-4)
 \end{equation}
 </center>
 
-Water storage at any given time step, $t$, is calculated using the previous time step’s water storage as a starting point ($S_{(t-1)}$). Inflows and outflows of water from the system/ bucket are then incorporated to obtain the next consecutive value of $S$. Precipitation recorded in the previous time step (inflow) is added to the initial storage value, whilst total evapotranspiration and total runoff in the previous time step (outflows) are both subtracted. Total water storage is made up of water stored in the saturated and unsaturated zones. Note that the initial value of $S_t$ may be empirically determined or assumed to be a certain value. The initial value of $S_{sat}$ is taken to be $D$ less the depth from the surface to the water table, which can be measured.
+Water storage at any given time step, $t$, is calculated using the previous time step’s water storage as a starting point ($t-1$). Inflows and outflows of water from the system/ bucket are then incorporated to obtain the next consecutive value of $S$. Precipitation recorded in the previous time step (inflow) is added to the initial storage value, whilst total evapotranspiration and total runoff in the previous time step (outflows) are both subtracted. Total water storage is made up of water stored in the saturated and unsaturated zones. Note that the initial value of $S_t$ may be empirically determined or assumed to be a certain value. The initial value of $S_{sat}$ is taken to be $D$ less the depth from the surface to the water table, which can be measured.
 
 <center>
 \begin{equation}
-S_{us}^{t+1}=\ S_{(t+1)}-\ S_{sat}^{t+1}
+S_{us}^{t+1}=\ S_{tot}^{t+1^\prime}-\ S_{sat}^{t+1}
 (\#eq:module5-5)
 \end{equation}
 \begin{equation}
@@ -294,25 +311,29 @@ Threshold storage in the unsaturated zone is simply the maximum potential storag
 
 <center>
 \begin{equation}
-S_{us}^\prime=\ S_{us}^t+\ P^{t+1} A_{c} 
+S_{us}^{t+1^\prime}=\ S_{us}^t+\ P^{t+1} A_{c} 
 (\#eq:module5-7)
 \end{equation}
 \begin{equation}
-R_p=\ S_{us}^\prime-\ S_{us(fc)}  ,   \text{if}\ \ \ S_{us}^\prime>\ S_{us(fc)}
+R_p^{t+1}=\ S_{us}^{t^\prime}-\ S_{us(fc)}^{t}  ,   \text{if}\ \ \ S_{us}^{t^\prime}>\ S_{us(fc)}^{t}
 (\#eq:module5-8)
 \end{equation}
 </center>
+
+```{block2, hint6_2, type='rmdtip2'}
+Equation \@ref(eq:module5-8) is an IF Statement.
+```
 
 The daily recharge rate from the unsaturated zone to the saturated zone is calculated as water storage in the unsaturated zone in the present time step, in addition to precipitation that has occurred in the current time step, less the threshold storage of the unsaturated zone (i.e. water which does not drain due to the downward forces of gravity alone). Recharge of this nature only occurs in the event that the combination of precipitation in the current time step and water storage in the unsaturated zone in the present time step is greater than the threshold field capacity of the unsaturated zone.
 
 <center>
 \begin{equation}
-S_{sat}^{t+1}=\ S_{sat}^t+\ R_p^t-\ R_g^t-\ Q_{ss}^t-\ e_{bs(sat)}^t-\ e_{v(sat)}^t-\ e_{ag(sat)}^t
+S_{sat}^{t+1}=\ S_{sat}^t+\ R_p^{t+1}-\ R_g^{t+1}-\ Q_{ss}^{t+1}-\ e_{v}^{t+1}A_{c}
 (\#eq:module5-9)
 \end{equation}
 </center>
 
-(Note the use of “$t$” on the Right Hand Side for $R$, $Q$ and $e$ will be on the same row since they are computed based on yesterday’s $S$)
+Note the use of “$t$” on the Right Hand Side for $R$, $Q$ and $e$ will be on the same row since they are computed based on yesterday’s $S$.
 
 The balance of volumetric water storage in the saturated zone is therefore calculated as the previous period’s storage plus any recharge from the unsaturated zone, less outflows including recharge to groundwater, subsurface runoff, and total evapotranspiration (bare soil, deep rooted vegetation and agricultural crop) from the saturated zone.
 
@@ -320,7 +341,7 @@ Optional Deep Ground Water Store:
 
 <center>
 \begin{equation}
-R_g=\ K_s{S}_{sat}
+R_g^{t+1}=\ K_s{S}_{sat}^t
 (\#eq:module5-10)
 \end{equation}
 </center>
@@ -329,110 +350,121 @@ Daily recharge to groundwater is calculated as the saturated hydraulic conductiv
 
 <center>
 \begin{equation}
-S_{gw}^{t+1}=\ S_{gw}^t+\ R_g^t-\ Q_{bf}^t\ 
+S_{gw}^{t+1}=\ S_{gw}^t+\ R_g^{t+1}-\ Q_{bf}^{t+1}\ 
 (\#eq:module5-11)
 \end{equation}
 </center>
 
 The balance of volumetric groundwater storage is calculated as the previous period’s storage plus recharge from the saturated zone less base flow out of the catchment.
 
+<center>
+\begin{equation}
+Q_{bf}=\ \alpha_{bf}\left(S_{gw}\right)^{\beta_{bf}}
+(\#eq:module5-27)
+\end{equation}
+</center>
+
+Base flow is treated for our purposes as a nonlinear function using groundwater storage.
+
 #### Transpiration {#M5_16 -}
 
 <center>
 \begin{equation}
-e_t=\ e_v+\ e_{bs}+\ e_{ag}
+e_{tot}^t=\ e_v^t+\ e_{bs}^t+\ e_{ag}^t
 (\#eq:module5-12)
 \end{equation}
 </center>
 
-Total evapotranspiration of the system is the sum of $ET$ from deep rooted native vegetation, bare soil and agricultural crops in the catchment.
+Total evapotranspiration (ET) of the system is the sum of ET from deep rooted native vegetation, bare soil and agricultural crops in the catchment.
 
-Native vegetation $ET$ is calculated as follows. 
+Native vegetation ET is calculated as follows. 
 
 Simple form:
 
 <center>
 \begin{equation}
-e_v= M (\frac{S_t}{S_{max}})^\varepsilon k_v e_p
+e_v^{t+1}= M (\frac{S_{tot}^t}{S_{max}})^\varepsilon k_v e_p^{t+1}
 (\#eq:module5-13)
 \end{equation}
 </center>
 
-More complex form attempts to scale based on water availability in the unsaturated zone and the height of the water table:
+<!-- More complex form attempts to scale based on water availability in the unsaturated zone and the height of the water table: -->
 
-<center>
-\begin{equation}
-e_v = \left\{\begin{matrix} Mk_{v}e_{p},\phantom{-}\phantom{-}\phantom{-} S_{sat}>\varphi D_{ebs}S_{us}^\prime>S_{us(fc)}  
-\\ Mk_v\frac{S_{us}^\prime}{S_{fc}}e_p,  \phantom{-}\phantom{-}\phantom{-}\phantom{-}\phantom{-}\phantom{-}\phantom{-} S_{us}^\prime\ <\ S_{us(fc)}
-\end{matrix}\right.
-(\#eq:module5-14)
-\end{equation}
-</center>
+<!-- <center> -->
+<!-- \begin{equation} -->
+<!-- e_v = \left\{\begin{matrix} Mk_{v}e_{p},\phantom{-}\phantom{-}\phantom{-} S_{sat}>\varphi D_{ebs}S_{us}^\prime>S_{us(fc)}   -->
+<!-- \\ Mk_v\frac{S_{us}^\prime}{S_{fc}}e_p,  \phantom{-}\phantom{-}\phantom{-}\phantom{-}\phantom{-}\phantom{-}\phantom{-} S_{us}^\prime\ <\ S_{us(fc)} -->
+<!-- \end{matrix}\right. -->
+<!-- (\#eq:module5-14) -->
+<!-- \end{equation} -->
+<!-- </center> -->
 
-If water storage in the unsaturated zone combined with precipitation during the period is greater than the field capacity storage threshold of the unsaturated zone and water storage in the saturated zone is greater than the water storage capacity in the bare soil zone of influence, then the % vegetation cover within the catchment is multiplied by the transpiration efficiency of the vegetation (a function of LAI), the result of which is then multiplied by the potential ET. 
+<!-- If water storage in the unsaturated zone combined with precipitation during the period is greater than the field capacity storage threshold of the unsaturated zone and water storage in the saturated zone is greater than the water storage capacity in the bare soil zone of influence, then the % vegetation cover within the catchment is multiplied by the transpiration efficiency of the vegetation (a function of LAI), the result of which is then multiplied by the potential ET.  -->
 
-To the extent that water storage in the unsaturated zone combined with precipitation during the period is less than field capacity storage in the unsaturated zone, the preceding equation is further multiplied by the proportion of water stored in the unsaturated zone (plus precipitation in the period) over the field capacity threshold of the catchment (i.e. a fraction that will always be <1).
+<!-- To the extent that water storage in the unsaturated zone combined with precipitation during the period is less than field capacity storage in the unsaturated zone, the preceding equation is further multiplied by the proportion of water stored in the unsaturated zone (plus precipitation in the period) over the field capacity threshold of the catchment (i.e. a fraction that will always be <1). -->
 
-<center>
-\begin{equation}
-e_{v(sat)}=\ \frac{S_{sat}}{S_t}e_v
-(\#eq:module5-15)
-\end{equation}
-</center>
+<!-- <center> -->
+<!-- \begin{equation} -->
+<!-- e_{v(sat)}=\ \frac{S_{sat}}{S_t}e_v -->
+<!-- (\#eq:module5-15) -->
+<!-- \end{equation} -->
+<!-- </center> -->
 
-In cases where the first condition in equation (12) is satisfied, equation (13) may be applied to calculate the proportion of ET emanating from the saturated zone. ET drawn from the saturated zone by deep rooted vegetation is calculated as the proportion of water storage in the saturated zone over the total catchment water storage, multiplied by total deep rooted vegetation ET from equation (12). This function could also be made non-linear if desired.
+<!-- In cases where the first condition in equation (12) is satisfied, equation (13) may be applied to calculate the proportion of ET emanating from the saturated zone. ET drawn from the saturated zone by deep rooted vegetation is calculated as the proportion of water storage in the saturated zone over the total catchment water storage, multiplied by total deep rooted vegetation ET from equation (12). This function could also be made non-linear if desired. -->
 
-The conditional rules applying to equations (12), (15), (16), (18) and (19) are expressed diagrammatically below, where $D_{ebs}$ is interchangeable with $D_{eag}$ for the purposes of the illustration.
+<!-- The conditional rules applying to equations (12), (15), (16), (18) and (19) are expressed diagrammatically below, where $D_{ebs}$ is interchangeable with $D_{eag}$ for the purposes of the illustration. -->
 
-<center>
-```{r module5-3, echo=FALSE, fig.cap="If  $S_{sat} > \\varphi D_{ebs}$.", out.width = '30%'}
-knitr::include_graphics("images/06-module5/picture2.png")
-```
-</center>
-<center>
-```{r module5-4, echo=FALSE, fig.cap="If  $S_{sat} < \\varphi D_{ebs}$.", out.width = '30%'}
-knitr::include_graphics("images/06-module5/picture3.png")
-```
-</center>
+<!-- <center> -->
+<!-- ```{r module5-3, echo=FALSE, fig.cap="If  $S_{sat} > \\varphi D_{ebs}$.", out.width = '30%'} -->
+<!-- knitr::include_graphics("images/06-module5/picture2.png") -->
+<!-- ``` -->
+<!-- </center> -->
+<!-- <center> -->
+<!-- ```{r module5-4, echo=FALSE, fig.cap="If  $S_{sat} < \\varphi D_{ebs}$.", out.width = '30%'} -->
+<!-- knitr::include_graphics("images/06-module5/picture3.png") -->
+<!-- ``` -->
+<!-- </center> -->
 
-<br>
+<!-- <br> -->
 
-<center>
-\begin{equation}
-e_{v(us)}=\ e_v-\ e_{v(sat)}
-(\#eq:module5-16)
-\end{equation}
-</center>
+<!-- <center> -->
+<!-- \begin{equation} -->
+<!-- e_{v(us)}=\ e_v-\ e_{v(sat)} -->
+<!-- (\#eq:module5-16) -->
+<!-- \end{equation} -->
+<!-- </center> -->
 
 #### Agricultural/Shallow Root Crop Evapotranspiration {#M5_17 -}
 
+For evapotranspiration by agricultural crops, we make the assumption that they can draw water from the unsaturated zone only, thus:
+
+<!-- <center> -->
+<!-- \begin{equation} -->
+<!-- e_{ag} = \left\{\begin{matrix} C\alpha_{eag}\left[\frac{S_{us}}{S_{max}-\ S_{sat}}\right]e_p,\ \ &S_{sat}<\varphi D_{eag} -->
+<!-- \\C\alpha_{eag}\left[\frac{S_{us}+\ \left(S_{sat}-\ \varphi D_{eag}\right)}{S_{sat}-\ \varphi D_{eag}}\right]e_p,\ \ &S_{sat}\geq\varphi D_{eag} -->
+<!-- \end{matrix}\right. -->
+<!-- (\#eq:module5-17) -->
+<!-- \end{equation} -->
+<!-- </center> -->
+
+<!-- In the first case, the water table is below the maximum depth of influence of agricultural crops, and total $e_{ag}$ is thus assumed to come from the unsaturated zone. Whereas in the second case, the water table is above the maximum depth of influence, meaning that $e_{ag}$ will be drawn partially from both the saturated and unsaturated zones.  -->
+
+<!-- In the first case therefore, $e_{ag}$ is calculated as the % of agricultural crop cover in the catchment, multiplied by the agricultural scaling factor (effectively an efficiency parameter), multiplied by the fraction of water stored in the unsaturated zone over the maximum potential water storage within that zone (a limiting variable), multiplied by the potential ET. -->
+
+<!-- In the second case, the fraction is amended to be the sum of the water stored in both the saturated and unsaturated zones within the depth of influence over the proportion that falls below the water table.  -->
+
+<!-- <center> -->
+<!-- \begin{equation} -->
+<!-- e_{ag}^{t+1}=\ \left[\frac{S_{sat}-\ \varphi D_{eag}}{S_{us}+\ (S_{sat}-\ \varphi D_{eag})}\right]e_{ag},\ \ if\ S_{sat}\geq\varphi D_{eag} -->
+<!-- (\#eq:module5-18) -->
+<!-- \end{equation} -->
+<!-- </center> -->
+
+<!-- The amount of ET that is drawn from the saturated zone is calculated as total ET due to agricultural crops multiplied by the proportion of water stored in the saturated zone within the depth of influence of agricultural crops. -->
+
 <center>
 \begin{equation}
-e_{ag} = \left\{\begin{matrix} C\alpha_{eag}\left[\frac{S_{us}}{S_{max}-\ S_{sat}}\right]e_p,\ \ &S_{sat}<\varphi D_{eag}
-\\C\alpha_{eag}\left[\frac{S_{us}+\ \left(S_{sat}-\ \varphi D_{eag}\right)}{S_{sat}-\ \varphi D_{eag}}\right]e_p,\ \ &S_{sat}\geq\varphi D_{eag}
-\end{matrix}\right.
-(\#eq:module5-17)
-\end{equation}
-</center>
-
-In the first case, the water table is below the maximum depth of influence of agricultural crops, and total $e_{ag}$ is thus assumed to come from the unsaturated zone. Whereas in the second case, the water table is above the maximum depth of influence, meaning that $e_{ag}$ will be drawn partially from both the saturated and unsaturated zones. 
-
-In the first case therefore, $e_{ag}$ is calculated as the % of agricultural crop cover in the catchment, multiplied by the agricultural scaling factor (effectively an efficiency parameter), multiplied by the fraction of water stored in the unsaturated zone over the maximum potential water storage within that zone (a limiting variable), multiplied by the potential ET.
-
-In the second case, the fraction is amended to be the sum of the water stored in both the saturated and unsaturated zones within the depth of influence over the proportion that falls below the water table. 
-
-<center>
-\begin{equation}
-e_{ag(sat)}=\ \left[\frac{S_{sat}-\ \varphi D_{eag}}{S_{us}+\ (S_{sat}-\ \varphi D_{eag})}\right]e_{ag},\ \ if\ S_{sat}\geq\varphi D_{eag}
-(\#eq:module5-18)
-\end{equation}
-</center>
-
-The amount of ET that is drawn from the saturated zone is calculated as total ET due to agricultural crops multiplied by the proportion of water stored in the saturated zone within the depth of influence of agricultural crops.
-
-<center>
-\begin{equation}
-e_{ag\left(us\right)}=\ e_{ag}-\ e_{ag\left(sat\right)}
+e_{ag}^{t+1}=C \alpha_{eag}[\frac{S_{us}^t}{S_{max}-S_{sat}^t}]e_{p}^{t+1}
 (\#eq:module5-19)
 \end{equation}
 </center>
@@ -441,25 +473,29 @@ e_{ag\left(us\right)}=\ e_{ag}-\ e_{ag\left(sat\right)}
 
 <center>
 \begin{equation}
-e_{bs} = \left\{\begin{matrix} (1-M-C)\alpha_{ebs}\left[\frac{S_{us}}{S_{max}-\ S_{sat}}\right]e_p,\ \ &S_{sat}<\varphi D_{ebs}
-\\ (1-M-C)\alpha_{ebs}\left[\frac{S_{us}+\ \left(S_{sat}-\ \varphi D_{ebs}\right)}{S_{sat}-\ \varphi D_{ebs}}\right]e_p,\ \ &S_{sat}\geq\varphi D_{ebs}
+e_{bs}^{t+1} = \left\{\begin{matrix} (1-M-C)\alpha_{ebs}\left[\frac{S_{us}^t}{S_{max}-\ S_{sat}^t}\right]e_p^{t+1},\ \ &S_{sat}^t<\varphi D_{ebs} A_c
+\\ (1-M-C)\alpha_{ebs}\left[\frac{S_{us}^{t}+\ \left(S_{us}^{t}-\ \varphi D_{ebs}\right)}{S_{sat}^t-\ \varphi D_{ebs}}\right]e_p^{t+1},\ \ &S_{sat}^t\geq\varphi D_{ebs} A_c
 \end{matrix}\right.
 (\#eq:module5-20)
 \end{equation}
 </center>
 
-The bare soil evaporation equations are identical to the agricultural crop ET equations in spirit.
+```{block2, hint6_3, type='rmdtip2'}
+This is an IF statement. In Excel split this equation up into the ‘TRUE’ and ‘FALSE’ columns.
+```
 
-<center>
-\begin{equation}
-e_{bs(sat)}=\ \left[\frac{S_{sat}-\ \varphi D_{ebs}}{S_{us}+\ (S_{sat}-\ \varphi D_{ebs})}\right]e_{bs},\ \ if\ S_{sat}\geq\varphi D_{ebs}
-(\#eq:module5-21)
-\end{equation}
-\begin{equation}
-e_{bs(us)}=\ e_{bs}-\ e_{bs(sat)}
-(\#eq:module5-22)
-\end{equation}
-</center>
+<!-- The bare soil evaporation equations are identical to the agricultural crop ET equations in spirit. -->
+
+<!-- <center> -->
+<!-- \begin{equation} -->
+<!-- e_{bs(sat)}=\ \left[\frac{S_{sat}-\ \varphi D_{ebs}}{S_{us}+\ (S_{sat}-\ \varphi D_{ebs})}\right]e_{bs},\ \ if\ S_{sat}\geq\varphi D_{ebs} -->
+<!-- (\#eq:module5-21) -->
+<!-- \end{equation} -->
+<!-- \begin{equation} -->
+<!-- e_{bs(us)}=\ e_{bs}-\ e_{bs(sat)} -->
+<!-- (\#eq:module5-22) -->
+<!-- \end{equation} -->
+<!-- </center> -->
 
 #### Calculating Daily $e_p$ {#M5_19 -}
 
@@ -467,7 +503,7 @@ Daily potential evaporation will be calculated using a sine wave, as follows:
 
 <center>
 \begin{equation}
-e_{p(\text{daily})}=\ \frac{e_{p(\text{annual})}}{365}\left[1+A\ sin\left\{B\left(m-1\right)+d\right\}+C\right]\ 
+e_{p(\text{daily})}=\ \frac{e_{p(\text{annual})}}{365}\left[1+A\ \textbf{sin}\left\{B\left(m-1\right)+d\right\}+C\right]\ 
 (\#eq:module5-23)
 \end{equation}
 </center>
@@ -478,8 +514,18 @@ Where, $A_{sin}$ is the height of the sine wave (i.e. maximum less minimum value
 
 <center>
 \begin{equation}
-Q_{se} = \left\{\begin{matrix} {S\prime}_t-\ S_{max},\ \ &{S\prime}_t>S_{max}
-\\ 0,\ \ &{S\prime}_t\le S_{max}
+Q_{tot}^t = Q_{se}^t + Q_{ie}^t + Q_{ss}^t
+(\#eq:module5-29)
+\end{equation}
+</center>
+
+Total runoff of the system is the sum of saturation excess, infiltration excess, subsurface
+runoff, and (optional) base flow.
+
+<center>
+\begin{equation}
+Q_{se}^t = \left\{\begin{matrix} {S}_{tot}^{\prime t}-\ S_{max}^t,\ \ &{S}_{tot}^{\prime t}>S_{max}
+\\ 0,\ \ &{S}_{tot}^{\prime t}\le S_{max}
 \end{matrix}\right.
 (\#eq:module5-24)
 \end{equation}
@@ -489,7 +535,9 @@ Saturation excess is simply taken as being zero to the extent that water storage
 
 <center>
 \begin{equation}
-Q_{ie}=(P-I_{max})A_C
+Q_{ie}^t = \left\{\begin{matrix} (P^t-I_{max})A_C,\ \ &{P}> I_{max}
+\\ 0,\ \ &{P}\le I_{max}
+\end{matrix}\right.
 (\#eq:module5-25)
 \end{equation}
 </center>
@@ -498,8 +546,8 @@ Hortonian runoff (infiltration excess):
 
 <center>
 \begin{equation}
-Q_{ss} = \left\{\begin{matrix} 0,\ \ &S_t\le S_{fc}
-\\ \alpha\left(\frac{S_t}{S_{max}}\right)^\beta,\ \ &{S_{fc}\ <\ S}_t<S_{max}
+Q_{ss}^{t+1} = \left\{\begin{matrix} 0,\ \ &S_{sat}^{t}\le S_{usfc}^{t+1}
+\\ \alpha_{s}\left(\frac{S_{sat}^t}{S_{max}}\right)^{\beta s,}\ \ &S_{usfc}^{t+1} <\ S_{sat}^t
 \end{matrix}\right.
 (\#eq:module5-26)
 \end{equation}
@@ -508,17 +556,6 @@ Q_{ss} = \left\{\begin{matrix} 0,\ \ &S_t\le S_{fc}
 Where $S_{fc}$ is $S_{max}fc$. 
 
 Subsurface runoff is taken to be zero in cases where the total water storage is less than field capacity threshold (i.e. thus will not drain due solely to the forces of gravity). In the event that total storage in the bucket/ catchment is greater than threshold storage and less than maximum storage capacity, subsurface runoff is taken as a nonlinear function using the excess above threshold storage and the assigned recession coefficients.
-
-For optional deep groundwater store:
-
-<center>
-\begin{equation}
-Q_{bf}=\ \alpha_{bf}\left(S_{gw}\right)^{\beta_{bf}}
-(\#eq:module5-27)
-\end{equation}
-</center>
-
-Base flow is treated for our purposes as a nonlinear function using groundwater storage.
 
 #### Water Table Depth {#M5_23 -}
 
