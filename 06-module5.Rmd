@@ -294,7 +294,7 @@ S_{tot}^{t+1}= S_{tot}^{t}+(P^{t+1}- e_{tot}^{t+1})A_{c} - Q_{tot}^{t+1}
 \end{equation}
 </center>
 
-Water storage at any given time step, $t$, is calculated using the previous time step’s water storage as a starting point ($t-1$). Inflows and outflows of water from the system/ bucket are then incorporated to obtain the next consecutive value of $S$. Precipitation recorded in the previous time step (inflow) is added to the initial storage value, whilst total evapotranspiration and total runoff in the previous time step (outflows) are both subtracted. Total water storage is made up of water stored in the saturated and unsaturated zones. Note that the initial value of $S_t$ may be empirically determined or assumed to be a certain value. The initial value of $S_{sat}$ is taken to be $D$ less the depth from the surface to the water table, which can be measured.
+Water storage at any given time step, $t$, is calculated using the previous time step’s water storage as a starting point ($t$). Inflows and outflows of water from the system/ bucket are then incorporated to obtain the next consecutive value of $S$. Precipitation recorded in the previous time step (inflow) is added to the initial storage value, whilst total evapotranspiration and total runoff in the previous time step (outflows) are both subtracted. Total water storage is made up of water stored in the saturated and unsaturated zones. Note that the initial value of $S_{tot}$ may be empirically determined or assumed to be a certain value. The initial value of $S_{sat}$ is taken to be $D$ less the depth from the surface to the water table, which can be measured.
 
 <center>
 \begin{equation}
@@ -333,7 +333,7 @@ S_{sat}^{t+1}=\ S_{sat}^t+\ R_p^{t+1}-\ R_g^{t+1}-\ Q_{ss}^{t+1}-\ e_{v}^{t+1}A_
 \end{equation}
 </center>
 
-Note the use of “$t$” on the Right Hand Side for $R$, $Q$ and $e$ will be on the same row since they are computed based on yesterday’s $S$.
+Note the use of “$t+1$” on the Right Hand Side for $R$, $Q$ and $e$ will be on the same row since they are computed based on yesterday’s $S$.
 
 The balance of volumetric water storage in the saturated zone is therefore calculated as the previous period’s storage plus any recharge from the unsaturated zone, less outflows including recharge to groundwater, subsurface runoff, and total evapotranspiration (bare soil, deep rooted vegetation and agricultural crop) from the saturated zone.
 
@@ -359,7 +359,7 @@ The balance of volumetric groundwater storage is calculated as the previous peri
 
 <center>
 \begin{equation}
-Q_{bf}=\ \alpha_{bf}\left(S_{gw}\right)^{\beta_{bf}}
+Q_{bf}^{t+1}= \alpha_{bf} (\frac{S_{gw}^t}{S_{gw\ max}})^{\beta_{bf}}
 (\#eq:module5-27)
 \end{equation}
 </center>
@@ -524,8 +524,8 @@ runoff, and (optional) base flow.
 
 <center>
 \begin{equation}
-Q_{se}^t = \left\{\begin{matrix} {S}_{tot}^{\prime t}-\ S_{max}^t,\ \ &{S}_{tot}^{\prime t}>S_{max}
-\\ 0,\ \ &{S}_{tot}^{\prime t}\le S_{max}
+Q_{se}^t = \left\{\begin{matrix} {S}_{tot}^{t \prime}-\ S_{max}^t,\ \ &{S}_{tot}^{t \prime}>S_{max}
+\\ 0,\ \ &{S}_{tot}^{t \prime}\le S_{max}
 \end{matrix}\right.
 (\#eq:module5-24)
 \end{equation}
@@ -535,8 +535,8 @@ Saturation excess is simply taken as being zero to the extent that water storage
 
 <center>
 \begin{equation}
-Q_{ie}^t = \left\{\begin{matrix} (P^t-I_{max})A_C,\ \ &{P}> I_{max}
-\\ 0,\ \ &{P}\le I_{max}
+Q_{ie}^t = \left\{\begin{matrix} (P^t-I_{max})A_C,\ \ &{P^t}> I_{max}
+\\ 0,\ \ &{P^t}\le I_{max}
 \end{matrix}\right.
 (\#eq:module5-25)
 \end{equation}
@@ -553,7 +553,7 @@ Q_{ss}^{t+1} = \left\{\begin{matrix} 0,\ \ &S_{sat}^{t}\le S_{usfc}^{t+1}
 \end{equation}
 </center>
 
-Where $S_{fc}$ is $S_{max}fc$. 
+<!-- Where $S_{fc}$ is $S_{max}fc$.  -->
 
 Subsurface runoff is taken to be zero in cases where the total water storage is less than field capacity threshold (i.e. thus will not drain due solely to the forces of gravity). In the event that total storage in the bucket/ catchment is greater than threshold storage and less than maximum storage capacity, subsurface runoff is taken as a nonlinear function using the excess above threshold storage and the assigned recession coefficients.
 
