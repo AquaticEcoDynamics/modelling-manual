@@ -53,6 +53,12 @@ P_{load}^{t} = \color{#9BBB59}{P_{1}^{t} Q_{1}^{t}} + \color{#0070C0}{P_{2}^{t-1
 \end{equation}
 </center>
 
+<center>
+<video width="80%" height="80%" controls>
+  <source src="images/07-module6/video1.mp4" type="video/mp4">
+</video>
+</center>
+
 
 ### Module Resources {#M6_4 -}
 
