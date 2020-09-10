@@ -209,7 +209,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M7-1.html"><a href="M7-1.html"><i class="fa fa-check"></i>Module 7: Advection-Dispersion</a>
 <ul>
 <li class="chapter" data-level="" data-path="M7-1.html"><a href="M7-1.html#M7_2"><i class="fa fa-check"></i>Objectives</a></li>
-<li class="chapter" data-level="" data-path="M7-1.html"><a href="M7-1.html#M7_3"><i class="fa fa-check"></i>The Advection-Dispersion Reaction</a></li>
+<li class="chapter" data-level="" data-path="M7-1.html"><a href="M7-1.html#M7_3"><i class="fa fa-check"></i>Advection-Dispersion Reaction</a></li>
 <li class="chapter" data-level="" data-path="M7-1.html"><a href="M7-1.html#M7_4"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M7-1.html"><a href="M7-1.html#M7_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M7-1.html"><a href="M7-1.html#M7_6"><i class="fa fa-check"></i>Submission</a></li>
@@ -242,7 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>To setup an advection-dispersion-reaction equation for a river system to demonstrate the combination of <strong>temporal and spatial</strong> finite differencing, in one dimension.</p>
 </div>
 <div id="M7_3" class="section level3 unnumbered">
-<h3>The Advection-Dispersion Reaction</h3>
+<h3>Advection-Dispersion Reaction</h3>
 <p>The advection-dispersion reaction equation for a species <span class="math inline">\(C\)</span>, is defined as:</p>
 <center>
 <span class="math display" id="eq:module7-1">\[\begin{equation}
@@ -282,6 +282,11 @@ R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
 <p>O<sub>2</sub> source/sink: <span class="math inline">\(\color{#D58400}{S_{x}}\)</span></p>
 </div>
 <p>To solve this the user specifies the initial oxygen concentration (<span class="math inline">\(C_0\)</span>), river velocity (<span class="math inline">\(u\)</span>) as a function of distance, grid length (<span class="math inline">\(L\)</span>), grid spacing (<span class="math inline">\(\Delta x\)</span>), simulation period (<span class="math inline">\(T\)</span>), time step (<span class="math inline">\(\Delta t\)</span>). The calculation should then compute the change in oxygen as a function of distance and time.</p>
+<center>
+<video width="100%" height="100%" controls>
+<source src="images/08-module7/video1.mp4" type="video/mp4">
+</video>
+</center>
 <p>Extra sources or sinks of oxygen can by added into the domain based on the <span class="math inline">\(S\)</span> term. We will first set up the model to have no <span class="math inline">\(S\)</span> inputs along the side of the river, but in the last task we add a low oxygen discharge somewhere along the river (ie. a pipe outflow).</p>
 </div>
 <div id="M7_4" class="section level3 unnumbered">
@@ -320,6 +325,14 @@ In Excel, time is going down the rows and distance (space) is going along the co
 <div class="rmdtip2">
 Use an IF statement. O<sub>2</sub> concentration cannot be negative, so set a minimum concentration of 0 mg/L
 </div>
+<center>
+<div class="figure"><span id="fig:module7-2"></span>
+<img src="images/08-module7/picture2.png" alt="Advection and dispersion of O~2~ in a river of length $x$. Note, in this figure $W_c$ refers to our wastewater plume (click [here](https://hydrologie.org/BIB/Publ_UNESCO/SR_999_E_2005.pdf) for image source)." width="60%" />
+<p class="caption">
+Figure 6: Advection and dispersion of O<sub>2</sub> in a river of length <span class="math inline">\(x\)</span>. Note, in this figure <span class="math inline">\(W_c\)</span> refers to our wastewater plume (click <a href="https://hydrologie.org/BIB/Publ_UNESCO/SR_999_E_2005.pdf">here</a> for image source).
+</p>
+</div>
+</center>
 </div>
 <div id="M7_9" class="section level4 unnumbered">
 <h4>Modelling an O<sub>2</sub> Drop</h4>
@@ -340,7 +353,7 @@ Use an IF statement. O<sub>2</sub> concentration cannot be negative, so set a mi
 <div class="figure"><span id="fig:module7-1"></span>
 <img src="images/08-module7/picture1.png" alt="A plume of coloured dye dispersing through a river." width="100%" />
 <p class="caption">
-Figure 6: A plume of coloured dye dispersing through a river.
+Figure 7: A plume of coloured dye dispersing through a river.
 </p>
 </div>
 </center>

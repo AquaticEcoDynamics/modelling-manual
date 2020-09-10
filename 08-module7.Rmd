@@ -5,7 +5,7 @@
 To setup an advection-dispersion-reaction equation for a river system to demonstrate the combination of **temporal and spatial** finite differencing, in one dimension.
 
 
-### The Advection-Dispersion Reaction {#M7_3 -}
+### Advection-Dispersion Reaction {#M7_3 -}
 
 The advection-dispersion reaction equation for a species $C$, is defined as:
 
@@ -62,6 +62,13 @@ O~2~ source/sink: $\color{#D58400}{S_{x}}$
 
 To solve this the user specifies the initial oxygen concentration ($C_0$), river velocity ($u$) as a function of distance, grid length ($L$), grid spacing ($\Delta x$), simulation period ($T$), time step ($\Delta t$). The calculation should then compute the change in oxygen as a function of distance and time.
 
+<center>
+<video width="100%" height="100%" controls>
+  <source src="images/08-module7/video1.mp4" type="video/mp4">
+</video>
+</center>
+
+
 Extra sources or sinks of oxygen can by added into the domain based on the $S$ term. We will first set up the model to have no $S$ inputs along the side of the river, but in the last task we add a low oxygen discharge somewhere along the river (ie. a pipe outflow).
 
 
@@ -96,6 +103,12 @@ In Excel, time is going down the rows and distance (space) is going along the co
 ```{block2, hint08_3, type='rmdtip2'}
 Use an IF statement. O~2~ concentration cannot be negative, so set a minimum concentration of 0 mg/L
 ```
+
+<center>
+```{r module7-2, echo=FALSE, fig.cap="Advection and dispersion of O~2~ in a river of length $x$. Note, in this figure $W_c$ refers to our wastewater plume (click [here](https://hydrologie.org/BIB/Publ_UNESCO/SR_999_E_2005.pdf) for image source).", out.width = '60%'}
+knitr::include_graphics("images/08-module7/picture2.png")
+```
+</center>
 
 #### Modelling an O~2~ Drop {#M7_9 -}
 
