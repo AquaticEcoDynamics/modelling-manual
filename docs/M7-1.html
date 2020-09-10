@@ -279,7 +279,7 @@ R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
 <p>Advection: <span class="math inline">\(\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}}\)</span></p>
 <p>Atmospherical exchange: <span class="math inline">\(\color{#77BB41}{k_{a}(C_{a}^{t}-C_{x}^{t})}\)</span></p>
 <p>Biological O<sub>2</sub> demand: <span class="math inline">\(\color{#B18CFE}{k_{BOD}C_{x}^{t}}\)</span></p>
-O<sub>2</sub> source/sink: <span class="math inline">\(\color{#D58400}{S_{x}^{t}}\)</span>
+<p>O<sub>2</sub> source/sink: <span class="math inline">\(\color{#D58400}{S_{x}^{t}}\)</span></p>
 </div>
 <p>To solve this the user specifies the initial oxygen concentration (<span class="math inline">\(C_0\)</span>), river velocity (<span class="math inline">\(u\)</span>) as a function of distance, grid length (<span class="math inline">\(L\)</span>), grid spacing (<span class="math inline">\(\Delta x\)</span>), simulation period (<span class="math inline">\(T\)</span>), time step (<span class="math inline">\(\Delta t\)</span>). The calculation should then compute the change in oxygen as a function of distance and time.</p>
 <p>Extra sources or sinks of oxygen can by added into the domain based on the <span class="math inline">\(S\)</span> term. We will first set up the model to have no <span class="math inline">\(S\)</span> inputs along the side of the river, but in the last task we add a low oxygen discharge somewhere along the river (ie. a pipe outflow).</p>
