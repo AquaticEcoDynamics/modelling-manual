@@ -22,7 +22,7 @@ In this exercise we numerically solve the 1-dimensional, advective-dispersive tr
 
 <center>
 \begin{equation}
-\frac{C_{t+1}-C_{t}}{\Delta t}=D_{d} \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}-u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}+R_{x}+S_{x}
+\frac{C^{t+1}_{x}-C^{t}_{x}}{\Delta t}=D_{d} \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}-u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}+R_{x}+S_{x}
 (\#eq:module7-2)
 \end{equation}
 </center>
@@ -40,7 +40,7 @@ Where the first term is atmospheric exchange ($k_a$ is the rate of re-aeration a
 
 <center>
 \begin{equation}
-\small{C_{x}^{t+1}=\color{#898989}{C_{x}^{t}}+ \left [ \color{#3A88FE}{D_d \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}}-\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}} + \color{#77BB41}{k_{a}(C_{a}^{t}-C_{x}^{t})}-\color{#B18CFE}{k_{BOD}C_{x}^{t}}  \right ]\Delta t+\color{#D58400}{S_{x}^{t}}}
+\small{C_{x}^{t+1}=\color{#898989}{C_{x}^{t}}+ \left [ \color{#3A88FE}{D_d \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}}-\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}} + \color{#77BB41}{k_{a}(C_{a}-C_{x}^{t})}-\color{#B18CFE}{k_{BOD}C_{x}}  \right ]\Delta t+\color{#D58400}{S_{x}^{t}}}
 (\#eq:module7-4)
 \end{equation}
 </center>
@@ -52,11 +52,11 @@ Diffusion: $\color{#3A88FE}{D_d \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta
   
 Advection: $\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}}$
   
-Atmospherical exchange: $\color{#77BB41}{k_{a}(C_{a}^{t}-C_{x}^{t})}$
+Atmospherical exchange: $\color{#77BB41}{k_{a}(C_{a}-C_{x}^{t})}$
   
 Biological O~2~ demand: $\color{#B18CFE}{k_{BOD}C_{x}^{t}}$
   
-O~2~ source/sink: $\color{#D58400}{S_{x}^{t}}$
+O~2~ source/sink: $\color{#D58400}{S_{x}$
 
 ```
 

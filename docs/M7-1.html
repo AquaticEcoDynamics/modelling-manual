@@ -254,7 +254,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this exercise we numerically solve the 1-dimensional, advective-dispersive transport of oxygen in a river. To solve this equation numerically, we must “discretise” the partial derivatives using finite difference methods, here done according to the FTCS scheme (refer to lecture!):</p>
 <center>
 <span class="math display" id="eq:module7-2">\[\begin{equation}
-\frac{C_{t+1}-C_{t}}{\Delta t}=D_{d} \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}-u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}+R_{x}+S_{x}
+\frac{C^{t+1}_{x}-C^{t}_{x}}{\Delta t}=D_{d} \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}-u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}+R_{x}+S_{x}
 \tag{56}
 \end{equation}\]</span>
 </center>
@@ -268,7 +268,7 @@ R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
 <p>Where the first term is atmospheric exchange (<span class="math inline">\(k_a\)</span> is the rate of re-aeration and <span class="math inline">\(C_a\)</span> is the saturation value of oxygen) and the second term is the bacterial consumption (described by <span class="math inline">\(k_{BOD}\)</span> which is in units of day<sup>-1</sup>). We can solve for the forward timestep at any position along the river by computing:</p>
 <center>
 <span class="math display" id="eq:module7-4">\[\begin{equation}
-\small{C_{x}^{t+1}=\color{#898989}{C_{x}^{t}}+ \left [ \color{#3A88FE}{D_d \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}}-\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}} + \color{#77BB41}{k_{a}(C_{a}^{t}-C_{x}^{t})}-\color{#B18CFE}{k_{BOD}C_{x}^{t}}  \right ]\Delta t+\color{#D58400}{S_{x}^{t}}}
+\small{C_{x}^{t+1}=\color{#898989}{C_{x}^{t}}+ \left [ \color{#3A88FE}{D_d \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}}-\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}} + \color{#77BB41}{k_{a}(C_{a}-C_{x}^{t})}-\color{#B18CFE}{k_{BOD}C_{x}}  \right ]\Delta t+\color{#D58400}{S_{x}^{t}}}
 \tag{58}
 \end{equation}\]</span>
 </center>
@@ -277,9 +277,9 @@ R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
 <p>Previous <span class="math inline">\(C\)</span> concentration: <span class="math inline">\(\color{#898989}{C_{x}^{t}}\)</span></p>
 <p>Diffusion: <span class="math inline">\(\color{#3A88FE}{D_d \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}}\)</span></p>
 <p>Advection: <span class="math inline">\(\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}}\)</span></p>
-<p>Atmospherical exchange: <span class="math inline">\(\color{#77BB41}{k_{a}(C_{a}^{t}-C_{x}^{t})}\)</span></p>
+<p>Atmospherical exchange: <span class="math inline">\(\color{#77BB41}{k_{a}(C_{a}-C_{x}^{t})}\)</span></p>
 <p>Biological O<sub>2</sub> demand: <span class="math inline">\(\color{#B18CFE}{k_{BOD}C_{x}^{t}}\)</span></p>
-<p>O<sub>2</sub> source/sink: <span class="math inline">\(\color{#D58400}{S_{x}^{t}}\)</span></p>
+<p>O<sub>2</sub> source/sink: <span class="math inline">\(\color{#D58400}{S_{x}\)</span></p>
 </div>
 <p>To solve this the user specifies the initial oxygen concentration (<span class="math inline">\(C_0\)</span>), river velocity (<span class="math inline">\(u\)</span>) as a function of distance, grid length (<span class="math inline">\(L\)</span>), grid spacing (<span class="math inline">\(\Delta x\)</span>), simulation period (<span class="math inline">\(T\)</span>), time step (<span class="math inline">\(\Delta t\)</span>). The calculation should then compute the change in oxygen as a function of distance and time.</p>
 <p>Extra sources or sinks of oxygen can by added into the domain based on the <span class="math inline">\(S\)</span> term. We will first set up the model to have no <span class="math inline">\(S\)</span> inputs along the side of the river, but in the last task we add a low oxygen discharge somewhere along the river (ie. a pipe outflow).</p>
