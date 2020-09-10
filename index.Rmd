@@ -1,6 +1,6 @@
 --- 
 title: "Environmental Dynamics Workbook"
-author: "[Giles Knight](mailto:giles.knight@uwa.edu.au), Matt Hipsey, Alanna Kursar, Dan Paraska"
+author: "[Giles Knight](mailto:giles.knight@uwa.edu.au), Matt Hipsey, [Alanna Kursar](mailto:alanna.kursar@uwa.edu.au), Dan Paraska"
 date: "Last updated: `r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
