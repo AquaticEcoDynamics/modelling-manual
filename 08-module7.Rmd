@@ -57,6 +57,7 @@ Atmospherical exchange: $\color{#77BB41}{k_{a}(C_{a}^{t}-C_{x}^{t})}$
 Biological O~2~ demand: $\color{#B18CFE}{k_{BOD}C_{x}^{t}}$
   
 O~2~ source/sink: $\color{#D58400}{S_{x}^{t}}$
+  
 ```
 
 To solve this the user specifies the initial oxygen concentration ($C_0$), river velocity ($u$) as a function of distance, grid length ($L$), grid spacing ($\Delta x$), simulation period ($T$), time step ($\Delta t$). The calculation should then compute the change in oxygen as a function of distance and time.
@@ -106,6 +107,7 @@ Use an IF statement. O~2~ concentration cannot be negative, so set a minimum con
 
 ```{block2, hint08_4, type='rmdtip2'}
 If you see fluctuating negative and positive concentrations, you might have numerical instability. Adjust your $\Delta t$ or $\Delta x$.
+
 ```
 
 <center>
