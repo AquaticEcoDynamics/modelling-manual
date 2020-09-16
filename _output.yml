@@ -10,11 +10,12 @@ bookdown::gitbook:
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     download: [["Module 1 Resources.zip", "Module 1 Resources"], 
-              ["Module 2 Resources.zip", "Module 2 Resources"],
-              ["Module 4 Resources.zip", "Module 4 Resources"],
-              ["Module 5 Resources.zip", "Module 5 Resources"],
-              ["Module 6 Resources.zip", "Module 6 Resources"],
-              ["Module 7 Resources.zip", "Module 7 Resources"]]
+               ["Module 2 Resources.zip", "Module 2 Resources"],
+               ["Module 4 Resources.zip", "Module 4 Resources"],
+               ["Module 5 Resources.zip", "Module 5 Resources"],
+               ["Module 6 Resources.zip", "Module 6 Resources"],
+               ["Module 7 Resources.zip", "Module 7 Resources"],
+               ["Module 8 Resources.zip", "Module 8 Resources"]]
     search: yes
     fontsettings:
       theme: white
