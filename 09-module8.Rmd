@@ -9,7 +9,7 @@ Download the GLM files for this module by clicking the download button in the to
 #### Running GLM on MacOS {#M8_4 -}
 
 - Open the Terminal application on your Mac
-- Use the `cd` (change directory) command to navigate to the Kinneret97 folder
+- Use the `cd` (change directory) command to navigate to the *Kinneret97* folder
 - In Finder, go to the macGLM folder and right-click on the glm app, select *Show Package Contents*
 - Enter the Contents folder then the MacOS folder, and locate the glm executable file
 - Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal
@@ -24,7 +24,13 @@ Download the GLM files for this module by clicking the download button in the to
 
 #### Running GLM on Windows {#M8_5 -}
 
-On Windows, the model can be run using a batch-file *glm32.bat*, which you can double click from the *Kinneret97* directory.
+On Windows, the model can be run using a batch-file *glm.bat*, which you can double click from in the *Kinneret97* directory.
+
+```{block2, hint09_2, type='rmdnote2'}
+
+If the model is not opening make sure you're **not** working in a network directory (e.g. OneDrive) and the file path to the *glm.bat* file has **zero** spaces in it.
+
+```
 
 #### Running GLM in RStudio {#M8_6 -}
 
