@@ -216,11 +216,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="M8-1.html"><a href="M8-1.html"><i class="fa fa-check"></i>Module 8: Lake Water Quality Modelling</a>
 <ul>
-<li class="chapter" data-level="" data-path="M8-1.html"><a href="M8-1.html#M8_2"><i class="fa fa-check"></i>Module Resources</a></li>
-<li class="chapter" data-level="" data-path="M8-1.html"><a href="M8-1.html#M8_3"><i class="fa fa-check"></i>Setting up GLM</a></li>
-<li class="chapter" data-level="" data-path="M8-1.html"><a href="M8-1.html#M8_7"><i class="fa fa-check"></i>Configuring Model Parameters</a></li>
-<li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#submission"><i class="fa fa-check"></i>Submission</a></li>
+<li class="chapter" data-level="" data-path="M8-1.html"><a href="M8-1.html#M8_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M8-1.html"><a href="M8-1.html#M8_3"><i class="fa fa-check"></i>Module Resources</a></li>
+<li class="chapter" data-level="" data-path="M8-1.html"><a href="M8-1.html#M8_4"><i class="fa fa-check"></i>Setting up GLM</a></li>
+<li class="chapter" data-level="" data-path="M8-1.html"><a href="M8-1.html#M8_8"><i class="fa fa-check"></i>Configuring Model Parameters</a></li>
+<li class="chapter" data-level="" data-path="M8-1.html"><a href="M8-1.html#M8_9"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="M8-1.html"><a href="M8-1.html#M8_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -246,12 +247,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="M8_1" class="section level1 unnumbered">
 <h1>Module 8: Lake Water Quality Modelling</h1>
 <div id="M8_2" class="section level3 unnumbered">
+<h3>Objectives</h3>
+<p>To use the GLM model to investigate water quality modelling in lakes and to incorporate a coupled hydrodynamic-biogeochemical model.</p>
+</div>
+<div id="M8_3" class="section level3 unnumbered">
 <h3>Module Resources</h3>
 <p>Download the GLM files for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
 </div>
-<div id="M8_3" class="section level3 unnumbered">
+<div id="M8_4" class="section level3 unnumbered">
 <h3>Setting up GLM</h3>
-<div id="M8_4" class="section level4 unnumbered">
+<div id="M8_5" class="section level4 unnumbered">
 <h4>Running GLM on MacOS</h4>
 <ul>
 <li>Open the Terminal application on your Mac</li>
@@ -269,10 +274,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </center>
 
 <div class="rmdnote2">
-Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway’
+Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway’.
 </div>
 </div>
-<div id="M8_5" class="section level4 unnumbered">
+<div id="M8_6" class="section level4 unnumbered">
 <h4>Running GLM on Windows</h4>
 <p>On Windows, the model can be run using a batch-file <code>glm.bat</code>, which you can double click from in the <em>Kinneret97</em> directory. The <code>.bat</code> file calls the GLM model from the current working directory.</p>
 
@@ -280,17 +285,17 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 <p>If the model is not opening make sure you’re <strong>not</strong> working in a network directory (e.g. OneDrive) and the file path to the <code>glm.bat</code> file has <strong>zero</strong> spaces in it.</p>
 </div>
 </div>
-<div id="M8_6" class="section level4 unnumbered">
+<div id="M8_7" class="section level4 unnumbered">
 <h4>Running GLM in RStudio</h4>
 <p>If you want to use RStudio, open the R Project, then each of the R files: <code>Get started.R</code>, <code>Change parameters.R</code> and <code>Plot.R</code>. Run the lines in <code>Get started.R</code> - it will download all the R packages from the internet, as well as an old version of GLM.</p>
-<p>To get the latest version of GLM, paste the folder <em>winGLM</em> into the place where R has saved its old version of <em>winGLM</em>, for example, <code>H:/My Documents/R/win-library/3.4/GLMr/extbin/winGLM</code>. After that you can drive the model and plot everything using the other two scripts.</p>
+<p>To get the latest version of GLM, paste the <em>winGLM</em> folder into the place where R has saved its old version of <em>winGLM</em>, for example, <code>H:/My Documents/R/win-library/3.4/GLMr/extbin/winGLM</code>. After that you can drive the model and plot everything using the other two scripts.</p>
 
 <div class="rmdnote2">
 GLM will not run on any versions of R newer than 4.0
 </div>
 </div>
 </div>
-<div id="M8_7" class="section level3 unnumbered">
+<div id="M8_8" class="section level3 unnumbered">
 <h3>Configuring Model Parameters</h3>
 <p>To configure the model, open the <code>glm3.nml</code> file in the <em>Kinneret97</em> directory with a text editor. A chunk of this <code>.nml</code> file is shown below. For example, if you wanted to change the maximum number of lake layers the model simulates, you would change <code>max_layers = 500</code>.</p>
 
@@ -325,12 +330,12 @@ The easiest way to edit the <em>glm3.nml</em> file is with the Atom text editor.
    density_model = 1
 /</code></pre>
 </div>
-<div id="exercises" class="section level3 unnumbered">
+<div id="M8_9" class="section level3 unnumbered">
 <h3>Exercises</h3>
-<div id="lake-stratification" class="section level4 unnumbered">
+<div id="M8_10" class="section level4 unnumbered">
 <h4>Lake Stratification</h4>
 <p>The simulation in the <em>Kinneret97</em> directory is an example 40m deep, monomictic lake that is used to supply drinking water and support an active fishery.</p>
-<p>Before running the model, open the file <code>glm3.nml</code> in a text editor and inspect the model setup etc. This file is the main configuration file that drives the model. The file <code>glm3.nml</code> has several key sections in it related to the model domain and parameters, the sources of boundary condition data, and details of outputs. Scan the parameters, eg number of layers, light extinction coefficient, mixing coefficient etc.</p>
+<p>Before running the model, open the file <code>glm3.nml</code> in a text editor and inspect the model setup etc. This file is the main configuration file that drives the model. The file <code>glm3.nml</code> has several key sections in it related to the model domain and parameters, the sources of boundary condition data, and details of outputs. Scan the parameters, e.g. number of layers, light extinction coefficient, mixing coefficient etc.</p>
 <p>Once the model has run, you can inspect the results. There are three ways to look at output:</p>
 <ul>
 <li>Via the time-depth contour plots that appear during the run (configured via <code>plots.nml</code>)</li>
@@ -340,7 +345,7 @@ The easiest way to edit the <em>glm3.nml</em> file is with the Atom text editor.
 <ol style="list-style-type: decimal">
 <li>Draw a schematic picture of the lake, the relevant boundary conditions (both related to water
 fluxes and energy fluxes).</li>
-<li>Identify and open the boundary condition input files - these are csv files containing time-series of meteorological information, and inflow and outflow volumes. These files can be opened in Excel or a text-editor. Find where these files are called from within <code>glm.nml</code>.</li>
+<li>Identify and open the boundary condition input files - these are csv files containing time-series of meteorological information, and inflow and outflow volumes. These files can be opened in Excel or a text-editor. Find where these files are called from within <code>glm3.nml</code>.</li>
 <li>Plot the lake water balance – volume, water level and fluxes including inflows, outflows, rainfall and evaporation (refer to columns in <code>lake.csv</code>, and copy the appropriate data into your own excel spreadsheet).</li>
 </ol>
 <center>
@@ -364,7 +369,7 @@ Figure 9: Schematic diagram of surface heat fluxes impacting lake water temperat
 </div>
 </center>
 <ol start="5" style="list-style-type: decimal">
-<li>Go to the <code>&amp;output</code> section of <code>glm.nml</code> and customize the configuration to make two output files, one at 5m from the bottom (ie. in the lake hypolimnion) and one at 35m from the bottom (ie. in the lake epilimnion). This create two <code>.csv</code> files (<code>WQ_5.csv</code> and <code>WQ_35.csv</code>) with conditions at these water depths. Plot the temperate of the two layers in excel. Identify the periods where the lake is stratified and mixed.</li>
+<li>Go to the <code>&amp;output</code> section of <code>glm3.nml</code> and customize the configuration to make two output files, one at 5m from the bottom (ie. in the lake hypolimnion) and one at 35m from the bottom (ie. in the lake epilimnion). This create two <code>.csv</code> files (<code>WQ_5.csv</code> and <code>WQ_35.csv</code>) with conditions at these water depths. Plot the temperate of the two layers in excel. Identify the periods where the lake is stratified and mixed.</li>
 </ol>
 <pre style="max-height: 239px;"><code>!-------------------------------------------------------------------------------
 ! format for output and filename(s)
@@ -383,14 +388,14 @@ Figure 9: Schematic diagram of surface heat fluxes impacting lake water temperat
    csv_point_vars = &#39;temp&#39;,&#39;salt&#39;,&#39;PHS_frp&#39;,&#39;NIT_amm&#39;
 /</code></pre>
 <ol start="6" style="list-style-type: decimal">
-<li>Assess how the degree of stratification changes as the initial water level of the lake is reduced by 20 m. To do this change the initial starting lake depth and profile details in <code>glm.nml</code>.</li>
+<li>Assess how the degree of stratification changes as the initial water level of the lake is reduced by 20m. To do this change the initial starting lake depth and profile details in <code>glm3.nml</code>.</li>
 </ol>
 
 <div class="rmdtip2">
 You will need to update the output depth of your surface output file.
 </div>
 </div>
-<div id="the-ecosystem-model" class="section level4 unnumbered">
+<div id="M8_11" class="section level4 unnumbered">
 <h4>The Ecosystem Model</h4>
 <center>
 <img src="images/09-module8/picture1.jpg" width="75%" />
@@ -403,7 +408,7 @@ You will need to update the output depth of your surface output file.
 <p>Let’s also now add water quality variables to the specific depth output files (i.e. <code>WQ_5.csv</code>). To do so we must edit the output section of the <code>glm3.nml</code> file, by adding the variables as extra columns to the <code>.csv</code> file that were configured above.</p>
 
 <div class="rmdtip2">
-If they are there already, make sure that the number of variables is high enough to include them all
+If they are there already, make sure that the number of variables is high enough to include them all.
 </div>
 <p>In <code>plots.nml</code> the required variables are all listed, make sure the number of plots is high enough to include them all.</p>
 <center>
@@ -697,10 +702,10 @@ Zooplankton
 </ol>
 
 <div class="rmdtip2">
-You must change the light extinction coefficient <code>Kw</code> (range 0-1) in the <code>glm.nml</code> file.
+You must change the light extinction coefficient <code>Kw</code> (range 0-1) in the <code>glm3.nml</code> file.
 </div>
 </div>
-<div id="assessing-error-sensitivity" class="section level4 unnumbered">
+<div id="M8_12" class="section level4 unnumbered">
 <h4>Assessing Error &amp; Sensitivity</h4>
 <ol start="10" style="list-style-type: decimal">
 <li>Calculate the mean absolute error in the simulation using the observed temperature data (<code>ObservedTempData.xlsx</code> from the <em>data</em> folder in <em>Kinneret97</em>) and the simulated temperature data (the simulated temperature data is from the surface layer in <code>lake.csv</code>).</li>
@@ -712,7 +717,7 @@ MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n}
 \end{equation}\]</span>
 </center>
 <ol start="11" style="list-style-type: decimal">
-<li>Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm.nml</code>. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.</li>
+<li>Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm3.nml</code>. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.</li>
 </ol>
 <center>
 <span class="math display" id="eq:module8-2">\[\begin{equation}
@@ -821,7 +826,7 @@ Average WQ_35 phytoplankton (green, crypto, diatom) biomass
 </center>
 </div>
 </div>
-<div id="submission" class="section level3 unnumbered">
+<div id="M8_13" class="section level3 unnumbered">
 <h3>Submission</h3>
 <div class="redbox2">
 <p><strong>Submit properly formatted graphs and tables of the following sections of the lab:</strong></p>
