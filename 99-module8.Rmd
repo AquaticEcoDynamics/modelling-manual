@@ -1,0 +1,200 @@
+# Module 8: Lake Water Quality Modelling {#M8_1 -}
+
+### Module Resources {#M8_2 -}
+
+Download the GLM files for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.
+
+### Setting up GLM {#M8_3 -}
+
+#### Running GLM on MacOS {#M8_4 -}
+
+- Open the Terminal application on your Mac
+- Use the `cd` (change directory) command to navigate to the *Kinneret97* folder
+- In Finder, go to the macGLM folder and right-click on the glm app, select *Show Package Contents*
+- Enter the Contents folder then the MacOS folder, and locate the glm executable file
+- Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal
+- Leave a space after the file path and type `--xdisp`
+- Press Enter and the model will open
+
+<center>
+<video width="100%" height="100%" controls>
+  <source src="images/09-module8/video1.mp4" type="video/mp4">
+</video>
+</center>
+
+#### Running GLM on Windows {#M8_5 -}
+
+On Windows, the model can be run using a batch-file *glm.bat*, which you can double click from in the *Kinneret97* directory.
+
+```{block2, hint09_2, type='rmdnote2'}
+
+If the model is not opening make sure you're **not** working in a network directory (e.g. OneDrive) and the file path to the *glm.bat* file has **zero** spaces in it.
+
+```
+
+#### Running GLM in RStudio {#M8_6 -}
+
+If you want to use RStudio, open the R Project, then each of the R files: *Get started.R*, *Change parameters.R* and *Plot.R*. Run the lines in *Get started.R* - it will download all the R packages from the internet, as well as an old version of GLM. 
+
+To get the latest version of GLM, paste the folder *winGLM* into the place where R has saved its old version of *winGLM*, for example, *H:/My Documents/R/win-library/3.4/GLMr/extbin/winGLM*. After that you can drive the model and plot everything using the other two scripts.
+
+```{block2, hint09_1, type='rmdnote2'}
+GLM will not run on any versions of R newer than 4.0
+```
+
+### Configuring Model Parameters {#M8_7 -}
+
+To configure the model, open the *glm3.nml* file in the *Kinneret97* directory with a plain text editor (TextEdit on MacOS, or Notepad on Windows). A chunk of this *.nml* file is shown below. For example, if you wanted to change the maximum number of lake layers the model simulates, you would change `max_layers = 500`.
+
+```{style="max-height: 400px;"}
+!------------------------------------------------------------------------------!
+!                                                                              !
+!          .----------------.  .----------------.  .----------------.          !
+!          | .--------------. || .--------------. || .--------------. |        !
+!          | |    ______    | || |   _____      | || | ____    ____ | |        !
+!          | |  .' ___  |   | || |  |_   _|     | || ||_   \  /   _|| |        !
+!          | | / .'   \_|   | || |    | |       | || |  |   \/   |  | |        !
+!          | | | |    ____  | || |    | |   _   | || |  | |\  /| |  | |        !
+!          | | \ `.___]  _| | || |   _| |__/ |  | || | _| |_\/_| |_ | |        !
+!          | |  `._____.'   | || |  |________|  | || ||_____||_____|| |        !
+!          | |              | || |              | || |              | |        !
+!          | '--------------' || '--------------' || '--------------' |        !
+!          '----------------'  '----------------'  '----------------'          !
+!                                                                              !
+!-------------------------------------------------------------------------------
+
+!-------------------------------------------------------------------------------
+! general model setup
+!-------------------------------------------------------------------------------
+&glm_setup
+   sim_name = 'Example Kinneret GLM Simulation'
+   max_layers = 500
+   min_layer_vol = 0.025
+   min_layer_thick = 0.15
+   max_layer_thick = 1.50
+   density_model = 1
+/
+```
+
+<!-- ### Exercises {-} -->
+
+<!-- #### Lake Stratification {-} -->
+
+<!-- The simulation in the *Kinneret97* directory is an example 40 m deep, monomictic lake that is used to supply drinking water and support an active fishery. -->
+
+<!-- Before running the model, open the file *glm3.nml* in a text editor and inspect the model setup etc. This file is the main configuration file that drives the model. For editing text files use TextEdit on MacOS, or Notepad/Wordpad on Windows. The file *glm3.nml* has several key sections in it related to the model domain and parameters, the sources of boundary condition data, and details of outputs. Scan the parameters, eg number of layers, light extinction coefficient, mixing coefficient etc. -->
+
+<!-- Once the model has run, you can inspect the results. There are three ways to look at output: -->
+<!-- - Via the time-depth contour plots that appear during the run (configured via plots.nml) -->
+<!-- - Further information on the daily water and energy balance is in the output file lake.csv -->
+<!-- - Time series values of selected state variables (eg temp, salinity etc) can be requested for a -->
+<!-- specific depth (depth above bottom) – this is setup in &outputs (eg. WQ_5.csv) -->
+
+<!-- 1) Draw a schematic picture of the lake, the relevant boundary conditions (both related to water -->
+<!-- fluxes and energy fluxes). -->
+<!-- 2) Identify and open the boundary condition input files - these are csv files containing time-series of meteorological information, and inflow and outflow volumes. These files can be opened in Excel or a text-editor. Find where these files are called from within glm.nml. -->
+<!-- 3) Plot the lake water balance – volume, water level and fluxes including inflows, outflows, rainfall and evaporation (refer to columns in lake.csv, and copy the appropriate data into your own excel spreadsheet). -->
+<!-- 4) Plot the surface heat fluxes such as shortwave, longwave, sensible heat latent heat (refer to columns in lake.csv). -->
+<!-- 5) Go to the &output section of glm.nml and customize the configuration to make two output files, one at 5 m from the bottom (ie. in the lake hypolimnion) and one at 35 m from the bottom (ie. in the lake epilimnion). Plot the temperate of the two layers in excel. -->
+<!-- 6) Assess how the degree of stratification changes as the initial water level of the lake is reduced by 20 m. To do this change the initial starting lake depth and profile details in glm.nml. -->
+
+<!-- ```{block2, hint09_2, type='rmdtip2'} -->
+<!-- You will need to update the output depth of your surface output file -->
+<!-- ``` -->
+
+<!-- #### The Ecosystem Model {-} -->
+
+<!-- <center> -->
+<!-- ```{r module8-1, echo=FALSE, fig.cap="", out.width = '75%'} -->
+<!-- knitr::include_graphics("images/09-module8/picture1.jpg") -->
+<!-- ``` -->
+<!-- </center> -->
+
+
+<!-- The *Kinneret97* model simulation above has the ecological model aed2 enabled. It has been pre- configured to run the customizable AED modules. These are separate models, but have been set up to run side by side. They are configured using the text file *aed2.nml*. -->
+
+<!-- Let’s also add these variables to the specific depth output files. To do so we must edit the output section of the *glm.nml* file, by adding the variables as extra columns to the csv file that were configured above. -->
+
+<!-- ```{block2, hint09_3, type='rmdtip2'} -->
+<!-- If they are there already, make sure that the number of variables is high enough to include them all -->
+<!-- ``` -->
+
+<!-- In *plots.nml* the required variables are all listed, make sure the number of plots is high enough to include them all. -->
+
+<!-- Now run the model as above by double clicking the glm.bat. -->
+
+<!-- 7) Create a well formatted, interesting graph of variables of your choice (for example, you may like to consider all of the phytoplankton groups, all of the nitrogen variables, or create sums of these to generate a NPZD model) to see how they interact and change over time. If any variables are much bigger or smaller than the others, then use two y axes or multiple plots. -->
+<!-- 8) How would these concentrations change if the air temperature increased by 2 °C? -->
+<!-- (You will need to edit the met_hourly.csv file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so YYYY-MM-DD hh:mm. -->
+<!-- 9) What happens if we change the water clarity? Increase and decrease from the original value to see the response -->
+
+<!-- ```{block2, hint09_4, type='rmdtip2'} -->
+<!-- You must change the light extinction coefficient Kw (range 0-1) in the glm.nml file -->
+<!-- ``` -->
+
+<!-- #### Assessing Error & Sensitivity {-} -->
+
+<!-- 10) Calculate the mean absolute error in the simulation using the observed temperature data (from data folder) and the simulated temperature data (the simulated temperature data is from the surface layer in lake.csv). -->
+
+<!-- <center> -->
+<!-- \begin{equation} -->
+<!-- MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n} -->
+<!-- (\#eq:module8-1) -->
+<!-- \end{equation} -->
+<!-- </center> -->
+
+<!-- 11) Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, $K_w$) and wind speed (wind_factor). These can be found in glm.nml. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes. -->
+
+<!-- <center> -->
+<!-- \begin{equation} -->
+<!-- SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-Parameter_{original})/Parameter_{original}} -->
+<!-- (\#eq:module8-2) -->
+<!-- \end{equation} -->
+<!-- </center> -->
+
+<!-- 12) Assess how sensitive the phytoplankton biomass is to water clarity: -->
+
+<!-- 13) Assess how sensitive the phytoplankton biomass is to wind speed: -->
+
+<!-- ### Submission {-} -->
+<!-- :::: {.redbox2} -->
+
+<!-- **Submit properly formatted graphs and tables of the following sections of the lab:** -->
+
+<!-- Lake Stratification:  -->
+
+<!-- - Hand drawn diagram of the lake and any variables you used -->
+<!-- - Plots of the water balance -->
+<!-- - Plots of the heat fluxes -->
+<!-- - Plots of the temperature at different layers -->
+<!-- - Plots of the shallower lake -->
+
+<!-- The Ecosystem Model: -->
+
+<!-- - Hand drawn diagram of the lake with any variables you used -->
+<!-- - Interesting plot of the selected variables -->
+<!-- - Any results of the higher air temperature and changed water clarity -->
+
+<!-- Assessing Error & Sensitivity: -->
+
+<!-- - Temperature error assessment -->
+<!-- - Temperature and phytoplankton sensitivity assessment -->
+<!-- - Tables for submission -->
+
+<!-- These are to be uploaded in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded -->
+
+<!-- **General professional formatting guidelines:** -->
+
+<!-- - All figures are to have adequate captions explaining them -->
+<!-- - For graphs, figure captions go below the plot -->
+<!-- - For tables, the caption goes above the table -->
+<!-- - Make sure figures and their text size is readable -->
+
+<!-- **Excel hints:** -->
+
+<!-- - When there is a caption for a plot, you remove the title -->
+<!-- - Remove the plot border and gridlines -->
+<!-- - Make sure both axes have visible lines and tick marks -->
+<!-- - Units need to be noted properly with the axis label - 'Temperature (°C)' -->
+<!-- - Round numbers to be reasonable -->
+<!-- :::: -->

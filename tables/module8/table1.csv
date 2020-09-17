@@ -1,0 +1,30 @@
+﻿Description,Variable Name
+Passive tracer,`TRC_tr1`
+Water age,`TRC_age`
+Suspended solids,`NCS_ss1`
+Dissolved oxygen,`OXY_oxy`
+Dissolved inorganic carbon,`CAR_dic`
+pH,`CAR_pH`
+Methane (dissolved),`CAR_ch4`
+Methane (bubbles),`CAR_ch4_bub`
+Reactive Silica,`SIL_rsi`
+Ammonium,`NIT_amm`
+Nitrate/Nitrite,`NIT_nit`
+Phosphate,`PHS_frp`
+Particulate inorganic phosphorus,`PHS_frp_ads`
+Dissolved organic carbon,`OGM_doc`
+Particualte organic carbon,`OGM_poc`
+Dissolved organic nitrogen,`OGM_don`
+Dissolved organic nitrogen,`OGM_pon`
+Particualte organic phosphorus,`OGM_dop`
+Dissolved organic phsophorus,`OGM_pop`
+Green algae ,`PHY_green`
+Green algae ,`PHY_green_IN`
+Green algae ,`PHY_green_IP`
+Diatoms,`PHY_diatom`
+Diatoms,`PHY_diatom_IN`
+Diatoms,`PHY_diatom_IP`
+Cyrptophytes,`PHY_crypto`
+Cyrptophytes,`PHY_crypto_IN`
+Cyrptophytes,`PHY_crypto_IP`
+Zooplankton,`ZOO_zoo01`
