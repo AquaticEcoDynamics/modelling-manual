@@ -26,7 +26,7 @@ Download the GLM files for this module by clicking the download button in the to
 </video>
 </center>
 
-```{block2, hint09_15, type='rmdnote2'}
+```{block2, hint09_1, type='rmdnote2'}
 Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click 'Open Anyway'.
 ```
 
@@ -46,7 +46,7 @@ If you want to use RStudio, open the R Project, then each of the R files: `Get s
 
 To get the latest version of GLM, paste the *winGLM* folder into the place where R has saved its old version of *winGLM*, for example, `H:/My Documents/R/win-library/3.4/GLMr/extbin/winGLM`. After that you can drive the model and plot everything using the other two scripts.
 
-```{block2, hint09_1, type='rmdnote2'}
+```{block2, hint09_3, type='rmdnote2'}
 GLM will not run on any versions of R newer than 4.0
 ```
 
@@ -54,7 +54,7 @@ GLM will not run on any versions of R newer than 4.0
 
 To configure the model, open the `glm3.nml` file in the *Kinneret97* directory with a text editor. A chunk of this `.nml` file is shown below. For example, if you wanted to change the maximum number of lake layers the model simulates, you would change `max_layers = 500`.
 
-```{block2, hint09_6, type='rmdnote2'}
+```{block2, hint09_4, type='rmdnote2'}
 The easiest way to edit the *glm3.nml* file is with the Atom text editor. You can download it [here](https://atom.io).
 ```
 
@@ -109,7 +109,7 @@ fluxes and energy fluxes).
 3) Plot the lake water balance – volume, water level and fluxes including inflows, outflows, rainfall and evaporation (refer to columns in `lake.csv`, and copy the appropriate data into your own excel spreadsheet).
 
 <center>
-```{r module8-2, echo=FALSE, fig.cap="Schematic diagram of water balance components.", out.width = '75%'}
+```{r module8-5, echo=FALSE, fig.cap="Schematic diagram of water balance components.", out.width = '75%'}
 knitr::include_graphics("images/09-module8/picture2.png")
 ```
 </center>
@@ -120,7 +120,7 @@ knitr::include_graphics("images/09-module8/picture2.png")
 4) Plot the surface heat fluxes such as shortwave, longwave, sensible heat latent heat (refer to columns in `lake.csv`).
 
 <center>
-```{r module8-3, echo=FALSE, fig.cap="Schematic diagram of surface heat fluxes impacting lake water temperature. For a description of the heat flux terms refer to the [GLM paper](https://gmd.copernicus.org/articles/12/473/2019/)", out.width = '75%'}
+```{r module8-6, echo=FALSE, fig.cap="Schematic diagram of surface heat fluxes impacting lake water temperature. For a description of the heat flux terms refer to the [GLM paper](https://gmd.copernicus.org/articles/12/473/2019/)", out.width = '75%'}
 knitr::include_graphics("images/09-module8/picture3.png")
 ```
 </center>
@@ -148,14 +148,14 @@ knitr::include_graphics("images/09-module8/picture3.png")
 
 6) Assess how the degree of stratification changes as the initial water level of the lake is reduced by 20m. To do this change the initial starting lake depth and profile details in `glm3.nml`.
 
-```{block2, hint09_5, type='rmdtip2'}
+```{block2, hint09_7, type='rmdtip2'}
 You will need to update the output depth of your surface output file.
 ```
 
 #### The Ecosystem Model {#M8_11 -}
 
 <center>
-```{r module8-4, echo=FALSE, fig.cap="", out.width = '75%'}
+```{r module8-8, echo=FALSE, fig.cap="", out.width = '75%'}
 knitr::include_graphics("images/09-module8/picture1.jpg")
 ```
 </center>
@@ -163,7 +163,7 @@ knitr::include_graphics("images/09-module8/picture1.jpg")
 
 The *Kinneret97* model simulation above has the ecological model aed2 enabled. It has been pre- configured to run the customizable [AED modules](http://aquatic.science.uwa.edu.au/research/models/AED/modules.html). These are separate models, but have been set up to run side by side. They are configured using the text file `aed2.nml`.
 
-```{block2, hint09_10, type='rmdnote2'}
+```{block2, hint09_9, type='rmdnote2'}
 
 The above simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed2.nml` has been created. To use this file, rename it to `plots.nml` (you'll first need to rename the existing `plots.nml`) and run the model. You should now see more outputs for the lake simulation.
 
@@ -171,14 +171,14 @@ The above simulation was only plotting temperature and salinity and these plots 
 
 Let’s also now add water quality variables to the specific depth output files (i.e. `WQ_5.csv`). To do so we must edit the output section of the `glm3.nml` file, by adding the variables as extra columns to the `.csv` file that were configured above.
 
-```{block2, hint09_3, type='rmdtip2'}
+```{block2, hint09_10, type='rmdtip2'}
 If they are there already, make sure that the number of variables is high enough to include them all.
 ```
 
 In `plots.nml` the required variables are all listed, make sure the number of plots is high enough to include them all.
 
 <center>
-```{r module8-1, echo=FALSE, message=FALSE, warning=FALSE}
+```{r module8-11, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(hablar)
@@ -195,7 +195,7 @@ kable(module8_1, format = "html", escape = F, align = "c", caption = "Water qual
 </center>
 <br>
 
-Now run the model as above by double clicking the `glm.bat`.
+Now re-run the model (e.g. Windows users double clicking `glm.bat` again).
 
 7) Create a well formatted, interesting graph of variables of your choice (for example, you may like to consider all of the phytoplankton groups, all of the nitrogen variables, or create sums of these to generate a NPZD model) to see how they interact and change over time. If any variables are much bigger or smaller than the others, then use two y-axes or multiple plots.
 8) How would these concentrations change if the air temperature increased by 2°C?
@@ -232,7 +232,7 @@ Now run the model as above by double clicking the `glm.bat`.
 
 9) What happens if we change the water clarity? Increase and decrease from the original value to see the response
 
-```{block2, hint09_4, type='rmdtip2'}
+```{block2, hint09_12, type='rmdtip2'}
 You must change the light extinction coefficient `Kw` (range 0-1) in the `glm3.nml` file.
 ```
 
@@ -259,7 +259,7 @@ SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-
 12) Assess how sensitive the phytoplankton biomass is to water clarity:
 
 <center>
-```{r module8-5, echo=FALSE, message=FALSE, warning=FALSE}
+```{r module8-13, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(hablar)
@@ -281,7 +281,7 @@ kable(module8_2, format = "html", escape = F, align = "c") %>%
 13) Assess how sensitive the phytoplankton biomass is to wind speed:
 
 <center>
-```{r module8-6, echo=FALSE, message=FALSE, warning=FALSE}
+```{r module8-14, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(hablar)
