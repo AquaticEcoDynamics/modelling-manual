@@ -152,6 +152,10 @@ knitr::include_graphics("images/09-module8/picture3.png")
 You will need to update the output depth of your surface output file.
 ```
 
+```{block2, hint09_16, type='rmdtip2'}
+For future activities make sure you change back to 43m.
+```
+
 #### The Ecosystem Model {#M8_11 -}
 
 <center>
@@ -167,12 +171,6 @@ The *Kinneret97* model simulation above has the ecological model aed2 enabled. I
 
 The above simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed2.nml` has been created. To use this file, rename it to `plots.nml` (you'll first need to rename the existing `plots.nml`) and run the model. You should now see more outputs for the lake simulation.
 
-```
-
-Let’s also now add water quality variables to the specific depth output files (i.e. `WQ_5.csv`). To do so we must edit the output section of the `glm3.nml` file, by adding the variables as extra columns to the `.csv` file that were configured above.
-
-```{block2, hint09_10, type='rmdtip2'}
-If they are there already, make sure that the number of variables is high enough to include them all.
 ```
 
 In `plots.nml` the required variables are all listed, make sure the number of plots is high enough to include them all.
@@ -195,9 +193,24 @@ kable(module8_1, format = "html", escape = F, align = "c", caption = "Water qual
 </center>
 <br>
 
-Now re-run the model (e.g. Windows users double clicking `glm.bat` again).
+Let’s also now add water quality variables to the specific depth output files (i.e. `WQ_5.csv`). To do so we must edit the output section of the `glm3.nml` file, by adding the variables as extra columns to the `.csv` file that were configured above.
 
-7) Create a well formatted, interesting graph of variables of your choice (for example, you may like to consider all of the phytoplankton groups, all of the nitrogen variables, or create sums of these to generate a NPZD model) to see how they interact and change over time. If any variables are much bigger or smaller than the others, then use two y-axes or multiple plots.
+```{block2, hint09_10, type='rmdtip2'}
+If they are there already, make sure that the number of variables is high enough to include them all.
+```
+
+<style>
+ol > li > ol > li {list-style-type:lower-alpha}
+</style>   
+<ol start="7">
+<li>
+<ol>
+<li>As an example to output water quality variables, let's plot all the nitrogen variables. Change `csv_point_vars` to include `NIT_amm`, `NIT_nit`, `OGM_don`, `OMG_pon`, `PHY_green_IN` - these are all the variables that contribute to the total nitrogen (TN) pool. Now re-run the model (e.g. Windows users double clicking `glm.bat` again). Once it's run open `WQ_35.csv` to see these new variables and create a stacked area plot to show how the different variables contribute to TN. </li>
+<li>Create a well formatted, interesting graph of variables of your choice (for example, you may like to consider all of the phytoplankton groups or create sums of these to generate a NPZD model) to see how they interact and change over time. If any variables are much bigger or smaller than the others, then use two y-axes or multiple plots.</li>
+</ol>
+</li>
+</ol>
+
 8) How would these concentrations change if the air temperature increased by 2°C?
 (You will need to edit the `met_hourly.csv` file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so YYYY-MM-DD hh:mm. A pre-made version of this file can be found in *bcs* which is called `met_1997_2004_airT2.csv`. To use this file, update `meteo_fl = 'bcs/met_1997_2004.csv'` in the `&meteorology` section of `glm3.nml`.
 
@@ -247,7 +260,13 @@ MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n}
 \end{equation}
 </center>
 
-11) Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, $K_w$) and wind speed (`wind_factor`). These can be found in `glm3.nml`. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.
+<style>
+ol > li > ol > li {list-style-type:lower-alpha}
+</style>   
+<ol start="11">
+<li>
+<ol>
+<li> Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, $K_w$) and wind speed (`wind_factor`). These can be found in `glm3.nml`. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.</li>
 
 <center>
 \begin{equation}
@@ -256,10 +275,10 @@ SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-
 \end{equation}
 </center>
 
-12) Assess how sensitive the phytoplankton biomass is to water clarity:
-
+<li>Assess how sensitive the temperature and phytoplankton biomass is to water clarity:</li>
+<br>
 <center>
-```{r module8-13, echo=FALSE, message=FALSE, warning=FALSE}
+```{r module8-33, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(hablar)
@@ -268,18 +287,17 @@ options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
 module8_2 <- read.csv("tables/module8/table2.csv", check.names=FALSE) 
 kable(module8_2, format = "html", escape = F, align = "c") %>%
   kable_styling(full_width = F, position = "center") %>%
-  column_spec(1, width_min = "12em") %>%
-  column_spec(2, width_min = "12em") %>%
-  column_spec(3, width_min = "12em") %>%
-  column_spec(4, width_min = "12em") %>%
+  column_spec(1, width_min = "10em") %>%
+  column_spec(2, width_min = "10em") %>%
+  column_spec(3, width_min = "10em") %>%
+  column_spec(4, width_min = "10em") %>%
   scroll_box(width = "100%",
              fixed_thead = FALSE) 
 ```
 </center>
 <br>
-
-13) Assess how sensitive the phytoplankton biomass is to wind speed:
-
+<li>Assess how sensitive the temperature and phytoplankton biomass is to wind speed:</li>
+<br>
 <center>
 ```{r module8-14, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -290,14 +308,17 @@ options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
 module8_3 <- read.csv("tables/module8/table3.csv", check.names=FALSE) 
 kable(module8_3, format = "html", escape = F, align = "c") %>%
   kable_styling(full_width = F, position = "center") %>%
-  column_spec(1, width_min = "12em") %>%
-  column_spec(2, width_min = "12em") %>%
-  column_spec(3, width_min = "12em") %>%
-  column_spec(4, width_min = "12em") %>%
+  column_spec(1, width_min = "10em") %>%
+  column_spec(2, width_min = "10em") %>%
+  column_spec(3, width_min = "10em") %>%
+  column_spec(4, width_min = "10em") %>%
   scroll_box(width = "100%",
              fixed_thead = FALSE) 
 ```
 </center>
+</ol>
+</li>
+</ol>
 
 ### Submission {#M8_13 -}
 :::: {.redbox2}
