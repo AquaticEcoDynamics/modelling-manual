@@ -32,16 +32,22 @@ Just like Excel, you can interact with your data using a variety of *functions* 
 
 All programming languages allow the user to write comments on their code to assist in readability and structure. In R, a comment is defined as a line beginning with a `#`. Any characters written after the `#` are ignored by R and not executed. It's good practice to get into the habit of commenting your R code as it will likely save you (or someone else!) a lot of time later down the track. 
 
+<iframe
+  src="https://carbon.now.sh/embed/j2ZVuI6gJwssXAMxPakk"
+  style="width: 698px; height: 348px; border:0; transform: scale(1); overflow:hidden;"
+  sandbox="allow-scripts allow-same-origin">
+</iframe>
+
 ```{r eval=FALSE}
 # This is a comment!
 
 # Create a graph using the plot() function
-plot(my_data,variable1,col="red",ylab="My y-axis label")
+plot(my_data, variable1, col = "red", ylab = "My y-axis label")
 
 # Plot other variables onto the graph using the points() function
-points(my_data,variable2,col="blue")
-points(my_data,variable3,col="green")
-points(my_data,variable4,col="purple")
+points(my_data, variable2, col = "blue")
+points(my_data, variable3, col = "green")
+points(my_data, variable4, col = "purple")
 
 ```
 

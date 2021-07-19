@@ -26,8 +26,16 @@ library(kableExtra)
 library(hablar)
 library(dplyr)
 #options(knitr.kable.NA = '')
-module4_1 <- read.csv("tables/module4/module4-1.csv", check.names=FALSE) 
-kable(module4_1, format = "html", escape = F, align = "c", col.names = NULL, caption = "Major variables") %>%
+module4_1 <-
+  read.csv("tables/module4/module4-1.csv", check.names = FALSE)
+kable(
+  module4_1,
+  format = "html",
+  escape = F,
+  align = "c",
+  col.names = NULL,
+  caption = "Major variables"
+) %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "23.5em") %>%
   column_spec(2, width_min = "23.5em") %>%

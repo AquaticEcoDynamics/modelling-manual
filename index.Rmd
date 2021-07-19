@@ -1,6 +1,6 @@
 --- 
 title: "Environmental Dynamics Workbook"
-author: "[Giles Knight](mailto:giles.knight@uwa.edu.au), Matt Hipsey, [Alanna Kursar](mailto:alanna.kursar@uwa.edu.au), Dan Paraska"
+author: "Matt Hipsey, Dan Paraska, Alanna Kursar, Giles Knight"
 date: "Last updated: `r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -16,6 +16,6 @@ Welcome to the Environmental Dynamics Workbook! This workbook supplements the pr
 
 Each practical class has a corresponding module that will be added to the workbook as the semester progresses. If you are at all unfamiliar with using Excel or R, please visit the [Getting Started](#GettingStarted) section of this workbook before commencing the first module. 
 
-Please contact <giles.knight@uwa.edu.au> for queries relating to this workbook, or refer to the Unit Outline on LMS for matters relating to the unit's structure. 
+Please contact your Unit Coordinator or tutor for queries relating to this workbook, or refer to the Unit Outline on LMS for matters relating to the unit's structure. 
 
 Good luck and happy modelling!

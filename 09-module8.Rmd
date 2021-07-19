@@ -1,36 +1,40 @@
-# Module 8: Lake Water Quality Modelling {#M8_1 -}
+# Module 8: Lake Water Quality Modelling {#M8_1 .unnumbered}
 
-### Objectives {#M8_2 -}
+### Objectives {#M8_2 .unnumbered}
 
 To use the GLM model to investigate water quality modelling in lakes and to incorporate a coupled hydrodynamic-biogeochemical model.
 
-### Module Resources {#M8_3 -}
+### Module Resources {#M8_3 .unnumbered}
 
 Download the GLM files for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.
 
-### Setting up GLM {#M8_4 -}
+### Setting up GLM {#M8_4 .unnumbered}
 
-#### Running GLM on MacOS {#M8_5 -}
+#### Running GLM on MacOS {#M8_5 .unnumbered}
 
-- Open the Terminal application on your Mac
-- Use the `cd` (change directory) command to navigate to the *Kinneret97* folder
-- In Finder, go to the macGLM folder and right-click on the glm app, select *Show Package Contents*
-- Enter the Contents folder then the MacOS folder, and locate the glm executable file
-- Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal
-- Leave a space after the file path and type `--xdisp`
-- Press Enter and the model will open
+-   Open the Terminal application on your Mac
+-   Use the `cd` (change directory) command to navigate to the *Kinneret97* folder
+-   In Finder, go to the macGLM folder and right-click on the glm app, select *Show Package Contents*
+-   Enter the Contents folder then the MacOS folder, and locate the glm executable file
+-   Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal
+-   Leave a space after the file path and type `--xdisp`
+-   Press Enter and the model will open
 
 <center>
+
 <video width="100%" height="100%" controls>
-  <source src="images/09-module8/video1.mp4" type="video/mp4">
+
+<source src="images/09-module8/video1.mp4" type="video/mp4">
+
 </video>
+
 </center>
 
 ```{block2, hint09_1, type='rmdnote2'}
 Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click 'Open Anyway'.
 ```
 
-#### Running GLM on Windows {#M8_6 -}
+#### Running GLM on Windows {#M8_6 .unnumbered}
 
 On Windows, the model can be run using a batch-file `glm.bat`, which you can double click from in the *Kinneret97* directory. The `.bat` file calls the GLM model from the current working directory.
 
@@ -40,9 +44,9 @@ If the model is not opening make sure you're **not** working in a network direct
 
 ```
 
-#### Running GLM in RStudio {#M8_7 -}
+#### Running GLM in RStudio {#M8_7 .unnumbered}
 
-If you want to use RStudio, open the R Project, then each of the R files: `Get started.R`, `Change parameters.R` and `Plot.R`. Run the lines in `Get started.R` - it will download all the R packages from the internet, as well as an old version of GLM. 
+If you want to use RStudio, open the R Project, then each of the R files: `Get started.R`, `Change parameters.R` and `Plot.R`. Run the lines in `Get started.R` - it will download all the R packages from the internet, as well as an old version of GLM.
 
 To get the latest version of GLM, paste the *winGLM* folder into the place where R has saved its old version of *winGLM*, for example, `H:/My Documents/R/win-library/3.4/GLMr/extbin/winGLM`. After that you can drive the model and plot everything using the other two scripts.
 
@@ -50,7 +54,7 @@ To get the latest version of GLM, paste the *winGLM* folder into the place where
 GLM will not run on any versions of R newer than 4.0
 ```
 
-### Configuring Model Parameters {#M8_8 -}
+### Configuring Model Parameters {#M8_8 .unnumbered}
 
 To configure the model, open the `glm3.nml` file in the *Kinneret97* directory with a text editor. A chunk of this `.nml` file is shown below. For example, if you wanted to change the maximum number of lake layers the model simulates, you would change `max_layers = 500`.
 
@@ -58,8 +62,7 @@ To configure the model, open the `glm3.nml` file in the *Kinneret97* directory w
 The easiest way to edit the *glm3.nml* file is with the Atom text editor. You can download it [here](https://atom.io).
 ```
 
-
-```{style="max-height: 400px;"}
+``` {style="max-height: 400px;"}
 !------------------------------------------------------------------------------!
 !                                                                              !
 !          .----------------.  .----------------.  .----------------.          !
@@ -89,9 +92,9 @@ The easiest way to edit the *glm3.nml* file is with the Atom text editor. You ca
 /
 ```
 
-### Exercises {#M8_9 -}
+### Exercises {#M8_9 .unnumbered}
 
-#### Lake Stratification {#M8_10 -}
+#### Lake Stratification {#M8_10 .unnumbered}
 
 The simulation in the *Kinneret97* directory is an example 40m deep, monomictic lake that is used to supply drinking water and support an active fishery.
 
@@ -99,14 +102,13 @@ Before running the model, open the file `glm3.nml` in a text editor and inspect 
 
 Once the model has run, you can inspect the results. There are three ways to look at output:
 
-- Via the time-depth contour plots that appear during the run (configured via `plots.nml`)
-- Further information on the daily water and energy balance is in the output file `lake.csv`
-- Time series values of selected state variables (e.g. temperature, salinity, etc...) can be requested for a specific depth (depth above bottom) – this is setup in `&outputs` (eg. `WQ_5.csv`)
+-   Via the time-depth contour plots that appear during the run (configured via `plots.nml`)
+-   Further information on the daily water and energy balance is in the output file `lake.csv`
+-   Time series values of selected state variables (e.g. temperature, salinity, etc...) can be requested for a specific depth (depth above bottom) -- this is setup in `&outputs` (eg. `WQ_5.csv`)
 
-1) Draw a schematic picture of the lake, the relevant boundary conditions (both related to water
-fluxes and energy fluxes).
-2) Identify and open the boundary condition input files - these are csv files containing time-series of meteorological information, and inflow and outflow volumes. These files can be opened in Excel or a text-editor. Find where these files are called from within `glm3.nml`.
-3) Plot the lake water balance – volume, water level and fluxes including inflows, outflows, rainfall and evaporation (refer to columns in `lake.csv`, and copy the appropriate data into your own excel spreadsheet).
+1)  Draw a schematic picture of the lake, the relevant boundary conditions (both related to water fluxes and energy fluxes).
+2)  Identify and open the boundary condition input files - these are csv files containing time-series of meteorological information, and inflow and outflow volumes. These files can be opened in Excel or a text-editor. Find where these files are called from within `glm3.nml`.
+3)  Plot the lake water balance -- volume, water level and fluxes including inflows, outflows, rainfall and evaporation (refer to columns in `lake.csv`, and copy the appropriate data into your own excel spreadsheet).
 
 <center>
 ```{r module8-5, echo=FALSE, fig.cap="Schematic diagram of water balance components.", out.width = '75%'}
@@ -116,18 +118,19 @@ knitr::include_graphics("images/09-module8/picture2.png")
 
 <!-- add in equation from slide -->
 
-
-4) Plot the surface heat fluxes such as shortwave, longwave, sensible heat latent heat (refer to columns in `lake.csv`).
+4)  Plot the surface heat fluxes such as shortwave, longwave, sensible heat latent heat (refer to columns in `lake.csv`).
 
 <center>
+
 ```{r module8-6, echo=FALSE, fig.cap="Schematic diagram of surface heat fluxes impacting lake water temperature. For a description of the heat flux terms refer to the [GLM paper](https://gmd.copernicus.org/articles/12/473/2019/)", out.width = '75%'}
 knitr::include_graphics("images/09-module8/picture3.png")
 ```
+
 </center>
 
-5) Go to the `&output` section of `glm3.nml` and customize the configuration to make two output files, one at 5m from the bottom (ie. in the lake hypolimnion) and one at 35m from the bottom (ie. in the lake epilimnion). This create two `.csv` files (`WQ_5.csv` and `WQ_35.csv`) with conditions at these water depths. Plot the temperate of the two layers in excel. Identify the periods where the lake is stratified and mixed.
+5)  Go to the `&output` section of `glm3.nml` and customize the configuration to make two output files, one at 5m from the bottom (ie. in the lake hypolimnion) and one at 35m from the bottom (ie. in the lake epilimnion). This create two `.csv` files (`WQ_5.csv` and `WQ_35.csv`) with conditions at these water depths. Plot the temperate of the two layers in excel. Identify the periods where the lake is stratified and mixed.
 
-```{style="max-height: 239px;"}
+``` {style="max-height: 239px;"}
 !-------------------------------------------------------------------------------
 ! format for output and filename(s)
 !-------------------------------------------------------------------------------
@@ -146,7 +149,7 @@ knitr::include_graphics("images/09-module8/picture3.png")
 /
 ```
 
-6) Assess how the degree of stratification changes as the initial water level of the lake is reduced by 20m. To do this change the initial starting lake depth and profile details in `glm3.nml`.
+6)  Assess how the degree of stratification changes as the initial water level of the lake is reduced by 20m. To do this change the initial starting lake depth and profile details in `glm3.nml`.
 
 ```{block2, hint09_7, type='rmdtip2'}
 You will need to update the output depth of your surface output file.
@@ -156,14 +159,15 @@ You will need to update the output depth of your surface output file.
 For future activities make sure you change back to 43m.
 ```
 
-#### The Ecosystem Model {#M8_11 -}
+#### The Ecosystem Model {#M8_11 .unnumbered}
 
 <center>
+
 ```{r module8-8, echo=FALSE, fig.cap="", out.width = '75%'}
 knitr::include_graphics("images/09-module8/picture1.jpg")
 ```
-</center>
 
+</center>
 
 The *Kinneret97* model simulation above has the ecological model aed2 enabled. It has been pre- configured to run the customizable [AED modules](http://aquatic.science.uwa.edu.au/research/models/AED/modules.html). These are separate models, but have been set up to run side by side. They are configured using the text file `aed2.nml`.
 
@@ -176,6 +180,7 @@ The above simulation was only plotting temperature and salinity and these plots 
 In `plots.nml` the required variables are all listed, make sure the number of plots is high enough to include them all.
 
 <center>
+
 ```{r module8-11, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
@@ -190,31 +195,49 @@ kable(module8_1, format = "html", escape = F, align = "c", caption = "Water qual
   scroll_box(width = "100%", height="250px",
              fixed_thead = FALSE) 
 ```
+
 </center>
+
 <br>
 
-Let’s also now add water quality variables to the specific depth output files (i.e. `WQ_5.csv`). To do so we must edit the output section of the `glm3.nml` file, by adding the variables as extra columns to the `.csv` file that were configured above.
+Let's also now add water quality variables to the specific depth output files (i.e. `WQ_5.csv`). To do so we must edit the output section of the `glm3.nml` file, by adding the variables as extra columns to the `.csv` file that were configured above.
 
 ```{block2, hint09_10, type='rmdtip2'}
 If they are there already, make sure that the number of variables is high enough to include them all.
 ```
 
+```{=html}
 <style>
 ol > li > ol > li {list-style-type:lower-alpha}
-</style>   
+</style>
+```
 <ol start="7">
+
 <li>
+
 <ol>
-<li>As an example to output water quality variables, let's plot all the nitrogen variables. Change `csv_point_vars` to include `NIT_amm`, `NIT_nit`, `OGM_don`, `OMG_pon`, `PHY_green_IN` - these are all the variables that contribute to the total nitrogen (TN) pool. Now re-run the model (e.g. Windows users double clicking `glm.bat` again). Once it's run open `WQ_35.csv` to see these new variables and create a stacked area plot to show how the different variables contribute to TN. </li>
-<li>Create a well formatted, interesting graph of variables of your choice (for example, you may like to consider all of the phytoplankton groups or create sums of these to generate a NPZD model) to see how they interact and change over time. If any variables are much bigger or smaller than the others, then use two y-axes or multiple plots.</li>
-</ol>
+
+<li>
+
+As an example to output water quality variables, let's plot all the nitrogen variables. Change `csv_point_vars` to include `NIT_amm`, `NIT_nit`, `OGM_don`, `OMG_pon`, `PHY_green_IN` - these are all the variables that contribute to the total nitrogen (TN) pool. Now re-run the model (e.g. Windows users double clicking `glm.bat` again). Once it's run open `WQ_35.csv` to see these new variables and create a stacked area plot to show how the different variables contribute to TN.
+
 </li>
+
+<li>
+
+Create a well formatted, interesting graph of variables of your choice (for example, you may like to consider all of the phytoplankton groups or create sums of these to generate a NPZD model) to see how they interact and change over time. If any variables are much bigger or smaller than the others, then use two y-axes or multiple plots.
+
+</li>
+
 </ol>
 
-8) How would these concentrations change if the air temperature increased by 2°C?
-(You will need to edit the `met_hourly.csv` file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so YYYY-MM-DD hh:mm. A pre-made version of this file can be found in *bcs* which is called `met_1997_2004_airT2.csv`. To use this file, update `meteo_fl = 'bcs/met_1997_2004.csv'` in the `&meteorology` section of `glm3.nml`.
+</li>
 
-```{style="max-height: 239px;"}
+</ol>
+
+8)  How would these concentrations change if the air temperature increased by 2°C? (You will need to edit the `met_hourly.csv` file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so YYYY-MM-DD hh:mm. A pre-made version of this file can be found in *bcs* which is called `met_1997_2004_airT2.csv`. To use this file, update `meteo_fl = 'bcs/met_1997_2004.csv'` in the `&meteorology` section of `glm3.nml`.
+
+``` {style="max-height: 239px;"}
 !-------------------------------------------------------------------------------
 ! meteorology
 !-------------------------------------------------------------------------------
@@ -243,41 +266,63 @@ ol > li > ol > li {list-style-type:lower-alpha}
 /
 ```
 
-9) What happens if we change the water clarity? Increase and decrease from the original value to see the response
+9)  What happens if we change the water clarity? Increase and decrease from the original value to see the response
 
 ```{block2, hint09_12, type='rmdtip2'}
 You must change the light extinction coefficient `Kw` (range 0-1) in the `glm3.nml` file.
 ```
 
-#### Assessing Error & Sensitivity {#M8_12 -}
+#### Assessing Error & Sensitivity {#M8_12 .unnumbered}
 
 10) Calculate the mean absolute error in the simulation using the observed temperature data (`ObservedTempData.xlsx` from the *data* folder in *Kinneret97*) and the simulated temperature data (the simulated temperature data is from the surface layer in `lake.csv`).
 
 <center>
+
+```{=tex}
 \begin{equation}
 MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n}
 (\#eq:module8-1)
 \end{equation}
+```
 </center>
 
+```{=html}
 <style>
 ol > li > ol > li {list-style-type:lower-alpha}
-</style>   
+</style>
+```
 <ol start="11">
+
 <li>
+
 <ol>
-<li> Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, $K_w$) and wind speed (`wind_factor`). These can be found in `glm3.nml`. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.</li>
+
+<li>
+
+Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, $K_w$) and wind speed (`wind_factor`). These can be found in `glm3.nml`. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.
+
+</li>
 
 <center>
+
+```{=tex}
 \begin{equation}
 SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-Parameter_{original})/Parameter_{original}}
 (\#eq:module8-2)
 \end{equation}
+```
 </center>
 
-<li>Assess how sensitive the temperature and phytoplankton biomass is to water clarity:</li>
+<li>
+
+Assess how sensitive the temperature and phytoplankton biomass is to water clarity:
+
+</li>
+
 <br>
+
 <center>
+
 ```{r module8-33, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
@@ -294,11 +339,21 @@ kable(module8_2, format = "html", escape = F, align = "c") %>%
   scroll_box(width = "100%",
              fixed_thead = FALSE) 
 ```
+
 </center>
+
 <br>
-<li>Assess how sensitive the temperature and phytoplankton biomass is to wind speed:</li>
+
+<li>
+
+Assess how sensitive the temperature and phytoplankton biomass is to wind speed:
+
+</li>
+
 <br>
+
 <center>
+
 ```{r module8-14, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
@@ -315,50 +370,54 @@ kable(module8_3, format = "html", escape = F, align = "c") %>%
   scroll_box(width = "100%",
              fixed_thead = FALSE) 
 ```
+
 </center>
+
 </ol>
+
 </li>
+
 </ol>
 
-### Submission {#M8_13 -}
-:::: {.redbox2}
+### Submission {#M8_13 .unnumbered}
 
+::: {.redbox2}
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 
 Lake Stratification:
 
-- Hand drawn diagram of the lake and any variables you used
-- Plots of the water balance
-- Plots of the heat fluxes
-- Plots of the temperature at different layers
-- Plots of the shallower lake
+-   Hand drawn diagram of the lake and any variables you used
+-   Plots of the water balance
+-   Plots of the heat fluxes
+-   Plots of the temperature at different layers
+-   Plots of the shallower lake
 
 The Ecosystem Model:
 
-- Hand drawn diagram of the lake with any variables you used
-- Interesting plot of the selected variables
-- Any results of the higher air temperature and changed water clarity
+-   Hand drawn diagram of the lake with any variables you used
+-   Interesting plot of the selected variables
+-   Any results of the higher air temperature and changed water clarity
 
 Assessing Error & Sensitivity:
 
-- Temperature error assessment
-- Temperature and phytoplankton sensitivity assessment
-- Tables for submission
+-   Temperature error assessment
+-   Temperature and phytoplankton sensitivity assessment
+-   Tables for submission
 
 These are to be uploaded in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
 
 **General professional formatting guidelines:**
 
-- All figures are to have adequate captions explaining them
-- For graphs, figure captions go below the plot
-- For tables, the caption goes above the table
-- Make sure figures and their text size is readable
+-   All figures are to have adequate captions explaining them
+-   For graphs, figure captions go below the plot
+-   For tables, the caption goes above the table
+-   Make sure figures and their text size is readable
 
 **Excel hints:**
 
-- When there is a caption for a plot, you remove the title
-- Remove the plot border and gridlines
-- Make sure both axes have visible lines and tick marks
-- Units need to be noted properly with the axis label - 'Temperature (°C)'
-- Round numbers to be reasonable
-::::
+-   When there is a caption for a plot, you remove the title
+-   Remove the plot border and gridlines
+-   Make sure both axes have visible lines and tick marks
+-   Units need to be noted properly with the axis label - 'Temperature (°C)'
+-   Round numbers to be reasonable
+:::

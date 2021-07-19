@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 8: Lake Water Quality Modelling | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 8: Lake Water Quality Modelling | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
   
 
-<meta name="author" content="Giles Knight, Matt Hipsey, Alanna Kursar, Dan Paraska" />
+<meta name="author" content="Matt Hipsey, Dan Paraska, Alanna Kursar, Giles Knight" />
 
 
 
@@ -32,8 +32,8 @@
   
 <link rel="prev" href="M7-1.html"/>
 <link rel="next" href="references.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,13 +50,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
@@ -67,6 +69,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
@@ -181,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#module-resources"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#module-resources-1"><i class="fa fa-check"></i>Module resources</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_4"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_5"><i class="fa fa-check"></i>Exercise 2</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_6"><i class="fa fa-check"></i>Exercise 3</a></li>
@@ -274,7 +300,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </center>
 
 <div class="rmdnote2">
-Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway’.
+Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway.’
 </div>
 </div>
 <div id="M8_6" class="section level4 unnumbered">
@@ -343,8 +369,7 @@ The easiest way to edit the <em>glm3.nml</em> file is with the Atom text editor.
 <li>Time series values of selected state variables (e.g. temperature, salinity, etc…) can be requested for a specific depth (depth above bottom) – this is setup in <code>&amp;outputs</code> (eg. <code>WQ_5.csv</code>)</li>
 </ul>
 <ol style="list-style-type: decimal">
-<li>Draw a schematic picture of the lake, the relevant boundary conditions (both related to water
-fluxes and energy fluxes).</li>
+<li>Draw a schematic picture of the lake, the relevant boundary conditions (both related to water fluxes and energy fluxes).</li>
 <li>Identify and open the boundary condition input files - these are csv files containing time-series of meteorological information, and inflow and outflow volumes. These files can be opened in Excel or a text-editor. Find where these files are called from within <code>glm3.nml</code>.</li>
 <li>Plot the lake water balance – volume, water level and fluxes including inflows, outflows, rainfall and evaporation (refer to columns in <code>lake.csv</code>, and copy the appropriate data into your own excel spreadsheet).</li>
 </ol>
@@ -402,7 +427,7 @@ For future activities make sure you change back to 43m.
 <div id="M8_11" class="section level4 unnumbered">
 <h4>The Ecosystem Model</h4>
 <center>
-<img src="images/09-module8/picture1.jpg" width="75%" />
+<p><img src="images/09-module8/picture1.jpg" width="75%" /></p>
 </center>
 <p>The <em>Kinneret97</em> model simulation above has the ecological model aed2 enabled. It has been pre- configured to run the customizable <a href="http://aquatic.science.uwa.edu.au/research/models/AED/modules.html">AED modules</a>. These are separate models, but have been set up to run side by side. They are configured using the text file <code>aed2.nml</code>.</p>
 
@@ -676,17 +701,16 @@ ol > li > ol > li {list-style-type:lower-alpha}
 <li>
 <ol>
 <li>
-As an example to output water quality variables, let’s plot all the nitrogen variables. Change <code>csv_point_vars</code> to include <code>NIT_amm</code>, <code>NIT_nit</code>, <code>OGM_don</code>, <code>OMG_pon</code>, <code>PHY_green_IN</code> - these are all the variables that contribute to the total nitrogen (TN) pool. Now re-run the model (e.g. Windows users double clicking <code>glm.bat</code> again). Once it’s run open <code>WQ_35.csv</code> to see these new variables and create a stacked area plot to show how the different variables contribute to TN.
+<p>As an example to output water quality variables, let’s plot all the nitrogen variables. Change <code>csv_point_vars</code> to include <code>NIT_amm</code>, <code>NIT_nit</code>, <code>OGM_don</code>, <code>OMG_pon</code>, <code>PHY_green_IN</code> - these are all the variables that contribute to the total nitrogen (TN) pool. Now re-run the model (e.g. Windows users double clicking <code>glm.bat</code> again). Once it’s run open <code>WQ_35.csv</code> to see these new variables and create a stacked area plot to show how the different variables contribute to TN.</p>
 </li>
 <li>
-Create a well formatted, interesting graph of variables of your choice (for example, you may like to consider all of the phytoplankton groups or create sums of these to generate a NPZD model) to see how they interact and change over time. If any variables are much bigger or smaller than the others, then use two y-axes or multiple plots.
+<p>Create a well formatted, interesting graph of variables of your choice (for example, you may like to consider all of the phytoplankton groups or create sums of these to generate a NPZD model) to see how they interact and change over time. If any variables are much bigger or smaller than the others, then use two y-axes or multiple plots.</p>
 </li>
 </ol>
 </li>
 </ol>
 <ol start="8" style="list-style-type: decimal">
-<li>How would these concentrations change if the air temperature increased by 2°C?
-(You will need to edit the <code>met_hourly.csv</code> file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so YYYY-MM-DD hh:mm. A pre-made version of this file can be found in <em>bcs</em> which is called <code>met_1997_2004_airT2.csv</code>. To use this file, update <code>meteo_fl = 'bcs/met_1997_2004.csv'</code> in the <code>&amp;meteorology</code> section of <code>glm3.nml</code>.</li>
+<li>How would these concentrations change if the air temperature increased by 2°C? (You will need to edit the <code>met_hourly.csv</code> file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so YYYY-MM-DD hh:mm. A pre-made version of this file can be found in <em>bcs</em> which is called <code>met_1997_2004_airT2.csv</code>. To use this file, update <code>meteo_fl = 'bcs/met_1997_2004.csv'</code> in the <code>&amp;meteorology</code> section of <code>glm3.nml</code>.</li>
 </ol>
 <pre style="max-height: 239px;"><code>!-------------------------------------------------------------------------------
 ! meteorology
@@ -740,7 +764,7 @@ ol > li > ol > li {list-style-type:lower-alpha}
 <li>
 <ol>
 <li>
-Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm3.nml</code>. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.
+<p>Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm3.nml</code>. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.</p>
 </li>
 <center>
 <span class="math display" id="eq:module8-2">\[\begin{equation}
@@ -749,9 +773,9 @@ SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-
 \end{equation}\]</span>
 </center>
 <li>
-Assess how sensitive the temperature and phytoplankton biomass is to water clarity:
+<p>Assess how sensitive the temperature and phytoplankton biomass is to water clarity:</p>
 </li>
-<br>
+<p><br></p>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -798,11 +822,11 @@ Average WQ_35 phytoplankton (green, crypto, diatom) biomass
 </table>
 </div>
 </center>
-<br>
+<p><br></p>
 <li>
-Assess how sensitive the temperature and phytoplankton biomass is to wind speed:
+<p>Assess how sensitive the temperature and phytoplankton biomass is to wind speed:</p>
 </li>
-<br>
+<p><br></p>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 4: Oceanic pH Calculation | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 4: Oceanic pH Calculation | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
   
 
-<meta name="author" content="Giles Knight, Matt Hipsey, Alanna Kursar, Dan Paraska" />
+<meta name="author" content="Matt Hipsey, Dan Paraska, Alanna Kursar, Giles Knight" />
 
 
 
@@ -32,8 +32,8 @@
   
 <link rel="prev" href="M3-1.html"/>
 <link rel="next" href="M5-1.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,13 +50,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
@@ -67,6 +69,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
@@ -181,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#module-resources"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#module-resources-1"><i class="fa fa-check"></i>Module resources</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_4"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_5"><i class="fa fa-check"></i>Exercise 2</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_6"><i class="fa fa-check"></i>Exercise 3</a></li>
@@ -326,7 +352,7 @@ Figure 1: Bleached coral (foreground) and normal coral (background). CC BY 3.0, 
 </div>
 </center>
 </div>
-<div id="module-resources" class="section level3 unnumbered">
+<div id="module-resources-1" class="section level3 unnumbered">
 <h3>Module resources</h3>
 <p>Download the Excel spreadsheet and R files for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
 
@@ -353,9 +379,9 @@ You can use either Excel or R for this module.
 <center>
 <br>
 <span class="math display" id="eq:module4-5" id="eq:module4-4">\[\begin{align*}
-\color{#ED7D31}{H_2CO_3^\ast} &amp;\rightleftarrows \color{#00B050}{HCO_3^-}+\color{#FF0000}{H^+} \hspace{3em}	K_{1} = 5×10^{-7}	
+\color{#ED7D31}{H_2CO_3^\ast} &amp;\rightleftarrows \color{#00B050}{HCO_3^-}+\color{#FF0000}{H^+} \hspace{3em}  K_{1} = 5×10^{-7}   
 \tag{19} \\
-\color{#00B050}{HCO_3^{-}} &amp;\rightleftarrows  \color{#5B9BD5}{{CO}_3^{2-}}+\color{#FF0000}{H^+} \hspace{3em}	K_{2} = 5×10^{-11}
+\color{#00B050}{HCO_3^{-}} &amp;\rightleftarrows  \color{#5B9BD5}{{CO}_3^{2-}}+\color{#FF0000}{H^+} \hspace{3em}    K_{2} = 5×10^{-11}
 \tag{20} \\
 \end{align*}\]</span>
 </center>
@@ -366,7 +392,7 @@ You can use either Excel or R for this module.
 <span class="math display" id="eq:module4-7" id="eq:module4-6">\[\begin{align*}
 C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2-}}\right]+\left[\color{#ED7D31}{H_2{CO}_3^\ast}\right]
 \tag{21} \\
-\left[Alk\right]&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+2\left[\color{#5B9BD5}{{CO}_3^{2-}}\right]+\left[{OH}^-\right]-\left[\color{#FF0000}{H^+}\right]	
+\left[Alk\right]&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+2\left[\color{#5B9BD5}{{CO}_3^{2-}}\right]+\left[{OH}^-\right]-\left[\color{#FF0000}{H^+}\right]  
 \tag{22} \\
 \end{align*}\]</span>
 </center>
@@ -388,7 +414,7 @@ C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2
 <center>
 <br>
 <span class="math display" id="eq:module4-11" id="eq:module4-10">\[\begin{align*}
-{CO}_3^{2-} &amp;+{Ca}^{2+}\rightleftarrows CaCO_3 \hspace{3em}	K_{sp} = 1\times 10^{-8.4}
+{CO}_3^{2-} &amp;+{Ca}^{2+}\rightleftarrows CaCO_3 \hspace{3em} K_{sp} = 1\times 10^{-8.4}
 \tag{25} \\
 \mathrm{\Omega} &amp;=\frac{[Ca^{2+}][CO_{3}^{2-}]}{[K_{sp\space CaCO_{3}}]}
 \tag{26} \\
@@ -404,7 +430,7 @@ C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2
 <div class="figure"><span id="fig:module4pic2"></span>
 <img src="images/05-module4/picture2.png" alt="Double logarithmic plot of the equilibrium composition of seawater in our model [@stumm1996]" width="90%" />
 <p class="caption">
-Figure 2: Double logarithmic plot of the equilibrium composition of seawater in our model <span class="citation">(Stumm and Morgan <a href="#ref-stumm1996" role="doc-biblioref">1996</a>)</span>
+Figure 2: Double logarithmic plot of the equilibrium composition of seawater in our model <span class="citation">(<a href="#ref-stumm1996" role="doc-biblioref">Stumm and Morgan 1996</a>)</span>
 </p>
 </div>
 </center>
@@ -415,9 +441,9 @@ Figure 2: Double logarithmic plot of the equilibrium composition of seawater in 
 <center>
 <br>
 <span class="math display" id="eq:module4-13" id="eq:module4-12">\[\begin{align*}
-{\left[\color{#FF0000}{H^+}\right]^2C}_T &amp;=\color{#ED7D31}{H_2{CO}_3^\ast}\left(\left[\color{#FF0000}{H^+}\right]^2+K_1\left[\color{#FF0000}{H^+}\right]+K_1K_2\right)	
+{\left[\color{#FF0000}{H^+}\right]^2C}_T &amp;=\color{#ED7D31}{H_2{CO}_3^\ast}\left(\left[\color{#FF0000}{H^+}\right]^2+K_1\left[\color{#FF0000}{H^+}\right]+K_1K_2\right)  
 \tag{27} \\
-\left[\color{#FF0000}{H^+}\right] &amp;=\sqrt[2]{\frac{\color{#ED7D31}{H_2{CO}_3^\ast}}{C_T}\left(\left[\color{#FF0000}{H^+}\right]^2+K_1\left[\color{#FF0000}{H^+}\right]+K_1K_2\right)}	
+\left[\color{#FF0000}{H^+}\right] &amp;=\sqrt[2]{\frac{\color{#ED7D31}{H_2{CO}_3^\ast}}{C_T}\left(\left[\color{#FF0000}{H^+}\right]^2+K_1\left[\color{#FF0000}{H^+}\right]+K_1K_2\right)}   
 \tag{28} \\
 \end{align*}\]</span>
 </center>
@@ -486,15 +512,15 @@ Which factors cause the differences between your results and those of the IPCC m
 <!-- <center> -->
 <!-- <br> -->
 <!-- \begin{gather*} -->
-<!-- {CO}_{2(\text{gas})}\rightleftarrows{CO}_{2(\text{dissolved})}	 -->
+<!-- {CO}_{2(\text{gas})}\rightleftarrows{CO}_{2(\text{dissolved})}  -->
 <!-- (\#eq:module4-14) \\ -->
-<!-- {CO}_{2(\text{dissolved})}+H_{2}O\rightleftarrows H_2{CO}_3	 -->
+<!-- {CO}_{2(\text{dissolved})}+H_{2}O\rightleftarrows H_2{CO}_3     -->
 <!-- (\#eq:module4-15) \\ -->
-<!-- {CO}_{2(\text{gas})}+H_2O\rightleftarrows \color{#ED7D31}{H_2CO_3^\ast}	\hspace{3em} K_{H} = 3.39×10^{-2}	 -->
+<!-- {CO}_{2(\text{gas})}+H_2O\rightleftarrows \color{#ED7D31}{H_2CO_3^\ast}    \hspace{3em} K_{H} = 3.39×10^{-2}    -->
 <!-- (\#eq:module4-16) \\ -->
-<!-- \color{#ED7D31}{H_2CO_3^\ast}\rightleftarrows \color{#00B050}{HCO_3^-}+\color{#FF0000}{H^+} \hspace{3em}	K_{1} = 5×10^{-7} -->
+<!-- \color{#ED7D31}{H_2CO_3^\ast}\rightleftarrows \color{#00B050}{HCO_3^-}+\color{#FF0000}{H^+} \hspace{3em}   K_{1} = 5×10^{-7} -->
 <!-- (\#eq:module4-17) \\ -->
-<!-- \color{#00B050}{HCO_3^-}\rightleftarrows\color{#5B9BD5}{{CO}_3^{2-}}+\color{#FF0000}{H^+}	\hspace{3em} K_{2} = 5×10^{-11} -->
+<!-- \color{#00B050}{HCO_3^-}\rightleftarrows\color{#5B9BD5}{{CO}_3^{2-}}+\color{#FF0000}{H^+}  \hspace{3em} K_{2} = 5×10^{-11} -->
 <!-- (\#eq:module4-18) \\ -->
 <!-- C_T=[\color{#00B050}{{HCO}_3^-}]+[\color{#5B9BD5}{{CO}_3^{2-}}]+[\color{#ED7D31}{H_2{CO}_3^\ast}]  -->
 <!-- (\#eq:module4-19) \\ -->
@@ -504,13 +530,13 @@ Which factors cause the differences between your results and those of the IPCC m
 <!-- (\#eq:module4-21) \\ -->
 <!-- [{OH}^-]=\frac{K_{W}}{[\color{#FF0000}{H+}]} -->
 <!-- (\#eq:module4-22) \\ -->
-<!-- {CO}_3^{2-}+{Ca}^{2+}\rightleftarrows CaCO_3	\hspace{3em} K_{sp} = 1\times 10^{-8.4} -->
+<!-- {CO}_3^{2-}+{Ca}^{2+}\rightleftarrows CaCO_3   \hspace{3em} K_{sp} = 1\times 10^{-8.4} -->
 <!-- (\#eq:module4-23) \\ -->
 <!-- \mathrm{\Omega}=[Ca^{2+}][CO_{3}^{2-}][K_{sp \space CaCO_{3}}] -->
 <!-- (\#eq:module4-24) \\ -->
-<!-- {[\color{#FF0000}{H^+}]^2C}_T=\color{#ED7D31}{H_2{CO}_3^\ast}([\color{#FF0000}{H^+}]^2+K_1[\color{#FF0000}{H^+}]+K_1K_2)	 -->
+<!-- {[\color{#FF0000}{H^+}]^2C}_T=\color{#ED7D31}{H_2{CO}_3^\ast}([\color{#FF0000}{H^+}]^2+K_1[\color{#FF0000}{H^+}]+K_1K_2)    -->
 <!-- (\#eq:module4-25) \\ -->
-<!-- [\color{#FF0000}{H^+}]=\sqrt[2]{\frac{\color{#ED7D31}{H_2{CO}_3^\ast}}{C_T}([\color{#FF0000}{H^+}]^2+K_1[\color{#FF0000}{H^+}]+K_1K_2)}	 -->
+<!-- [\color{#FF0000}{H^+}]=\sqrt[2]{\frac{\color{#ED7D31}{H_2{CO}_3^\ast}}{C_T}([\color{#FF0000}{H^+}]^2+K_1[\color{#FF0000}{H^+}]+K_1K_2)}     -->
 <!-- (\#eq:module4-26) \\ -->
 <!-- K_{1} = \frac{[\color{#FF0000}{H^{+}}][\color{#00B050}{HCO_{3}^{-}}]}{[\color{#C45911}{H_{2}CO_{3}]}} -->
 <!-- (\#eq:module4-27) \\ -->
@@ -546,9 +572,9 @@ Which factors cause the differences between your results and those of the IPCC m
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-stumm1996">
-<p>Stumm, Werner, and JJ Morgan. 1996. “Chemical Equilibria and Rates in Natural Waters.” <em>Aquatic Chemistry</em> 1022.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-stumm1996" class="csl-entry">
+Stumm, Werner, and JJ Morgan. 1996. <span>“Chemical Equilibria and Rates in Natural Waters.”</span> <em>Aquatic Chemistry</em> 1022.
 </div>
 </div>
             </section>

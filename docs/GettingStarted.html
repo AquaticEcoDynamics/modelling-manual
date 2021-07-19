@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Getting Started | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Getting Started | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
   
 
-<meta name="author" content="Giles Knight, Matt Hipsey, Alanna Kursar, Dan Paraska" />
+<meta name="author" content="Matt Hipsey, Dan Paraska, Alanna Kursar, Giles Knight" />
 
 
 
@@ -32,8 +32,8 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="module-1-modelling-in-excel.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,13 +50,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
@@ -67,6 +69,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
@@ -181,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#module-resources"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#module-resources-1"><i class="fa fa-check"></i>Module resources</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_4"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_5"><i class="fa fa-check"></i>Exercise 2</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_6"><i class="fa fa-check"></i>Exercise 3</a></li>
@@ -273,15 +299,17 @@ Tools You’ll Need
 <p>Just like Excel, you can interact with your data using a variety of <em>functions</em> in R. Functions are the tools you use to get the job done. For example, the <code>plot()</code> function can be used to create graphs. R is an open source programming language, meaning anyone can create their own functions and bundle them up in a collection known as a <em>package</em>.</p>
 <p><strong>Comments</strong></p>
 <p>All programming languages allow the user to write comments on their code to assist in readability and structure. In R, a comment is defined as a line beginning with a <code>#</code>. Any characters written after the <code>#</code> are ignored by R and not executed. It’s good practice to get into the habit of commenting your R code as it will likely save you (or someone else!) a lot of time later down the track.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="GettingStarted.html#cb1-1" aria-hidden="true"></a><span class="co"># This is a comment!</span></span>
-<span id="cb1-2"><a href="GettingStarted.html#cb1-2" aria-hidden="true"></a></span>
-<span id="cb1-3"><a href="GettingStarted.html#cb1-3" aria-hidden="true"></a><span class="co"># Create a graph using the plot() function</span></span>
-<span id="cb1-4"><a href="GettingStarted.html#cb1-4" aria-hidden="true"></a><span class="kw">plot</span>(my_data,variable1,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;My y-axis label&quot;</span>)</span>
-<span id="cb1-5"><a href="GettingStarted.html#cb1-5" aria-hidden="true"></a></span>
-<span id="cb1-6"><a href="GettingStarted.html#cb1-6" aria-hidden="true"></a><span class="co"># Plot other variables onto the graph using the points() function</span></span>
-<span id="cb1-7"><a href="GettingStarted.html#cb1-7" aria-hidden="true"></a><span class="kw">points</span>(my_data,variable2,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb1-8"><a href="GettingStarted.html#cb1-8" aria-hidden="true"></a><span class="kw">points</span>(my_data,variable3,<span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</span>
-<span id="cb1-9"><a href="GettingStarted.html#cb1-9" aria-hidden="true"></a><span class="kw">points</span>(my_data,variable4,<span class="dt">col=</span><span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
+<iframe src="https://carbon.now.sh/embed/j2ZVuI6gJwssXAMxPakk" style="width: 698px; height: 348px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin">
+</iframe>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="GettingStarted.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment!</span></span>
+<span id="cb1-2"><a href="GettingStarted.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="GettingStarted.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a graph using the plot() function</span></span>
+<span id="cb1-4"><a href="GettingStarted.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my_data, variable1, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;My y-axis label&quot;</span>)</span>
+<span id="cb1-5"><a href="GettingStarted.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="GettingStarted.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot other variables onto the graph using the points() function</span></span>
+<span id="cb1-7"><a href="GettingStarted.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(my_data, variable2, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb1-8"><a href="GettingStarted.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(my_data, variable3, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb1-9"><a href="GettingStarted.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(my_data, variable4, <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
 
 <div class="rmdtip2">
 To comment multiple lines of code at once in R Studio, press<code>Command + Shift + C</code>on MacOS or<code>Control + Shift + C</code>on Windows

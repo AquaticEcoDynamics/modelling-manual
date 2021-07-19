@@ -73,10 +73,18 @@ library(knitr)
 library(kableExtra)
 library(hablar)
 library(dplyr)
-options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
-module3_1 <- read.csv("tables/module3/module3-1.csv", check.names=FALSE) %>% 
+options(kableExtra.html.bsTable = F,
+        knitr.kable.NA = '')
+module3_1 <-
+  read.csv("tables/module3/module3-1.csv", check.names = FALSE) %>%
   convert(chr(Value, Units))
-kable(module3_1, format = "html", escape = F, align = "c", caption = "Fill in the blank cells to calculate the mean temperature of the Earth.") %>%
+kable(
+  module3_1,
+  format = "html",
+  escape = F,
+  align = "c",
+  caption = "Fill in the blank cells to calculate the mean temperature of the Earth."
+) %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "15.5em") %>%
   column_spec(2, width_min = "15.5em") %>%
@@ -103,10 +111,18 @@ library(knitr)
 library(kableExtra)
 library(hablar)
 library(dplyr)
-options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
-module3_2 <- read.csv("tables/module3/module3-2.csv", check.names=FALSE) %>%
+options(kableExtra.html.bsTable = F,
+        knitr.kable.NA = '')
+module3_2 <-
+  read.csv("tables/module3/module3-2.csv", check.names = FALSE) %>%
   convert(chr("Stefan-Boltzmann constant"))
-kable(module3_2, format = "html", escape = F, align = "c", caption = "Test the sensitivity of this model.") %>%
+kable(
+  module3_2,
+  format = "html",
+  escape = F,
+  align = "c",
+  caption = "Test the sensitivity of this model."
+) %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "6.5em") %>%
   column_spec(2, width_min = "6.5em") %>%
@@ -156,10 +172,18 @@ library(knitr)
 library(kableExtra)
 library(hablar)
 library(dplyr)
-options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
-module3_3 <- read.csv("tables/module3/module3-3.csv", check.names=FALSE) %>%
+options(kableExtra.html.bsTable = F,
+        knitr.kable.NA = '')
+module3_3 <-
+  read.csv("tables/module3/module3-3.csv", check.names = FALSE) %>%
   convert(chr(Albedo, x, y))
-kable(module3_3, format = "html", escape = F, align = "c", caption = "Estimate $T$ for a range of albedo values.") %>%
+kable(
+  module3_3,
+  format = "html",
+  escape = F,
+  align = "c",
+  caption = "Estimate $T$ for a range of albedo values."
+) %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "11.5em") %>%
   column_spec(2, width_min = "11.5em") %>%
@@ -197,14 +221,22 @@ library(kableExtra)
 library(hablar)
 library(dplyr)
 #options(knitr.kable.NA = '')
-module3_4 <- read.csv("tables/module3/module3-4.csv", check.names=FALSE) 
-kable(module3_4, format = "html", escape = F, align = "c", caption = "Energy balance model of Earth's atmosphere.") %>%
+module3_4 <-
+  read.csv("tables/module3/module3-4.csv", check.names = FALSE)
+kable(
+  module3_4,
+  format = "html",
+  escape = F,
+  align = "c",
+  caption = "Energy balance model of Earth's atmosphere."
+) %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "5em") %>%
   column_spec(2, width_min = "15em") %>%
   column_spec(3, width_min = "13em") %>%
   row_spec(1:12, background = '#ffffff00') %>%
-  scroll_box(width = "100%", height = "435px",
+  scroll_box(width = "100%",
+             height = "435px",
              fixed_thead = FALSE) 
 ```
 </center>

@@ -79,14 +79,22 @@ library(kableExtra)
 library(hablar)
 library(dplyr)
 #options(knitr.kable.NA = '')
-module6_1 <- read.csv("tables/module6/table1.csv", check.names=FALSE) 
-kable(module6_1, format = "html", escape = F, align = "c", caption = "Parameters for the individual catchments.") %>%
+module6_1 <-
+  read.csv("tables/module6/table1.csv", check.names = FALSE)
+kable(
+  module6_1,
+  format = "html",
+  escape = F,
+  align = "c",
+  caption = "Parameters for the individual catchments."
+) %>%
   kable_styling(full_width = F, position = "center") %>%
   #column_spec(1, width_min = "5em") %>%
   #column_spec(2, width_min = "15em") %>%
   #column_spec(3, width_min = "13em") %>%
   #row_spec(1:12, background = '#ffffff00') %>%
-  scroll_box(width = "100%", height = "445px",
+  scroll_box(width = "100%",
+             height = "445px",
              fixed_thead = FALSE) 
 ```
 </center>
@@ -117,14 +125,22 @@ library(kableExtra)
 library(hablar)
 library(dplyr)
 #options(knitr.kable.NA = '')
-module6_2 <- read.csv("tables/module6/table2.csv", check.names=FALSE) 
-kable(module6_2, format = "html", escape = F, align = "c", caption = "Phosphate parameters.") %>%
+module6_2 <-
+  read.csv("tables/module6/table2.csv", check.names = FALSE)
+kable(
+  module6_2,
+  format = "html",
+  escape = F,
+  align = "c",
+  caption = "Phosphate parameters."
+) %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "25em") %>%
   column_spec(2, width_min = "11em") %>%
   column_spec(3, width_min = "11em") %>%
   #row_spec(1:12, background = '#ffffff00') %>%
-  scroll_box(width = "100%", height = "235px",
+  scroll_box(width = "100%",
+             height = "235px",
              fixed_thead = FALSE) 
 ```
 </center>

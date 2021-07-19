@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 2: Biogeochemistry | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 2: Biogeochemistry | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
   
 
-<meta name="author" content="Giles Knight, Matt Hipsey, Alanna Kursar, Dan Paraska" />
+<meta name="author" content="Matt Hipsey, Dan Paraska, Alanna Kursar, Giles Knight" />
 
 
 
@@ -32,8 +32,8 @@
   
 <link rel="prev" href="module-1-modelling-in-excel.html"/>
 <link rel="next" href="M3-1.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,13 +50,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
@@ -67,6 +69,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -127,6 +130,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
@@ -181,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="" data-path="module-1-modelling-in-excel.html"><a href="module-1-modelling-in-excel.html#module-resources"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#module-resources-1"><i class="fa fa-check"></i>Module resources</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_4"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_5"><i class="fa fa-check"></i>Exercise 2</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_6"><i class="fa fa-check"></i>Exercise 3</a></li>
@@ -320,7 +346,7 @@ R_{Meth} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#FF0000}{\frac{
 The rate is dependent on the concentration in the previous time step – this is called an <em>explicit</em> solution (as opposed to <em>implicit</em>).
 </div>
 <ol start="3" style="list-style-type: decimal">
-<li><p>Complete the line plot (<strong>1</strong>) of relative oxidant concentration for iron and sulphate. Right click on the plot and use ‘Add data’, make the x axis time and the y axis relative concentration. It is easy to visualise if you keep the colours consistent, and choose the colours that you like. Adjust the values for the initial condition and the half-saturation constants and see how the lines move on your plot. Add more time steps underneath if you want to see what happens over the long term.</p></li>
+<li><p>Complete the line plot (<strong>1</strong>) of relative oxidant concentration for iron and sulphate. Right click on the plot and use ‘Add data,’ make the x axis time and the y axis relative concentration. It is easy to visualise if you keep the colours consistent, and choose the colours that you like. Adjust the values for the initial condition and the half-saturation constants and see how the lines move on your plot. Add more time steps underneath if you want to see what happens over the long term.</p></li>
 <li><p>Complete the area plot (<strong>2</strong>) of reaction rates, then play around with the numbers to test the sensitivities of the outputs to the parameter inputs</p></li>
 </ol>
 </div>
