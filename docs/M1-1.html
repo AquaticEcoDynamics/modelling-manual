@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Getting Started | Environmental Dynamics Workbook</title>
+  <title>Module 1: Modelling in Excel | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
   <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Getting Started | Environmental Dynamics Workbook" />
+  <meta property="og:title" content="Module 1: Modelling in Excel | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Getting Started | Environmental Dynamics Workbook" />
+  <meta name="twitter:title" content="Module 1: Modelling in Excel | Environmental Dynamics Workbook" />
   
   <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="M1-1.html"/>
+<link rel="prev" href="GettingStarted.html"/>
+<link rel="next" href="M2-1.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -270,82 +270,164 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="GettingStarted" class="section level1 unnumbered">
-<h1>Getting Started</h1>
+<div id="M1_1" class="section level1 unnumbered">
+<h1>Module 1: Modelling in Excel</h1>
 <h2>
-Tools You’ll Need
+Environmental Flows to an Estuary
 </h2>
-<div id="excel" class="section level3 unnumbered">
-<h3>Excel</h3>
-<p>Excel is available on all computer laboratory PC’s and can be freely downloaded to personal devices <a href="http://www.it.uwa.edu.au/service-catalogue/software/office-365#availability-and-support">here</a>. You should already feel confident using Excel from your previous units, however if you need further guidance please visit UWA’s <a href="https://www.uwa.edu.au/education/educational-enhancement-unit/strategic-projects/linkedin-learning-at-uwa">LinkedIn Learning</a> resources.</p>
+<div id="M1_2" class="section level3 unnumbered">
+<h3>Objectives</h3>
+<p>Become familiar with basic spreadsheet commands in Excel by conducting an environmental flow analysis and building a simple impact model.</p>
 </div>
-<div id="r" class="section level3 unnumbered">
-<h3>R</h3>
-<p>To get started with R, first download the base R system onto your computer. By itself, this provides a rudimentary console for interacting with the R programming language. For a more user-friendly experience, download the R Studio integrated development environment (IDE).</p>
-<ul>
-<li>R can be downloaded <a href="https://cran.csiro.au">here</a></li>
-<li>R Studio can be downloaded <a href="https://rstudio.com">here</a></li>
-</ul>
-<div id="terminology" class="section level4 unnumbered">
-<h4>Terminology</h4>
-<p><strong>File types</strong></p>
-<p>In this unit you will largely be dealing with two kinds of ‘R files’:</p>
-<ul>
-<li>R script files (e.g. <code>Equations.R</code>) and,</li>
-<li>R project files (e.g. <code>Module2Biogeochem.Rproj</code>)</li>
-</ul>
-<p>R scripts are the raw instructions that tell the R programming language what to do. Meanwhile, an R Project file simply creates an independent workplace environment for you to interact with and manage your scripts. It’s wise to create a new R Project file whenever you start working on a new project.</p>
-<p><strong>Functions and packages</strong></p>
-<p>Just like Excel, you can interact with your data using a variety of <em>functions</em> in R. Functions are the tools you use to get the job done. For example, the <code>plot()</code> function can be used to create graphs. R is an open source programming language, meaning anyone can create their own functions and bundle them up in a collection known as a <em>package</em>.</p>
-<p><strong>Comments</strong></p>
-<p>All programming languages allow the user to write comments on their code to assist in readability and structure. In R, a comment is defined as a line beginning with a <code>#</code>. Any characters written after the <code>#</code> are ignored by R and not executed. It’s good practice to get into the habit of commenting your R code as it will likely save you (or someone else!) a lot of time later down the track.</p>
-<!-- <iframe -->
-<!--   src="https://carbon.now.sh/embed/j2ZVuI6gJwssXAMxPakk" -->
-<!--   style="width: 698px; height: 348px; border:0; transform: scale(1); overflow:hidden;" -->
-<!--   sandbox="allow-scripts allow-same-origin"> -->
-<!-- </iframe> -->
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="GettingStarted.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment!</span></span>
-<span id="cb1-2"><a href="GettingStarted.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="GettingStarted.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a graph using the plot() function</span></span>
-<span id="cb1-4"><a href="GettingStarted.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my_data, variable1, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;My y-axis label&quot;</span>)</span>
-<span id="cb1-5"><a href="GettingStarted.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="GettingStarted.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot other variables onto the graph using the points() function</span></span>
-<span id="cb1-7"><a href="GettingStarted.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(my_data, variable2, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb1-8"><a href="GettingStarted.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(my_data, variable3, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
-<span id="cb1-9"><a href="GettingStarted.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(my_data, variable4, <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
+<div id="M1_3" class="section level3 unnumbered">
+<h3>What are environmental flows?</h3>
+<p>Lakes, rivers and estuaries are adapted to receive water based on the natural hydrological condition, but often water is required upstream for other purposes. An environmental flow is water that is provided to the environment to maintain its health and natural diversity</p>
+<center>
+<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+<iframe style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" src="https://www.youtube.com/embed/BLeA1l0IH3w" allowfullscreen scrolling="no" allow="encrypted-media; accelerometer; gyroscope; picture-in-picture">
+</iframe>
+</div>
+</center>
+</div>
+<div id="M1_4" class="section level3 unnumbered">
+<h3>Case study</h3>
+<center>
+<div class="figure">
+<img src="images/module1/picture1.jpeg" width="750" alt="" />
+<p class="caption">Figure 1: Drain L inflows (yellow arrow) will be diverted (blue arrow)</p>
+</div>
+</center>
+</div>
+<div id="M1_5" class="section level3 unnumbered">
+<h3>Module resources</h3>
+<p>Download the Excel spreadsheet for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
+</div>
+<div id="M1_6" class="section level3 unnumbered">
+<h3>Exercises</h3>
+<p>You are given a time-series of daily river flow and need to assess how different diversion scenarios impact the freshwater flow delivery to a down stream estuary.</p>
+<ol style="list-style-type: decimal">
+<li>For this flow time-series, calculate the <strong>volume of daily flow</strong> within the following bands
+0-40; 40-80; 80-120; 120-200; 200-400; 400-1000; &gt;1000</li>
+</ol>
 
 <div class="rmdtip2">
-To comment multiple lines of code at once in R Studio, press<code>Command + Shift + C</code>on MacOS or<code>Control + Shift + C</code>on Windows
+Use a nested <code>IF()</code> statement in adjacent columns to partition flows
+<center>
+<img src="images/module1/picture2.png" style="width:100.0%" />
+</center>
 </div>
-<p><strong>Further R resources</strong></p>
+<center>
+<video width="100%" height="100%" controls>
+<source src="images/module1/video1.mp4" type="video/mp4">
+</video>
+</center>
+<ol start="2" style="list-style-type: decimal">
+<li>For this flow time-series, calculate the <strong>number of days</strong> of daily flow within the above bands and work out <strong>annual average number of days</strong></li>
+</ol>
+
+<div class="rmdtip2">
+Use <code>COUNT()</code> to get the number of entries in the column
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Calculate the <strong>annual amount of flow</strong> in total and in each band</li>
+</ol>
+<p>You may do the annual averaging manually or the pivot table method. For the pivot table method: Insert a new column B, Label it Year.
+Type the year number into the first cell, make sure it is formatted as a number.</p>
+<center>
+<video width="100%" height="80%" controls>
+<source src="images/module1/video2.mp4" type="video/mp4">
+</video>
+</center>
+<p>Click two times on the little square in the corner of the box. This will fill down the page.
+Repeat this at each year change and you will have the year only information which you can then use to summarise data. As the original date has day numbers and decimal time each one is unique so you end up with a record for each day. This way you get a record for each year.</p>
+
+<div class="rmdtip2">
+Use <code>YEAR()</code> to speed this step up
+</div>
+<p>Highlight all the data. It must have headings for each column or it won’t work.
+Go to “Insert” then “Pivot Table.” Click OK as you want the default settings.
+Then you just fiddle until you get what you want. The following is an example:</p>
+<center>
+<video width="90%" height="90%" controls>
+<source src="images/module1/video3.mp4" type="video/mp4">
+</video>
+</center>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Sort the years</strong> from highest to lowest total annual flow:
+<ol style="list-style-type: lower-alpha">
+<li>Add a new column next to the flows indexing the years sequentially (i.e. 1, 2, 3…)</li>
+<li>Add a new column next to the indices calculating the probability of meeting the annual flow: <span class="math inline">\(P(Yri) = \frac{i}{\text{number of years}+1}\)</span></li>
+</ol></li>
+</ol>
+<center>
+<video width="100%" height="100%" controls>
+<source src="images/module1/video4.mp4" type="video/mp4">
+</video>
+</center>
+<div class="line-block">           c. Scatter plot the flow vs probability curve</div>
+
+<div class="rmdtip2">
+Sum each year
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>Assess the amount of water available for <strong>flow diversion for two scenarios</strong> by adding a new time-series column for each option:
+<ol style="list-style-type: lower-alpha">
+<li>Water below 50 ML/day and above 550 ML/day is NOT diverted</li>
+<li>Water below 150 ML/day and above 1000 ML/day is NOT diverted</li>
+</ol></li>
+</ol>
+
+<div class="rmdtip2">
+Construct a nested <code>IF()</code> that solves the following:
+<center>
+<img src="images/module1/picture3.png" style="width:100.0%" />
+</center>
+</div>
+<ol start="6" style="list-style-type: decimal">
+<li>Add two new columns for each of the above to work out <strong>cumulative amount</strong> (running total) of diverted water
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\text{Cumulated Volume} = \text{Previous Cumulated Volume}+\text{Today&#39;s Diverted Discharge}\)</span></li>
+</ol></li>
+<li>Create a scatter plot of historical salinity (as EC) collected from the site marked in the map (+) vs daily discharge from the drain (see sheet: Estuary – Salinity).</li>
+<li>Fit a trendline to the data and display equation and R<sup>2</sup> – this is a statistical model.</li>
+<li>In a new time-series column in the previous sheet, use the statistical model from above to predict a salinity time-series for the above station in the estuary under the two diversion scenarios compared to the base case.</li>
+</ol>
+</div>
+<div id="M1_7" class="section level3 unnumbered">
+<h3>Submission</h3>
+<div class="redbox2">
+<p><strong>Submit properly formatted graphs and tables of the following sections of the lab:</strong></p>
 <ul>
-<li>Read the <a href="https://jovial-stonebraker-82b147.netlify.app/">Introduction to R and Statistics</a> book for a more detailed coverage on the core data visualisation and statistics capabilities in R</li>
-<li>Access UWA’s <a href="https://www.uwa.edu.au/education/educational-enhancement-unit/strategic-projects/linkedin-learning-at-uwa">LinkedIn Learning</a> portal the learn more about the basics of R</li>
-<li>Refer to some handy R cheatsheets
+<li>Q2: Table of the number of days daily flow within the above bands and annual average
+number of days</li>
+<li>Q3: Table of the annual amount of flow in total and in each band</li>
+<li>Q4: Table of annual flow by year with index and probability. Scatter plot of the flow vs
+probability curve</li>
+<li>Q6: Table of the cumulative amount of diverted water</li>
+<li>Q7 &amp; 8: Scatterplot of the EC vs. daily discharge from the drain, with trendline (hint: exponential), equation and
+R2 value</li>
+<li>Q9: Plot of the salinity timeseries of the two diversion scenarios compared to the base case</li>
+<li>In less than 100 words, discuss which is the most appropriate scenario choice for
+management of the estuary</li>
+</ul>
+<p>These are in a word doc or PDF format. No screenshots of figures from Excel/Excel
+spreadsheets to be uploaded</p>
+<p><strong>General professional formatting guidelines:</strong></p>
 <ul>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">R Studio cheatsheet</a></li>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf">ggplot2 data visualisation cheatsheet</a></li>
-</ul></li>
+<li>All figures are to have adequate captions explaining them</li>
+<li>For graphs, figure captions go below the plot</li>
+<li>For tables, the caption goes above the table</li>
+<li>Make sure figures and their text size is readable</li>
+</ul>
+<p><strong>Excel hints:</strong></p>
+<ul>
+<li>When there is a caption for a plot, you remove the title</li>
+<li>Remove the plot border and gridlines</li>
+<li>Make sure both axes have visible lines and tick marks</li>
+<li>Units need to be noted properly with the axis label - ‘Temperature (°C)’</li>
+<li>Round numbers to be reasonable</li>
 </ul>
 </div>
-</div>
-<div id="unzipping-files" class="section level3 unnumbered">
-<h3>Unzipping files</h3>
-<p>Many of the module resources found in this workbook are downloaded as ‘zipped’ (i.e. compressed) files. ‘Unzipping’ (i.e. extracting) these files is simple.</p>
-On MacOS, simply double click the ‘zipped’ file:
-<center>
-<video width="100%" height="100%" controls>
-<source src="images/gettingstarted/video1.mp4" type="video/mp4">
-</video>
-</center>
-<p><br></p>
-<p>On Windows, click ‘Extract All’ and follow the prompt:</p>
-<center>
-<video width="100%" height="100%" controls>
-<source src="images/gettingstarted/video2.mp4" type="video/mp4">
-</video>
-</center>
-<p><br></p>
 
 </div>
 </div>
@@ -354,8 +436,8 @@ On MacOS, simply double click the ‘zipped’ file:
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="M1-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="GettingStarted.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="M2-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

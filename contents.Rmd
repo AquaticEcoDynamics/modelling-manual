@@ -1,0 +1,10 @@
+# Contents {-}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("render_toc.R")
+```
+
+```{r toc, echo=FALSE}
+render_toc("Environmental Dynamics Workbook.Rmd")
+```

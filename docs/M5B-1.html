@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Getting Started | Environmental Dynamics Workbook</title>
+  <title>Module 5b: Land Use and Nutrient Management | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
   <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Getting Started | Environmental Dynamics Workbook" />
+  <meta property="og:title" content="Module 5b: Land Use and Nutrient Management | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Getting Started | Environmental Dynamics Workbook" />
+  <meta name="twitter:title" content="Module 5b: Land Use and Nutrient Management | Environmental Dynamics Workbook" />
   
   <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="M1-1.html"/>
+<link rel="prev" href="M5A-1.html"/>
+<link rel="next" href="M6-1.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -270,82 +270,334 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="GettingStarted" class="section level1 unnumbered">
-<h1>Getting Started</h1>
-<h2>
-Tools You’ll Need
-</h2>
-<div id="excel" class="section level3 unnumbered">
-<h3>Excel</h3>
-<p>Excel is available on all computer laboratory PC’s and can be freely downloaded to personal devices <a href="http://www.it.uwa.edu.au/service-catalogue/software/office-365#availability-and-support">here</a>. You should already feel confident using Excel from your previous units, however if you need further guidance please visit UWA’s <a href="https://www.uwa.edu.au/education/educational-enhancement-unit/strategic-projects/linkedin-learning-at-uwa">LinkedIn Learning</a> resources.</p>
+<div id="M5B_1" class="section level1 unnumbered">
+<h1>Module 5b: Land Use and Nutrient Management</h1>
+<div id="M5B_2" class="section level3 unnumbered">
+<h3>Objectives</h3>
+<p>To setup a simple model to compare the effect of BMPs on nutrient export from a catchment with
+mixed land use.</p>
 </div>
-<div id="r" class="section level3 unnumbered">
-<h3>R</h3>
-<p>To get started with R, first download the base R system onto your computer. By itself, this provides a rudimentary console for interacting with the R programming language. For a more user-friendly experience, download the R Studio integrated development environment (IDE).</p>
-<ul>
-<li>R can be downloaded <a href="https://cran.csiro.au">here</a></li>
-<li>R Studio can be downloaded <a href="https://rstudio.com">here</a></li>
-</ul>
-<div id="terminology" class="section level4 unnumbered">
-<h4>Terminology</h4>
-<p><strong>File types</strong></p>
-<p>In this unit you will largely be dealing with two kinds of ‘R files’:</p>
-<ul>
-<li>R script files (e.g. <code>Equations.R</code>) and,</li>
-<li>R project files (e.g. <code>Module2Biogeochem.Rproj</code>)</li>
-</ul>
-<p>R scripts are the raw instructions that tell the R programming language what to do. Meanwhile, an R Project file simply creates an independent workplace environment for you to interact with and manage your scripts. It’s wise to create a new R Project file whenever you start working on a new project.</p>
-<p><strong>Functions and packages</strong></p>
-<p>Just like Excel, you can interact with your data using a variety of <em>functions</em> in R. Functions are the tools you use to get the job done. For example, the <code>plot()</code> function can be used to create graphs. R is an open source programming language, meaning anyone can create their own functions and bundle them up in a collection known as a <em>package</em>.</p>
-<p><strong>Comments</strong></p>
-<p>All programming languages allow the user to write comments on their code to assist in readability and structure. In R, a comment is defined as a line beginning with a <code>#</code>. Any characters written after the <code>#</code> are ignored by R and not executed. It’s good practice to get into the habit of commenting your R code as it will likely save you (or someone else!) a lot of time later down the track.</p>
-<!-- <iframe -->
-<!--   src="https://carbon.now.sh/embed/j2ZVuI6gJwssXAMxPakk" -->
-<!--   style="width: 698px; height: 348px; border:0; transform: scale(1); overflow:hidden;" -->
-<!--   sandbox="allow-scripts allow-same-origin"> -->
-<!-- </iframe> -->
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="GettingStarted.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment!</span></span>
-<span id="cb1-2"><a href="GettingStarted.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="GettingStarted.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a graph using the plot() function</span></span>
-<span id="cb1-4"><a href="GettingStarted.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my_data, variable1, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;My y-axis label&quot;</span>)</span>
-<span id="cb1-5"><a href="GettingStarted.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="GettingStarted.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot other variables onto the graph using the points() function</span></span>
-<span id="cb1-7"><a href="GettingStarted.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(my_data, variable2, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb1-8"><a href="GettingStarted.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(my_data, variable3, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
-<span id="cb1-9"><a href="GettingStarted.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(my_data, variable4, <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
+<div id="M5B_3" class="section level3 unnumbered">
+<h3>Model Overview</h3>
+<p>Consider a catchment basin with <strong>3 sub catchments</strong>, each with <strong>a different dominant land use and slightly different climate</strong>.</p>
+<p>The daily runoff from each sub catchment, <span class="math inline">\(Q_i\)</span> (m<sup>3</sup>/day), can be simply approximated based on the daily rainfall (<span class="math inline">\(R\)</span>), where <span class="math inline">\(c\)</span> is the daily runoff efficiency and <span class="math inline">\(R^{crit}\)</span> is the initial loss threshold (<span class="math inline">\(m\)</span>, this is the amount of rainfall that does not make it to the stream):</p>
+<center>
+<span class="math display" id="eq:module5b-1">\[\begin{equation}
+Q_{i}^{t} = \left\{\begin{matrix} 0,\ \ &amp;R_{i}^{t}\le R_{i}^{crit}
+\\ c_{i}(R_{i}^{t}-R_{i}^{crit})A_{i},\ \ &amp;R_{i}^{t}&gt; R_{i}^{crit}
+\end{matrix}\right.
+\tag{51}
+\end{equation}\]</span>
+</center>
+<p>The total flow (<span class="math inline">\(Q_{tot}\)</span>, m<sup>3</sup>/day) is calculated by summing the individual sub catchments, however there is an assumed lag time of 1 day for sub catchment 2 and 2 days lag time for sub catchment 3:</p>
+<center>
+<span class="math display" id="eq:module5b-2">\[\begin{equation}
+Q_{tot}^{t} = \color{#9BBB59}{Q_{1}^{t}} + \color{#0070C0}{Q_{2}^{t-1}} + \color{#F79646}{Q_{3}^{t-2}}
+\tag{52}
+\end{equation}\]</span>
+</center>
+<p>For each sub catchment, the phosphorus concentration, <span class="math inline">\(P_{i}\)</span> (g/m<sup>3</sup>), depends on how much flow there is (e.g. more flow = more fertilizer leaching) by assuming a simple power law fitted to the flow-concentration relationship computed for each land-use (<span class="math inline">\(P\)</span>~<span class="math inline">\(\alpha Q \beta\)</span>). This is averaged over the different land use fractions (denoted with the small <span class="math inline">\(p\)</span> index), using the land-use fraction <span class="math inline">\(F_p\)</span>:</p>
+<center>
+<span class="math display" id="eq:module5b-3">\[\begin{equation}
+P_{i}^{t} = \sum_{p=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{p} \left (\frac{Q_{i}^{t}}{A_{i}}  \right )^{\beta_{p}}+P_{0}}  \right )
+\tag{53}
+\end{equation}\]</span>
+</center>
+
+<div class="rmdnote2">
+<span class="math inline">\(\color{#FF0000}{\alpha_{p} \left (\frac{Q_{i}^{t}}{A_{i}} \right )^{\beta_{p}}+P_{0}}\)</span> is the flow dependent concentration of the <em>p</em>-th land use type.
+</div>
+<p>Where alpha (<span class="math inline">\(\alpha\)</span>) and beta (<span class="math inline">\(\beta\)</span>) are variables that govern the stream <span class="math inline">\(P_i\)</span> concentration (g/m<sup>3</sup>) as a function of area-averaged flow rate (<span class="math inline">\(Q/A\)</span>) and they depend on the dominant land use (<span class="math inline">\(p\)</span>). <span class="math inline">\(N_p\)</span> is the number of land use classes being considered (4) and <span class="math inline">\(P_0\)</span> is the background concentration (g/m<sup>3</sup>) for that sub-catchment (i.e. the value of PO<sub>4</sub> when flow tends to 0).</p>
+<p>The total <span class="math inline">\(P\)</span> export load is <span class="math inline">\(P_{load}\)</span> (g/day) and is the sum of the different sub catchment outputs (remember <em>load = flow x concentration</em>) with the assumed lag time:</p>
+<center>
+<span class="math display" id="eq:module5b-4">\[\begin{equation}
+P_{load}^{t} = \color{#9BBB59}{P_{1}^{t} Q_{1}^{t}} + \color{#0070C0}{P_{2}^{t-1} Q_{2}^{t-1}} + \color{#F79646}{P_{3}^{t-2} Q_{3}^{t-2}}
+\tag{54}
+\end{equation}\]</span>
+</center>
+<center>
+<video width="80%" height="80%" controls>
+<source src="images/module5b/video1.mp4" type="video/mp4">
+</video>
+</center>
+</div>
+<div id="M5B_4" class="section level3 unnumbered">
+<h3>Module Resources</h3>
+<p>Download the Excel spreadsheet for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
+</div>
+<div id="M5B_5" class="section level3 unnumbered">
+<h3>Exercises</h3>
+<div id="M5B_6" class="section level4 unnumbered">
+<h4>Building the model</h4>
+<ol style="list-style-type: decimal">
+<li>Draw by hand the conceptual model of this system.</li>
+<li>Confirm with the person beside you what index means (<span class="math inline">\(t\)</span>, <span class="math inline">\(i\)</span>, <span class="math inline">\(p\)</span>).</li>
+<li>Build the above model to predict the individual sub catchment flows and basin total flow. Assume basic information as outlined in Table <a href="M5B-1.html#tab:module5b-1">6</a> below and supplied rainfall data for the 3 catchments. Input a value for <span class="math inline">\(c\)</span> within the range given for now.</li>
+</ol>
+<center>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:445px; overflow-x: scroll; width:100%; ">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:module5b-1">Table 6: </span>Parameters for the individual catchments.
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Parameters for catchment model:
+</th>
+<th style="text-align:center;">
+<span style="color: #9BBB59;">Sub Catchment 1 (<span class="math inline">\(i\)</span>=1)</span>
+</th>
+<th style="text-align:center;">
+<span style="color: #0070C0;">Sub Catchment 2 (<span class="math inline">\(i\)</span>=2)</span>
+</th>
+<th style="text-align:center;">
+<span style="color: #F79646;">Sub catchment 3 (<span class="math inline">\(i\)</span>=3)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Sub catchment area, <span class="math inline">\(A\)</span> (km<sup>2</sup>)
+</td>
+<td style="text-align:center;">
+50
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+120
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Runoff coefficient, <span class="math inline">\(c\)</span> (range)
+</td>
+<td style="text-align:center;">
+0.2 to 0.5
+</td>
+<td style="text-align:center;">
+0.1 to 0.4
+</td>
+<td style="text-align:center;">
+0.1 to 0.3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Initial loss threshold value, <span class="math inline">\(R_{crit}\)</span> (m)
+</td>
+<td style="text-align:center;">
+0.01
+</td>
+<td style="text-align:center;">
+0.025
+</td>
+<td style="text-align:center;">
+0.04
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Landuse fraction, <span class="math inline">\(F\)</span>: irrigated dairy
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Landuse fraction, <span class="math inline">\(F\)</span>: wheat
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.8
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Landuse fraction, <span class="math inline">\(F\)</span>: urban
+</td>
+<td style="text-align:center;">
+0.3
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Landuse fraction, <span class="math inline">\(F\)</span>: forest
+</td>
+<td style="text-align:center;">
+0.6
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+0.3
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+</div>
+<div id="M5B_7" class="section level4 unnumbered">
+<h4>Calibrating the model</h4>
+<p>Let’s make sure the model flows are realistic:</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Manually adjust the runoff coefficient values (<span class="math inline">\(c\)</span>) for each sub catchment (see possible ranges in table below) until the model best matches the observed data. This processed is called “calibration.”</li>
+</ol>
 
 <div class="rmdtip2">
-To comment multiple lines of code at once in R Studio, press<code>Command + Shift + C</code>on MacOS or<code>Control + Shift + C</code>on Windows
+Check this by using a regression plot of the given total observed runoff and the model total runoff, checking to get the highest R<sup>2</sup> value
 </div>
-<p><strong>Further R resources</strong></p>
+</div>
+<div id="M5B_8" class="section level4 unnumbered">
+<h4>Calculate phosphate concentrations</h4>
+<p>Now let’s work out the land-use specific stream <span class="math inline">\(P\)</span> concentrations:</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Predict the sub catchment river <span class="math inline">\(P\)</span> concentrations and total river basin <span class="math inline">\(P\)</span> export load.
+The best way to do this is first predict the <span class="math inline">\(P\)</span> concentration of each land-use class (<span class="math inline">\(F_p\)</span>) in each sub catchment each as a column (i.e. Dairy <span class="math inline">\(P\)</span> concentration, Wheat <span class="math inline">\(P\)</span> concentration and so on), and then sum the 4 columns for <span class="math inline">\(P_i\)</span>.</li>
+</ol>
+<center>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:235px; overflow-x: scroll; width:100%; ">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:module5b-2">Table 7: </span>Phosphate parameters.
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Parameters for P concentration:
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(\alpha\)</span> (alpha)
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(\beta\)</span> (beta)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Landuse parameters: irrigated dairy (<span class="math inline">\(p\)</span>=1)
+</td>
+<td style="text-align:center;min-width: 11em; ">
+0.10
+</td>
+<td style="text-align:center;min-width: 11em; ">
+0.10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Landuse parameters: wheat (<span class="math inline">\(p\)</span>=2)
+</td>
+<td style="text-align:center;min-width: 11em; ">
+0.05
+</td>
+<td style="text-align:center;min-width: 11em; ">
+0.15
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Landuse parameters: urban (<span class="math inline">\(p\)</span>=3)
+</td>
+<td style="text-align:center;min-width: 11em; ">
+0.06
+</td>
+<td style="text-align:center;min-width: 11em; ">
+0.15
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Landuse parameters: forest (<span class="math inline">\(p\)</span>=4)
+</td>
+<td style="text-align:center;min-width: 11em; ">
+0.02
+</td>
+<td style="text-align:center;min-width: 11em; ">
+0.08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+
+<div class="rmdtip2">
+See how dairy has the highest alpha? This means it produces the most <span class="math inline">\(P\)</span> of all 4 classes.
+</div>
+</div>
+<div id="M5B_9" class="section level4 unnumbered">
+<h4>Consider 2 management scenarios</h4>
+<p>Finally, let’s run 2 management scenarios:</p>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>Scenario 1:</strong> If the total urban area in each sub catchment expands to 50% (0.5), how would this affect the overall <span class="math inline">\(P\)</span> export?</li>
+</ol>
+
+<div class="rmdtip2">
+Change the land use fractions manually. They still have to add up to 1, so change the other parts as you see appropriate, i.e. urban area usually comes at the expense of forest, but you can decide how to change the landscape. Record your changed fractions.
+</div>
+<ol start="7" style="list-style-type: decimal">
+<li><strong>Scenario 2</strong> If the irrigated dairy industry were made to contain their flows (i.e. prevent high <span class="math inline">\(P\)</span> concentrations going to the stream), how would this affect the overall concentration in the water at the river basin outlet? They have to keep the total subcatchment <span class="math inline">\(P\)</span> concentration below 0.065 g m<sup>3</sup>.</li>
+</ol>
+
+<div class="rmdtip2">
+Use an IF statement.
+</div>
+</div>
+</div>
+<div id="M5B_10" class="section level3 unnumbered">
+<h3>Submission</h3>
+<div class="redbox2">
+<p><strong>Submit properly formatted graphs and tables of the following sections of the lab:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Clear photograph or page scan of your <strong>hand drawn conceptual model</strong> of the Catchment system.</li>
+<li>Plot of calibration regression plot, including a trendline, equation and R<sup>2</sup> value. Include in the caption what <span class="math inline">\(c\)</span> values you gave each catchment.</li>
+<li>Plot of the phosphorous export of the urban expansion management scenario (Scenario 1) compared to the original, over time.</li>
+<li>Plot of the phosphorous export of the dairy management scenario (Scenario 2) compared to the original, over time.</li>
+<li>Any other interesting plots you create, if you like.</li>
+</ol>
+<p>These are in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded</p>
+<p><strong>General professional formatting guidelines:</strong></p>
 <ul>
-<li>Read the <a href="https://jovial-stonebraker-82b147.netlify.app/">Introduction to R and Statistics</a> book for a more detailed coverage on the core data visualisation and statistics capabilities in R</li>
-<li>Access UWA’s <a href="https://www.uwa.edu.au/education/educational-enhancement-unit/strategic-projects/linkedin-learning-at-uwa">LinkedIn Learning</a> portal the learn more about the basics of R</li>
-<li>Refer to some handy R cheatsheets
+<li>All figures are to have adequate captions explaining them</li>
+<li>For graphs, figure captions go below the plot</li>
+<li>For tables, the caption goes above the table</li>
+<li>Make sure figures and their text size is readable</li>
+</ul>
+<p><strong>Excel hints:</strong></p>
 <ul>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">R Studio cheatsheet</a></li>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf">ggplot2 data visualisation cheatsheet</a></li>
-</ul></li>
+<li>When there is a caption for a plot, you remove the title</li>
+<li>Remove the plot border and gridlines</li>
+<li>Make sure both axes have visible lines and tick marks</li>
+<li>Units need to be noted properly with the axis label - ‘Temperature (°C)’</li>
+<li>Round numbers to be reasonable</li>
 </ul>
 </div>
-</div>
-<div id="unzipping-files" class="section level3 unnumbered">
-<h3>Unzipping files</h3>
-<p>Many of the module resources found in this workbook are downloaded as ‘zipped’ (i.e. compressed) files. ‘Unzipping’ (i.e. extracting) these files is simple.</p>
-On MacOS, simply double click the ‘zipped’ file:
-<center>
-<video width="100%" height="100%" controls>
-<source src="images/gettingstarted/video1.mp4" type="video/mp4">
-</video>
-</center>
-<p><br></p>
-<p>On Windows, click ‘Extract All’ and follow the prompt:</p>
-<center>
-<video width="100%" height="100%" controls>
-<source src="images/gettingstarted/video2.mp4" type="video/mp4">
-</video>
-</center>
-<p><br></p>
 
 </div>
 </div>
@@ -354,8 +606,8 @@ On MacOS, simply double click the ‘zipped’ file:
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="M1-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="M5A-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="M6-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
