@@ -52,9 +52,18 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.9.2.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
@@ -180,10 +189,12 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="M1-1.html"><a href="M1-1.html#M1_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M1-1.html"><a href="M1-1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
-<li class="chapter" data-level="" data-path="M1-1.html"><a href="M1-1.html#M1_4"><i class="fa fa-check"></i>Case study</a></li>
+<li class="chapter" data-level="" data-path="M1-1.html"><a href="M1-1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
 <li class="chapter" data-level="" data-path="M1-1.html"><a href="M1-1.html#M1_5"><i class="fa fa-check"></i>Module resources</a></li>
 <li class="chapter" data-level="" data-path="M1-1.html"><a href="M1-1.html#M1_6"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="M1-1.html"><a href="M1-1.html#M1_7"><i class="fa fa-check"></i>Submission</a></li>
+<li class="chapter" data-level="" data-path="M1-1.html"><a href="M1-1.html#M1_7"><i class="fa fa-check"></i>Flow diversion scenarios</a></li>
+<li class="chapter" data-level="" data-path="M1-1.html"><a href="M1-1.html#M1_8"><i class="fa fa-check"></i>Assessing impacts on lake salinity</a></li>
+<li class="chapter" data-level="" data-path="M1-1.html"><a href="M1-1.html#M1_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="M2-1.html"><a href="M2-1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a>
 <ul>
@@ -288,7 +299,7 @@ div.csl-indent {
 <div class="figure"><span id="fig:figM4-1"></span>
 <img src="images/module4/picture1.jpg" alt="Bleached coral (foreground) and normal coral (background). CC BY 3.0, https://en.wikipedia.org/w/index.php?curid=32829631" width="70%" />
 <p class="caption">
-Figure 1: Bleached coral (foreground) and normal coral (background). CC BY 3.0, <a href="https://en.wikipedia.org/w/index.php?curid=32829631" class="uri">https://en.wikipedia.org/w/index.php?curid=32829631</a>
+Figure 2: Bleached coral (foreground) and normal coral (background). CC BY 3.0, <a href="https://en.wikipedia.org/w/index.php?curid=32829631" class="uri">https://en.wikipedia.org/w/index.php?curid=32829631</a>
 </p>
 </div>
 </center>
@@ -425,12 +436,12 @@ C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2
 </div>
 <div id="M4_5" class="section level3 unnumbered">
 <h3>Exercise 2</h3>
-<p>In this exercise you will construct a double-logarithmic plot of this system, holding CO2 constant and varying the pH. Go to the second tab in Excel and copy the equations over from the first tab. Or in R, you can run a <em>for loop</em> to calculate the different concentrations for each of the different pHs. Then you will have some of the major variables converted to logarithms. Next you can make an x y scatter plot. If you add the data correctly, you should get a plot that looks like Figure <a href="M4-1.html#fig:figM4-2">2</a>.</p>
+<p>In this exercise you will construct a double-logarithmic plot of this system, holding CO2 constant and varying the pH. Go to the second tab in Excel and copy the equations over from the first tab. Or in R, you can run a <em>for loop</em> to calculate the different concentrations for each of the different pHs. Then you will have some of the major variables converted to logarithms. Next you can make an x y scatter plot. If you add the data correctly, you should get a plot that looks like Figure <a href="M4-1.html#fig:figM4-2">3</a>.</p>
 <center>
 <div class="figure"><span id="fig:figM4-2"></span>
 <img src="images/module4/picture2.png" alt="Double logarithmic plot of the equilibrium composition of seawater in our model [@stumm1996]" width="90%" />
 <p class="caption">
-Figure 2: Double logarithmic plot of the equilibrium composition of seawater in our model <span class="citation">(<a href="#ref-stumm1996" role="doc-biblioref">Stumm and Morgan 1996</a>)</span>
+Figure 3: Double logarithmic plot of the equilibrium composition of seawater in our model <span class="citation">(<a href="#ref-stumm1996" role="doc-biblioref">Stumm and Morgan 1996</a>)</span>
 </p>
 </div>
 </center>
@@ -465,7 +476,7 @@ Big questions: if you increase CO<sub>2</sub>, does the pH rise or fall? Does Ca
 <div class="figure"><span id="fig:figM4-3"></span>
 <img src="images/module4/picture3.png" alt="Changes in global average surface pH and saturation state with respect to aragonite in the Southern Ocean under various SRES scenarios." width="60%" />
 <p class="caption">
-Figure 3: Changes in global average surface pH and saturation state with respect to aragonite in the Southern Ocean under various SRES scenarios.
+Figure 4: Changes in global average surface pH and saturation state with respect to aragonite in the Southern Ocean under various SRES scenarios.
 </p>
 </div>
 </center>
@@ -625,7 +636,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": [["Module 1 Resources.zip", "Module 1 Resources"], ["Module 2 Resources.zip", "Module 2 Resources"], ["Module 4 Resources.zip", "Module 4 Resources"], ["Module 5 Resources.zip", "Module 5 Resources"], ["Module 6 Resources.zip", "Module 6 Resources"], ["Module 7 Resources.zip", "Module 7 Resources"], ["Module 8 Resources.zip", "Module 8 Resources"]],
+"download": [["Module 1 Resources.zip", "Module 1 Resources"], ["Module 2 Resources.zip", "Module 2 Resources"], ["Module 4 Resources.zip", "Module 4 Resources"], ["Module 5a Resources.zip", "Module 5a Resources"], ["Module 5b Resources.zip", "Module 5b Resources"], ["Module 6 Resources.zip", "Module 6 Resources"], ["Module 7 Resources.zip", "Module 7 Resources"]],
 "toc": {
 "collapse": "section"
 },

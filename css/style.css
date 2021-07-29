@@ -152,3 +152,11 @@ body {font-family: Arial;}
   border: 1px solid #ccc;
   border-top: none;
 }
+
+leaflet-bar a, .leaflet-bar a:hover {
+  background-color: #fff !important;
+}  
+
+.leaflet-touch .leaflet-bar a {
+background-color: #fff !important;
+}

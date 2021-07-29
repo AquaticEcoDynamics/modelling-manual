@@ -1,3 +1,4 @@
+fig:map7-1
 eq:module2-1
 eq:module2-2
 eq:module2-3
