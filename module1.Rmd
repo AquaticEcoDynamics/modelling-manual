@@ -33,6 +33,10 @@ In the Murray-Darling Basin ([MDB](https://www.mdba.gov.au/importance-murray-dar
 
 ### Flow diversion case study: Robe Lakes {#M1_4 -}
 
+What happens if we divert freshwater away from a coastal lake system? How much flow diversion is "acceptable"? 
+
+In this exercise we use a real data-set from the Robe Lakes system in South Australia to explore this question.
+
 <center>
 ```{r map7-1, fig.cap="Explore the case study area with this interactive map.", out.width='100%', out.height='350px', echo=FALSE, message=FALSE, warning=FALSE}
 library(leaflet)
@@ -43,7 +47,7 @@ leaflet::leaflet() %>%
 ```
 </center>
 
-We can further plan for e-water requirements to a critical system using scenario modelling, and as outlined above, the concept of "flow-response". In this case we look at an example in South Australia where an assessment for water diversion is being undertaken, and we seek to look at what impact this might have on the salinity of a coastal lake. In other words, if we change the flow regime, what will the response be. In this case, salinity is an environmental indicator of ecological requirements.
+We can  plan for e-water requirements to a highly valued system using scenario modelling, and the concept of a "flow-response model" (or flow-response relationship). In this case we look at an example in South Australia where an assessment for water diversion is being undertaken, and we seek to look at what impact this might have on the salinity of a coastal lake. In other words, if we change the flow regime, what will the response be. In this case, salinity is an environmental indicator of ecological requirements.
 
 Specifically in this example, we assess the impact of diverting water from "Drain L", thereby reducing water to the Robe Lakes. Before we assess our diversion scenario, we must first analyse the historical flow data, to understand the historical flow regime.
 
@@ -57,9 +61,20 @@ Download the Excel spreadsheet for this module by clicking the download button i
 
 ### Exercises {#M1_6 -}
 
-You are given a time-series of daily river flow and need to assess how different diversion scenarios impact the freshwater flow delivery to a down stream estuary.
+You are given a time-series of daily river flow (through the Drain) and need to assess how different diversion scenarios impact the freshwater flow delivery to a down stream estuary.
 
-1) For this flow time-series, calculate the **volume of daily flow** within the following bands
+The steps below allow us to:
+
+- "Bin" (aka categorise) the daily flow into different categories (using an IF statement)
+- Summarise the daily flows into annual totals (using a PIVOT table)
+- Describe the historical flow variance in terms of an exceedance probability plot
+- Create to alternate "diversion scenarios". These are "what-if" type scenarios where we explore what would have occurred if the diversion policy was in place.
+- Build a simple empirical (statistical) model linking drain flow rate and estuary response - we measure response in terms of salinity.
+- Use the empirical model to show what the salinity in the estuarine lakes would have looked like if the flow diversion policy was in place.
+
+Now that we have an overview, lets get started! Follow closely the below steps from 1 to 9.
+
+1) Categorise the flow into different categories. For this flow time-series, calculate the **volume of daily flow** within the following bands
 0-40; 40-80; 80-120; 120-200; 200-400; 400-1000; >1000
 
 ```{block2, hintM1-1, type='rmdtip2'}
@@ -82,9 +97,9 @@ Use a nested `IF()` statement in adjacent columns to partition flows
 Use `COUNT()` to get the number of entries in the column
 ```
 
-3) Calculate the **annual amount of flow** in total and in each band
+3) Calculate the **annual amount of flow** in total and in each flow band.
 
-You may do the annual averaging manually or the pivot table method. For the pivot table method: Insert a new column B, Label it Year.
+You may do the annual averaging manually (slow) or the pivot table method (fast). For the pivot table method: Insert a new column B, Label it Year.
 Type the year number into the first cell, make sure it is formatted as a number.
 
 <center>
@@ -119,7 +134,7 @@ Then you just fiddle until you get what you want. The following is an example:
     <source src="images/module1/video4.mp4" type="video/mp4">
   </video>
 </center>
-|            c. Scatter plot the flow vs probability curve
+   c. Create a scatter plot of the flow (y-axis) vs probability (x-axis) to create an "exceedance" curve
 
 
 ```{block2, hintM1-4, type='rmdtip2'}
