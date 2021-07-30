@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Module 6: Advection-Dispersion | Environmental Dynamics Workbook</title>
+  <title>Module 6: River Pollution | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Module 6: Advection-Dispersion | Environmental Dynamics Workbook" />
+  <meta property="og:title" content="Module 6: River Pollution | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Module 6: Advection-Dispersion | Environmental Dynamics Workbook" />
+  <meta name="twitter:title" content="Module 6: River Pollution | Environmental Dynamics Workbook" />
   
   <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
   
@@ -189,7 +189,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M3-1.html"><a href="M3-1.html#M3_9"><i class="fa fa-check"></i>Case Study 3: Incorporating Greenhouse Gases</a></li>
 <li class="chapter" data-level="" data-path="M3-1.html"><a href="M3-1.html#M3_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html"><i class="fa fa-check"></i>Module 4: Oceanic pH Calculation</a>
+<li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a>
 <ul>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M4-1.html"><a href="M4-1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
@@ -218,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M5B-1.html"><a href="M5B-1.html#M5B_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M5B-1.html"><a href="M5B-1.html#M5B_10"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M6-1.html"><a href="M6-1.html"><i class="fa fa-check"></i>Module 6: Advection-Dispersion</a>
+<li class="chapter" data-level="" data-path="M6-1.html"><a href="M6-1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a>
 <ul>
 <li class="chapter" data-level="" data-path="M6-1.html"><a href="M6-1.html#M6_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M6-1.html"><a href="M6-1.html#M6_3"><i class="fa fa-check"></i>Advection-Dispersion Reaction</a></li>
@@ -226,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M6-1.html"><a href="M6-1.html#M6_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M6-1.html"><a href="M6-1.html#M6_6"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M7-1.html"><a href="M7-1.html"><i class="fa fa-check"></i>Module 7: Lake Water Quality Modelling</a>
+<li class="chapter" data-level="" data-path="M7-1.html"><a href="M7-1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a>
 <ul>
 <li class="chapter" data-level="" data-path="M7-1.html"><a href="M7-1.html#M7_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M7-1.html"><a href="M7-1.html#M7_3"><i class="fa fa-check"></i>Module Resources</a></li>
@@ -257,21 +257,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="M6_1" class="section level1 unnumbered">
-<h1>Module 6: Advection-Dispersion</h1>
+<h1>Module 6: River Pollution</h1>
 <div id="M6_2" class="section level3 unnumbered">
 <h3>Objectives</h3>
-<p>To setup an advection-dispersion-reaction equation for a river system to demonstrate the combination of <strong>temporal and spatial</strong> finite differencing, in one dimension.</p>
+<p>To setup an “advection-dispersion-reaction” equation for a river system to demonstrate the combination of <strong>temporal and spatial</strong> finite differencing, in one dimension.</p>
 </div>
 <div id="M6_3" class="section level3 unnumbered">
 <h3>Advection-Dispersion Reaction</h3>
-<p>The advection-dispersion reaction equation for a species <span class="math inline">\(C\)</span>, is defined as:</p>
+<p>Mixing in environmental waters is described based on the currents and turbulence in the water - in simple terms we refer to these as advection and dispersion.</p>
+<p>The advection-dispersion reaction equation for the concentration of a substance <span class="math inline">\(C\)</span>, is defined as:</p>
 <center>
 <span class="math display" id="eq:module6-1">\[\begin{equation}
 \frac{\delta C}{\delta t} = D_{d}\frac{\delta^{2} C}{\delta x^{2}} - u \frac{\delta C}{\delta x} + S + R
 \tag{55}
 \end{equation}\]</span>
 </center>
-<p>Where the left hand side (LHS) is the “unsteady” term (<span class="math inline">\(C\)</span> change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and <span class="math inline">\(S\)</span> is a source term and <span class="math inline">\(R\)</span> is a reaction term. We use a partial deriviative (“curly <span class="math inline">\(\delta\)</span>”) since <span class="math inline">\(C\)</span> is now varying in both space and time.</p>
+<p>where the left hand side (LHS) is the “unsteady” term (<span class="math inline">\(C\)</span> change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and <span class="math inline">\(S\)</span> is a source term and <span class="math inline">\(R\)</span> is a reaction term. We use a partial deriviative (“curly <span class="math inline">\(\delta\)</span>”) since <span class="math inline">\(C\)</span> is now varying in both space and time.</p>
 <p>In this exercise we numerically solve the 1-dimensional, advective-dispersive transport of oxygen in a river. To solve this equation numerically, we must “discretise” the partial derivatives using finite difference methods, here done according to the FTCS scheme (refer to lecture!):</p>
 <center>
 <span class="math display" id="eq:module6-2">\[\begin{equation}

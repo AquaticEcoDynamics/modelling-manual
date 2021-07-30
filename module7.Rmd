@@ -1,4 +1,4 @@
-# Module 7: Lake Water Quality Modelling {#M7_1 .unnumbered}
+# Module 7: Lake Ecosystem Dynamics {#M7_1 .unnumbered}
 
 ### Objectives {#M7_2 .unnumbered}
 

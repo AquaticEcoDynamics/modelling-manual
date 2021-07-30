@@ -1,13 +1,15 @@
-# Module 6: Advection-Dispersion {#M6_1 -}
+# Module 6: River Pollution {#M6_1 -}
 
 ### Objectives {#M6_2 -}
 
-To setup an advection-dispersion-reaction equation for a river system to demonstrate the combination of **temporal and spatial** finite differencing, in one dimension.
+To setup an "advection-dispersion-reaction" equation for a river system to demonstrate the combination of **temporal and spatial** finite differencing, in one dimension. 
 
 
 ### Advection-Dispersion Reaction {#M6_3 -}
 
-The advection-dispersion reaction equation for a species $C$, is defined as:
+Mixing in environmental waters is described based on the currents and turbulence in the water - in simple terms we refer to these as advection and dispersion. 
+
+The advection-dispersion reaction equation for the concentration of a substance $C$, is defined as:
 
 <center>
 \begin{equation}
@@ -16,7 +18,7 @@ The advection-dispersion reaction equation for a species $C$, is defined as:
 \end{equation}
 </center>
 
-Where the left hand side (LHS) is the “unsteady” term ($C$ change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and $S$ is a source term and $R$ is a reaction term. We use a partial deriviative (“curly $\delta$”) since $C$ is now varying in both space and time.
+where the left hand side (LHS) is the “unsteady” term ($C$ change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and $S$ is a source term and $R$ is a reaction term. We use a partial deriviative (“curly $\delta$”) since $C$ is now varying in both space and time.
 
 In this exercise we numerically solve the 1-dimensional, advective-dispersive transport of oxygen in a river. To solve this equation numerically, we must “discretise” the partial derivatives using finite difference methods, here done according to the FTCS scheme (refer to lecture!):
 

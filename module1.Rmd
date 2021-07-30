@@ -91,7 +91,7 @@ Use a nested `IF()` statement in adjacent columns to partition flows
 </center>
 
 
-2) For this flow time-series, calculate the **number of days** of daily flow within the above bands and work out **annual average number of days**
+2) For this flow time-series, calculate the **number of days** of daily flow within the above bands and then work out **annual average number of days**. The latter is simply computed by dividing the total number of days by the number of years in the data-set.
 
 ```{block2, hintM1-2, type='rmdtip2'}
 Use `COUNT()` to get the number of entries in the column
