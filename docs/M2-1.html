@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 2: Biogeochemistry | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 2: Biogeochemistry | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
 <link rel="prev" href="M1-1.html"/>
 <link rel="next" href="M3-1.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
@@ -62,12 +64,12 @@
 <script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/plotly-binding-4.9.2.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script src="https://hypothes.is/embed.js" async></script>
   
 
@@ -135,6 +137,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -267,7 +292,25 @@ Bacterially Mediated Organic Matter Oxidation Rates
 </div>
 <div id="M2_3" class="section level3 unnumbered">
 <h3>Modelling concepts</h3>
-<p>This model has variables of concentration and rate, no spatial dimensions, and it has a dimension of time. Last week’s model had variables of volume and concentration (salinity), and was also resolved in time. In coming weeks the models will be resolved in zero, one, two or three dimensions of space, and only some will be resolved in time. Going down the rows of the Excel spread sheet means going forward in time, as the differential equations break the time axis into hundreds of tiny little chunks. The concentration at any point in time may depend on concentration at the previous point in time. We use the notation concentrationt depends on concentration<sup>t-1</sup>.</p>
+<p>This model has variables of concentration and rate, no spatial dimensions, and it has a dimension of time. Last week’s model had variables of volume and concentration (salinity), and was also resolved in time. In coming weeks the models will be resolved in zero, one, two or three dimensions of space, and only some will be resolved in time.</p>
+Remember that a chemical reaction can be described using a simple differential equation. For the concetration of OM, we can write it as:
+<center>
+<br>
+<span class="math display" id="eq:module2-1a">\[\begin{equation}
+ \frac{dOM}{dt} = -R_{OM} =  -k_{OM}OM
+ \tag{1}
+ \end{equation}\]</span>
+</center>
+<p><br>
+Here, <span class="math inline">\(k_{OM}\)</span> is the rate of the organic matter decay reaction, in units of <span class="math inline">\(/year\)</span>, and <span class="math inline">\(OM\)</span> is a concentration of organic matter in units of <span class="math inline">\(mM\)</span>.</p>
+In this activity going down the rows of the Excel spread sheet means going forward in time, as the differential equations divide the time axis into hundreds of tiny little chunks (i.e., each row is a day in this weeks setup). The concentration at any point in time may depend on concentration at the previous point in time. We use the notation concentration @ <sup>t</sup> depends on concentration @ <sup>t-1</sup>. We write this by “discretizing” the equation, as:
+<br>
+<span class="math display" id="eq:module2-1b">\[\begin{equation}
+ OM^{t} = OM^{t-1} +  (k_{OM} OM^{t-1})\Delta t
+ \tag{2}
+ \end{equation}\]</span>
+</center>
+<p><br></p>
 </div>
 <div id="M2_4" class="section level3 unnumbered">
 <h3>Organic matter oxidation</h3>
@@ -277,8 +320,8 @@ Bacterially Mediated Organic Matter Oxidation Rates
 <center>
 <br>
 <span class="math display" id="eq:module2-1">\[\begin{equation}
-R_{O_{2}} = \color{#00B0F0}{K_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{O_{2}}{O_{2}+K_{O_{2}}}}
-\tag{1}
+R_{O_{2}} = \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{O_{2}}{O_{2}+K_{O_{2}}}}
+\tag{3}
 \end{equation}\]</span>
 </center>
 <p><br></p>
@@ -287,18 +330,19 @@ R_{O_{2}} = \color{#00B0F0}{K_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{O_{2
 <br>
 <span class="math display" id="eq:module2-6" id="eq:module2-5" id="eq:module2-4" id="eq:module2-3" id="eq:module2-2">\[\begin{align*}
 R_{NO_{3}} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{NO_{3}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
-\tag{2}\\
+\tag{4}\\
 R_{Mn} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Mn}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
-\tag{3}\\
-R_{Fe} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Fe}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
-\tag{4} \\
-R_{SO_{4}} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{SO_{4}^{2-}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
 \tag{5}\\
+R_{Fe} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{Fe}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
+\tag{6} \\
+R_{SO_{4}} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{SO_{4}^{2-}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
+\tag{7}\\
 R_{Meth} &amp;= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#FF0000}{\frac{K_{SO_{4}}}{SO_{4}^{2-}+K_{SO_{4}}}}\color{#FF0000}{\frac{K_{Fe}}{Fe+K_{Fe}}}\color{#FF0000}{\frac{K_{Mn}}{Mn+K_{Mn}}}\color{#FF0000}{\frac{K_{NO_{3}}}{NO_{3}+K_{NO_{3}}}}\color{#FF0000}{\frac{K_{O_{2}}}{O_{2}+K_{O_{2}}}}
-\tag{6}\\
+\tag{8}\\
 \end{align*}\]</span>
 </center>
 <p><br></p>
+<p>Note that the total amount of <span class="math inline">\(OM\)</span> decay, <span class="math inline">\(R_{OM}\)</span>, is the sum of the all the individual pathways listed above.</p>
 <p>In this lab, we simulate a blob of aquatic sediment. It is a closed system, so that the initial concentrations react until they reach equilibrium. This system is also perfectly mixed, with an unchanging biomass of bacteria, and so there is no spatial resolution. This allows us to focus on the chemical reactions alone.</p>
 </div>
 <div id="M2_5" class="section level3 unnumbered">
@@ -360,7 +404,7 @@ You can press <code>Cmd+Enter</code> on MacOS, or <code>Ctrl+Enter</code> on Win
 <center>
 <div class="figure">
 <video src="images/module2/video3.mp4" style="width:100.0%" controls=""><a href="images/module2/video3.mp4"></a></video>
-<p class="caption">Step 2: Write the equation. It should match Equation <a href="M2-1.html#eq:module2-4">(4)</a>.</p>
+<p class="caption">Step 2: Write the equation. It should match Equation <a href="M2-1.html#eq:module2-4">(6)</a>.</p>
 </div>
 </center>
 <br>
