@@ -6,7 +6,7 @@
 Become familiar with basic spread sheet commands in excel by building a simple biogeochemical model from chemical and mathematical equations. Become familiar with the program R Studio and compare it to Excel.
 
 ### Modelling concepts {#M2_3 -}
-This model has variables of concentration and rate, no spatial dimensions, and it has a dimension of time. Last week’s model had variables of volume and concentration (salinity), and was also resolved in time. In coming weeks the models will be resolved in zero, one, two or three dimensions of space, and only some will be resolved in time. 
+This model has variables of concentration and rate, no spatial dimensions, and it has a dimension of time. Last week’s model had variables of volume and concentration (salinity), and was also resolved in time. In coming weeks the models will be resolved in zero, one, two or three dimensions of space, and only some will be resolved in time.
 
 Remember that a chemical reaction can be described using a simple differential equation. For the concetration of OM, we can write it as:
 <center>
@@ -39,7 +39,7 @@ The rate is dependent on the concentration of the organic matter, $\color{#E36C0
 <center>
 <br>
 \begin{equation}
-R_{O_{2}} = \color{#00B0F0}{K_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{O_{2}}{O_{2}+K_{O_{2}}}}
+R_{O_{2}} = \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{O_{2}}{O_{2}+K_{O_{2}}}}
 (\#eq:module2-1)
 \end{equation}
 </center>
@@ -143,7 +143,7 @@ You can press `Cmd+Enter` on MacOS, or `Ctrl+Enter` on Windows instead of clicki
 
 Now we have a working process-based model. This was the hard and boring part, but now we can be creative. So far we have established an initial condition and let it run to completion, but next we can model a hypothetical environmental situation. For example, imagine there were an oxygen fluctuation, perhaps from algal photosynthesis occurring in the day but not at night in a lake, or from the tidal movement of hypoxic water.
 
-9) In either Excel or R, create a new environmental situation that involves organic matter oxidation. Consider the assumptions you are making and how important they are. Use the model to test the effect of this situation on concentrations and rates. For example, what would happen if there were regular organic matter deposition as a boundary condition? Or maybe what if there were a constant oxygen concentration? What conditions might be needed to minimise methanogenesis? How could you maximise denitrification? I will give higher marks if you do something original and creative. Write a brief description of your new situation and create one plot (**4**) to explain your result. 
+9) In either Excel or R, create a new environmental situation that involves organic matter oxidation. Consider the assumptions you are making and how important they are. Use the model to test the effect of this situation on concentrations and rates. For example, what would happen if there were regular organic matter deposition as a boundary condition? Or maybe what if there were a constant oxygen concentration? What conditions might be needed to minimise methanogenesis? How could you maximise denitrification? I will give higher marks if you do something original and creative. Write a brief description of your new situation and create one plot (**4**) to explain your result.
 
 ### Submission {#M2_9 -}
 :::: {.redbox2}
@@ -172,4 +172,3 @@ These are in a word doc or PDF format. No screenshots of figures from Excel/Exce
 - Units need to be noted properly with the axis label - 'Temperature (°C)'
 - Round numbers to be reasonable
 ::::
-
