@@ -285,7 +285,7 @@ To simplify the model further, we assume the Earth emits outgoing (longwave) rad
 <center>
 <span class="math display" id="eq:module3-1">\[\begin{equation}
 E = \sigma T^{4}
-\tag{7}
+\tag{9}
 \end{equation}\]</span>
 </center>
 <p>Where, <span class="math inline">\(\sigma\)</span> = Stefan-Boltzmann constant (5.67x10<sup>-8</sup>), and <span class="math inline">\(T\)</span> = Temperature (in degrees Kelvin).</p>
@@ -293,7 +293,7 @@ E = \sigma T^{4}
 <center>
 <span class="math display" id="eq:module3-2">\[\begin{equation}
 E_{\text{out}} = \sigma 4\pi r^{2} T^{4}
-\tag{8}
+\tag{10}
 \end{equation}\]</span>
 </center>
 <p>Where, <span class="math inline">\(r\)</span> = Radius of the Earth (in m).</p>
@@ -304,7 +304,7 @@ E_{\text{out}} = \sigma 4\pi r^{2} T^{4}
 <center>
 <span class="math display" id="eq:module3-3">\[\begin{equation}
 E_{\text{abs}} = S\pi r^{2} (1-a)
-\tag{9}
+\tag{11}
 \end{equation}\]</span>
 </center>
 <p>Where, <span class="math inline">\(S\)</span> = incoming solar radiation: the “solar constant” (1367 W/m<sup>2</sup>) .</p>
@@ -531,7 +531,7 @@ Stefan-Boltzmann constant
 <center>
 <span class="math display" id="eq:module3-4">\[\begin{equation}
 E_{\text{out}} = x + yT
-\tag{10}
+\tag{12}
 \end{equation}\]</span>
 </center>
 <p>Where, <span class="math inline">\(x = 204\)</span> W/m<sup>2</sup>, and <span class="math inline">\(y = 2.17\)</span> W/m<sup>2</sup>/°C.</p>
@@ -539,7 +539,7 @@ E_{\text{out}} = x + yT
 <center>
 <span class="math display" id="eq:module3-5">\[\begin{equation}
 \pi r^{2} S (1-a) = 4\pi r^{2}(X+yT)
-\tag{11}
+\tag{13}
 \end{equation}\]</span>
 </center>
 <div id="M3_8" class="section level4 unnumbered">
@@ -839,7 +839,7 @@ Energy leaves these the system by three routes:</p>
 <center>
 <span class="math display" id="eq:module3-6">\[\begin{equation}
 S + W = a_{p}S_{av} + \sigma T_{u}^{4} + (1 − \varepsilon)\sigma T_{s}^{4}
-\tag{12}
+\tag{14}
 \end{equation}\]</span>
 </center>
 <p><br></p>
@@ -854,7 +854,7 @@ The upper layer loses energy by thermal radiation upward to outer space <strong>
 <center>
 <span class="math display" id="eq:module3-7">\[\begin{equation}
 k_{u}S_{av} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
-\tag{13}
+\tag{15}
 \end{equation}\]</span>
 </center>
 <p><br></p>
@@ -871,7 +871,7 @@ k_{u}S_{av} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
 <center>
 <span class="math display" id="eq:module3-8">\[\begin{equation}
 k_{l}S_{av} + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigma T_{l}^{4}
-\tag{14}
+\tag{16}
 \end{equation}\]</span>
 </center>
 <p><br></p>
@@ -879,19 +879,19 @@ k_{l}S_{av} + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2
 <div id="M3_11" class="section level4 unnumbered">
 <h4>Exercise 2</h4>
 <p><strong>Solve these equations to find a formula for surface temperature <span class="math inline">\(T_{s}\)</span>:</strong></p>
-<p>Equations <a href="M3-1.html#eq:module3-6">(12)</a> to <a href="M3-1.html#eq:module3-8">(14)</a> are a system of three equations in three unknowns: the temperatures <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and <span class="math inline">\(T_{s}\)</span>. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:</p>
+<p>Equations <a href="M3-1.html#eq:module3-6">(14)</a> to <a href="M3-1.html#eq:module3-8">(16)</a> are a system of three equations in three unknowns: the temperatures <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and <span class="math inline">\(T_{s}\)</span>. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:</p>
 <ol style="list-style-type: decimal">
-<li>Rearrange Equation <a href="M3-1.html#eq:module3-6">(12)</a> for <span class="math inline">\(\sigma T_{u}^{4}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
-<li>Rearrange Equation <a href="M3-1.html#eq:module3-7">(13)</a> for <span class="math inline">\(\sigma T_{l}^{4}\)</span> in terms of <span class="math inline">\(T_{u}\)</span> and parameters.</li>
+<li>Rearrange Equation <a href="M3-1.html#eq:module3-6">(14)</a> for <span class="math inline">\(\sigma T_{u}^{4}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
+<li>Rearrange Equation <a href="M3-1.html#eq:module3-7">(15)</a> for <span class="math inline">\(\sigma T_{l}^{4}\)</span> in terms of <span class="math inline">\(T_{u}\)</span> and parameters.</li>
 <li>Substitute the results of step 1 into the results of step 2 to give an equation for <span class="math inline">\(\sigma T_{l}^{4}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
-<li>Rearrange Equation <a href="M3-1.html#eq:module3-8">(14)</a> for <span class="math inline">\(\sigma T_{s}^{4}\)</span> in terms <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and parameters.</li>
+<li>Rearrange Equation <a href="M3-1.html#eq:module3-8">(16)</a> for <span class="math inline">\(\sigma T_{s}^{4}\)</span> in terms <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and parameters.</li>
 <li>Put the results of steps 1 and 3 into the results of step 4 and simplify to give the equation for <span class="math inline">\(T_{s}\)</span> as a function of parameters:</li>
 </ol>
 <br>
 <center>
 <span class="math display" id="eq:module3-9">\[\begin{equation}
 T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S_{av}-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\frac{1}{4}}
-\tag{15}
+\tag{17}
 \end{equation}\]</span>
 </center>
 <p><br></p>
