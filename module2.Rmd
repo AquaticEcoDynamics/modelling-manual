@@ -18,7 +18,7 @@ The rate is dependent on the concentration of the organic matter, $\color{#E36C0
 <center>
 <br>
 \begin{equation}
-R_{O_{2}} = \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{O_{2}}{O_{2}+K_{O_{2}}}}
+R_{O_{2}} = \color{#00B0F0}{K_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{O_{2}}{O_{2}+K_{O_{2}}}}
 (\#eq:module2-1)
 \end{equation}
 </center>
