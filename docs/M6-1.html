@@ -294,7 +294,7 @@ div.csl-indent {
 <center>
 <span class="math display" id="eq:module6-1">\[\begin{equation}
 \frac{\delta C}{\delta t} = D_{d}\frac{\delta^{2} C}{\delta x^{2}} - u \frac{\delta C}{\delta x} + S + R
-\tag{55}
+\tag{57}
 \end{equation}\]</span>
 </center>
 <p>where the left hand side (LHS) is the “unsteady” term (<span class="math inline">\(C\)</span> change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and <span class="math inline">\(S\)</span> is a source term and <span class="math inline">\(R\)</span> is a reaction term. We use a partial deriviative (“curly <span class="math inline">\(\delta\)</span>”) since <span class="math inline">\(C\)</span> is now varying in both space and time.</p>
@@ -302,21 +302,21 @@ div.csl-indent {
 <center>
 <span class="math display" id="eq:module6-2">\[\begin{equation}
 \frac{C^{t+1}_{x}-C^{t}_{x}}{\Delta t}=D_{d} \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}-u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}+R_{x}+S_{x}
-\tag{56}
+\tag{58}
 \end{equation}\]</span>
 </center>
 <p>Where the <span class="math inline">\(t\)</span> subscript is referring to timestep, and the <span class="math inline">\(x\)</span> subscript refers to the space increment/position. For the case of oxygen we assume that <span class="math inline">\(R\)</span> is accounting for oxygen input from the atmosphere and consumption by bacteria (called the Biochemical Oxygen Demand, BOD), then:</p>
 <center>
 <span class="math display" id="eq:module6-3">\[\begin{equation}
 R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
-\tag{57}
+\tag{59}
 \end{equation}\]</span>
 </center>
 <p>Where the first term is atmospheric exchange (<span class="math inline">\(k_a\)</span> is the rate of re-aeration and <span class="math inline">\(C_a\)</span> is the saturation value of oxygen) and the second term is the bacterial consumption (described by <span class="math inline">\(k_{BOD}\)</span> which is in units of day<sup>-1</sup>). We can solve for the forward timestep at any position along the river by computing:</p>
 <center>
 <span class="math display" id="eq:module6-4">\[\begin{equation}
 \small{C_{x}^{t+1}=\color{#898989}{C_{x}^{t}}+ \left [ \color{#3A88FE}{D_d \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}}-\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}} + \color{#77BB41}{k_{a}(C_{a}-C_{x}^{t})}-\color{#B18CFE}{k_{BOD}C_{x}^t}  \right ]\Delta t+\color{#D58400}{S_{x}}}
-\tag{58}
+\tag{60}
 \end{equation}\]</span>
 </center>
 

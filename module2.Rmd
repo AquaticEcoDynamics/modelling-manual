@@ -6,7 +6,28 @@
 Become familiar with basic spread sheet commands in excel by building a simple biogeochemical model from chemical and mathematical equations. Become familiar with the program R Studio and compare it to Excel.
 
 ### Modelling concepts {#M2_3 -}
-This model has variables of concentration and rate, no spatial dimensions, and it has a dimension of time. Last week’s model had variables of volume and concentration (salinity), and was also resolved in time. In coming weeks the models will be resolved in zero, one, two or three dimensions of space, and only some will be resolved in time. Going down the rows of the Excel spread sheet means going forward in time, as the differential equations break the time axis into hundreds of tiny little chunks. The concentration at any point in time may depend on concentration at the previous point in time. We use the notation concentrationt depends on concentration^t-1^.
+This model has variables of concentration and rate, no spatial dimensions, and it has a dimension of time. Last week’s model had variables of volume and concentration (salinity), and was also resolved in time. In coming weeks the models will be resolved in zero, one, two or three dimensions of space, and only some will be resolved in time. 
+
+Remember that a chemical reaction can be described using a simple differential equation. For the concetration of OM, we can write it as:
+<center>
+<br>
+\begin{equation}
+\frac{dOM}{dt} = -R_{OM} =  -k_{OM}OM
+(\#eq:module2-1a)
+\end{equation}
+</center>
+<br>
+Here, $k_{OM}$ is the rate of the organic matter decay reaction, in units of $/year$, and $OM$ is a concentration of organic matter in units of $mM$.
+
+In this activity going down the rows of the Excel spread sheet means going forward in time, as the differential equations divide the time axis into hundreds of tiny little chunks (i.e., each row is a day in this weeks setup). The concentration at any point in time may depend on concentration at the previous point in time. We use the notation concentration @ ^t^ depends on concentration @ ^t-1^. We write this by "discretizing" the equation, as:
+<br>
+\begin{equation}
+OM^{t} = OM^{t-1} +  (k_{OM} OM^{t-1})\Delta t
+(\#eq:module2-1b)
+\end{equation}
+</center>
+<br>
+
 
 ### Organic matter oxidation {#M2_4 -}
 Organic matter (dead algae, leaves etc.) is oxidised by different bacteria that use a range of oxidants. The bacteria simultaneously consume organic matter and an oxidant, in a similar way to how humans consume carbohydrate and oxygen. Scientists have observed that there is a general sequence of oxidants used, based on the energy available for each process. When all of the oxidants are consumed, methanogenesis takes place, where bacteria use the organic matter alone without any oxidant. This is similar to the lactic acid metabolic system that the human body uses when oxygen is in short supply, such as when you go for a run. Remember that methane is a reduced byproduct, not an oxidant. Other reduced by-products include N~2~ gas, Mn^2+^ and Fe^2+^ metal ions, and the S^2-^ anion.
@@ -42,6 +63,8 @@ R_{Meth} &= \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#FF0000}{\frac{K_{S
 \end{align*}
 </center>
 <br>
+
+Note that the total amount of $OM$ decay, $R_{OM}$, is the sum of the all the individual pathways listed above.
 
 In this lab, we simulate a blob of aquatic sediment. It is a closed system, so that the initial concentrations react until they reach equilibrium. This system is also perfectly mixed, with an unchanging biomass of bacteria, and so there is no spatial resolution. This allows us to focus on the chemical reactions alone.
 
