@@ -22,12 +22,12 @@ Here, $k_{OM}$ is the rate of the organic matter decay reaction, in units of $/y
 In this activity going down the rows of the Excel spread sheet means going forward in time, as the differential equations divide the time axis into hundreds of tiny little chunks (i.e., each row is a day in this weeks setup). The concentration at any point in time may depend on concentration at the previous point in time. We use the notation concentration @ ^t^ depends on concentration @ ^t-1^. We write this by "discretizing" the equation, as:
 <br>
 \begin{equation}
-OM^{t} = OM^{t-1} +  (k_{OM} OM^{t-1})\Delta t
+OM^{t} = OM^{t-1} -  (k_{OM} OM^{t-1})\Delta t
 (\#eq:module2-1b)
 \end{equation}
 </center>
 <br>
-
+This states that the current concentration is equal to the previous days concentration, subtract any reaction that occured over the past day.
 
 ### Organic matter oxidation {#M2_4 -}
 Organic matter (dead algae, leaves etc.) is oxidised by different bacteria that use a range of oxidants. The bacteria simultaneously consume organic matter and an oxidant, in a similar way to how humans consume carbohydrate and oxygen. Scientists have observed that there is a general sequence of oxidants used, based on the energy available for each process. When all of the oxidants are consumed, methanogenesis takes place, where bacteria use the organic matter alone without any oxidant. This is similar to the lactic acid metabolic system that the human body uses when oxygen is in short supply, such as when you go for a run. Remember that methane is a reduced byproduct, not an oxidant. Other reduced by-products include N~2~ gas, Mn^2+^ and Fe^2+^ metal ions, and the S^2-^ anion.

@@ -281,11 +281,12 @@ Here, <span class="math inline">\(k_{OM}\)</span> is the rate of the organic mat
 In this activity going down the rows of the Excel spread sheet means going forward in time, as the differential equations divide the time axis into hundreds of tiny little chunks (i.e., each row is a day in this weeks setup). The concentration at any point in time may depend on concentration at the previous point in time. We use the notation concentration @ <sup>t</sup> depends on concentration @ <sup>t-1</sup>. We write this by “discretizing” the equation, as:
 <br>
 <span class="math display" id="eq:module2-1b">\[\begin{equation}
-OM^{t} = OM^{t-1} +  (k_{OM} OM^{t-1})\Delta t
+OM^{t} = OM^{t-1} -  (k_{OM} OM^{t-1})\Delta t
 \tag{2}
 \end{equation}\]</span>
 </center>
-<p><br></p>
+<p><br>
+This states that the current concentration is equal to the previous days concentration, subtract any reaction that occured over the past day.</p>
 </div>
 <div id="M2_4" class="section level3 unnumbered">
 <h3>Organic matter oxidation</h3>
