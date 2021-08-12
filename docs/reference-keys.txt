@@ -2,6 +2,7 @@ fig:map7-1
 eq:module2-1a
 eq:module2-1b
 eq:module2-1
+fig:M2Plot1
 eq:module2-2
 eq:module2-3
 eq:module2-4

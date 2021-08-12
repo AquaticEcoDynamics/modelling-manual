@@ -45,6 +45,45 @@ R_{O_{2}} = \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{O_{2
 </center>
 <br>
 
+```{r M2Plot1, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Move the slider to change the $K_{O_2}$ value.", out.width = '100%'}
+library(plotly)
+library(dplyr)
+monod <- readRDS('data/monodData.rds')
+fig <- plot_ly()
+fig <- fig %>% add_trace(
+  monod,
+  name="OM",
+  x = monod$time,
+  y = monod$OMprop,
+  frame = monod$KO2,
+  hovertemplate = 'OM: %{y:.2f}<extra></extra>',
+  type = 'scatter',
+  mode = 'lines')
+fig <- fig %>% add_trace(
+  monod,
+  name="O<sub>2</sub>",
+  x = monod$time,
+  y = monod$O2prop,
+  frame = monod$KO2,
+  hovertemplate = 'O<sub>2</sub>: %{y:.2f}<extra></extra>',
+  type = 'scatter',
+  mode = 'lines')
+fig <- fig %>%
+  layout(
+    xaxis = list(title='Time',hoverformat = "Time"), 
+    yaxis = list(title='Relative oxidant concentration')
+  ) %>% 
+  animation_opts(
+    750, easing = "linear", redraw = FALSE
+  ) %>% 
+  animation_slider(
+    currentvalue = list(prefix = "K<sub>O<sub>2</sub></sub>: ")
+  ) %>% 
+  config(displayModeBar = FALSE,
+         displaylogo = FALSE)
+fig  
+```
+
 The generally observed sequence of oxidants is modelled with an <span style="color: #FF0000;">inhibition</span> process, so that a higher energy yielding oxidant, such as oxygen, inhibits a lower energy oxidant such as iron.
 
 <center>
