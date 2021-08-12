@@ -56,7 +56,7 @@ fig <- fig %>% add_trace(
   x = monod$time,
   y = monod$OMprop,
   frame = monod$KO2,
-  line = list(color='rgb(0, 176, 240)'),
+  line = list(color='rgb(227, 108, 10)'),
   hovertemplate = 'OM: %{y:.2f}<extra></extra>',
   type = 'scatter',
   mode = 'lines')
