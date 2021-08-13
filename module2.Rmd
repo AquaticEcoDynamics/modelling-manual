@@ -45,35 +45,40 @@ R_{O_{2}} = \color{#00B0F0}{k_{OM}}\color{#E36C0A}{OM}\color{#76923C}{\frac{O_{2
 </center>
 <br>
 
-```{r M2Plot1, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Move the slider to change the $K_{O_2}$ value.", out.width = '100%'}
+```{r M2Plot1, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Move the slider to see the effect of changing the $K_{O_2}$ value in the monod equaiton.", out.width = '100%'}
 library(plotly)
 library(dplyr)
-monod <- readRDS('data/monodData.rds')
+
+monod <- data.frame(
+  O2 = double(),
+  KO2 = double(),
+  O2KO2 = double()
+)
+for(i in seq(5, 100, by = 5)){
+  monod_temp <- data.frame(
+    O2 = seq(0, 50, by = 5),
+    KO2 = i
+  )
+  monod_temp$O2KO2 <- (monod_temp$O2)/(monod_temp$O2+monod_temp$KO2)  
+  monod <- bind_rows(monod,monod_temp)
+}
+
+
 fig <- plot_ly()
 fig <- fig %>% add_trace(
   monod,
-  name="OM",
-  x = monod$time,
-  y = monod$OMprop,
-  frame = monod$KO2,
-  line = list(color='rgb(227, 108, 10)'),
-  hovertemplate = 'OM: %{y:.2f}<extra></extra>',
-  type = 'scatter',
-  mode = 'lines')
-fig <- fig %>% add_trace(
-  monod,
-  name="O<sub>2</sub>",
-  x = monod$time,
-  y = monod$O2prop,
+  name="Monod",
+  y = monod$O2KO2,
+  x = monod$O2,
   frame = monod$KO2,
   line = list(color='rgb(118, 146, 60)'),
-  hovertemplate = 'O<sub>2</sub>: %{y:.2f}<extra></extra>',
+  hovertemplate = '%{y:.1f}<extra></extra>',
   type = 'scatter',
   mode = 'lines')
 fig <- fig %>%
   layout(
-    xaxis = list(title='Time',hoverformat = "Time"), 
-    yaxis = list(title='Relative oxidant concentration')
+    xaxis = list(title='O<sub>2</sub> Concentration'), 
+    yaxis = list(title='O<sub>2</sub>/(O<sub>2</sub>+K<sub>O<sub>2</sub></sub>)')
   ) %>% 
   animation_opts(
     750, easing = "linear", redraw = FALSE
@@ -147,6 +152,47 @@ The rate is dependent on the concentration in the previous time step – this is
 3) Complete the line plot (**1**) of relative oxidant concentration for iron and sulphate. Right click on the plot and use ‘Add data’, make the x axis time and the y axis relative concentration. It is easy to visualise if you keep the colours consistent, and choose the colours that you like. Adjust the values for the initial condition and the half-saturation constants and see how the lines move on your plot. Add more time steps underneath if you want to see what happens over the long term.
 
 4) Complete the area plot (**2**) of reaction rates, then play around with the numbers to test the sensitivities of the outputs to the parameter inputs
+
+```{r M2Plot2, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Move the slider to experiment with changing the $K_{O_2}$ value.", out.width = '100%'}
+library(plotly)
+library(dplyr)
+monod <- readRDS('data/monodData.rds')
+fig <- plot_ly()
+fig <- fig %>% add_trace(
+  monod,
+  name="OM",
+  x = monod$time,
+  y = monod$OMprop,
+  frame = monod$KO2,
+  line = list(color='rgb(227, 108, 10)'),
+  hovertemplate = 'OM: %{y:.2f}<extra></extra>',
+  type = 'scatter',
+  mode = 'lines')
+fig <- fig %>% add_trace(
+  monod,
+  name="O<sub>2</sub>",
+  x = monod$time,
+  y = monod$O2prop,
+  frame = monod$KO2,
+  line = list(color='rgb(118, 146, 60)'),
+  hovertemplate = 'O<sub>2</sub>: %{y:.2f}<extra></extra>',
+  type = 'scatter',
+  mode = 'lines')
+fig <- fig %>%
+  layout(
+    xaxis = list(title='Time',hoverformat = "Time"), 
+    yaxis = list(title='Relative oxidant concentration')
+  ) %>% 
+  animation_opts(
+    750, easing = "linear", redraw = FALSE
+  ) %>% 
+  animation_slider(
+    currentvalue = list(prefix = "K<sub>O<sub>2</sub></sub>: ")
+  ) %>% 
+  config(displayModeBar = FALSE,
+         displaylogo = FALSE)
+fig  
+```
 
 ####  Building the model in R {#M2_8 -}
 

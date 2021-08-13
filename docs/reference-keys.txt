@@ -8,6 +8,7 @@ eq:module2-3
 eq:module2-4
 eq:module2-5
 eq:module2-6
+fig:M2Plot2
 eq:module3-1
 eq:module3-2
 eq:module3-3
