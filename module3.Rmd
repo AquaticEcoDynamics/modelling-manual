@@ -349,7 +349,7 @@ Using Excel, test the sensitivity of this model to albedo. Compare your findings
 
 1) Clear photograph or page scan of your **hand drawn conceptual model** of the *Harte 1-D Energy Balance Model*, including key explaining the terms.
 2) Clear photograph or page scan of your handwritten workings of the *Harte Model* calculations, with a clear answer of $T_{s}$, the Earth’s temperature.
-3) **Summary plot** from Exercise 1, 2 & 3 assessing albedo and temperature of the three models, with a brief explanation of less than 150 words of which model you prefer.
+3) **Summary plot** from Case Study 1, 2 & 3 assessing albedo and temperature of the three models, with a brief explanation of less than 150 words of which model you prefer.
 
 The submission is to be all together in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded.
 
