@@ -264,7 +264,7 @@ Here:
 <br>
 <center>
 \begin{equation}
-S + W = a_{p}S_{av} + \sigma T_{u}^{4} + (1 − \varepsilon)\sigma T_{s}^{4}
+S_{av} + W = a_{p}S_{av} + \sigma T_{u}^{4} + (1 − \varepsilon)\sigma T_{s}^{4}
 (\#eq:module3-6)
 \end{equation}
 </center>
@@ -316,7 +316,7 @@ Equations \@ref(eq:module3-6) to \@ref(eq:module3-8) are a system of three equat
 1) Rearrange Equation \@ref(eq:module3-6) for $\sigma T_{u}^{4}$ in terms of $T_{s}$ and parameters.
 2) Rearrange Equation \@ref(eq:module3-7) for $\sigma T_{l}^{4}$ in terms of $T_{u}$ and parameters.
 3) Substitute the results of step 1 into the results of step 2 to give an equation for $\sigma T_{l}^{4}$ in terms of $T_{s}$ and parameters.
-4) Rearrange Equation \@ref(eq:module3-8) for $\sigma T_{s}^{4}$ in terms $T_{l}$, $T_{u}$, and parameters.
+4) Rearrange Equation \@ref(eq:module3-8) for $\varepsilon\sigma T_{s}^{4}$ in terms $T_{l}$, $T_{u}$, and parameters.
 5) Put the results of steps 1 and 3 into the results of step 4 and simplify to give the equation for $T_{s}$ as a function of parameters:
 
 <br>
