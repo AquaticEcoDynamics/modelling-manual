@@ -495,8 +495,8 @@ e_{ag}^{t+1}=C \alpha_{eag}[\frac{S_{us}^t}{S_{max}-S_{sat}^t}]e_{p}^{t+1}
 
 <center>
 \begin{equation}
-e_{bs}^{t+1} = \left\{\begin{matrix} (1-M-C)\alpha_{ebs}\left[\frac{S_{us}^t}{S_{max}-\ S_{sat}^t}\right]e_p^{t+1},\ \ &S_{sat}^t<\varphi D_{ebs} A_c
-\\ (1-M-C)\alpha_{ebs}\left[\frac{S_{us}^{t}+\ \left(S_{us}^{t}-\ \varphi D_{ebs}\right)}{S_{sat}^t-\ \varphi D_{ebs}}\right]e_p^{t+1},\ \ &S_{sat}^t\geq\varphi D_{ebs} A_c
+e_{bs}^{t+1} = \left\{\begin{matrix} (1-M-C)e_p^{t+1},\ \ &S_{sat}^t\geq\varphi D_{ebs} A_c
+\\ (1-M-C)\left[\frac{S_{us}^{t}}{S_{max} - S_{sat}^t}\right]e_p^{t+1},\ \ &S_{sat}^t<\varphi D_{ebs} A_c
 \end{matrix}\right.
 (\#eq:module5a-20)
 \end{equation}
