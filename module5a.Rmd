@@ -49,23 +49,6 @@ In Excel, the precipitation is in a column and has a value for every date. The p
 In RStudio, the rainfall is given by a text file ’Precipitation.txt’. You will have to download this text file, tell RStudio the location where you have saved the data, and then load the data into your project. Finally, in the equations, you can convert the precipitation dataset into a matrix.
 The parameters for the potential evaporation function are in Inputs, and the equation is in the Equations script. Look for the `#CLIMATE FORCING` sections.
 
-<center>
-```{r plotM5A-1, fig.cap="Potential evaporation sin wave function over time.", echo=FALSE, message=FALSE, warning=FALSE, out.width='100%',out.height='100%'}
-library(ggplot2)
-library(lubridate)
-library(plotly)
-library(dplyr)
-evap <- read.csv("plots/module5a/evap.csv")
-evap$Date <- as.Date(evap$Date)
-plot <- ggplot(data = evap, aes(x = Date, y = Evaporation)) +
-  geom_line(colour = "#3182bd", size = 1.2) + xlab("Time (years)") + ylab("Potential evaporation (m day<sup>-1</sup>)") +
-  theme_bw()
-ggplotly(plot) %>%
-  config(displaylogo = FALSE)
-
-```
-</center>
-
 #### Storage {#M5A_7 -}
 
 Start to write in the equations for storage, using the equations given in the [Equations](#M5A_12) section of this module. Note that there are two variables that have a prime ($\prime$) sign. These variables only exist theoretically in the model, so that we can use them for our IF statements.
@@ -284,6 +267,17 @@ S_{fc}=\ S_{max} f_c
 
 The volumetric water storage at field capacity is therefore the theoretical maximum storage capacity of the catchment multiplied (or limited by) the threshold storage parameter (which is ≤ 1).
 
+#### Water Table Depth {#M5A_23 -}
+
+The water table depth is calculated with the following equation:
+
+<center>
+\begin{equation}
+WT^{t}= \frac{S_{sat}^{t}}{A_{c}\varphi}
+(\#eq:module5a-28)
+\end{equation}
+</center>
+
 #### Water Balance {#M5A_15 -}
 
 <center>
@@ -327,7 +321,7 @@ The daily recharge rate from the unsaturated zone to the saturated zone is calcu
 
 <center>
 \begin{equation}
-S_{sat}^{t+1}=\ S_{sat}^t+\ R_p^{t+1}-\ R_g^{t+1}-\ Q_{ss}^{t+1}-\ e_{v}^{t+1}A_{c}
+S_{sat}^{t+1}=\ S_{sat}^t+\ R_p^{t+1}-\ Q_{ss}^{t+1}-\ e_{v}^{t+1}A_{c}
 (\#eq:module5a-9)
 \end{equation}
 </center>
@@ -336,34 +330,63 @@ Note the use of “$t+1$” on the Right Hand Side for $R$, $Q$ and $e$ will be 
 
 The balance of volumetric water storage in the saturated zone is therefore calculated as the previous period’s storage plus any recharge from the unsaturated zone, less outflows including recharge to groundwater, subsurface runoff, and total evapotranspiration (bare soil, deep rooted vegetation and agricultural crop) from the saturated zone.
 
-Optional Deep Ground Water Store:
+<!-- Optional Deep Ground Water Store: -->
+
+<!-- <center> -->
+<!-- \begin{equation} -->
+<!-- R_g^{t+1}=\ K_s{S}_{sat}^t -->
+<!-- (\#eq:module5a-10) -->
+<!-- \end{equation} -->
+<!-- </center> -->
+
+<!-- Daily recharge to groundwater is calculated as the saturated hydraulic conductivity multiplied by the present water storage in the saturated zone.  -->
+
+<!-- <center> -->
+<!-- \begin{equation} -->
+<!-- S_{gw}^{t+1}=\ S_{gw}^t+\ R_g^{t+1}-\ Q_{bf}^{t+1}\  -->
+<!-- (\#eq:module5a-11) -->
+<!-- \end{equation} -->
+<!-- </center> -->
+
+<!-- The balance of volumetric groundwater storage is calculated as the previous period’s storage plus recharge from the saturated zone less base flow out of the catchment. -->
+
+<!-- <center> -->
+<!-- \begin{equation} -->
+<!-- Q_{bf}^{t+1}= \alpha_{bf} (\frac{S_{gw}^t}{S_{gw\ max}})^{\beta_{bf}} -->
+<!-- (\#eq:module5a-27) -->
+<!-- \end{equation} -->
+<!-- </center> -->
+
+<!-- Base flow is treated for our purposes as a nonlinear function using groundwater storage. -->
+#### Calculating Daily $e_p$ {#M5A_19 -}
+
+Daily potential evaporation will be calculated using a sine wave, as follows:
 
 <center>
 \begin{equation}
-R_g^{t+1}=\ K_s{S}_{sat}^t
-(\#eq:module5a-10)
+e_{p(\text{daily})}=\ \frac{e_{p(\text{annual})}}{365}\left[1+A\ \textbf{sin}\left\{B\left(m-1\right)+d\right\}+C\right]\ 
+(\#eq:module5a-23)
 \end{equation}
 </center>
 
-Daily recharge to groundwater is calculated as the saturated hydraulic conductivity multiplied by the present water storage in the saturated zone. 
+Where, $A_{sin}$ is the height of the sine wave (i.e. maximum less minimum value), $B$ is the frequency of the sine wave, $C$ is the minimum $e_{p(\text{daily})}$ (i.e. in mid-winter), $d$ is the day of the month, and $m$ is the month number.
 
 <center>
-\begin{equation}
-S_{gw}^{t+1}=\ S_{gw}^t+\ R_g^{t+1}-\ Q_{bf}^{t+1}\ 
-(\#eq:module5a-11)
-\end{equation}
+```{r plotM5A-1, fig.cap="Potential evaporation sin wave function over time.", echo=FALSE, message=FALSE, warning=FALSE, out.width='100%',out.height='100%'}
+library(ggplot2)
+library(lubridate)
+library(plotly)
+library(dplyr)
+evap <- read.csv("plots/module5a/evap.csv")
+evap$Date <- as.Date(evap$Date)
+plot <- ggplot(data = evap, aes(x = Date, y = Evaporation)) +
+  geom_line(colour = "#3182bd", size = 1.2) + xlab("Time (years)") + ylab("Potential evaporation (m day<sup>-1</sup>)") +
+  theme_bw()
+ggplotly(plot) %>%
+  config(displaylogo = FALSE)
+
+```
 </center>
-
-The balance of volumetric groundwater storage is calculated as the previous period’s storage plus recharge from the saturated zone less base flow out of the catchment.
-
-<center>
-\begin{equation}
-Q_{bf}^{t+1}= \alpha_{bf} (\frac{S_{gw}^t}{S_{gw\ max}})^{\beta_{bf}}
-(\#eq:module5a-27)
-\end{equation}
-</center>
-
-Base flow is treated for our purposes as a nonlinear function using groundwater storage.
 
 #### Transpiration {#M5A_16 -}
 
@@ -382,7 +405,7 @@ Simple form:
 
 <center>
 \begin{equation}
-e_v^{t+1}= M (\frac{S_{tot}^t}{S_{max}})^\varepsilon k_v e_p^{t+1}
+e_v^{t+1}= M \frac{S_{tot}^t}{S_{max}} k_v e_p^{t+1}
 (\#eq:module5a-13)
 \end{equation}
 </center>
@@ -496,19 +519,6 @@ This is an IF statement. In Excel split this equation up into the ‘TRUE’ and
 <!-- \end{equation} -->
 <!-- </center> -->
 
-#### Calculating Daily $e_p$ {#M5A_19 -}
-
-Daily potential evaporation will be calculated using a sine wave, as follows:
-
-<center>
-\begin{equation}
-e_{p(\text{daily})}=\ \frac{e_{p(\text{annual})}}{365}\left[1+A\ \textbf{sin}\left\{B\left(m-1\right)+d\right\}+C\right]\ 
-(\#eq:module5a-23)
-\end{equation}
-</center>
-
-Where, $A_{sin}$ is the height of the sine wave (i.e. maximum less minimum value), $B$ is the frequency of the sine wave, $C$ is the minimum $e_{p(\text{daily})}$ (i.e. in mid-winter), $d$ is the day of the month, and $m$ is the month number.
-
 #### Flows {#M5A_20 -}
 
 <center>
@@ -541,12 +551,12 @@ Q_{ie}^t = \left\{\begin{matrix} (P^t-I_{max})A_C,\ \ &{P^t}> I_{max}
 \end{equation}
 </center>
 
-Hortonian runoff (infiltration excess):
+Subsurface flow:
 
 <center>
 \begin{equation}
 Q_{ss}^{t+1} = \left\{\begin{matrix} 0,\ \ &S_{sat}^{t}\le S_{usfc}^{t+1}
-\\ \alpha_{s}\left(\frac{S_{sat}^t}{S_{max}}\right)^{\beta s,}\ \ &S_{usfc}^{t+1} <\ S_{sat}^t
+\\ \alpha_{s}\frac{S_{sat}^t}{S_{max}}\ \ &S_{usfc}^{t+1} <\ S_{sat}^t
 \end{matrix}\right.
 (\#eq:module5a-26)
 \end{equation}
@@ -555,17 +565,6 @@ Q_{ss}^{t+1} = \left\{\begin{matrix} 0,\ \ &S_{sat}^{t}\le S_{usfc}^{t+1}
 <!-- Where $S_{fc}$ is $S_{max}fc$.  -->
 
 Subsurface runoff is taken to be zero in cases where the total water storage is less than field capacity threshold (i.e. thus will not drain due solely to the forces of gravity). In the event that total storage in the bucket/ catchment is greater than threshold storage and less than maximum storage capacity, subsurface runoff is taken as a nonlinear function using the excess above threshold storage and the assigned recession coefficients.
-
-#### Water Table Depth {#M5A_23 -}
-
-The water table depth is calculated with the following equation:
-
-<center>
-\begin{equation}
-WT^{t}= \frac{S_{sat}^{t}}{A_{c}\varphi}
-(\#eq:module5a-28)
-\end{equation}
-</center>
 
 
 ## Submission {#M5A_21 -}

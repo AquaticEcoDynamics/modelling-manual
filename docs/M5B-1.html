@@ -297,21 +297,21 @@ mixed land use.</p>
 Q_{i}^{t} = \left\{\begin{matrix} 0,\ \ &amp;R_{i}^{t}\le R_{i}^{crit}
 \\ c_{i}(R_{i}^{t}-R_{i}^{crit})A_{i},\ \ &amp;R_{i}^{t}&gt; R_{i}^{crit}
 \end{matrix}\right.
-\tag{53}
+\tag{50}
 \end{equation}\]</span>
 </center>
 <p>The total flow (<span class="math inline">\(Q_{tot}\)</span>, m<sup>3</sup>/day) is calculated by summing the individual sub catchments, however there is an assumed lag time of 1 day for sub catchment 2 and 2 days lag time for sub catchment 3:</p>
 <center>
 <span class="math display" id="eq:module5b-2">\[\begin{equation}
 Q_{tot}^{t} = \color{#9BBB59}{Q_{1}^{t}} + \color{#0070C0}{Q_{2}^{t-1}} + \color{#F79646}{Q_{3}^{t-2}}
-\tag{54}
+\tag{51}
 \end{equation}\]</span>
 </center>
 <p>For each sub catchment, the phosphorus concentration, <span class="math inline">\(P_{i}\)</span> (g/m<sup>3</sup>), depends on how much flow there is (e.g. more flow = more fertilizer leaching) by assuming a simple power law fitted to the flow-concentration relationship computed for each land-use (<span class="math inline">\(P\)</span>~<span class="math inline">\(\alpha Q \beta\)</span>). This is averaged over the different land use fractions (denoted with the small <span class="math inline">\(p\)</span> index), using the land-use fraction <span class="math inline">\(F_p\)</span>:</p>
 <center>
 <span class="math display" id="eq:module5b-3">\[\begin{equation}
 P_{i}^{t} = \sum_{p=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{p} \left (\frac{Q_{i}^{t}}{A_{i}}  \right )^{\beta_{p}}+P_{0}}  \right )
-\tag{55}
+\tag{52}
 \end{equation}\]</span>
 </center>
 
@@ -323,7 +323,7 @@ P_{i}^{t} = \sum_{p=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{p} \left (\fr
 <center>
 <span class="math display" id="eq:module5b-4">\[\begin{equation}
 P_{load}^{t} = \color{#9BBB59}{P_{1}^{t} Q_{1}^{t}} + \color{#0070C0}{P_{2}^{t-1} Q_{2}^{t-1}} + \color{#F79646}{P_{3}^{t-2} Q_{3}^{t-2}}
-\tag{56}
+\tag{53}
 \end{equation}\]</span>
 </center>
 <center>
