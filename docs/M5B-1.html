@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 5b: Land Use and Nutrient Management | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 5b: Land Use and Nutrient Management | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
 <link rel="prev" href="M5A-1.html"/>
 <link rel="next" href="M6-1.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -62,7 +62,7 @@
 <script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
 <script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
-<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
@@ -285,41 +285,43 @@ div.csl-indent {
 <h1>Module 5b: Land Use and Nutrient Management</h1>
 <div id="M5B_2" class="section level3 unnumbered">
 <h3>Objectives</h3>
-<p>To setup a simple model to compare the effect of BMPs on nutrient export from a catchment with
-mixed land use.</p>
+<p>To setup a nutrient export model to compare the effect of Best Management Practices (BMP’s) on nutrient loads from a catchment with mixed land use.</p>
 </div>
 <div id="M5B_3" class="section level3 unnumbered">
 <h3>Model Overview</h3>
-<p>Consider a catchment basin with <strong>3 sub catchments</strong>, each with <strong>a different dominant land use and slightly different climate</strong>.</p>
-<p>The daily runoff from each sub catchment, <span class="math inline">\(Q_i\)</span> (m<sup>3</sup>/day), can be simply approximated based on the daily rainfall (<span class="math inline">\(R\)</span>) - see Module 5a.</p>
-<p>For each sub catchment, the phosphorus concentration, <span class="math inline">\(P_{i}\)</span> (g/m<sup>3</sup>), depends on how much flow there is (e.g. more flow = more fertilizer leaching) by assuming a simple power law fitted to the flow-concentration relationship computed for each land-use (<span class="math inline">\(P\)</span>~<span class="math inline">\(\alpha Q \beta\)</span>). This is averaged over the different land use fractions (denoted with the small <span class="math inline">\(p\)</span> index), using the land-use fraction <span class="math inline">\(F_p\)</span>:</p>
+<p>Consider a catchment basin with with <strong>different types of land use</strong>.</p>
+<p>The daily streamflow through the catchment, <span class="math inline">\(Q^t\)</span> (m<sup>3</sup>/day), can be approximated based on the daily rainfall (<span class="math inline">\(R\)</span>) - see the Water Balance model in Module 5a.</p>
+<p>The phosphorus concentration in the water, <span class="math inline">\(P^{t}\)</span> (g/m^3), depends on how much flow there is (i.e. more flow = more fertilizer leaching). To model this we use a simple power law to make a “flow-concentration relationship,” which is computed for each land-use (<span class="math inline">\(P\)</span> is proportional to <span class="math inline">\(\alpha Q^{\beta}\)</span>). <em>If you’ve not seen a power law, sketch a graph of C (y-axis) vs Q (x-axis) for a value of <span class="math inline">\(\beta =1\)</span>. WHat happens if <span class="math inline">\(\beta =2\)</span> or <span class="math inline">\(\beta =0.5\)</span>?</em></p>
+<p>This is averaged over the different land use fractions (denoted with the small <span class="math inline">\(p\)</span> index), using the land-use fraction <span class="math inline">\(F_p\)</span>:</p>
 <center>
 <span class="math display" id="eq:module5b-3">\[\begin{equation}
-P_{i}^{t} = \sum_{p=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{p} \left (\frac{Q_{i}^{t}}{A_{i}}  \right )^{\beta_{p}}+P_{0}}  \right )
+P^{t} = \sum_{p=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{p} \left (\frac{Q^{t}}{A_{c}}  \right )^{\beta_{p}}+P_{0}}  \right )
 \tag{50}
 \end{equation}\]</span>
 </center>
+<p>where alpha (<span class="math inline">\(\alpha\)</span>) and beta (<span class="math inline">\(\beta\)</span>) are variables that govern the stream <span class="math inline">\(P\)</span> concentration (g/m<sup>3</sup>) as a function of area-averaged flow rate (<span class="math inline">\(Q/A\)</span>) and they depend on the dominant land use (<span class="math inline">\(p\)</span>). <span class="math inline">\(N_p\)</span> is the number of land use classes being considered (4) and <span class="math inline">\(P_0\)</span> is the background concentration (g/m<sup>3</sup>) for that sub-catchment (i.e. the value of PO<sub>4</sub> when flow is low 0).</p>
 
 <div class="rmdnote2">
-<span class="math inline">\(\color{#FF0000}{\alpha_{p} \left (\frac{Q_{i}^{t}}{A_{i}} \right )^{\beta_{p}}+P_{0}}\)</span> is the flow dependent concentration of the <em>p</em>-th land use type.
+<span class="math inline">\(\color{#FF0000}{\alpha_{p} \left (\frac{Q}{A_{c}} \right )^{\beta_{p}}+P_{0}}\)</span> is the flow dependent concentration of the <em>p</em>-th land use type.
 </div>
-<p>Where alpha (<span class="math inline">\(\alpha\)</span>) and beta (<span class="math inline">\(\beta\)</span>) are variables that govern the stream <span class="math inline">\(P_i\)</span> concentration (g/m<sup>3</sup>) as a function of area-averaged flow rate (<span class="math inline">\(Q/A\)</span>) and they depend on the dominant land use (<span class="math inline">\(p\)</span>). <span class="math inline">\(N_p\)</span> is the number of land use classes being considered (4) and <span class="math inline">\(P_0\)</span> is the background concentration (g/m<sup>3</sup>) for that sub-catchment (i.e. the value of PO<sub>4</sub> when flow tends to 0).</p>
-<p>The total <span class="math inline">\(P\)</span> export load is <span class="math inline">\(P_{load}\)</span> (g/day) and is the sum of the different sub catchment outputs (remember <em>load = flow x concentration</em>) with the assumed lag time:</p>
+<p>The total <span class="math inline">\(P\)</span> export <strong>load</strong> is <span class="math inline">\(P_{load}\)</span> (g/day) and is the mass flux through the river (remember <em>load = flow x concentration</em>) :</p>
 <center>
 <span class="math display" id="eq:module5b-4">\[\begin{equation}
-P_{load}^{t} = P_{1}^{t} Q_{1}^{t}
+P_{load}^{t} = P^{t} Q^{t}
 \tag{51}
 \end{equation}\]</span>
 </center>
+<!--
 <center>
 <video width="80%" height="80%" controls>
-<source src="images/module5b/video1.mp4" type="video/mp4">
+  <source src="images/module5b/video1.mp4" type="video/mp4">
 </video>
 </center>
+-->
 </div>
 <div id="M5B_4" class="section level3 unnumbered">
 <h3>Module Resources</h3>
-<p>Download the Excel spreadsheet for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
+<p>The Excel spreadsheet for this module is part of the Module 5 download. Access using the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
 </div>
 <div id="M5B_5" class="section level3 unnumbered">
 <h3>Exercises</h3>
@@ -327,8 +329,8 @@ P_{load}^{t} = P_{1}^{t} Q_{1}^{t}
 <h4>Building the model</h4>
 <ol style="list-style-type: decimal">
 <li>Draw by hand the conceptual model of this system.</li>
-<li>Confirm with the person beside you what index means (<span class="math inline">\(t\)</span>, <span class="math inline">\(i\)</span>, <span class="math inline">\(p\)</span>).</li>
-<li>Build the above model to predict the individual sub catchment flows and basin total flow. Assume basic information as outlined in Table <a href="M5B-1.html#tab:module5b-1">6</a> below and supplied rainfall data for the 3 catchments. Input a value for <span class="math inline">\(c\)</span> within the range given for now.</li>
+<li>Confirm with the person beside you what index means (<span class="math inline">\(t\)</span> and <span class="math inline">\(p\)</span>).</li>
+<li>Use your Module 5a water balance model to predict the catchment flows. Tailor that model to use the information as outlined in Table <a href="M5B-1.html#tab:module5b-1">6</a> below and supplied rainfall data in teh <strong>CLIMATE</strong> sheet. Input a value for <span class="math inline">\(c\)</span> within the range given for now.</li>
 </ol>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:445px; overflow-x: scroll; width:100%; ">
@@ -460,19 +462,23 @@ Landuse fraction, <span class="math inline">\(F\)</span>: forest
 <h4>Calibrating the model</h4>
 <p>Let’s make sure the model flows are realistic:</p>
 <ol start="4" style="list-style-type: decimal">
-<li>Manually adjust the runoff coefficient values (<span class="math inline">\(c\)</span>) for each sub catchment (see possible ranges in table below) until the model best matches the observed data. This processed is called “calibration.”</li>
+<li>Manually adjust the catchment model parameters (see possible ranges in table below) until the model best matches the observed data - the observed flow data is in the <strong>CLIMATE</strong> sheet. This processed is called “calibration.”</li>
 </ol>
 
 <div class="rmdtip2">
-Check this by using a regression plot of the given total observed runoff and the model total runoff, checking to get the highest R<sup>2</sup> value
+Check this by using a regression plot of the given total observed streamflow and the model total streamflow, checking to get the highest R<sup>2</sup> value.
+</div>
+
+<div class="rmdtip2">
+Note that the <span class="math inline">\(M\)</span> and <span class="math inline">\(C\)</span> land cover fractions in the WATER BALANCE model need to be updated to be consistent with the <span class="math inline">\(F_p\)</span> land-use fractions mentioned here.
 </div>
 </div>
 <div id="M5B_8" class="section level4 unnumbered">
 <h4>Calculate phosphate concentrations</h4>
 <p>Now let’s work out the land-use specific stream <span class="math inline">\(P\)</span> concentrations:</p>
 <ol start="5" style="list-style-type: decimal">
-<li>Predict the sub catchment river <span class="math inline">\(P\)</span> concentrations and total river basin <span class="math inline">\(P\)</span> export load.
-The best way to do this is first predict the <span class="math inline">\(P\)</span> concentration of each land-use class (<span class="math inline">\(F_p\)</span>) in each sub catchment each as a column (i.e. Dairy <span class="math inline">\(P\)</span> concentration, Wheat <span class="math inline">\(P\)</span> concentration and so on), and then sum the 4 columns for <span class="math inline">\(P_i\)</span>.</li>
+<li>Predict the catchment river <span class="math inline">\(P\)</span> concentrations and total export load, <span class="math inline">\(P_{load}\)</span>.
+The best way to do this is first predict the <span class="math inline">\(P\)</span> concentration of each land-use class each as a column (i.e. Dairy <span class="math inline">\(P\)</span> concentration, Wheat <span class="math inline">\(P\)</span> concentration and so on), and then sum the 4 columns for <span class="math inline">\(P^t\)</span> by factoring the (<span class="math inline">\(F_p\)</span>) for each land-use.</li>
 </ol>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:235px; overflow-x: scroll; width:100%; ">
@@ -575,9 +581,9 @@ Use an IF statement.
 <li>Plot of calibration regression plot, including a trendline, equation and R<sup>2</sup> value. Include in the caption what <span class="math inline">\(c\)</span> values you gave each catchment.</li>
 <li>Plot of the phosphorous export of the urban expansion management scenario (Scenario 1) compared to the original, over time.</li>
 <li>Plot of the phosphorous export of the dairy management scenario (Scenario 2) compared to the original, over time.</li>
-<li>Any other interesting plots you create, if you like.</li>
+<li>Any other interesting plots you may like to create.</li>
 </ol>
-<p>These are in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded</p>
+<p>These are in a PDF format, combined with 5a results. No screenshots of figures from Excel/Excel spreadsheets to be uploaded</p>
 <p><strong>General professional formatting guidelines:</strong></p>
 <ul>
 <li>All figures are to have adequate captions explaining them</li>
@@ -626,6 +632,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": false
 },
 "fontsettings": {

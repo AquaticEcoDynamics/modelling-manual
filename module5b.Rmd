@@ -2,57 +2,61 @@
 
 ### Objectives {#M5B_2 -}
 
-To setup a simple model to compare the effect of BMPs on nutrient export from a catchment with
-mixed land use.
+To setup a nutrient export model to compare the effect of Best Management Practices (BMP's) on nutrient loads from a catchment with mixed land use.
 
 ### Model Overview {#M5B_3 -}
 
-Consider a catchment basin with **3 sub catchments**, each with **a different dominant land use and slightly different climate**.
+Consider a catchment basin with with **different types of land use**.
 
-The daily runoff from each sub catchment, $Q_i$ (m^3^/day), can be simply approximated based on the daily rainfall ($R$) - see Module 5a.
+The daily streamflow through the catchment, $Q^t$ (m^3^/day), can be approximated based on the daily rainfall ($R$) - see the Water Balance model in Module 5a. 
 
-For each sub catchment, the phosphorus concentration, $P_{i}$ (g/m^3^), depends on how much flow there is (e.g. more flow = more fertilizer leaching) by assuming a simple power law fitted to the flow-concentration relationship computed for each land-use ($P$~$\alpha Q \beta$). This is averaged over the different land use fractions (denoted with the small $p$ index), using the land-use fraction $F_p$:
+The phosphorus concentration in the water, $P^{t}$ (g/m^3), depends on how much flow there is (i.e. more flow = more fertilizer leaching). To model this we use a simple power law to make a "flow-concentration relationship", which is computed for each land-use ($P$ is proportional to $\alpha Q^{\beta}$). *If you've not seen a power law, sketch a graph of C (y-axis) vs Q (x-axis) for a value of $\beta =1$. WHat happens if $\beta =2$ or $\beta =0.5$?*
+
+This is averaged over the different land use fractions (denoted with the small $p$ index), using the land-use fraction $F_p$:
 
 <center>
 \begin{equation}
-P_{i}^{t} = \sum_{p=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{p} \left (\frac{Q_{i}^{t}}{A_{i}}  \right )^{\beta_{p}}+P_{0}}  \right )
+P^{t} = \sum_{p=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{p} \left (\frac{Q^{t}}{A_{c}}  \right )^{\beta_{p}}+P_{0}}  \right )
 (\#eq:module5b-3)
 \end{equation}
 </center>
 
+where alpha ($\alpha$) and beta ($\beta$) are variables that govern the stream $P$ concentration (g/m^3^) as a function of area-averaged flow rate ($Q/A$) and they depend on the dominant land use ($p$). $N_p$ is the number of land use classes being considered (4) and $P_0$ is the background concentration (g/m^3^) for that sub-catchment (i.e. the value of PO~4~ when flow is low 0).
+
+
 ```{block2, hintM5B_1, type='rmdnote2'}
-$\color{#FF0000}{\alpha_{p} \left (\frac{Q_{i}^{t}}{A_{i}}  \right )^{\beta_{p}}+P_{0}}$ is the flow dependent concentration of the *p*-th land use type.
+$\color{#FF0000}{\alpha_{p} \left (\frac{Q}{A_{c}}  \right )^{\beta_{p}}+P_{0}}$ is the flow dependent concentration of the *p*-th land use type.
 ```
 
-Where alpha ($\alpha$) and beta ($\beta$) are variables that govern the stream $P_i$ concentration (g/m^3^) as a function of area-averaged flow rate ($Q/A$) and they depend on the dominant land use ($p$). $N_p$ is the number of land use classes being considered (4) and $P_0$ is the background concentration (g/m^3^) for that sub-catchment (i.e. the value of PO~4~ when flow tends to 0).
 
-The total $P$ export load is $P_{load}$ (g/day) and is the sum of the different sub catchment outputs (remember *load = flow x concentration*) with the assumed lag time:
+The total $P$ export **load** is $P_{load}$ (g/day) and is the mass flux through the river (remember *load = flow x concentration*) :
 
 <center>
 \begin{equation}
-P_{load}^{t} = P_{1}^{t} Q_{1}^{t}
+P_{load}^{t} = P^{t} Q^{t}
 (\#eq:module5b-4)
 \end{equation}
 </center>
 
+<!--
 <center>
 <video width="80%" height="80%" controls>
   <source src="images/module5b/video1.mp4" type="video/mp4">
 </video>
 </center>
-
+-->
 
 ### Module Resources {#M5B_4 -}
 
-Download the Excel spreadsheet for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.
+The Excel spreadsheet for this module is part of the Module 5 download. Access using the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.
 
 ### Exercises {#M5B_5 -}
 
 #### Building the model {#M5B_6 -}
 
 1) Draw by hand the conceptual model of this system.
-2) Confirm with the person beside you what index means ($t$, $i$, $p$).
-3) Build the above model to predict the individual sub catchment flows and basin total flow. Assume basic information as outlined in Table \@ref(tab:module5b-1) below and supplied rainfall data for the 3 catchments. Input a value for $c$ within the range given for now.
+2) Confirm with the person beside you what index means ($t$ and $p$).
+3) Use your Module 5a water balance model to predict the catchment flows. Tailor that model to use the information as outlined in Table \@ref(tab:module5b-1) below and supplied rainfall data in teh **CLIMATE** sheet. Input a value for $c$ within the range given for now.
 
 <center>
 ```{r module5b-1, echo=FALSE, message=FALSE, warning=FALSE}
@@ -86,19 +90,22 @@ kable(
 
 Let’s make sure the model flows are realistic:
 
-4) Manually adjust the runoff coefficient values ($c$) for each sub catchment (see possible ranges in table below) until the model best matches the observed data. This processed is called “calibration”.
+4) Manually adjust the catchment model parameters (see possible ranges in table below) until the model best matches the observed data - the observed flow data is in the **CLIMATE** sheet. This processed is called “calibration”.
 
 ```{block2, hintM5B_2, type='rmdtip2'}
-Check this by using a regression plot of the given total observed runoff and the model total runoff, checking to get the highest R^2^ value
+Check this by using a regression plot of the given total observed streamflow and the model total streamflow, checking to get the highest R^2^ value.
 ```
 
+```{block2, hintM5B_50, type='rmdtip2'}
+Note that the $M$ and $C$ land cover fractions in the WATER BALANCE model need to be updated to be consistent with the $F_p$ land-use fractions mentioned here.
+```
 
 #### Calculate phosphate concentrations {#M5B_8 -}
 
 Now let’s work out the land-use specific stream $P$ concentrations:
 
-5) Predict the sub catchment river $P$ concentrations and total river basin $P$ export load.
-The best way to do this is first predict the $P$ concentration of each land-use class ($F_p$) in each sub catchment each as a column (i.e. Dairy $P$ concentration, Wheat $P$ concentration and so on), and then sum the 4 columns for $P_i$.
+5) Predict the catchment river $P$ concentrations and total export load, $P_{load}$.
+The best way to do this is first predict the $P$ concentration of each land-use class each as a column (i.e. Dairy $P$ concentration, Wheat $P$ concentration and so on), and then sum the 4 columns for $P^t$ by factoring the ($F_p$) for each land-use.
 
 <center>
 ```{r module5b-2, echo=FALSE, message=FALSE, warning=FALSE}
@@ -156,9 +163,9 @@ Use an IF statement.
 2) Plot of calibration regression plot, including a trendline, equation and R^2^ value. Include in the caption what $c$ values you gave each catchment.
 3) Plot of the phosphorous export of the urban expansion management scenario (Scenario 1) compared to the original, over time.
 4) Plot of the phosphorous export of the dairy management scenario (Scenario 2) compared to the original, over time.
-5) Any other interesting plots you create, if you like.
+5) Any other interesting plots you may like to create.
 
-These are in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
+These are in a PDF format, combined with 5a results. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
 
 **General professional formatting guidelines:**
 

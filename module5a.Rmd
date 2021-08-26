@@ -2,7 +2,7 @@
 
 ### Objectives {#M5A_2 -}
 
-To understand a simple multi-store catchment water balance model and implement within Excel or R. Using the supplied parameters and input data, run the model and plot the variability in key hydrological pathways.
+To understand a two-store catchment water balance model and implement within Excel or R. Using the supplied parameters and input data, run the model and plot changes in water stores and key hydrological fluxes.
 
 ### The Water Balance Approach {#M5A_3 -}
 
@@ -24,6 +24,8 @@ Download the Excel spreadsheet and R files for this module by clicking the downl
 
 ```{block2, hintM5A_5, type='rmdnote2'}
 You can use either Excel or R for this module.
+<br>
+*Update 26-Aug : Note the R is temporarilly out of date, so please use Excel*
 ```
 
 
@@ -31,7 +33,7 @@ You can use either Excel or R for this module.
 
 Open the spreadsheet or RStudio project. Make sure that there are three sections in each: Inputs, Equations and Plotting. Draw your own version of the diagram above, label all of the variables and note the storage, evaporation and flows.
 
-#### Date {#M5A_5 -}
+#### 1. Date {#M5A_5 -}
 
 Have a quick look at the date.
 
@@ -40,25 +42,55 @@ In Excel, the date takes the first four columns of the Equations sheet.
 In RStudio, there is a section in the Inputs script called `#DATE`. Run the section line by line and you
 will learn how to make dates. Then delete the comments at the end of the section.
 
-#### Climate {#M5A_6 -}
+#### 2. Climate {#M5A_6 -}
 
-As boundary conditions, we have a precipitation dataset, and a function (Equation \@ref(eq:module5a-28)) to simulate potential evaporation (Figure \@ref(fig:plotM5A-1)).
+Navigate to the **CLIMATE** sheet. As boundary conditions, we have a precipitation dataset, and a function (Equation \@ref(eq:module5a-23)) to simulate *potential* evaporation (Figure \@ref(fig:plotM5A-1)).
 
-In Excel, the precipitation is in a column and has a value for every date. The potential evaporation is given by a sin wave function that makes potential evaporation increase in summer and decrease in winter. Copy this formula down the page.
+In Excel, the precipitation is in a column and has a value for every day. The potential evaporation is harder to get hold of. So we use a sine wave function, $sin()$, that takes an annual potl evaporation rate (e.g. 1.5m/yr) and makes a daily potential evaporation value that increases during summer and decrease in winter. Inspect, then copy this formula down the page.
 
 In RStudio, the rainfall is given by a text file ’Precipitation.txt’. You will have to download this text file, tell RStudio the location where you have saved the data, and then load the data into your project. Finally, in the equations, you can convert the precipitation dataset into a matrix.
 The parameters for the potential evaporation function are in Inputs, and the equation is in the Equations script. Look for the `#CLIMATE FORCING` sections.
 
-#### Storage {#M5A_7 -}
+**Calculating Daily $e_p$** : Daily potential evaporation will be calculated using a sine wave, as follows:
 
-Start to write in the equations for storage, using the equations given in the [Equations](#M5A_12) section of this module. Note that there are two variables that have a prime ($\prime$) sign. These variables only exist theoretically in the model, so that we can use them for our IF statements.
+<center>
+\begin{equation}
+e_{p(\text{daily})}=\ \frac{e_{p(\text{annual})}}{365}\left[1+A\ \textbf{sin}\left\{B\left(m-1\right)+d\right\}+C\right]\ 
+(\#eq:module5a-23)
+\end{equation}
+</center>
+
+where, $A_{sin}$ is the height of the sine wave (i.e. maximum less minimum value), $B$ is the frequency of the sine wave, $C$ is the minimum $e_{p(\text{daily})}$ (i.e. in mid-winter), $d$ is the day of the month, and $m$ is the month number.
+
+<center>
+```{r plotM5A-1, fig.cap="Potential evaporation sine wave function over time.", echo=FALSE, message=FALSE, warning=FALSE, out.width='80%',out.height='80%'}
+library(ggplot2)
+library(lubridate)
+library(plotly)
+library(dplyr)
+evap <- read.csv("plots/module5a/evap.csv")
+evap$Date <- as.Date(evap$Date)
+plot <- ggplot(data = evap, aes(x = Date, y = Evaporation)) +
+  geom_line(colour = "#3182bd", size = 1.2) + xlab("Time (years)") + ylab("Potential evaporation (m day<sup>-1</sup>)") +
+  theme_bw()
+ggplotly(plot) %>%
+  config(displaylogo = FALSE)
+
+```
+</center>
+
+#### 3. Storages {#M5A_7 -}
+
+Start to write in the equations for storage, using the equations given in the [Equations](#M5A_12) section of this module. The first is $S_{tot}$ which is the total water in the two stores, $S_{sat}$ and $S_{us}$. 
+
+Note that there are two variables that have a prime ($\prime$) sign. These are interim storage values estimated so that we can use them for our IF statements to check for whether runoff or percolation should occur..
 
 
 ```{block2, hintM5A_1, type='rmdtip2'}
 You may have to convert between storage volumes (m^3^) and heights (m) by multiplying or dividing by area (m^2^).
 ```
 
-In Excel, there is an initial condition in a box given for you at time step 0. Your equations will start at time step 1. Your whole set of equations will not be finished until you have also completed the evaporation and flows, but you have to start somewhere.
+In Excel, there is an initial condition in a box given for you at time step 0. Your equations will start at time step 1. Your whole set of equations will not be finished until you have also completed the evaporation and flows, but you have to start somewhere. 
 
 In RStudio, the initial condition is given in the `Inputs` section with the square brackets and the `[1]` (time step 1) and the loop starts at time step 2. For the equations, use the sequence that is given. The code reads from top to bottom so it is important that if a variable is referred to in an equation, it must already have been calculated in a previous line of code. Pay careful attention to the indices for $t$ and $t-1$.
 
@@ -75,17 +107,24 @@ If an equation is written entirely in terms of $t+1$ (e.g. $X^{t+1}= Y^{t+1}+Z^{
 
 
 
-#### Evapotranspiration {#M5A_8 -}
+#### 4. Actual evapotranspiration {#M5A_8 -}
 
 Type in the evapotranspiration equations. Use the previous time step storage values to calculate these.
 
-#### Flows {#M5A_9 -}
+We are computing the water evaporating from trees tapping into groundwater ($e_v$) and from the unsaturated zone ($e_{bs}$ and $e_{ag}$)
 
-Type in the flow equations.
 
-#### Plots {#M5A_10 -}
+#### 5. Flows {#M5A_9 -}
 
-When you have finished filling in all the columns, see the [Submission](#M5A_21) section for what plots to create and submit.
+Type in the flow equations, baseflow, infiltration excess runoff and runoff that occurs when the bucket is full.
+
+
+#### 6. Plots {#M5A_10 -}
+
+When you have finished filling in all the columns, create some plots to explore the model. Consider a stacked-area plot of the two stores ($S_{sat}$ and $S_{us}$), and the evaporation components. Look at the fluxes like percolation and baseflow.
+
+Play with the parameters and see what happens.
+
 
 ### Notation {#M5A_11 -}
 
@@ -358,37 +397,9 @@ The balance of volumetric water storage in the saturated zone is therefore calcu
 <!-- </center> -->
 
 <!-- Base flow is treated for our purposes as a nonlinear function using groundwater storage. -->
-#### Calculating Daily $e_p$ {#M5A_19 -}
 
-Daily potential evaporation will be calculated using a sine wave, as follows:
 
-<center>
-\begin{equation}
-e_{p(\text{daily})}=\ \frac{e_{p(\text{annual})}}{365}\left[1+A\ \textbf{sin}\left\{B\left(m-1\right)+d\right\}+C\right]\ 
-(\#eq:module5a-23)
-\end{equation}
-</center>
-
-Where, $A_{sin}$ is the height of the sine wave (i.e. maximum less minimum value), $B$ is the frequency of the sine wave, $C$ is the minimum $e_{p(\text{daily})}$ (i.e. in mid-winter), $d$ is the day of the month, and $m$ is the month number.
-
-<center>
-```{r plotM5A-1, fig.cap="Potential evaporation sin wave function over time.", echo=FALSE, message=FALSE, warning=FALSE, out.width='100%',out.height='100%'}
-library(ggplot2)
-library(lubridate)
-library(plotly)
-library(dplyr)
-evap <- read.csv("plots/module5a/evap.csv")
-evap$Date <- as.Date(evap$Date)
-plot <- ggplot(data = evap, aes(x = Date, y = Evaporation)) +
-  geom_line(colour = "#3182bd", size = 1.2) + xlab("Time (years)") + ylab("Potential evaporation (m day<sup>-1</sup>)") +
-  theme_bw()
-ggplotly(plot) %>%
-  config(displaylogo = FALSE)
-
-```
-</center>
-
-#### Transpiration {#M5A_16 -}
+#### Total Evapo-transpiration {#M5A_16 -}
 
 <center>
 \begin{equation}
@@ -572,18 +583,19 @@ Subsurface runoff is taken to be zero in cases where the total water storage is 
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 
-1) Clear photograph or page scan of your hand drawn conceptual model of the Water Balance Model
-2) Plot of total water storage over time
-3) Plot of $Q_{ie}$ (infiltration excess runoff) and precipitation (on a secondary axis) over time
-4) Plot of $Q_{ss}$ (subsurface runoff) and precipitation (on a secondary axis) over time
-5) Plot of $e_{Tot}$ (total evaporation) over time
+1) Stacked area plot of water storage over time
+2) Plot of $Q_{ie}$ (infiltration excess runoff) and precipitation (on a secondary axis) over time
+3) Plot of $Q_{ss}$ (subsurface runoff) and precipitation (on a secondary axis) over time
+4) Stacked area plot of $e_{v}$, $e_{bs}$, $e_{ag}$ (i.e., total evaporation) over time
 
 **In less than 100 words write an answer to:**
 
-6) What is the general trend of rainfall over the long term?
-7) What is the general trend of storage over the long term? Why does the storage vary over the short term?
+5) What is the general trend of rainfall over the long term?
+6) What is the general trend of storage over the long term? Why does the storage vary over the short term?
+7) Which flow mechanism contributes the most to the stream? 
+8) What is the dominant ET flux?
 
-These are in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
+These are in PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
 
 **General professional formatting guidelines:**
 
