@@ -10,7 +10,7 @@ Consider a catchment basin with with **different types of land use**.
 
 The daily streamflow through the catchment, $Q^t$ (m^3^/day), can be approximated based on the daily rainfall ($R$) - see the Water Balance model in Module 5a. 
 
-The phosphorus concentration in the water, $P^{t}$ (g/m^3), depends on how much flow there is (i.e. more flow = more fertilizer leaching). To model this we use a simple power law to make a "flow-concentration relationship", which is computed for each land-use ($P$ is proportional to $\alpha Q^{\beta}$). *If you've not seen a power law, sketch a graph of C (y-axis) vs Q (x-axis) for a value of $\beta =1$. WHat happens if $\beta =2$ or $\beta =0.5$?*
+The phosphorus concentration in the water, $P^{t}$ (g/m^3), depends on how much flow there is (i.e. more flow = more fertilizer leaching). To model this we use a simple power law to make a "flow-concentration relationship", which is computed for each land-use ($P$ is proportional to $\alpha Q^{\beta}$). *If you've not seen a power law, sketch a graph of C (y-axis) vs Q (x-axis) for a value of $\beta =1$. What happens if $\beta =2$ or $\beta =0.5$?*
 
 This is averaged over the different land use fractions (denoted with the small $p$ index), using the land-use fraction $F_p$:
 
@@ -56,7 +56,7 @@ The Excel spreadsheet for this module is part of the Module 5 download. Access u
 
 1) Draw by hand the conceptual model of this system.
 2) Confirm with the person beside you what index means ($t$ and $p$).
-3) Use your Module 5a water balance model to predict the catchment flows. Tailor that model to use the information as outlined in Table \@ref(tab:module5b-1) below and supplied rainfall data in teh **CLIMATE** sheet. Input a value for $c$ within the range given for now.
+3) Use your Module 5a water balance model to predict the catchment flows. Tailor that model to use the information as outlined in Table \@ref(tab:module5b-1) below and supplied rainfall data in the **CLIMATE** sheet. Input a value for each parameter within the range given for now.
 
 <center>
 ```{r module5b-1, echo=FALSE, message=FALSE, warning=FALSE}
@@ -88,16 +88,16 @@ kable(
 
 #### Calibrating the model {#M5B_7 -}
 
-Let’s make sure the model flows are realistic:
+Let’s make sure the model flows are realistic. Let's compare our prediction with some observed data:
 
-4) Manually adjust the catchment model parameters (see possible ranges in table below) until the model best matches the observed data - the observed flow data is in the **CLIMATE** sheet. This processed is called “calibration”.
+4) Manually adjust the catchment model parameters (see possible ranges in table below) until the model best matches the observed data - the observed flow data and water table data is in the **CLIMATE** sheet. This processed is called “calibration”.
 
 ```{block2, hintM5B_2, type='rmdtip2'}
 Check this by using a regression plot of the given total observed streamflow and the model total streamflow, checking to get the highest R^2^ value.
 ```
 
 ```{block2, hintM5B_50, type='rmdtip2'}
-Note that the $M$ and $C$ land cover fractions in the WATER BALANCE model need to be updated to be consistent with the $F_p$ land-use fractions mentioned here.
+Note the catchment area of the WATER BALANCE model needs to match the details in the table. Make a copy of the sheet to make a duplicate model with tailored parameters
 ```
 
 #### Calculate phosphate concentrations {#M5B_8 -}
@@ -125,8 +125,9 @@ kable(
 ) %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "25em") %>%
-  column_spec(2, width_min = "11em") %>%
-  column_spec(3, width_min = "11em") %>%
+  column_spec(2, width_min = "10em") %>%
+  column_spec(3, width_min = "10em") %>%
+  column_spec(4, width_min = "10em") %>%
   #row_spec(1:12, background = '#ffffff00') %>%
   scroll_box(width = "100%",
              height = "235px",
@@ -138,17 +139,21 @@ kable(
 See how dairy has the highest alpha? This means it produces the most $P$ of all 4 classes.
 ```
 
+#### Calculate phosphate export load {#M5B_8 -}
+
+6) Compute the $P_{load}$ at the catchment outlet in kg/day. Also, work out the cumulative load (this will come in handy to coampre scenarios; we call it a mass curve) 
+
 #### Consider 2 management scenarios {#M5B_9 -}
 
 Finally, let’s run 2 management scenarios:
 
-6) **Scenario 1:** If the total urban area in each sub catchment expands to 50% (0.5), how would this affect the overall $P$ export?
+7a) **Scenario 1:** If the total urban area expanded to 50% (0.5), how would this affect the overall $P$ export?
 
 ```{block2, hintM5B_4, type='rmdtip2'}
 Change the land use fractions manually. They still have to add up to 1, so change the other parts as you see appropriate, i.e. urban area usually comes at the expense of forest, but you can decide how to change the landscape. Record your changed fractions.
 ```
 
-7) **Scenario 2** If the irrigated dairy industry were made to contain their flows (i.e. prevent high $P$ concentrations going to the stream), how would this affect the overall concentration in the water at the river basin outlet? They have to keep the total subcatchment $P$ concentration below 0.065 g m^3^. 
+7b) **Scenario 2** If the irrigated dairy industry were made to contain their flows (i.e. prevent high $P$ concentrations going to the stream), how would this affect the overall concentration in the water at the river basin outlet? They have to keep water leaving dairy properties to be below 0.065 g m^3^. 
 
 ```{block2, hintM5B_5, type='rmdtip2'}
 Use an IF statement.
@@ -161,8 +166,8 @@ Use an IF statement.
 
 1) Clear photograph or page scan of your **hand drawn conceptual model** of the Catchment system.
 2) Plot of calibration regression plot, including a trendline, equation and R^2^ value. Include in the caption what $c$ values you gave each catchment.
-3) Plot of the phosphorous export of the urban expansion management scenario (Scenario 1) compared to the original, over time.
-4) Plot of the phosphorous export of the dairy management scenario (Scenario 2) compared to the original, over time.
+3) Plot of the cumulative phosphorous export of the urban expansion management scenario (Scenario 1) compared to the original, over time.
+4) Add scenario 2 to the above plot also.
 5) Any other interesting plots you may like to create.
 
 These are in a PDF format, combined with 5a results. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
