@@ -9,25 +9,7 @@ mixed land use.
 
 Consider a catchment basin with **3 sub catchments**, each with **a different dominant land use and slightly different climate**.
 
-The daily runoff from each sub catchment, $Q_i$ (m^3^/day), can be simply approximated based on the daily rainfall ($R$), where $c$ is the daily runoff efficiency and $R^{crit}$ is the initial loss threshold ($m$, this is the amount of rainfall that does not make it to the stream):
-
-<center>
-\begin{equation}
-Q_{i}^{t} = \left\{\begin{matrix} 0,\ \ &R_{i}^{t}\le R_{i}^{crit}
-\\ c_{i}(R_{i}^{t}-R_{i}^{crit})A_{i},\ \ &R_{i}^{t}> R_{i}^{crit}
-\end{matrix}\right.
-(\#eq:module5b-1)
-\end{equation}
-</center>
-
-The total flow ($Q_{tot}$, m^3^/day) is calculated by summing the individual sub catchments, however there is an assumed lag time of 1 day for sub catchment 2 and 2 days lag time for sub catchment 3:
-
-<center>
-\begin{equation}
-Q_{tot}^{t} = \color{#9BBB59}{Q_{1}^{t}} + \color{#0070C0}{Q_{2}^{t-1}} + \color{#F79646}{Q_{3}^{t-2}}
-(\#eq:module5b-2)
-\end{equation}
-</center>
+The daily runoff from each sub catchment, $Q_i$ (m^3^/day), can be simply approximated based on the daily rainfall ($R$) - see Module 5a.
 
 For each sub catchment, the phosphorus concentration, $P_{i}$ (g/m^3^), depends on how much flow there is (e.g. more flow = more fertilizer leaching) by assuming a simple power law fitted to the flow-concentration relationship computed for each land-use ($P$~$\alpha Q \beta$). This is averaged over the different land use fractions (denoted with the small $p$ index), using the land-use fraction $F_p$:
 
@@ -48,7 +30,7 @@ The total $P$ export load is $P_{load}$ (g/day) and is the sum of the different 
 
 <center>
 \begin{equation}
-P_{load}^{t} = \color{#9BBB59}{P_{1}^{t} Q_{1}^{t}} + \color{#0070C0}{P_{2}^{t-1} Q_{2}^{t-1}} + \color{#F79646}{P_{3}^{t-2} Q_{3}^{t-2}}
+P_{load}^{t} = P_{1}^{t} Q_{1}^{t}
 (\#eq:module5b-4)
 \end{equation}
 </center>

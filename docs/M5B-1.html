@@ -291,27 +291,12 @@ mixed land use.</p>
 <div id="M5B_3" class="section level3 unnumbered">
 <h3>Model Overview</h3>
 <p>Consider a catchment basin with <strong>3 sub catchments</strong>, each with <strong>a different dominant land use and slightly different climate</strong>.</p>
-<p>The daily runoff from each sub catchment, <span class="math inline">\(Q_i\)</span> (m<sup>3</sup>/day), can be simply approximated based on the daily rainfall (<span class="math inline">\(R\)</span>), where <span class="math inline">\(c\)</span> is the daily runoff efficiency and <span class="math inline">\(R^{crit}\)</span> is the initial loss threshold (<span class="math inline">\(m\)</span>, this is the amount of rainfall that does not make it to the stream):</p>
-<center>
-<span class="math display" id="eq:module5b-1">\[\begin{equation}
-Q_{i}^{t} = \left\{\begin{matrix} 0,\ \ &amp;R_{i}^{t}\le R_{i}^{crit}
-\\ c_{i}(R_{i}^{t}-R_{i}^{crit})A_{i},\ \ &amp;R_{i}^{t}&gt; R_{i}^{crit}
-\end{matrix}\right.
-\tag{50}
-\end{equation}\]</span>
-</center>
-<p>The total flow (<span class="math inline">\(Q_{tot}\)</span>, m<sup>3</sup>/day) is calculated by summing the individual sub catchments, however there is an assumed lag time of 1 day for sub catchment 2 and 2 days lag time for sub catchment 3:</p>
-<center>
-<span class="math display" id="eq:module5b-2">\[\begin{equation}
-Q_{tot}^{t} = \color{#9BBB59}{Q_{1}^{t}} + \color{#0070C0}{Q_{2}^{t-1}} + \color{#F79646}{Q_{3}^{t-2}}
-\tag{51}
-\end{equation}\]</span>
-</center>
+<p>The daily runoff from each sub catchment, <span class="math inline">\(Q_i\)</span> (m<sup>3</sup>/day), can be simply approximated based on the daily rainfall (<span class="math inline">\(R\)</span>) - see Module 5a.</p>
 <p>For each sub catchment, the phosphorus concentration, <span class="math inline">\(P_{i}\)</span> (g/m<sup>3</sup>), depends on how much flow there is (e.g. more flow = more fertilizer leaching) by assuming a simple power law fitted to the flow-concentration relationship computed for each land-use (<span class="math inline">\(P\)</span>~<span class="math inline">\(\alpha Q \beta\)</span>). This is averaged over the different land use fractions (denoted with the small <span class="math inline">\(p\)</span> index), using the land-use fraction <span class="math inline">\(F_p\)</span>:</p>
 <center>
 <span class="math display" id="eq:module5b-3">\[\begin{equation}
 P_{i}^{t} = \sum_{p=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{p} \left (\frac{Q_{i}^{t}}{A_{i}}  \right )^{\beta_{p}}+P_{0}}  \right )
-\tag{52}
+\tag{50}
 \end{equation}\]</span>
 </center>
 
@@ -322,8 +307,8 @@ P_{i}^{t} = \sum_{p=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{p} \left (\fr
 <p>The total <span class="math inline">\(P\)</span> export load is <span class="math inline">\(P_{load}\)</span> (g/day) and is the sum of the different sub catchment outputs (remember <em>load = flow x concentration</em>) with the assumed lag time:</p>
 <center>
 <span class="math display" id="eq:module5b-4">\[\begin{equation}
-P_{load}^{t} = \color{#9BBB59}{P_{1}^{t} Q_{1}^{t}} + \color{#0070C0}{P_{2}^{t-1} Q_{2}^{t-1}} + \color{#F79646}{P_{3}^{t-2} Q_{3}^{t-2}}
-\tag{53}
+P_{load}^{t} = P_{1}^{t} Q_{1}^{t}
+\tag{51}
 \end{equation}\]</span>
 </center>
 <center>
@@ -660,7 +645,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": [["Module 1 Resources.zip", "Module 1 Resources"], ["Module 2 Resources.zip", "Module 2 Resources"], ["Module 4 Resources.zip", "Module 4 Resources"], ["Module 5a Resources.zip", "Module 5a Resources"], ["Module 5b Resources.zip", "Module 5b Resources"], ["Module 6 Resources.zip", "Module 6 Resources"], ["Module 7 Resources.zip", "Module 7 Resources"]],
+"download": [["Module 1 Resources.zip", "Module 1 Resources"], ["Module 2 Resources.zip", "Module 2 Resources"], ["Module 4 Resources.zip", "Module 4 Resources"], ["Module 6 Resources.zip", "Module 6 Resources"], ["Module 7 Resources.zip", "Module 7 Resources"]],
 "toc": {
 "collapse": "section"
 },

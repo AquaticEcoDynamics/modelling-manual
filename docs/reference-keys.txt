@@ -60,8 +60,6 @@ eq:module5a-29
 eq:module5a-24
 eq:module5a-25
 eq:module5a-26
-eq:module5b-1
-eq:module5b-2
 eq:module5b-3
 eq:module5b-4
 tab:module5b-1

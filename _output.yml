@@ -12,8 +12,8 @@ bookdown::gitbook:
     download: [["Module 1 Resources.zip", "Module 1 Resources"], 
                ["Module 2 Resources.zip", "Module 2 Resources"],
                ["Module 4 Resources.zip", "Module 4 Resources"],
-               ["Module 5a Resources.zip", "Module 5a Resources"],
-               ["Module 5b Resources.zip", "Module 5b Resources"],
+               #["Module 5a Resources.zip", "Module 5a Resources"],
+               #["Module 5b Resources.zip", "Module 5b Resources"],
                ["Module 6 Resources.zip", "Module 6 Resources"],
                ["Module 7 Resources.zip", "Module 7 Resources"]]
     search: yes
