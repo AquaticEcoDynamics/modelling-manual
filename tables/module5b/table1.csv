@@ -7,4 +7,4 @@ Parameters for catchment model: ,"<span style=""color: #9BBB59;"">Catchment valu
 "Deep rooted vegetation fraction, $M$ (range)",0.42 to 0.65
 "Crop vegetation fraction, $C$ (range)",0.25 to 0.4
 "Starting storage, $S_{0}$",1.05E+09
-$Ssat_{0}$,9.45E+07
+$Ssat_{0}$,94500000.00
