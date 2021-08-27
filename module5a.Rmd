@@ -37,7 +37,7 @@ Open the spreadsheet or RStudio project. Make sure that there are three sections
 
 Have a quick look at the date.
 
-In Excel, the date takes the first four columns of the Equations sheet.
+In Excel, the date takes the first four columns of the **WATER BALANCE** sheet.
 
 In RStudio, there is a section in the Inputs script called `#DATE`. Run the section line by line and you
 will learn how to make dates. Then delete the comments at the end of the section.
@@ -46,7 +46,7 @@ will learn how to make dates. Then delete the comments at the end of the section
 
 Navigate to the **CLIMATE** sheet. As boundary conditions, we have a precipitation dataset, and a function (Equation \@ref(eq:module5a-23)) to simulate *potential* evaporation (Figure \@ref(fig:plotM5A-1)).
 
-In Excel, the precipitation is in a column and has a value for every day. The potential evaporation is harder to get hold of. So we use a sine wave function, $sin()$, that takes an annual potl evaporation rate (e.g. 1.5m/yr) and makes a daily potential evaporation value that increases during summer and decrease in winter. Inspect, then copy this formula down the page.
+In Excel, the precipitation is in a column and has a value for every day. The potential evaporation is harder to get hold of. So we use a sine wave function, $sin()$, that takes an annual potential evaporation rate (e.g. 1.5m/yr) and makes a daily potential evaporation value that increases during summer and decrease in winter. Inspect, then copy this formula down the page.
 
 In RStudio, the rainfall is given by a text file ’Precipitation.txt’. You will have to download this text file, tell RStudio the location where you have saved the data, and then load the data into your project. Finally, in the equations, you can convert the precipitation dataset into a matrix.
 The parameters for the potential evaporation function are in Inputs, and the equation is in the Equations script. Look for the `#CLIMATE FORCING` sections.
@@ -81,7 +81,7 @@ ggplotly(plot) %>%
 
 #### 3. Storages {#M5A_7 -}
 
-Start to write in the equations for storage, using the equations given in the [Equations](#M5A_12) section of this module. The first is $S_{tot}$ which is the total water in the two stores, $S_{sat}$ and $S_{us}$. 
+Start to write in the equations for storage (**WATER BALANCE** sheet), using the equations given in the [Equations](#M5A_12) section of this module. The first is $S_{tot}$ which is the total water in the two stores, $S_{sat}$ and $S_{us}$. 
 
 Note that there are two variables that have a prime ($\prime$) sign. These are interim storage values estimated so that we can use them for our IF statements to check for whether runoff or percolation should occur..
 
@@ -272,7 +272,7 @@ document.getElementById("defaultOpen").click();
 ### Equations {#M5A_12 -}
 
 #### Maximum Storage Capacity of the Bucket/Catchment  {#M5A_13 -}
-*Already completed in INPUTS*
+*Already completed in WATER BALANCE*
 
 <center>
 \begin{equation}
@@ -286,7 +286,7 @@ The theoretical maximum storage capacity of the catchment is calculated by takin
 Note that ‘plant available water’ is the water content difference between field capacity and permanent wilting point of the soil at any given depth.
 
 #### Threshold Storage {#M5A_14 -}
-*Already completed in INPUTS*
+*Already completed in WATER BALANCE*
 
 <center>
 \begin{equation}
@@ -544,7 +544,7 @@ runoff, and (optional) base flow.
 
 <center>
 \begin{equation}
-Q_{se}^t = \left\{\begin{matrix} {S}_{tot}^{t \prime}-\ S_{max}^t,\ \ &{S}_{tot}^{t \prime}>S_{max}
+Q_{se}^t = \left\{\begin{matrix} {S}_{tot}^{t \prime}-\ S_{max},\ \ &{S}_{tot}^{t \prime}>S_{max}
 \\ 0,\ \ &{S}_{tot}^{t \prime}\le S_{max}
 \end{matrix}\right.
 (\#eq:module5a-24)

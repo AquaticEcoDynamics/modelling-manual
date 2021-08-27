@@ -75,12 +75,14 @@ kable(
   caption = "Parameters for the individual catchments."
 ) %>%
   kable_styling(full_width = F, position = "center") %>%
+  column_spec(1, width_min = "23.5em") %>%
+  column_spec(2, width_min = "23.5em") %>%
   #column_spec(1, width_min = "5em") %>%
   #column_spec(2, width_min = "15em") %>%
   #column_spec(3, width_min = "13em") %>%
   #row_spec(1:12, background = '#ffffff00') %>%
   scroll_box(width = "100%",
-             height = "445px",
+             height = "100%",
              fixed_thead = FALSE) 
 ```
 </center>
