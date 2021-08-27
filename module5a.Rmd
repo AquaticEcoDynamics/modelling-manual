@@ -13,7 +13,7 @@ Based on our understanding of soil physics, flow processes and transpiration, we
 The water balance assumes an initial amount of water and then we sequentially estimate the fluxes of water as outlined below in the conceptual diagram.
 
 <center>
-```{r figM5A-1, echo=FALSE, fig.cap="Conceptual model schematic of the 0D ‘bucket’ by Yasmina Elshafei and Matthew Hipsey, adapted from Farmer et al. (2003)", out.width = '90%'}
+```{r figM5A-1, echo=FALSE, fig.cap="Conceptual model schematic of the 0D ‘bucket’ by Yasmina Elshafei and Matthew Hipsey, adapted from Farmer et al. (2003). Note that $R_g$ and deep groundwater store $S_{gw}$ are depicted here as an optional extension and not included in the exercise.", out.width = '90%'}
 knitr::include_graphics("images/module5a/picture1.png")
 ```
 </center>
