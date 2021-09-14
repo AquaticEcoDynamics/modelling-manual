@@ -12,14 +12,6 @@ Download the GLM files for this module by clicking the download button in the to
 
 #### Running GLM on macOS {#M7_5 .unnumbered}
 
-On macOS, GLM can be run by opening the `launch_glm_mac` application in the *Kinneret97* folder.
-
-```{block2, hintM7_1, type='rmdnote2'}
-Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click 'Open Anyway'.
-```
-
-Alternatively, you can run the model by following these steps:
-
 -   Open the Terminal application on your Mac
 -   Use the `cd` (change directory) command to navigate to the *Kinneret97* folder
 -   In Finder, go to the macGLM folder and right-click on the glm app, select *Show Package Contents*
@@ -33,6 +25,10 @@ Alternatively, you can run the model by following these steps:
 <source src="images/module7/video1.mp4" type="video/mp4">
 </video>
 </center>
+
+```{block2, hintM7_1, type='rmdnote2'}
+Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click 'Open Anyway'.
+```
 
 #### Running GLM on Windows {#M7_6 .unnumbered}
 
