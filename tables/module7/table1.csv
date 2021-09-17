@@ -15,9 +15,9 @@ Particulate inorganic phosphorus,`PHS_frp_ads`
 Dissolved organic carbon,`OGM_doc`
 Particualte organic carbon,`OGM_poc`
 Dissolved organic nitrogen,`OGM_don`
-Dissolved organic nitrogen,`OGM_pon`
-Particualte organic phosphorus,`OGM_dop`
-Dissolved organic phsophorus,`OGM_pop`
+Particulate organic nitrogen,`OGM_pon`
+Dissolved organic phosphorus,`OGM_dop`
+Particulate organic phsophorus,`OGM_pop`
 Green algae ,`PHY_green`
 Green algae ,`PHY_green_IN`
 Green algae ,`PHY_green_IP`

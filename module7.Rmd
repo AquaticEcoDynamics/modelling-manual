@@ -215,7 +215,7 @@ ol > li > ol > li {list-style-type:lower-alpha}
 
 <li>
 
-As an example to output water quality variables, let's plot all the nitrogen variables. Change `csv_point_vars` to include `NIT_amm`, `NIT_nit`, `OGM_don`, `OMG_pon`, `PHY_green_IN` - these are all the variables that contribute to the total nitrogen (TN) pool. Now re-run the model (e.g. Windows users double clicking `glm.bat` again). Once it's run open `WQ_35.csv` to see these new variables and create a stacked area plot to show how the different variables contribute to TN.
+As an example to output water quality variables, let's plot all the nitrogen variables. Change `csv_point_vars` to include `NIT_amm`, `NIT_nit`, `OGM_don`, `OGM_pon`, `PHY_green_IN` - these are all the variables that contribute to the total nitrogen (TN) pool. Now re-run the model (e.g. Windows users double clicking `glm.bat` again). Once it's run open `WQ_35.csv` to see these new variables and create a stacked area plot to show how the different variables contribute to TN.
 
 </li>
 
