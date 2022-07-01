@@ -4,7 +4,7 @@ on:
       - main
       - master
 
-name: Austomatic book build
+name: deploy-bookdown
 
 jobs:
   build:
