@@ -12,7 +12,7 @@ In this exercise, we create a simple model of the ocean, with a limited number o
 
 
 <center>
-```{r figM4-1, echo=FALSE, fig.cap="Bleached coral (foreground) and normal coral (background). CC BY 3.0, https://en.wikipedia.org/w/index.php?curid=32829631", out.width = '70%'}
+```{r figM4-1, echo=FALSE, fig.cap="Bleached coral (foreground) and normal coral (background). CC BY 3.0, https://en.wikipedia.org/w/index.php?curid=32829631", out.width = '70%', out.extra='data-action="zoom"'}
 knitr::include_graphics("images/module4/picture1.jpg")
 ```
 </center>
@@ -132,7 +132,7 @@ Have a good think about this: given these CO~2~ and pH, did your calculations le
 In this exercise you will construct a double-logarithmic plot of this system, holding CO2 constant and varying the pH. Go to the second tab in Excel and copy the equations over from the first tab. Or in R, you can run a *for loop* to calculate the different concentrations for each of the different pHs. Then you will have some of the major variables converted to logarithms. Next you can make an x y scatter plot. If you add the data correctly, you should get a plot that looks like Figure \@ref(fig:figM4-2).
 
 <center>
-```{r figM4-2, echo=FALSE, fig.cap="Double logarithmic plot of the equilibrium composition of seawater in our model [@stumm1996]", out.width = '90%'}
+```{r figM4-2, echo=FALSE, fig.cap="Double logarithmic plot of the equilibrium composition of seawater in our model [@stumm1996]", out.width = '90%', out.extra='data-action="zoom"'}
 knitr::include_graphics("images/module4/picture2.png")
 ```
 </center>
@@ -172,7 +172,7 @@ Last exercise! In this exercise, we will extract someone else’s data from thei
 Go to the [IPCC website](https://archive.ipcc.ch/publications_and_data/ar4/wg1/en/figure-10-24.html) and read about CO~2~ predictions and CaCO~3~ precipitation. Save their Figure 10.24 as an image file or download it [here](images/module4/picture3.png).
 
 <center>
-```{r figM4-3, echo=FALSE, fig.cap="Changes in global average surface pH and saturation state with respect to aragonite in the Southern Ocean under various SRES scenarios.", out.width = '60%'}
+```{r figM4-3, echo=FALSE, fig.cap="Changes in global average surface pH and saturation state with respect to aragonite in the Southern Ocean under various SRES scenarios.", out.width = '60%', out.extra='data-action="zoom"'}
 knitr::include_graphics("images/module4/picture3.png")
 ```
 </center>

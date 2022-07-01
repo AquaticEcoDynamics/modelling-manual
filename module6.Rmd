@@ -107,7 +107,7 @@ Use an IF statement. O~2~ concentration cannot be negative, so set a minimum con
 ```
 
 <center>
-```{r figM6-1, echo=FALSE, fig.cap="Advection and dispersion of O~2~ in a river of length $x$. Note, in this figure $W_c$ refers to our wastewater plume (click [here](https://hydrologie.org/BIB/Publ_UNESCO/SR_999_E_2005.pdf) for image source).", out.width = '60%'}
+```{r figM6-1, echo=FALSE, fig.cap="Advection and dispersion of O~2~ in a river of length $x$. Note, in this figure $W_c$ refers to our wastewater plume (click [here](https://hydrologie.org/BIB/Publ_UNESCO/SR_999_E_2005.pdf) for image source).", out.width = '60%', out.extra='data-action="zoom"'}
 knitr::include_graphics("images/module6/picture2.png")
 ```
 </center>
@@ -126,7 +126,7 @@ If you see fluctuating negative and positive concentrations, you might have nume
 ```
 
 <center>
-```{r figM6-2, echo=FALSE, fig.cap="A plume of coloured dye dispersing through a river.", out.width = '100%'}
+```{r figM6-2, echo=FALSE, fig.cap="A plume of coloured dye dispersing through a river.", out.width = '100%', out.extra='data-action="zoom"'}
 knitr::include_graphics("images/module6/picture1.png")
 ```
 </center>

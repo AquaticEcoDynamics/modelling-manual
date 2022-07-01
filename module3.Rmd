@@ -19,7 +19,7 @@ To simplify the model further, we assume the Earth emits outgoing (longwave) rad
 
 <center>
 
-![](images/module3/picture2.png){width=650px}
+![](images/module3/picture2.png){width=650px data-action="zoom"}
 
 </center>
 
@@ -209,7 +209,7 @@ This time we require three energy-balance equations:
 In this model, all energy terms are expressed as long-term average fluxes, all temperatures are absolute. We assume that emissivity = 1 except at the surface, and (most importantly) that each of the three systems is in equilibrium.
 
 <center>
-![](images/module3/picture3.png){width=90%}
+![](images/module3/picture3.png){width=90% data-action="zoom"}
 </center>
 
 <center>

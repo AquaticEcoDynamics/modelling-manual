@@ -1,6 +1,6 @@
 bookdown::gitbook:
   includes:
-    in_header: "includes/hypothesis.html"
+    after_body: js/imgZoom.html
   css: css/style.css
   config:
     toc:

@@ -116,7 +116,7 @@ Once the model has run, you can inspect the results. There are three ways to loo
 3)  Plot the lake water balance -- volume, water level and fluxes including inflows, outflows, rainfall and evaporation (refer to columns in `lake.csv`, and copy the appropriate data into your own excel spreadsheet).
 
 <center>
-```{r figM7-1, echo=FALSE, fig.cap="Schematic diagram of water balance components.", out.width = '75%'}
+```{r figM7-1, echo=FALSE, fig.cap="Schematic diagram of water balance components.", out.width = '75%',out.extra='data-action="zoom"'}
 knitr::include_graphics("images/module7/picture2.png")
 ```
 </center>
@@ -127,7 +127,7 @@ knitr::include_graphics("images/module7/picture2.png")
 
 <center>
 
-```{r figM7-2, echo=FALSE, fig.cap="Schematic diagram of surface heat fluxes impacting lake water temperature. For a description of the heat flux terms refer to the [GLM paper](https://gmd.copernicus.org/articles/12/473/2019/)", out.width = '75%'}
+```{r figM7-2, echo=FALSE, fig.cap="Schematic diagram of surface heat fluxes impacting lake water temperature. For a description of the heat flux terms refer to the [GLM paper](https://gmd.copernicus.org/articles/12/473/2019/)", out.width = '75%', out.extra='data-action="zoom"'}
 knitr::include_graphics("images/module7/picture3.png")
 ```
 
@@ -168,7 +168,7 @@ For future activities make sure you change back to 43m.
 
 <center>
 
-```{r figM7-3, echo=FALSE, fig.cap="", out.width = '75%'}
+```{r figM7-3, echo=FALSE, fig.cap="", out.width = '75%', out.extra='data-action="zoom"'}
 knitr::include_graphics("images/module7/picture1.jpg")
 ```
 
