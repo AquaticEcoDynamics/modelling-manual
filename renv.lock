@@ -569,13 +569,6 @@
       "Repository": "CRAN",
       "Hash": "90b28393209827327de889f49935140a"
     },
-    "terra": {
-      "Package": "terra",
-      "Version": "1.4-20",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "2fd9b6a814d577e2e4a7d04d4e067bc0"
-    },
     "tibble": {
       "Package": "tibble",
       "Version": "3.1.7",
@@ -688,3 +681,5 @@
     }
   }
 }
+
+
