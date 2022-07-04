@@ -457,6 +457,18 @@
       "Repository": "CRAN",
       "Hash": "5e3c5dc0b071b21fa128676560dbe94d"
     },
+      "raster": {
+          "Package": "raster",
+          "Version": "3.5-15",
+          "Source": "Repository",
+          "Repository": "CRAN",
+          "Hash": "70cf51235e017702ed77427797572ef0",
+          "Requirements": [
+              "Rcpp",
+              "sp",
+              "terra"
+          ]
+      },  
     "renv": {
       "Package": "renv",
       "Version": "0.14.0",
@@ -674,6 +686,7 @@
     }
   }
 }
+
 
 
 
