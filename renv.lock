@@ -457,13 +457,6 @@
       "Repository": "CRAN",
       "Hash": "5e3c5dc0b071b21fa128676560dbe94d"
     },
-    "raster": {
-      "Package": "raster",
-      "Version": "3.5-2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "c5df27b2de56767e7cfbc74a962ef61c"
-    },
     "renv": {
       "Package": "renv",
       "Version": "0.14.0",
@@ -681,5 +674,6 @@
     }
   }
 }
+
 
 
