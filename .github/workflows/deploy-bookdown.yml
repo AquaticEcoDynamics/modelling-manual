@@ -21,24 +21,32 @@ jobs:
       - name: Install pandoc 
         run: |
           brew install pandoc
-      - name: Cache Renv packages
-        uses: actions/cache@v2
-        with:
-          path: $HOME/.local/share/renv
-          key: r-${{ hashFiles('renv.lock') }}
-          restore-keys: r-
-
-      - name: Cache bookdown results
-        uses: actions/cache@v2
-        with:
-          path: _bookdown_files
-          key: bookdown-${{ hashFiles('**/*Rmd') }}
-          restore-keys: bookdown-
-
-      - name: Install packages
+          
+      - name: Set RENV_PATHS_ROOT
+        shell: bash
         run: |
-          R -e 'install.packages("renv")'
-          R -e 'renv::restore()'
+          echo "RENV_PATHS_ROOT=${{ runner.temp }}/renv" >> $GITHUB_ENV
+          
+      - name: Install and activate renv
+        run: |
+          install.packages("renv")
+          renv::activate()
+        shell: Rscript {0}
+        
+      - name: Get R and OS version
+        id: get-version
+        run: |
+          cat("##[set-output name=os-version;]", sessionInfo()$running, "\n", sep = "")
+          cat("##[set-output name=r-version;]", R.Version()$version.string, sep = "")
+        shell: Rscript {0}
+        
+      - name: Restore Renv package cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.RENV_PATHS_ROOT }}
+          key: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{ inputs.cache-version }}-${{ hashFiles('renv.lock') }}
+          restore-keys: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-
+          
       - name: Build site
         run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
 
