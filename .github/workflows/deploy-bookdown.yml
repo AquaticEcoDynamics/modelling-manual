@@ -21,7 +21,6 @@ jobs:
       - name: Install pandoc
         run: |
           brew install pandoc
-          brew install osgeo-gdal
       - name: Cache Renv packages
         uses: actions/cache@v2
         with:
