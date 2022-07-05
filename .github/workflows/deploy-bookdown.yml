@@ -18,14 +18,33 @@ jobs:
 
       - name: Setup R
         uses: r-lib/actions/setup-r@v1
-
-      - name: Install pandoc and gdal dependencies
+      
+      - name: Cache pandoc
+        uses: actions/cache@v2
+        id: cache-pandoc
+        with:
+          path: "~/pandoc"
+          key: ${{secrets.PANDOC_VERSION}}
+      
+      - name: Install apt packages
+        env:
+          CACHE_HIT: ${{steps.cache-aptdir.outputs.cache-hit}}
+          APTDIR_VERSION: ${{secrets.APTDIR_VERSION}}
         run: |
-          sudo apt-get install -y pandoc
-          sudo apt-get install -y pandoc-citeproc
-          sudo apt-get install gdal-bin proj-bin libgdal-dev libproj-dev
+          if [[ "$CACHE_HIT" == 'true' ]]; then
+            sudo cp --verbose --force --recursive ~/aptdir/* /
+          else
+            sudo apt-get install -y pandoc="$APTDIR_VERSION"
+            sudo apt-get install -y pandoc-citeproc="$APTDIR_VERSION"
+            sudo apt-get install gdal-bin="$APTDIR_VERSION"
+            sudo apt-get install proj-bin="$APTDIR_VERSION"
+            sudo apt-get install libgdal-dev="$APTDIR_VERSION"
+            sudo apt-get install libproj-dev="$APTDIR_VERSION"
+            mkdir -p ~/aptdir
+            sudo dpkg -L aptdir | while IFS= read -r f; do if test -f $f; then echo $f; fi; done | xargs cp --parents --target-directory ~/aptdir/
+          fi
           
-      - name: Cache packages
+      - name: Cache renv packages
         uses: actions/cache@v1
         with:
          path: ${{ env.RENV_PATHS_ROOT }}
@@ -33,7 +52,7 @@ jobs:
          restore-keys: |
            ${{ runner.os }}-renv-
 
-      - name: Restore packages
+      - name: Restore renv packages
         shell: Rscript {0}
         run: |
           if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
