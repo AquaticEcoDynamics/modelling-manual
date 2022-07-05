@@ -20,6 +20,7 @@ jobs:
 
       - name: Install pandoc and gdal dependencies
         run: |
+          sudo apt-get install -y pandoc
           sudo apt-get install -y pandoc-citeproc
           sudo apt-get install gdal-bin proj-bin libgdal-dev libproj-dev
           
