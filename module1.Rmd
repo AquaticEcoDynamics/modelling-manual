@@ -39,11 +39,11 @@ In this exercise we use a real data-set from the Robe Lakes system in South Aust
 
 <center>
 ```{r map7-1, fig.cap="Explore the case study area with this interactive map.", out.width='100%', out.height='350px', echo=FALSE, message=FALSE, warning=FALSE}
-# library(leaflet)
-# library(magrittr)
-# leaflet::leaflet() %>%
-#   leaflet::setView(lat = -37.170055016065895, lng = 139.78148241493437, zoom = 15) %>%
-#   leaflet::addProviderTiles(providers$Esri.WorldImagery)
+library(leaflet)
+library(magrittr)
+leaflet::leaflet() %>%
+  leaflet::setView(lat = -37.170055016065895, lng = 139.78148241493437, zoom = 15) %>%
+  leaflet::addProviderTiles(providers$Esri.WorldImagery)
 ```
 </center>
 
