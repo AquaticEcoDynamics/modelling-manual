@@ -116,10 +116,6 @@ In this lab, we simulate a blob of aquatic sediment. It is a closed system, so t
 
 ### Module resources {#M2_5 -}
 
-<!-- Download the Excel spreadsheet: [MODULE02_Biogeochemistry.xlsx](./resources/module2/MODULE02_Biogeochemistry.xlsx) -->
-
-<!-- Download the R scripts: [MODULE2_R_Biogeochem.zip](./resources/module2/MODULE2_R_Biogeochem.zip) -->
-
 Download the Excel spreadsheet and R scripts for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.
 
 ### Exercises {#M2_6 -}
@@ -131,18 +127,8 @@ Download the Excel spreadsheet and R scripts for this module by clicking the dow
 
 2) Complete the excel spreadsheet for iron reduction, sulfate reduction and methanogenesis. Oxygen, nitrate and manganese are done already, so copy the method and use the equations at the tops of the columns. It is tedious, fiddly and there is a good chance that you will introduce bugs that are hard to find. This is the nature of Excel.
 
-<!-- <center> -->
-<!-- <video width="90%" height="90%" controls> -->
-<!--   <source src="images/module2/video2.mp4" type="video/mp4"> -->
-<!--   <p>Test</p> -->
-<!-- </video> -->
-<!-- </center> -->
-
-
 <center>
-
 ![Video 1: Match your Excel equations to the formulas on the sheet (Tip: Make this video fullscreen for better viewing).](images/module2/video1.mp4){width=100%}
-
 </center>
 
 ```{block2, hintM2-1, type='rmdnote2'}
@@ -208,9 +194,25 @@ You can press `Cmd+Enter` on MacOS, or `Ctrl+Enter` on Windows instead of clicki
 
 7) Enter the inputs, equations and plotting scripts for iron, sulfate and methanogenesis reactions, just as you did in the excel spreadsheet. Remember that you just need a rate of methanogenesis: methane is not an oxidant like sulfate.
 
+::::: {.rmdtip2}
+
+Step 1: Enter the inputs for Iron. Don't forget to 'run' these!
+
+```{r M2Vid1, echo=FALSE, message=FALSE, warning=FALSE}
+htmltools::tags$video(
+  width='100%', 
+  controls=NA,
+  htmltools::tags$source(
+    src='images/module2/video2.mp4',
+    type="video/mp4"
+  )
+  )
+```
+:::::
+
 <center>
 
-![Step 1: Enter the inputs for Iron. Don't forget to 'run' these!](images/module2/video2.mp4){width=100%}
+![Step 1: Enter the inputs for Iron. Don't forget to 'run' these!](images/module2/video2.mp4){autosize=true}
 
 </center>
 <br>
