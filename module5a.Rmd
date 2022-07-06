@@ -68,7 +68,7 @@ library(ggplot2)
 library(lubridate)
 library(plotly)
 library(dplyr)
-evap <- read.csv("plots/module5a/evap.csv")
+evap <- read.csv("data/module5a/evap.csv")
 evap$Date <- as.Date(evap$Date)
 plot <- ggplot(data = evap, aes(x = Date, y = Evaporation)) +
   geom_line(colour = "#3182bd", size = 1.2) + xlab("Time (years)") + ylab("Potential evaporation (m day<sup>-1</sup>)") +
