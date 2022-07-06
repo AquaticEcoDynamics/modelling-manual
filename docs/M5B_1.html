@@ -74,27 +74,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -103,9 +101,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,28 +136,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -178,14 +154,12 @@ div.csl-indent {
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a>
-<ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a><ul>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
-<ul>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a><ul>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
@@ -195,8 +169,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_8"><i class="fa fa-check"></i>Assessing impacts on lake salinity</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a>
-<ul>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a><ul>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_3"><i class="fa fa-check"></i>Modelling concepts</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_4"><i class="fa fa-check"></i>Organic matter oxidation</a></li>
@@ -204,8 +177,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_6"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modeling</a>
-<ul>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modeling</a><ul>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M2_14"><i class="fa fa-check"></i>Module resources</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_3"><i class="fa fa-check"></i>Case Study 1: A “Zero-Dimensional” Energy Balance Model</a></li>
@@ -213,8 +185,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_9"><i class="fa fa-check"></i>Case Study 3: Incorporating Greenhouse Gases</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a>
-<ul>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a><ul>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#module-resources"><i class="fa fa-check"></i>Module resources</a></li>
@@ -224,8 +195,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_7"><i class="fa fa-check"></i>Exercise 4</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_8"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a>
-<ul>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a><ul>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_3"><i class="fa fa-check"></i>The Water Balance Approach</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_22"><i class="fa fa-check"></i>Module resources</a></li>
@@ -233,24 +203,21 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_11"><i class="fa fa-check"></i>Notation</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_21"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a>
-<ul>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a><ul>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_3"><i class="fa fa-check"></i>Model Overview</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_4"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_10"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a>
-<ul>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a><ul>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_3"><i class="fa fa-check"></i>Advection-Dispersion Reaction</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_4"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_6"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a>
-<ul>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a><ul>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_3"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_4"><i class="fa fa-check"></i>Setting up GLM</a></li>
@@ -289,7 +256,7 @@ div.csl-indent {
 <h3>Model Overview<a href="M5B_1.html#M5B_3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Consider a catchment basin with with <strong>different types of land use</strong>.</p>
 <p>The daily streamflow through the catchment, <span class="math inline">\(Q^t\)</span> (m<sup>3</sup>/day), can be approximated based on the daily rainfall (<span class="math inline">\(R\)</span>) - see the Water Balance model in Module 5a.</p>
-<p>The phosphorus concentration in the water, <span class="math inline">\(P^{t}\)</span> (g/m^3), depends on how much flow there is (i.e. more flow = more fertilizer leaching). To model this we use a simple power law to make a “flow-concentration relationship,” which is computed for each land-use (<span class="math inline">\(P\)</span> is proportional to <span class="math inline">\(\alpha Q^{\beta}\)</span>). <em>If you’ve not seen a power law, sketch a graph of C (y-axis) vs Q (x-axis) for a value of <span class="math inline">\(\beta =1\)</span>. What happens if <span class="math inline">\(\beta =2\)</span> or <span class="math inline">\(\beta =0.5\)</span>?</em></p>
+<p>The phosphorus concentration in the water, <span class="math inline">\(P^{t}\)</span> (g/m^3), depends on how much flow there is (i.e. more flow = more fertilizer leaching). To model this we use a simple power law to make a “flow-concentration relationship”, which is computed for each land-use (<span class="math inline">\(P\)</span> is proportional to <span class="math inline">\(\alpha Q^{\beta}\)</span>). <em>If you’ve not seen a power law, sketch a graph of C (y-axis) vs Q (x-axis) for a value of <span class="math inline">\(\beta =1\)</span>. What happens if <span class="math inline">\(\beta =2\)</span> or <span class="math inline">\(\beta =0.5\)</span>?</em></p>
 <p>This is averaged over the different land use fractions (denoted with the small <span class="math inline">\(p\)</span> index), using the land-use fraction <span class="math inline">\(F_p\)</span>:</p>
 <center>
 <span class="math display" id="eq:module5b-3">\[\begin{equation}
@@ -302,6 +269,7 @@ P^{t} = \sum_{p=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{p} \left (\frac{Q
 <div class="rmdnote2">
 <span class="math inline">\(\color{#FF0000}{\alpha_{p} \left (\frac{Q}{A_{c}} \right )^{\beta_{p}}+P_{0}}\)</span> is the flow dependent concentration of the <em>p</em>-th land use type.
 </div>
+
 <p>The total <span class="math inline">\(P\)</span> export <strong>load</strong> is <span class="math inline">\(P_{load}\)</span> (g/day) and is the mass flux through the river (remember <em>load = flow x concentration</em>) :</p>
 <center>
 <span class="math display" id="eq:module5b-4">\[\begin{equation}
@@ -428,16 +396,18 @@ Starting storage, <span class="math inline">\(S_{0}\)</span>
 <h4>Calibrating the model<a href="M5B_1.html#M5B_7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Let’s make sure the model flows are realistic. Let’s compare our prediction with some observed data:</p>
 <ol start="4" style="list-style-type: decimal">
-<li>Manually adjust the catchment model parameters (see possible ranges in table below) until the model best matches the observed data - the observed flow data and water table data is in the <strong>CLIMATE</strong> sheet. This processed is called “calibration.”</li>
+<li>Manually adjust the catchment model parameters (see possible ranges in table below) until the model best matches the observed data - the observed flow data and water table data is in the <strong>CLIMATE</strong> sheet. This processed is called “calibration”.</li>
 </ol>
 
 <div class="rmdtip2">
 Check this by using a regression plot of the given total observed streamflow and the model total streamflow, checking to get the highest R<sup>2</sup> value.
 </div>
 
+
 <div class="rmdtip2">
 Note the catchment area of the WATER BALANCE model needs to match the details in the table. Make a copy of the sheet to make a duplicate model with tailored parameters
 </div>
+
 </div>
 <div id="M5B_8" class="section level4 unnumbered hasAnchor">
 <h4>Calculate phosphate concentrations<a href="M5B_1.html#M5B_8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -533,6 +503,7 @@ Landuse parameters: forest (<span class="math inline">\(p\)</span>=4)
 <div class="rmdtip2">
 See how dairy has the highest alpha? This means it produces the most <span class="math inline">\(P\)</span> of all 4 classes.
 </div>
+
 </div>
 <div id="M5B_8" class="section level4 unnumbered hasAnchor">
 <h4>Calculate phosphate export load<a href="M5B_1.html#M5B_8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -548,11 +519,13 @@ See how dairy has the highest alpha? This means it produces the most <span class
 <div class="rmdtip2">
 Change the land use fractions manually. They still have to add up to 1, so change the other parts as you see appropriate, i.e. urban area usually comes at the expense of forest, but you can decide how to change the landscape. Record your changed fractions.
 </div>
+
 <p>7b) <strong>Scenario 2</strong> If the irrigated dairy industry were made to contain their flows (i.e. prevent high <span class="math inline">\(P\)</span> concentrations going to the stream), how would this affect the overall concentration in the water at the river basin outlet? The total concentration has to be maintained at 0.065 g m<sup>3</sup> or below.</p>
 
 <div class="rmdtip2">
 Use an IF statement.
 </div>
+
 </div>
 </div>
 <div id="M5B_10" class="section level3 unnumbered hasAnchor">
