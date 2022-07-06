@@ -64,12 +64,16 @@ O~2~ source/sink: $\color{#D58400}{S_{x}}$
 
 To solve this the user specifies the initial oxygen concentration ($C_0$), river velocity ($u$) as a function of distance, grid length ($L$), grid spacing ($\Delta x$), simulation period ($T$), time step ($\Delta t$). The calculation should then compute the change in oxygen as a function of distance and time.
 
-<center>
-<video width="100%" height="100%" controls>
-  <source src="images/module6/video1.mp4" type="video/mp4">
-</video>
-</center>
-
+```{r M6Vid1, echo=FALSE, message=FALSE, warning=FALSE}
+htmltools::tags$video(
+  width='100%', 
+  controls=NA,
+  htmltools::tags$source(
+    src='images/module6/video1.mp4',
+    type="video/mp4"
+  )
+  )
+```
 
 Extra sources or sinks of oxygen can by added into the domain based on the $S$ term. We will first set up the model to have no $S$ inputs along the side of the river, but in the last task we add a low oxygen discharge somewhere along the river (ie. a pipe outflow).
 

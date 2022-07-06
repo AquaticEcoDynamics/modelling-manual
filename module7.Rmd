@@ -20,11 +20,16 @@ Download the GLM files for this module by clicking the download button in the to
 -   Leave a space after the file path and type `--xdisp`
 -   Press Enter and the model will open
 
-<center>
-<video width="100%" height="100%" controls>
-<source src="images/module7/video1.mp4" type="video/mp4">
-</video>
-</center>
+```{r M7Vid1, echo=FALSE, message=FALSE, warning=FALSE}
+htmltools::tags$video(
+  width='100%', 
+  controls=NA,
+  htmltools::tags$source(
+    src='images/module7/video1.mp4',
+    type="video/mp4"
+  )
+  )
+```
 
 ```{block2, hintM7_1, type='rmdnote2'}
 Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click 'Open Anyway'.

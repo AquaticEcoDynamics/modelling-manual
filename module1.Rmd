@@ -84,12 +84,16 @@ Use a nested `IF()` statement in adjacent columns to partition flows
 </center>
 ```
 
-<center>
-<video width="100%" height="100%" controls>
-  <source src="images/module1/video1.mp4" type="video/mp4">
-</video>
-</center>
-
+```{r M1Vid1, echo=FALSE, message=FALSE, warning=FALSE}
+htmltools::tags$video(
+  width='100%', 
+  controls=NA,
+  htmltools::tags$source(
+    src='images/module1/video1.mp4',
+    type="video/mp4"
+  )
+  )
+```
 
 2) For this flow time-series, calculate the **number of days** of daily flow within the above bands and then work out **annual average number of days**. The latter is simply computed by dividing the total number of days by the number of years in the data-set.
 
@@ -102,11 +106,16 @@ Use `COUNT()` to get the number of entries in the column
 You may do the annual averaging manually (slow) or the pivot table method (fast). For the pivot table method: Insert a new column B, Label it Year.
 Type the year number into the first cell, make sure it is formatted as a number.
 
-<center>
-<video width="100%" height="80%" controls>
-  <source src="images/module1/video2.mp4" type="video/mp4">
-</video>
-</center>
+```{r M1Vid2, echo=FALSE, message=FALSE, warning=FALSE}
+htmltools::tags$video(
+  width='100%', 
+  controls=NA,
+  htmltools::tags$source(
+    src='images/module1/video2.mp4',
+    type="video/mp4"
+  )
+  )
+```
 
 Click two times on the little square in the corner of the box.  This will fill down the page.
 Repeat this at each year change and you will have the year only information which you can then use to summarise data.  As the original date has day numbers and decimal time each one is unique so you end up with a record for each day.  This way you get a record for each year.
@@ -119,21 +128,31 @@ Highlight all the data.  It must have headings for each column or it won’t wor
 Go to “Insert” then “Pivot Table”. Click OK as you want the default settings.
 Then you just fiddle until you get what you want. The following is an example:
 
-<center>
-<video width="90%" height="90%" controls>
-  <source src="images/module1/video3.mp4" type="video/mp4">
-</video>
-</center>
+```{r M1Vid3, echo=FALSE, message=FALSE, warning=FALSE}
+htmltools::tags$video(
+  width='100%', 
+  controls=NA,
+  htmltools::tags$source(
+    src='images/module1/video3.mp4',
+    type="video/mp4"
+  )
+  )
+```
 
 4) **Sort the years** from highest to lowest total annual flow:
     a. Add a new column next to the flows indexing the years sequentially (i.e. 1, 2, 3...)
     b. Add a new column next to the indices calculating the probability of meeting the annual flow: $P(Yri) =  \frac{i}{\text{number of years}+1}$
 
-<center>
-  <video width="100%" height="100%" controls>
-    <source src="images/module1/video4.mp4" type="video/mp4">
-  </video>
-</center>
+```{r M1Vid4, echo=FALSE, message=FALSE, warning=FALSE}
+htmltools::tags$video(
+  width='100%', 
+  controls=NA,
+  htmltools::tags$source(
+    src='images/module1/video4.mp4',
+    type="video/mp4"
+  )
+  )
+```
    c. Create a scatter plot of the flow (y-axis) vs probability (x-axis) to create an "exceedance" curve
 
 

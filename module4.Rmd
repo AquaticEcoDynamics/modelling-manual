@@ -12,7 +12,7 @@ In this exercise, we create a simple model of the ocean, with a limited number o
 
 
 <center>
-```{r figM4-1, echo=FALSE, fig.cap="Bleached coral (foreground) and normal coral (background). CC BY 3.0, https://en.wikipedia.org/w/index.php?curid=32829631", out.width = '70%', out.extra='data-action="zoom"'}
+```{r figM4-1, echo=FALSE, fig.cap="Bleached coral (foreground) and normal coral (background). CC BY 3.0, https://en.wikipedia.org/w/index.php?curid=32829631", out.width = '77%', out.extra='data-action="zoom"'}
 knitr::include_graphics("images/module4/picture1.jpg")
 ```
 </center>
@@ -181,11 +181,16 @@ Go to the [Plot Digitizer website](https://sourceforge.net/projects/plotdigitize
 
 Open the IPCC image in Plot Digitizer. The program guides you through the steps you need to take: read the command at the bottom of the screen (for example, “Choose most negative end of x-axis”) and click “Done” when you have finished. It will be easiest if you make a point every 10 years. Save each dataset as a separate csv file and then combine the results in one sheet. If your x-axis points line up nicely enough, you can re-plot the data.
 
-<center>
-<video width="70%" height="70%" controls>
-  <source src="images/module4/video1.mp4" type="video/mp4">
-</video>
-</center>
+```{r M4Vid1, echo=FALSE, message=FALSE, warning=FALSE}
+htmltools::tags$video(
+  width='100%', 
+  controls=NA,
+  htmltools::tags$source(
+    src='images/module4/video1.mp4',
+    type="video/mp4"
+  )
+  )
+```
 
 Compare these results with your own results. And make any plots that you feel help explain the environmental system behaviour.
 
