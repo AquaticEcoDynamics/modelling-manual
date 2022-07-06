@@ -12,9 +12,8 @@ description: "The online Environmental Dynamics Workbook"
 
 # Introduction {#intro -}
 
-```{r panel-setup, include = FALSE}
+```{r xaringanExtra, include = FALSE}
 library(xaringanExtra)
-library(rgdal)
 xaringanExtra::use_panelset()
 xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ```
