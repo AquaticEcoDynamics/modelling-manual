@@ -1,6 +1,7 @@
 bookdown::gitbook:
   includes:
     after_body: js/imgZoom.html
+    in_header: js/gtag.html
   css: css/style.css
   config:
     toc:
