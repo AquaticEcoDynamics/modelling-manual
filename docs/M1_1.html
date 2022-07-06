@@ -280,8 +280,8 @@ Become familiar with basic spreadsheet commands in Excel by conducting an enviro
 <p>In this exercise we use a real data-set from the Robe Lakes system in South Australia to explore this question.</p>
 <center>
 <div class="figure"><span style="display:block;" id="fig:map7-1"></span>
-<div id="htmlwidget-2bad7c8e442ec2814de2" style="width:100%;height:350px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2bad7c8e442ec2814de2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[-37.1700550160659,139.781482414934],15,[]],"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2083fb33d5ffc9dd453f" style="width:100%;height:350px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2083fb33d5ffc9dd453f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[-37.1700550160659,139.781482414934],15,[]],"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 1: Explore the case study area with this interactive map.
 </p>
@@ -322,11 +322,9 @@ Use a nested <code>IF()</code> statement in adjacent columns to partition flows
 </center>
 </div>
 
-<center>
-<video width="100%" height="100%" controls>
-<source src="images/module1/video1.mp4" type="video/mp4">
+<video width="100%" controls>
+<source src="images/module1/video1.mp4" type="video/mp4"/>
 </video>
-</center>
 <ol start="2" style="list-style-type: decimal">
 <li>For this flow time-series, calculate the <strong>number of days</strong> of daily flow within the above bands and then work out <strong>annual average number of days</strong>. The latter is simply computed by dividing the total number of days by the number of years in the data-set.</li>
 </ol>
@@ -340,11 +338,9 @@ Use <code>COUNT()</code> to get the number of entries in the column
 </ol>
 <p>You may do the annual averaging manually (slow) or the pivot table method (fast). For the pivot table method: Insert a new column B, Label it Year.
 Type the year number into the first cell, make sure it is formatted as a number.</p>
-<center>
-<video width="100%" height="80%" controls>
-<source src="images/module1/video2.mp4" type="video/mp4">
+<video width="100%" controls>
+<source src="images/module1/video2.mp4" type="video/mp4"/>
 </video>
-</center>
 <p>Click two times on the little square in the corner of the box. This will fill down the page.
 Repeat this at each year change and you will have the year only information which you can then use to summarise data. As the original date has day numbers and decimal time each one is unique so you end up with a record for each day. This way you get a record for each year.</p>
 
@@ -355,11 +351,9 @@ Use <code>YEAR()</code> to speed this step up
 <p>Highlight all the data. It must have headings for each column or it won’t work.
 Go to “Insert” then “Pivot Table”. Click OK as you want the default settings.
 Then you just fiddle until you get what you want. The following is an example:</p>
-<center>
-<video width="90%" height="90%" controls>
-<source src="images/module1/video3.mp4" type="video/mp4">
+<video width="100%" controls>
+<source src="images/module1/video3.mp4" type="video/mp4"/>
 </video>
-</center>
 <ol start="4" style="list-style-type: decimal">
 <li><strong>Sort the years</strong> from highest to lowest total annual flow:
 <ol style="list-style-type: lower-alpha">
@@ -367,11 +361,9 @@ Then you just fiddle until you get what you want. The following is an example:</
 <li>Add a new column next to the indices calculating the probability of meeting the annual flow: <span class="math inline">\(P(Yri) = \frac{i}{\text{number of years}+1}\)</span></li>
 </ol></li>
 </ol>
-<center>
-<video width="100%" height="100%" controls>
-<source src="images/module1/video4.mp4" type="video/mp4">
+<video width="100%" controls>
+<source src="images/module1/video4.mp4" type="video/mp4"/>
 </video>
-</center>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Create a scatter plot of the flow (y-axis) vs probability (x-axis) to create an “exceedance” curve</li>
 </ol>
