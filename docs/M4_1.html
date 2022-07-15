@@ -51,24 +51,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
-<script src="libs/panelset-0.2.6/panelset.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -82,69 +64,29 @@
 </script>
 
 
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -163,12 +105,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a><ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a>
+<ul>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a><ul>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
+<ul>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
@@ -178,7 +122,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_8"><i class="fa fa-check"></i>Assessing impacts on lake salinity</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a><ul>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a>
+<ul>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_3"><i class="fa fa-check"></i>Modelling concepts</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_4"><i class="fa fa-check"></i>Organic matter oxidation</a></li>
@@ -186,7 +131,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_6"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modeling</a><ul>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modeling</a>
+<ul>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M2_14"><i class="fa fa-check"></i>Module resources</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_3"><i class="fa fa-check"></i>Case Study 1: A “Zero-Dimensional” Energy Balance Model</a></li>
@@ -194,7 +140,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_9"><i class="fa fa-check"></i>Case Study 3: Incorporating Greenhouse Gases</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a><ul>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a>
+<ul>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#module-resources"><i class="fa fa-check"></i>Module resources</a></li>
@@ -204,7 +151,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_7"><i class="fa fa-check"></i>Exercise 4</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_8"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a><ul>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a>
+<ul>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_3"><i class="fa fa-check"></i>The Water Balance Approach</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_22"><i class="fa fa-check"></i>Module resources</a></li>
@@ -212,21 +160,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_11"><i class="fa fa-check"></i>Notation</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_21"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a><ul>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a>
+<ul>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_3"><i class="fa fa-check"></i>Model Overview</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_4"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_10"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a><ul>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a>
+<ul>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_3"><i class="fa fa-check"></i>Advection-Dispersion Reaction</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_4"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_6"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a><ul>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a>
+<ul>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_3"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_4"><i class="fa fa-check"></i>Setting up GLM</a></li>
@@ -273,16 +224,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="figure"><span style="display:block;" id="fig:figM4-1"></span>
 <img src="images/module4/picture1.jpg" alt="Bleached coral (foreground) and normal coral (background). CC BY 3.0, https://en.wikipedia.org/w/index.php?curid=32829631" width="77%" data-action="zoom" />
 <p class="caption">
-Figure 4: Bleached coral (foreground) and normal coral (background). CC BY 3.0, <a href="https://en.wikipedia.org/w/index.php?curid=32829631" class="uri">https://en.wikipedia.org/w/index.php?curid=32829631</a>
+Figure 1: Bleached coral (foreground) and normal coral (background). CC BY 3.0, <a href="https://en.wikipedia.org/w/index.php?curid=32829631" class="uri">https://en.wikipedia.org/w/index.php?curid=32829631</a>
 </p>
 </div>
 </center>
-<p>The major variables are given in Table <a href="M4_1.html#tab:tabM4-1">5</a>. Given any two of the variables on the left hand column, the other four can be calculated.</p>
+<p>The major variables are given in Table <a href="M4_1.html#tab:tabM4-1">1</a>. Given any two of the variables on the left hand column, the other four can be calculated.</p>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:tabM4-1">Table 5: </span>Major variables
+<span id="tab:tabM4-1">Table 1: </span>Major variables
 </caption>
 <tbody>
 <tr>
@@ -344,66 +295,65 @@ Figure 4: Bleached coral (foreground) and normal coral (background). CC BY 3.0, 
 <div class="rmdnote2">
 You can use either Excel or R for this module.
 </div>
-
 </div>
 <div id="M4_4" class="section level3 unnumbered hasAnchor">
 <h3>Exercise 1<a href="M4_1.html#M4_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In the first exercise, we set pH to be 8.3 and atmospheric CO<sub>2</sub> gas to be 3.5×10<sup>-4</sup> atmospheres, and calculate the other variables based on these two. CO<sub>2</sub> gas dissolves in water according to Equation <a href="M4_1.html#eq:module4-1">(18)</a>. The dissolved CO<sub>2</sub> easily dissociates into carbonic acid according to Equation <a href="M4_1.html#eq:module4-2">(19)</a>. For simplicity, we will go straight from atmospheric CO<sub>2</sub> to H<sub>2</sub>CO<sub>3</sub>*, which is the sum of dissolved CO<sub>2</sub> and carbonic acid, using Equation <a href="M4_1.html#eq:module4-3">(20)</a>.</p>
+<p>In the first exercise, we set pH to be 8.3 and atmospheric CO<sub>2</sub> gas to be 3.5×10<sup>-4</sup> atmospheres, and calculate the other variables based on these two. CO<sub>2</sub> gas dissolves in water according to Equation <a href="M4_1.html#eq:module4-1">(1)</a>. The dissolved CO<sub>2</sub> easily dissociates into carbonic acid according to Equation <a href="M4_1.html#eq:module4-2">(2)</a>. For simplicity, we will go straight from atmospheric CO<sub>2</sub> to H<sub>2</sub>CO<sub>3</sub>*, which is the sum of dissolved CO<sub>2</sub> and carbonic acid, using Equation <a href="M4_1.html#eq:module4-3">(3)</a>.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-3" id="eq:module4-2" id="eq:module4-1">\[\begin{align*}
 {CO}_{2(\text{gas})}&amp;\rightleftarrows{CO}_{2(\text{dissolved})} 
-\tag{18} \\
+\tag{1} \\
 {CO}_{2(\text{dissolved})}+H_2O&amp;\rightleftarrows H_2{CO}_3 
-\tag{19} \\
+\tag{2} \\
 {CO}_{2(\text{gas})}+H_2O&amp;\rightleftarrows \color{#ED7D31}{H_2CO_3^\ast} \hspace{3em} K_{H} = 3.39×10^{-2} 
-\tag{20} \\
+\tag{3} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
-<p>The carbonic acid dissociates into a hydrogen ion (H<sup>+</sup>, or proton) and a bicarbonate ion (HCO<sub>3</sub><sup>-</sup>), according to Equation <a href="M4_1.html#eq:module4-4">(21)</a>. The bicarbonate further dissociates into carbonate (CO<sub>3</sub><sup>2-</sup>) and another hydrogen ion, as shown in Equation <a href="M4_1.html#eq:module4-5">(22)</a>. The release of these two hydrogen ions is what creates the acidity of the ocean.</p>
+<p>The carbonic acid dissociates into a hydrogen ion (H<sup>+</sup>, or proton) and a bicarbonate ion (HCO<sub>3</sub><sup>-</sup>), according to Equation <a href="M4_1.html#eq:module4-4">(4)</a>. The bicarbonate further dissociates into carbonate (CO<sub>3</sub><sup>2-</sup>) and another hydrogen ion, as shown in Equation <a href="M4_1.html#eq:module4-5">(5)</a>. The release of these two hydrogen ions is what creates the acidity of the ocean.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-5" id="eq:module4-4">\[\begin{align*}
 \color{#ED7D31}{H_2CO_3^\ast} &amp;\rightleftarrows \color{#00B050}{HCO_3^-}+\color{#FF0000}{H^+} \hspace{3em}  K_{1} = 5×10^{-7}   
-\tag{21} \\
+\tag{4} \\
 \color{#00B050}{HCO_3^{-}} &amp;\rightleftarrows  \color{#5B9BD5}{{CO}_3^{2-}}+\color{#FF0000}{H^+} \hspace{3em}    K_{2} = 5×10^{-11}
-\tag{22} \\
+\tag{5} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
-<p>Total carbon, <span class="math inline">\(C_{T}\)</span>, is defined as the sum of these carbonate species. Alkalinity is defined as the sum of the charged carbonate species and the balance of hydrogen ions and hydroxide (OH<sup>-</sup>), as shown in Equations <a href="M4_1.html#eq:module4-6">(23)</a> and <a href="M4_1.html#eq:module4-7">(24)</a>. (Remember that alkalinity is the opposite of acidity.)</p>
+<p>Total carbon, <span class="math inline">\(C_{T}\)</span>, is defined as the sum of these carbonate species. Alkalinity is defined as the sum of the charged carbonate species and the balance of hydrogen ions and hydroxide (OH<sup>-</sup>), as shown in Equations <a href="M4_1.html#eq:module4-6">(6)</a> and <a href="M4_1.html#eq:module4-7">(7)</a>. (Remember that alkalinity is the opposite of acidity.)</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-7" id="eq:module4-6">\[\begin{align*}
 C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2-}}\right]+\left[\color{#ED7D31}{H_2{CO}_3^\ast}\right]
-\tag{23} \\
+\tag{6} \\
 \left[Alk\right]&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+2\left[\color{#5B9BD5}{{CO}_3^{2-}}\right]+\left[{OH}^-\right]-\left[\color{#FF0000}{H^+}\right]  
-\tag{24} \\
+\tag{7} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
-<p>The concentration of hydroxide can be found by rearranging Equation <a href="M4_1.html#eq:module4-8">(25)</a> to Equation <a href="M4_1.html#eq:module4-9">(26)</a> and using the dissociation constant of water, <span class="math inline">\(K_W\)</span>, and the hydrogen ion concentration.</p>
+<p>The concentration of hydroxide can be found by rearranging Equation <a href="M4_1.html#eq:module4-8">(8)</a> to Equation <a href="M4_1.html#eq:module4-9">(9)</a> and using the dissociation constant of water, <span class="math inline">\(K_W\)</span>, and the hydrogen ion concentration.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-9" id="eq:module4-8">\[\begin{align*}
 [OH^{-}][\color{#FF0000}{H^{+}}] &amp;= K_{W} \hspace{3em} K_{W} = 1×10^{-14}
-\tag{25} \\
+\tag{8} \\
 [OH^{-}]&amp;=\frac{K_{W}}{[\color{#FF0000}{H^{+}]}}
-\tag{26} \\
+\tag{9} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
 <p>Open the Excel spreadsheet or R project and examine the tab or script <code>Initial CO2</code>. The chemical equations and constants are given to you already. The variables that we are forcing to be constant in Excel are
 <span style="color: #A5A5A5;">coloured grey</span>. Enter the equations for Exercise 1 into the <span style="color: #FFD966;">yellow boxes</span>.</p>
-<p>If we assume that calcium ion concentration does not vary much in this system, we can force it to be 5×10<sup>-4</sup> mol L<sup>-1</sup>. Calcium carbonate (CaCO<sub>3</sub>) precipitation or dissolution is governed by the ratio (<span class="math inline">\(\mathrm{\Omega}\)</span>) of Ca<sup>2+</sup> concentration and CO<sub>3</sub><sup>2-</sup> concentration to the solubility constant, <span class="math inline">\(K_{sp}\)</span>, according to Equations <a href="M4_1.html#eq:module4-10">(27)</a> and <a href="M4_1.html#eq:module4-11">(28)</a>. If  is greater than 1, then precipitation is favourable, and conversely, if  is less than 1, dissolution is favourable.</p>
+<p>If we assume that calcium ion concentration does not vary much in this system, we can force it to be 5×10<sup>-4</sup> mol L<sup>-1</sup>. Calcium carbonate (CaCO<sub>3</sub>) precipitation or dissolution is governed by the ratio (<span class="math inline">\(\mathrm{\Omega}\)</span>) of Ca<sup>2+</sup> concentration and CO<sub>3</sub><sup>2-</sup> concentration to the solubility constant, <span class="math inline">\(K_{sp}\)</span>, according to Equations <a href="M4_1.html#eq:module4-10">(10)</a> and <a href="M4_1.html#eq:module4-11">(11)</a>. If  is greater than 1, then precipitation is favourable, and conversely, if  is less than 1, dissolution is favourable.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-11" id="eq:module4-10">\[\begin{align*}
 {CO}_3^{2-} &amp;+{Ca}^{2+}\rightleftarrows CaCO_3 \hspace{3em} K_{sp} = 1\times 10^{-8.4}
-\tag{27} \\
+\tag{10} \\
 \mathrm{\Omega} &amp;=\frac{[Ca^{2+}][CO_{3}^{2-}]}{[K_{sp\space CaCO_{3}}]}
-\tag{28} \\
+\tag{11} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
@@ -411,31 +361,31 @@ C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2
 </div>
 <div id="M4_5" class="section level3 unnumbered hasAnchor">
 <h3>Exercise 2<a href="M4_1.html#M4_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In this exercise you will construct a double-logarithmic plot of this system, holding CO2 constant and varying the pH. Go to the second tab in Excel and copy the equations over from the first tab. Or in R, you can run a <em>for loop</em> to calculate the different concentrations for each of the different pHs. Then you will have some of the major variables converted to logarithms. Next you can make an x y scatter plot. If you add the data correctly, you should get a plot that looks like Figure <a href="M4_1.html#fig:figM4-2">5</a>.</p>
+<p>In this exercise you will construct a double-logarithmic plot of this system, holding CO2 constant and varying the pH. Go to the second tab in Excel and copy the equations over from the first tab. Or in R, you can run a <em>for loop</em> to calculate the different concentrations for each of the different pHs. Then you will have some of the major variables converted to logarithms. Next you can make an x y scatter plot. If you add the data correctly, you should get a plot that looks like Figure <a href="M4_1.html#fig:figM4-2">2</a>.</p>
 <center>
 <div class="figure"><span style="display:block;" id="fig:figM4-2"></span>
-<img src="images/module4/picture2.png" alt="Double logarithmic plot of the equilibrium composition of seawater in our model [@stumm1996]" width="90%" data-action="zoom" />
+<img src="images/module4/picture2.png" alt="Double logarithmic plot of the equilibrium composition of seawater in our model. Adapted from @stumm1996." width="90%" data-action="zoom" />
 <p class="caption">
-Figure 5: Double logarithmic plot of the equilibrium composition of seawater in our model <span class="citation">(Stumm and Morgan <a href="#ref-stumm1996">1996</a>)</span>
+Figure 2: Double logarithmic plot of the equilibrium composition of seawater in our model. Adapted from <span class="citation"><a href="#ref-stumm1996" role="doc-biblioref">Stumm and Morgan</a> (<a href="#ref-stumm1996" role="doc-biblioref">1996</a>)</span>.
 </p>
 </div>
 </center>
 </div>
 <div id="M4_6" class="section level3 unnumbered hasAnchor">
 <h3>Exercise 3<a href="M4_1.html#M4_6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This is the cool part. Here we are going to calculate a new pH given an increased atmospheric CO<sub>2</sub> concentration. Given that we calculated the concentrations of all the other species according to the initial distribution in Exercise 1, we now hold them all constant, while increasing CO<sub>2</sub> and calculating H<sup>+</sup> (and therefore pH). This is not simple, because H<sup>+</sup> concentration is tightly bound up with the concentrations of all other species, and so we cannot simply work backwards from any one equation alone. However, there is a quadratic Equation <a href="M4_1.html#eq:module4-12">(29)</a> that we can solve for H<sup>+</sup> , using a fixed <span class="math inline">\(C_{T}\)</span>, rearranged to Equation <a href="M4_1.html#eq:module4-13">(30)</a>.</p>
+<p>This is the cool part. Here we are going to calculate a new pH given an increased atmospheric CO<sub>2</sub> concentration. Given that we calculated the concentrations of all the other species according to the initial distribution in Exercise 1, we now hold them all constant, while increasing CO<sub>2</sub> and calculating H<sup>+</sup> (and therefore pH). This is not simple, because H<sup>+</sup> concentration is tightly bound up with the concentrations of all other species, and so we cannot simply work backwards from any one equation alone. However, there is a quadratic Equation <a href="M4_1.html#eq:module4-12">(12)</a> that we can solve for H<sup>+</sup> , using a fixed <span class="math inline">\(C_{T}\)</span>, rearranged to Equation <a href="M4_1.html#eq:module4-13">(13)</a>.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-13" id="eq:module4-12">\[\begin{align*}
 {\left[\color{#FF0000}{H^+}\right]^2C}_T &amp;=\color{#ED7D31}{H_2{CO}_3^\ast}\left(\left[\color{#FF0000}{H^+}\right]^2+K_1\left[\color{#FF0000}{H^+}\right]+K_1K_2\right)  
-\tag{29} \\
+\tag{12} \\
 \left[\color{#FF0000}{H^+}\right] &amp;=\sqrt[2]{\frac{\color{#ED7D31}{H_2{CO}_3^\ast}}{C_T}\left(\left[\color{#FF0000}{H^+}\right]^2+K_1\left[\color{#FF0000}{H^+}\right]+K_1K_2\right)}   
-\tag{30} \\
+\tag{13} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
 <p>Solving this quadratic would be fiendishly difficult. Instead, we will use trial and error, otherwise known as our iterative solution. We will do this to find a value for H<sup>+</sup> that is the same on both sides of the equation.</p>
-<p>Go to the third tab and copy over all of the equations from Exercise 1. The <span style="color: #A5A5A5;">grey boxes</span> are the values that we will hold constant, and the first guess for H<sup>+</sup>, based on the H<sup>+</sup> in Exercise 1. You can alter the CO<sub>2</sub> concentration using the CO<sub>2</sub> multiplier cell and your rapidly developing Excel and R skills. If you want to double CO<sub>2</sub> concentration, type 2 into the multiplier cell. If you want to keep it at present levels, type 1. Repeat the calculation of Equation <a href="M4_1.html#eq:module4-13">(30)</a> over successive iterations, using the answer from the previous iteration as your guess for the next iteration. Eventually, the difference between your guesses will become very small and you can settle on a constant pH. (This is roughly how equilibrium-solving computer programs solve complex biogeochemical interactions, often with many more interacting variables than this.)
+<p>Go to the third tab and copy over all of the equations from Exercise 1. The <span style="color: #A5A5A5;">grey boxes</span> are the values that we will hold constant, and the first guess for H<sup>+</sup>, based on the H<sup>+</sup> in Exercise 1. You can alter the CO<sub>2</sub> concentration using the CO<sub>2</sub> multiplier cell and your rapidly developing Excel and R skills. If you want to double CO<sub>2</sub> concentration, type 2 into the multiplier cell. If you want to keep it at present levels, type 1. Repeat the calculation of Equation <a href="M4_1.html#eq:module4-13">(13)</a> over successive iterations, using the answer from the previous iteration as your guess for the next iteration. Eventually, the difference between your guesses will become very small and you can settle on a constant pH. (This is roughly how equilibrium-solving computer programs solve complex biogeochemical interactions, often with many more interacting variables than this.)
 Don’t forget that your successive iterations, are not time steps, like we had in previous weeks. Rather, they are just guesses at the right number that only exist in the model. Your final answer is the only one that has a real scientific meaning. If you want to determine the pH over a range of CO<sub>2</sub> concentrations, you will need to repeat the calculation over ~10 rows, and save your results each time.</p>
 <div class="rmdquestion">
 <p>
@@ -451,7 +401,7 @@ Big questions: if you increase CO<sub>2</sub>, does the pH rise or fall? Does Ca
 <div class="figure"><span style="display:block;" id="fig:figM4-3"></span>
 <img src="images/module4/picture3.png" alt="Changes in global average surface pH and saturation state with respect to aragonite in the Southern Ocean under various SRES scenarios." width="60%" data-action="zoom" />
 <p class="caption">
-Figure 6: Changes in global average surface pH and saturation state with respect to aragonite in the Southern Ocean under various SRES scenarios.
+Figure 3: Changes in global average surface pH and saturation state with respect to aragonite in the Southern Ocean under various SRES scenarios.
 </p>
 </div>
 </center>
@@ -556,9 +506,9 @@ Which factors cause the differences between your results and those of the IPCC m
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references">
-<div id="ref-stumm1996">
-<p>Stumm, Werner, and JJ Morgan. 1996. “Chemical Equilibria and Rates in Natural Waters.” <em>Aquatic Chemistry</em> 1022.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-stumm1996" class="csl-entry">
+Stumm, Werner, and JJ Morgan. 1996. <span>“Chemical Equilibria and Rates in Natural Waters.”</span> <em>Aquatic Chemistry</em> 1022.
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script>
