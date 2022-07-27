@@ -83,27 +83,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -112,9 +110,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -147,28 +145,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -188,15 +164,13 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="part"><span><b>I Overview</b></span></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a>
-<ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a><ul>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
 <li class="part"><span><b>II Weekly Modules</b></span></li>
-<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
-<ul>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a><ul>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
@@ -206,8 +180,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_8"><i class="fa fa-check"></i>Assessing impacts on lake salinity</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a>
-<ul>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a><ul>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_3"><i class="fa fa-check"></i>Modelling concepts</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_4"><i class="fa fa-check"></i>Organic matter oxidation</a></li>
@@ -215,8 +188,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_6"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modeling</a>
-<ul>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modeling</a><ul>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M2_14"><i class="fa fa-check"></i>Module resources</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_3"><i class="fa fa-check"></i>Case Study 1: A “Zero-Dimensional” Energy Balance Model</a></li>
@@ -224,8 +196,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_9"><i class="fa fa-check"></i>Case Study 3: Incorporating Greenhouse Gases</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a>
-<ul>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a><ul>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#module-resources"><i class="fa fa-check"></i>Module resources</a></li>
@@ -235,8 +206,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_7"><i class="fa fa-check"></i>Exercise 4</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_8"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a>
-<ul>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a><ul>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_3"><i class="fa fa-check"></i>The Water Balance Approach</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_22"><i class="fa fa-check"></i>Module resources</a></li>
@@ -244,24 +214,21 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_11"><i class="fa fa-check"></i>Notation</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_21"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a>
-<ul>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a><ul>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_3"><i class="fa fa-check"></i>Model Overview</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_4"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_10"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a>
-<ul>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a><ul>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_3"><i class="fa fa-check"></i>Advection-Dispersion Reaction</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_4"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_6"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a>
-<ul>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a><ul>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_3"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_4"><i class="fa fa-check"></i>Setting up GLM</a></li>
@@ -318,8 +285,9 @@ div.csl-indent {
 </video>
 
 <div class="rmdnote2">
-Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway.’
+Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway’.
 </div>
+
 </div>
 <div id="M7_6" class="section level4 unnumbered hasAnchor">
 <h4>Running GLM on Windows<a href="M7_1.html#M7_6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -328,6 +296,7 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 <div class="rmdnote2">
 <p>If the model is not opening make sure you’re <strong>not</strong> working in a network directory (e.g. OneDrive) and the file path to the <code>glm.bat</code> file has <strong>zero</strong> spaces in it.</p>
 </div>
+
 </div>
 <div id="M7_7" class="section level4 unnumbered hasAnchor">
 <h4>Running GLM in RStudio<a href="M7_1.html#M7_7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -337,6 +306,7 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 <div class="rmdnote2">
 GLM will not run on any versions of R newer than 4.0
 </div>
+
 </div>
 </div>
 <div id="M7_8" class="section level3 unnumbered hasAnchor">
@@ -346,6 +316,7 @@ GLM will not run on any versions of R newer than 4.0
 <div class="rmdnote2">
 The easiest way to edit the <em>glm3.nml</em> file is with the Atom text editor. You can download it <a href="https://atom.io">here</a>.
 </div>
+
 <style type="text/css">
 .sourceCode {
 max-height: 400px;
@@ -353,33 +324,33 @@ overflow-y: auto !important;
 background-color: inherit;
 }
 </style>
-<div class="sourceCode" id="cb2"><pre class="sourceCode fortran"><code class="sourceCode fortranfixed"><span id="cb2-1"><a href="M7_1.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">!------------------------------------------------------------------------------!</span></span>
-<span id="cb2-2"><a href="M7_1.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">!                                                                              !</span></span>
-<span id="cb2-3"><a href="M7_1.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">!          .----------------.  .----------------.  .----------------.          !</span></span>
-<span id="cb2-4"><a href="M7_1.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">!          | .--------------. || .--------------. || .--------------. |        !</span></span>
-<span id="cb2-5"><a href="M7_1.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">!          | |    ______    | || |   _____      | || | ____    ____ | |        !</span></span>
-<span id="cb2-6"><a href="M7_1.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">!          | |  .&#39; ___  |   | || |  |_   _|     | || ||_   \  /   _|| |        !</span></span>
-<span id="cb2-7"><a href="M7_1.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">!          | | / .&#39;   \_|   | || |    | |       | || |  |   \/   |  | |        !</span></span>
-<span id="cb2-8"><a href="M7_1.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">!          | | | |    ____  | || |    | |   _   | || |  | |\  /| |  | |        !</span></span>
-<span id="cb2-9"><a href="M7_1.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">!          | | \ `.___]  _| | || |   _| |__/ |  | || | _| |_\/_| |_ | |        !</span></span>
-<span id="cb2-10"><a href="M7_1.html#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">!          | |  `._____.&#39;   | || |  |________|  | || ||_____||_____|| |        !</span></span>
-<span id="cb2-11"><a href="M7_1.html#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">!          | |              | || |              | || |              | |        !</span></span>
-<span id="cb2-12"><a href="M7_1.html#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">!          | &#39;--------------&#39; || &#39;--------------&#39; || &#39;--------------&#39; |        !</span></span>
-<span id="cb2-13"><a href="M7_1.html#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">!          &#39;----------------&#39;  &#39;----------------&#39;  &#39;----------------&#39;          !</span></span>
-<span id="cb2-14"><a href="M7_1.html#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">!                                                                              !</span></span>
-<span id="cb2-15"><a href="M7_1.html#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb2-16"><a href="M7_1.html#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="M7_1.html#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb2-18"><a href="M7_1.html#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">! general model setup</span></span>
-<span id="cb2-19"><a href="M7_1.html#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb2-20"><a href="M7_1.html#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="kw">&amp;</span>glm_setup</span>
-<span id="cb2-21"><a href="M7_1.html#cb2-21" aria-hidden="true" tabindex="-1"></a>   sim_name <span class="kw">=</span> <span class="st">&#39;Example Kinneret GLM Simulation&#39;</span></span>
-<span id="cb2-22"><a href="M7_1.html#cb2-22" aria-hidden="true" tabindex="-1"></a>   max_layers <span class="kw">=</span> <span class="dv">500</span></span>
-<span id="cb2-23"><a href="M7_1.html#cb2-23" aria-hidden="true" tabindex="-1"></a>   min_layer_vol <span class="kw">=</span> <span class="fl">0.025</span></span>
-<span id="cb2-24"><a href="M7_1.html#cb2-24" aria-hidden="true" tabindex="-1"></a>   min_layer_thick <span class="kw">=</span> <span class="fl">0.15</span></span>
-<span id="cb2-25"><a href="M7_1.html#cb2-25" aria-hidden="true" tabindex="-1"></a>   max_layer_thick <span class="kw">=</span> <span class="fl">1.50</span></span>
-<span id="cb2-26"><a href="M7_1.html#cb2-26" aria-hidden="true" tabindex="-1"></a>   density_model <span class="kw">=</span> <span class="dv">1</span></span>
-<span id="cb2-27"><a href="M7_1.html#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="kw">/</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb2-1" title="1"><span class="co">!------------------------------------------------------------------------------!</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co">!                                                                              !</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co">!          .----------------.  .----------------.  .----------------.          !</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="co">!          | .--------------. || .--------------. || .--------------. |        !</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="co">!          | |    ______    | || |   _____      | || | ____    ____ | |        !</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="co">!          | |  .&#39; ___  |   | || |  |_   _|     | || ||_   \  /   _|| |        !</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="co">!          | | / .&#39;   \_|   | || |    | |       | || |  |   \/   |  | |        !</span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="co">!          | | | |    ____  | || |    | |   _   | || |  | |\  /| |  | |        !</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co">!          | | \ `.___]  _| | || |   _| |__/ |  | || | _| |_\/_| |_ | |        !</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="co">!          | |  `._____.&#39;   | || |  |________|  | || ||_____||_____|| |        !</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">!          | |              | || |              | || |              | |        !</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="co">!          | &#39;--------------&#39; || &#39;--------------&#39; || &#39;--------------&#39; |        !</span></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="co">!          &#39;----------------&#39;  &#39;----------------&#39;  &#39;----------------&#39;          !</span></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="co">!                                                                              !</span></a>
+<a class="sourceLine" id="cb2-15" title="15"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb2-16" title="16"></a>
+<a class="sourceLine" id="cb2-17" title="17"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb2-18" title="18"><span class="co">! general model setup</span></a>
+<a class="sourceLine" id="cb2-19" title="19"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb2-20" title="20"><span class="kw">&amp;</span>glm_setup</a>
+<a class="sourceLine" id="cb2-21" title="21">   sim_name <span class="kw">=</span> <span class="st">&#39;Example Kinneret GLM Simulation&#39;</span></a>
+<a class="sourceLine" id="cb2-22" title="22">   max_layers <span class="kw">=</span> <span class="dv">500</span></a>
+<a class="sourceLine" id="cb2-23" title="23">   min_layer_vol <span class="kw">=</span> <span class="fl">0.025</span></a>
+<a class="sourceLine" id="cb2-24" title="24">   min_layer_thick <span class="kw">=</span> <span class="fl">0.15</span></a>
+<a class="sourceLine" id="cb2-25" title="25">   max_layer_thick <span class="kw">=</span> <span class="fl">1.50</span></a>
+<a class="sourceLine" id="cb2-26" title="26">   density_model <span class="kw">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb2-27" title="27"><span class="kw">/</span></a></code></pre></div>
 </div>
 <div id="M7_9" class="section level3 unnumbered hasAnchor">
 <h3>Exercises<a href="M7_1.html#M7_9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -421,22 +392,22 @@ Figure 12: Schematic diagram of surface heat fluxes impacting lake water tempera
 <ol start="5" style="list-style-type: decimal">
 <li>Go to the <code>&amp;output</code> section of <code>glm3.nml</code> and customize the configuration to make two output files, one at 5m from the bottom (ie. in the lake hypolimnion) and one at 35m from the bottom (ie. in the lake epilimnion). This create two <code>.csv</code> files (<code>WQ_5.csv</code> and <code>WQ_35.csv</code>) with conditions at these water depths. Plot the temperate of the two layers in excel. Identify the periods where the lake is stratified and mixed.</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode fortran"><code class="sourceCode fortranfixed"><span id="cb3-1"><a href="M7_1.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb3-2"><a href="M7_1.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">! format for output and filename(s)</span></span>
-<span id="cb3-3"><a href="M7_1.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb3-4"><a href="M7_1.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&amp;</span>output</span>
-<span id="cb3-5"><a href="M7_1.html#cb3-5" aria-hidden="true" tabindex="-1"></a>   out_dir <span class="kw">=</span> <span class="st">&#39;output&#39;</span></span>
-<span id="cb3-6"><a href="M7_1.html#cb3-6" aria-hidden="true" tabindex="-1"></a>   out_fn  <span class="kw">=</span> <span class="st">&#39;output&#39;</span></span>
-<span id="cb3-7"><a href="M7_1.html#cb3-7" aria-hidden="true" tabindex="-1"></a>   nsave <span class="kw">=</span> <span class="dv">6</span>  <span class="co">!This will output every 6 hours</span></span>
-<span id="cb3-8"><a href="M7_1.html#cb3-8" aria-hidden="true" tabindex="-1"></a>   <span class="co">! General summary file</span></span>
-<span id="cb3-9"><a href="M7_1.html#cb3-9" aria-hidden="true" tabindex="-1"></a>   csv_lake_fname <span class="kw">=</span> <span class="st">&#39;lake&#39;</span></span>
-<span id="cb3-10"><a href="M7_1.html#cb3-10" aria-hidden="true" tabindex="-1"></a>   <span class="co">! Depth specific outputs</span></span>
-<span id="cb3-11"><a href="M7_1.html#cb3-11" aria-hidden="true" tabindex="-1"></a>   csv_point_nlevs <span class="kw">=</span> <span class="dv">2</span> </span>
-<span id="cb3-12"><a href="M7_1.html#cb3-12" aria-hidden="true" tabindex="-1"></a>   csv_point_fname <span class="kw">=</span> <span class="st">&#39;WQ_&#39;</span></span>
-<span id="cb3-13"><a href="M7_1.html#cb3-13" aria-hidden="true" tabindex="-1"></a>   csv_point_at <span class="kw">=</span> <span class="fl">5.</span>,<span class="fl">35.</span></span>
-<span id="cb3-14"><a href="M7_1.html#cb3-14" aria-hidden="true" tabindex="-1"></a>   csv_point_nvars <span class="kw">=</span> <span class="dv">4</span></span>
-<span id="cb3-15"><a href="M7_1.html#cb3-15" aria-hidden="true" tabindex="-1"></a>   csv_point_vars <span class="kw">=</span> <span class="st">&#39;temp&#39;</span>,<span class="st">&#39;salt&#39;</span>,<span class="st">&#39;PHS_frp&#39;</span>,<span class="st">&#39;NIT_amm&#39;</span></span>
-<span id="cb3-16"><a href="M7_1.html#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="kw">/</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb3-1" title="1"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co">! format for output and filename(s)</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">&amp;</span>output</a>
+<a class="sourceLine" id="cb3-5" title="5">   out_dir <span class="kw">=</span> <span class="st">&#39;output&#39;</span></a>
+<a class="sourceLine" id="cb3-6" title="6">   out_fn  <span class="kw">=</span> <span class="st">&#39;output&#39;</span></a>
+<a class="sourceLine" id="cb3-7" title="7">   nsave <span class="kw">=</span> <span class="dv">6</span>  <span class="co">!This will output every 6 hours</span></a>
+<a class="sourceLine" id="cb3-8" title="8">   <span class="co">! General summary file</span></a>
+<a class="sourceLine" id="cb3-9" title="9">   csv_lake_fname <span class="kw">=</span> <span class="st">&#39;lake&#39;</span></a>
+<a class="sourceLine" id="cb3-10" title="10">   <span class="co">! Depth specific outputs</span></a>
+<a class="sourceLine" id="cb3-11" title="11">   csv_point_nlevs <span class="kw">=</span> <span class="dv">2</span> </a>
+<a class="sourceLine" id="cb3-12" title="12">   csv_point_fname <span class="kw">=</span> <span class="st">&#39;WQ_&#39;</span></a>
+<a class="sourceLine" id="cb3-13" title="13">   csv_point_at <span class="kw">=</span> <span class="fl">5.</span>,<span class="fl">35.</span></a>
+<a class="sourceLine" id="cb3-14" title="14">   csv_point_nvars <span class="kw">=</span> <span class="dv">4</span></a>
+<a class="sourceLine" id="cb3-15" title="15">   csv_point_vars <span class="kw">=</span> <span class="st">&#39;temp&#39;</span>,<span class="st">&#39;salt&#39;</span>,<span class="st">&#39;PHS_frp&#39;</span>,<span class="st">&#39;NIT_amm&#39;</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="kw">/</span></a></code></pre></div>
 <ol start="6" style="list-style-type: decimal">
 <li>Assess how the degree of stratification changes as the initial water level of the lake is reduced by 20m. To do this change the initial starting lake depth and profile details in <code>glm3.nml</code>.</li>
 </ol>
@@ -445,9 +416,11 @@ Figure 12: Schematic diagram of surface heat fluxes impacting lake water tempera
 You will need to update the output depth of your surface output file.
 </div>
 
+
 <div class="rmdtip2">
 For future activities make sure you change back to 43m.
 </div>
+
 </div>
 <div id="M7_11" class="section level4 unnumbered hasAnchor">
 <h4>The Ecosystem Model<a href="M7_1.html#M7_11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -459,6 +432,7 @@ For future activities make sure you change back to 43m.
 <div class="rmdnote2">
 <p>The above simulation was only plotting temperature and salinity and these plots were configured in <code>plots.nml</code>. Open <code>plots.nml</code> to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called <code>plots_aed2.nml</code> has been created. To use this file, rename it to <code>plots.nml</code> (you’ll first need to rename the existing <code>plots.nml</code>) and run the model. You should now see more outputs for the lake simulation.</p>
 </div>
+
 <p>In <code>plots.nml</code> the required variables are all listed, make sure the number of plots is high enough to include them all.</p>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:250px; overflow-x: scroll; width:100%; ">
@@ -719,6 +693,7 @@ Zooplankton
 <div class="rmdtip2">
 If they are there already, make sure that the number of variables is high enough to include them all.
 </div>
+
 <style>
 ol > li > ol > li {list-style-type:lower-alpha}
 </style>
@@ -737,32 +712,32 @@ ol > li > ol > li {list-style-type:lower-alpha}
 <ol start="8" style="list-style-type: decimal">
 <li>How would these concentrations change if the air temperature increased by 2°C? (You will need to edit the <code>met_hourly.csv</code> file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so YYYY-MM-DD hh:mm. A pre-made version of this file can be found in <em>bcs</em> which is called <code>met_1997_2004_airT2.csv</code>. To use this file, update <code>meteo_fl = 'bcs/met_1997_2004.csv'</code> in the <code>&amp;meteorology</code> section of <code>glm3.nml</code>.</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode fortran"><code class="sourceCode fortranfixed"><span id="cb4-1"><a href="M7_1.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb4-2"><a href="M7_1.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">! meteorology</span></span>
-<span id="cb4-3"><a href="M7_1.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb4-4"><a href="M7_1.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&amp;</span>meteorology</span>
-<span id="cb4-5"><a href="M7_1.html#cb4-5" aria-hidden="true" tabindex="-1"></a>   met_sw      <span class="kw">=</span> <span class="cn">.true.</span></span>
-<span id="cb4-6"><a href="M7_1.html#cb4-6" aria-hidden="true" tabindex="-1"></a>   lw_type     <span class="kw">=</span> <span class="st">&#39;LW_IN&#39;</span></span>
-<span id="cb4-7"><a href="M7_1.html#cb4-7" aria-hidden="true" tabindex="-1"></a>   rain_sw     <span class="kw">=</span> <span class="cn">.false.</span></span>
-<span id="cb4-8"><a href="M7_1.html#cb4-8" aria-hidden="true" tabindex="-1"></a>   atm_stab    <span class="kw">=</span> <span class="dv">0</span></span>
-<span id="cb4-9"><a href="M7_1.html#cb4-9" aria-hidden="true" tabindex="-1"></a>   fetch_mode  <span class="kw">=</span> <span class="dv">0</span></span>
-<span id="cb4-10"><a href="M7_1.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">!rad_mode    = 1</span></span>
-<span id="cb4-11"><a href="M7_1.html#cb4-11" aria-hidden="true" tabindex="-1"></a>   albedo_mode <span class="kw">=</span> <span class="dv">1</span></span>
-<span id="cb4-12"><a href="M7_1.html#cb4-12" aria-hidden="true" tabindex="-1"></a>   cloud_mode  <span class="kw">=</span> <span class="dv">4</span></span>
-<span id="cb4-13"><a href="M7_1.html#cb4-13" aria-hidden="true" tabindex="-1"></a>   <span class="co">!-- BC file details</span></span>
-<span id="cb4-14"><a href="M7_1.html#cb4-14" aria-hidden="true" tabindex="-1"></a>   subdaily    <span class="kw">=</span> <span class="cn">.true.</span></span>
-<span id="cb4-15"><a href="M7_1.html#cb4-15" aria-hidden="true" tabindex="-1"></a>   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span> <span class="co">!UPDATE THIS</span></span>
-<span id="cb4-16"><a href="M7_1.html#cb4-16" aria-hidden="true" tabindex="-1"></a>   wind_factor <span class="kw">=</span> <span class="fl">0.9</span></span>
-<span id="cb4-17"><a href="M7_1.html#cb4-17" aria-hidden="true" tabindex="-1"></a>   lw_factor   <span class="kw">=</span> <span class="fl">1.0</span></span>
-<span id="cb4-18"><a href="M7_1.html#cb4-18" aria-hidden="true" tabindex="-1"></a>   lw_offset   <span class="kw">=</span> <span class="fl">0.0</span></span>
-<span id="cb4-19"><a href="M7_1.html#cb4-19" aria-hidden="true" tabindex="-1"></a>   <span class="co">!-- Parameters</span></span>
-<span id="cb4-20"><a href="M7_1.html#cb4-20" aria-hidden="true" tabindex="-1"></a>   ce <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb4-21"><a href="M7_1.html#cb4-21" aria-hidden="true" tabindex="-1"></a>   ch <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb4-22"><a href="M7_1.html#cb4-22" aria-hidden="true" tabindex="-1"></a>   cd  <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb4-23"><a href="M7_1.html#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="co">!catchrain      = .true.</span></span>
-<span id="cb4-24"><a href="M7_1.html#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="co">!rain_threshold = 0.001</span></span>
-<span id="cb4-25"><a href="M7_1.html#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="co">!runoff_coef    = 0.0</span></span>
-<span id="cb4-26"><a href="M7_1.html#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="kw">/</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb4-1" title="1"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="co">! meteorology</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="kw">&amp;</span>meteorology</a>
+<a class="sourceLine" id="cb4-5" title="5">   met_sw      <span class="kw">=</span> <span class="cn">.true.</span></a>
+<a class="sourceLine" id="cb4-6" title="6">   lw_<span class="dt">type</span>     <span class="kw">=</span> <span class="st">&#39;LW_IN&#39;</span></a>
+<a class="sourceLine" id="cb4-7" title="7">   rain_sw     <span class="kw">=</span> <span class="cn">.false.</span></a>
+<a class="sourceLine" id="cb4-8" title="8">   atm_stab    <span class="kw">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb4-9" title="9">   fetch_mode  <span class="kw">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb4-10" title="10">  <span class="co">!rad_mode    = 1</span></a>
+<a class="sourceLine" id="cb4-11" title="11">   albedo_mode <span class="kw">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb4-12" title="12">   cloud_mode  <span class="kw">=</span> <span class="dv">4</span></a>
+<a class="sourceLine" id="cb4-13" title="13">   <span class="co">!-- BC file details</span></a>
+<a class="sourceLine" id="cb4-14" title="14">   subdaily    <span class="kw">=</span> <span class="cn">.true.</span></a>
+<a class="sourceLine" id="cb4-15" title="15">   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span> <span class="co">!UPDATE THIS</span></a>
+<a class="sourceLine" id="cb4-16" title="16">   wind_factor <span class="kw">=</span> <span class="fl">0.9</span></a>
+<a class="sourceLine" id="cb4-17" title="17">   lw_factor   <span class="kw">=</span> <span class="fl">1.0</span></a>
+<a class="sourceLine" id="cb4-18" title="18">   lw_offset   <span class="kw">=</span> <span class="fl">0.0</span></a>
+<a class="sourceLine" id="cb4-19" title="19">   <span class="co">!-- Parameters</span></a>
+<a class="sourceLine" id="cb4-20" title="20">   ce <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb4-21" title="21">   ch <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb4-22" title="22">   cd  <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb4-23" title="23">  <span class="co">!catchrain      = .true.</span></a>
+<a class="sourceLine" id="cb4-24" title="24">  <span class="co">!rain_threshold = 0.001</span></a>
+<a class="sourceLine" id="cb4-25" title="25">  <span class="co">!runoff_coef    = 0.0</span></a>
+<a class="sourceLine" id="cb4-26" title="26"><span class="kw">/</span></a></code></pre></div>
 <ol start="9" style="list-style-type: decimal">
 <li>What happens if we change the water clarity? Increase and decrease from the original value to see the response</li>
 </ol>
@@ -770,6 +745,7 @@ ol > li > ol > li {list-style-type:lower-alpha}
 <div class="rmdtip2">
 You must change the light extinction coefficient <code>Kw</code> (range 0-1) in the <code>glm3.nml</code> file.
 </div>
+
 </div>
 <div id="M7_12" class="section level4 unnumbered hasAnchor">
 <h4>Assessing Error &amp; Sensitivity<a href="M7_1.html#M7_12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -944,6 +920,7 @@ Average WQ_35 phytoplankton (green, crypto, diatom) biomass
 <li>Round numbers to be reasonable</li>
 </ul>
 </div>
+
 
 </div>
 </div>
