@@ -4,7 +4,10 @@
 
 ### Excel {-} 
 
-Excel is available on all computer laboratory PC's and can be freely downloaded to personal devices [here](http://www.it.uwa.edu.au/service-catalogue/software/office-365#availability-and-support). You should already feel confident using Excel from your previous units, however if you need further guidance please visit UWA's [LinkedIn Learning](https://www.uwa.edu.au/education/educational-enhancement-unit/strategic-projects/linkedin-learning-at-uwa) resources. 
+Excel is available on all computer laboratory PC's and can be freely downloaded to personal devices [here](http://portal.office.com). You should already feel confident using Excel from your previous units, however if you need further guidance please visit UWA's resources:
+
+- [Getting started with Excel](https://www.linkedin.com/learning/excel-essential-training-office-365-microsoft-365)
+- [Using formulas and functions in Excel](https://www.linkedin.com/learning/excel-advanced-formulas-and-functions)
 
 ### R {-}
 
@@ -32,22 +35,17 @@ Just like Excel, you can interact with your data using a variety of *functions* 
 
 All programming languages allow the user to write comments on their code to assist in readability and structure. In R, a comment is defined as a line beginning with a `#`. Any characters written after the `#` are ignored by R and not executed. It's good practice to get into the habit of commenting your R code as it will likely save you (or someone else!) a lot of time later down the track. 
 
-<!-- <iframe -->
-<!--   src="https://carbon.now.sh/embed/j2ZVuI6gJwssXAMxPakk" -->
-<!--   style="width: 698px; height: 348px; border:0; transform: scale(1); overflow:hidden;" -->
-<!--   sandbox="allow-scripts allow-same-origin"> -->
-<!-- </iframe> -->
-
 ```{r eval=FALSE}
 # This is a comment!
+library(tidyverse) # You can load packages with the library() function
 
-# Create a graph using the plot() function
-plot(my_data, variable1, col = "red", ylab = "My y-axis label")
+# Inspect your data with the head() function
+head(iris)
 
-# Plot other variables onto the graph using the points() function
-points(my_data, variable2, col = "blue")
-points(my_data, variable3, col = "green")
-points(my_data, variable4, col = "purple")
+# Create a graph using the ggplot() function
+ggplot(data = iris, mapping = aes(x = Petal.Length, y = Petal.Width, colour = Species)) +
+  geom_point() +
+  theme_light()
 
 ```
 
@@ -59,11 +57,10 @@ To comment multiple lines of code at once in R Studio, press`Command + Shift + C
 
 **Further R resources**
 
-- Read the [Introduction to R and Statistics](https://jovial-stonebraker-82b147.netlify.app/) book for a more detailed coverage on the core data visualisation and statistics capabilities in R
-- Access UWA's [LinkedIn Learning](https://www.uwa.edu.au/education/educational-enhancement-unit/strategic-projects/linkedin-learning-at-uwa) portal the learn more about the basics of R 
-- Refer to some handy R cheatsheets   
-  - [R Studio cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
-  - [ggplot2 data visualisation cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+If you want to learn more about R and the tidyverse packages, we recommend reading the following (free) textbooks:
+
+- [R for Data Science](https://r4ds.had.co.nz)
+- [ggplot2: elegant graphics for data analysis](https://ggplot2-book.org)
 
 ### Unzipping files {-}
 

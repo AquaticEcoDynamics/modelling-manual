@@ -11,5 +11,6 @@ rmd_files: ["index.Rmd",
             "module5b.Rmd",
             "module6.Rmd",
             "module7.Rmd",
+            #"workshop2.Rmd",
             "references.Rmd"]
 new_session: no
