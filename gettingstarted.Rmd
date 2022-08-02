@@ -14,7 +14,7 @@ Excel is available on all computer laboratory PC's and can be freely downloaded 
 To get started with R, first download the base R system onto your computer. By itself, this provides a rudimentary console for interacting with the R programming language. For a more user-friendly experience, download the R Studio integrated development environment (IDE). 
 
 - R can be downloaded [here](https://cran.csiro.au)
-- R Studio can be downloaded [here](https://rstudio.com)
+- R Studio can be downloaded [here](https://www.rstudio.com/products/rstudio/download/#download)
 
 #### Terminology {-}
 
