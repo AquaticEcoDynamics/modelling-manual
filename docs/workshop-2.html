@@ -272,13 +272,20 @@ div.csl-indent {
 <li class="part"><span><b>III Supporting Material</b></span></li>
 <li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html"><i class="fa fa-check"></i>Workshop 2</a>
 <ul>
-<li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#introduction-to-ggplot-and-the-tidyverse"><i class="fa fa-check"></i>Introduction to ggplot and the Tidyverse</a>
+<li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#visualising-module-1-flow-data"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#setting-up"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#importing-and-formatting-the-data"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
 <li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#graphing-with-ggplot"><i class="fa fa-check"></i>Graphing with ggplot</a></li>
-<li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#visualising-the-flow-diversions"><i class="fa fa-check"></i>Visualising the Flow Diversions</a></li>
-<li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#barcharts-and-pipes"><i class="fa fa-check"></i>Barcharts and pipes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#visualising-diversion-scenarios"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
+<li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#barcharts-and-pipes"><i class="fa fa-check"></i>Barcharts and Pipes</a></li>
+<li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#modelling-quokkas-in-r"><i class="fa fa-check"></i>Modelling Quokkas in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#setting-up-1"><i class="fa fa-check"></i>Setting up</a></li>
+<li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#modelling"><i class="fa fa-check"></i>Modelling</a></li>
+<li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#speeding-things-up"><i class="fa fa-check"></i>Speeding things up</a></li>
+<li class="chapter" data-level="" data-path="workshop-2.html"><a href="workshop-2.html#visualise-the-modelled-populations-with-ggplot"><i class="fa fa-check"></i>Visualise the modelled populations with ggplot</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -304,8 +311,8 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="workshop-2" class="section level1 unnumbered hasAnchor">
 <h1>Workshop 2<a href="workshop-2.html#workshop-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction-to-ggplot-and-the-tidyverse" class="section level2 unnumbered hasAnchor">
-<h2>Introduction to ggplot and the Tidyverse<a href="workshop-2.html#introduction-to-ggplot-and-the-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="visualising-module-1-flow-data" class="section level2 unnumbered hasAnchor">
+<h2>Visualising Module 1 Flow Data<a href="workshop-2.html#visualising-module-1-flow-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="setting-up" class="section level3 unnumbered hasAnchor">
 <h3>Setting up<a href="workshop-2.html#setting-up" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="creating-an-r-studio-project" class="section level4 unnumbered hasAnchor">
@@ -316,7 +323,7 @@ div.csl-indent {
 <li><em>Directory name:</em> ENVT3362_workshop_2</li>
 <li><em>Create project as a subdirectory of:</em> Wherever you store your ENVT3362 files!</li>
 <li>Click <em>Create project</em></li>
-<li>Download the spreadsheet for this workshop <a href="envFlowData.xls">here</a></li>
+<li>Download the spreadsheet for this workshop <a href="data/workshop2/envFlowData.xls">here</a></li>
 <li>Move this to your <em>ENVT3362_workshop_2</em> directory</li>
 </ol>
 </div>
@@ -472,8 +479,9 @@ div.csl-indent {
 <span id="cb21-6"><a href="workshop-2.html#cb21-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
 </div>
-<div id="visualising-the-flow-diversions" class="section level3 unnumbered hasAnchor">
-<h3>Visualising the Flow Diversions<a href="workshop-2.html#visualising-the-flow-diversions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="visualising-diversion-scenarios" class="section level2 unnumbered hasAnchor">
+<h2>Visualising Diversion Scenarios<a href="workshop-2.html#visualising-diversion-scenarios" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s pretend our graph will be used in a report that assesses the impact of the proposed diversion scenarios. We need to visually communicate to the reader the upper and lower limits of flows that can be diverted. To do this, let’s highlight the region of the graph where environmental flows can occur under Diversion Scenario 1 (i.e. Water below 50 ML/day and above 550 ML/day is not diverted).</p>
 <div id="map-the-current-aesthetics-to-geom_line" class="section level4 unnumbered hasAnchor">
 <h4>Map the current aesthetics to <code>geom_line()</code><a href="workshop-2.html#map-the-current-aesthetics-to-geom_line" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -595,8 +603,8 @@ div.csl-indent {
 <span id="cb28-7"><a href="workshop-2.html#cb28-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
 </div>
-<div id="barcharts-and-pipes" class="section level3 unnumbered hasAnchor">
-<h3>Barcharts and pipes<a href="workshop-2.html#barcharts-and-pipes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="barcharts-and-pipes" class="section level2 unnumbered hasAnchor">
+<h2>Barcharts and Pipes<a href="workshop-2.html#barcharts-and-pipes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="reload-the-data" class="section level4 unnumbered hasAnchor">
 <h4>Reload the data<a href="workshop-2.html#reload-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="workshop-2.html#cb29-1" aria-hidden="true" tabindex="-1"></a>envFlow  <span class="ot">&lt;-</span> <span class="fu">read_xls</span>(<span class="at">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span></code></pre></div>
@@ -604,8 +612,9 @@ div.csl-indent {
 <div id="use-pipes-and-mutate-to-reformat-the-date" class="section level4 unnumbered hasAnchor">
 <h4>Use pipes and <code>mutate()</code> to reformat the date<a href="workshop-2.html#use-pipes-and-mutate-to-reformat-the-date" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
-<li>Pipes (<code>%&gt;%</code>) take the output from one function make it the input of the next</li>
-<li><code>mutate()</code> is used to add or remove variables</li>
+<li>The pipe (<code>%&gt;%</code>) operator takes the output from one function and makes it the input of the next</li>
+<li>Pipes can be used across the tidyverse when working with tidy data</li>
+<li><code>mutate()</code> is used to add or remove variables when working with pipes</li>
 <li>This is the same as <code>envFlow$date &lt;- ymd(envFlow$date)</code> but it’s ‘pipeable!’</li>
 </ul>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="workshop-2.html#cb30-1" aria-hidden="true" tabindex="-1"></a>envFlow <span class="sc">%&gt;%</span> </span>
@@ -651,7 +660,7 @@ div.csl-indent {
 <div id="pipes-are-non-destructive" class="section level4 unnumbered hasAnchor">
 <h4>Pipes are non-destructive<a href="workshop-2.html#pipes-are-non-destructive" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
-<li>Notice how <code>envFlow</code> is unchanged</li>
+<li>Notice how <code>envFlow</code> is unchanged? This is useful when performing ‘data exploration’ as the original dataframe never altered</li>
 </ul>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="workshop-2.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(envFlow)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 2
@@ -667,7 +676,7 @@ div.csl-indent {
 <div id="group-and-summarise" class="section level4 unnumbered hasAnchor">
 <h4>Group and summarise<a href="workshop-2.html#group-and-summarise" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
-<li>Group the data by <code>year</code> and calculate summary statistic with <code>summarise()</code></li>
+<li>Group the data by new <code>year</code> column and calculate summary statistics with <code>summarise()</code></li>
 </ul>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="workshop-2.html#cb36-1" aria-hidden="true" tabindex="-1"></a>envFlow <span class="sc">%&gt;%</span> </span>
 <span id="cb36-2"><a href="workshop-2.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date)) <span class="sc">%&gt;%</span> </span>
@@ -697,13 +706,11 @@ div.csl-indent {
 ## 18  2009         62334.
 ## 19  2010         33940.</code></pre>
 </div>
-<div id="plot-using-geom_bar" class="section level4 unnumbered hasAnchor">
-<h4>Plot using <code>geom_bar()</code><a href="workshop-2.html#plot-using-geom_bar" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="plot-using-geom_col" class="section level4 unnumbered hasAnchor">
+<h4>Plot using <code>geom_col()</code><a href="workshop-2.html#plot-using-geom_col" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Pipe this into <code>ggplot()</code></li>
 <li>Note that we don’t need to specify the <code>data</code> argument to <code>ggplot()</code></li>
-<li>The data is ‘binned,’ render it with <code>geom_bar()</code></li>
-<li><code>stat="identity"</code> sets the bar height to values in the data</li>
 </ul>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="workshop-2.html#cb38-1" aria-hidden="true" tabindex="-1"></a>envFlow <span class="sc">%&gt;%</span> </span>
 <span id="cb38-2"><a href="workshop-2.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date)) <span class="sc">%&gt;%</span> </span>
@@ -711,7 +718,7 @@ div.csl-indent {
 <span id="cb38-4"><a href="workshop-2.html#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
 <span id="cb38-5"><a href="workshop-2.html#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">totalDischarge =</span> <span class="fu">sum</span>(totalDischarge)) <span class="sc">%&gt;%</span> </span>
 <span id="cb38-6"><a href="workshop-2.html#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
-<span id="cb38-7"><a href="workshop-2.html#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </span></code></pre></div>
+<span id="cb38-7"><a href="workshop-2.html#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </span></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 </div>
 <div id="apply-the-previous-theme" class="section level4 unnumbered hasAnchor">
@@ -722,7 +729,7 @@ div.csl-indent {
 <span id="cb39-4"><a href="workshop-2.html#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
 <span id="cb39-5"><a href="workshop-2.html#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">totalDischarge =</span> <span class="fu">sum</span>(totalDischarge)) <span class="sc">%&gt;%</span> </span>
 <span id="cb39-6"><a href="workshop-2.html#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
-<span id="cb39-7"><a href="workshop-2.html#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
+<span id="cb39-7"><a href="workshop-2.html#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
 <span id="cb39-8"><a href="workshop-2.html#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&#39;Total Discharge (ML)&#39;</span>)<span class="sc">+</span></span>
 <span id="cb39-9"><a href="workshop-2.html#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
 <span id="cb39-10"><a href="workshop-2.html#cb39-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
@@ -730,8 +737,135 @@ div.csl-indent {
 <span id="cb39-12"><a href="workshop-2.html#cb39-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
 <span id="cb39-13"><a href="workshop-2.html#cb39-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
-
 </div>
+<div id="recap" class="section level4 unnumbered hasAnchor">
+<h4>Recap<a href="workshop-2.html#recap" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="workshop-2.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_xls</span>(<span class="at">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="at">sheet =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="workshop-2.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date)) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-3"><a href="workshop-2.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date)) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-4"><a href="workshop-2.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-5"><a href="workshop-2.html#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">totalDischarge =</span> <span class="fu">sum</span>(totalDischarge)) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-6"><a href="workshop-2.html#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
+<span id="cb40-7"><a href="workshop-2.html#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
+<span id="cb40-8"><a href="workshop-2.html#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&#39;Total Discharge (ML)&#39;</span>)<span class="sc">+</span></span>
+<span id="cb40-9"><a href="workshop-2.html#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb40-10"><a href="workshop-2.html#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb40-11"><a href="workshop-2.html#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb40-12"><a href="workshop-2.html#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb40-13"><a href="workshop-2.html#cb40-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+</div>
+</div>
+<div id="modelling-quokkas-in-r" class="section level2 unnumbered hasAnchor">
+<h2>Modelling Quokkas in R<a href="workshop-2.html#modelling-quokkas-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="setting-up-1" class="section level3 unnumbered hasAnchor">
+<h3>Setting up<a href="workshop-2.html#setting-up-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="create-a-new-r-script" class="section level4 unnumbered hasAnchor">
+<h4>Create a new R script<a href="workshop-2.html#create-a-new-r-script" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Go <em>File -&gt; New File -&gt; R Script</em></li>
+<li>Load the tidyverse</li>
+</ul>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="workshop-2.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+</div>
+<div id="declare-the-constants-as-variables" class="section level4 unnumbered hasAnchor">
+<h4>Declare the constants as variables<a href="workshop-2.html#declare-the-constants-as-variables" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="workshop-2.html#cb42-1" aria-hidden="true" tabindex="-1"></a>birthRate  <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb42-2"><a href="workshop-2.html#cb42-2" aria-hidden="true" tabindex="-1"></a>deathRate  <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb42-3"><a href="workshop-2.html#cb42-3" aria-hidden="true" tabindex="-1"></a>timestep  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># i.e. 1 year</span></span>
+<span id="cb42-4"><a href="workshop-2.html#cb42-4" aria-hidden="true" tabindex="-1"></a>timeMax <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb42-5"><a href="workshop-2.html#cb42-5" aria-hidden="true" tabindex="-1"></a>carryCap  <span class="ot">&lt;-</span> <span class="dv">10000</span></span></code></pre></div>
+</div>
+<div id="create-a-new-data-frame-of-the-initial-values" class="section level4 unnumbered hasAnchor">
+<h4>Create a new data frame of the initial values<a href="workshop-2.html#create-a-new-data-frame-of-the-initial-values" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>A data frame is simply a table</li>
+<li><code>year</code>, <code>relativeCarryCap</code>, <code>quokkaRate</code>, and <code>quokkaRate</code> will be created as new columns in that table</li>
+<li>Inspect <code>model</code> with the <code>head()</code> function</li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="workshop-2.html#cb43-1" aria-hidden="true" tabindex="-1"></a>model  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb43-2"><a href="workshop-2.html#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="dv">1</span>,</span>
+<span id="cb43-3"><a href="workshop-2.html#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">relativeCarryCap  =</span> <span class="cn">NA</span>,</span>
+<span id="cb43-4"><a href="workshop-2.html#cb43-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">quokkaRate =</span> <span class="cn">NA</span>,</span>
+<span id="cb43-5"><a href="workshop-2.html#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">quokkaPop =</span> <span class="dv">5</span></span>
+<span id="cb43-6"><a href="workshop-2.html#cb43-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb43-7"><a href="workshop-2.html#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-8"><a href="workshop-2.html#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(model)</span></code></pre></div>
+<pre><code>##   year relativeCarryCap quokkaRate quokkaPop
+## 1    1               NA         NA         5</code></pre>
+</div>
+</div>
+<div id="modelling" class="section level3 unnumbered hasAnchor">
+<h3>Modelling<a href="workshop-2.html#modelling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="calculate-the-next-timestep" class="section level4 unnumbered hasAnchor">
+<h4>Calculate the next timestep<a href="workshop-2.html#calculate-the-next-timestep" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For the next time step we’ll need to compute new values for <code>year</code>, <code>relativeCarryCap</code>, <code>quokkaRate</code>, and <code>quokkaPop</code>. These values will be appended as a new row (i.e. timestep) to the <code>model</code> data frame.</p>
+<ul>
+<li><code>year</code>takes a value of 2</li>
+</ul>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="workshop-2.html#cb45-1" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> <span class="dv">2</span></span></code></pre></div>
+<ul>
+<li><code>relativeCarryCap</code> is the result of the previous quokka population divided by the carrying capacity</li>
+<li><code>model$quokkaPop[1]</code> specifies the population in the previous row (row 1) i.e. the previous time step</li>
+</ul>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="workshop-2.html#cb46-1" aria-hidden="true" tabindex="-1"></a>relativeCarryCap  <span class="ot">&lt;-</span>  model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]<span class="sc">/</span>carryCap</span></code></pre></div>
+<ul>
+<li><code>quokkaRate</code> and <code>quokkaPop</code> are calculated in the same fashion i.e. using the constants and values in the previous row of the <code>model</code> data frame</li>
+</ul>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="workshop-2.html#cb47-1" aria-hidden="true" tabindex="-1"></a>quokkaRate <span class="ot">&lt;-</span> timestep<span class="sc">*</span>((<span class="dv">1</span><span class="sc">-</span>relativeCarryCap)<span class="sc">*</span>birthRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]<span class="sc">-</span>(deathRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]))</span>
+<span id="cb47-2"><a href="workshop-2.html#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="workshop-2.html#cb47-3" aria-hidden="true" tabindex="-1"></a>quokkaPop <span class="ot">&lt;-</span>  quokkaRate<span class="sc">+</span>model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]</span></code></pre></div>
+<ul>
+<li>Next, we’ll create an identical data frame to <code>model</code> with our new values</li>
+</ul>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="workshop-2.html#cb48-1" aria-hidden="true" tabindex="-1"></a>model_temp  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb48-2"><a href="workshop-2.html#cb48-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">year =</span> year,</span>
+<span id="cb48-3"><a href="workshop-2.html#cb48-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">relativeCarryCap =</span> relativeCarryCap,</span>
+<span id="cb48-4"><a href="workshop-2.html#cb48-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaRate =</span> quokkaRate,</span>
+<span id="cb48-5"><a href="workshop-2.html#cb48-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaPop =</span> quokkaPop</span>
+<span id="cb48-6"><a href="workshop-2.html#cb48-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb48-7"><a href="workshop-2.html#cb48-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-8"><a href="workshop-2.html#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(model_temp)</span></code></pre></div>
+<pre><code>##   year relativeCarryCap quokkaRate quokkaPop
+## 1    2            5e-04     4.4975    9.4975</code></pre>
+<ul>
+<li>We can append this time step to <code>model</code> by using the <code>rbind()</code> function</li>
+</ul>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="workshop-2.html#cb50-1" aria-hidden="true" tabindex="-1"></a>model  <span class="ot">&lt;-</span> <span class="fu">rbind</span>(model,model_temp)</span>
+<span id="cb50-2"><a href="workshop-2.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(model)</span></code></pre></div>
+<pre><code>##   year relativeCarryCap quokkaRate quokkaPop
+## 1    1               NA         NA    5.0000
+## 2    2            5e-04     4.4975    9.4975</code></pre>
+</div>
+</div>
+<div id="speeding-things-up" class="section level3 unnumbered hasAnchor">
+<h3>Speeding things up<a href="workshop-2.html#speeding-things-up" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Want to repeat that process for the next 29 time steps? Probably not. Let’s create a loop that iterates through each year, calculates the new values, and appends them to the <code>model</code> data frame.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="workshop-2.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>timeMax){</span>
+<span id="cb52-2"><a href="workshop-2.html#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="workshop-2.html#cb52-3" aria-hidden="true" tabindex="-1"></a>    year  <span class="ot">&lt;-</span> i</span>
+<span id="cb52-4"><a href="workshop-2.html#cb52-4" aria-hidden="true" tabindex="-1"></a>    relativeCarryCap  <span class="ot">&lt;-</span>  model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="sc">/</span>carryCap</span>
+<span id="cb52-5"><a href="workshop-2.html#cb52-5" aria-hidden="true" tabindex="-1"></a>    quokkaRate <span class="ot">=</span> timestep<span class="sc">*</span>((<span class="dv">1</span><span class="sc">-</span>relativeCarryCap)<span class="sc">*</span>birthRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="sc">-</span>(deathRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]))</span>
+<span id="cb52-6"><a href="workshop-2.html#cb52-6" aria-hidden="true" tabindex="-1"></a>    quokkaPop <span class="ot">=</span> quokkaRate<span class="sc">+</span>model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]</span>
+<span id="cb52-7"><a href="workshop-2.html#cb52-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-8"><a href="workshop-2.html#cb52-8" aria-hidden="true" tabindex="-1"></a>    model_temp  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb52-9"><a href="workshop-2.html#cb52-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">year =</span> year,</span>
+<span id="cb52-10"><a href="workshop-2.html#cb52-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">relativeCarryCap =</span> relativeCarryCap,</span>
+<span id="cb52-11"><a href="workshop-2.html#cb52-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaRate =</span> quokkaRate,</span>
+<span id="cb52-12"><a href="workshop-2.html#cb52-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaPop =</span> quokkaPop</span>
+<span id="cb52-13"><a href="workshop-2.html#cb52-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb52-14"><a href="workshop-2.html#cb52-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-15"><a href="workshop-2.html#cb52-15" aria-hidden="true" tabindex="-1"></a>    model  <span class="ot">&lt;-</span> <span class="fu">rbind</span>(model,model_temp)</span>
+<span id="cb52-16"><a href="workshop-2.html#cb52-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-17"><a href="workshop-2.html#cb52-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="visualise-the-modelled-populations-with-ggplot" class="section level3 unnumbered hasAnchor">
+<h3>Visualise the modelled populations with ggplot<a href="workshop-2.html#visualise-the-modelled-populations-with-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="workshop-2.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>model,<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>year,<span class="at">y=</span>quokkaPop))<span class="sc">+</span></span>
+<span id="cb53-2"><a href="workshop-2.html#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb53-3"><a href="workshop-2.html#cb53-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Year&quot;</span>, <span class="at">y=</span><span class="st">&quot;Quokka population&quot;</span>)<span class="sc">+</span></span>
+<span id="cb53-4"><a href="workshop-2.html#cb53-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_light</span>()</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+
 </div>
 </div>
 </div>
