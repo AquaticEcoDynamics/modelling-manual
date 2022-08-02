@@ -1,6 +1,6 @@
 # (PART)  Supporting Material {-} 
 
-# Workshop 2 {-}
+# Workshop 2 {#W2_1 .unnumbered}
 
 ## Visualising Module 1 Flow Data {-}
 

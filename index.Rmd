@@ -37,4 +37,5 @@ Please contact your Unit Coordinator or tutor for queries relating to this workb
 8) [Module 5b - Land Use and Nutrient Management]({#M5B_1)
 9) [Module 6 - River Pollution](#M6_1)
 10) [Module 7 - Lake Ecosystem Dynamics](#M7_1)
-11) [References](#references)
+11) [Workshop 2](#W2_1)   
+12) [References](#references)
