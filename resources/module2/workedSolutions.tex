@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{mathpazo}
+
+\begin{document}
+\newgeometry{top=1in,bottom=1in}
+\section*{ENVT3362 Module 3 - Worked Solutions}
+\subsection*{Case Study 1}
+\begin{enumerate}
+	\item{Using the concept of an energy balance (i.e. energy in = energy out), rearrange the equations to find the Earth's temperature, $T$:
+\begin{align*}
+	\text{Let } E_{\text{out}} = &\ \sigma 4\pi r^{2} T^{4}\\
+	\text{and  } E_{\text{abs}} = &\ S\pi r^{2} (1-a)\\
+	\text{then }E_{\text{out}} = &\ E_{\text{abs}}\\
+	\sigma 4\pi r^{2} T^{4} = &\ S\pi r^{2} (1-a) \\
+	T^{4} = &\ \frac{S\pi r^{2} (1-a)}{\sigma 4\pi r^{2}}\\
+	T = &\ \sqrt[4]{\frac{S\pi r^{2} (1-a)}{\sigma 4\pi r^{2}}}
+\end{align*}
+} 
+\end{enumerate}
+
+\subsection*{Case Study 2}
+\begin{enumerate}
+	\item{Solve the following equation for $T$:
+	\begin{align*}
+	\pi r^{2} S (1-a) =&\ 4\pi r^{2}(x+yT)\\
+	\pi r^{2} S (1-a) =&\ 4\pi r^{2}x + 4\pi r^{2}yT\\
+	\pi r ^{2}S(1-a) - 4\pi r^{2}x =&\ 4\pi r^{2}yT\\
+	T =&\ \frac{\pi r ^{2}S(1-a) - 4\pi r^{2}x}{4\pi r^{2}y}
+\end{align*}
+	}
+\end{enumerate}
+
+\subsection*{Case Study 3}
+\textbf{Energy-balance for the Earth-atmosphere system as a whole:}
+\begin{align}\label{eq:3a}
+	S_{av} + W = a_{p}S_{av} + \sigma T_{u}^{4} + (1 - \varepsilon)\sigma T_{s}^{4}
+\end{align}
+\textbf{Energy-balance for the upper layer of the atmosphere:}
+\begin{align}\label{eq:3b}
+	k_{u}S_{av} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
+\end{align}
+\textbf{Energy-balance for the lower layer of the atmosphere:}
+\begin{align}\label{eq:3c}
+	k_{l}S_{av} + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigma T_{l}^{4}
+\end{align}
+
+
+\begin{enumerate}
+\item{Rearrange Equation \ref{eq:3a} for $\sigma T_{u}^{4}$ in terms of $T_{s}$ and parameters:
+\begin{align*}
+	S_{av} + W =&\ a_{p}S_{av} + \sigma T_{u}^{4} + (1 - \varepsilon)\sigma T_{s}^{4} \\
+	\sigma T_{u}^{4} =&\ S_{av} + W - a_{p}S_{av} - (1 - \varepsilon)\sigma T_{s}^{4} 
+\end{align*}}
+\item{Rearrange Equation \ref{eq:3b} for $\sigma T_{l}^{4}$ in terms of $T_{u}$ and parameters:
+\begin{align*}
+	k_{u}S_{av} + \sigma T_{l}^{4} + 0.5L =&\ 2\sigma T_{u}^{4}\\
+	\sigma T_{l}^{4} =&\ 2\sigma T_{u}^{4} - k_{u}S_{av} - 0.5L
+\end{align*}}
+\item{Substitute the results of Step 1 into the results of Step 2 to give an equation for $\sigma T_{l}^{4}$ in terms of $T_{s}$ and parameters. 
+\begin{align*}
+	\text{if }\textcolor{red}{\sigma T_{u}^{4}} =&\ S_{av} + W - a_{p}S_{av} - (1 - \varepsilon)\sigma T_{s}^{4} \\
+	\text{and } \sigma T_{l}^{4} =&\ 2\textcolor{red}{\sigma T_{u}^{4}} - k_{u}S_{av} - 0.5L\\
+	\text{then } \sigma T_{l}^{4} =&\ 2\textcolor{red}{(S_{av} + W - a_{p}S_{av} - (1 - \varepsilon)\sigma T_{s}^{4})} - k_{u}S_{av} - 0.5L \\
+	\sigma T_{l}^{4} =&\ 2S_{av} + 2W - 2a_{p}S_{av} - 2(1 - \varepsilon)\sigma T_{s}^{4} - k_{u}S_{av} - 0.5L 
+\end{align*}
+}
+\item{Rearrange Equation \ref{eq:3c} for $\varepsilon\sigma T_{s}^{4}$ in terms $T_{l}$,$T_{u }$, and parameters.
+\begin{align*}
+	k_{l}S_{av} + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W =&\ 2\sigma T_{l}^{4} \\
+	\varepsilon \sigma T_{s}^{4} =&\ 2\sigma T_{l}^{4} - k_{l}S_{av} - \sigma T_{u}^{4} - 0.5L - H - W \\
+\end{align*}
+}
+\item{Put the results of Steps 1 and 3 into the results of Step 4 and simplify to give the equation for $T_{s}$.}
+\footnotesize
+\begin{align*}
+	\text{if } \varepsilon\sigma T_{s}^{4} =&\ 2\textcolor{red}{\sigma T_{l}^{4}} - k_{l}S_{av} - \textcolor{red}{\sigma T_{u}^{4}} - 0.5L - H - W \\
+	\text{and }\textcolor{red}{\sigma T_{u}^{4}} =&\ S_{av} + W - a_{p}S_{av} - (1 - \varepsilon)\sigma T_{s}^{4}\\
+	\text{and }\textcolor{red}{\sigma T_{l}^{4}} =&\ 2S_{av} + 2W - 2a_{p}S_{av} - 2(1 - \varepsilon)\sigma T_{s}^{4} - k_{u}S_{av} - 0.5L \\
+	\text{then } \varepsilon\sigma T_{s}^{4} =&\ 2\textcolor{red}{(2S_{av} + 2W - 2a_{p}S_{av} - 2(1 - \varepsilon)\sigma T_{s}^{4} - k_{u}S_{av} - 0.5L)} - k_{l}S_{av} - \\& \textcolor{red}{(S_{av} + W - a_{p}S_{av} - (1 - \varepsilon)\sigma T_{s}^{4})} - 0.5L - H - W \\
+	\varepsilon\sigma T_{s}^{4} =&\ \textcolor{red}{4S_{av} + 4W - 4a_{p}S_{av} - 4(1-\varepsilon)\sigma T_{s}^{4} - 2k_{u}S_{av} - L} - k_{l}S_{av} - \\& \textcolor{red}{S_{av} - W + a_{p}S_{av} + (1 - \varepsilon)\sigma T_{s}^{4}} - 0.5L - H - W\\
+	\varepsilon\sigma T_{s}^{4} =&\ 3S_{av}+2W-3a_{p}S_{av}-3(1-\varepsilon)\sigma T_{s}^{4}-2k_{u}S_{av}-k_{l}S_{av}-1.5L-H\\
+	\varepsilon\sigma T_{s}^{4}+3(1-\varepsilon)\sigma T_{s}^{4} =&\ 3S_{av}+2W-3a_{p}S_{av}-2k_{u}S_{av}-k_{l}S_{av}-1.5L-H\\
+	\varepsilon\sigma T_{s}^{4}+(3 -3\varepsilon)\sigma T_{s}^{4} =&\ 3S_{av}+2W-3a_{p}S_{av}-2k_{u}S_{av}-k_{l}S_{av}-1.5L-H\\
+	\varepsilon\sigma T_{s}^{4}+3\sigma T_{s}^{4}-3\varepsilon \sigma T_{s}^{4} =&\ 3S_{av}+2W-3a_{p}S_{av}-2k_{u}S_{av}-k_{l}S_{av}-1.5L-H\\
+	T_{s}^{4}(\varepsilon\sigma+3\sigma-3\varepsilon\sigma)=&\ S_{av}(3-3a_{p}-2k_{u}-k_{l})-1.5L - H +2W\\
+	T_{s}^{4}=&\ \frac{S_{av}(3-3a_{p}-2k_{u}-k_{l})-1.5L - H +2W}{\varepsilon\sigma+3\sigma-3\varepsilon\sigma}\\
+	T_{s}^{4}=&\ \frac{S_{av}(3-3a_{p}-2k_{u}-k_{l})-1.5L - H +2W}{3\sigma-2\varepsilon\sigma}\\
+	T_{s}^{4}=&\ \frac{S_{av}(3-3a_{p}-2k_{u}-k_{l})-1.5L - H +2W}{(3-2\varepsilon)\sigma}\\
+	T_{s}=&\  \sqrt[4]{\frac{S_{av}(3-3a_{p}-2k_{u}-k_{l})-1.5L - H +2W}{(3-2\varepsilon)\sigma}}\\
+	\text{or}&\\
+	T_{s}=&\  \left(\frac{S_{av}(3-3a_{p}-2k_{u}-k_{l})-1.5L - H +2W}{(3-2\varepsilon)\sigma}\right)^{\frac{1}{4}}
+\end{align*}
+
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

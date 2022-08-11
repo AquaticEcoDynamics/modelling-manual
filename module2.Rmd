@@ -243,7 +243,7 @@ htmltools::tags$video(
 ```
 :::::
 
-8) In the Plotting script, uncomment (remove the `#`s) the lines starting with `png` and `dev.off`. Now if you run the plot (**3**) again, it saves the plot to a .png file. You can edit the settings of the png line to create a high quality figure to put in the report.
+8) In the Plotting script, graph the concentrations, and relative concentrations, of each oxidant using `ggplot()`
 
 Now we have a working process-based model. This was the hard and boring part, but now we can be creative. So far we have established an initial condition and let it run to completion, but next we can model a hypothetical environmental situation. For example, imagine there were an oxygen fluctuation, perhaps from algal photosynthesis occurring in the day but not at night in a lake, or from the tidal movement of hypoxic water.
 
