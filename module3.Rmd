@@ -1,16 +1,16 @@
-# Module 3: Climate Modeling {#M3_1 -}
+# Module 3: Climate Modelling {#M3_1 -}
 
 <h2>Energy Balance Models</h2>
 
 ### Objectives {#M3_2 -}
 
-- To construct a simple energy balance climate model for the earth in Excel
+- To construct a simple energy balance climate model for the Earth in Excel
 - To understand the role of greenhouse gases, and incorporate them into an energy balance climate model
 
 
 ### Module resources {#M2_14 -}
 
-There are no module resources needed for these exercises!
+There are no module resources needed for these exercises! But please refer to the supporting information on LMS (Assignment 1/Week3) prior to commencing.
 
 ### Case Study 1: A “Zero-Dimensional” Energy Balance Model {#M3_3 -}
 
@@ -34,7 +34,7 @@ E = \sigma T^{4}
 \end{equation}
 </center>
 
-Where, $\sigma$ = Stefan-Boltzmann constant (5.67x10^-8^), and $T$ = Temperature (in degrees Kelvin).
+where, $\sigma$ = Stefan-Boltzmann constant (5.67x10^-8^), and $T$ = Temperature (in degrees Kelvin).
 
 However, for the Earth, this is being emitted over the full surface area of the Earth:
 
@@ -45,7 +45,7 @@ E_{\text{out}} = \sigma 4\pi r^{2} T^{4}
 \end{equation}
 </center>
 
-Where, $r$ = Radius of the Earth (in m).
+where, $r$ = Radius of the Earth (in m).
 
 #### Incoming Radiation {#M3_5 -}
 
@@ -58,7 +58,7 @@ E_{\text{abs}} = S\pi r^{2} (1-a)
 \end{equation}
 </center>
 
-Where, $S$ = incoming solar radiation: the “solar constant” (1367 W/m^2^) .
+where, $S$ = incoming solar radiation: the “solar constant” (1367 W/m^2^) .
 
 #### Exercises {#M3_6 -}
 
