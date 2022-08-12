@@ -3,6 +3,8 @@
 \usepackage{xcolor}
 \usepackage{geometry}
 \usepackage{mathpazo}
+\usepackage[makeroom]{cancel}
+\renewcommand\CancelColor{\color{red}}
 
 \begin{document}
 \newgeometry{top=1in,bottom=1in}
@@ -16,7 +18,8 @@
 	\text{then }E_{\text{out}} = &\ E_{\text{abs}}\\
 	\sigma 4\pi r^{2} T^{4} = &\ S\pi r^{2} (1-a) \\
 	T^{4} = &\ \frac{S\pi r^{2} (1-a)}{\sigma 4\pi r^{2}}\\
-	T = &\ \sqrt[4]{\frac{S\pi r^{2} (1-a)}{\sigma 4\pi r^{2}}}
+	T^{4} = &\ \frac{S\cancel{\pi r^{2}} (1-a)}{\sigma 4\cancel{\pi r^{2}}}\\
+	T = &\ \sqrt[4]{\frac{S (1-a)}{4\sigma}}
 \end{align*}
 } 
 \end{enumerate}

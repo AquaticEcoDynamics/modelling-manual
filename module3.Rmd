@@ -152,7 +152,7 @@ This gets inputted into the energy balance equation (energy in = energy out) to 
 
 <center>
 \begin{equation}
-\pi r^{2} S (1-a) = 4\pi r^{2}(X+yT)
+\pi r^{2} S (1-a) = 4\pi r^{2}(x+yT)
 (\#eq:module3-5)
 \end{equation}
 </center>
