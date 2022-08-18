@@ -161,18 +161,18 @@ Solving this quadratic would be fiendishly difficult. Instead, we will use trial
 Go to the third tab and copy over all of the equations from Exercise 1. The <span style="color: #A5A5A5;">grey boxes</span> are the values that we will hold constant, and the first guess for H^+^, based on the H^+^ in Exercise 1. You can alter the CO~2~ concentration using the CO~2~ multiplier cell and your rapidly developing Excel and R skills. If you want to double CO~2~ concentration, type 2 into the multiplier cell. If you want to keep it at present levels, type 1. Repeat the calculation of Equation \@ref(eq:module4-13) over successive iterations, using the answer from the previous iteration as your guess for the next iteration. Eventually, the difference between your guesses will become very small and you can settle on a constant pH. (This is roughly how equilibrium-solving computer programs solve complex biogeochemical interactions, often with many more interacting variables than this.)
 Don’t forget that your successive iterations, are not time steps, like we had in previous weeks. Rather, they are just guesses at the right number that only exist in the model. Your final answer is the only one that has a real scientific meaning. If you want to determine the pH over a range of CO~2~ concentrations, you will need to repeat the calculation over ~10 rows, and save your results each time.
 
-<center>
 ```{r M4Vid2, echo=FALSE, message=FALSE, warning=FALSE}
 htmltools::tags$video(
   width='75%', 
   controls=NA,
+  style = "display: block; margin-left: auto; margin-right: auto;",
   htmltools::tags$source(
     src='images/module4/video2.mp4',
     type="video/mp4"
   )
   )
 ```
-</center>
+
 
 ```{block, hintM4-2, type='rmdquestion'}
 Big questions: if you increase CO~2~, does the pH rise or fall? Does CaCO~3~ precipitation become more or less favourable if CO~2~ increases?
