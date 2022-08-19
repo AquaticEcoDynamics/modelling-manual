@@ -169,10 +169,6 @@ htmltools::tags$video(
   htmltools::tags$source(
     src='images/module4/video2.mp4',
     type="video/mp4"
-  ),
-  htmltools::tags$source(
-    src='images/module4/video2-ios.mp4',
-    type="video/mp4"
   )
   )
 ```
