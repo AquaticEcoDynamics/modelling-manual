@@ -175,6 +175,7 @@ Don’t forget that your successive iterations, are not time steps, like we had 
 htmltools::tags$video(
   width='75%', 
   controls=NA,
+  loop = 'true',
   style = "display: block; margin-left: auto; margin-right: auto;",
   htmltools::tags$source(
     src='images/module4/video2-og.mp4',
