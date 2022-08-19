@@ -167,11 +167,11 @@ htmltools::tags$video(
   controls=NA,
   style = "display: block; margin-left: auto; margin-right: auto;",
   htmltools::tags$source(
-    src='images/module4/video2-og.mp4',
+    src='images/module4/video2.mp4',
     type="video/mp4"
   ),
   htmltools::tags$source(
-    src='images/module4/video2-265.mp4',
+    src='images/module4/video2-ios.mp4',
     type="video/mp4"
   )
   )
