@@ -1,4 +1,4 @@
-library("scales", lib.loc="~/R/win-library/2.15")
+library("scales")
 #NULL
 Stot     =NULL
 Ssat     =NULL
@@ -48,10 +48,10 @@ days<-Time$mday
 days[1:50]
 months<-Time$mon+1
 months[1:50]
-Have a 
-"Have a look at how I made the time sequence and try to understand it."
-Delete this
-"Delete this line once you have understood it."
+
+#"Have a look at how I made the time sequence and try to understand it."
+
+#"Delete this line once you have understood it."
 #CLIMATE
 alphaebs=0.5	#bare soil evap scaling (-)
 alphaeag=0.5	#crop evap scaling (-)
@@ -63,7 +63,7 @@ Smax=D*(phi-thetapwp)*Ac # Maximum storage capacity (m3)
 #CLIMATE FORCING 
 #Add rainfall boundary condition here as text file and location
 #for example H:/Documents/Precipitation.txt
-precip<-read.table(file=" put the location of the text file here /with forward slashes/Precipitation.txt")
+precip<-read.table(file="Precipitation.txt")
 epamp  =0.9
 #angfreq=8*atanh_trans(1)/365.25
 angfreq=0.017202424

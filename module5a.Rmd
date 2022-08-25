@@ -2,7 +2,7 @@
 
 ### Objectives {#M5A_2 -}
 
-To understand a two-store catchment water balance model and implement within Excel or R. Using the supplied parameters and input data, run the model and plot changes in water stores and key hydrological fluxes.
+To understand a two-store catchment water balance model and implement within Excel. Using the supplied parameters and input data, run the model and plot changes in water stores and key hydrological fluxes.
 
 ### The Water Balance Approach {#M5A_3 -}
 
@@ -20,7 +20,7 @@ knitr::include_graphics("images/module5a/picture1.png")
 
 ### Module resources {#M5A_22 -}
 
-Download the Excel spreadsheet and R files for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.
+Download the Excel spreadsheet for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.
 
 <!---
 ```{block2, hintM5A_5, type='rmdnote2'}
@@ -90,7 +90,7 @@ ggplotly(plot) %>%
 
 #### 3. Storages {#M5A_7 -}
 
-Start to write in the equations for storage (**WATER BALANCE** sheet), using the equations given in the [Equations](#M5A_12) section of this module. Take a look at $S_{tot}$ (Equation \@ref(eq:module5a-4)) which is the total water in the two stores, $S_{sat}$ and $S_{us}$. 
+Start by copying your precipitation ($P$) and potential evaporation values from your **CLIMATE** sheet to your **WATER BALANCE - 5a** sheet. Next, type in the forumulas for storage using the equations given in the [Equations](#M5A_12) section of this module. Take a look at $S_{tot}$ (Equation \@ref(eq:module5a-4)) which is the total water in the two stores, $S_{sat}$ and $S_{us}$. 
 
 Note that there are two variables that have a prime ($\prime$) sign. These are interim storage values estimated so that we can use them for our IF statements to check for whether runoff or percolation should occur..
 
