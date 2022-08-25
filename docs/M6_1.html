@@ -83,25 +83,27 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -110,9 +112,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -145,6 +147,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -164,13 +188,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="part"><span><b>I Overview</b></span></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a><ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a>
+<ul>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
 <li class="part"><span><b>II Weekly Modules</b></span></li>
-<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a><ul>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
+<ul>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
@@ -180,7 +206,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_8"><i class="fa fa-check"></i>Assessing impacts on lake salinity</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a><ul>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a>
+<ul>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_3"><i class="fa fa-check"></i>Modelling concepts</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_4"><i class="fa fa-check"></i>Organic matter oxidation</a></li>
@@ -188,7 +215,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_6"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modelling</a><ul>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modelling</a>
+<ul>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M2_14"><i class="fa fa-check"></i>Module resources</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_3"><i class="fa fa-check"></i>Case Study 1: A “Zero-Dimensional” Energy Balance Model</a></li>
@@ -196,7 +224,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_9"><i class="fa fa-check"></i>Case Study 3: Incorporating Greenhouse Gases</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a><ul>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a>
+<ul>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#module-resources"><i class="fa fa-check"></i>Module resources</a></li>
@@ -206,29 +235,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_7"><i class="fa fa-check"></i>Exercise 4</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_8"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a><ul>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a>
+<ul>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_3"><i class="fa fa-check"></i>The Water Balance Approach</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_22"><i class="fa fa-check"></i>Module resources</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_4"><i class="fa fa-check"></i>Water Balance Model</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_11"><i class="fa fa-check"></i>Notation</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_12"><i class="fa fa-check"></i>Equations</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_21"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a><ul>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a>
+<ul>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_3"><i class="fa fa-check"></i>Model Overview</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_4"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_10"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a><ul>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a>
+<ul>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_3"><i class="fa fa-check"></i>Advection-Dispersion Reaction</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_4"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_6"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a><ul>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a>
+<ul>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_3"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_4"><i class="fa fa-check"></i>Setting up GLM</a></li>
@@ -237,15 +271,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
 <li class="part"><span><b>III Supporting Material</b></span></li>
-<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html"><i class="fa fa-check"></i>Workshop 2</a><ul>
-<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#visualising-module-1-flow-data"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a><ul>
+<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html"><i class="fa fa-check"></i>Workshop 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#visualising-module-1-flow-data"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a>
+<ul>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#setting-up"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#importing-and-formatting-the-data"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#graphing-with-ggplot"><i class="fa fa-check"></i>Graphing with ggplot</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#visualising-diversion-scenarios"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#barcharts-and-pipes"><i class="fa fa-check"></i>Barcharts and Pipes</a></li>
-<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#modelling-quokkas-in-r"><i class="fa fa-check"></i>Modelling Quokkas in R</a><ul>
+<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#modelling-quokkas-in-r"><i class="fa fa-check"></i>Modelling Quokkas in R</a>
+<ul>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#setting-up-1"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#modelling"><i class="fa fa-check"></i>Modelling</a></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#speeding-things-up"><i class="fa fa-check"></i>Speeding things up</a></li>
@@ -286,7 +323,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <center>
 <span class="math display" id="eq:module6-1">\[\begin{equation}
 \frac{\delta C}{\delta t} = D_{d}\frac{\delta^{2} C}{\delta x^{2}} - u \frac{\delta C}{\delta x} + S + R
-\tag{53}
+\tag{54}
 \end{equation}\]</span>
 </center>
 <p>where the left hand side (LHS) is the “unsteady” term (<span class="math inline">\(C\)</span> change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and <span class="math inline">\(S\)</span> is a source term and <span class="math inline">\(R\)</span> is a reaction term. We use a partial deriviative (“curly <span class="math inline">\(\delta\)</span>”) since <span class="math inline">\(C\)</span> is now varying in both space and time.</p>
@@ -294,21 +331,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <center>
 <span class="math display" id="eq:module6-2">\[\begin{equation}
 \frac{C^{t+1}_{x}-C^{t}_{x}}{\Delta t}=D_{d} \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}-u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}+R_{x}+S_{x}
-\tag{54}
+\tag{55}
 \end{equation}\]</span>
 </center>
 <p>Where the <span class="math inline">\(t\)</span> subscript is referring to timestep, and the <span class="math inline">\(x\)</span> subscript refers to the space increment/position. For the case of oxygen we assume that <span class="math inline">\(R\)</span> is accounting for oxygen input from the atmosphere and consumption by bacteria (called the Biochemical Oxygen Demand, BOD), then:</p>
 <center>
 <span class="math display" id="eq:module6-3">\[\begin{equation}
 R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
-\tag{55}
+\tag{56}
 \end{equation}\]</span>
 </center>
 <p>Where the first term is atmospheric exchange (<span class="math inline">\(k_a\)</span> is the rate of re-aeration and <span class="math inline">\(C_a\)</span> is the saturation value of oxygen) and the second term is the bacterial consumption (described by <span class="math inline">\(k_{BOD}\)</span> which is in units of day<sup>-1</sup>). We can solve for the forward timestep at any position along the river by computing:</p>
 <center>
 <span class="math display" id="eq:module6-4">\[\begin{equation}
 \small{C_{x}^{t+1}=\color{#898989}{C_{x}^{t}}+ \left [ \color{#3A88FE}{D_d \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}}-\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}} + \color{#77BB41}{k_{a}(C_{a}-C_{x}^{t})}-\color{#B18CFE}{k_{BOD}C_{x}^t}  \right ]\Delta t+\color{#D58400}{S_{x}}}
-\tag{56}
+\tag{57}
 \end{equation}\]</span>
 </center>
 
@@ -320,7 +357,6 @@ R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
 <p>Biological O<sub>2</sub> demand: <span class="math inline">\(\color{#B18CFE}{k_{BOD}C_{x}^{t}}\)</span></p>
 <p>O<sub>2</sub> source/sink: <span class="math inline">\(\color{#D58400}{S_{x}}\)</span></p>
 </div>
-
 <p>To solve this the user specifies the initial oxygen concentration (<span class="math inline">\(C_0\)</span>), river velocity (<span class="math inline">\(u\)</span>) as a function of distance, grid length (<span class="math inline">\(L\)</span>), grid spacing (<span class="math inline">\(\Delta x\)</span>), simulation period (<span class="math inline">\(T\)</span>), time step (<span class="math inline">\(\Delta t\)</span>). The calculation should then compute the change in oxygen as a function of distance and time.</p>
 <video width="100%" controls>
 <source src="images/module6/video1.mp4" type="video/mp4"/>
@@ -334,7 +370,6 @@ R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
 <div class="rmdnote2">
 You can use either Excel or R for this module.
 </div>
-
 </div>
 <div id="M6_5" class="section level3 unnumbered hasAnchor">
 <h3>Exercises<a href="M6_1.html#M6_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -348,7 +383,6 @@ You can use either Excel or R for this module.
 <div class="rmdtip2">
 In Excel, time is going down the rows and distance (space) is going along the columns.
 </div>
-
 <ol start="3" style="list-style-type: decimal">
 <li>Set the initial condition (<span class="math inline">\(C_0\)</span>) row to be 10 mg O<sub>2</sub>/L – i.e. the whole river starts at 10 mg/L in each cell.</li>
 <li>Once you see the formula is working in the first time-step, then copy the formula along the length of the river. You will need to set a downstream boundary condition (at the the position where <span class="math inline">\(x = L\)</span>, the last column). For this we will set a “zero-derivative” condition <span class="math inline">\(– \frac{\delta C}{\delta x} = 0\)</span>. Therefore <span class="math inline">\(C_n = C_{n-1}\)</span>, where <span class="math inline">\(n\)</span> is the last cell of the river length.</li>
@@ -365,7 +399,6 @@ In Excel, time is going down the rows and distance (space) is going along the co
 <div class="rmdtip2">
 Use an IF statement. O<sub>2</sub> concentration cannot be negative, so set a minimum concentration of 0 mg/L
 </div>
-
 <center>
 <div class="figure"><span style="display:block;" id="fig:figM6-1"></span>
 <img src="images/module6/picture2.png" alt="Advection and dispersion of O~2~ in a river of length $x$. Note, in this figure $W_c$ refers to our wastewater plume (click [here](https://hydrologie.org/BIB/Publ_UNESCO/SR_999_E_2005.pdf) for image source)." width="60%" data-action="zoom" />
@@ -390,7 +423,6 @@ Figure 9: Advection and dispersion of O<sub>2</sub> in a river of length <span c
 <div class="rmdtip2">
 <p>If you see fluctuating negative and positive concentrations, you might have numerical instability. Adjust your <span class="math inline">\(\Delta t\)</span> or <span class="math inline">\(\Delta x\)</span>.</p>
 </div>
-
 <center>
 <div class="figure"><span style="display:block;" id="fig:figM6-2"></span>
 <img src="images/module6/picture1.png" alt="A plume of coloured dye dispersing through a river." width="100%" data-action="zoom" />

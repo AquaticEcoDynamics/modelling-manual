@@ -166,10 +166,10 @@ Use an IF statement.
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 
-1) Clear photograph or page scan of your **hand drawn conceptual model** of the Catchment system.
+1) Clear photograph or page scan of your hand drawn conceptual model of the Catchment system (may be combined with the 5a catchment model)
 2) Plot of calibration regression plot, including a trendline, equation and R^2^ value. Include in the caption what parameter values you gave the catchment.
-3) Plot of the cumulative phosphorous export of the urban expansion management scenario (Scenario 1) compared to the original, over time.
-4) Add scenario 2 to the above plot also.
+3) Plot of the cumulative phosphorous export of increased urbanisation (Scenario 1) and dairy management (Scenario 2) compared to the original conditions, over time.
+4) Plot of the concentration-flow relationship for the three scenarios of phosphorous concentration. 
 5) Any other interesting plots you may like to create.
 
 These are in a PDF format, combined with 5a results. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
