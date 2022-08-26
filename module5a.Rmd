@@ -317,7 +317,7 @@ S_{tot}^{t+1}= S_{tot}^{t}+(P^{t+1}- e_{tot}^{t+1})A_{c} - Q_{tot}^{t+1}
 \end{equation}
 </center>
 
-Water storage at any given time step, $t$, is calculated using the previous time step’s water storage as a starting point ($t$). Inflows and outflows of water from the system/ bucket are then incorporated to obtain the next consecutive value of $S$. Precipitation recorded in the current time step (inflow) is added to the initial storage value, whilst total evapotranspiration and total runoff (outflows) are both subtracted. Total water storage is made up of water stored in the saturated and unsaturated zones. Note that the initial value of $S_{tot}$ may be empirically determined or assumed to be a certain value. The initial value of $S_{sat}$ is taken to be $D$ less the depth from the surface to the water table, which can be measured.
+Water storage at any given time step, $t$, is calculated using the previous time step’s water storage as a starting point ($t$). Inflows and outflows of water from the system/ bucket are then incorporated to obtain the next consecutive value of $S$. Precipitation recorded in the current time step (inflow) is added to the initial storage value, whilst total evapotranspiration and total runoff (outflows) are both subtracted. Total water storage is made up of water stored in the saturated and unsaturated zones. Note that the initial value of $S_{tot}$ may be empirically determined or assumed to be a certain value. The initial value of $S_{sat}$ is taken to be $D$ less than the depth from the surface to the water table, which can be measured.
 
 <center>
 \begin{equation}
@@ -347,7 +347,7 @@ Threshold storage in the unsaturated zone is simply the maximum potential storag
 Equation \@ref(eq:module5a-8) is an IF Statement.
 ```
 
-The daily recharge rate from the unsaturated zone to the saturated zone is calculated as water storage in the unsaturated zone in the present time step, in addition to precipitation that has occurred in the current time step, less the threshold storage of the unsaturated zone (i.e. water which does not drain due to the downward forces of gravity alone). Recharge of this nature only occurs in the event that the combination of precipitation in the current time step and water storage in the unsaturated zone in the present time step is greater than the threshold field capacity of the unsaturated zone.
+The daily recharge rate from the unsaturated zone to the saturated zone is calculated as water storage in the unsaturated zone at the present time step, in addition to any new precipitation that has occurred, minus the threshold storage of the unsaturated zone (i.e. water which does not drain due to the downward forces of gravity alone). Recharge of this nature only occurs in the event that the combination of precipitation at the current time step, and water storage in the unsaturated zone, is greater than the threshold field capacity of the unsaturated zone.
 
 <center>
 \begin{equation}
@@ -358,7 +358,7 @@ S_{sat}^{t+1}=\ S_{sat}^t+\ R_p^{t+1}-\ Q_{ss}^{t+1}-\ e_{v}^{t+1}A_{c}
 
 Note the use of “$t+1$” on the Right Hand Side for $R$, $Q$ and $e$ will be on the same row since they are computed based on yesterday’s $S$.
 
-The balance of volumetric water storage in the saturated zone is therefore calculated as the previous period’s storage plus any recharge from the unsaturated zone, less outflows including recharge to groundwater, subsurface runoff, and total evapotranspiration (bare soil, deep rooted vegetation and agricultural crop) from the saturated zone.
+The balance of volumetric water storage in the saturated zone is therefore calculated as the previous period’s storage plus any recharge from the unsaturated zone, minus outflows including recharge to groundwater, subsurface runoff, and total evapotranspiration (bare soil, deep rooted vegetation and agricultural crop) from the saturated zone.
 
 <!-- Optional Deep Ground Water Store: -->
 
