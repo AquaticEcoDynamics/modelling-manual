@@ -92,7 +92,7 @@ kable(
 
 Let’s make sure the model flows are realistic. Let's compare our prediction with some observed data:
 
-4) Manually adjust the catchment model parameters (see possible ranges in table below) until the model best matches the observed data - the observed flow data and water table data is in the **CLIMATE** sheet. This processed is called “calibration”.
+4) Manually adjust the catchment model parameters (see possible ranges in table above) until the model best matches the observed data - the observed flow data and water table data is in the **CLIMATE** sheet. This processed is called “calibration”.
 
 ```{block2, hintM5B_2, type='rmdtip2'}
 Check this by using a regression plot of the given total observed streamflow and the model total streamflow, checking to get the highest R^2^ value.
@@ -104,7 +104,7 @@ Note the catchment area of the WATER BALANCE model needs to match the details in
 
 #### Calculate phosphate concentrations {#M5B_8 -}
 
-Now let’s work out the land-use specific stream $P$ concentrations:
+Now let’s work out the land-use specific stream $P$ concentrations in the **PHOSPHOROUS** sheet:
 
 5) Predict the catchment river $P$ concentrations and total export load, $P_{load}$.
 The best way to do this is first predict the $P$ concentration of each land-use class each as a column (i.e. Dairy $P$ concentration, Wheat $P$ concentration and so on), and then sum the 4 columns for $P^t$ by factoring the ($F_p$) for each land-use.
