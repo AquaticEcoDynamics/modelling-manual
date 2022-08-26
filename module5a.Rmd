@@ -263,6 +263,12 @@ The theoretical maximum storage capacity of the catchment is calculated by takin
 
 Note that ‘plant available water’ is the water content difference between field capacity and permanent wilting point of the soil at any given depth.
 
+<center>
+```{r figM5A-89, echo=FALSE, fig.cap="", out.width = '50%', out.extra='data-action="zoom"'}
+knitr::include_graphics("images/module5a/picture9.png")
+```
+</center>
+
 #### Threshold Storage {#M5A_14 -}
 *Already completed in WATER BALANCE*
 
