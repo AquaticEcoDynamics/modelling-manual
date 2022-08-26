@@ -593,6 +593,7 @@ Subsurface runoff is taken to be zero in cases where the total water storage is 
 5) Stacked area plot of $e_{v}$, $e_{bs}$, $e_{ag}$ (i.e. total evaporation) over time.
 
 **In less than 100 words write an answer to:**
+
 6) What is the general trend of rainfall over the long term?
 7) What is the general trend of storage over the long term? Why does the storage vary over the short term?
 8) Which flow mechanism contributes the most to the stream? 
