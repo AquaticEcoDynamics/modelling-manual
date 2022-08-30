@@ -278,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Module 6: River Pollution<a href="M6_1.html#M6_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="M6_2" class="section level3 unnumbered hasAnchor">
 <h3>Objectives<a href="M6_1.html#M6_2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To setup an “advection-dispersion-reaction” equation for a river system to demonstrate the combination of <strong>temporal and spatial</strong> finite differencing, in one dimension.</p>
+<p>In this module you will setup an “advection-dispersion-reaction” equation for a river system to demonstrate the combination of <strong>temporal and spatial</strong> finite differencing, in one dimension.</p>
 </div>
 <div id="M6_3" class="section level3 unnumbered hasAnchor">
 <h3>Advection-Dispersion Reaction<a href="M6_1.html#M6_3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -290,7 +290,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \tag{54}
 \end{equation}\]</span>
 </center>
-<p>where the left hand side (LHS) is the “unsteady” term (<span class="math inline">\(C\)</span> change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and <span class="math inline">\(S\)</span> is a source term and <span class="math inline">\(R\)</span> is a reaction term. We use a partial deriviative (“curly <span class="math inline">\(\delta\)</span>”) since <span class="math inline">\(C\)</span> is now varying in both space and time.</p>
+<p>where the left hand side (LHS) is the “unsteady” term (<span class="math inline">\(C\)</span> change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and <span class="math inline">\(S\)</span> is a source term, and <span class="math inline">\(R\)</span> is a reaction term. We use a partial deriviative (“curly <span class="math inline">\(\delta\)</span>”) since <span class="math inline">\(C\)</span> is now varying in both space and time.</p>
 <p>In this exercise we numerically solve the 1-dimensional, advective-dispersive transport of oxygen in a river. To solve this equation numerically, we must “discretise” the partial derivatives using finite difference methods, here done according to the FTCS scheme (refer to lecture!):</p>
 <center>
 <span class="math display" id="eq:module6-2">\[\begin{equation}
@@ -356,6 +356,9 @@ In Excel, time is going down the rows and distance (space) is going along the co
 <li>Copy the first time row down for all the time-steps (simulate several days in total).</li>
 <li>Plot the oxygen concentration as a function of distance for several times during the simulation.</li>
 </ol>
+<video width="100%" loop="TRUE" controls="TRUE" autoplay="autoplay">
+<source src="images/module6/video2.mp4" type="video/mp4"/>
+</video>
 </div>
 <div id="M6_8" class="section level4 unnumbered hasAnchor">
 <h4>Modelling a Wastewater Plume<a href="M6_1.html#M6_8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -384,6 +387,9 @@ Figure 9: Advection and dispersion of O<sub>2</sub> in a river of length <span c
 </div>
 <div id="M6_10" class="section level4 unnumbered hasAnchor">
 <h4>Modelling your own Scenario<a href="M6_1.html#M6_10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<video width="100%" loop="TRUE" controls="TRUE" autoplay="autoplay">
+<source src="images/module6/video3.mp4" type="video/mp4"/>
+</video>
 <ol start="9" style="list-style-type: decimal">
 <li>Create your own environmental scenario using this model, make a brief description of it, calculate a result and if necessary, express the result with a figure.</li>
 </ol>
