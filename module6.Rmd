@@ -2,8 +2,7 @@
 
 ### Objectives {#M6_2 -}
 
-To setup an "advection-dispersion-reaction" equation for a river system to demonstrate the combination of **temporal and spatial** finite differencing, in one dimension. 
-
+In this module you will setup an "advection-dispersion-reaction" equation for a river system to demonstrate the combination of **temporal and spatial** finite differencing, in one dimension. 
 
 ### Advection-Dispersion Reaction {#M6_3 -}
 
@@ -18,7 +17,7 @@ The advection-dispersion reaction equation for the concentration of a substance 
 \end{equation}
 </center>
 
-where the left hand side (LHS) is the “unsteady” term ($C$ change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and $S$ is a source term and $R$ is a reaction term. We use a partial deriviative (“curly $\delta$”) since $C$ is now varying in both space and time.
+where the left hand side (LHS) is the “unsteady” term ($C$ change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and $S$ is a source term, and $R$ is a reaction term. We use a partial deriviative (“curly $\delta$”) since $C$ is now varying in both space and time.
 
 In this exercise we numerically solve the 1-dimensional, advective-dispersive transport of oxygen in a river. To solve this equation numerically, we must “discretise” the partial derivatives using finite difference methods, here done according to the FTCS scheme (refer to lecture!):
 
@@ -102,6 +101,21 @@ In Excel, time is going down the rows and distance (space) is going along the co
 5) Copy the first time row down for all the time-steps (simulate several days in total).
 6) Plot the oxygen concentration as a function of distance for several times during the simulation.
 
+
+```{r M6Vid2, echo=FALSE, message=FALSE, warning=FALSE}
+  htmltools::tags$video(
+    width='100%',
+    loop=TRUE,
+    controls=TRUE,
+    autoplay="autoplay",
+    htmltools::tags$source(
+      src='images/module6/video2.mp4',
+      type="video/mp4"
+    )
+  )
+```
+
+
 #### Modelling a Wastewater Plume {#M6_8 -}
 
 7) Implement at $x \approx 1500\text{m}$ a wastewater plume entering the river – do this by reducing the $C$ at the relevant $x$ cell by 3 mg/L (or less if the $C$ is already below 3). This is done by adding the extra “$S$” term of -3 to the appropriate $x$-cell formula, and copying the formula down through time. Plot and note how the oxygen recovers downstream of the low oxygen inflow plume.
@@ -121,6 +135,19 @@ knitr::include_graphics("images/module6/picture2.png")
 8) Change the upstream boundary concentration at $x = 0$, to include a sudden drop in oxygen for a period of 0.5 hour. Plot how this signal propagates through the river domain during and after the period where the upstream condition drops – can you see the low oxygen pulse moving through the river? How does this concentration profile vary if the diffusivity is different?
 
 #### Modelling your own Scenario  {#M6_10 -}
+
+```{r M6Vid3, echo=FALSE, message=FALSE, warning=FALSE}
+  htmltools::tags$video(
+    width='100%',
+    loop=TRUE,
+    controls=TRUE,
+    autoplay="autoplay",
+    htmltools::tags$source(
+      src='images/module6/video3.mp4',
+      type="video/mp4"
+    )
+  )
+```
 
 9) Create your own environmental scenario using this model, make a brief description of it, calculate a result and if necessary, express the result with a figure. 
 
