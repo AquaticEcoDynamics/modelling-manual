@@ -107,7 +107,6 @@ In Excel, time is going down the rows and distance (space) is going along the co
     width='100%',
     loop=TRUE,
     controls=TRUE,
-    autoplay="autoplay",
     htmltools::tags$source(
       src='images/module6/video2.mp4',
       type="video/mp4"
@@ -141,7 +140,6 @@ knitr::include_graphics("images/module6/picture2.png")
     width='100%',
     loop=TRUE,
     controls=TRUE,
-    autoplay="autoplay",
     htmltools::tags$source(
       src='images/module6/video3.mp4',
       type="video/mp4"
