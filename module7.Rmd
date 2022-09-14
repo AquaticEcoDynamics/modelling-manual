@@ -8,7 +8,7 @@ To use the GLM model to investigate water quality modelling in lakes and to inco
 
 This week, you'll be working through the [**GLM Workbook**](https://aquaticecodynamics.github.io/glm-workbook/). If you're not already familiar with GLM, start by reading the [Getting Started](https://aquaticecodynamics.github.io/glm-workbook/GettingStarted.html), [File Structure](https://aquaticecodynamics.github.io/glm-workbook/glm-file-structure.html), and [Running GLM](https://aquaticecodynamics.github.io/glm-workbook/running-glm.html) chapters.
 
-Your task will be to complete the [Warm Lake Case Study](https://aquaticecodynamics.github.io/glm-workbook/warm-lake.html) chapter. 
+Your task will be to complete the **Warm Lake Case Study**. 
 
 ```{block2, hintM7_1, type='rmdtip2'}
 As you work through this chapter you may find it helpful to refer to some of the Exercises in the GLM workbook.
