@@ -72,8 +72,3 @@ eq:module6-3
 eq:module6-4
 fig:figM6-1
 fig:figM6-2
-fig:figM7-1
-fig:figM7-2
-tab:tabM7-1
-eq:module7-1
-eq:module7-2
