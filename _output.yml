@@ -16,8 +16,9 @@ bookdown::gitbook:
                ["Module 5 Resources.zip", "Module 5a&b Resources"],
                #["Module 5a Resources.zip", "Module 5a Resources"],
                #["Module 5b Resources.zip", "Module 5b Resources"],
-               ["Module 6 Resources.zip", "Module 6 Resources"],
-               ["Module 7 Resources.zip", "Module 7 Resources"]]
+               ["Module 6 Resources.zip", "Module 6 Resources"]
+               #["Module 7 Resources.zip", "Module 7 Resources"]
+               ]
     search: yes
     fontsettings:
       theme: white
