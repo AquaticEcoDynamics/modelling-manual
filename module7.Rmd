@@ -4,6 +4,10 @@
 
 To use the GLM model to investigate water quality modelling in lakes and to incorporate a coupled hydrodynamic-biogeochemical model.
 
+### Before you start {#M7_before_start -}
+
+- Review modelling aquatic systems lecture
+
 ### Module Resources {#M7_3 .unnumbered}
 
 This week, you'll be working through the [**GLM Workbook**](https://aquaticecodynamics.github.io/glm-workbook/). If you're not already familiar with GLM, start by reading the [Getting Started](https://aquaticecodynamics.github.io/glm-workbook/GettingStarted.html), [File Structure](https://aquaticecodynamics.github.io/glm-workbook/glm-file-structure.html), and [Running GLM](https://aquaticecodynamics.github.io/glm-workbook/running-glm.html) chapters.
@@ -39,6 +43,8 @@ Assessing Error & Sensitivity:
 -   Temperature and phytoplankton sensitivity assessment
 -   Tables for submission
 
+These are to be uploaded as per the formatting specified in the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
+<!--
 These are to be uploaded in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
 
 **General professional formatting guidelines:**
@@ -55,4 +61,5 @@ These are to be uploaded in a word doc or PDF format. No screenshots of figures 
 -   Make sure both axes have visible lines and tick marks
 -   Units need to be noted properly with the axis label - 'Temperature (°C)'
 -   Round numbers to be reasonable
+-->
 :::

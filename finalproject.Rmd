@@ -1,0 +1,35 @@
+# (PART)  Assessment {-} 
+
+# Final Project {#FinalProject -}
+
+## Overview {-}
+
+<center>
+```{r finalproject-journey, echo=FALSE, fig.cap="", out.width = '100%', out.extra='data-action="zoom"'}
+knitr::include_graphics("images/finalproject/journey.png")
+```
+</center>
+
+## Stages {-}
+
+### Brainstorm {-}
+
+**Complete by: end of Week 8**
+
+### Research & Discovery {-}
+
+**Complete by: Week 8-9**
+
+### Conceptual Model & Plan {-}
+
+**Complete by: end of Week 9**
+
+### Two-pager/Pitch {-}
+
+### Idealised Prototype {-}
+
+### Validation/Evaluation {-}
+
+### Scenarios/Limits {-}
+
+### Presenting Results {-}

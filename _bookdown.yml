@@ -3,6 +3,7 @@ output_dir: docs
 delete_merged_file: true
 rmd_files: ["index.Rmd",
             "gettingstarted.Rmd",
+            "styleguide.Rmd",
             "module1.Rmd",
             "module2.Rmd",
             "module3.Rmd",
@@ -11,6 +12,7 @@ rmd_files: ["index.Rmd",
             "module5b.Rmd",
             "module6.Rmd",
             "module7.Rmd",
+            "finalproject.Rmd",
             "workshop2.Rmd",
             "references.Rmd"]
 new_session: no

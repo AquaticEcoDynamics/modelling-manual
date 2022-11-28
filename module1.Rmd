@@ -32,7 +32,6 @@ allow="encrypted-media; accelerometer; gyroscope; picture-in-picture">
 
 In the Murray-Darling Basin ([MDB](https://www.mdba.gov.au/importance-murray-darling-basin)), a water market was established that allows for irrigation entitlements to be "traded"; e-water must be bought from the "water holder" (in this case that is the Commonwealth Environmental Water Holder, [CEWH](http://www.environment.gov.au/water/cewo)).
 
-
 ### Flow diversion case study: Robe Lakes {#M1_4 -}
 
 What happens if we divert freshwater away from a coastal lake system? How much flow diversion is "acceptable"? 
@@ -176,13 +175,23 @@ Construct a nested `IF()` that solves the following:
 ```
 
 6) Add two new columns for each of the above to work out **cumulative amount** (running total) of diverted water
-    a. $\text{Cumulated Volume} = \text{Previous Cumulated Volume}+\text{Today's Diverted Discharge}$
+    a. $\small{\text{Cumulated Volume} = \text{Yesterday's Total Diverted Discharge}+\text{Today's Diverted Discharge}}$
     
 ### Assessing impacts on lake salinity {#M1_8 .unnumbered}
 
-7) Create a scatter plot of historical salinity (as EC) collected from the site marked in the map (+) vs daily discharge from the drain (see sheet: Estuary – Salinity).
-8) Fit a trendline to the data and display equation and R^2^ – this is a statistical model.
-9) In a new time-series column in the previous sheet, use the statistical model from above to predict a salinity time-series for the above station in the estuary under the two diversion scenarios compared to the base case.
+You've now calculated the cumulative amount of water diverted under the two flow diversion scenarios. Next, let's calculate how much water will remain in the Robe Lakes and the impact that this will have on salinity.
+
+7) Calculate the daily flow into the Robe Lakes for both diversion scenarios 
+
+```{block2, hintM1-6, type='rmdtip2'}
+Subtract the volume of today's diverted water from today's inflow
+```
+
+Look at sheet *Estuary – Salinity*. This records data collected at the site marked on the map with a **+**. You will use this data to build a simple statistical model that predicts the salinity from the drain's daily discharge.
+
+8) Start by creating a scatter plot of the historical salinity (as EC) and daily discharge in the *Estuary – Salinity* sheet.
+9) Fit a trendline to the data and display equation and R^2^ – this is a statistical model. Look x/y axis, is your model predicting for salinity? 
+10) In a new time-series column in the previous sheet, use the statistical model from above to predict a salinity time-series for the Robe Lakes under the two diversion scenarios compared to the base case.
 
 ### Submission {#M1_9 -}
 
@@ -201,13 +210,15 @@ number of days
 - Q3: Table of the annual amount of flow in total and in each band
 - Q4: Table of annual flow by year with index and probability. Scatter plot of the flow vs
 probability curve
-- Q6: Table of the cumulative amount of diverted water
+- Q6: Table of the total cumulative amount of diverted water (i.e. the last value) for both diversion scenarios
 - Q7 & 8: Scatterplot of the EC vs. daily discharge from the drain, with trendline (hint: exponential), equation and
-R2 value
-- Q9: Plot of the salinity timeseries of the two diversion scenarios compared to the base case
+R^2^ value
+- Q9: Plot of the **annual average** salinity timeseries of the two diversion scenarios compared to the base case
 - In less than 100 words, discuss which is the most appropriate scenario choice for
 management of the estuary
 
+These are to be uploaded as per the formatting specified in the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
+<!--
 These are in a word doc or PDF format. No screenshots of figures from Excel/Excel
 spreadsheets to be uploaded
 
@@ -225,6 +236,7 @@ spreadsheets to be uploaded
 - Make sure both axes have visible lines and tick marks
 - Units need to be noted properly with the axis label - 'Temperature (°C)'
 - Round numbers to be reasonable
+-->
 ::::
 
 

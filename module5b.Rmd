@@ -4,11 +4,18 @@
 
 To setup a nutrient export model to compare the effect of Best Management Practices (BMP's) on nutrient loads from a catchment with mixed land use.
 
+### Before you start {#M5b_before_start -}
+
+- Complete 5a
+- Be familiar with the land use export model activity from lecture
+- Review the flow concentration relationship document
+- Review nutrient modelling lecture and be familiar with best management practices (BMPs)
+
 ### Model Overview {#M5B_3 -}
 
 Consider a catchment basin with with **different types of land use**.
 
-The daily streamflow through the catchment, $Q^t$ (m^3^/day), can be approximated based on the daily rainfall ($R$) - see the Water Balance model in Module 5a. 
+The daily runoff/streamflow through the catchment, $Q^t$ (m^3^/day), can be approximated based on the daily rainfall ($R$) - see the Water Balance model in Module 5a. 
 
 The phosphorus concentration in the water, $P^{t}$ (g/m^3), depends on how much flow there is (i.e. more flow = more fertilizer leaching). To model this we use a simple power law to make a "flow-concentration relationship", which is computed for each land-use ($P$ is proportional to $\alpha Q^{\beta}$). *If you've not seen a power law, sketch a graph of C (y-axis) vs Q (x-axis) for a value of $\beta =1$. What happens if $\beta =2$ or $\beta =0.5$?*
 
@@ -56,7 +63,20 @@ The Excel spreadsheet for this module is part of the Module 5 download. Access u
 
 1) Draw by hand the conceptual model of this system.
 2) Confirm with the person beside you what index means ($t$ and $p$).
-3) Use your Module 5a water balance model to predict the catchment flows. Tailor that model to use the information as outlined in Table \@ref(tab:module5b-1) below and supplied rainfall data in the **CLIMATE** sheet. Input a value for each parameter within the range given for now.
+3) Set your modelled $Q_{tot}$ to equal your $Q_{tot}$ values in the **WATER BALANCE - 5a** sheet 
+
+
+#### Calibrating the model {#M5B_7 -}
+
+Let’s make sure the model flows are realistic. Let's compare our prediction with some observed data:
+
+4) Create a regression plot of the observed $Q_{tot}$ and your modelled $Q_{tot}$
+
+5) Tailor this model to use the information as outlined in Table \@ref(tab:module5b-1). Add a linear trendline, R^2^, and the line equation to the plot. Aim to achieve modelled flow values that closely match the observed $Q_{tot}$ 
+
+```{block2, hintM5B_9, type='rmdtip2'}
+You want a high R^2^ value (greater than 0.8) and a slope coefficient close to 1.
+```
 
 <center>
 ```{r module5b-1, echo=FALSE, message=FALSE, warning=FALSE}
@@ -87,26 +107,18 @@ kable(
 ```
 </center>
 
-
-#### Calibrating the model {#M5B_7 -}
-
-Let’s make sure the model flows are realistic. Let's compare our prediction with some observed data:
-
-4) Manually adjust the catchment model parameters (see possible ranges in table above) until the model best matches the observed data - the observed flow data and water table data is in the **CLIMATE** sheet. This processed is called “calibration”.
+Manually adjust the catchment model parameters (see possible ranges in table above) until the model best matches the observed data - the observed flow data and water table data is in the **CLIMATE** sheet. This processed is called “calibration”.
 
 ```{block2, hintM5B_2, type='rmdtip2'}
 Check this by using a regression plot of the given total observed streamflow and the model total streamflow, checking to get the highest R^2^ value.
 ```
 
-```{block2, hintM5B_50, type='rmdtip2'}
-Note the catchment area of the WATER BALANCE model needs to match the details in the table. Make a copy of the sheet to make a duplicate model with tailored parameters
-```
 
 #### Calculate phosphate concentrations {#M5B_8 -}
 
 Now let’s work out the land-use specific stream $P$ concentrations in the **PHOSPHOROUS** sheet:
 
-5) Predict the catchment river $P$ concentrations and total export load, $P_{load}$.
+6) Predict the catchment river $P$ concentrations and total export load, $P_{load}$.
 The best way to do this is first predict the $P$ concentration of each land-use class each as a column (i.e. Dairy $P$ concentration, Wheat $P$ concentration and so on), and then sum the 4 columns for $P^t$ by factoring the ($F_p$) for each land-use.
 
 <center>
@@ -143,22 +155,22 @@ See how dairy has the highest alpha? This means it produces the most $P$ of all 
 
 #### Calculate phosphate export load {#M5B_8 -}
 
-6) Compute the $P_{load}$ at the catchment outlet in kg/day. Also, work out the cumulative load (this will come in handy to coampre scenarios; we call it a mass curve) 
+7) Compute the $P_{load}$ at the catchment outlet in kg/day. Also, work out the cumulative load (this will come in handy to coampre scenarios; we call it a mass curve) 
 
 #### Consider 2 management scenarios {#M5B_9 -}
 
 Finally, let’s run 2 management scenarios:
 
-7a) **Scenario 1:** If the total urban area expanded to 50% (0.5), how would this affect the overall $P$ export?
+8a) **Scenario 1:** If the total urban area expanded to 50% (0.5), how would this affect the overall $P$ export?
 
 ```{block2, hintM5B_4, type='rmdtip2'}
 Change the land use fractions manually. They still have to add up to 1, so change the other parts as you see appropriate, i.e. urban area usually comes at the expense of forest, but you can decide how to change the landscape. Record your changed fractions.
 ```
 
-7b) **Scenario 2** If the irrigated dairy industry were made to contain their flows (i.e. prevent high $P$ concentrations going to the stream), how would this affect the overall concentration in the water at the river basin outlet? The total concentration has to be maintained at 0.065 g m^3^ or below. 
+8b) **Scenario 2** If the irrigated dairy industry incorporated new phosphorus reduction technology, i.e. a best management practice (BMP) which leads to less $P$ concentrations going from the farm to the stream. How would this affect the overall concentration in the water at the river basin outlet? The dairy concentration is now no more than 0.06 g m^3^. 
 
 ```{block2, hintM5B_5, type='rmdtip2'}
-Use an IF statement.
+Use an IF statement to put a conditional cap on your dairy phosphorous concentration 
 ```
 
 ### Submission {#M5B_10 -}
@@ -172,6 +184,8 @@ Use an IF statement.
 4) Plot of the concentration-flow relationship for the three scenarios of phosphorous concentration. 
 5) Any other interesting plots you may like to create.
 
+These are to be uploaded as per the formatting specified in the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
+<!--
 These are in a PDF format, combined with 5a results. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
 
 **General professional formatting guidelines:**
@@ -188,5 +202,6 @@ These are in a PDF format, combined with 5a results. No screenshots of figures f
 - Make sure both axes have visible lines and tick marks
 - Units need to be noted properly with the axis label - 'Temperature (°C)'
 - Round numbers to be reasonable
+-->
 ::::
 

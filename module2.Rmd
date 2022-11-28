@@ -3,7 +3,13 @@
 <h2>Bacterially Mediated Organic Matter Oxidation Rates</h2>
 
 ### Objectives {#M2_2 -}
-Become familiar with basic spread sheet commands in excel by building a simple biogeochemical model from chemical and mathematical equations. Become familiar with the program R Studio and compare it to Excel.
+Become familiar with basic spread sheet commands in Excel by building a simple biogeochemical model from chemical and mathematical equations. Become familiar with the program R Studio and compare it to Excel.
+
+### Before you start {#M2_before_start -}
+
+- Listen to lecture on ordinary differential equations (ODEs)
+- Be familiar with the exponential growth of Quokkas example in Excel
+- Review slides on sediment
 
 ### Modelling concepts {#M2_3 -}
 This model has variables of concentration and rate, no spatial dimensions, and it has a dimension of time. Last week’s model had variables of volume and concentration (salinity), and was also resolved in time. In coming weeks the models will be resolved in zero, one, two or three dimensions of space, and only some will be resolved in time.
@@ -125,7 +131,7 @@ Download the Excel spreadsheet and R scripts for this module by clicking the dow
 1) Looking at the sequence of equations above: what is the difference between the limitation and the inhibition term? Have a good think about this. If concentration were amazingly bigger or smaller than the $K_{O_{x}}$^[Where $K_{O_{x}}$ is the general term for the half saturation constant of any oxidant, for example $K_{O_{2}}$, $K_{SO_{4}}$ etc.], what would happen to the rates of the higher and lower energy processes? For example, with a high oxygen concentration, what would happen to the manganese reduction rate? With a low oxygen and nitrate concentration, and a high manganese concentration, what would happen to the manganese oxidation rate?
 
 
-2) Complete the excel spreadsheet for iron reduction, sulfate reduction and methanogenesis. Oxygen, nitrate and manganese are done already, so copy the method and use the equations at the tops of the columns. It is tedious, fiddly and there is a good chance that you will introduce bugs that are hard to find. This is the nature of Excel.
+2) Complete the Excel spreadsheet for iron reduction, sulfate reduction and methanogenesis. Oxygen, nitrate and manganese are done already, so copy the method and use the equations at the tops of the columns. It is tedious, fiddly and there is a good chance that you will introduce bugs that are hard to find. This is the nature of Excel.
 
 ```{r M2Vid1, echo=FALSE, message=FALSE, warning=FALSE}
 htmltools::tags$video(
@@ -189,17 +195,17 @@ fig
 
 ####  Building the model in R {#M2_8 -}
 
-Now the excel spreadsheet is working, the next step is to repeat the process in R.
+Now the Excel spreadsheet is working, the next step is to repeat the process in R.
 
 5) Open the R project and the three scripts: there is one in which you set the input parameters and initial conditions; one which has the equations; and one which is used for plotting the outputs. Read through them and become familiar with what is in each.
 
-6) Run each script in sequence, starting with Inputs, then Equations, then Plotting. The plotting script should make a plot appear in the bottom right corner.
+6) Without making any edits, run each script in sequence, starting with Inputs, then Equations, then Plotting. The plotting script should make a plot appear in the bottom right corner.
 
 ```{block2, hintM2-2, type='rmdtip2'}
 You can press `Cmd+Enter` on MacOS, or `Ctrl+Enter` on Windows instead of clicking the 'Run' button.
 ```
 
-7) Enter the inputs, equations and plotting scripts for iron, sulfate and methanogenesis reactions, just as you did in the excel spreadsheet. Remember that you just need a rate of methanogenesis: methane is not an oxidant like sulfate.
+7) You'll  have noticed some parts of these scripts are incomplete (i.e. commented out with `#`s). Complete the model by entering the inputs, equations and plotting scripts for iron, sulfate and methanogenesis reactions, just as you did in the Excel spreadsheet. Remember that you just need a rate of methanogenesis: methane is not an oxidant like sulfate.
 
 ::::: {.rmdtip2}
 
@@ -247,18 +253,20 @@ htmltools::tags$video(
 
 Now we have a working process-based model. This was the hard and boring part, but now we can be creative. So far we have established an initial condition and let it run to completion, but next we can model a hypothetical environmental situation. For example, imagine there were an oxygen fluctuation, perhaps from algal photosynthesis occurring in the day but not at night in a lake, or from the tidal movement of hypoxic water.
 
-9) In either Excel or R, create a new environmental situation that involves organic matter oxidation. Consider the assumptions you are making and how important they are. Use the model to test the effect of this situation on concentrations and rates. For example, what would happen if there were regular organic matter deposition as a boundary condition? Or maybe what if there were a constant oxygen concentration? What conditions might be needed to minimise methanogenesis? How could you maximise denitrification? I will give higher marks if you do something original and creative. Write a brief description of your new situation and create one plot (**4**) to explain your result.
+9) In either Excel or R, create a new environmental situation that involves organic matter oxidation. Consider the assumptions you are making and how important they are. Use the model to test the effect of this situation on concentrations and rates. For example, what would happen if there were regular organic matter deposition as a boundary condition? Or maybe what if there were a constant oxygen concentration? What conditions might be needed to minimise methanogenesis? Be creative! Write a brief description of your new situation and create one plot (**4**) to explain your result.
 
 ### Submission {#M2_9 -}
 :::: {.redbox2}
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 
-- Graph of concentration (y) against time (x) scatter plot, for all oxidants, made in Excel
+- Graph of relative and absolute concentration (y) against time (x) scatter plot, for all oxidants, made in Excel
 - Graph of rate (y) against time (x) area plot, for all oxidants
-- Graph of concentration (y) against time (x) scatter plot, for all oxidants, made in R
-- Any figure of a new environmental situation you create, and a brief explanation of lessthan 100 words of how you used the model creatively.
+- Graph of relative and absolute concentration (y) against time (x) scatter plot, for all oxidants, made in R
+- Any figure of a new environmental situation you create, and a brief explanation of less than 100 words of how you used the model creatively.
 
+These are to be uploaded as per the formatting specified in the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
+<!--
 These are in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
 
 **General professional formatting guidelines:**
@@ -275,4 +283,5 @@ These are in a word doc or PDF format. No screenshots of figures from Excel/Exce
 - Make sure both axes have visible lines and tick marks
 - Units need to be noted properly with the axis label - 'Temperature (°C)'
 - Round numbers to be reasonable
+-->
 ::::

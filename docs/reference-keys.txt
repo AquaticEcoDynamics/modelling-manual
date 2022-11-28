@@ -51,7 +51,6 @@ eq:module5a-4
 eq:module5a-99
 eq:module5a-5
 eq:module5a-6
-eq:module5a-7
 eq:module5a-8
 eq:module5a-9
 eq:module5a-12

@@ -7,6 +7,10 @@
 - Calculate the pH change and CaCO~3~ solubility given an increased atmospheric CO~2~.
 - Replot other published data for comparison with our data
 
+### Before you start {#M4_before_start -}
+
+- Review slides
+
 ### Overview {#M4_3 -}
 In this exercise, we create a simple model of the ocean, with a limited number of state variables. We examine the chemical interactions that result from atmospheric CO~2~ gas dissolving in water, along with calcium salts in the ocean fed by erosion of minerals on the land. The key overall process is that dissolved CO~2~ and Ca^2+^ are in equilibrium with solid CaCO~3~ (limestone).
 
@@ -216,10 +220,12 @@ htmltools::tags$video(
   )
 ```
 
-Compare these results with your own results. And make any plots that you feel help explain the environmental system behaviour.
+Compare these results with your own results. You will notice the IPCC data graphed over time. Our model depicts an increasing CO2 environment via the multiplier. The fundamental relationships between these variables is similar - an increasing CO~2~ world leads to increased ocean acidification and decreased pH.
 
-```{block, hintM4-3, type='rmdquestion'}
-Which factors cause the differences between your results and those of the IPCC models?
+Remember back to Module 1 where we modelled salinity values from flow. Let's do something similar here to predict year from our CO~2~, Omega, and pH. Correlate the IPCC data of CO~2~/Year, pH/Year, and Omega/Year (i.e. use a scatterplot and add a trendline). Use these equations to generate modelled year values for our Exercise 3 model. Compare and contrast your results with a plot each for CO~2~, pH, and Omega.
+
+```{block, tipM4-1, type='rmdtip2'}
+You will need to convert atm to µatm and multiply Omega by 100 to create a percentage!
 ```
 
 ### Submission {#M4_8 -}
@@ -228,8 +234,12 @@ Which factors cause the differences between your results and those of the IPCC m
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 
 1) Double log plot.
-2) Any number of plots that compare your Exercise 3 results with the IPCC data.
+2) Your Exercise 3 CO~2~ plot comparing your modelled CO~2~ and Omega. Attempt to incorporate the IPCC data into this plot.
+3) In 3 plots, compare your modelled data with the IPCC data over time (CO~2~, pH, and Omega).
+4) In 150 words or less, which factors cause the differences between your results and those of the IPCC models.
 
+These are to be uploaded as per the formatting specified in the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
+<!--
 The submission is to be all together in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded.
 
 **General professional formatting guidelines:**
@@ -246,6 +256,7 @@ The submission is to be all together in a word doc or PDF format. No screenshots
 - Make sure both axes have visible lines and tick marks
 - Units need to be noted properly with the axis label - 'Temperature (°C)'
 - Round numbers to be reasonable
+-->
 ::::
 
 

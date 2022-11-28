@@ -7,10 +7,15 @@
 - To construct a simple energy balance climate model for the Earth in Excel
 - To understand the role of greenhouse gases, and incorporate them into an energy balance climate model
 
+### Before you start {#M3_before_start -}
+
+- Listen to the energy balance lecture
 
 ### Module resources {#M2_14 -}
 
-There are no module resources needed for these exercises! But please refer to the supporting information on LMS (Assignment 1/Week3) prior to commencing.
+Download the Excel spreadsheet for this module by clicking the download button in the <i class="fa fa-download" aria-hidden="true"></i>.
+
+<!--There are no module resources needed for these exercises! But please refer to the supporting information on LMS (Assignment 1/Week3) prior to commencing.-->
 
 ### Case Study 1: A “Zero-Dimensional” Energy Balance Model {#M3_3 -}
 
@@ -163,7 +168,7 @@ This gets inputted into the energy balance equation (energy in = energy out) to 
 
 2) Set up a spreadsheet to estimate $T$ for a range of albedo values. Different amounts of glacial ice cover on the Earth could produce albedos from 0.3 for minimal ice to 0.7 for a complete ice cover (this might seem unrealistic, but geologists have recently found evidence to suggest that the Earth was completely ice-covered during Neoproterozoic time 700 million years ago – a “snowball Earth”!)
     a) Are your results reasonably close for the present-day Earth mean temperature? What is the  sensitivity of this model to small changes in albedo?
-    b) Expanding a bit from your model (you might need to consider smaller steps in albedo), at what value of albedo do you think this simplified Earth would experience strong positive feedback involving ice cover, albedo, and mean temperature, and therefore move rapidly toward “snowball Earth” with albedo = 0.7? Could it ever be deglaciated?
+<!--    b) Expanding a bit from your model (you might need to consider smaller steps in albedo), at what value of albedo do you think this simplified Earth would experience strong positive feedback involving ice cover, albedo, and mean temperature, and therefore move rapidly toward “snowball Earth” with albedo = 0.7? Could it ever be deglaciated? -->
 
 
 <center>
@@ -341,6 +346,8 @@ How close is this to the actual value of 290K?
 
 Using Excel, test the sensitivity of this model to albedo. Compare your findings to those found in [Case Study 1](#M3_3) (a plot of $T_{s}$ for values of albedo between 0.3 and 0.7 might help here).
 
+1) For which model, and at what value of albedo, do you think the Earth would experience a strong positive feedback involving ice cover, albedo, and mean temperature, and therefore move rapidly toward “snowball Earth”? Could it ever be deglaciated?
+
 
 ### Submission {#M3_13 -}
 :::: {.redbox2}
@@ -350,7 +357,11 @@ Using Excel, test the sensitivity of this model to albedo. Compare your findings
 1) Clear photograph or page scan of your **hand drawn conceptual model** of the *Harte 1-D Energy Balance Model*, including key explaining the terms.
 2) Clear photograph or page scan of your handwritten workings of the *Harte Model* calculations, with a clear answer of $T_{s}$, the Earth’s temperature.
 3) **Summary plot** from Case Study 1, 2 & 3 assessing albedo and temperature of the three models, with a brief explanation of less than 150 words of which model you prefer.
+4) In 100 words or less, your answer to the Exercise 3 “snowball Earth” question.
 
+These are to be uploaded as per the formatting specified in the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
+
+<!--
 The submission is to be all together in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded.
 
 **General professional formatting guidelines:**
@@ -367,4 +378,5 @@ The submission is to be all together in a word doc or PDF format. No screenshots
 - Make sure both axes have visible lines and tick marks
 - Units need to be noted properly with the axis label - 'Temperature (°C)'
 - Round numbers to be reasonable
+-->
 ::::

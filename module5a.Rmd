@@ -4,6 +4,11 @@
 
 To understand a two-store catchment water balance model and implement within Excel. Using the supplied parameters and input data, run the model and plot changes in water stores and key hydrological fluxes.
 
+### Before you start {#M5a_before_start -}
+
+- Listen to the water balance lecture
+- Be familiar with the connected bucket example (double buckets) in Excel
+
 ### The Water Balance Approach {#M5A_3 -}
 
 A water balance equation can be used to describe the flow of water in and out of a “system”. A system can be one of several hydrological domains depending on the context, such as a column of soil or a catchment basin. In the context of catchment, we assume the catchment area has a known ‘average’ depth, and the amount of soil is the catchment area multiplied by the depth. We treat this soil volume as our catchment ‘bucket’, and then estimate the inputs (rainfall) and outputs (evapotranspiration, runoff and baseflow).
@@ -94,10 +99,11 @@ Start by copying your precipitation ($P$) and potential evaporation values from 
 
 Note that there are two variables that have a prime ($\prime$) sign. These are interim storage values estimated so that we can use them for our IF statements to check for whether runoff or percolation should occur..
 
-
+<!---
 ```{block2, hintM5A_1, type='rmdtip2'}
 You may have to convert between storage volumes (m^3^) and heights (m) by multiplying or dividing by area (m^2^).
 ```
+--->
 
 In Excel, there is an initial condition in a box given for you at time step 0. Your equations will start at time step 1. Your whole set of equations will not be finished until you have also completed the evaporation and flows, but you have to start somewhere. 
 
@@ -338,13 +344,23 @@ S_{us(fc)}^{t+1}=\ f_c\left(S_{max}-\ S_{sat}^t\right)
 
 Threshold storage in the unsaturated zone is simply the maximum potential storage capacity in the unsaturated zone multiplied (limited) by the threshold storage parameter.
 
+<!---
 <center>
 \begin{equation}
 \color{grey}{S_{us}^{t+1^\prime}}=\ S_{us}^t+\ P^{t+1} A_{c} 
 (\#eq:module5a-7)
 \end{equation}
 \begin{equation}
- \color{red}{\text{if}}\ \ \ \color{grey}{S_{us}^{{t+1}^\prime}}>\ S_{us(fc)}^{t+1} \ \color{red}{\text{  then  }} \ R_p^{t+1}=\ \color{grey}{S_{us}^{{t+1}^\prime}}-\ S_{us(fc)}^{t+1}  
+ \color{red}{\text{if}}\ \ \ \color{grey}{S_{us}^{{t+1}^\prime}}>\ S_{us(fc)}^{t+1} \ \color{red}{\text{  then  }} \ R_p^{t+1}=\ \color{grey}{S_{us}^{{t+1}^\prime}}-\ S_{us(fc)}^{t+1}
+(\#eq:module5a-8)
+\end{equation}
+</center>
+--->
+<center>
+\begin{equation}
+R_{p}^{t+1} = \left\{\begin{matrix} \color{grey}{S_{us}^{t+1^\prime}}-S_{us(fc)}^{t+1},\ \ &\color{grey}{S_{us}^{{t+1}^\prime}}>\ S_{us(fc)}^{t+1}
+\\ 0,\ \ &S_{us(fc)}^{t+1} \le \color{grey}{S_{us}^{{t+1}^\prime}}
+\end{matrix}\right.
 (\#eq:module5a-8)
 \end{equation}
 </center>
@@ -564,7 +580,7 @@ Saturation excess is simply taken as being zero to the extent that water storage
 
 <center>
 \begin{equation}
-Q_{ie}^t = \left\{\begin{matrix} (P^t-I_{max})A_C,\ \ &{P^t}> I_{max}
+Q_{ie}^t = \left\{\begin{matrix} (P^t-I_{max})A_c,\ \ &{P^t}> I_{max}
 \\ 0,\ \ &{P^t}\le I_{max}
 \end{matrix}\right.
 (\#eq:module5a-25)
@@ -605,6 +621,9 @@ Subsurface runoff is taken to be zero in cases where the total water storage is 
 8) Which flow mechanism contributes the most to the stream? 
 9) What is the dominant ET flux?
 
+These are to be uploaded as per the formatting specified in the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
+
+<!--
 These are in PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
 
 **General professional formatting guidelines:**
@@ -621,4 +640,5 @@ These are in PDF format. No screenshots of figures from Excel/Excel spreadsheets
 - Make sure both axes have visible lines and tick marks
 - Units need to be noted properly with the axis label - 'Temperature (°C)'
 - Round numbers to be reasonable
+-->
 ::::
