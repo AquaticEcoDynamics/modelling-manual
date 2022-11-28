@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Workshop 2 | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Workshop 2 | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -60,15 +60,15 @@
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1.9000/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.1.9000/leaflet-providers-plugin.js"></script>
-<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -83,27 +83,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -112,9 +110,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -147,28 +145,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -188,21 +164,17 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="part"><span><b>I Overview</b></span></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a>
-<ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a><ul>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html"><i class="fa fa-check"></i>Style Guide</a>
-<ul>
-<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#text"><i class="fa fa-check"></i>Text</a>
-<ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html"><i class="fa fa-check"></i>Style Guide</a><ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#text"><i class="fa fa-check"></i>Text</a><ul>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#fonts"><i class="fa fa-check"></i>Fonts</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#paragraphs"><i class="fa fa-check"></i>Paragraphs</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#figures"><i class="fa fa-check"></i>Figures</a>
-<ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#figures"><i class="fa fa-check"></i>Figures</a><ul>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#good-graphs"><i class="fa fa-check"></i>Good Graphs</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#bad-graphs"><i class="fa fa-check"></i>Bad Graphs</a></li>
 </ul></li>
@@ -210,8 +182,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#submissions"><i class="fa fa-check"></i>Submissions</a></li>
 </ul></li>
 <li class="part"><span><b>II Weekly Modules</b></span></li>
-<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
-<ul>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a><ul>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
@@ -221,8 +192,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_8"><i class="fa fa-check"></i>Assessing impacts on lake salinity</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a>
-<ul>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a><ul>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_3"><i class="fa fa-check"></i>Modelling concepts</a></li>
@@ -231,8 +201,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_6"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modelling</a>
-<ul>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modelling</a><ul>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M2_14"><i class="fa fa-check"></i>Module resources</a></li>
@@ -241,8 +210,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_9"><i class="fa fa-check"></i>Case Study 3: Incorporating Greenhouse Gases</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a>
-<ul>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a><ul>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
@@ -253,8 +221,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_7"><i class="fa fa-check"></i>Exercise 4</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_8"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a>
-<ul>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a><ul>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5a_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_3"><i class="fa fa-check"></i>The Water Balance Approach</a></li>
@@ -264,8 +231,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_12"><i class="fa fa-check"></i>Equations</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_21"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a>
-<ul>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a><ul>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5b_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_3"><i class="fa fa-check"></i>Model Overview</a></li>
@@ -273,8 +239,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_10"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a>
-<ul>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a><ul>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_3"><i class="fa fa-check"></i>Advection-Dispersion Reaction</a></li>
@@ -282,19 +247,16 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_6"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a>
-<ul>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a><ul>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_3"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
 <li class="part"><span><b>III Assessment</b></span></li>
-<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html"><i class="fa fa-check"></i>Final Project</a>
-<ul>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html"><i class="fa fa-check"></i>Final Project</a><ul>
 <li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#overview"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#stages"><i class="fa fa-check"></i>Stages</a>
-<ul>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#stages"><i class="fa fa-check"></i>Stages</a><ul>
 <li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#brainstorm"><i class="fa fa-check"></i>Brainstorm</a></li>
 <li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#research-discovery"><i class="fa fa-check"></i>Research &amp; Discovery</a></li>
 <li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#conceptual-model-plan"><i class="fa fa-check"></i>Conceptual Model &amp; Plan</a></li>
@@ -306,18 +268,15 @@ div.csl-indent {
 </ul></li>
 </ul></li>
 <li class="part"><span><b>IV Supporting Material</b></span></li>
-<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html"><i class="fa fa-check"></i>Workshop 2</a>
-<ul>
-<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#visualising-module-1-flow-data"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a>
-<ul>
+<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html"><i class="fa fa-check"></i>Workshop 2</a><ul>
+<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#visualising-module-1-flow-data"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a><ul>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#setting-up"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#importing-and-formatting-the-data"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#graphing-with-ggplot"><i class="fa fa-check"></i>Graphing with ggplot</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#visualising-diversion-scenarios"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#barcharts-and-pipes"><i class="fa fa-check"></i>Barcharts and Pipes</a></li>
-<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#modelling-quokkas-in-r"><i class="fa fa-check"></i>Modelling Quokkas in R</a>
-<ul>
+<li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#modelling-quokkas-in-r"><i class="fa fa-check"></i>Modelling Quokkas in R</a><ul>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#setting-up-1"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#modelling"><i class="fa fa-check"></i>Modelling</a></li>
 <li class="chapter" data-level="" data-path="W2_1.html"><a href="W2_1.html#speeding-things-up"><i class="fa fa-check"></i>Speeding things up</a></li>
@@ -369,7 +328,7 @@ div.csl-indent {
 <li>Type this into the R console</li>
 <li>You only need to do this once</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="W2_1.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</a></code></pre></div>
 </div>
 </div>
 <div id="importing-and-formatting-the-data" class="section level3 unnumbered hasAnchor">
@@ -380,9 +339,9 @@ div.csl-indent {
 <li><code>library(tidyverse)</code> loads all the ‘core’ tidyverse packages</li>
 <li>readxl and lubridate need to be loaded separately</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="W2_1.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="W2_1.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb3-3"><a href="W2_1.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">library</span>(readxl)</a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="kw">library</span>(lubridate)</a></code></pre></div>
 </div>
 <div id="import-the-spreadsheet" class="section level4 unnumbered hasAnchor">
 <h4>Import the spreadsheet<a href="W2_1.html#import-the-spreadsheet" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -390,7 +349,7 @@ div.csl-indent {
 <li>The <code>path</code> argument is relative to you R Studio project file</li>
 <li><code>sheet</code> specifies which Excel sheet to read</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="W2_1.html#cb4-1" aria-hidden="true" tabindex="-1"></a>envFlow  <span class="ot">&lt;-</span> <span class="fu">read_xls</span>(<span class="at">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">envFlow  &lt;-<span class="st"> </span><span class="kw">read_xls</span>(<span class="dt">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="dt">sheet =</span> <span class="dv">1</span>)</a></code></pre></div>
 </div>
 <div id="inspect-the-data" class="section level4 unnumbered hasAnchor">
 <h4>Inspect the data<a href="W2_1.html#inspect-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -398,7 +357,7 @@ div.csl-indent {
 <li><code>head()</code> prints the first few observations</li>
 <li>What data type is <code>date</code>?</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="W2_1.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(envFlow)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">head</span>(envFlow)</a></code></pre></div>
 <pre><code>## # A tibble: 6 × 2
 ##   date       totalDischarge
 ##   &lt;chr&gt;               &lt;dbl&gt;
@@ -414,14 +373,14 @@ div.csl-indent {
 <ul>
 <li>Use lubridate’s <code>ymd()</code> function to overwrite the existing <code>date</code> variable and convert the <strong>character</strong> data to <strong>date</strong> data</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="W2_1.html#cb7-1" aria-hidden="true" tabindex="-1"></a>envFlow<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(envFlow<span class="sc">$</span>date)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">envFlow<span class="op">$</span>date &lt;-<span class="st"> </span><span class="kw">ymd</span>(envFlow<span class="op">$</span>date)</a></code></pre></div>
 </div>
 <div id="inspect-the-data-again" class="section level4 unnumbered hasAnchor">
 <h4>Inspect the data again<a href="W2_1.html#inspect-the-data-again" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Notice the change in data type of <code>date</code></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="W2_1.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(envFlow)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">head</span>(envFlow)</a></code></pre></div>
 <pre><code>## # A tibble: 6 × 2
 ##   date       totalDischarge
 ##   &lt;date&gt;              &lt;dbl&gt;
@@ -437,7 +396,7 @@ div.csl-indent {
 <h3>Graphing with ggplot<a href="W2_1.html#graphing-with-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="call-ggplot" class="section level4 unnumbered hasAnchor">
 <h4>Call <code>ggplot()</code><a href="W2_1.html#call-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="W2_1.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">ggplot</span>() </a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 <div id="define-the-data-and-mapping" class="section level4 unnumbered hasAnchor">
@@ -445,7 +404,7 @@ div.csl-indent {
 <ul>
 <li>The aesthetics (<code>aes()</code>) provide the mapping between variables in the data and the plot’s visual properties</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="W2_1.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge)) </span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) </a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 <div id="add-a-geometry-layer" class="section level4 unnumbered hasAnchor">
@@ -453,8 +412,8 @@ div.csl-indent {
 <ul>
 <li><code>geom_</code> functions tell ggplot how to render each observation</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="W2_1.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="W2_1.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="st">  </span><span class="kw">geom_line</span>() </a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="change-the-geometry" class="section level4 unnumbered hasAnchor">
@@ -462,8 +421,8 @@ div.csl-indent {
 <ul>
 <li>As long as the aesthetics can be mapped to the declared geometry type, ggplot will render the graph</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="W2_1.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
-<span id="cb13-2"><a href="W2_1.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="change-the-colour" class="section level4 unnumbered hasAnchor">
@@ -471,35 +430,35 @@ div.csl-indent {
 <ul>
 <li>Colours can either be hexadecimal codes (e.g. <code>"#0000FF"</code> is blue) or one of <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">R’s reserved colour names</a></li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="W2_1.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="W2_1.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 <div id="fix-the-labels" class="section level4 unnumbered hasAnchor">
 <h4>Fix the labels<a href="W2_1.html#fix-the-labels" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="W2_1.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
-<span id="cb15-2"><a href="W2_1.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="W2_1.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>)</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 </div>
 <div id="change-the-theme" class="section level4 unnumbered hasAnchor">
 <h4>Change the theme<a href="W2_1.html#change-the-theme" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="W2_1.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="W2_1.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="W2_1.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb16-4"><a href="W2_1.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-3" title="3"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-4" title="4"><span class="st">  </span><span class="kw">theme_light</span>()</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
 <div id="customise-the-theme" class="section level4 unnumbered hasAnchor">
 <h4>Customise the theme<a href="W2_1.html#customise-the-theme" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="W2_1.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
-<span id="cb17-2"><a href="W2_1.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="W2_1.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb17-4"><a href="W2_1.html#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb17-5"><a href="W2_1.html#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb17-6"><a href="W2_1.html#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb17-7"><a href="W2_1.html#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
-<span id="cb17-8"><a href="W2_1.html#cb17-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-2" title="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-3" title="3"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-4" title="4"><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-5" title="5"><span class="st">  </span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb17-6" title="6">    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</a>
+<a class="sourceLine" id="cb17-7" title="7">    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</a>
+<a class="sourceLine" id="cb17-8" title="8">  )</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
 <div id="save-the-plot" class="section level4 unnumbered hasAnchor">
@@ -507,12 +466,12 @@ div.csl-indent {
 <ul>
 <li>File types can be changed by modifying the file extensions e.g. <code>"discharge.jpeg"</code></li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="W2_1.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
-<span id="cb18-2"><a href="W2_1.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">filename =</span> <span class="st">&quot;discharge.pdf&quot;</span>,</span>
-<span id="cb18-3"><a href="W2_1.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">2000</span>,</span>
-<span id="cb18-4"><a href="W2_1.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">2000</span>,</span>
-<span id="cb18-5"><a href="W2_1.html#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">units =</span> <span class="st">&#39;px&#39;</span></span>
-<span id="cb18-6"><a href="W2_1.html#cb18-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">ggsave</span>(</a>
+<a class="sourceLine" id="cb18-2" title="2">  <span class="dt">filename =</span> <span class="st">&quot;discharge.pdf&quot;</span>,</a>
+<a class="sourceLine" id="cb18-3" title="3">  <span class="dt">width =</span> <span class="dv">2000</span>,</a>
+<a class="sourceLine" id="cb18-4" title="4">  <span class="dt">height =</span> <span class="dv">2000</span>,</a>
+<a class="sourceLine" id="cb18-5" title="5">  <span class="dt">units =</span> <span class="st">&#39;px&#39;</span></a>
+<a class="sourceLine" id="cb18-6" title="6">  )</a></code></pre></div>
 </div>
 </div>
 </div>
@@ -525,14 +484,14 @@ div.csl-indent {
 <li><code>aes()</code> can be passed to either <code>ggplot()</code> or a specific <code>geom_</code></li>
 <li>Aesthetics supplied to <code>ggplot()</code> are used as defaults for every layer</li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="W2_1.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb19-2"><a href="W2_1.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge), <span class="at">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb19-3"><a href="W2_1.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb19-4"><a href="W2_1.html#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb19-5"><a href="W2_1.html#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb19-6"><a href="W2_1.html#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb19-7"><a href="W2_1.html#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
-<span id="cb19-8"><a href="W2_1.html#cb19-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb19-2" title="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb19-3" title="3"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb19-4" title="4"><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb19-5" title="5"><span class="st">  </span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb19-6" title="6">    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</a>
+<a class="sourceLine" id="cb19-7" title="7">    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</a>
+<a class="sourceLine" id="cb19-8" title="8">  )</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 </div>
 <div id="add-a-second-geometry" class="section level4 unnumbered hasAnchor">
@@ -540,31 +499,31 @@ div.csl-indent {
 <ul>
 <li><code>geom_rect()</code> has two dimensions and therefore reques different aesthetic mappings</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="W2_1.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb20-2"><a href="W2_1.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge), <span class="at">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb20-3"><a href="W2_1.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rect</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">xmin=</span><span class="fu">min</span>(envFlow<span class="sc">$</span>date),<span class="at">xmax=</span><span class="fu">max</span>(envFlow<span class="sc">$</span>date), <span class="at">ymin=</span><span class="dv">50</span>, <span class="at">ymax=</span><span class="dv">550</span>))<span class="sc">+</span></span>
-<span id="cb20-4"><a href="W2_1.html#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb20-5"><a href="W2_1.html#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb20-6"><a href="W2_1.html#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb20-7"><a href="W2_1.html#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb20-8"><a href="W2_1.html#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
-<span id="cb20-9"><a href="W2_1.html#cb20-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-3" title="3"><span class="st">  </span><span class="kw">geom_rect</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">xmin=</span><span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="dt">xmax=</span><span class="kw">max</span>(envFlow<span class="op">$</span>date), <span class="dt">ymin=</span><span class="dv">50</span>, <span class="dt">ymax=</span><span class="dv">550</span>))<span class="op">+</span></a>
+<a class="sourceLine" id="cb20-4" title="4"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-5" title="5"><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-6" title="6"><span class="st">  </span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb20-7" title="7">    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</a>
+<a class="sourceLine" id="cb20-8" title="8">    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</a>
+<a class="sourceLine" id="cb20-9" title="9">  )</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 </div>
 <div id="customise-the-geometry" class="section level4 unnumbered hasAnchor">
 <h4>Customise the geometry<a href="W2_1.html#customise-the-geometry" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="W2_1.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb21-2"><a href="W2_1.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge), <span class="at">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb21-3"><a href="W2_1.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rect</span>(</span>
-<span id="cb21-4"><a href="W2_1.html#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">xmin=</span><span class="fu">min</span>(envFlow<span class="sc">$</span>date),<span class="at">xmax=</span><span class="fu">max</span>(envFlow<span class="sc">$</span>date), <span class="at">ymin=</span><span class="dv">50</span>, <span class="at">ymax=</span><span class="dv">550</span>),</span>
-<span id="cb21-5"><a href="W2_1.html#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.25</span></span>
-<span id="cb21-6"><a href="W2_1.html#cb21-6" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
-<span id="cb21-7"><a href="W2_1.html#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb21-8"><a href="W2_1.html#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb21-9"><a href="W2_1.html#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb21-10"><a href="W2_1.html#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb21-11"><a href="W2_1.html#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
-<span id="cb21-12"><a href="W2_1.html#cb21-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb21-3" title="3"><span class="st">  </span><span class="kw">geom_rect</span>(</a>
+<a class="sourceLine" id="cb21-4" title="4">    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">xmin=</span><span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="dt">xmax=</span><span class="kw">max</span>(envFlow<span class="op">$</span>date), <span class="dt">ymin=</span><span class="dv">50</span>, <span class="dt">ymax=</span><span class="dv">550</span>),</a>
+<a class="sourceLine" id="cb21-5" title="5">    <span class="dt">alpha =</span> <span class="fl">0.25</span></a>
+<a class="sourceLine" id="cb21-6" title="6">  )<span class="op">+</span></a>
+<a class="sourceLine" id="cb21-7" title="7"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb21-8" title="8"><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb21-9" title="9"><span class="st">  </span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb21-10" title="10">    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</a>
+<a class="sourceLine" id="cb21-11" title="11">    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</a>
+<a class="sourceLine" id="cb21-12" title="12">  )</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 </div>
 <div id="add-a-legend" class="section level4 unnumbered hasAnchor">
@@ -573,18 +532,18 @@ div.csl-indent {
 <li>By specifying <code>fill</code> inside the aesthetics, ggplot <em>maps</em> this information to the geom’s fill (i.e. the colour fill)</li>
 <li>Usually a grouping variable from the data would be provided here i.e. a column that classifies your data into different groups</li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="W2_1.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb22-2"><a href="W2_1.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge), <span class="at">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb22-3"><a href="W2_1.html#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rect</span>(</span>
-<span id="cb22-4"><a href="W2_1.html#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">xmin=</span><span class="fu">min</span>(envFlow<span class="sc">$</span>date),<span class="at">xmax=</span><span class="fu">max</span>(envFlow<span class="sc">$</span>date), <span class="at">ymin=</span><span class="dv">50</span>, <span class="at">ymax=</span><span class="dv">550</span>, <span class="at">fill =</span> <span class="st">&quot;Diversion Scenario 1&quot;</span>),</span>
-<span id="cb22-5"><a href="W2_1.html#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.25</span></span>
-<span id="cb22-6"><a href="W2_1.html#cb22-6" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
-<span id="cb22-7"><a href="W2_1.html#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb22-8"><a href="W2_1.html#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb22-9"><a href="W2_1.html#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb22-10"><a href="W2_1.html#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb22-11"><a href="W2_1.html#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
-<span id="cb22-12"><a href="W2_1.html#cb22-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb22-2" title="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb22-3" title="3"><span class="st">  </span><span class="kw">geom_rect</span>(</a>
+<a class="sourceLine" id="cb22-4" title="4">    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">xmin=</span><span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="dt">xmax=</span><span class="kw">max</span>(envFlow<span class="op">$</span>date), <span class="dt">ymin=</span><span class="dv">50</span>, <span class="dt">ymax=</span><span class="dv">550</span>, <span class="dt">fill =</span> <span class="st">&quot;Diversion Scenario 1&quot;</span>),</a>
+<a class="sourceLine" id="cb22-5" title="5">    <span class="dt">alpha =</span> <span class="fl">0.25</span></a>
+<a class="sourceLine" id="cb22-6" title="6">  )<span class="op">+</span></a>
+<a class="sourceLine" id="cb22-7" title="7"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb22-8" title="8"><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb22-9" title="9"><span class="st">  </span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb22-10" title="10">    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</a>
+<a class="sourceLine" id="cb22-11" title="11">    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</a>
+<a class="sourceLine" id="cb22-12" title="12">  )</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 </div>
 <div id="customise-the-legend" class="section level4 unnumbered hasAnchor">
@@ -592,58 +551,58 @@ div.csl-indent {
 <ul>
 <li>ggplot automatically assigns the colours, change this with <code>scale_fill_manual()</code></li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="W2_1.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb23-2"><a href="W2_1.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge), <span class="at">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb23-3"><a href="W2_1.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rect</span>(</span>
-<span id="cb23-4"><a href="W2_1.html#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">xmin=</span><span class="fu">min</span>(envFlow<span class="sc">$</span>date),<span class="at">xmax=</span><span class="fu">max</span>(envFlow<span class="sc">$</span>date), <span class="at">ymin=</span><span class="dv">50</span>, <span class="at">ymax=</span><span class="dv">550</span>, <span class="at">fill =</span> <span class="st">&quot;Diversion Scenario 1&quot;</span>),</span>
-<span id="cb23-5"><a href="W2_1.html#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.25</span></span>
-<span id="cb23-6"><a href="W2_1.html#cb23-6" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
-<span id="cb23-7"><a href="W2_1.html#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb23-8"><a href="W2_1.html#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb23-9"><a href="W2_1.html#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb23-10"><a href="W2_1.html#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb23-11"><a href="W2_1.html#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb23-12"><a href="W2_1.html#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
-<span id="cb23-13"><a href="W2_1.html#cb23-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb23-14"><a href="W2_1.html#cb23-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-3" title="3"><span class="st">  </span><span class="kw">geom_rect</span>(</a>
+<a class="sourceLine" id="cb23-4" title="4">    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">xmin=</span><span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="dt">xmax=</span><span class="kw">max</span>(envFlow<span class="op">$</span>date), <span class="dt">ymin=</span><span class="dv">50</span>, <span class="dt">ymax=</span><span class="dv">550</span>, <span class="dt">fill =</span> <span class="st">&quot;Diversion Scenario 1&quot;</span>),</a>
+<a class="sourceLine" id="cb23-5" title="5">    <span class="dt">alpha =</span> <span class="fl">0.25</span></a>
+<a class="sourceLine" id="cb23-6" title="6">  )<span class="op">+</span></a>
+<a class="sourceLine" id="cb23-7" title="7"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb23-8" title="8"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-9" title="9"><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-10" title="10"><span class="st">  </span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb23-11" title="11">    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</a>
+<a class="sourceLine" id="cb23-12" title="12">    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>),</a>
+<a class="sourceLine" id="cb23-13" title="13">    <span class="dt">legend.title =</span> <span class="kw">element_blank</span>()</a>
+<a class="sourceLine" id="cb23-14" title="14">  )</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 </div>
 <div id="move-the-legend" class="section level4 unnumbered hasAnchor">
 <h4>Move the legend<a href="W2_1.html#move-the-legend" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="W2_1.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb24-2"><a href="W2_1.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> envFlow, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> totalDischarge), <span class="at">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb24-3"><a href="W2_1.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rect</span>(</span>
-<span id="cb24-4"><a href="W2_1.html#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">xmin=</span><span class="fu">min</span>(envFlow<span class="sc">$</span>date),<span class="at">xmax=</span><span class="fu">max</span>(envFlow<span class="sc">$</span>date), <span class="at">ymin=</span><span class="dv">50</span>, <span class="at">ymax=</span><span class="dv">550</span>, <span class="at">fill =</span> <span class="st">&quot;Diversion Scenario 1&quot;</span>),</span>
-<span id="cb24-5"><a href="W2_1.html#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.25</span></span>
-<span id="cb24-6"><a href="W2_1.html#cb24-6" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
-<span id="cb24-7"><a href="W2_1.html#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb24-8"><a href="W2_1.html#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb24-9"><a href="W2_1.html#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb24-10"><a href="W2_1.html#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb24-11"><a href="W2_1.html#cb24-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb24-12"><a href="W2_1.html#cb24-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
-<span id="cb24-13"><a href="W2_1.html#cb24-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb24-14"><a href="W2_1.html#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>,</span>
-<span id="cb24-15"><a href="W2_1.html#cb24-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.justification =</span> <span class="st">&quot;right&quot;</span></span>
-<span id="cb24-16"><a href="W2_1.html#cb24-16" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb24-3" title="3"><span class="st">  </span><span class="kw">geom_rect</span>(</a>
+<a class="sourceLine" id="cb24-4" title="4">    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">xmin=</span><span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="dt">xmax=</span><span class="kw">max</span>(envFlow<span class="op">$</span>date), <span class="dt">ymin=</span><span class="dv">50</span>, <span class="dt">ymax=</span><span class="dv">550</span>, <span class="dt">fill =</span> <span class="st">&quot;Diversion Scenario 1&quot;</span>),</a>
+<a class="sourceLine" id="cb24-5" title="5">    <span class="dt">alpha =</span> <span class="fl">0.25</span></a>
+<a class="sourceLine" id="cb24-6" title="6">  )<span class="op">+</span></a>
+<a class="sourceLine" id="cb24-7" title="7"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb24-8" title="8"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb24-9" title="9"><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb24-10" title="10"><span class="st">  </span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb24-11" title="11">    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</a>
+<a class="sourceLine" id="cb24-12" title="12">    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>),</a>
+<a class="sourceLine" id="cb24-13" title="13">    <span class="dt">legend.title =</span> <span class="kw">element_blank</span>(),</a>
+<a class="sourceLine" id="cb24-14" title="14">    <span class="dt">legend.position =</span> <span class="st">&quot;top&quot;</span>,</a>
+<a class="sourceLine" id="cb24-15" title="15">    <span class="dt">legend.justification =</span> <span class="st">&quot;right&quot;</span></a>
+<a class="sourceLine" id="cb24-16" title="16">  )</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 </div>
 <div id="save-the-plot-1" class="section level4 unnumbered hasAnchor">
 <h4>Save the plot<a href="W2_1.html#save-the-plot-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="W2_1.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
-<span id="cb25-2"><a href="W2_1.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">filename =</span> <span class="st">&quot;dischargeDiversion1.pdf&quot;</span>,</span>
-<span id="cb25-3"><a href="W2_1.html#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">297</span>,</span>
-<span id="cb25-4"><a href="W2_1.html#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">210</span>,</span>
-<span id="cb25-5"><a href="W2_1.html#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">units =</span> <span class="st">&#39;mm&#39;</span>,</span>
-<span id="cb25-6"><a href="W2_1.html#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale =</span> <span class="fl">0.8</span></span>
-<span id="cb25-7"><a href="W2_1.html#cb25-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">ggsave</span>(</a>
+<a class="sourceLine" id="cb25-2" title="2">  <span class="dt">filename =</span> <span class="st">&quot;dischargeDiversion1.pdf&quot;</span>,</a>
+<a class="sourceLine" id="cb25-3" title="3">  <span class="dt">width =</span> <span class="dv">297</span>,</a>
+<a class="sourceLine" id="cb25-4" title="4">  <span class="dt">height =</span> <span class="dv">210</span>,</a>
+<a class="sourceLine" id="cb25-5" title="5">  <span class="dt">units =</span> <span class="st">&#39;mm&#39;</span>,</a>
+<a class="sourceLine" id="cb25-6" title="6">  <span class="dt">scale =</span> <span class="fl">0.8</span></a>
+<a class="sourceLine" id="cb25-7" title="7">  )</a></code></pre></div>
 </div>
 </div>
 <div id="barcharts-and-pipes" class="section level2 unnumbered hasAnchor">
 <h2>Barcharts and Pipes<a href="W2_1.html#barcharts-and-pipes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="reload-the-data" class="section level4 unnumbered hasAnchor">
 <h4>Reload the data<a href="W2_1.html#reload-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="W2_1.html#cb26-1" aria-hidden="true" tabindex="-1"></a>envFlow  <span class="ot">&lt;-</span> <span class="fu">read_xls</span>(<span class="at">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">envFlow  &lt;-<span class="st"> </span><span class="kw">read_xls</span>(<span class="dt">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="dt">sheet =</span> <span class="dv">1</span>)</a></code></pre></div>
 </div>
 <div id="use-pipes-and-mutate-to-reformat-the-date" class="section level4 unnumbered hasAnchor">
 <h4>Use pipes and <code>mutate()</code> to reformat the date<a href="W2_1.html#use-pipes-and-mutate-to-reformat-the-date" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -651,10 +610,10 @@ div.csl-indent {
 <li>The pipe (<code>%&gt;%</code>) operator takes the output from one function and makes it the input of the next</li>
 <li>Pipes can be used across the tidyverse when working with tidy data</li>
 <li><code>mutate()</code> is used to add or remove variables when working with pipes</li>
-<li>This is the same as <code>envFlow$date &lt;- ymd(envFlow$date)</code> but it’s ‘pipeable!’</li>
+<li>This is the same as <code>envFlow$date &lt;- ymd(envFlow$date)</code> but it’s ‘pipeable’!</li>
 </ul>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="W2_1.html#cb27-1" aria-hidden="true" tabindex="-1"></a>envFlow <span class="sc">%&gt;%</span> </span>
-<span id="cb27-2"><a href="W2_1.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date)) </span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1">envFlow <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) </a></code></pre></div>
 <pre><code>## # A tibble: 6,940 × 2
 ##    date       totalDischarge
 ##    &lt;date&gt;              &lt;dbl&gt;
@@ -668,17 +627,16 @@ div.csl-indent {
 ##  8 1992-01-08           26.8
 ##  9 1992-01-09           26.7
 ## 10 1992-01-10           26.0
-## # … with 6,930 more rows
-## # ℹ Use `print(n = ...)` to see more rows</code></pre>
+## # … with 6,930 more rows</code></pre>
 </div>
 <div id="extract-the-years" class="section level4 unnumbered hasAnchor">
 <h4>Extract the years<a href="W2_1.html#extract-the-years" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><code>year()</code> returns the numerical year from date formatted data</li>
 </ul>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="W2_1.html#cb29-1" aria-hidden="true" tabindex="-1"></a>envFlow <span class="sc">%&gt;%</span> </span>
-<span id="cb29-2"><a href="W2_1.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date)) <span class="sc">%&gt;%</span> </span>
-<span id="cb29-3"><a href="W2_1.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date))</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">envFlow <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb29-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">year =</span> <span class="kw">year</span>(date))</a></code></pre></div>
 <pre><code>## # A tibble: 6,940 × 3
 ##    date       totalDischarge  year
 ##    &lt;date&gt;              &lt;dbl&gt; &lt;dbl&gt;
@@ -692,15 +650,14 @@ div.csl-indent {
 ##  8 1992-01-08           26.8  1992
 ##  9 1992-01-09           26.7  1992
 ## 10 1992-01-10           26.0  1992
-## # … with 6,930 more rows
-## # ℹ Use `print(n = ...)` to see more rows</code></pre>
+## # … with 6,930 more rows</code></pre>
 </div>
 <div id="pipes-are-non-destructive" class="section level4 unnumbered hasAnchor">
 <h4>Pipes are non-destructive<a href="W2_1.html#pipes-are-non-destructive" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Notice how <code>envFlow</code> is unchanged? This is useful when performing ‘data exploration’ as the original dataframe never altered</li>
 </ul>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="W2_1.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(envFlow)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">head</span>(envFlow)</a></code></pre></div>
 <pre><code>## # A tibble: 6 × 2
 ##   date       totalDischarge
 ##   &lt;chr&gt;               &lt;dbl&gt;
@@ -716,11 +673,11 @@ div.csl-indent {
 <ul>
 <li>Group the data by new <code>year</code> column and calculate summary statistics with <code>summarise()</code></li>
 </ul>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="W2_1.html#cb33-1" aria-hidden="true" tabindex="-1"></a>envFlow <span class="sc">%&gt;%</span> </span>
-<span id="cb33-2"><a href="W2_1.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date)) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-3"><a href="W2_1.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date)) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-4"><a href="W2_1.html#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-5"><a href="W2_1.html#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">totalDischarge =</span> <span class="fu">sum</span>(totalDischarge))</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">envFlow <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">year =</span> <span class="kw">year</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-4" title="4"><span class="st">  </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-5" title="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">totalDischarge =</span> <span class="kw">sum</span>(totalDischarge))</a></code></pre></div>
 <pre><code>## # A tibble: 19 × 2
 ##     year totalDischarge
 ##    &lt;dbl&gt;          &lt;dbl&gt;
@@ -750,47 +707,47 @@ div.csl-indent {
 <li>Pipe this into <code>ggplot()</code></li>
 <li>Note that we don’t need to specify the <code>data</code> argument to <code>ggplot()</code></li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="W2_1.html#cb35-1" aria-hidden="true" tabindex="-1"></a>envFlow <span class="sc">%&gt;%</span> </span>
-<span id="cb35-2"><a href="W2_1.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date)) <span class="sc">%&gt;%</span> </span>
-<span id="cb35-3"><a href="W2_1.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date)) <span class="sc">%&gt;%</span> </span>
-<span id="cb35-4"><a href="W2_1.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb35-5"><a href="W2_1.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">totalDischarge =</span> <span class="fu">sum</span>(totalDischarge)) <span class="sc">%&gt;%</span> </span>
-<span id="cb35-6"><a href="W2_1.html#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
-<span id="cb35-7"><a href="W2_1.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">envFlow <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb35-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb35-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">year =</span> <span class="kw">year</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb35-4" title="4"><span class="st">  </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb35-5" title="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">totalDischarge =</span> <span class="kw">sum</span>(totalDischarge)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb35-6" title="6"><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb35-7" title="7"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 </div>
 <div id="apply-the-previous-theme" class="section level4 unnumbered hasAnchor">
 <h4>Apply the previous theme<a href="W2_1.html#apply-the-previous-theme" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="W2_1.html#cb36-1" aria-hidden="true" tabindex="-1"></a>envFlow <span class="sc">%&gt;%</span> </span>
-<span id="cb36-2"><a href="W2_1.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date)) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-3"><a href="W2_1.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date)) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-4"><a href="W2_1.html#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-5"><a href="W2_1.html#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">totalDischarge =</span> <span class="fu">sum</span>(totalDischarge)) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-6"><a href="W2_1.html#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
-<span id="cb36-7"><a href="W2_1.html#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb36-8"><a href="W2_1.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&#39;Total Discharge (ML)&#39;</span>)<span class="sc">+</span></span>
-<span id="cb36-9"><a href="W2_1.html#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb36-10"><a href="W2_1.html#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb36-11"><a href="W2_1.html#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb36-12"><a href="W2_1.html#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
-<span id="cb36-13"><a href="W2_1.html#cb36-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1">envFlow <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb36-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb36-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">year =</span> <span class="kw">year</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb36-4" title="4"><span class="st">  </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb36-5" title="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">totalDischarge =</span> <span class="kw">sum</span>(totalDischarge)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb36-6" title="6"><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb36-7" title="7"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb36-8" title="8"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Year&quot;</span>, <span class="dt">y =</span> <span class="st">&#39;Total Discharge (ML)&#39;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb36-9" title="9"><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb36-10" title="10"><span class="st">  </span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb36-11" title="11">    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</a>
+<a class="sourceLine" id="cb36-12" title="12">    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</a>
+<a class="sourceLine" id="cb36-13" title="13">  )</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 </div>
 <div id="recap" class="section level4 unnumbered hasAnchor">
 <h4>Recap<a href="W2_1.html#recap" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="W2_1.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_xls</span>(<span class="at">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="at">sheet =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb37-2"><a href="W2_1.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date)) <span class="sc">%&gt;%</span> </span>
-<span id="cb37-3"><a href="W2_1.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date)) <span class="sc">%&gt;%</span> </span>
-<span id="cb37-4"><a href="W2_1.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb37-5"><a href="W2_1.html#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">totalDischarge =</span> <span class="fu">sum</span>(totalDischarge)) <span class="sc">%&gt;%</span> </span>
-<span id="cb37-6"><a href="W2_1.html#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> totalDischarge)) <span class="sc">+</span></span>
-<span id="cb37-7"><a href="W2_1.html#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="sc">+</span></span>
-<span id="cb37-8"><a href="W2_1.html#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&#39;Total Discharge (ML)&#39;</span>)<span class="sc">+</span></span>
-<span id="cb37-9"><a href="W2_1.html#cb37-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb37-10"><a href="W2_1.html#cb37-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb37-11"><a href="W2_1.html#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb37-12"><a href="W2_1.html#cb37-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
-<span id="cb37-13"><a href="W2_1.html#cb37-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">read_xls</span>(<span class="dt">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="dt">sheet =</span> <span class="dv">1</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb37-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">year =</span> <span class="kw">year</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb37-4" title="4"><span class="st">  </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb37-5" title="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">totalDischarge =</span> <span class="kw">sum</span>(totalDischarge)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb37-6" title="6"><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb37-7" title="7"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb37-8" title="8"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Year&quot;</span>, <span class="dt">y =</span> <span class="st">&#39;Total Discharge (ML)&#39;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb37-9" title="9"><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb37-10" title="10"><span class="st">  </span><span class="kw">theme</span>(</a>
+<a class="sourceLine" id="cb37-11" title="11">    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</a>
+<a class="sourceLine" id="cb37-12" title="12">    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</a>
+<a class="sourceLine" id="cb37-13" title="13">  )</a></code></pre></div>
 </div>
 </div>
 <div id="modelling-quokkas-in-r" class="section level2 unnumbered hasAnchor">
@@ -803,15 +760,15 @@ div.csl-indent {
 <li>Go <em>File -&gt; New File -&gt; R Script</em></li>
 <li>Load the tidyverse</li>
 </ul>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="W2_1.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 </div>
 <div id="declare-the-constants-as-variables" class="section level4 unnumbered hasAnchor">
 <h4>Declare the constants as variables<a href="W2_1.html#declare-the-constants-as-variables" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="W2_1.html#cb39-1" aria-hidden="true" tabindex="-1"></a>birthRate  <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb39-2"><a href="W2_1.html#cb39-2" aria-hidden="true" tabindex="-1"></a>deathRate  <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
-<span id="cb39-3"><a href="W2_1.html#cb39-3" aria-hidden="true" tabindex="-1"></a>timestep  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># i.e. 1 year</span></span>
-<span id="cb39-4"><a href="W2_1.html#cb39-4" aria-hidden="true" tabindex="-1"></a>timeMax <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb39-5"><a href="W2_1.html#cb39-5" aria-hidden="true" tabindex="-1"></a>carryCap  <span class="ot">&lt;-</span> <span class="dv">10000</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1">birthRate  &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb39-2" title="2">deathRate  &lt;-<span class="st"> </span><span class="fl">0.1</span></a>
+<a class="sourceLine" id="cb39-3" title="3">timestep  &lt;-<span class="st"> </span><span class="dv">1</span> <span class="co"># i.e. 1 year</span></a>
+<a class="sourceLine" id="cb39-4" title="4">timeMax &lt;-<span class="st"> </span><span class="dv">30</span></a>
+<a class="sourceLine" id="cb39-5" title="5">carryCap  &lt;-<span class="st"> </span><span class="dv">10000</span></a></code></pre></div>
 </div>
 <div id="create-a-new-data-frame-of-the-initial-values" class="section level4 unnumbered hasAnchor">
 <h4>Create a new data frame of the initial values<a href="W2_1.html#create-a-new-data-frame-of-the-initial-values" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -820,14 +777,14 @@ div.csl-indent {
 <li><code>year</code>, <code>relativeCarryCap</code>, <code>quokkaRate</code>, and <code>quokkaRate</code> will be created as new columns in that table</li>
 <li>Inspect <code>model</code> with the <code>head()</code> function</li>
 </ul>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="W2_1.html#cb40-1" aria-hidden="true" tabindex="-1"></a>model  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb40-2"><a href="W2_1.html#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="dv">1</span>,</span>
-<span id="cb40-3"><a href="W2_1.html#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">relativeCarryCap  =</span> <span class="cn">NA</span>,</span>
-<span id="cb40-4"><a href="W2_1.html#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">quokkaRate =</span> <span class="cn">NA</span>,</span>
-<span id="cb40-5"><a href="W2_1.html#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">quokkaPop =</span> <span class="dv">5</span></span>
-<span id="cb40-6"><a href="W2_1.html#cb40-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb40-7"><a href="W2_1.html#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-8"><a href="W2_1.html#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">model  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb40-2" title="2">    <span class="dt">year =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb40-3" title="3">    <span class="dt">relativeCarryCap  =</span> <span class="ot">NA</span>,</a>
+<a class="sourceLine" id="cb40-4" title="4">    <span class="dt">quokkaRate =</span> <span class="ot">NA</span>,</a>
+<a class="sourceLine" id="cb40-5" title="5">    <span class="dt">quokkaPop =</span> <span class="dv">5</span></a>
+<a class="sourceLine" id="cb40-6" title="6">)</a>
+<a class="sourceLine" id="cb40-7" title="7"></a>
+<a class="sourceLine" id="cb40-8" title="8"><span class="kw">head</span>(model)</a></code></pre></div>
 <pre><code>##   year relativeCarryCap quokkaRate quokkaPop
 ## 1    1               NA         NA         5</code></pre>
 </div>
@@ -840,36 +797,36 @@ div.csl-indent {
 <ul>
 <li><code>year</code>takes a value of 2</li>
 </ul>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="W2_1.html#cb42-1" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">year &lt;-<span class="st"> </span><span class="dv">2</span></a></code></pre></div>
 <ul>
 <li><code>relativeCarryCap</code> is the result of the previous quokka population divided by the carrying capacity</li>
 <li><code>model$quokkaPop[1]</code> specifies the population in the previous row (row 1) i.e. the previous time step</li>
 </ul>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="W2_1.html#cb43-1" aria-hidden="true" tabindex="-1"></a>relativeCarryCap  <span class="ot">&lt;-</span>  model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]<span class="sc">/</span>carryCap</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1">relativeCarryCap  &lt;-<span class="st">  </span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]<span class="op">/</span>carryCap</a></code></pre></div>
 <ul>
 <li><code>quokkaRate</code> and <code>quokkaPop</code> are calculated in the same fashion i.e. using the constants and values in the previous row of the <code>model</code> data frame</li>
 </ul>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="W2_1.html#cb44-1" aria-hidden="true" tabindex="-1"></a>quokkaRate <span class="ot">&lt;-</span> timestep<span class="sc">*</span>((<span class="dv">1</span><span class="sc">-</span>relativeCarryCap)<span class="sc">*</span>birthRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]<span class="sc">-</span>(deathRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]))</span>
-<span id="cb44-2"><a href="W2_1.html#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-3"><a href="W2_1.html#cb44-3" aria-hidden="true" tabindex="-1"></a>quokkaPop <span class="ot">&lt;-</span>  quokkaRate<span class="sc">+</span>model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1">quokkaRate &lt;-<span class="st"> </span>timestep<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span>relativeCarryCap)<span class="op">*</span>birthRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]<span class="op">-</span>(deathRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]))</a>
+<a class="sourceLine" id="cb44-2" title="2"></a>
+<a class="sourceLine" id="cb44-3" title="3">quokkaPop &lt;-<span class="st">  </span>quokkaRate<span class="op">+</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]</a></code></pre></div>
 <ul>
 <li>Next, we’ll create an identical data frame to <code>model</code> with our new values</li>
 </ul>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="W2_1.html#cb45-1" aria-hidden="true" tabindex="-1"></a>model_temp  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb45-2"><a href="W2_1.html#cb45-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">year =</span> year,</span>
-<span id="cb45-3"><a href="W2_1.html#cb45-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">relativeCarryCap =</span> relativeCarryCap,</span>
-<span id="cb45-4"><a href="W2_1.html#cb45-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaRate =</span> quokkaRate,</span>
-<span id="cb45-5"><a href="W2_1.html#cb45-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaPop =</span> quokkaPop</span>
-<span id="cb45-6"><a href="W2_1.html#cb45-6" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb45-7"><a href="W2_1.html#cb45-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-8"><a href="W2_1.html#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(model_temp)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1">model_temp  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb45-2" title="2">        <span class="dt">year =</span> year,</a>
+<a class="sourceLine" id="cb45-3" title="3">        <span class="dt">relativeCarryCap =</span> relativeCarryCap,</a>
+<a class="sourceLine" id="cb45-4" title="4">        <span class="dt">quokkaRate =</span> quokkaRate,</a>
+<a class="sourceLine" id="cb45-5" title="5">        <span class="dt">quokkaPop =</span> quokkaPop</a>
+<a class="sourceLine" id="cb45-6" title="6">    )</a>
+<a class="sourceLine" id="cb45-7" title="7"></a>
+<a class="sourceLine" id="cb45-8" title="8"><span class="kw">head</span>(model_temp)</a></code></pre></div>
 <pre><code>##   year relativeCarryCap quokkaRate quokkaPop
 ## 1    2            5e-04     4.4975    9.4975</code></pre>
 <ul>
 <li>We can append this time step to <code>model</code> by using the <code>rbind()</code> function</li>
 </ul>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="W2_1.html#cb47-1" aria-hidden="true" tabindex="-1"></a>model  <span class="ot">&lt;-</span> <span class="fu">rbind</span>(model,model_temp)</span>
-<span id="cb47-2"><a href="W2_1.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1">model  &lt;-<span class="st"> </span><span class="kw">rbind</span>(model,model_temp)</a>
+<a class="sourceLine" id="cb47-2" title="2"><span class="kw">head</span>(model)</a></code></pre></div>
 <pre><code>##   year relativeCarryCap quokkaRate quokkaPop
 ## 1    1               NA         NA    5.0000
 ## 2    2            5e-04     4.4975    9.4975</code></pre>
@@ -878,31 +835,32 @@ div.csl-indent {
 <div id="speeding-things-up" class="section level3 unnumbered hasAnchor">
 <h3>Speeding things up<a href="W2_1.html#speeding-things-up" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Want to repeat that process for the next 29 time steps? Probably not. Let’s create a loop that iterates through each year, calculates the new values, and appends them to the <code>model</code> data frame.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="W2_1.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>timeMax){</span>
-<span id="cb49-2"><a href="W2_1.html#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-3"><a href="W2_1.html#cb49-3" aria-hidden="true" tabindex="-1"></a>    year  <span class="ot">&lt;-</span> i</span>
-<span id="cb49-4"><a href="W2_1.html#cb49-4" aria-hidden="true" tabindex="-1"></a>    relativeCarryCap  <span class="ot">&lt;-</span>  model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="sc">/</span>carryCap</span>
-<span id="cb49-5"><a href="W2_1.html#cb49-5" aria-hidden="true" tabindex="-1"></a>    quokkaRate <span class="ot">=</span> timestep<span class="sc">*</span>((<span class="dv">1</span><span class="sc">-</span>relativeCarryCap)<span class="sc">*</span>birthRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="sc">-</span>(deathRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]))</span>
-<span id="cb49-6"><a href="W2_1.html#cb49-6" aria-hidden="true" tabindex="-1"></a>    quokkaPop <span class="ot">=</span> quokkaRate<span class="sc">+</span>model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]</span>
-<span id="cb49-7"><a href="W2_1.html#cb49-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-8"><a href="W2_1.html#cb49-8" aria-hidden="true" tabindex="-1"></a>    model_temp  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb49-9"><a href="W2_1.html#cb49-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">year =</span> year,</span>
-<span id="cb49-10"><a href="W2_1.html#cb49-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">relativeCarryCap =</span> relativeCarryCap,</span>
-<span id="cb49-11"><a href="W2_1.html#cb49-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaRate =</span> quokkaRate,</span>
-<span id="cb49-12"><a href="W2_1.html#cb49-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaPop =</span> quokkaPop</span>
-<span id="cb49-13"><a href="W2_1.html#cb49-13" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb49-14"><a href="W2_1.html#cb49-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-15"><a href="W2_1.html#cb49-15" aria-hidden="true" tabindex="-1"></a>    model  <span class="ot">&lt;-</span> <span class="fu">rbind</span>(model,model_temp)</span>
-<span id="cb49-16"><a href="W2_1.html#cb49-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-17"><a href="W2_1.html#cb49-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span>timeMax){</a>
+<a class="sourceLine" id="cb49-2" title="2"></a>
+<a class="sourceLine" id="cb49-3" title="3">    year  &lt;-<span class="st"> </span>i</a>
+<a class="sourceLine" id="cb49-4" title="4">    relativeCarryCap  &lt;-<span class="st">  </span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="op">/</span>carryCap</a>
+<a class="sourceLine" id="cb49-5" title="5">    quokkaRate =<span class="st"> </span>timestep<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span>relativeCarryCap)<span class="op">*</span>birthRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="op">-</span>(deathRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]))</a>
+<a class="sourceLine" id="cb49-6" title="6">    quokkaPop =<span class="st"> </span>quokkaRate<span class="op">+</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]</a>
+<a class="sourceLine" id="cb49-7" title="7"></a>
+<a class="sourceLine" id="cb49-8" title="8">    model_temp  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb49-9" title="9">        <span class="dt">year =</span> year,</a>
+<a class="sourceLine" id="cb49-10" title="10">        <span class="dt">relativeCarryCap =</span> relativeCarryCap,</a>
+<a class="sourceLine" id="cb49-11" title="11">        <span class="dt">quokkaRate =</span> quokkaRate,</a>
+<a class="sourceLine" id="cb49-12" title="12">        <span class="dt">quokkaPop =</span> quokkaPop</a>
+<a class="sourceLine" id="cb49-13" title="13">    )</a>
+<a class="sourceLine" id="cb49-14" title="14"></a>
+<a class="sourceLine" id="cb49-15" title="15">    model  &lt;-<span class="st"> </span><span class="kw">rbind</span>(model,model_temp)</a>
+<a class="sourceLine" id="cb49-16" title="16"></a>
+<a class="sourceLine" id="cb49-17" title="17">}</a></code></pre></div>
 </div>
 <div id="visualise-the-modelled-populations-with-ggplot" class="section level3 unnumbered hasAnchor">
 <h3>Visualise the modelled populations with ggplot<a href="W2_1.html#visualise-the-modelled-populations-with-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="W2_1.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>model,<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>year,<span class="at">y=</span>quokkaPop))<span class="sc">+</span></span>
-<span id="cb50-2"><a href="W2_1.html#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb50-3"><a href="W2_1.html#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Year&quot;</span>, <span class="at">y=</span><span class="st">&quot;Quokka population&quot;</span>)<span class="sc">+</span></span>
-<span id="cb50-4"><a href="W2_1.html#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_light</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data=</span>model,<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>year,<span class="dt">y=</span>quokkaPop))<span class="op">+</span></a>
+<a class="sourceLine" id="cb50-2" title="2"><span class="st">    </span><span class="kw">geom_line</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb50-3" title="3"><span class="st">    </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Year&quot;</span>, <span class="dt">y=</span><span class="st">&quot;Quokka population&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb50-4" title="4"><span class="st">    </span><span class="kw">theme_light</span>()</a></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+
 
 </div>
 </div>
