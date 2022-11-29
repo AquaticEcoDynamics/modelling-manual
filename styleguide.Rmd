@@ -28,12 +28,47 @@ Format your paragraphs with the following:
 ![](images/styleguide/paragraph.png){width=80% }
 </center>
 
+Use consistent approach when capatalising your headers/titles:
+
+- Capitalise at least the first and last word
+- Don't capitalise conjunctions, prepositions, and articles (e.g. the, an, a)
+
+<center>
+![](images/styleguide/headings.png){width=75% }
+</center>
 
 ## Figures {-}
 
-### Good Graphs {-}
+### 3D {-}
 
-### Bad Graphs {-}
+Do not use 3D plots to visualise your data! They easily misrepresent data and, more often than not, look visually jarring. They can be appropriate for certain types of scatterplots or surface plots when there is a third dimension to the data.
+
+### Colour {-}
+
+Rarely are the defaults the best choice for your figure.
+
+When selecting a colour palette:
+
+- Consider the saturation and brightness of your colours 
+
+- Be considerate of colour blindness and of how colours are commonly interpreted, i.e. if you were mapping surface temperatures you wouldn't use red to colour the cold areas and blue for the hot
+
+### Captions {-}
+
+Captions are always positioned below the figure and contain a useful description to assist it's interpretation. Do not include a title as your caption renders this redundant!
+
+### Timeseries axis {-}
+
+
+### Multipanel plots {-}
+
+
+### Unnecessary regressions {-}
+
+
+### Good graphs {-}
+
+### Bad graphs {-}
 
 The following graphs leave a lot to be desired! They misrepresent data, lack critical details, and are visually jarring. Take a look at each and read the marker's feedback to get an idea of how your graphs will be assessed.
 
@@ -68,7 +103,13 @@ Feedback:
 - Missing units and a legend
 - Pie charts are a poor choice of visualisation for comparing numbers. The human eye is much less able to distinguish differences of scale for data represented as sectors of a circle compared to rectangles on a bar chart
 
+### Superfluous images {-}
 
+Unless specified, your assessments are not picture books! Do not use figures to arbitrarily lengthen your report and add visual clutter. Justify the purpose of each figure you include. When used well, figures should support your writing and illustrate key points to the reader. 
+
+<center>
+![](images/styleguide/superfluous.png){width=80% }
+</center>
 
 ## Tables {-}
 
@@ -90,6 +131,45 @@ knitr::include_graphics("images/styleguide/table.png")
 ```
 </center>
 
+## Referencing {-}
+
+When completing academic work it is essential that you refer to the sources of information within your text, and professionally adhere to referencing standards. Marks will be deducted for inadequate, or poor quality referencing. Complete details of these works should be arranged alphabetically in a reference list at the end of any document or report you submit. 
+
+You are permitted to use Harvard or APA reference style. The choice is up to you as long as it is used consistently throughout the document.
+
+1) When referring to a specific page or pages of a reference:
+
+> Labaree (2006, p. 17) disputed the evidence.
+
+> The findings are suppored in the literature (Labaree, 2006, p.17-18).
+
+2) When referring to more than one work by the same author(s): 
+
+> Fink and Brayman (2004, 2006) expressed similar doubts.
+
+3) When referring to more than one work in the same year: 
+
+> Research in this field has progressed rapidly (Hargreave,s 2005a) (Hargreaves 2005b).
+
+4) When there are two authors: 
+
+> There is mounting evidence of these trends (Tilbury & Wortman, 2003).
+
+> The study built on earlier work by Tilbury and Wortman (2003).
+
+5) When there are three or more authors:
+
+> New research as revealed substantial differences (Leithwood et al., 1999).
+
+6) When referring to a publication that has no specific author, but which was written by an organization:
+
+> Global concern is increasing (UNESCO, 1992). 
+
+7) When citing 3 or more works that support the same argument:
+
+> There is a strong concensus in the literature (Andrews, 2015; Brown & Baldwin, 2012; Carter et al., 2016).
+
+
 ## Submissions {-}
 
 When uploading your assessments, only submit your work in PDF format - not Word's *.docx*. In Word, you can export your documents to PDF via *File -> Save As... -> File Format -> PDF -> Save*.
@@ -97,3 +177,4 @@ When uploading your assessments, only submit your work in PDF format - not Word'
 <center>
 ![](images/styleguide/files.png){width=80% }
 </center>
+

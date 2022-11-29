@@ -240,3 +240,6 @@ spreadsheets to be uploaded
 ::::
 
 
+```{block2, noteM1-1, type='rmdnote2'}
+Professional presentation of your results is important. Explore the [short tutorial](#tidyverse) in the Supporting Material section to improve your data viz skills with R's tidyverse package.
+```

@@ -1,5 +1,5 @@
-Parameters for P conc.:,$\alpha$ (alpha),$\beta$ (beta),land-use $F_p$
-Landuse parameters: irrigated dairy ($p$=1),2.1,0.9,0.3
-Landuse parameters: wheat ($p$=2),1.2,0.45,0.1
-Landuse parameters: urban ($p$=3),1.9,0.8,0.15
-Landuse parameters: forest ($p$=4),0.5,1.2,0.45
+Parameters for P conc.:,$\alpha$ (alpha),$\beta$ (beta),land-use $F_l$
+Landuse parameters: irrigated dairy ($l$=1),2.1,0.9,0.3
+Landuse parameters: wheat ($l$=2),1.2,0.45,0.1
+Landuse parameters: urban ($l$=3),1.9,0.8,0.15
+Landuse parameters: forest ($l$=4),0.5,1.2,0.45

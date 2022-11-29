@@ -13,6 +13,7 @@ rmd_files: ["index.Rmd",
             "module6.Rmd",
             "module7.Rmd",
             "finalproject.Rmd",
-            "workshop2.Rmd",
+            "learntidyverse.Rmd",
+            "modelquokkas.Rmd",
             "references.Rmd"]
 new_session: no

@@ -6,7 +6,7 @@ To setup a nutrient export model to compare the effect of Best Management Practi
 
 ### Before you start {#M5b_before_start -}
 
-- Complete 5a
+- Complete [Module 5a](#M5A_1)
 - Be familiar with the land use export model activity from lecture
 - Review the flow concentration relationship document
 - Review nutrient modelling lecture and be familiar with best management practices (BMPs)
@@ -15,24 +15,32 @@ To setup a nutrient export model to compare the effect of Best Management Practi
 
 Consider a catchment basin with with **different types of land use**.
 
-The daily runoff/streamflow through the catchment, $Q^t$ (m^3^/day), can be approximated based on the daily rainfall ($R$) - see the Water Balance model in Module 5a. 
+The daily runoff/streamflow through the catchment, $Q^t$ (m^3^/day), can be approximated based on the daily rainfall ($R$) - see the Water Balance model in [Module 5a](#M5A_1). 
 
 The phosphorus concentration in the water, $P^{t}$ (g/m^3), depends on how much flow there is (i.e. more flow = more fertilizer leaching). To model this we use a simple power law to make a "flow-concentration relationship", which is computed for each land-use ($P$ is proportional to $\alpha Q^{\beta}$). *If you've not seen a power law, sketch a graph of C (y-axis) vs Q (x-axis) for a value of $\beta =1$. What happens if $\beta =2$ or $\beta =0.5$?*
 
-This is averaged over the different land use fractions (denoted with the small $p$ index), using the land-use fraction $F_p$:
+<center>
+![](images/module5b/flowPlot.png){width=60%}
+<img src="images/module5b/flowPlot2.png" style="width:100%;" data-action="zoom"/>
+</center>
+
+This is averaged over the different land use fractions (denoted with the small $p$ index), using the land-use fraction $F_l$:
 
 <center>
 \begin{equation}
-P^{t} = \sum_{p=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{p} \left (\frac{Q^{t}}{A_{c}}  \right )^{\beta_{p}}+P_{0}}  \right )
+P^{t} = \sum_{l=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{l} \left (\frac{Q^{t}}{A_{c}}  \right )^{\beta_{l}}+P_{0}}  \right )
 (\#eq:module5b-3)
 \end{equation}
 </center>
 
-where alpha ($\alpha$) and beta ($\beta$) are variables that govern the stream $P$ concentration (g/m^3^) as a function of area-averaged flow rate ($Q/A$) and they depend on the dominant land use ($p$). $N_p$ is the number of land use classes being considered (4) and $P_0$ is the background concentration (g/m^3^) for that sub-catchment (i.e. the value of PO~4~ when flow is low 0).
+where alpha ($\alpha$) and beta ($\beta$) are variables that govern the stream $P$ concentration (g/m^3^) as a function of area-averaged flow rate ($Q/A$) and they depend on the dominant land use ($l$). $N_l$ is the number of land use classes being considered (4) and $P_0$ is the background concentration (g/m^3^) for that sub-catchment (i.e. the value of PO~4~ when flow is low 0).
 
 
 ```{block2, hintM5B_1, type='rmdnote2'}
-$\color{#FF0000}{\alpha_{p} \left (\frac{Q}{A_{c}}  \right )^{\beta_{p}}+P_{0}}$ is the flow dependent concentration of the *p*-th land use type.
+$\color{#FF0000}{\alpha_{p} \left (\frac{Q}{A_{c}}  \right )^{\beta_{p}}+P_{0}}$ is the flow dependent concentration ($\color{#FF0000}{P}$) of the *p*-th land use type.
+  
+
+$P^{t} = \sum_{l=4}^{N_{p}} F_{p}\left (\color{#FF0000}{\alpha_{l} \left (\frac{Q^{t}}{A_{c}}  \right )^{\beta_{l}}+P_{0}}  \right )$ is a shorthand way of expressing: $P^{t} = F_{1}\color{#FF0000}{P_{1}^{t}} + F_{2}\color{#FF0000}{P_{2}^{t}} + F_{3}\color{#FF0000}{P_{3}^{t}} + F_{4}\color{#FF0000}{P_{4}^{t}}$
 ```
 
 
@@ -62,7 +70,7 @@ The Excel spreadsheet for this module is part of the Module 5 download. Access u
 #### Building the model {#M5B_6 -}
 
 1) Draw by hand the conceptual model of this system.
-2) Confirm with the person beside you what index means ($t$ and $p$).
+2) Confirm with the person beside you what index means ($t$ and $l$).
 3) Set your modelled $Q_{tot}$ to equal your $Q_{tot}$ values in the **WATER BALANCE - 5a** sheet 
 
 
@@ -119,7 +127,7 @@ Check this by using a regression plot of the given total observed streamflow and
 Now let’s work out the land-use specific stream $P$ concentrations in the **PHOSPHOROUS** sheet:
 
 6) Predict the catchment river $P$ concentrations and total export load, $P_{load}$.
-The best way to do this is first predict the $P$ concentration of each land-use class each as a column (i.e. Dairy $P$ concentration, Wheat $P$ concentration and so on), and then sum the 4 columns for $P^t$ by factoring the ($F_p$) for each land-use.
+The best way to do this is first predict the $P$ concentration of each land-use class each as a column (i.e. Dairy $P$ concentration, Wheat $P$ concentration and so on), and then sum the 4 columns for $P^t$ by factoring the ($F_l$) for each land-use.
 
 <center>
 ```{r module5b-2, echo=FALSE, message=FALSE, warning=FALSE}
