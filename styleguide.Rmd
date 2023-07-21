@@ -59,6 +59,7 @@ Captions are always positioned below the figure and contain a useful description
 
 ### Timeseries axis {-}
 
+Use a human readable date format, with regular tick spacing
 
 ### Multipanel plots {-}
 
