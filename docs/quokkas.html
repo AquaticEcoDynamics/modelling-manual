@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Modelling Quokkas in R | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Modelling Quokkas in R | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -60,9 +60,9 @@
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
 <script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
@@ -83,25 +83,27 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -110,15 +112,15 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -131,7 +133,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -145,6 +147,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -164,17 +188,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="part"><span><b>I Overview</b></span></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a><ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a>
+<ul>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html"><i class="fa fa-check"></i>Style Guide</a><ul>
-<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#text"><i class="fa fa-check"></i>Text</a><ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html"><i class="fa fa-check"></i>Style Guide</a>
+<ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#text"><i class="fa fa-check"></i>Text</a>
+<ul>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#fonts"><i class="fa fa-check"></i>Fonts</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#paragraphs"><i class="fa fa-check"></i>Paragraphs</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#figures"><i class="fa fa-check"></i>Figures</a><ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#figures"><i class="fa fa-check"></i>Figures</a>
+<ul>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#d"><i class="fa fa-check"></i>3D</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#colour"><i class="fa fa-check"></i>Colour</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#captions"><i class="fa fa-check"></i>Captions</a></li>
@@ -190,7 +218,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#submissions"><i class="fa fa-check"></i>Submissions</a></li>
 </ul></li>
 <li class="part"><span><b>II Weekly Modules</b></span></li>
-<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a><ul>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
+<ul>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
@@ -200,7 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_8"><i class="fa fa-check"></i>Assessing impacts on lake salinity</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a><ul>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a>
+<ul>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_3"><i class="fa fa-check"></i>Modelling concepts</a></li>
@@ -209,7 +239,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_6"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_9"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modelling</a><ul>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modelling</a>
+<ul>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M2_14"><i class="fa fa-check"></i>Module resources</a></li>
@@ -218,7 +249,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_9"><i class="fa fa-check"></i>Case Study 3: Incorporating Greenhouse Gases</a></li>
 <li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a><ul>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a>
+<ul>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
@@ -229,7 +261,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_7"><i class="fa fa-check"></i>Exercise 4</a></li>
 <li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_8"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a><ul>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a>
+<ul>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5a_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_3"><i class="fa fa-check"></i>The Water Balance Approach</a></li>
@@ -239,7 +272,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_12"><i class="fa fa-check"></i>Equations</a></li>
 <li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_21"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a><ul>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a>
+<ul>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5b_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_3"><i class="fa fa-check"></i>Model Overview</a></li>
@@ -247,7 +281,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_10"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a><ul>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a>
+<ul>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_3"><i class="fa fa-check"></i>Advection-Dispersion Reaction</a></li>
@@ -255,16 +290,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_5"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_6"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a><ul>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a>
+<ul>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_3"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_13"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
 <li class="part"><span><b>III Assessment</b></span></li>
-<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html"><i class="fa fa-check"></i>Final Project</a><ul>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html"><i class="fa fa-check"></i>Final Project</a>
+<ul>
 <li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#overview"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#stages"><i class="fa fa-check"></i>Stages</a><ul>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#stages"><i class="fa fa-check"></i>Stages</a>
+<ul>
 <li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#brainstorm"><i class="fa fa-check"></i>Brainstorm</a></li>
 <li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#research-discovery"><i class="fa fa-check"></i>Research &amp; Discovery</a></li>
 <li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#conceptual-model-plan"><i class="fa fa-check"></i>Conceptual Model &amp; Plan</a></li>
@@ -276,8 +314,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>IV Supporting Material</b></span></li>
-<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html"><i class="fa fa-check"></i>Learning the Tidyverse</a><ul>
-<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#visualising-module-1-flow-data"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a><ul>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html"><i class="fa fa-check"></i>Learning the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#visualising-module-1-flow-data"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a>
+<ul>
 <li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#setting-up"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#importing-and-formatting-the-data"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
 <li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#graphing-with-ggplot"><i class="fa fa-check"></i>Graphing with ggplot</a></li>
@@ -285,7 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#visualising-diversion-scenarios"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
 <li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#barcharts-and-pipes"><i class="fa fa-check"></i>Barcharts and Pipes</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html"><i class="fa fa-check"></i>Modelling Quokkas in R</a><ul>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html"><i class="fa fa-check"></i>Modelling Quokkas in R</a>
+<ul>
 <li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#setting-up-1"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#modelling"><i class="fa fa-check"></i>Modelling</a></li>
 <li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#speeding-things-up"><i class="fa fa-check"></i>Speeding things up</a></li>
@@ -322,15 +363,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Go <em>File -&gt; New File -&gt; R Script</em></li>
 <li>Load the tidyverse</li>
 </ul>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="quokkas.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 </div>
 <div id="declare-the-constants-as-variables" class="section level4 unnumbered hasAnchor">
 <h4>Declare the constants as variables<a href="quokkas.html#declare-the-constants-as-variables" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1">birthRate  &lt;-<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb39-2" title="2">deathRate  &lt;-<span class="st"> </span><span class="fl">0.1</span></a>
-<a class="sourceLine" id="cb39-3" title="3">timestep  &lt;-<span class="st"> </span><span class="dv">1</span> <span class="co"># i.e. 1 year</span></a>
-<a class="sourceLine" id="cb39-4" title="4">timeMax &lt;-<span class="st"> </span><span class="dv">30</span></a>
-<a class="sourceLine" id="cb39-5" title="5">carryCap  &lt;-<span class="st"> </span><span class="dv">10000</span></a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="quokkas.html#cb39-1" aria-hidden="true" tabindex="-1"></a>birthRate  <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb39-2"><a href="quokkas.html#cb39-2" aria-hidden="true" tabindex="-1"></a>deathRate  <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb39-3"><a href="quokkas.html#cb39-3" aria-hidden="true" tabindex="-1"></a>timestep  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># i.e. 1 year</span></span>
+<span id="cb39-4"><a href="quokkas.html#cb39-4" aria-hidden="true" tabindex="-1"></a>timeMax <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb39-5"><a href="quokkas.html#cb39-5" aria-hidden="true" tabindex="-1"></a>carryCap  <span class="ot">&lt;-</span> <span class="dv">10000</span></span></code></pre></div>
 </div>
 <div id="create-a-new-data-frame-of-the-initial-values" class="section level4 unnumbered hasAnchor">
 <h4>Create a new data frame of the initial values<a href="quokkas.html#create-a-new-data-frame-of-the-initial-values" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -339,14 +380,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>year</code>, <code>relativeCarryCap</code>, <code>quokkaRate</code>, and <code>quokkaRate</code> will be created as new columns in that table</li>
 <li>Inspect <code>model</code> with the <code>head()</code> function</li>
 </ul>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">model  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb40-2" title="2">    <span class="dt">year =</span> <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb40-3" title="3">    <span class="dt">relativeCarryCap  =</span> <span class="ot">NA</span>,</a>
-<a class="sourceLine" id="cb40-4" title="4">    <span class="dt">quokkaRate =</span> <span class="ot">NA</span>,</a>
-<a class="sourceLine" id="cb40-5" title="5">    <span class="dt">quokkaPop =</span> <span class="dv">5</span></a>
-<a class="sourceLine" id="cb40-6" title="6">)</a>
-<a class="sourceLine" id="cb40-7" title="7"></a>
-<a class="sourceLine" id="cb40-8" title="8"><span class="kw">head</span>(model)</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="quokkas.html#cb40-1" aria-hidden="true" tabindex="-1"></a>model  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb40-2"><a href="quokkas.html#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="dv">1</span>,</span>
+<span id="cb40-3"><a href="quokkas.html#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">relativeCarryCap  =</span> <span class="cn">NA</span>,</span>
+<span id="cb40-4"><a href="quokkas.html#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">quokkaRate =</span> <span class="cn">NA</span>,</span>
+<span id="cb40-5"><a href="quokkas.html#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">quokkaPop =</span> <span class="dv">5</span></span>
+<span id="cb40-6"><a href="quokkas.html#cb40-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-7"><a href="quokkas.html#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-8"><a href="quokkas.html#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(model)</span></code></pre></div>
 <pre><code>##   year relativeCarryCap quokkaRate quokkaPop
 ## 1    1               NA         NA         5</code></pre>
 </div>
@@ -359,36 +400,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>year</code>takes a value of 2</li>
 </ul>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">year &lt;-<span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="quokkas.html#cb42-1" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> <span class="dv">2</span></span></code></pre></div>
 <ul>
 <li><code>relativeCarryCap</code> is the result of the previous quokka population divided by the carrying capacity</li>
 <li><code>model$quokkaPop[1]</code> specifies the population in the previous row (row 1) i.e. the previous time step</li>
 </ul>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1">relativeCarryCap  &lt;-<span class="st">  </span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]<span class="op">/</span>carryCap</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="quokkas.html#cb43-1" aria-hidden="true" tabindex="-1"></a>relativeCarryCap  <span class="ot">&lt;-</span>  model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]<span class="sc">/</span>carryCap</span></code></pre></div>
 <ul>
 <li><code>quokkaRate</code> and <code>quokkaPop</code> are calculated in the same fashion i.e. using the constants and values in the previous row of the <code>model</code> data frame</li>
 </ul>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1">quokkaRate &lt;-<span class="st"> </span>timestep<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span>relativeCarryCap)<span class="op">*</span>birthRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]<span class="op">-</span>(deathRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]))</a>
-<a class="sourceLine" id="cb44-2" title="2"></a>
-<a class="sourceLine" id="cb44-3" title="3">quokkaPop &lt;-<span class="st">  </span>quokkaRate<span class="op">+</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="quokkas.html#cb44-1" aria-hidden="true" tabindex="-1"></a>quokkaRate <span class="ot">&lt;-</span> timestep<span class="sc">*</span>((<span class="dv">1</span><span class="sc">-</span>relativeCarryCap)<span class="sc">*</span>birthRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]<span class="sc">-</span>(deathRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]))</span>
+<span id="cb44-2"><a href="quokkas.html#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="quokkas.html#cb44-3" aria-hidden="true" tabindex="-1"></a>quokkaPop <span class="ot">&lt;-</span>  quokkaRate<span class="sc">+</span>model<span class="sc">$</span>quokkaPop[<span class="dv">1</span>]</span></code></pre></div>
 <ul>
 <li>Next, we’ll create an identical data frame to <code>model</code> with our new values</li>
 </ul>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1">model_temp  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb45-2" title="2">        <span class="dt">year =</span> year,</a>
-<a class="sourceLine" id="cb45-3" title="3">        <span class="dt">relativeCarryCap =</span> relativeCarryCap,</a>
-<a class="sourceLine" id="cb45-4" title="4">        <span class="dt">quokkaRate =</span> quokkaRate,</a>
-<a class="sourceLine" id="cb45-5" title="5">        <span class="dt">quokkaPop =</span> quokkaPop</a>
-<a class="sourceLine" id="cb45-6" title="6">    )</a>
-<a class="sourceLine" id="cb45-7" title="7"></a>
-<a class="sourceLine" id="cb45-8" title="8"><span class="kw">head</span>(model_temp)</a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="quokkas.html#cb45-1" aria-hidden="true" tabindex="-1"></a>model_temp  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb45-2"><a href="quokkas.html#cb45-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">year =</span> year,</span>
+<span id="cb45-3"><a href="quokkas.html#cb45-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">relativeCarryCap =</span> relativeCarryCap,</span>
+<span id="cb45-4"><a href="quokkas.html#cb45-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaRate =</span> quokkaRate,</span>
+<span id="cb45-5"><a href="quokkas.html#cb45-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaPop =</span> quokkaPop</span>
+<span id="cb45-6"><a href="quokkas.html#cb45-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb45-7"><a href="quokkas.html#cb45-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-8"><a href="quokkas.html#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(model_temp)</span></code></pre></div>
 <pre><code>##   year relativeCarryCap quokkaRate quokkaPop
 ## 1    2            5e-04     4.4975    9.4975</code></pre>
 <ul>
 <li>We can append this time step to <code>model</code> by using the <code>rbind()</code> function</li>
 </ul>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1">model  &lt;-<span class="st"> </span><span class="kw">rbind</span>(model,model_temp)</a>
-<a class="sourceLine" id="cb47-2" title="2"><span class="kw">head</span>(model)</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="quokkas.html#cb47-1" aria-hidden="true" tabindex="-1"></a>model  <span class="ot">&lt;-</span> <span class="fu">rbind</span>(model,model_temp)</span>
+<span id="cb47-2"><a href="quokkas.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(model)</span></code></pre></div>
 <pre><code>##   year relativeCarryCap quokkaRate quokkaPop
 ## 1    1               NA         NA    5.0000
 ## 2    2            5e-04     4.4975    9.4975</code></pre>
@@ -397,32 +438,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="speeding-things-up" class="section level3 unnumbered hasAnchor">
 <h3>Speeding things up<a href="quokkas.html#speeding-things-up" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Want to repeat that process for the next 29 time steps? Probably not. Let’s create a loop that iterates through each year, calculates the new values, and appends them to the <code>model</code> data frame.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span>timeMax){</a>
-<a class="sourceLine" id="cb49-2" title="2"></a>
-<a class="sourceLine" id="cb49-3" title="3">    year  &lt;-<span class="st"> </span>i</a>
-<a class="sourceLine" id="cb49-4" title="4">    relativeCarryCap  &lt;-<span class="st">  </span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="op">/</span>carryCap</a>
-<a class="sourceLine" id="cb49-5" title="5">    quokkaRate =<span class="st"> </span>timestep<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span>relativeCarryCap)<span class="op">*</span>birthRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="op">-</span>(deathRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]))</a>
-<a class="sourceLine" id="cb49-6" title="6">    quokkaPop =<span class="st"> </span>quokkaRate<span class="op">+</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]</a>
-<a class="sourceLine" id="cb49-7" title="7"></a>
-<a class="sourceLine" id="cb49-8" title="8">    model_temp  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb49-9" title="9">        <span class="dt">year =</span> year,</a>
-<a class="sourceLine" id="cb49-10" title="10">        <span class="dt">relativeCarryCap =</span> relativeCarryCap,</a>
-<a class="sourceLine" id="cb49-11" title="11">        <span class="dt">quokkaRate =</span> quokkaRate,</a>
-<a class="sourceLine" id="cb49-12" title="12">        <span class="dt">quokkaPop =</span> quokkaPop</a>
-<a class="sourceLine" id="cb49-13" title="13">    )</a>
-<a class="sourceLine" id="cb49-14" title="14"></a>
-<a class="sourceLine" id="cb49-15" title="15">    model  &lt;-<span class="st"> </span><span class="kw">rbind</span>(model,model_temp)</a>
-<a class="sourceLine" id="cb49-16" title="16"></a>
-<a class="sourceLine" id="cb49-17" title="17">}</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="quokkas.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>timeMax){</span>
+<span id="cb49-2"><a href="quokkas.html#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="quokkas.html#cb49-3" aria-hidden="true" tabindex="-1"></a>    year  <span class="ot">&lt;-</span> i</span>
+<span id="cb49-4"><a href="quokkas.html#cb49-4" aria-hidden="true" tabindex="-1"></a>    relativeCarryCap  <span class="ot">&lt;-</span>  model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="sc">/</span>carryCap</span>
+<span id="cb49-5"><a href="quokkas.html#cb49-5" aria-hidden="true" tabindex="-1"></a>    quokkaRate <span class="ot">=</span> timestep<span class="sc">*</span>((<span class="dv">1</span><span class="sc">-</span>relativeCarryCap)<span class="sc">*</span>birthRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="sc">-</span>(deathRate<span class="sc">*</span>model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]))</span>
+<span id="cb49-6"><a href="quokkas.html#cb49-6" aria-hidden="true" tabindex="-1"></a>    quokkaPop <span class="ot">=</span> quokkaRate<span class="sc">+</span>model<span class="sc">$</span>quokkaPop[i<span class="dv">-1</span>]</span>
+<span id="cb49-7"><a href="quokkas.html#cb49-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-8"><a href="quokkas.html#cb49-8" aria-hidden="true" tabindex="-1"></a>    model_temp  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb49-9"><a href="quokkas.html#cb49-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">year =</span> year,</span>
+<span id="cb49-10"><a href="quokkas.html#cb49-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">relativeCarryCap =</span> relativeCarryCap,</span>
+<span id="cb49-11"><a href="quokkas.html#cb49-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaRate =</span> quokkaRate,</span>
+<span id="cb49-12"><a href="quokkas.html#cb49-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">quokkaPop =</span> quokkaPop</span>
+<span id="cb49-13"><a href="quokkas.html#cb49-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb49-14"><a href="quokkas.html#cb49-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-15"><a href="quokkas.html#cb49-15" aria-hidden="true" tabindex="-1"></a>    model  <span class="ot">&lt;-</span> <span class="fu">rbind</span>(model,model_temp)</span>
+<span id="cb49-16"><a href="quokkas.html#cb49-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-17"><a href="quokkas.html#cb49-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="visualise-the-modelled-populations-with-ggplot" class="section level3 unnumbered hasAnchor">
 <h3>Visualise the modelled populations with ggplot<a href="quokkas.html#visualise-the-modelled-populations-with-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data=</span>model,<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>year,<span class="dt">y=</span>quokkaPop))<span class="op">+</span></a>
-<a class="sourceLine" id="cb50-2" title="2"><span class="st">    </span><span class="kw">geom_line</span>()<span class="op">+</span></a>
-<a class="sourceLine" id="cb50-3" title="3"><span class="st">    </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Year&quot;</span>, <span class="dt">y=</span><span class="st">&quot;Quokka population&quot;</span>)<span class="op">+</span></a>
-<a class="sourceLine" id="cb50-4" title="4"><span class="st">    </span><span class="kw">theme_light</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="quokkas.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>model,<span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>year,<span class="at">y=</span>quokkaPop))<span class="sc">+</span></span>
+<span id="cb50-2"><a href="quokkas.html#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb50-3"><a href="quokkas.html#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Year&quot;</span>, <span class="at">y=</span><span class="st">&quot;Quokka population&quot;</span>)<span class="sc">+</span></span>
+<span id="cb50-4"><a href="quokkas.html#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_light</span>()</span></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
-
 
 </div>
 </div>
