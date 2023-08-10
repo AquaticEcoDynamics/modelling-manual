@@ -51,45 +51,23 @@ When selecting a colour palette:
 
 - Consider the saturation and brightness of your colours 
 
-- Be considerate of colour blindness and of how colours are commonly interpreted, i.e. if you were mapping surface temperatures you would not use red to colour the cold areas and blue for the hot
+- Be considerate of colour blindness and of how colours are commonly interpreted, i.e. if you were mapping surface temperatures you wouldn't use red to colour the cold areas and blue for the hot
 
 ### Captions {-}
 
-Captions are positioned below a figure and above a table. They contain a useful description to assist the interpretation of the figure or table. Do not include a title as your caption renders this redundant! 
+Captions are always positioned below the figure and contain a useful description to assist it's interpretation. Do not include a title as your caption renders this redundant!
 
 ### Timeseries axis {-}
 
-If you have a date axis, arrange the dates so that they can be read.
-
-![](images/styleguide/Goodgraphs/Slide4.PNG){width=80% }
-
-Do not let them all crash into each other.
-
-![](images/styleguide/Goodgraphs/Slide5.PNG){width=80% }
-
-
+Use a human readable date format, with regular tick spacing
 
 ### Multipanel plots {-}
 
 
 ### Unnecessary regressions {-}
 
-Do not include a trendline for a series of data that you have calculated yourself. If y = 2x, and you calculate y over a series of x values, a linear regression of this calculation will give you a formula of 2x, with an r^2^ of 1. This regression is not helpful. 
-
-![](images/styleguide/Goodgraphs/Slide3.PNG){width=80% }
-
-
 
 ### Good graphs {-}
-
-Include axis labels, with units. Use a legend if you have more than one data series. Spread your tick marks out nicely. Use black lines for the axes and black font for the text. 
-
-
-![](images/styleguide/Goodgraphs/Slide1.PNG){width=80% }
-
-
-![](images/styleguide/Goodgraphs/Slide2.PNG){width=80% }
-
 
 ### Bad graphs {-}
 
