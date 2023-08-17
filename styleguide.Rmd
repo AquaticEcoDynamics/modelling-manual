@@ -8,7 +8,7 @@ Leave a space between a numeral and a unit. For example, 100 m^3^, not 100m^3^. 
 
 Capital M as a unit is known as molar. It is an abbreviation of mol L^-1^. mM is the same as mmol L^-1^, or 1 $\times$ 10^-3^ M.
 
-### Chemicals
+### Chemicals {.unnumbered}
 
 Elements, compounds and molecules do not start with capital letters. An abbreviation or a chemical symbol has capital letters. Multiple elements in a compound have a subscript and charged molecules have a superscript. For example, carbonate, CO~3~^2-^.
 
