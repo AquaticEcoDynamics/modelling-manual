@@ -71,3 +71,5 @@ eq:module6-3
 eq:module6-4
 fig:figM6-1
 fig:figM6-2
+chemicals
+positioning

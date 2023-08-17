@@ -198,11 +198,14 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#text"><i class="fa fa-check"></i>Text</a>
 <ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#units"><i class="fa fa-check"></i>Units</a></li>
+<li class="chapter" data-level="0.0.1" data-path="StyleGuide.html"><a href="StyleGuide.html#chemicals"><i class="fa fa-check"></i><b>0.0.1</b> Chemicals</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#fonts"><i class="fa fa-check"></i>Fonts</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#paragraphs"><i class="fa fa-check"></i>Paragraphs</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#figures"><i class="fa fa-check"></i>Figures</a>
 <ul>
+<li class="chapter" data-level="0.0.2" data-path="StyleGuide.html"><a href="StyleGuide.html#positioning"><i class="fa fa-check"></i><b>0.0.2</b> Positioning</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#d"><i class="fa fa-check"></i>3D</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#colour"><i class="fa fa-check"></i>Colour</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#captions"><i class="fa fa-check"></i>Captions</a></li>
@@ -386,16 +389,16 @@ Tools You’ll Need
 <p>Just like Excel, you can interact with your data using a variety of <em>functions</em> in R. Functions are the tools you use to get the job done. For example, the <code>plot()</code> function can be used to create graphs. R is an open source programming language, meaning anyone can create their own functions and bundle them up in a collection known as a <em>package</em>.</p>
 <p><strong>Comments</strong></p>
 <p>All programming languages allow the user to write comments on their code to assist in readability and structure. In R, a comment is defined as a line beginning with a <code>#</code>. Any characters written after the <code>#</code> are ignored by R and not executed. It’s good practice to get into the habit of commenting your R code as it will likely save you (or someone else!) a lot of time later down the track.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="GettingStarted.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment!</span></span>
-<span id="cb1-2"><a href="GettingStarted.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># You can load packages with the library() function</span></span>
-<span id="cb1-3"><a href="GettingStarted.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="GettingStarted.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect your data with the head() function</span></span>
-<span id="cb1-5"><a href="GettingStarted.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span>
-<span id="cb1-6"><a href="GettingStarted.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="GettingStarted.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a graph using the ggplot() function</span></span>
-<span id="cb1-8"><a href="GettingStarted.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
-<span id="cb1-9"><a href="GettingStarted.html#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb1-10"><a href="GettingStarted.html#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="GettingStarted.html#cb1-1" tabindex="-1"></a><span class="co"># This is a comment!</span></span>
+<span id="cb1-2"><a href="GettingStarted.html#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># You can load packages with the library() function</span></span>
+<span id="cb1-3"><a href="GettingStarted.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="GettingStarted.html#cb1-4" tabindex="-1"></a><span class="co"># Inspect your data with the head() function</span></span>
+<span id="cb1-5"><a href="GettingStarted.html#cb1-5" tabindex="-1"></a><span class="fu">head</span>(iris)</span>
+<span id="cb1-6"><a href="GettingStarted.html#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="GettingStarted.html#cb1-7" tabindex="-1"></a><span class="co"># Create a graph using the ggplot() function</span></span>
+<span id="cb1-8"><a href="GettingStarted.html#cb1-8" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb1-9"><a href="GettingStarted.html#cb1-9" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-10"><a href="GettingStarted.html#cb1-10" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code></pre></div>
 
 <div class="rmdtip2">
 To comment multiple lines of code at once in R Studio, press<code>Command + Shift + C</code>on MacOS or<code>Control + Shift + C</code>on Windows

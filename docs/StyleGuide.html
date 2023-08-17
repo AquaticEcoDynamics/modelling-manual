@@ -198,11 +198,14 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#text"><i class="fa fa-check"></i>Text</a>
 <ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#units"><i class="fa fa-check"></i>Units</a></li>
+<li class="chapter" data-level="0.0.1" data-path="StyleGuide.html"><a href="StyleGuide.html#chemicals"><i class="fa fa-check"></i><b>0.0.1</b> Chemicals</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#fonts"><i class="fa fa-check"></i>Fonts</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#paragraphs"><i class="fa fa-check"></i>Paragraphs</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#figures"><i class="fa fa-check"></i>Figures</a>
 <ul>
+<li class="chapter" data-level="0.0.2" data-path="StyleGuide.html"><a href="StyleGuide.html#positioning"><i class="fa fa-check"></i><b>0.0.2</b> Positioning</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#d"><i class="fa fa-check"></i>3D</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#colour"><i class="fa fa-check"></i>Colour</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#captions"><i class="fa fa-check"></i>Captions</a></li>
@@ -357,6 +360,15 @@ div.csl-indent {
 <h1>Style Guide<a href="StyleGuide.html#StyleGuide" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="text" class="section level2 unnumbered hasAnchor">
 <h2>Text<a href="StyleGuide.html#text" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="units" class="section level3 unnumbered hasAnchor">
+<h3>Units<a href="StyleGuide.html#units" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Leave a space between a numeral and a unit. For example, 100 m<sup>3</sup>, not 100m<sup>3</sup>. For inverse units use a slash or a negative power, but be consistent throughout your text. For example 100 L/d or 100 L d<sup>-1</sup>. Pay attention to capital letters: there is a billion-fold difference between mL and ML (millilitres and megalitres). Do not leave a space between a numeral and %. For example, 100%, not 100 %.</p>
+<p>Capital M as a unit is known as molar. It is an abbreviation of mol L<sup>-1</sup>. mM is the same as mmol L<sup>-1</sup>, or 1 <span class="math inline">\(\times\)</span> 10<sup>-3</sup> M.</p>
+</div>
+<div id="chemicals" class="section level3 hasAnchor" number="0.0.1">
+<h3><span class="header-section-number">0.0.1</span> Chemicals<a href="StyleGuide.html#chemicals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Elements, compounds and molecules do not start with capital letters. An abbreviation or a chemical symbol has capital letters. Multiple elements in a compound have a subscript and charged molecules have a superscript. For example, carbonate, CO<sub>3</sub><sup>2-</sup>.</p>
+</div>
 <div id="fonts" class="section level3 unnumbered hasAnchor">
 <h3>Fonts<a href="StyleGuide.html#fonts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pick an appropriate Seriff or Sans-Seriff font with a size of <strong>12pt</strong>. Commonly used fonts include Arial, Helvetica, Times New Roman and Garamond.</p>
@@ -391,6 +403,10 @@ div.csl-indent {
 </div>
 <div id="figures" class="section level2 unnumbered hasAnchor">
 <h2>Figures<a href="StyleGuide.html#figures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="positioning" class="section level3 hasAnchor" number="0.0.2">
+<h3><span class="header-section-number">0.0.2</span> Positioning<a href="StyleGuide.html#positioning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Put the figure after it is referred to in the text for the first time, so that the figure is below. Refer to every figure and make sure the figure caption is updated to the right number.</p>
+</div>
 <div id="d" class="section level3 unnumbered hasAnchor">
 <h3>3D<a href="StyleGuide.html#d" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Do not use 3D plots to visualise your data! They easily misrepresent data and, more often than not, look visually jarring. They can be appropriate for certain types of scatterplots or surface plots when there is a third dimension to the data.</p>
@@ -402,6 +418,8 @@ div.csl-indent {
 <ul>
 <li><p>Consider the saturation and brightness of your colours</p></li>
 <li><p>Be considerate of colour blindness and of how colours are commonly interpreted, i.e. if you were mapping surface temperatures you would not use red to colour the cold areas and blue for the hot</p></li>
+<li><p>Use black font and black lines for the axes</p></li>
+<li><p>Do not put a border around the figure</p></li>
 </ul>
 </div>
 <div id="captions" class="section level3 unnumbered hasAnchor">
@@ -413,6 +431,7 @@ div.csl-indent {
 <p>If you have a date axis, arrange the dates so that they can be read.</p>
 <p><img src="images/styleguide/Goodgraphs/Slide4.PNG" style="width:80.0%" /></p>
 <p>Do not let them all crash into each other.</p>
+<p>If you have a timespan of many years, do not include days and months in the date tick label. For example, between 1950 and 2000, it does not matter to the reader that a point occurred on 1 January.</p>
 <p><img src="images/styleguide/Goodgraphs/Slide5.PNG" style="width:80.0%" /></p>
 </div>
 <div id="multipanel-plots" class="section level3 unnumbered hasAnchor">
@@ -432,7 +451,7 @@ div.csl-indent {
 <div id="bad-graphs" class="section level3 unnumbered hasAnchor">
 <h3>Bad graphs<a href="StyleGuide.html#bad-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following graphs leave a lot to be desired! They misrepresent data, lack critical details, and are visually jarring. Take a look at each and read the marker’s feedback to get an idea of how your graphs will be assessed.</p>
-<strong>Figure 1:</strong>
+<p><strong>Figure 1:</strong></p>
 <center>
 <img src="images/styleguide/bad-graph-1.png" style="width:80.0%" />
 </center>
@@ -443,7 +462,7 @@ div.csl-indent {
 <li>5 decimal places! With the scale of this y-axis decimal places are serving no useful purpose here</li>
 <li>There’s no units or y-axis label and a title has been used instead of a figure caption</li>
 </ul>
-<strong>Figure 2:</strong>
+<p><strong>Figure 2:</strong></p>
 <center>
 <img src="images/styleguide/bad-graph-2.png" style="width:80.0%" />
 </center>
@@ -453,7 +472,7 @@ div.csl-indent {
 <li>No axis labels or units</li>
 <li>Missing a legend for the two lines plotted</li>
 </ul>
-<strong>Figure 3:</strong>
+<p><strong>Figure 3:</strong></p>
 <center>
 <img src="images/styleguide/bad-graph-3.png" style="width:80.0%" />
 </center>
@@ -487,7 +506,7 @@ div.csl-indent {
 <li><strong>Pooled group:</strong> Identification of a pooled group with a dashed line is optional</li>
 </ul>
 <center>
-<img src="images/styleguide/table.png" width="100%" data-action="zoom" />
+<p><img src="images/styleguide/table.png" width="100%" data-action="zoom" /></p>
 </center>
 </div>
 <div id="referencing" class="section level2 unnumbered hasAnchor">
