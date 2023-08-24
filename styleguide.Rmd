@@ -41,7 +41,7 @@ Use consistent approach when capatalising your headers/titles:
 
 ## Figures {.unnumbered}
 
-### Positioning
+### Positioning {.unnumbered}
 
 Put the figure after it is referred to in the text for the first time, so that the figure is below. Refer to every figure and make sure the figure caption is updated to the right number.
 
