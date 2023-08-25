@@ -60,15 +60,15 @@
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.1.9000/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1.9000/leaflet-providers-plugin.js"></script>
+<script src="libs/plotly-binding-4.10.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -120,7 +120,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -133,7 +133,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -199,13 +199,13 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#text"><i class="fa fa-check"></i>Text</a>
 <ul>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#units"><i class="fa fa-check"></i>Units</a></li>
-<li class="chapter" data-level="0.0.1" data-path="StyleGuide.html"><a href="StyleGuide.html#chemicals"><i class="fa fa-check"></i><b>0.0.1</b> Chemicals</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#chemicals"><i class="fa fa-check"></i>Chemicals</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#fonts"><i class="fa fa-check"></i>Fonts</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#paragraphs"><i class="fa fa-check"></i>Paragraphs</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#figures"><i class="fa fa-check"></i>Figures</a>
 <ul>
-<li class="chapter" data-level="0.0.2" data-path="StyleGuide.html"><a href="StyleGuide.html#positioning"><i class="fa fa-check"></i><b>0.0.2</b> Positioning</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#positioning"><i class="fa fa-check"></i>Positioning</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#d"><i class="fa fa-check"></i>3D</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#colour"><i class="fa fa-check"></i>Colour</a></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#captions"><i class="fa fa-check"></i>Captions</a></li>
@@ -458,11 +458,11 @@ You can use either Excel or R for this module.
 <center>
 <br>
 <span class="math display" id="eq:module4-3" id="eq:module4-2" id="eq:module4-1">\[\begin{align*}
-{CO}_{2(\text{gas})}&amp;\rightleftarrows{CO}_{2(\text{dissolved})}
+{CO}_{2(\text{gas})}&amp;\rightleftarrows{CO}_{2(\text{dissolved})} 
 \tag{18} \\
-{CO}_{2(\text{dissolved})}+H_2O&amp;\rightleftarrows H_2{CO}_3
+{CO}_{2(\text{dissolved})}+H_2O&amp;\rightleftarrows H_2{CO}_3 
 \tag{19} \\
-{CO}_{2(\text{gas})}+H_2O&amp;\rightleftarrows \color{#ED7D31}{H_2CO_3^\ast} \hspace{3em} K_{H} = 3.39×10^{-2}
+{CO}_{2(\text{gas})}+H_2O&amp;\rightleftarrows \color{#ED7D31}{H_2CO_3^\ast} \hspace{3em} K_{H} = 3.39×10^{-2} 
 \tag{20} \\
 \end{align*}\]</span>
 </center>
@@ -502,7 +502,7 @@ C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2
 <p><br></p>
 <p>Open the Excel spreadsheet or R project and examine the tab or script <code>Initial CO2</code>. The chemical equations and constants are given to you already. The variables that we are forcing to be constant in Excel are
 <span style="color: #A5A5A5;">coloured grey</span>. Enter the equations for Exercise 1 into the <span style="color: #FFD966;">yellow boxes</span>.</p>
-<p>If we assume that calcium ion concentration does not vary much in this system, we can force it to be 5×10<sup>-4</sup> mol L<sup>-1</sup>. Calcium carbonate (CaCO<sub>3</sub>) precipitation or dissolution is governed by the ratio (<span class="math inline">\(\mathrm{\Omega}\)</span>) of Ca<sup>2+</sup> concentration and CO<sub>3</sub><sup>2-</sup> concentration to the solubility constant, <span class="math inline">\(K_{sp}\)</span>, according to Equations <a href="M4_1.html#eq:module4-10">(27)</a> and <a href="M4_1.html#eq:module4-11">(28)</a>. If is greater than 1, then precipitation is favourable, and conversely, if is less than 1, dissolution is favourable.</p>
+<p>If we assume that calcium ion concentration does not vary much in this system, we can force it to be 5×10<sup>-4</sup> mol L<sup>-1</sup>. Calcium carbonate (CaCO<sub>3</sub>) precipitation or dissolution is governed by the ratio (<span class="math inline">\(\mathrm{\Omega}\)</span>) of Ca<sup>2+</sup> concentration and CO<sub>3</sub><sup>2-</sup> concentration to the solubility constant, <span class="math inline">\(K_{sp}\)</span>, according to Equations <a href="M4_1.html#eq:module4-10">(27)</a> and <a href="M4_1.html#eq:module4-11">(28)</a>. If  is greater than 1, then precipitation is favourable, and conversely, if  is less than 1, dissolution is favourable.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-11" id="eq:module4-10">\[\begin{align*}
@@ -522,7 +522,7 @@ C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2
 <div class="figure"><span style="display:block;" id="fig:figM4-2"></span>
 <img src="images/module4/picture2.png" alt="Double logarithmic plot of the equilibrium composition of seawater in our model. Adapted from @stumm1996." width="90%" data-action="zoom" />
 <p class="caption">
-Figure 5: Double logarithmic plot of the equilibrium composition of seawater in our model. Adapted from <span class="citation">Stumm and Morgan (<a href="#ref-stumm1996">1996</a>)</span>.
+Figure 5: Double logarithmic plot of the equilibrium composition of seawater in our model. Adapted from <span class="citation"><a href="#ref-stumm1996" role="doc-biblioref">Stumm and Morgan</a> (<a href="#ref-stumm1996" role="doc-biblioref">1996</a>)</span>.
 </p>
 </div>
 </center>
@@ -556,9 +556,7 @@ Don’t forget that your successive iterations, are not time steps, like we had 
 </video>
 <div class="rmdquestion">
 <p>
-Big questions: if you increase CO<sub>2</sub>, does the pH rise or
-fall? Does CaCO<sub>3</sub> precipitation become more or less favourable
-if CO<sub>2</sub> increases?
+Big questions: if you increase CO<sub>2</sub>, does the pH rise or fall? Does CaCO<sub>3</sub> precipitation become more or less favourable if CO<sub>2</sub> increases?
 </p>
 </div>
 </div>
@@ -583,8 +581,7 @@ Figure 6: Changes in global average surface pH and saturation state with respect
 <p>Remember back to Module 1 where we modelled salinity values from flow. Let’s do something similar here to predict year from our CO<sub>2</sub>, Omega, and pH. Correlate the IPCC data of CO<sub>2</sub>/Year, pH/Year, and Omega/Year (i.e. use a scatterplot and add a trendline). Use these equations to generate modelled year values for our Exercise 3 model. Compare and contrast your results with a plot each for CO<sub>2</sub>, pH, and Omega.</p>
 <div class="rmdtip2">
 <p>
-You will need to convert atm to µatm and multiply Omega by 100 to
-create a percentage!
+You will need to convert atm to µatm and multiply Omega by 100 to create a percentage!
 </p>
 </div>
 </div>
