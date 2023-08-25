@@ -148,10 +148,12 @@ When you have finished filling in all the columns, create some plots to explore 
 
 Play with the parameters and see what happens.
 
+
 ### Notation {#M5A_11 .unnumbered}
 
 ::: {.panelset .sideways}
 ::: panel
+
 [Forcing/Limiting Variables]{.panel-name}
 
 $P$ = precipitation (m/d)
@@ -162,6 +164,7 @@ $A_c$ = catchment area (m^2^)
 :::
 
 ::: panel
+
 [Storage Variables]{.panel-name}
 
 $S_{(t)}$ = total volume of water stored in catchment at time $t$ (m^3^)
@@ -191,9 +194,11 @@ $D_{ebs}$ = effective depth of influence from the bottom of the saturated zone f
 $D_{eag}$ = effective depth of influence from the bottom of the saturated zone for agricultural crop evaporation (m)
 
 $S_{us(fc)}$ = current unsaturated zone field capacity (m^3^)
+
 :::
 
 ::: panel
+
 [ET Variables/Fluxes]{.panel-name}
 
 $e_t$ = total evapotranspiration at time $t$ (m/d)
@@ -221,9 +226,11 @@ $K_s$ = saturated hydraulic conductivity (dimensionless)
 $\alpha_{ebs}$ = bare soil evaporation scaling factor (dimensionless)
 
 $\alpha_{eag}$ = agriculture evaporation scaling factor (dimensionless)
+
 :::
 
 ::: panel
+
 [Flow Variables/Fluxes]{.panel-name}
 
 $Q_t$ = total runoff at time $t$ (m/d)
@@ -241,8 +248,9 @@ $R_g$ = daily recharge $S_{sat} \rightarrow S_{gw}$ (m/d)
 $\alpha$, $\beta$ = recession coefficients for subsurface flow from saturated zone
 
 $\alpha_{bf}$, $\beta_{bf}$ = recession coefficients for subsurface flow from groundwater store
+
 :::
-:::
+:::::
 
 ### Equations {#M5A_12 .unnumbered}
 
