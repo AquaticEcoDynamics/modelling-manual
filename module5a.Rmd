@@ -344,12 +344,14 @@ S_{us(fc)}^{t+1}=\ f_c\left(S_{max}-\ S_{sat}^t\right)
 
 Threshold storage in the unsaturated zone is simply the maximum potential storage capacity in the unsaturated zone multiplied (limited) by the threshold storage parameter.
 
-<!---
+
 <center>
 \begin{equation}
 \color{grey}{S_{us}^{t+1^\prime}}=\ S_{us}^t+\ P^{t+1} A_{c} 
 (\#eq:module5a-7)
 \end{equation}
+</center>
+<!---
 \begin{equation}
  \color{red}{\text{if}}\ \ \ \color{grey}{S_{us}^{{t+1}^\prime}}>\ S_{us(fc)}^{t+1} \ \color{red}{\text{  then  }} \ R_p^{t+1}=\ \color{grey}{S_{us}^{{t+1}^\prime}}-\ S_{us(fc)}^{t+1}
 (\#eq:module5a-8)
