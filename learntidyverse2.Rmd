@@ -1,6 +1,7 @@
 <!-- # (PART)  Supporting Material {-}  -->
 
-# Learning the Tidyverse2 {#tidyverse2 .unnumbered}
+<!-- # Learning the Base Plotting {#tidyverse2 .unnumbered} -->
+# Learning the Tidyverse2 {#tidyverse .unnumbered}
 
 ## Visualising Module 1 Flow Data {-}
 
@@ -16,24 +17,13 @@
 5) Download the spreadsheet for this workshop [here](envFlowData.xls)
 6) Move this to your *ENVT3362_workshop_2* directory
 
-#### Install the tidyverse {-}
-
-- Type this into the R console
-- You only need to do this once
-
-```{r echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE}
-install.packages("tidyverse")
-```
-
 ### Importing and formatting the data {-}
 
 #### Load the necessary packages {-}
 
-- `library(tidyverse)` loads all the 'core' tidyverse packages
 - readxl and lubridate need to be loaded separately 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-library(tidyverse)
 library(readxl)
 library(lubridate)
 ```
@@ -77,367 +67,150 @@ envFlow$date <- ymd(envFlow$date)
 head(envFlow)
 ```
 
-### Graphing with ggplot {-}
+### Graphing with base plot {-}
 
-#### Call `ggplot()` {-}
+Simply using the 'plot' function will make a default points plot. The plot does not look good, however, the function is convenient for checking your data quickly.
 
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-ggplot() 
-```
 
-#### Define the data and mapping {-}
-
-- The aesthetics (`aes()`) provide the mapping between variables in the data and the plot's visual properties
+#### Call `plot()` {-}
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot(data = envFlow, mapping = aes(x = date, y = totalDischarge)) 
-
+plot(envFlow) 
 ```
 
-#### Add a geometry layer {-}
-
-- `geom_` functions tell ggplot how to render each observation
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot(data = envFlow, mapping = aes(x = date, y = totalDischarge)) +
-  geom_line() 
-
-```
-
-#### Change the geometry {-}
-
-- As long as the aesthetics can be mapped to the declared geometry type, ggplot will render the graph
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot(data = envFlow, mapping = aes(x = date, y = totalDischarge)) +
-  geom_point()
-
-```
-
-#### Change the colour {-}
-
-- Colours can either be hexadecimal codes (e.g. `"#0000FF"` is blue) or one of [R's reserved colour names](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot(data = envFlow, mapping = aes(x = date, y = totalDischarge)) +
-  geom_line(colour = "dodgerblue3") 
-
-```
-
-#### Fix the labels {-}
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot(data = envFlow, mapping = aes(x = date, y = totalDischarge)) +
-  geom_line(colour = "dodgerblue3") +
-  labs(x = "Date", y = "Total Discharge (ML)")
-
-```
-
-#### Change the theme {-}
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot(data = envFlow, mapping = aes(x = date, y = totalDischarge)) +
-  geom_line(colour = "dodgerblue3") +
-  labs(x = "Date", y = "Total Discharge (ML)") +
-  theme_light()
-
-```
-
-#### Customise the theme {-}
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot(data = envFlow, mapping = aes(x = date, y = totalDischarge)) +
-  geom_line(colour = "dodgerblue3") +
-  labs(x = "Date", y = "Total Discharge (ML)") +
-  theme_light() +
-  theme(
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(colour = "black")
-  )
-
-```
-
-#### Save the plot {-}
-
-- File types can be changed by modifying the file extensions e.g. `"discharge.jpeg"`
-
-```{r echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE}
-
-ggsave(
-  filename = "discharge.pdf",
-  width = 2000,
-  height = 2000,
-  units = 'px'
-  )
-
-```
-
-## Visualising Diversion Scenarios {-}
-
-Let's pretend our graph will be used in a report that assesses the impact of the proposed diversion scenarios. We need to visually communicate to the reader the upper and lower limits of flows that can be diverted. To do this, let's highlight the region of the graph where environmental flows can occur under Diversion Scenario 1 (i.e. Water below 50 ML/day and above 550 ML/day is not diverted).
-
-#### Map the current aesthetics to `geom_line()` {-}
-
-- `aes()` can be passed to either `ggplot()` or a specific `geom_`
-- Aesthetics supplied to `ggplot()` are used as defaults for every layer
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot() +
-  geom_line(data = envFlow, mapping = aes(x = date, y = totalDischarge), colour = "dodgerblue3") +
-  labs(x = "Date", y = "Total Discharge (ML)") +
-  theme_light() +
-  theme(
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(colour = "black")
-  )
-
-```
-
-#### Add a second geometry {-}
-
-- `geom_rect()` has two dimensions and therefore reques different aesthetic mappings
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot() +
-  geom_line(data = envFlow, mapping = aes(x = date, y = totalDischarge), colour = "dodgerblue3") +
-  geom_rect(mapping = aes(xmin=min(envFlow$date),xmax=max(envFlow$date), ymin=50, ymax=550))+
-  labs(x = "Date", y = "Total Discharge (ML)") +
-  theme_light() +
-  theme(
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(colour = "black")
-  )
-
-```
-
-#### Customise the geometry {-}
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot() +
-  geom_line(data = envFlow, mapping = aes(x = date, y = totalDischarge), colour = "dodgerblue3") +
-  geom_rect(
-    mapping = aes(xmin=min(envFlow$date),xmax=max(envFlow$date), ymin=50, ymax=550),
-    alpha = 0.25
-  )+
-  labs(x = "Date", y = "Total Discharge (ML)") +
-  theme_light() +
-  theme(
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(colour = "black")
-  )
-
-```
-
-#### Add a legend {-}
-
-- By specifying `fill` inside the aesthetics, ggplot *maps* this information to the geom's fill (i.e. the colour fill)
-- Usually a grouping variable from the data would be provided here i.e. a column that classifies your data into different groups  
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot() +
-  geom_line(data = envFlow, mapping = aes(x = date, y = totalDischarge), colour = "dodgerblue3") +
-  geom_rect(
-    mapping = aes(xmin=min(envFlow$date),xmax=max(envFlow$date), ymin=50, ymax=550, fill = "Diversion Scenario 1"),
-    alpha = 0.25
-  )+
-  labs(x = "Date", y = "Total Discharge (ML)") +
-  theme_light() +
-  theme(
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(colour = "black")
-  )
-
-```
-
-#### Customise the legend {-}
-
-- ggplot automatically assigns the colours, change this with `scale_fill_manual()`
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot() +
-  geom_line(data = envFlow, mapping = aes(x = date, y = totalDischarge), colour = "dodgerblue3") +
-  geom_rect(
-    mapping = aes(xmin=min(envFlow$date),xmax=max(envFlow$date), ymin=50, ymax=550, fill = "Diversion Scenario 1"),
-    alpha = 0.25
-  )+
-  scale_fill_manual(values = "red")+
-  labs(x = "Date", y = "Total Discharge (ML)") +
-  theme_light() +
-  theme(
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(colour = "black"),
-    legend.title = element_blank()
-  )
-
-```
- 
-#### Move the legend {-}
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-ggplot() +
-  geom_line(data = envFlow, mapping = aes(x = date, y = totalDischarge), colour = "dodgerblue3") +
-  geom_rect(
-    mapping = aes(xmin=min(envFlow$date),xmax=max(envFlow$date), ymin=50, ymax=550, fill = "Diversion Scenario 1"),
-    alpha = 0.25
-  )+
-  scale_fill_manual(values = "red")+
-  labs(x = "Date", y = "Total Discharge (ML)") +
-  theme_light() +
-  theme(
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(colour = "black"),
-    legend.title = element_blank(),
-    legend.position = "top",
-    legend.justification = "right"
-  )
-
-```
-
-#### Save the plot {-}
-
-```{r echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE}
-
-ggsave(
-  filename = "dischargeDiversion1.pdf",
-  width = 297,
-  height = 210,
-  units = 'mm',
-  scale = 0.8
-  )
-
-```
-
-
-## Barcharts and Pipes {-}
-
-#### Reload the data {-}
-
-```{r message=FALSE, warning=FALSE, include=FALSE}
-envFlow  <- read_xls(path = "data/workshop2/envFlowData.xls", sheet = 1)
-```
-
-```{r eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
-envFlow  <- read_xls(path = "envFlowData.xls", sheet = 1)
-```
-
-#### Use pipes and `mutate()` to reformat the date {-}
-
-- The pipe (`%>%`) operator takes the output from one function and makes it the input of the next 
-- Pipes can be used across the tidyverse when working with tidy data
-- `mutate()` is used to add or remove variables when working with pipes
-- This is the same as `envFlow$date <- ymd(envFlow$date)` but it's 'pipeable'!
+'plot' defaults to a points plot, but we can quickly change it to a line plot using the argument `type = "l"`.
 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-envFlow %>% 
-  mutate(date = ymd(date)) 
-
+plot(envFlow, type = "l") 
 ```
 
-#### Extract the years {-}
-
-- `year()` returns the numerical year from date formatted data
+Just as with ggplot, we can access the R database of standard colours. 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-envFlow %>% 
-  mutate(date = ymd(date)) %>% 
-  mutate(year = year(date))
-
+plot(envFlow, type = "l", col = "dodgerblue3") 
 ```
 
-
-#### Pipes are non-destructive {-}
-
-- Notice how `envFlow` is unchanged? This is useful when performing 'data exploration' as the original dataframe never altered
+By default it is selecting x and y from columns 1 and 2. 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-head(envFlow)
-
+plot(x=envFlow$date, y=envFlow$totalDischarge    ,type="l",col="dodgerblue3")
 ```
 
-#### Group and summarise {-}
+If you had several columns, you could choose which to plot on the y axis. We can make a new variable, say, double flow. A new line can be appended to the original plot using the `lines` function.
 
-- Group the data by new `year` column and calculate summary statistics with `summarise()`
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-envFlow %>% 
-  mutate(date = ymd(date)) %>% 
-  mutate(year = year(date)) %>% 
-  group_by(year) %>% 
-  summarise(totalDischarge = sum(totalDischarge))
-
+doubleflow = envFlow$totalDischarge * 2
+plot(x=envFlow$date, y=envFlow$totalDischarge    ,type="l",col="dodgerblue3")
+lines(x=envFlow$date, y=doubleflow, col="red4")
 ```
 
-#### Plot using `geom_col()` {-}
-
-- Pipe this into `ggplot()`
-- Note that we don't need to specify the `data` argument to `ggplot()`
+To plot a subset of the data, use the square brackets to select indices, say, points 100 to 800.
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-envFlow %>% 
-  mutate(date = ymd(date)) %>% 
-  mutate(year = year(date)) %>% 
-  group_by(year) %>% 
-  summarise(totalDischarge = sum(totalDischarge)) %>% 
-  ggplot(mapping = aes(x = year, y = totalDischarge)) +
-  geom_col(fill = "dodgerblue3") 
-
+doubleflow = envFlow$totalDischarge * 2
+plot(x=envFlow$date[100:800], y=envFlow$totalDischarge[100:800]    ,type="l",col="dodgerblue3")
 ```
 
-#### Apply the previous theme {-}
+Similarly, the limits of the axes can be set with the `xlim` and `ylim` arguments. 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-
-envFlow %>% 
-  mutate(date = ymd(date)) %>% 
-  mutate(year = year(date)) %>% 
-  group_by(year) %>% 
-  summarise(totalDischarge = sum(totalDischarge)) %>% 
-  ggplot(mapping = aes(x = year, y = totalDischarge)) +
-  geom_col(fill = "dodgerblue3") +
-  labs(x="Year", y = 'Total Discharge (ML)')+
-  theme_light() +
-  theme(
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(colour = "black")
-  )
-
+plot(x=envFlow$date, y=envFlow$totalDischarge    
+     ,type="l",col="dodgerblue3"
+     ,xlim = c(date("2000-01-01"),date("2005-01-01"))
+     ,ylim = c(0,1500)
+     )
 ```
 
-#### Recap {-}
+#### Call `plot()` and then start again {-}
 
-```{r echo=TRUE, eval=FALSE, output=FALSE,message=FALSE, warning=FALSE}
+The base plot is convenient, however, to make it look good, sometimes it is easier to plot it as a blank and add each element in separately. Just as "l" was the argument for lines, "n" is an argument for no plot. We can even turn off the axes and titles.
 
-read_xls(path = "envFlowData.xls", sheet = 1) %>%
-  mutate(date = ymd(date)) %>% 
-  mutate(year = year(date)) %>% 
-  group_by(year) %>% 
-  summarise(totalDischarge = sum(totalDischarge)) %>% 
-  ggplot(mapping = aes(x = year, y = totalDischarge)) +
-  geom_col(fill = "dodgerblue3") +
-  labs(x="Year", y = 'Total Discharge (ML)')+
-  theme_light() +
-  theme(
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(colour = "black")
-  )
-
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+plot(envFlow,type="n"
+     ,axes=F
+     ,xlab="", ylab=""
+     ,xlim = c(date("2000-01-01"),date("2005-01-01"))
+     )
 ```
+
+Then we can add all the elements back in. The plot is still open so it will plot everything to the blank plot.
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+plot(envFlow,type="n"
+     ,axes=F
+     ,xlab="", ylab=""
+     ,xlim = c(date("2000-01-01"),date("2005-01-01"))
+     )
+lines(envFlow$date,envFlow$totalDischarge,col="dodgerblue3")
+lines(envFlow$date,doubleflow,col="red4")
+box(bty="o")
+```
+
+#### Axis and mtext {-}
+We can put the axis and axis labels back in using the functions 'axis' and 'mtext'. They both have the `side` argument:
+
+1 = bottom, 2 = left, 3 = top, 4 = right
+
+The font size defaults to 1, but we can adjust it using the argument `cex`. The distance from the axis is set using `line`. the `expression` function allows formatting of text, such as subscripts and superscripts.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+plot(envFlow,type="n"
+     ,axes=F
+     ,xlab="", ylab=""
+     ,xlim = c(date("2000-01-01"),date("2005-01-01"))
+     )
+lines(envFlow$date,envFlow$totalDischarge,col="dodgerblue3")
+lines(envFlow$date,doubleflow,col="red4")
+box(bty="o")
+mtext(side = 1,text="Date",line=2)
+mtext(side = 2,text=expression("Flow (ML d"^-1*")"),line=2)
+axis(2,cex=0.7)
+```
+
+The date axis needs to be formatted, then the `axis.Date` function is used. This step is clunky compared to ggplot.
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+plot(envFlow,type="n"
+     ,axes=F
+     ,xlab="", ylab=""
+     ,xlim = c(date("2000-01-01"),date("2005-01-01"))
+     )
+lines(envFlow$date,envFlow$totalDischarge,col="dodgerblue3")
+lines(envFlow$date,doubleflow,col="red4")
+box(bty="o")
+mtext(side = 1,text="Date",line=2)
+mtext(side = 2,text=expression("Flow (ML d"^-1*")"),line=2)
+axis(2,cex=0.7)
+x.axis<-as.Date(seq(min(envFlow$date),max(envFlow$date),by=3*365),format="%Y")
+axis.Date(at=x.axis,side=1,cex=0.7)
+```
+
+#### Legend {-} 
+
+Add a legend using the `legend` function. You can search for its details. In this case, `topleft` is the position, inset by 0.1; the `legend` argument is the text, `col` is the sequence of colours, and pch is the symbol.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+plot(envFlow,type="n"
+     ,axes=F
+     ,xlab="", ylab=""
+     ,xlim = c(date("2000-01-01"),date("2005-01-01"))
+     )
+lines(envFlow$date,envFlow$totalDischarge,col="dodgerblue3")
+lines(envFlow$date,doubleflow,col="red4")
+box(bty="o")
+mtext(side = 1,text="Date",line=2)
+mtext(side = 2,text=expression("Flow (ML d"^-1*")"),line=2)
+axis(2,cex=0.7)
+x.axis<-as.Date(seq(min(envFlow$date),max(envFlow$date),by=3*365),format="%Y")
+axis.Date(at=x.axis,side=1,cex=0.7)
+legend("topleft", inset=0.1
+       ,legend=c("Flow","Doubleflow")
+       ,col=c("dodgerblue3","red4")
+       ,pch=16 
+       ,cex = 0.7)
+```
+
+
+

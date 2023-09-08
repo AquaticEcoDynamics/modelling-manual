@@ -40,6 +40,6 @@ Please contact your Unit Coordinator or tutor for queries relating to this workb
 11) [Module 7 - Lake Ecosystem Dynamics](#M7_1)
 12) [Final Project](#FinalProject)
 13) [Learning the Tidyverse](#tidyverse)
-<!-- 14) [Learning the Tidyverse2](#tidyverse2) -->
+14) [Learning the base plot](#baseplot)
 15) [Modelling Quokkas in R](#quokkas)   
 16) [References](#references)
