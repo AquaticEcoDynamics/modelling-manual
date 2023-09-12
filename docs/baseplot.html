@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Learning the base plot | Environmental Dynamics Workbook</title>
+  <title>Learning to use the base plot | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Learning the base plot | Environmental Dynamics Workbook" />
+  <meta property="og:title" content="Learning to use the base plot | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The online Environmental Dynamics Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Learning the base plot | Environmental Dynamics Workbook" />
+  <meta name="twitter:title" content="Learning to use the base plot | Environmental Dynamics Workbook" />
   
   <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
   
@@ -328,14 +328,25 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#visualising-diversion-scenarios"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
 <li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#barcharts-and-pipes"><i class="fa fa-check"></i>Barcharts and Pipes</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html"><i class="fa fa-check"></i>Learning the base plot</a>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html"><i class="fa fa-check"></i>Learning to use the base plot</a>
 <ul>
 <li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#visualising-module-1-flow-data-1"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#setting-up-1"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#importing-and-formatting-the-data-1"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
-<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#graphing-with-base-plot"><i class="fa fa-check"></i>Graphing with base plot</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#graphing-with-base-plot"><i class="fa fa-check"></i>Graphing with base plot</a>
+<ul>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#call-plot"><i class="fa fa-check"></i>Call <code>plot()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#call-plot-and-then-start-again"><i class="fa fa-check"></i>Call <code>plot()</code> and then start again</a>
+<ul>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#axis-and-mtext"><i class="fa fa-check"></i>Axis and mtext</a></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#legend"><i class="fa fa-check"></i>Legend</a></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#add-a-polygon"><i class="fa fa-check"></i>Add a polygon</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#make-an-annual-column-chart"><i class="fa fa-check"></i>Make an annual column chart</a></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#make-a-multi-plot-figure"><i class="fa fa-check"></i>Make a multi-plot figure</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html"><i class="fa fa-check"></i>Modelling Quokkas in R</a>
 <ul>
@@ -366,7 +377,8 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="baseplot" class="section level1 unnumbered hasAnchor">
-<h1>Learning the base plot<a href="baseplot.html#baseplot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1>Learning to use the base plot<a href="baseplot.html#baseplot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>As an alternative to ggplot and tidyverse, there are other basic plotting functions that you might prefer. This module takes you through a few basic plotting functions. It starts in the same way as the tidyverse module, using the same dataset.</p>
 <div id="visualising-module-1-flow-data-1" class="section level2 unnumbered hasAnchor">
 <h2>Visualising Module 1 Flow Data<a href="baseplot.html#visualising-module-1-flow-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="setting-up-1" class="section level3 unnumbered hasAnchor">
@@ -443,11 +455,12 @@ div.csl-indent {
 ## 6 1992-01-06           26.8</code></pre>
 </div>
 </div>
-<div id="graphing-with-base-plot" class="section level3 unnumbered hasAnchor">
-<h3>Graphing with base plot<a href="baseplot.html#graphing-with-base-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="graphing-with-base-plot" class="section level2 unnumbered hasAnchor">
+<h2>Graphing with base plot<a href="baseplot.html#graphing-with-base-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Simply using the ‘plot’ function will make a default points plot. The plot does not look good, however, the function is convenient for checking your data quickly.</p>
-<div id="call-plot" class="section level4 unnumbered hasAnchor">
-<h4>Call <code>plot()</code><a href="baseplot.html#call-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="call-plot" class="section level3 unnumbered hasAnchor">
+<h3>Call <code>plot()</code><a href="baseplot.html#call-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="baseplot.html#cb45-1" tabindex="-1"></a><span class="fu">plot</span>(envFlow) </span></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
 <p><code>plot</code> defaults to a points plot, but we can quickly change it to a line plot using the argument <code>type = "l"</code>.</p>
@@ -476,8 +489,9 @@ div.csl-indent {
 <span id="cb51-5"><a href="baseplot.html#cb51-5" tabindex="-1"></a>     )</span></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 </div>
-<div id="call-plot-and-then-start-again" class="section level4 unnumbered hasAnchor">
-<h4>Call <code>plot()</code> and then start again<a href="baseplot.html#call-plot-and-then-start-again" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="call-plot-and-then-start-again" class="section level2 unnumbered hasAnchor">
+<h2>Call <code>plot()</code> and then start again<a href="baseplot.html#call-plot-and-then-start-again" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The base plot is convenient, however, to make it look good, sometimes it is easier to plot it as a blank and add each element in separately. Just as “l” was the argument for lines, “n” is an argument for no plot. We can even turn off the axes and titles.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="baseplot.html#cb52-1" tabindex="-1"></a><span class="fu">plot</span>(envFlow,<span class="at">type=</span><span class="st">&quot;n&quot;</span></span>
 <span id="cb52-2"><a href="baseplot.html#cb52-2" tabindex="-1"></a>     ,<span class="at">axes=</span>F</span>
@@ -495,9 +509,8 @@ div.csl-indent {
 <span id="cb53-7"><a href="baseplot.html#cb53-7" tabindex="-1"></a><span class="fu">lines</span>(envFlow<span class="sc">$</span>date,doubleflow,<span class="at">col=</span><span class="st">&quot;red4&quot;</span>)</span>
 <span id="cb53-8"><a href="baseplot.html#cb53-8" tabindex="-1"></a><span class="fu">box</span>(<span class="at">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
-</div>
-<div id="axis-and-mtext" class="section level4 unnumbered hasAnchor">
-<h4>Axis and mtext<a href="baseplot.html#axis-and-mtext" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="axis-and-mtext" class="section level3 unnumbered hasAnchor">
+<h3>Axis and mtext<a href="baseplot.html#axis-and-mtext" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can put the axis and axis labels back in using the functions ‘axis’ and ‘mtext’. They both have the <code>side</code> argument:</p>
 <p>1 = bottom, 2 = left, 3 = top, 4 = right</p>
 <p>The font size defaults to 1, but we can adjust it using the argument <code>cex</code>. The distance from the axis is set using <code>line</code>. the <code>expression</code> function allows formatting of text, such as subscripts and superscripts.</p>
@@ -529,8 +542,8 @@ div.csl-indent {
 <span id="cb55-13"><a href="baseplot.html#cb55-13" tabindex="-1"></a><span class="fu">axis.Date</span>(<span class="at">at=</span>x.axis,<span class="at">side=</span><span class="dv">1</span>,<span class="at">cex=</span><span class="fl">0.7</span>)</span></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 </div>
-<div id="legend" class="section level4 unnumbered hasAnchor">
-<h4>Legend<a href="baseplot.html#legend" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="legend" class="section level3 unnumbered hasAnchor">
+<h3>Legend<a href="baseplot.html#legend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Add a legend using the <code>legend</code> function. You can search for its details. In this case, <code>topleft</code> is the position, inset by 0.1; the <code>legend</code> argument is the text, <code>col</code> is the sequence of colours, and pch is the symbol.</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="baseplot.html#cb56-1" tabindex="-1"></a><span class="fu">plot</span>(envFlow,<span class="at">type=</span><span class="st">&quot;n&quot;</span></span>
 <span id="cb56-2"><a href="baseplot.html#cb56-2" tabindex="-1"></a>     ,<span class="at">axes=</span>F</span>
@@ -552,14 +565,16 @@ div.csl-indent {
 <span id="cb56-18"><a href="baseplot.html#cb56-18" tabindex="-1"></a>       ,<span class="at">cex =</span> <span class="fl">0.7</span>)</span></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 </div>
-<div id="add-a-polygon" class="section level4 unnumbered hasAnchor">
-<h4>Add a polygon<a href="baseplot.html#add-a-polygon" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>We can add a polygon that represents the threshold above, say, 500 ML. The <code>polygon</code> function draws a polygon of any shape, by listing a sequence of the x and y values of a polygon. For example, imagine
-it started at 0,0,
-then you drew a line along the x axis to x = 10, y still = 0,
-then you drew a line up from x still = 10 and y = 3,
-then backwards along the x direction from y still = 3, x = 0 again.
-The polygon joins all of these points. These could also be expressed as a matrix</p>
+<div id="add-a-polygon" class="section level3 unnumbered hasAnchor">
+<h3>Add a polygon<a href="baseplot.html#add-a-polygon" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can add a polygon that represents the threshold above, say, 500 ML. The <code>polygon</code> function draws a polygon of any shape, by listing a sequence of the x and y values of a polygon. For example, imagine</p>
+<ul>
+<li><p>it started at 0,0,</p></li>
+<li><p>then you drew a line along the x axis to x = 10, y still = 0,</p></li>
+<li><p>then you drew a line up from x still = 10 and y = 3,</p></li>
+<li><p>then backwards along the x direction from y still = 3, x = 0 again.</p></li>
+</ul>
+<p>The polygon joins all of these points. These could also be expressed as a matrix</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="baseplot.html#cb57-1" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
 <span id="cb57-2"><a href="baseplot.html#cb57-2" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
 <span id="cb57-3"><a href="baseplot.html#cb57-3" tabindex="-1"></a>this.matrix<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="at">ncol =</span> <span class="dv">2</span></span>
@@ -598,8 +613,9 @@ The polygon joins all of these points. These could also be expressed as a matrix
 <span id="cb59-25"><a href="baseplot.html#cb59-25" tabindex="-1"></a>       ,<span class="at">pch=</span><span class="dv">16</span> )</span></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 </div>
-<div id="make-an-annual-column-chart" class="section level4 unnumbered hasAnchor">
-<h4>Make an annual column chart<a href="baseplot.html#make-an-annual-column-chart" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="make-an-annual-column-chart" class="section level2 unnumbered hasAnchor">
+<h2>Make an annual column chart<a href="baseplot.html#make-an-annual-column-chart" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can make an annual summary then plot it as a column chart. The years of the date column can be isolated by formatting the $date column with the <code>format</code> function, and setting the argument to <code>"%Y"</code>, which means year.</p>
 <p>The <code>rowsum</code> function sums rows of a matrix (there is also a function called <code>colsum</code>). The first argument is the matrix column to be summed. The second argument is how to group the rows that are summed, i.e. it will look for values that are the same. Here we can make a new matrix called <code>envFlow.by.year</code>.</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="baseplot.html#cb60-1" tabindex="-1"></a>envFlow.by.year<span class="ot">&lt;-</span><span class="fu">rowsum</span>(<span class="at">x=</span>envFlow<span class="sc">$</span>totalDischarge</span>
@@ -619,9 +635,74 @@ The polygon joins all of these points. These could also be expressed as a matrix
 <span id="cb61-12"><a href="baseplot.html#cb61-12" tabindex="-1"></a>        )</span>
 <span id="cb61-13"><a href="baseplot.html#cb61-13" tabindex="-1"></a><span class="fu">box</span>(<span class="at">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
 <p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+</div>
+<div id="make-a-multi-plot-figure" class="section level2 unnumbered hasAnchor">
+<h2>Make a multi-plot figure<a href="baseplot.html#make-a-multi-plot-figure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can make one figure that has several plots in it. One way to do this is to use the <code>mfrow</code> function. This sets a blank grid where the figures will be written. The arguments are the number of rows and columns that the figures are written into. To put a figure in a particular spot in this blank grid, the <code>mfg</code> function is used. The arguments in this function also correspond to the row and column. You can add white space around each figure using the <code>mar</code> function. Its arguments correspond to the number of lines below, left, above and right of the figure.</p>
+<p>For example, to make two figures above and below, in two rows, use <code>mfrow</code> 2,1. Alternatively, to make two figures left and right, in two columns, use <code>mfrow</code> 1,2.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="baseplot.html#cb62-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))</span>
+<span id="cb62-2"><a href="baseplot.html#cb62-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfg=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb62-3"><a href="baseplot.html#cb62-3" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="fl">0.5</span>,<span class="dv">1</span>))</span>
+<span id="cb62-4"><a href="baseplot.html#cb62-4" tabindex="-1"></a><span class="fu">plot</span>(envFlow,<span class="at">type=</span><span class="st">&quot;n&quot;</span></span>
+<span id="cb62-5"><a href="baseplot.html#cb62-5" tabindex="-1"></a>     ,<span class="at">axes=</span>F</span>
+<span id="cb62-6"><a href="baseplot.html#cb62-6" tabindex="-1"></a>     ,<span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span></span>
+<span id="cb62-7"><a href="baseplot.html#cb62-7" tabindex="-1"></a>     ,<span class="at">xlim =</span> <span class="fu">c</span>(<span class="fu">date</span>(<span class="st">&quot;1992-01-01&quot;</span>),<span class="fu">date</span>(<span class="st">&quot;2010-12-31&quot;</span>))</span>
+<span id="cb62-8"><a href="baseplot.html#cb62-8" tabindex="-1"></a>)</span>
+<span id="cb62-9"><a href="baseplot.html#cb62-9" tabindex="-1"></a><span class="fu">lines</span>(envFlow<span class="sc">$</span>date,envFlow<span class="sc">$</span>totalDischarge,<span class="at">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
+<span id="cb62-10"><a href="baseplot.html#cb62-10" tabindex="-1"></a><span class="fu">box</span>(<span class="at">bty=</span><span class="st">&quot;o&quot;</span>)</span>
+<span id="cb62-11"><a href="baseplot.html#cb62-11" tabindex="-1"></a><span class="fu">mtext</span>(<span class="at">side =</span> <span class="dv">1</span>,<span class="at">text=</span><span class="st">&quot;Year&quot;</span>,<span class="at">line=</span><span class="dv">3</span>)</span>
+<span id="cb62-12"><a href="baseplot.html#cb62-12" tabindex="-1"></a><span class="fu">mtext</span>(<span class="at">side =</span> <span class="dv">2</span>,<span class="at">text=</span><span class="fu">expression</span>(<span class="st">&quot;Flow (ML d&quot;</span><span class="sc">^-</span><span class="dv">1</span><span class="sc">*</span><span class="st">&quot;)&quot;</span>),<span class="at">line=</span><span class="dv">3</span>)</span>
+<span id="cb62-13"><a href="baseplot.html#cb62-13" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>,<span class="at">cex.axis=</span><span class="fl">0.7</span>)</span>
+<span id="cb62-14"><a href="baseplot.html#cb62-14" tabindex="-1"></a>x.axis<span class="ot">&lt;-</span><span class="fu">as.Date</span>(<span class="fu">seq</span>(<span class="fu">min</span>(envFlow<span class="sc">$</span>date),<span class="fu">max</span>(envFlow<span class="sc">$</span>date),<span class="at">by=</span><span class="dv">1</span><span class="sc">*</span><span class="dv">365</span>),<span class="at">format=</span><span class="st">&quot;%Y&quot;</span>)</span>
+<span id="cb62-15"><a href="baseplot.html#cb62-15" tabindex="-1"></a><span class="fu">axis.Date</span>(<span class="at">at=</span>x.axis,<span class="at">side=</span><span class="dv">1</span>,<span class="at">cex.axis=</span><span class="fl">0.7</span>)</span>
+<span id="cb62-16"><a href="baseplot.html#cb62-16" tabindex="-1"></a></span>
+<span id="cb62-17"><a href="baseplot.html#cb62-17" tabindex="-1"></a></span>
+<span id="cb62-18"><a href="baseplot.html#cb62-18" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfg=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))</span>
+<span id="cb62-19"><a href="baseplot.html#cb62-19" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="fl">0.5</span>,<span class="dv">1</span>))</span>
+<span id="cb62-20"><a href="baseplot.html#cb62-20" tabindex="-1"></a>      <span class="fu">barplot</span>(<span class="at">height=</span>envFlow.by.year,<span class="at">beside =</span> T</span>
+<span id="cb62-21"><a href="baseplot.html#cb62-21" tabindex="-1"></a>              ,<span class="at">space=</span><span class="fl">0.1</span></span>
+<span id="cb62-22"><a href="baseplot.html#cb62-22" tabindex="-1"></a>              ,<span class="at">col=</span><span class="st">&quot;dodgerblue3&quot;</span></span>
+<span id="cb62-23"><a href="baseplot.html#cb62-23" tabindex="-1"></a>              ,<span class="at">border =</span> <span class="cn">NA</span></span>
+<span id="cb62-24"><a href="baseplot.html#cb62-24" tabindex="-1"></a>              ,<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fu">max</span>(envFlow.by.year)<span class="sc">*</span><span class="fl">1.1</span>)</span>
+<span id="cb62-25"><a href="baseplot.html#cb62-25" tabindex="-1"></a>              ,<span class="at">cex.axis =</span> <span class="fl">0.7</span>,<span class="at">cex.names =</span> <span class="fl">0.7</span>, </span>
+<span id="cb62-26"><a href="baseplot.html#cb62-26" tabindex="-1"></a>              ,<span class="at">names.arg =</span> <span class="fu">rownames</span>(envFlow.by.year )</span>
+<span id="cb62-27"><a href="baseplot.html#cb62-27" tabindex="-1"></a>              ,<span class="at">xlab =</span> <span class="st">&quot;Year&quot;</span></span>
+<span id="cb62-28"><a href="baseplot.html#cb62-28" tabindex="-1"></a>              ,<span class="at">ylab =</span> <span class="st">&quot;Anual flow (ML)&quot;</span></span>
+<span id="cb62-29"><a href="baseplot.html#cb62-29" tabindex="-1"></a>      )</span>
+<span id="cb62-30"><a href="baseplot.html#cb62-30" tabindex="-1"></a><span class="fu">box</span>(<span class="at">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="baseplot.html#cb63-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb63-2"><a href="baseplot.html#cb63-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfg=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb63-3"><a href="baseplot.html#cb63-3" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb63-4"><a href="baseplot.html#cb63-4" tabindex="-1"></a><span class="fu">plot</span>(envFlow,<span class="at">type=</span><span class="st">&quot;n&quot;</span></span>
+<span id="cb63-5"><a href="baseplot.html#cb63-5" tabindex="-1"></a>     ,<span class="at">axes=</span>F</span>
+<span id="cb63-6"><a href="baseplot.html#cb63-6" tabindex="-1"></a>     ,<span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span></span>
+<span id="cb63-7"><a href="baseplot.html#cb63-7" tabindex="-1"></a>     ,<span class="at">xlim =</span> <span class="fu">c</span>(<span class="fu">date</span>(<span class="st">&quot;1992-01-01&quot;</span>),<span class="fu">date</span>(<span class="st">&quot;2010-12-31&quot;</span>))</span>
+<span id="cb63-8"><a href="baseplot.html#cb63-8" tabindex="-1"></a>)</span>
+<span id="cb63-9"><a href="baseplot.html#cb63-9" tabindex="-1"></a><span class="fu">lines</span>(envFlow<span class="sc">$</span>date,envFlow<span class="sc">$</span>totalDischarge,<span class="at">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
+<span id="cb63-10"><a href="baseplot.html#cb63-10" tabindex="-1"></a><span class="fu">box</span>(<span class="at">bty=</span><span class="st">&quot;o&quot;</span>)</span>
+<span id="cb63-11"><a href="baseplot.html#cb63-11" tabindex="-1"></a><span class="fu">mtext</span>(<span class="at">side =</span> <span class="dv">1</span>,<span class="at">text=</span><span class="st">&quot;Year&quot;</span>,<span class="at">line=</span><span class="dv">3</span>)</span>
+<span id="cb63-12"><a href="baseplot.html#cb63-12" tabindex="-1"></a><span class="fu">mtext</span>(<span class="at">side =</span> <span class="dv">2</span>,<span class="at">text=</span><span class="fu">expression</span>(<span class="st">&quot;Flow (ML d&quot;</span><span class="sc">^-</span><span class="dv">1</span><span class="sc">*</span><span class="st">&quot;)&quot;</span>),<span class="at">line=</span><span class="dv">3</span>)</span>
+<span id="cb63-13"><a href="baseplot.html#cb63-13" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>,<span class="at">cex.axis=</span><span class="fl">0.7</span>)</span>
+<span id="cb63-14"><a href="baseplot.html#cb63-14" tabindex="-1"></a>x.axis<span class="ot">&lt;-</span><span class="fu">as.Date</span>(<span class="fu">seq</span>(<span class="fu">min</span>(envFlow<span class="sc">$</span>date),<span class="fu">max</span>(envFlow<span class="sc">$</span>date),<span class="at">by=</span><span class="dv">1</span><span class="sc">*</span><span class="dv">365</span>),<span class="at">format=</span><span class="st">&quot;%Y&quot;</span>)</span>
+<span id="cb63-15"><a href="baseplot.html#cb63-15" tabindex="-1"></a><span class="fu">axis.Date</span>(<span class="at">at=</span>x.axis,<span class="at">side=</span><span class="dv">1</span>,<span class="at">cex.axis=</span><span class="fl">0.7</span>)</span>
+<span id="cb63-16"><a href="baseplot.html#cb63-16" tabindex="-1"></a></span>
+<span id="cb63-17"><a href="baseplot.html#cb63-17" tabindex="-1"></a></span>
+<span id="cb63-18"><a href="baseplot.html#cb63-18" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfg=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb63-19"><a href="baseplot.html#cb63-19" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb63-20"><a href="baseplot.html#cb63-20" tabindex="-1"></a>      <span class="fu">barplot</span>(<span class="at">height=</span>envFlow.by.year,<span class="at">beside =</span> T</span>
+<span id="cb63-21"><a href="baseplot.html#cb63-21" tabindex="-1"></a>              ,<span class="at">space=</span><span class="fl">0.1</span></span>
+<span id="cb63-22"><a href="baseplot.html#cb63-22" tabindex="-1"></a>              ,<span class="at">col=</span><span class="st">&quot;dodgerblue3&quot;</span></span>
+<span id="cb63-23"><a href="baseplot.html#cb63-23" tabindex="-1"></a>              ,<span class="at">border =</span> <span class="cn">NA</span></span>
+<span id="cb63-24"><a href="baseplot.html#cb63-24" tabindex="-1"></a>              ,<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fu">max</span>(envFlow.by.year)<span class="sc">*</span><span class="fl">1.1</span>)</span>
+<span id="cb63-25"><a href="baseplot.html#cb63-25" tabindex="-1"></a>              ,<span class="at">cex.axis =</span> <span class="fl">0.7</span>,<span class="at">cex.names =</span> <span class="fl">0.7</span>, </span>
+<span id="cb63-26"><a href="baseplot.html#cb63-26" tabindex="-1"></a>              ,<span class="at">names.arg =</span> <span class="fu">rownames</span>(envFlow.by.year )</span>
+<span id="cb63-27"><a href="baseplot.html#cb63-27" tabindex="-1"></a>              ,<span class="at">xlab =</span> <span class="st">&quot;Year&quot;</span></span>
+<span id="cb63-28"><a href="baseplot.html#cb63-28" tabindex="-1"></a>              ,<span class="at">ylab =</span> <span class="st">&quot;Anual flow (ML)&quot;</span></span>
+<span id="cb63-29"><a href="baseplot.html#cb63-29" tabindex="-1"></a>      )</span>
+<span id="cb63-30"><a href="baseplot.html#cb63-30" tabindex="-1"></a><span class="fu">box</span>(<span class="at">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 
-</div>
-</div>
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script>

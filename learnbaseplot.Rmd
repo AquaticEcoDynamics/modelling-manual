@@ -310,7 +310,8 @@ box(bty="o")
 
 You can make one figure that has several plots in it. One way to do this is to use the `mfrow` function. This sets a blank grid where the figures will be written. The arguments are the number of rows and columns that the figures are written into. To put a figure in a particular spot in this blank grid, the `mfg` function is used. The arguments in this function also correspond to the row and column. You can add white space around each figure using the `mar` function. Its arguments correspond to the number of lines below, left, above and right of the figure. 
 
-For example, to make two figures above and below, in two rows, use `mfrow` 2,1.
+For example, to make two figures above and below, in two rows, use `mfrow` 2,1. Alternatively, to make two figures left and right, in two columns, use `mfrow` 1,2.
+
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 par(mfrow=c(2,1))
@@ -344,7 +345,8 @@ par(mar=c(4,4,0.5,1))
       )
 box(bty="o")
 ```    
-Alternatively, to make two figures left and right, in two columns, use `mfrow` 1,2.
+
+
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 par(mfrow=c(1,2))
