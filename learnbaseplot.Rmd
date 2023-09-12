@@ -1,7 +1,9 @@
 <!-- # (PART)  Supporting Material {-}  -->
 
 <!-- # Learning the Base Plotting {#tidyverse2 .unnumbered} -->
-# Learning the base plot {#baseplot .unnumbered}
+# Learning to use the base plot {#baseplot .unnumbered}
+
+As an alternative to ggplot and tidyverse, there are other basic plotting functions that you might prefer. This module takes you through a few basic plotting functions. It starts in the same way as the tidyverse module, using the same dataset.
 
 ## Visualising Module 1 Flow Data {-}
 
@@ -67,12 +69,12 @@ envFlow$date <- ymd(envFlow$date)
 head(envFlow)
 ```
 
-### Graphing with base plot {-}
+## Graphing with base plot {-}
 
 Simply using the 'plot' function will make a default points plot. The plot does not look good, however, the function is convenient for checking your data quickly.
 
 
-#### Call `plot()` {-}
+### Call `plot()` {-}
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 plot(envFlow) 
@@ -123,7 +125,7 @@ plot(x=envFlow$date, y=envFlow$totalDischarge
      )
 ```
 
-#### Call `plot()` and then start again {-}
+## Call `plot()` and then start again {-}
 
 The base plot is convenient, however, to make it look good, sometimes it is easier to plot it as a blank and add each element in separately. Just as "l" was the argument for lines, "n" is an argument for no plot. We can even turn off the axes and titles.
 
@@ -149,7 +151,7 @@ lines(envFlow$date,doubleflow,col="red4")
 box(bty="o")
 ```
 
-#### Axis and mtext {-}
+### Axis and mtext {-}
 We can put the axis and axis labels back in using the functions 'axis' and 'mtext'. They both have the `side` argument:
 
 1 = bottom, 2 = left, 3 = top, 4 = right
@@ -187,7 +189,7 @@ x.axis<-as.Date(seq(min(envFlow$date),max(envFlow$date),by=3*365),format="%Y")
 axis.Date(at=x.axis,side=1,cex=0.7)
 ```
 
-#### Legend {-} 
+### Legend {-} 
 
 Add a legend using the `legend` function. You can search for its details. In this case, `topleft` is the position, inset by 0.1; the `legend` argument is the text, `col` is the sequence of colours, and pch is the symbol.
 
@@ -212,7 +214,7 @@ legend("topleft", inset=0.1
        ,cex = 0.7)
 ```
 
-#### Add a polygon {-} 
+### Add a polygon {-} 
 
 We can add a polygon that represents the threshold above, say, 500 ML. The `polygon` function draws a polygon of any shape, by listing a sequence of the x and y values of a polygon. For example, imagine 
 
@@ -275,7 +277,7 @@ legend("topleft", inset=0.1
 
 ```
 
-#### Make an annual column chart {-} 
+## Make an annual column chart {-} 
 
 We can make an annual summary then plot it as a column chart. The years of the date column can be isolated by formatting the $date column with the `format` function, and setting the argument to `"%Y"`, which means year. 
 
@@ -303,4 +305,77 @@ barplot(envFlow.by.year,beside = TRUE
         )
 box(bty="o")
 ```
+
+## Make a multi-plot figure {-} 
+
+You can make one figure that has several plots in it. One way to do this is to use the `mfrow` function. This sets a blank grid where the figures will be written. The arguments are the number of rows and columns that the figures are written into. To put a figure in a particular spot in this blank grid, the `mfg` function is used. The arguments in this function also correspond to the row and column. You can add white space around each figure using the `mar` function. Its arguments correspond to the number of lines below, left, above and right of the figure. 
+
+For example, to make two figures above and below, in two rows, use `mfrow` 2,1.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+par(mfrow=c(2,1))
+par(mfg=c(1,1))
+par(mar=c(4,4,0.5,1))
+plot(envFlow,type="n"
+     ,axes=F
+     ,xlab="", ylab=""
+     ,xlim = c(date("1992-01-01"),date("2010-12-31"))
+)
+lines(envFlow$date,envFlow$totalDischarge,col="dodgerblue3")
+box(bty="o")
+mtext(side = 1,text="Year",line=3)
+mtext(side = 2,text=expression("Flow (ML d"^-1*")"),line=3)
+axis(2,cex.axis=0.7)
+x.axis<-as.Date(seq(min(envFlow$date),max(envFlow$date),by=1*365),format="%Y")
+axis.Date(at=x.axis,side=1,cex.axis=0.7)
+
+
+par(mfg=c(2,1))
+par(mar=c(4,4,0.5,1))
+      barplot(height=envFlow.by.year,beside = T
+              ,space=0.1
+              ,col="dodgerblue3"
+              ,border = NA
+              ,ylim = c(0,max(envFlow.by.year)*1.1)
+              ,cex.axis = 0.7,cex.names = 0.7, 
+              ,names.arg = rownames(envFlow.by.year )
+              ,xlab = "Year"
+              ,ylab = "Anual flow (ML)"
+      )
+box(bty="o")
+```    
+Alternatively, to make two figures left and right, in two columns, use `mfrow` 1,2.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+par(mfrow=c(1,2))
+par(mfg=c(1,1))
+par(mar=c(4,4,1,1))
+plot(envFlow,type="n"
+     ,axes=F
+     ,xlab="", ylab=""
+     ,xlim = c(date("1992-01-01"),date("2010-12-31"))
+)
+lines(envFlow$date,envFlow$totalDischarge,col="dodgerblue3")
+box(bty="o")
+mtext(side = 1,text="Year",line=3)
+mtext(side = 2,text=expression("Flow (ML d"^-1*")"),line=3)
+axis(2,cex.axis=0.7)
+x.axis<-as.Date(seq(min(envFlow$date),max(envFlow$date),by=1*365),format="%Y")
+axis.Date(at=x.axis,side=1,cex.axis=0.7)
+
+
+par(mfg=c(1,2))
+par(mar=c(4,4,1,1))
+      barplot(height=envFlow.by.year,beside = T
+              ,space=0.1
+              ,col="dodgerblue3"
+              ,border = NA
+              ,ylim = c(0,max(envFlow.by.year)*1.1)
+              ,cex.axis = 0.7,cex.names = 0.7, 
+              ,names.arg = rownames(envFlow.by.year )
+              ,xlab = "Year"
+              ,ylab = "Anual flow (ML)"
+      )
+box(bty="o")
+```    
 
