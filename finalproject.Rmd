@@ -4,32 +4,96 @@
 
 ## Overview {-}
 
+Your major assessment in this unit is an environmental model that you design and a scientific report that you write about your model. The sooner you can start this project, the better it will be.
+
 <center>
-```{r finalproject-journey, echo=FALSE, fig.cap="", out.width = '100%', out.extra='data-action="zoom"'}
+```{r finalproject-journey, echo=FALSE, fig.cap="", out.width = '50%', out.extra='data-action="zoom"'}
 knitr::include_graphics("images/finalproject/journey.png")
 ```
 </center>
 
-## Stages {-}
-
-### Brainstorm {-}
+## Brainstorm {-}
 
 **Complete by: end of Week 8**
 
-### Research & Discovery {-}
+During the first eight weeks, start to think of ideas for your project. As you work on the weekly exercises, consider how you could make a similar model. Also think about an environmental system that you are interested in, or that you have experience with from other units in your degree. Consider what you might like to do next year, whether it is research honours or a career, and whether this project can be a step towards this.
+
+## Research & Discovery {-}
 
 **Complete by: Week 8-9**
 
-### Conceptual Model & Plan {-}
+Commit to a main idea that you would like to pursue. Find some key references for background information and data that you can compare with your simulation. Discuss your ideas with the tutors.
+
+## Conceptual Model & Plan {-}
 
 **Complete by: end of Week 9**
 
-### Two-pager/Pitch {-}
+Design a conceptual model for your project. Decide on the boundary conditions, initial conditions, interactions between variables in the system, data to calibrate the model and scenarios to test the model. Your environmental model can be simple, with only a few major components in its system. It is good if it is discretised with time, like the weekly exercises.
 
-### Idealised Prototype {-}
+## Two-pager/Pitch {-}
 
-### Validation/Evaluation {-}
+Write up your plan for the model in two pages. Include a short introduction of background material. Sketch the interactions between the variables in the system. This two-pager will help you commit to your model, it will help you think it through from beginning to end, and it will give the tutors an overview of your work. 
 
-### Scenarios/Limits {-}
+## Idealised Prototype {-}
 
-### Presenting Results {-}
+Build your model. You can use Excel, R or some other software. Your model may have a base case scenario. You may take one of the weekly exercises and expand its capability.
+
+## Validation/Evaluation {-}
+
+Compare the key outputs of your model to some measured data. It does not have to have a perfect match, although results within an order of magnitude are preferable. Calculate and discuss the difference between your result and a measured result. 
+
+Change the values of some key parameters if their value is uncertain. Calculate the relative difference in some major result as you change the parameter values. 
+
+For example, if the parameter for sensitivity to wind is twice as high, is the lake water temperature twice as high or half as high? 
+
+## Scenarios/Limits {-}
+
+Once your model is working, use it to test scenarios. You could change the initial conditions or the boundary conditions. For example, what if the starting population of quokkas were twice as high? What if temperature were 1 degree higher?
+
+## Presenting Results {-}
+
+Your work will be assessed by the report that you write. It will be in the format of a standard scientific report.
+
+### *Introduction* {-}
+
+Write background information necessary for the reader to understand your hypothesis. Only include the most relevant information. Include a justification for using an environmental model to answer a question. For example, you may write that
+
+*we know that fact one is true *
+
+*we also know that fact two is true *
+
+*we don't know what happens when fact one interacts with fact two, but we expect that it will have this result *
+
+*we can simulate the interaction between them using a model *
+
+### *Methods* {-}
+
+Describe the conceptual model that you use, including a diagram, if possible.
+
+Describe the technical setup of your model such that the reader could replicate it. Include major equations or a link to an appendix where all equations are listed. Include parameter values.
+
+Describe any scenarios that you ran with the model. 
+
+Only include methods and do not include any results.
+
+### *Results* {-}
+
+List the major results. Do not include any methods, and do not include any analysis of the results. Provide figures and tables of results.
+
+List the results of any scenarios, sensitivity analyses and error assessments. 
+
+### *Discussion* {-}
+
+Discuss how your results relate to the question you listed in the introduction. Did your model answer the question that you set out to answer? 
+
+Discuss the scientific and environmental implications of your result and the implications of your scenarios.
+
+Assess the technical details of your model. Was it the right tool for the job?
+
+Mention the future work that would be done next based on your results. 
+
+### *Bibliography* {-}
+
+List your references, using a consistent and professional format. 
+
+
