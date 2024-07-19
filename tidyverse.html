@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Learning the Tidyverse | Environmental Dynamics Workbook</title>
+  <meta name="description" content="The online Environmental Dynamics Workbook" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Learning the Tidyverse | Environmental Dynamics Workbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The online Environmental Dynamics Workbook" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Learning the Tidyverse | Environmental Dynamics Workbook" />
+  
+  <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
+  
+
+<meta name="author" content="Matt Hipsey, Dan Paraska, Alanna Kursar, Giles Knight" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="FinalProject.html"/>
+<link rel="next" href="baseplot.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+<script src="libs/panelset-0.2.6/panelset.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9Z9NDQP4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TR9Z9NDQP4');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><b>Environmental Dynamics Workbook</b></a></li>
+
+<li class="divider"></li>
+<li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a>
+<ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html"><i class="fa fa-check"></i>Style Guide</a>
+<ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#text"><i class="fa fa-check"></i>Text</a>
+<ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#units"><i class="fa fa-check"></i>Units</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#chemicals"><i class="fa fa-check"></i>Chemicals</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#fonts"><i class="fa fa-check"></i>Fonts</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#paragraphs"><i class="fa fa-check"></i>Paragraphs</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#figures"><i class="fa fa-check"></i>Figures</a>
+<ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#positioning"><i class="fa fa-check"></i>Positioning</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#d"><i class="fa fa-check"></i>3D</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#colour"><i class="fa fa-check"></i>Colour</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#captions"><i class="fa fa-check"></i>Captions</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#timeseries-axis"><i class="fa fa-check"></i>Timeseries axis</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#multipanel-plots"><i class="fa fa-check"></i>Multipanel plots</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#unnecessary-regressions"><i class="fa fa-check"></i>Unnecessary regressions</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#good-graphs"><i class="fa fa-check"></i>Good graphs</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#bad-graphs"><i class="fa fa-check"></i>Bad graphs</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#superfluous-images"><i class="fa fa-check"></i>Superfluous images</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#tables"><i class="fa fa-check"></i>Tables</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#referencing"><i class="fa fa-check"></i>Referencing</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#submissions"><i class="fa fa-check"></i>Submissions</a></li>
+</ul></li>
+<li class="part"><span><b>II Weekly Modules</b></span></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
+<ul>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_5"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_6"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_7"><i class="fa fa-check"></i>Flow diversion scenarios</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_8"><i class="fa fa-check"></i>Assessing impacts on lake salinity</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_9"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a>
+<ul>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_3"><i class="fa fa-check"></i>Modelling concepts</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_4"><i class="fa fa-check"></i>Organic matter oxidation</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_5"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_6"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_9"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modelling</a>
+<ul>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M2_14"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_3"><i class="fa fa-check"></i>Case Study 1: A “Zero-Dimensional” Energy Balance Model</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_7"><i class="fa fa-check"></i>Case Study 2: A “Quick Fix”</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_9"><i class="fa fa-check"></i>Case Study 3: Incorporating Greenhouse Gases</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_13"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a>
+<ul>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#module-resources"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_4"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_5"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_6"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_7"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_8"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a>
+<ul>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5a_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_3"><i class="fa fa-check"></i>The Water Balance Approach</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_22"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_4"><i class="fa fa-check"></i>Water Balance Model</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_11"><i class="fa fa-check"></i>Notation</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_12"><i class="fa fa-check"></i>Equations</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_21"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a>
+<ul>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5b_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_3"><i class="fa fa-check"></i>Model Overview</a></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_4"><i class="fa fa-check"></i>Module Resources</a></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_5"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_10"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a>
+<ul>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_3"><i class="fa fa-check"></i>Advection-Dispersion Reaction</a></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_4"><i class="fa fa-check"></i>Module Resources</a></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_5"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_6"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a>
+<ul>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_3"><i class="fa fa-check"></i>Module Resources</a></li>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_13"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="part"><span><b>III Assessment</b></span></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html"><i class="fa fa-check"></i>Final Project</a>
+<ul>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#overview"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#brainstorm"><i class="fa fa-check"></i>Brainstorm</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#research-discovery"><i class="fa fa-check"></i>Research &amp; Discovery</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#conceptual-model-plan"><i class="fa fa-check"></i>Conceptual Model &amp; Plan</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#two-pagerpitch"><i class="fa fa-check"></i>Two-pager/Pitch</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#idealised-prototype"><i class="fa fa-check"></i>Idealised Prototype</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#validationevaluation"><i class="fa fa-check"></i>Validation/Evaluation</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#scenarioslimits"><i class="fa fa-check"></i>Scenarios/Limits</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#presenting-results"><i class="fa fa-check"></i>Presenting Results</a>
+<ul>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#introduction"><i class="fa fa-check"></i><em>Introduction</em></a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#methods"><i class="fa fa-check"></i><em>Methods</em></a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#results"><i class="fa fa-check"></i><em>Results</em></a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#discussion"><i class="fa fa-check"></i><em>Discussion</em></a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#bibliography"><i class="fa fa-check"></i><em>Bibliography</em></a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Supporting Material</b></span></li>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html"><i class="fa fa-check"></i>Learning the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#visualising-module-1-flow-data"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#setting-up"><i class="fa fa-check"></i>Setting up</a></li>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#importing-and-formatting-the-data"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#graphing-with-ggplot"><i class="fa fa-check"></i>Graphing with ggplot</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#visualising-diversion-scenarios"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#barcharts-and-pipes"><i class="fa fa-check"></i>Barcharts and Pipes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html"><i class="fa fa-check"></i>Learning to use the base plot</a>
+<ul>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#visualising-module-1-flow-data-1"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#setting-up-1"><i class="fa fa-check"></i>Setting up</a></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#importing-and-formatting-the-data-1"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#graphing-with-base-plot"><i class="fa fa-check"></i>Graphing with base plot</a>
+<ul>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#call-plot"><i class="fa fa-check"></i>Call <code>plot()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#call-plot-and-then-start-again"><i class="fa fa-check"></i>Call <code>plot()</code> and then start again</a>
+<ul>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#axis-and-mtext"><i class="fa fa-check"></i>Axis and mtext</a></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#legend"><i class="fa fa-check"></i>Legend</a></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#add-a-polygon"><i class="fa fa-check"></i>Add a polygon</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#make-an-annual-column-chart"><i class="fa fa-check"></i>Make an annual column chart</a></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#make-a-multi-plot-figure"><i class="fa fa-check"></i>Make a multi-plot figure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html"><i class="fa fa-check"></i>Modelling Quokkas in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#setting-up-2"><i class="fa fa-check"></i>Setting up</a></li>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#modelling"><i class="fa fa-check"></i>Modelling</a></li>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#speeding-things-up"><i class="fa fa-check"></i>Speeding things up</a></li>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#visualise-the-modelled-populations-with-ggplot"><i class="fa fa-check"></i>Visualise the modelled populations with ggplot</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Environmental Dynamics Workbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tidyverse" class="section level1 unnumbered hasAnchor" number="">
+<h1>Learning the Tidyverse<a href="tidyverse.html#tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="visualising-module-1-flow-data" class="section level2 unnumbered hasAnchor" number="">
+<h2>Visualising Module 1 Flow Data<a href="tidyverse.html#visualising-module-1-flow-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="setting-up" class="section level3 unnumbered hasAnchor" number="">
+<h3>Setting up<a href="tidyverse.html#setting-up" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="creating-an-r-studio-project" class="section level4 unnumbered hasAnchor" number="">
+<h4>Creating an R Studio project<a href="tidyverse.html#creating-an-r-studio-project" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Open R Studio</li>
+<li>Go <em>File -&gt; New Project -&gt; New Directory -&gt; New Project</em></li>
+<li><em>Directory name:</em> ENVT3362_workshop_2</li>
+<li><em>Create project as a subdirectory of:</em> Wherever you store your ENVT3362 files!</li>
+<li>Click <em>Create project</em></li>
+<li>Download the spreadsheet for this workshop <a href="envFlowData.xls">here</a></li>
+<li>Move this to your <em>ENVT3362_workshop_2</em> directory</li>
+</ol>
+</div>
+<div id="install-the-tidyverse" class="section level4 unnumbered hasAnchor" number="">
+<h4>Install the tidyverse<a href="tidyverse.html#install-the-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Type this into the R console</li>
+<li>You only need to do this once</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="tidyverse.html#cb2-1" aria-hidden="true"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="importing-and-formatting-the-data" class="section level3 unnumbered hasAnchor" number="">
+<h3>Importing and formatting the data<a href="tidyverse.html#importing-and-formatting-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="load-the-necessary-packages" class="section level4 unnumbered hasAnchor" number="">
+<h4>Load the necessary packages<a href="tidyverse.html#load-the-necessary-packages" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><code>library(tidyverse)</code> loads all the ‘core’ tidyverse packages</li>
+<li>readxl and lubridate need to be loaded separately</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tidyverse.html#cb3-1" aria-hidden="true"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="tidyverse.html#cb3-2" aria-hidden="true"></a><span class="kw">library</span>(readxl)</span>
+<span id="cb3-3"><a href="tidyverse.html#cb3-3" aria-hidden="true"></a><span class="kw">library</span>(lubridate)</span></code></pre></div>
+</div>
+<div id="import-the-spreadsheet" class="section level4 unnumbered hasAnchor" number="">
+<h4>Import the spreadsheet<a href="tidyverse.html#import-the-spreadsheet" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>The <code>path</code> argument is relative to you R Studio project file</li>
+<li><code>sheet</code> specifies which Excel sheet to read</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="tidyverse.html#cb4-1" aria-hidden="true"></a>envFlow  &lt;-<span class="st"> </span><span class="kw">read_xls</span>(<span class="dt">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="dt">sheet =</span> <span class="dv">1</span>)</span></code></pre></div>
+</div>
+<div id="inspect-the-data" class="section level4 unnumbered hasAnchor" number="">
+<h4>Inspect the data<a href="tidyverse.html#inspect-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><code>head()</code> prints the first few observations</li>
+<li>What data type is <code>date</code>?</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tidyverse.html#cb5-1" aria-hidden="true"></a><span class="kw">head</span>(envFlow)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 2
+##   date       totalDischarge
+##   &lt;chr&gt;               &lt;dbl&gt;
+## 1 1992-01-01           26.6
+## 2 1992-01-02           26.8
+## 3 1992-01-03           27.3
+## 4 1992-01-04           27.0
+## 5 1992-01-05           26.5
+## 6 1992-01-06           26.8</code></pre>
+</div>
+<div id="format-the-date" class="section level4 unnumbered hasAnchor" number="">
+<h4>Format the date<a href="tidyverse.html#format-the-date" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Use lubridate’s <code>ymd()</code> function to overwrite the existing <code>date</code> variable and convert the <strong>character</strong> data to <strong>date</strong> data</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tidyverse.html#cb7-1" aria-hidden="true"></a>envFlow<span class="op">$</span>date &lt;-<span class="st"> </span><span class="kw">ymd</span>(envFlow<span class="op">$</span>date)</span></code></pre></div>
+</div>
+<div id="inspect-the-data-again" class="section level4 unnumbered hasAnchor" number="">
+<h4>Inspect the data again<a href="tidyverse.html#inspect-the-data-again" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Notice the change in data type of <code>date</code></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="tidyverse.html#cb8-1" aria-hidden="true"></a><span class="kw">head</span>(envFlow)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 2
+##   date       totalDischarge
+##   &lt;date&gt;              &lt;dbl&gt;
+## 1 1992-01-01           26.6
+## 2 1992-01-02           26.8
+## 3 1992-01-03           27.3
+## 4 1992-01-04           27.0
+## 5 1992-01-05           26.5
+## 6 1992-01-06           26.8</code></pre>
+</div>
+</div>
+<div id="graphing-with-ggplot" class="section level3 unnumbered hasAnchor" number="">
+<h3>Graphing with ggplot<a href="tidyverse.html#graphing-with-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="call-ggplot" class="section level4 unnumbered hasAnchor" number="">
+<h4>Call <code>ggplot()</code><a href="tidyverse.html#call-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="tidyverse.html#cb10-1" aria-hidden="true"></a><span class="kw">ggplot</span>() </span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="define-the-data-and-mapping" class="section level4 unnumbered hasAnchor" number="">
+<h4>Define the data and mapping<a href="tidyverse.html#define-the-data-and-mapping" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>The aesthetics (<code>aes()</code>) provide the mapping between variables in the data and the plot’s visual properties</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tidyverse.html#cb11-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) </span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="add-a-geometry-layer" class="section level4 unnumbered hasAnchor" number="">
+<h4>Add a geometry layer<a href="tidyverse.html#add-a-geometry-layer" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><code>geom_</code> functions tell ggplot how to render each observation</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tidyverse.html#cb12-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
+<span id="cb12-2"><a href="tidyverse.html#cb12-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>() </span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="change-the-geometry" class="section level4 unnumbered hasAnchor" number="">
+<h4>Change the geometry<a href="tidyverse.html#change-the-geometry" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>As long as the aesthetics can be mapped to the declared geometry type, ggplot will render the graph</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tidyverse.html#cb13-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
+<span id="cb13-2"><a href="tidyverse.html#cb13-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="change-the-colour" class="section level4 unnumbered hasAnchor" number="">
+<h4>Change the colour<a href="tidyverse.html#change-the-colour" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Colours can either be hexadecimal codes (e.g. <code>"#0000FF"</code> is blue) or one of <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">R’s reserved colour names</a></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="tidyverse.html#cb14-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
+<span id="cb14-2"><a href="tidyverse.html#cb14-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="fix-the-labels" class="section level4 unnumbered hasAnchor" number="">
+<h4>Fix the labels<a href="tidyverse.html#fix-the-labels" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tidyverse.html#cb15-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
+<span id="cb15-2"><a href="tidyverse.html#cb15-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
+<span id="cb15-3"><a href="tidyverse.html#cb15-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>)</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+</div>
+<div id="change-the-theme" class="section level4 unnumbered hasAnchor" number="">
+<h4>Change the theme<a href="tidyverse.html#change-the-theme" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tidyverse.html#cb16-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
+<span id="cb16-2"><a href="tidyverse.html#cb16-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
+<span id="cb16-3"><a href="tidyverse.html#cb16-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></span>
+<span id="cb16-4"><a href="tidyverse.html#cb16-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>()</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+</div>
+<div id="customise-the-theme" class="section level4 unnumbered hasAnchor" number="">
+<h4>Customise the theme<a href="tidyverse.html#customise-the-theme" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="tidyverse.html#cb17-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
+<span id="cb17-2"><a href="tidyverse.html#cb17-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
+<span id="cb17-3"><a href="tidyverse.html#cb17-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></span>
+<span id="cb17-4"><a href="tidyverse.html#cb17-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></span>
+<span id="cb17-5"><a href="tidyverse.html#cb17-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb17-6"><a href="tidyverse.html#cb17-6" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb17-7"><a href="tidyverse.html#cb17-7" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb17-8"><a href="tidyverse.html#cb17-8" aria-hidden="true"></a>  )</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="save-the-plot" class="section level4 unnumbered hasAnchor" number="">
+<h4>Save the plot<a href="tidyverse.html#save-the-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>File types can be changed by modifying the file extensions e.g. <code>"discharge.jpeg"</code></li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="tidyverse.html#cb18-1" aria-hidden="true"></a><span class="kw">ggsave</span>(</span>
+<span id="cb18-2"><a href="tidyverse.html#cb18-2" aria-hidden="true"></a>  <span class="dt">filename =</span> <span class="st">&quot;discharge.pdf&quot;</span>,</span>
+<span id="cb18-3"><a href="tidyverse.html#cb18-3" aria-hidden="true"></a>  <span class="dt">width =</span> <span class="dv">2000</span>,</span>
+<span id="cb18-4"><a href="tidyverse.html#cb18-4" aria-hidden="true"></a>  <span class="dt">height =</span> <span class="dv">2000</span>,</span>
+<span id="cb18-5"><a href="tidyverse.html#cb18-5" aria-hidden="true"></a>  <span class="dt">units =</span> <span class="st">&#39;px&#39;</span></span>
+<span id="cb18-6"><a href="tidyverse.html#cb18-6" aria-hidden="true"></a>  )</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="visualising-diversion-scenarios" class="section level2 unnumbered hasAnchor" number="">
+<h2>Visualising Diversion Scenarios<a href="tidyverse.html#visualising-diversion-scenarios" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s pretend our graph will be used in a report that assesses the impact of the proposed diversion scenarios. We need to visually communicate to the reader the upper and lower limits of flows that can be diverted. To do this, let’s highlight the region of the graph where environmental flows can occur under Diversion Scenario 1 (i.e. Water below 50 ML/day and above 550 ML/day is not diverted).</p>
+<div id="map-the-current-aesthetics-to-geom_line" class="section level4 unnumbered hasAnchor" number="">
+<h4>Map the current aesthetics to <code>geom_line()</code><a href="tidyverse.html#map-the-current-aesthetics-to-geom_line" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><code>aes()</code> can be passed to either <code>ggplot()</code> or a specific <code>geom_</code></li>
+<li>Aesthetics supplied to <code>ggplot()</code> are used as defaults for every layer</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="tidyverse.html#cb19-1" aria-hidden="true"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb19-2"><a href="tidyverse.html#cb19-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
+<span id="cb19-3"><a href="tidyverse.html#cb19-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></span>
+<span id="cb19-4"><a href="tidyverse.html#cb19-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></span>
+<span id="cb19-5"><a href="tidyverse.html#cb19-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb19-6"><a href="tidyverse.html#cb19-6" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb19-7"><a href="tidyverse.html#cb19-7" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb19-8"><a href="tidyverse.html#cb19-8" aria-hidden="true"></a>  )</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+</div>
+<div id="add-a-second-geometry" class="section level4 unnumbered hasAnchor" number="">
+<h4>Add a second geometry<a href="tidyverse.html#add-a-second-geometry" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><code>geom_rect()</code> has two dimensions and therefore reques different aesthetic mappings</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="tidyverse.html#cb20-1" aria-hidden="true"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb20-2"><a href="tidyverse.html#cb20-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
+<span id="cb20-3"><a href="tidyverse.html#cb20-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_rect</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">xmin=</span><span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="dt">xmax=</span><span class="kw">max</span>(envFlow<span class="op">$</span>date), <span class="dt">ymin=</span><span class="dv">50</span>, <span class="dt">ymax=</span><span class="dv">550</span>))<span class="op">+</span></span>
+<span id="cb20-4"><a href="tidyverse.html#cb20-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></span>
+<span id="cb20-5"><a href="tidyverse.html#cb20-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></span>
+<span id="cb20-6"><a href="tidyverse.html#cb20-6" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb20-7"><a href="tidyverse.html#cb20-7" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb20-8"><a href="tidyverse.html#cb20-8" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb20-9"><a href="tidyverse.html#cb20-9" aria-hidden="true"></a>  )</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+</div>
+<div id="customise-the-geometry" class="section level4 unnumbered hasAnchor" number="">
+<h4>Customise the geometry<a href="tidyverse.html#customise-the-geometry" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="tidyverse.html#cb21-1" aria-hidden="true"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb21-2"><a href="tidyverse.html#cb21-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
+<span id="cb21-3"><a href="tidyverse.html#cb21-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_rect</span>(</span>
+<span id="cb21-4"><a href="tidyverse.html#cb21-4" aria-hidden="true"></a>    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">xmin=</span><span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="dt">xmax=</span><span class="kw">max</span>(envFlow<span class="op">$</span>date), <span class="dt">ymin=</span><span class="dv">50</span>, <span class="dt">ymax=</span><span class="dv">550</span>),</span>
+<span id="cb21-5"><a href="tidyverse.html#cb21-5" aria-hidden="true"></a>    <span class="dt">alpha =</span> <span class="fl">0.25</span></span>
+<span id="cb21-6"><a href="tidyverse.html#cb21-6" aria-hidden="true"></a>  )<span class="op">+</span></span>
+<span id="cb21-7"><a href="tidyverse.html#cb21-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></span>
+<span id="cb21-8"><a href="tidyverse.html#cb21-8" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></span>
+<span id="cb21-9"><a href="tidyverse.html#cb21-9" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb21-10"><a href="tidyverse.html#cb21-10" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb21-11"><a href="tidyverse.html#cb21-11" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb21-12"><a href="tidyverse.html#cb21-12" aria-hidden="true"></a>  )</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+</div>
+<div id="add-a-legend" class="section level4 unnumbered hasAnchor" number="">
+<h4>Add a legend<a href="tidyverse.html#add-a-legend" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>By specifying <code>fill</code> inside the aesthetics, ggplot <em>maps</em> this information to the geom’s fill (i.e. the colour fill)</li>
+<li>Usually a grouping variable from the data would be provided here i.e. a column that classifies your data into different groups</li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="tidyverse.html#cb22-1" aria-hidden="true"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb22-2"><a href="tidyverse.html#cb22-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
+<span id="cb22-3"><a href="tidyverse.html#cb22-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_rect</span>(</span>
+<span id="cb22-4"><a href="tidyverse.html#cb22-4" aria-hidden="true"></a>    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">xmin=</span><span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="dt">xmax=</span><span class="kw">max</span>(envFlow<span class="op">$</span>date), <span class="dt">ymin=</span><span class="dv">50</span>, <span class="dt">ymax=</span><span class="dv">550</span>, <span class="dt">fill =</span> <span class="st">&quot;Diversion Scenario 1&quot;</span>),</span>
+<span id="cb22-5"><a href="tidyverse.html#cb22-5" aria-hidden="true"></a>    <span class="dt">alpha =</span> <span class="fl">0.25</span></span>
+<span id="cb22-6"><a href="tidyverse.html#cb22-6" aria-hidden="true"></a>  )<span class="op">+</span></span>
+<span id="cb22-7"><a href="tidyverse.html#cb22-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></span>
+<span id="cb22-8"><a href="tidyverse.html#cb22-8" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></span>
+<span id="cb22-9"><a href="tidyverse.html#cb22-9" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb22-10"><a href="tidyverse.html#cb22-10" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb22-11"><a href="tidyverse.html#cb22-11" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb22-12"><a href="tidyverse.html#cb22-12" aria-hidden="true"></a>  )</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+</div>
+<div id="customise-the-legend" class="section level4 unnumbered hasAnchor" number="">
+<h4>Customise the legend<a href="tidyverse.html#customise-the-legend" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>ggplot automatically assigns the colours, change this with <code>scale_fill_manual()</code></li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="tidyverse.html#cb23-1" aria-hidden="true"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb23-2"><a href="tidyverse.html#cb23-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
+<span id="cb23-3"><a href="tidyverse.html#cb23-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_rect</span>(</span>
+<span id="cb23-4"><a href="tidyverse.html#cb23-4" aria-hidden="true"></a>    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">xmin=</span><span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="dt">xmax=</span><span class="kw">max</span>(envFlow<span class="op">$</span>date), <span class="dt">ymin=</span><span class="dv">50</span>, <span class="dt">ymax=</span><span class="dv">550</span>, <span class="dt">fill =</span> <span class="st">&quot;Diversion Scenario 1&quot;</span>),</span>
+<span id="cb23-5"><a href="tidyverse.html#cb23-5" aria-hidden="true"></a>    <span class="dt">alpha =</span> <span class="fl">0.25</span></span>
+<span id="cb23-6"><a href="tidyverse.html#cb23-6" aria-hidden="true"></a>  )<span class="op">+</span></span>
+<span id="cb23-7"><a href="tidyverse.html#cb23-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span></span>
+<span id="cb23-8"><a href="tidyverse.html#cb23-8" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></span>
+<span id="cb23-9"><a href="tidyverse.html#cb23-9" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></span>
+<span id="cb23-10"><a href="tidyverse.html#cb23-10" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb23-11"><a href="tidyverse.html#cb23-11" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb23-12"><a href="tidyverse.html#cb23-12" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb23-13"><a href="tidyverse.html#cb23-13" aria-hidden="true"></a>    <span class="dt">legend.title =</span> <span class="kw">element_blank</span>()</span>
+<span id="cb23-14"><a href="tidyverse.html#cb23-14" aria-hidden="true"></a>  )</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+</div>
+<div id="move-the-legend" class="section level4 unnumbered hasAnchor" number="">
+<h4>Move the legend<a href="tidyverse.html#move-the-legend" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="tidyverse.html#cb24-1" aria-hidden="true"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb24-2"><a href="tidyverse.html#cb24-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge), <span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
+<span id="cb24-3"><a href="tidyverse.html#cb24-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_rect</span>(</span>
+<span id="cb24-4"><a href="tidyverse.html#cb24-4" aria-hidden="true"></a>    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">xmin=</span><span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="dt">xmax=</span><span class="kw">max</span>(envFlow<span class="op">$</span>date), <span class="dt">ymin=</span><span class="dv">50</span>, <span class="dt">ymax=</span><span class="dv">550</span>, <span class="dt">fill =</span> <span class="st">&quot;Diversion Scenario 1&quot;</span>),</span>
+<span id="cb24-5"><a href="tidyverse.html#cb24-5" aria-hidden="true"></a>    <span class="dt">alpha =</span> <span class="fl">0.25</span></span>
+<span id="cb24-6"><a href="tidyverse.html#cb24-6" aria-hidden="true"></a>  )<span class="op">+</span></span>
+<span id="cb24-7"><a href="tidyverse.html#cb24-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span></span>
+<span id="cb24-8"><a href="tidyverse.html#cb24-8" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></span>
+<span id="cb24-9"><a href="tidyverse.html#cb24-9" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></span>
+<span id="cb24-10"><a href="tidyverse.html#cb24-10" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb24-11"><a href="tidyverse.html#cb24-11" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb24-12"><a href="tidyverse.html#cb24-12" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb24-13"><a href="tidyverse.html#cb24-13" aria-hidden="true"></a>    <span class="dt">legend.title =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb24-14"><a href="tidyverse.html#cb24-14" aria-hidden="true"></a>    <span class="dt">legend.position =</span> <span class="st">&quot;top&quot;</span>,</span>
+<span id="cb24-15"><a href="tidyverse.html#cb24-15" aria-hidden="true"></a>    <span class="dt">legend.justification =</span> <span class="st">&quot;right&quot;</span></span>
+<span id="cb24-16"><a href="tidyverse.html#cb24-16" aria-hidden="true"></a>  )</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+</div>
+<div id="save-the-plot-1" class="section level4 unnumbered hasAnchor" number="">
+<h4>Save the plot<a href="tidyverse.html#save-the-plot-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="tidyverse.html#cb25-1" aria-hidden="true"></a><span class="kw">ggsave</span>(</span>
+<span id="cb25-2"><a href="tidyverse.html#cb25-2" aria-hidden="true"></a>  <span class="dt">filename =</span> <span class="st">&quot;dischargeDiversion1.pdf&quot;</span>,</span>
+<span id="cb25-3"><a href="tidyverse.html#cb25-3" aria-hidden="true"></a>  <span class="dt">width =</span> <span class="dv">297</span>,</span>
+<span id="cb25-4"><a href="tidyverse.html#cb25-4" aria-hidden="true"></a>  <span class="dt">height =</span> <span class="dv">210</span>,</span>
+<span id="cb25-5"><a href="tidyverse.html#cb25-5" aria-hidden="true"></a>  <span class="dt">units =</span> <span class="st">&#39;mm&#39;</span>,</span>
+<span id="cb25-6"><a href="tidyverse.html#cb25-6" aria-hidden="true"></a>  <span class="dt">scale =</span> <span class="fl">0.8</span></span>
+<span id="cb25-7"><a href="tidyverse.html#cb25-7" aria-hidden="true"></a>  )</span></code></pre></div>
+</div>
+</div>
+<div id="barcharts-and-pipes" class="section level2 unnumbered hasAnchor" number="">
+<h2>Barcharts and Pipes<a href="tidyverse.html#barcharts-and-pipes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="reload-the-data" class="section level4 unnumbered hasAnchor" number="">
+<h4>Reload the data<a href="tidyverse.html#reload-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="tidyverse.html#cb26-1" aria-hidden="true"></a>envFlow  &lt;-<span class="st"> </span><span class="kw">read_xls</span>(<span class="dt">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="dt">sheet =</span> <span class="dv">1</span>)</span></code></pre></div>
+</div>
+<div id="use-pipes-and-mutate-to-reformat-the-date" class="section level4 unnumbered hasAnchor" number="">
+<h4>Use pipes and <code>mutate()</code> to reformat the date<a href="tidyverse.html#use-pipes-and-mutate-to-reformat-the-date" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>The pipe (<code>%&gt;%</code>) operator takes the output from one function and makes it the input of the next</li>
+<li>Pipes can be used across the tidyverse when working with tidy data</li>
+<li><code>mutate()</code> is used to add or remove variables when working with pipes</li>
+<li>This is the same as <code>envFlow$date &lt;- ymd(envFlow$date)</code> but it’s ‘pipeable’!</li>
+</ul>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tidyverse.html#cb27-1" aria-hidden="true"></a>envFlow <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb27-2"><a href="tidyverse.html#cb27-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) </span></code></pre></div>
+<pre><code>## # A tibble: 6,940 × 2
+##    date       totalDischarge
+##    &lt;date&gt;              &lt;dbl&gt;
+##  1 1992-01-01           26.6
+##  2 1992-01-02           26.8
+##  3 1992-01-03           27.3
+##  4 1992-01-04           27.0
+##  5 1992-01-05           26.5
+##  6 1992-01-06           26.8
+##  7 1992-01-07           27.1
+##  8 1992-01-08           26.8
+##  9 1992-01-09           26.7
+## 10 1992-01-10           26.0
+## # … with 6,930 more rows</code></pre>
+</div>
+<div id="extract-the-years" class="section level4 unnumbered hasAnchor" number="">
+<h4>Extract the years<a href="tidyverse.html#extract-the-years" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><code>year()</code> returns the numerical year from date formatted data</li>
+</ul>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tidyverse.html#cb29-1" aria-hidden="true"></a>envFlow <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb29-2"><a href="tidyverse.html#cb29-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb29-3"><a href="tidyverse.html#cb29-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">year =</span> <span class="kw">year</span>(date))</span></code></pre></div>
+<pre><code>## # A tibble: 6,940 × 3
+##    date       totalDischarge  year
+##    &lt;date&gt;              &lt;dbl&gt; &lt;dbl&gt;
+##  1 1992-01-01           26.6  1992
+##  2 1992-01-02           26.8  1992
+##  3 1992-01-03           27.3  1992
+##  4 1992-01-04           27.0  1992
+##  5 1992-01-05           26.5  1992
+##  6 1992-01-06           26.8  1992
+##  7 1992-01-07           27.1  1992
+##  8 1992-01-08           26.8  1992
+##  9 1992-01-09           26.7  1992
+## 10 1992-01-10           26.0  1992
+## # … with 6,930 more rows</code></pre>
+</div>
+<div id="pipes-are-non-destructive" class="section level4 unnumbered hasAnchor" number="">
+<h4>Pipes are non-destructive<a href="tidyverse.html#pipes-are-non-destructive" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Notice how <code>envFlow</code> is unchanged? This is useful when performing ‘data exploration’ as the original dataframe never altered</li>
+</ul>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="tidyverse.html#cb31-1" aria-hidden="true"></a><span class="kw">head</span>(envFlow)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 2
+##   date       totalDischarge
+##   &lt;chr&gt;               &lt;dbl&gt;
+## 1 1992-01-01           26.6
+## 2 1992-01-02           26.8
+## 3 1992-01-03           27.3
+## 4 1992-01-04           27.0
+## 5 1992-01-05           26.5
+## 6 1992-01-06           26.8</code></pre>
+</div>
+<div id="group-and-summarise" class="section level4 unnumbered hasAnchor" number="">
+<h4>Group and summarise<a href="tidyverse.html#group-and-summarise" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Group the data by new <code>year</code> column and calculate summary statistics with <code>summarise()</code></li>
+</ul>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="tidyverse.html#cb33-1" aria-hidden="true"></a>envFlow <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb33-2"><a href="tidyverse.html#cb33-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb33-3"><a href="tidyverse.html#cb33-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">year =</span> <span class="kw">year</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb33-4"><a href="tidyverse.html#cb33-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb33-5"><a href="tidyverse.html#cb33-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">totalDischarge =</span> <span class="kw">sum</span>(totalDischarge))</span></code></pre></div>
+<pre><code>## # A tibble: 19 × 2
+##     year totalDischarge
+##    &lt;dbl&gt;          &lt;dbl&gt;
+##  1  1992         89538.
+##  2  1993         21042.
+##  3  1994         16511.
+##  4  1995         31838.
+##  5  1996        128586.
+##  6  1997         18061.
+##  7  1998         23067.
+##  8  1999         19090.
+##  9  2000        189366.
+## 10  2001         17462.
+## 11  2002         13946.
+## 12  2003         39874.
+## 13  2004        124288.
+## 14  2005          8567.
+## 15  2006          4182.
+## 16  2007          5221.
+## 17  2008          8418.
+## 18  2009         62334.
+## 19  2010         33940.</code></pre>
+</div>
+<div id="plot-using-geom_col" class="section level4 unnumbered hasAnchor" number="">
+<h4>Plot using <code>geom_col()</code><a href="tidyverse.html#plot-using-geom_col" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Pipe this into <code>ggplot()</code></li>
+<li>Note that we don’t need to specify the <code>data</code> argument to <code>ggplot()</code></li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="tidyverse.html#cb35-1" aria-hidden="true"></a>envFlow <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb35-2"><a href="tidyverse.html#cb35-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb35-3"><a href="tidyverse.html#cb35-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">year =</span> <span class="kw">year</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb35-4"><a href="tidyverse.html#cb35-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb35-5"><a href="tidyverse.html#cb35-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">totalDischarge =</span> <span class="kw">sum</span>(totalDischarge)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb35-6"><a href="tidyverse.html#cb35-6" aria-hidden="true"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
+<span id="cb35-7"><a href="tidyverse.html#cb35-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+</div>
+<div id="apply-the-previous-theme" class="section level4 unnumbered hasAnchor" number="">
+<h4>Apply the previous theme<a href="tidyverse.html#apply-the-previous-theme" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="tidyverse.html#cb36-1" aria-hidden="true"></a>envFlow <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb36-2"><a href="tidyverse.html#cb36-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb36-3"><a href="tidyverse.html#cb36-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">year =</span> <span class="kw">year</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb36-4"><a href="tidyverse.html#cb36-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb36-5"><a href="tidyverse.html#cb36-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">totalDischarge =</span> <span class="kw">sum</span>(totalDischarge)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb36-6"><a href="tidyverse.html#cb36-6" aria-hidden="true"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
+<span id="cb36-7"><a href="tidyverse.html#cb36-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
+<span id="cb36-8"><a href="tidyverse.html#cb36-8" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Year&quot;</span>, <span class="dt">y =</span> <span class="st">&#39;Total Discharge (ML)&#39;</span>)<span class="op">+</span></span>
+<span id="cb36-9"><a href="tidyverse.html#cb36-9" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></span>
+<span id="cb36-10"><a href="tidyverse.html#cb36-10" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb36-11"><a href="tidyverse.html#cb36-11" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb36-12"><a href="tidyverse.html#cb36-12" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb36-13"><a href="tidyverse.html#cb36-13" aria-hidden="true"></a>  )</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+</div>
+<div id="recap" class="section level4 unnumbered hasAnchor" number="">
+<h4>Recap<a href="tidyverse.html#recap" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="tidyverse.html#cb37-1" aria-hidden="true"></a><span class="kw">read_xls</span>(<span class="dt">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="dt">sheet =</span> <span class="dv">1</span>) <span class="op">%&gt;%</span></span>
+<span id="cb37-2"><a href="tidyverse.html#cb37-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">ymd</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb37-3"><a href="tidyverse.html#cb37-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">year =</span> <span class="kw">year</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb37-4"><a href="tidyverse.html#cb37-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb37-5"><a href="tidyverse.html#cb37-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">totalDischarge =</span> <span class="kw">sum</span>(totalDischarge)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb37-6"><a href="tidyverse.html#cb37-6" aria-hidden="true"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
+<span id="cb37-7"><a href="tidyverse.html#cb37-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
+<span id="cb37-8"><a href="tidyverse.html#cb37-8" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Year&quot;</span>, <span class="dt">y =</span> <span class="st">&#39;Total Discharge (ML)&#39;</span>)<span class="op">+</span></span>
+<span id="cb37-9"><a href="tidyverse.html#cb37-9" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span></span>
+<span id="cb37-10"><a href="tidyverse.html#cb37-10" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb37-11"><a href="tidyverse.html#cb37-11" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb37-12"><a href="tidyverse.html#cb37-12" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb37-13"><a href="tidyverse.html#cb37-13" aria-hidden="true"></a>  )</span></code></pre></div>
+
+<!-- # (PART)  Supporting Material {-}  -->
+<!-- # Learning the Base Plotting {#tidyverse2 .unnumbered} -->
+</div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom.css" rel="stylesheet">
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="FinalProject.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="baseplot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["Module 1 Resources.zip", "Module 1 Resources"], ["Module 2 Resources.zip", "Module 2 Resources"], ["Module 4 Resources.zip", "Module 4 Resources"], ["Module 5 Resources.zip", "Module 5a&b Resources"], ["Module 6 Resources.zip", "Module 6 Resources"]],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

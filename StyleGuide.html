@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Style Guide | Environmental Dynamics Workbook</title>
+  <meta name="description" content="The online Environmental Dynamics Workbook" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Style Guide | Environmental Dynamics Workbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The online Environmental Dynamics Workbook" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Style Guide | Environmental Dynamics Workbook" />
+  
+  <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
+  
+
+<meta name="author" content="Matt Hipsey, Dan Paraska, Alanna Kursar, Giles Knight" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="GettingStarted.html"/>
+<link rel="next" href="M1_1.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+<script src="libs/panelset-0.2.6/panelset.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9Z9NDQP4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TR9Z9NDQP4');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><b>Environmental Dynamics Workbook</b></a></li>
+
+<li class="divider"></li>
+<li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a>
+<ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html"><i class="fa fa-check"></i>Style Guide</a>
+<ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#text"><i class="fa fa-check"></i>Text</a>
+<ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#units"><i class="fa fa-check"></i>Units</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#chemicals"><i class="fa fa-check"></i>Chemicals</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#fonts"><i class="fa fa-check"></i>Fonts</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#paragraphs"><i class="fa fa-check"></i>Paragraphs</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#figures"><i class="fa fa-check"></i>Figures</a>
+<ul>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#positioning"><i class="fa fa-check"></i>Positioning</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#d"><i class="fa fa-check"></i>3D</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#colour"><i class="fa fa-check"></i>Colour</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#captions"><i class="fa fa-check"></i>Captions</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#timeseries-axis"><i class="fa fa-check"></i>Timeseries axis</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#multipanel-plots"><i class="fa fa-check"></i>Multipanel plots</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#unnecessary-regressions"><i class="fa fa-check"></i>Unnecessary regressions</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#good-graphs"><i class="fa fa-check"></i>Good graphs</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#bad-graphs"><i class="fa fa-check"></i>Bad graphs</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#superfluous-images"><i class="fa fa-check"></i>Superfluous images</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#tables"><i class="fa fa-check"></i>Tables</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#referencing"><i class="fa fa-check"></i>Referencing</a></li>
+<li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html#submissions"><i class="fa fa-check"></i>Submissions</a></li>
+</ul></li>
+<li class="part"><span><b>II Weekly Modules</b></span></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
+<ul>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_5"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_6"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_7"><i class="fa fa-check"></i>Flow diversion scenarios</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_8"><i class="fa fa-check"></i>Assessing impacts on lake salinity</a></li>
+<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_9"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html"><i class="fa fa-check"></i>Module 2: Biogeochemistry</a>
+<ul>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_3"><i class="fa fa-check"></i>Modelling concepts</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_4"><i class="fa fa-check"></i>Organic matter oxidation</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_5"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_6"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="M2_1.html"><a href="M2_1.html#M2_9"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html"><i class="fa fa-check"></i>Module 3: Climate Modelling</a>
+<ul>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M2_14"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_3"><i class="fa fa-check"></i>Case Study 1: A “Zero-Dimensional” Energy Balance Model</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_7"><i class="fa fa-check"></i>Case Study 2: A “Quick Fix”</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_9"><i class="fa fa-check"></i>Case Study 3: Incorporating Greenhouse Gases</a></li>
+<li class="chapter" data-level="" data-path="M3_1.html"><a href="M3_1.html#M3_13"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html"><i class="fa fa-check"></i>Module 4: Ocean Acidification</a>
+<ul>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_3"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#module-resources"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_4"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_5"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_6"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_7"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="M4_1.html"><a href="M4_1.html#M4_8"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html"><i class="fa fa-check"></i>Module 5a: Catchment Water Balance</a>
+<ul>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5a_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_3"><i class="fa fa-check"></i>The Water Balance Approach</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_22"><i class="fa fa-check"></i>Module resources</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_4"><i class="fa fa-check"></i>Water Balance Model</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_11"><i class="fa fa-check"></i>Notation</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_12"><i class="fa fa-check"></i>Equations</a></li>
+<li class="chapter" data-level="" data-path="M5A_1.html"><a href="M5A_1.html#M5A_21"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html"><i class="fa fa-check"></i>Module 5b: Land Use and Nutrient Management</a>
+<ul>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5b_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_3"><i class="fa fa-check"></i>Model Overview</a></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_4"><i class="fa fa-check"></i>Module Resources</a></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_5"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="M5B_1.html"><a href="M5B_1.html#M5B_10"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html"><i class="fa fa-check"></i>Module 6: River Pollution</a>
+<ul>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_3"><i class="fa fa-check"></i>Advection-Dispersion Reaction</a></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_4"><i class="fa fa-check"></i>Module Resources</a></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_5"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_6"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: Lake Ecosystem Dynamics</a>
+<ul>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_before_start"><i class="fa fa-check"></i>Before you start</a></li>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_3"><i class="fa fa-check"></i>Module Resources</a></li>
+<li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html#M7_13"><i class="fa fa-check"></i>Submission</a></li>
+</ul></li>
+<li class="part"><span><b>III Assessment</b></span></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html"><i class="fa fa-check"></i>Final Project</a>
+<ul>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#overview"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#brainstorm"><i class="fa fa-check"></i>Brainstorm</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#research-discovery"><i class="fa fa-check"></i>Research &amp; Discovery</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#conceptual-model-plan"><i class="fa fa-check"></i>Conceptual Model &amp; Plan</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#two-pagerpitch"><i class="fa fa-check"></i>Two-pager/Pitch</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#idealised-prototype"><i class="fa fa-check"></i>Idealised Prototype</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#validationevaluation"><i class="fa fa-check"></i>Validation/Evaluation</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#scenarioslimits"><i class="fa fa-check"></i>Scenarios/Limits</a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#presenting-results"><i class="fa fa-check"></i>Presenting Results</a>
+<ul>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#introduction"><i class="fa fa-check"></i><em>Introduction</em></a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#methods"><i class="fa fa-check"></i><em>Methods</em></a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#results"><i class="fa fa-check"></i><em>Results</em></a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#discussion"><i class="fa fa-check"></i><em>Discussion</em></a></li>
+<li class="chapter" data-level="" data-path="FinalProject.html"><a href="FinalProject.html#bibliography"><i class="fa fa-check"></i><em>Bibliography</em></a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Supporting Material</b></span></li>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html"><i class="fa fa-check"></i>Learning the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#visualising-module-1-flow-data"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#setting-up"><i class="fa fa-check"></i>Setting up</a></li>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#importing-and-formatting-the-data"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#graphing-with-ggplot"><i class="fa fa-check"></i>Graphing with ggplot</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#visualising-diversion-scenarios"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
+<li class="chapter" data-level="" data-path="tidyverse.html"><a href="tidyverse.html#barcharts-and-pipes"><i class="fa fa-check"></i>Barcharts and Pipes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html"><i class="fa fa-check"></i>Learning to use the base plot</a>
+<ul>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#visualising-module-1-flow-data-1"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#setting-up-1"><i class="fa fa-check"></i>Setting up</a></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#importing-and-formatting-the-data-1"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#graphing-with-base-plot"><i class="fa fa-check"></i>Graphing with base plot</a>
+<ul>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#call-plot"><i class="fa fa-check"></i>Call <code>plot()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#call-plot-and-then-start-again"><i class="fa fa-check"></i>Call <code>plot()</code> and then start again</a>
+<ul>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#axis-and-mtext"><i class="fa fa-check"></i>Axis and mtext</a></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#legend"><i class="fa fa-check"></i>Legend</a></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#add-a-polygon"><i class="fa fa-check"></i>Add a polygon</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#make-an-annual-column-chart"><i class="fa fa-check"></i>Make an annual column chart</a></li>
+<li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#make-a-multi-plot-figure"><i class="fa fa-check"></i>Make a multi-plot figure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html"><i class="fa fa-check"></i>Modelling Quokkas in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#setting-up-2"><i class="fa fa-check"></i>Setting up</a></li>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#modelling"><i class="fa fa-check"></i>Modelling</a></li>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#speeding-things-up"><i class="fa fa-check"></i>Speeding things up</a></li>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#visualise-the-modelled-populations-with-ggplot"><i class="fa fa-check"></i>Visualise the modelled populations with ggplot</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Environmental Dynamics Workbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="StyleGuide" class="section level1 unnumbered hasAnchor" number="">
+<h1>Style Guide<a href="StyleGuide.html#StyleGuide" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="text" class="section level2 unnumbered hasAnchor" number="">
+<h2>Text<a href="StyleGuide.html#text" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="units" class="section level3 unnumbered hasAnchor" number="">
+<h3>Units<a href="StyleGuide.html#units" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Leave a space between a numeral and a unit. For example, 100 m<sup>3</sup>, not 100m<sup>3</sup>. For inverse units use a slash or a negative power, but be consistent throughout your text. For example 100 L/d or 100 L d<sup>-1</sup>. Pay attention to capital letters: there is a billion-fold difference between mL and ML (millilitres and megalitres). Do not leave a space between a numeral and %. For example, 100%, not 100 %.</p>
+<p>Capital M as a unit is known as molar. It is an abbreviation of mol L<sup>-1</sup>. mM is the same as mmol L<sup>-1</sup>, or 1 <span class="math inline">\(\times\)</span> 10<sup>-3</sup> M.</p>
+</div>
+<div id="chemicals" class="section level3 unnumbered hasAnchor" number="">
+<h3>Chemicals<a href="StyleGuide.html#chemicals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Elements, compounds and molecules do not start with capital letters. An abbreviation or a chemical symbol has capital letters. Multiple elements in a compound have a subscript and charged molecules have a superscript. For example, carbonate, CO<sub>3</sub><sup>2-</sup>.</p>
+</div>
+<div id="fonts" class="section level3 unnumbered hasAnchor" number="">
+<h3>Fonts<a href="StyleGuide.html#fonts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pick an appropriate Seriff or Sans-Seriff font with a size of <strong>12pt</strong>. Commonly used fonts include Arial, Helvetica, Times New Roman and Garamond.</p>
+<center>
+<img src="images/styleguide/good-fonts.png" style="width:50.0%" />
+</center>
+<p>Do not use stylised fonts - you know the ones!</p>
+<center>
+<img src="images/styleguide/bad-fonts.png" style="width:35.0%" />
+</center>
+</div>
+<div id="paragraphs" class="section level3 unnumbered hasAnchor" number="">
+<h3>Paragraphs<a href="StyleGuide.html#paragraphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Format your paragraphs with the following:</p>
+<ul>
+<li><strong>Line spacing:</strong> 1.5pt</li>
+<li><strong>Section headings:</strong> 14pt font size and in bold</li>
+<li><strong>Margins:</strong> 2cm margins on all sides i.e. top, bottom, left, and right margins</li>
+</ul>
+<center>
+<img src="images/styleguide/paragraph.png" style="width:80.0%" />
+</center>
+<p>Use consistent approach when capatalising your headers/titles:</p>
+<ul>
+<li>Capitalise at least the first and last word</li>
+<li>Don’t capitalise conjunctions, prepositions, and articles (e.g. the, an, a)</li>
+</ul>
+<center>
+<img src="images/styleguide/headings.png" style="width:75.0%" />
+</center>
+</div>
+</div>
+<div id="figures" class="section level2 unnumbered hasAnchor" number="">
+<h2>Figures<a href="StyleGuide.html#figures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="positioning" class="section level3 unnumbered hasAnchor" number="">
+<h3>Positioning<a href="StyleGuide.html#positioning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Put the figure after it is referred to in the text for the first time, so that the figure is below. Refer to every figure and make sure the figure caption is updated to the right number.</p>
+</div>
+<div id="d" class="section level3 unnumbered hasAnchor" number="">
+<h3>3D<a href="StyleGuide.html#d" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Do not use 3D plots to visualise your data! They easily misrepresent data and, more often than not, look visually jarring. They can be appropriate for certain types of scatterplots or surface plots when there is a third dimension to the data.</p>
+</div>
+<div id="colour" class="section level3 unnumbered hasAnchor" number="">
+<h3>Colour<a href="StyleGuide.html#colour" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Rarely are the defaults the best choice for your figure.</p>
+<p>When selecting a colour palette:</p>
+<ul>
+<li><p>Consider the saturation and brightness of your colours</p></li>
+<li><p>Be considerate of colour blindness and of how colours are commonly interpreted, i.e. if you were mapping surface temperatures you would not use red to colour the cold areas and blue for the hot</p></li>
+<li><p>Use black font and black lines for the axes</p></li>
+<li><p>Do not put a border around the figure</p></li>
+</ul>
+</div>
+<div id="captions" class="section level3 unnumbered hasAnchor" number="">
+<h3>Captions<a href="StyleGuide.html#captions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Captions are positioned below a figure and above a table. They contain a useful description to assist the interpretation of the figure or table. Do not include a title as your caption renders this redundant!</p>
+</div>
+<div id="timeseries-axis" class="section level3 unnumbered hasAnchor" number="">
+<h3>Timeseries axis<a href="StyleGuide.html#timeseries-axis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you have a date axis, arrange the dates so that they can be read.</p>
+<p><img src="images/styleguide/Goodgraphs/Slide4.PNG" style="width:80.0%" /></p>
+<p>Do not let them all crash into each other.</p>
+<p>If you have a timespan of many years, do not include days and months in the date tick label. For example, between 1950 and 2000, it does not matter to the reader that a point occurred on 1 January.</p>
+<p><img src="images/styleguide/Goodgraphs/Slide5.PNG" style="width:80.0%" /></p>
+</div>
+<div id="multipanel-plots" class="section level3 unnumbered hasAnchor" number="">
+<h3>Multipanel plots<a href="StyleGuide.html#multipanel-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="unnecessary-regressions" class="section level3 unnumbered hasAnchor" number="">
+<h3>Unnecessary regressions<a href="StyleGuide.html#unnecessary-regressions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Do not include a trendline for a series of data that you have calculated yourself. If y = 2x, and you calculate y over a series of x values, a linear regression of this calculation will give you a formula of 2x, with an r<sup>2</sup> of 1. This regression is not helpful.</p>
+<p><img src="images/styleguide/Goodgraphs/Slide3.PNG" style="width:80.0%" /></p>
+</div>
+<div id="good-graphs" class="section level3 unnumbered hasAnchor" number="">
+<h3>Good graphs<a href="StyleGuide.html#good-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Include axis labels, with units. Use a legend if you have more than one data series. Spread your tick marks out nicely. Use black lines for the axes and black font for the text.</p>
+<p><img src="images/styleguide/Goodgraphs/Slide1.PNG" style="width:80.0%" /></p>
+<p><img src="images/styleguide/Goodgraphs/Slide2.PNG" style="width:80.0%" /></p>
+</div>
+<div id="bad-graphs" class="section level3 unnumbered hasAnchor" number="">
+<h3>Bad graphs<a href="StyleGuide.html#bad-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following graphs leave a lot to be desired! They misrepresent data, lack critical details, and are visually jarring. Take a look at each and read the marker’s feedback to get an idea of how your graphs will be assessed.</p>
+<p><strong>Figure 1:</strong></p>
+<center>
+<img src="images/styleguide/bad-graph-1.png" style="width:80.0%" />
+</center>
+<p>Feedback:</p>
+<ul>
+<li>This is a graph of one number on a completely arbitrary scale</li>
+<li>We’ve been told it’s the total 3 times but not what it’s a total of!</li>
+<li>5 decimal places! With the scale of this y-axis decimal places are serving no useful purpose here</li>
+<li>There’s no units or y-axis label and a title has been used instead of a figure caption</li>
+</ul>
+<p><strong>Figure 2:</strong></p>
+<center>
+<img src="images/styleguide/bad-graph-2.png" style="width:80.0%" />
+</center>
+<p>Feedback:</p>
+<ul>
+<li>A 3D visualisation is being used for 2D data</li>
+<li>No axis labels or units</li>
+<li>Missing a legend for the two lines plotted</li>
+</ul>
+<p><strong>Figure 3:</strong></p>
+<center>
+<img src="images/styleguide/bad-graph-3.png" style="width:80.0%" />
+</center>
+<p>Feedback:</p>
+<ul>
+<li>A pie chart of what?</li>
+<li>Missing units and a legend</li>
+<li>Pie charts are a poor choice of visualisation for comparing numbers. The human eye is much less able to distinguish differences of scale for data represented as sectors of a circle compared to rectangles on a bar chart</li>
+</ul>
+</div>
+<div id="superfluous-images" class="section level3 unnumbered hasAnchor" number="">
+<h3>Superfluous images<a href="StyleGuide.html#superfluous-images" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Unless specified, your assessments are not picture books! Do not use figures to arbitrarily lengthen your report and add visual clutter. Justify the purpose of each figure you include. When used well, figures should support your writing and illustrate key points to the reader.</p>
+<center>
+<img src="images/styleguide/superfluous.png" style="width:80.0%" />
+</center>
+</div>
+</div>
+<div id="tables" class="section level2 unnumbered hasAnchor" number="">
+<h2>Tables<a href="StyleGuide.html#tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>All tables must be styled as per the following:</p>
+<ul>
+<li><strong>Table font size:</strong> All table information is to be in 10pt font</li>
+<li><strong>Line spacing:</strong> Within a table, line spacing is to single line spacing</li>
+<li><strong>Decimals:</strong> Within a table column a common decimal place format is to be used</li>
+<li><strong>Heading separator:</strong> A single solid line is to be used to separate column headings from numbers</li>
+<li><strong>Caption location:</strong> The table caption must be placed above the table</li>
+<li><strong>Caption label font:</strong> The caption label is to be in 12pt font</li>
+<li><strong>Caption label line spacing:</strong> The caption label line spacing is to be single line spacing</li>
+<li><strong>Sub-groups:</strong> Identification of subgroups with a line is optional</li>
+<li><strong>Pooled group:</strong> Identification of a pooled group with a dashed line is optional</li>
+</ul>
+<center>
+<p><img src="images/styleguide/table.png" width="100%" data-action="zoom" /></p>
+</center>
+</div>
+<div id="referencing" class="section level2 unnumbered hasAnchor" number="">
+<h2>Referencing<a href="StyleGuide.html#referencing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When completing academic work it is essential that you refer to the sources of information within your text, and professionally adhere to referencing standards. Marks will be deducted for inadequate, or poor quality referencing. Complete details of these works should be arranged alphabetically in a reference list at the end of any document or report you submit.</p>
+<p>You are permitted to use Harvard or APA reference style. The choice is up to you as long as it is used consistently throughout the document.</p>
+<ol style="list-style-type: decimal">
+<li>When referring to a specific page or pages of a reference:</li>
+</ol>
+<blockquote>
+<p>Labaree (2006, p. 17) disputed the evidence.</p>
+</blockquote>
+<blockquote>
+<p>The findings are suppored in the literature (Labaree, 2006, p.17-18).</p>
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li>When referring to more than one work by the same author(s):</li>
+</ol>
+<blockquote>
+<p>Fink and Brayman (2004, 2006) expressed similar doubts.</p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li>When referring to more than one work in the same year:</li>
+</ol>
+<blockquote>
+<p>Research in this field has progressed rapidly (Hargreave,s 2005a) (Hargreaves 2005b).</p>
+</blockquote>
+<ol start="4" style="list-style-type: decimal">
+<li>When there are two authors:</li>
+</ol>
+<blockquote>
+<p>There is mounting evidence of these trends (Tilbury &amp; Wortman, 2003).</p>
+</blockquote>
+<blockquote>
+<p>The study built on earlier work by Tilbury and Wortman (2003).</p>
+</blockquote>
+<ol start="5" style="list-style-type: decimal">
+<li>When there are three or more authors:</li>
+</ol>
+<blockquote>
+<p>New research as revealed substantial differences (Leithwood et al., 1999).</p>
+</blockquote>
+<ol start="6" style="list-style-type: decimal">
+<li>When referring to a publication that has no specific author, but which was written by an organization:</li>
+</ol>
+<blockquote>
+<p>Global concern is increasing (UNESCO, 1992).</p>
+</blockquote>
+<ol start="7" style="list-style-type: decimal">
+<li>When citing 3 or more works that support the same argument:</li>
+</ol>
+<blockquote>
+<p>There is a strong concensus in the literature (Andrews, 2015; Brown &amp; Baldwin, 2012; Carter et al., 2016).</p>
+</blockquote>
+</div>
+<div id="submissions" class="section level2 unnumbered hasAnchor" number="">
+<h2>Submissions<a href="StyleGuide.html#submissions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When uploading your assessments, only submit your work in PDF format - not Word’s <em>.docx</em>. In Word, you can export your documents to PDF via <em>File -&gt; Save As… -&gt; File Format -&gt; PDF -&gt; Save</em>.</p>
+<center>
+<img src="images/styleguide/files.png" style="width:80.0%" />
+</center>
+
+</div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom.css" rel="stylesheet">
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="GettingStarted.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="M1_1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["Module 1 Resources.zip", "Module 1 Resources"], ["Module 2 Resources.zip", "Module 2 Resources"], ["Module 4 Resources.zip", "Module 4 Resources"], ["Module 5 Resources.zip", "Module 5a&b Resources"], ["Module 6 Resources.zip", "Module 6 Resources"]],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
