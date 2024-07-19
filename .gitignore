@@ -2,11 +2,12 @@
 .Rhistory
 .RData
 .Ruserdata
-
-docs/.DS_Store
 .DS_Store
 _bookdown_files/
 docs/Environmental-Dynamics-Workbook_files/
+docs/.DS_Store
 docs/*.html
 docs/*.json
 docs/libs/
+enviro_dynamics_workbook.Rproj 
+'Environmental Dynamics Workbook.rds' 

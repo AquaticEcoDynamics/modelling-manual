@@ -4,8 +4,22 @@ Interactive manual for learning how to model environmental dynamics.
 ## Development 
 
 A docker container/dev-container can be used to develop the bookdown project on
-your local machine. To build the book inside this environment, run the following 
-in the R console:
+your local machine. To build the book inside this environment, run the 
+following:
+
+1) Launch the R console:
+
+```
+R
+```
+
+2) Synchronise the project library with the lockfile:
+
+```
+renv::restore()
+```
+
+3) Build the book:
 
 ```
 bookdown::render_book("index.Rmd", "bookdown::gitbook")
@@ -17,8 +31,9 @@ environment to preview a locally hosted version of the website. Open
 corner of VS Code.
 
 When commiting changes, avoid commiting any HTML/JS/CSS in the `docs` directory
-that was generated when building the book locally. The only files that should be
-commited from the `docs` directory are:
+that was generated when building the book locally (`.gitignore` will catch most 
+of this for you). The only files that should be commited from the `docs` 
+directory are:
 
 - Module resources intended to be downloaded by the user, e.g.,
 `Module 1 Resources.zip`.
@@ -27,4 +42,4 @@ commited from the `docs` directory are:
 
 A GitHub Actions deployment workflow with build the book from scratch and add 
 the generated website files to the `_book` directory of the `gh-pages` branch.
-This is where GitHub Pages looks when 
+This is where GitHub Pages looks when hosting the website.
