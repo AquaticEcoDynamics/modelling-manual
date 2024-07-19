@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 4: Ocean Acidification | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 4: Ocean Acidification | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -48,28 +48,28 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet" />
-<script src="libs/panelset-0.3.0/panelset.js"></script>
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+<script src="libs/panelset-0.2.6/panelset.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.2.2/leaflet.js"></script>
-<script src="libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
-<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -87,7 +87,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -121,7 +120,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -134,7 +133,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -148,32 +147,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -228,7 +201,6 @@ div.csl-indent {
 <li class="part"><span><b>II Weekly Modules</b></span></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
 <ul>
-<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_5"><i class="fa fa-check"></i>Module resources</a></li>
@@ -385,9 +357,9 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="M4_1" class="section level1 unnumbered hasAnchor">
+<div id="M4_1" class="section level1 unnumbered hasAnchor" number="">
 <h1>Module 4: Ocean Acidification<a href="M4_1.html#M4_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="M4_2" class="section level3 unnumbered hasAnchor">
+<div id="M4_2" class="section level3 unnumbered hasAnchor" number="">
 <h3>Objectives<a href="M4_1.html#M4_2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Calculate the carbonate species distribution given pH and CO<sub>2</sub> (gas)</li>
@@ -396,13 +368,13 @@ div.csl-indent {
 <li>Replot other published data for comparison with our data</li>
 </ul>
 </div>
-<div id="M4_before_start" class="section level3 unnumbered hasAnchor">
+<div id="M4_before_start" class="section level3 unnumbered hasAnchor" number="">
 <h3>Before you start<a href="M4_1.html#M4_before_start" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Review slides</li>
 </ul>
 </div>
-<div id="M4_3" class="section level3 unnumbered hasAnchor">
+<div id="M4_3" class="section level3 unnumbered hasAnchor" number="">
 <h3>Overview<a href="M4_1.html#M4_3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this exercise, we create a simple model of the ocean, with a limited number of state variables. We examine the chemical interactions that result from atmospheric CO<sub>2</sub> gas dissolving in water, along with calcium salts in the ocean fed by erosion of minerals on the land. The key overall process is that dissolved CO<sub>2</sub> and Ca<sup>2+</sup> are in equilibrium with solid CaCO<sub>3</sub> (limestone).</p>
 <center>
@@ -473,7 +445,7 @@ Figure 4: Bleached coral (foreground) and normal coral (background). CC BY 3.0, 
 </div>
 </center>
 </div>
-<div id="module-resources" class="section level3 unnumbered hasAnchor">
+<div id="module-resources" class="section level3 unnumbered hasAnchor" number="">
 <h3>Module resources<a href="M4_1.html#module-resources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Download the Excel spreadsheet and R files for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
 
@@ -481,17 +453,17 @@ Figure 4: Bleached coral (foreground) and normal coral (background). CC BY 3.0, 
 You can use either Excel or R for this module.
 </div>
 </div>
-<div id="M4_4" class="section level3 unnumbered hasAnchor">
+<div id="M4_4" class="section level3 unnumbered hasAnchor" number="">
 <h3>Exercise 1<a href="M4_1.html#M4_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In the first exercise, we set pH to be 8.3 and atmospheric CO<sub>2</sub> gas to be 3.5×10<sup>-4</sup> atmospheres, and calculate the other variables based on these two. CO<sub>2</sub> gas dissolves in water according to Equation <a href="M4_1.html#eq:module4-1">(18)</a>. The dissolved CO<sub>2</sub> easily dissociates into carbonic acid according to Equation <a href="M4_1.html#eq:module4-2">(19)</a>. For simplicity, we will go straight from atmospheric CO<sub>2</sub> to H<sub>2</sub>CO<sub>3</sub>*, which is the sum of dissolved CO<sub>2</sub> and carbonic acid, using Equation <a href="M4_1.html#eq:module4-3">(20)</a>.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-3" id="eq:module4-2" id="eq:module4-1">\[\begin{align*}
-{CO}_{2(\text{gas})}&amp;\rightleftarrows{CO}_{2(\text{dissolved})}
+{CO}_{2(\text{gas})}&amp;\rightleftarrows{CO}_{2(\text{dissolved})} 
 \tag{18} \\
-{CO}_{2(\text{dissolved})}+H_2O&amp;\rightleftarrows H_2{CO}_3
+{CO}_{2(\text{dissolved})}+H_2O&amp;\rightleftarrows H_2{CO}_3 
 \tag{19} \\
-{CO}_{2(\text{gas})}+H_2O&amp;\rightleftarrows \color{#ED7D31}{H_2CO_3^\ast} \hspace{3em} K_{H} = 3.39×10^{-2}
+{CO}_{2(\text{gas})}+H_2O&amp;\rightleftarrows \color{#ED7D31}{H_2CO_3^\ast} \hspace{3em} K_{H} = 3.39×10^{-2} 
 \tag{20} \\
 \end{align*}\]</span>
 </center>
@@ -531,7 +503,7 @@ C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2
 <p><br></p>
 <p>Open the Excel spreadsheet or R project and examine the tab or script <code>Initial CO2</code>. The chemical equations and constants are given to you already. The variables that we are forcing to be constant in Excel are
 <span style="color: #A5A5A5;">coloured grey</span>. Enter the equations for Exercise 1 into the <span style="color: #FFD966;">yellow boxes</span>.</p>
-<p>If we assume that calcium ion concentration does not vary much in this system, we can force it to be 5×10<sup>-4</sup> mol L<sup>-1</sup>. Calcium carbonate (CaCO<sub>3</sub>) precipitation or dissolution is governed by the ratio (<span class="math inline">\(\mathrm{\Omega}\)</span>) of Ca<sup>2+</sup> concentration and CO<sub>3</sub><sup>2-</sup> concentration to the solubility constant, <span class="math inline">\(K_{sp}\)</span>, according to Equations <a href="M4_1.html#eq:module4-10">(27)</a> and <a href="M4_1.html#eq:module4-11">(28)</a>. If is greater than 1, then precipitation is favourable, and conversely, if is less than 1, dissolution is favourable.</p>
+<p>If we assume that calcium ion concentration does not vary much in this system, we can force it to be 5×10<sup>-4</sup> mol L<sup>-1</sup>. Calcium carbonate (CaCO<sub>3</sub>) precipitation or dissolution is governed by the ratio (<span class="math inline">\(\mathrm{\Omega}\)</span>) of Ca<sup>2+</sup> concentration and CO<sub>3</sub><sup>2-</sup> concentration to the solubility constant, <span class="math inline">\(K_{sp}\)</span>, according to Equations <a href="M4_1.html#eq:module4-10">(27)</a> and <a href="M4_1.html#eq:module4-11">(28)</a>. If  is greater than 1, then precipitation is favourable, and conversely, if  is less than 1, dissolution is favourable.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-11" id="eq:module4-10">\[\begin{align*}
@@ -544,19 +516,19 @@ C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2
 <p><br></p>
 <p>Have a good think about this: given these CO<sub>2</sub> and pH, did your calculations lead to a system that favours CaCO<sub>3</sub> dissolution or precipitation?</p>
 </div>
-<div id="M4_5" class="section level3 unnumbered hasAnchor">
+<div id="M4_5" class="section level3 unnumbered hasAnchor" number="">
 <h3>Exercise 2<a href="M4_1.html#M4_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this exercise you will construct a double-logarithmic plot of this system, holding CO2 constant and varying the pH. Go to the second tab in Excel and copy the equations over from the first tab. Or in R, you can run a <em>for loop</em> to calculate the different concentrations for each of the different pHs. Then you will have some of the major variables converted to logarithms. Next you can make an x y scatter plot. If you add the data correctly, you should get a plot that looks like Figure <a href="M4_1.html#fig:figM4-2">5</a>.</p>
 <center>
 <div class="figure"><span style="display:block;" id="fig:figM4-2"></span>
 <img src="images/module4/picture2.png" alt="Double logarithmic plot of the equilibrium composition of seawater in our model. Adapted from @stumm1996." width="90%" data-action="zoom" />
 <p class="caption">
-Figure 5: Double logarithmic plot of the equilibrium composition of seawater in our model. Adapted from <span class="citation">Stumm and Morgan (<a href="#ref-stumm1996">1996</a>)</span>.
+Figure 5: Double logarithmic plot of the equilibrium composition of seawater in our model. Adapted from <span class="citation">Stumm and Morgan (<a href="#ref-stumm1996" role="doc-biblioref">1996</a>)</span>.
 </p>
 </div>
 </center>
 </div>
-<div id="M4_6" class="section level3 unnumbered hasAnchor">
+<div id="M4_6" class="section level3 unnumbered hasAnchor" number="">
 <h3>Exercise 3<a href="M4_1.html#M4_6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This is the cool part. Here we are going to calculate a new pH given an increased atmospheric CO<sub>2</sub> concentration. Given that we calculated the concentrations of all the other species according to the initial distribution in Exercise 1, we now hold them all constant, while increasing CO<sub>2</sub> and calculating H<sup>+</sup> (and therefore pH). This is not simple, because H<sup>+</sup> concentration is tightly bound up with the concentrations of all other species, and so we cannot simply work backwards from any one equation alone. However, there is a quadratic Equation <a href="M4_1.html#eq:module4-12">(29)</a> that we can solve for H<sup>+</sup> , using a fixed <span class="math inline">\(C_{T}\)</span>, rearranged to Equation <a href="M4_1.html#eq:module4-13">(30)</a>.</p>
 <center>
@@ -585,13 +557,11 @@ Don’t forget that your successive iterations, are not time steps, like we had 
 </video>
 <div class="rmdquestion">
 <p>
-Big questions: if you increase CO<sub>2</sub>, does the pH rise or
-fall? Does CaCO<sub>3</sub> precipitation become more or less favourable
-if CO<sub>2</sub> increases?
+Big questions: if you increase CO<sub>2</sub>, does the pH rise or fall? Does CaCO<sub>3</sub> precipitation become more or less favourable if CO<sub>2</sub> increases?
 </p>
 </div>
 </div>
-<div id="M4_7" class="section level3 unnumbered hasAnchor">
+<div id="M4_7" class="section level3 unnumbered hasAnchor" number="">
 <h3>Exercise 4<a href="M4_1.html#M4_7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Last exercise! In this exercise, we will extract someone else’s data from their plot and make our own plot.</p>
 <p>Go to the <a href="https://archive.ipcc.ch/publications_and_data/ar4/wg1/en/figure-10-24.html">IPCC website</a> and read about CO<sub>2</sub> predictions and CaCO<sub>3</sub> precipitation. Save their Figure 10.24 as an image file or download it <a href="images/module4/picture3.png">here</a>.</p>
@@ -612,12 +582,11 @@ Figure 6: Changes in global average surface pH and saturation state with respect
 <p>Remember back to Module 1 where we modelled salinity values from flow. Let’s do something similar here to predict year from our CO<sub>2</sub>, Omega, and pH. Correlate the IPCC data of CO<sub>2</sub>/Year, pH/Year, and Omega/Year (i.e. use a scatterplot and add a trendline). Use these equations to generate modelled year values for our Exercise 3 model. Compare and contrast your results with a plot each for CO<sub>2</sub>, pH, and Omega.</p>
 <div class="rmdtip2">
 <p>
-You will need to convert atm to µatm and multiply Omega by 100 to
-create a percentage!
+You will need to convert atm to µatm and multiply Omega by 100 to create a percentage!
 </p>
 </div>
 </div>
-<div id="M4_8" class="section level3 unnumbered hasAnchor">
+<div id="M4_8" class="section level3 unnumbered hasAnchor" number="">
 <h3>Submission<a href="M4_1.html#M4_8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="redbox2">
 <p><strong>Submit properly formatted graphs and tables of the following sections of the lab:</strong></p>
@@ -711,9 +680,9 @@ The submission is to be all together in a word doc or PDF format. No screenshots
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-stumm1996" class="csl-entry">
-Stumm, Werner, and JJ Morgan. 1996. <span>“Chemical Equilibria and Rates in Natural Waters.”</span> <em>Aquatic Chemistry</em> 1022.
+<div id="refs" class="references hanging-indent">
+<div id="ref-stumm1996">
+<p>Stumm, Werner, and JJ Morgan. 1996. “Chemical Equilibria and Rates in Natural Waters.” <em>Aquatic Chemistry</em> 1022.</p>
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script>
@@ -785,7 +754,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

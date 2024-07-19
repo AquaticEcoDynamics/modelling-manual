@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 6: River Pollution | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 6: River Pollution | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -48,28 +48,28 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet" />
-<script src="libs/panelset-0.3.0/panelset.js"></script>
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+<script src="libs/panelset-0.2.6/panelset.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.2.2/leaflet.js"></script>
-<script src="libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
-<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -87,7 +87,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -121,7 +120,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -134,7 +133,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -148,32 +147,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -228,7 +201,6 @@ div.csl-indent {
 <li class="part"><span><b>II Weekly Modules</b></span></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
 <ul>
-<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_5"><i class="fa fa-check"></i>Module resources</a></li>
@@ -385,20 +357,20 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="M6_1" class="section level1 unnumbered hasAnchor">
+<div id="M6_1" class="section level1 unnumbered hasAnchor" number="">
 <h1>Module 6: River Pollution<a href="M6_1.html#M6_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="M6_2" class="section level3 unnumbered hasAnchor">
+<div id="M6_2" class="section level3 unnumbered hasAnchor" number="">
 <h3>Objectives<a href="M6_1.html#M6_2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this module you will setup an “advection-dispersion-reaction” equation for a river system to demonstrate the combination of <strong>temporal and spatial</strong> finite differencing, in one dimension.</p>
 </div>
-<div id="M6_before_start" class="section level3 unnumbered hasAnchor">
+<div id="M6_before_start" class="section level3 unnumbered hasAnchor" number="">
 <h3>Before you start<a href="M6_1.html#M6_before_start" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Review the mixing in the environment lecture</li>
 <li>Undertake the lecture’s lake oxygen worked example</li>
 </ul>
 </div>
-<div id="M6_3" class="section level3 unnumbered hasAnchor">
+<div id="M6_3" class="section level3 unnumbered hasAnchor" number="">
 <h3>Advection-Dispersion Reaction<a href="M6_1.html#M6_3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Mixing in environmental waters is described based on the currents and turbulence in the water - in simple terms we refer to these as advection and dispersion.</p>
 <p>The advection-dispersion reaction equation for the concentration of a substance <span class="math inline">\(C\)</span>, is defined as:</p>
@@ -445,7 +417,7 @@ R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
 </video>
 <p>Extra sources or sinks of oxygen can by added into the domain based on the <span class="math inline">\(S\)</span> term. We will first set up the model to have no <span class="math inline">\(S\)</span> inputs along the side of the river, but in the last task we add a low oxygen discharge somewhere along the river (ie. a pipe outflow).</p>
 </div>
-<div id="M6_4" class="section level3 unnumbered hasAnchor">
+<div id="M6_4" class="section level3 unnumbered hasAnchor" number="">
 <h3>Module Resources<a href="M6_1.html#M6_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Download the Excel spreadsheet and R files for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
 
@@ -453,9 +425,9 @@ R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
 You can use either Excel or R for this module.
 </div>
 </div>
-<div id="M6_5" class="section level3 unnumbered hasAnchor">
+<div id="M6_5" class="section level3 unnumbered hasAnchor" number="">
 <h3>Exercises<a href="M6_1.html#M6_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="M6_7" class="section level4 unnumbered hasAnchor">
+<div id="M6_7" class="section level4 unnumbered hasAnchor" number="">
 <h4>Setting up the Model<a href="M6_1.html#M6_7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
 <li>Draw the schematic of the conceptual model by hand, showing the spatial discretisation, boundaries, sources, reactions, and a little animal swimming in the river.</li>
@@ -478,7 +450,7 @@ In Excel, time is going down the rows and distance (space) is going along the co
 <li>For Excel users, Set up conditional formatting to help visualise the concentration change through space and time</li>
 </ol>
 </div>
-<div id="M6_8" class="section level4 unnumbered hasAnchor">
+<div id="M6_8" class="section level4 unnumbered hasAnchor" number="">
 <h4>Modelling a Wastewater Plume<a href="M6_1.html#M6_8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol start="8" style="list-style-type: decimal">
 <li>Implement at <span class="math inline">\(x \approx 1500\text{m}\)</span> a wastewater plume entering the river – do this by reducing the <span class="math inline">\(C\)</span> at the relevant <span class="math inline">\(x\)</span> cell by 3 mg/L (or less if the <span class="math inline">\(C\)</span> is already below 3). This is done by adding the extra “<span class="math inline">\(S\)</span>” term of -3 to the appropriate <span class="math inline">\(x\)</span>-cell formula, and copying the formula down through time. Plot and note how the oxygen recovers downstream of the low oxygen inflow plume.</li>
@@ -499,13 +471,13 @@ Figure 9: Advection and dispersion of O<sub>2</sub> in a river of length <span c
 <li>The above example should show the low oxygen water diffusing into the river environment. The default velocity in this river was 0.2 m/s which is not very fast. Increase the velocity (<span class="math inline">\(U\)</span>) in all cells to 1.2 m/s and see how the shape of the waste water plume changes. Now the advection term will be more significant, you should see the plume moving more strongly down stream.</li>
 </ol>
 </div>
-<div id="M6_9" class="section level4 unnumbered hasAnchor">
+<div id="M6_9" class="section level4 unnumbered hasAnchor" number="">
 <h4>Modelling an O<sub>2</sub> Drop<a href="M6_1.html#M6_9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol start="10" style="list-style-type: decimal">
 <li>Change the upstream boundary concentration at <span class="math inline">\(x = 0\)</span>, to include a sudden drop in oxygen for a period of 0.5 hour. Plot how this signal propagates through the river domain during and after the period where the upstream condition drops – can you see the low oxygen pulse moving through the river? How does this concentration profile vary if the diffusivity is different?</li>
 </ol>
 </div>
-<div id="M6_10" class="section level4 unnumbered hasAnchor">
+<div id="M6_10" class="section level4 unnumbered hasAnchor" number="">
 <h4>Modelling your own Scenario<a href="M6_1.html#M6_10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <video width="100%" loop="TRUE" controls="TRUE">
 <source src="images/module6/video3.mp4" type="video/mp4"/>
@@ -527,7 +499,7 @@ Figure 10: A plume of coloured dye dispersing through a river.
 </center>
 </div>
 </div>
-<div id="M6_6" class="section level3 unnumbered hasAnchor">
+<div id="M6_6" class="section level3 unnumbered hasAnchor" number="">
 <h3>Submission<a href="M6_1.html#M6_6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="redbox2">
 <p><strong>Submit properly formatted graphs and tables of the following sections of the lab:</strong></p>
@@ -640,7 +612,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

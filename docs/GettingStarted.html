@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Getting Started | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Getting Started | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -48,28 +48,28 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet" />
-<script src="libs/panelset-0.3.0/panelset.js"></script>
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+<script src="libs/panelset-0.2.6/panelset.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.2.2/leaflet.js"></script>
-<script src="libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
-<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -87,7 +87,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -121,7 +120,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -134,7 +133,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -148,32 +147,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -228,7 +201,6 @@ div.csl-indent {
 <li class="part"><span><b>II Weekly Modules</b></span></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
 <ul>
-<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_5"><i class="fa fa-check"></i>Module resources</a></li>
@@ -385,12 +357,12 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="GettingStarted" class="section level1 unnumbered hasAnchor">
+<div id="GettingStarted" class="section level1 unnumbered hasAnchor" number="">
 <h1>Getting Started<a href="GettingStarted.html#GettingStarted" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <h2>
 Tools You’ll Need
 </h2>
-<div id="excel" class="section level3 unnumbered hasAnchor">
+<div id="excel" class="section level3 unnumbered hasAnchor" number="">
 <h3>Excel<a href="GettingStarted.html#excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Excel is available on all computer laboratory PC’s and can be freely downloaded to personal devices <a href="http://portal.office.com">here</a>. You should already feel confident using Excel from your previous units, however if you need further guidance please visit UWA’s resources:</p>
 <ul>
@@ -398,14 +370,14 @@ Tools You’ll Need
 <li><a href="https://www.linkedin.com/learning/excel-advanced-formulas-and-functions">Using formulas and functions in Excel</a></li>
 </ul>
 </div>
-<div id="r" class="section level3 unnumbered hasAnchor">
+<div id="r" class="section level3 unnumbered hasAnchor" number="">
 <h3>R<a href="GettingStarted.html#r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To get started with R, first download the base R system onto your computer. By itself, this provides a rudimentary console for interacting with the R programming language. For a more user-friendly experience, download the R Studio integrated development environment (IDE).</p>
 <ul>
 <li>R can be downloaded <a href="https://cran.csiro.au">here</a></li>
 <li>R Studio can be downloaded <a href="https://www.rstudio.com/products/rstudio/download/#download">here</a></li>
 </ul>
-<div id="terminology" class="section level4 unnumbered hasAnchor">
+<div id="terminology" class="section level4 unnumbered hasAnchor" number="">
 <h4>Terminology<a href="GettingStarted.html#terminology" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><strong>File types</strong></p>
 <p>In this unit you will largely be dealing with two kinds of ‘R files’:</p>
@@ -418,16 +390,16 @@ Tools You’ll Need
 <p>Just like Excel, you can interact with your data using a variety of <em>functions</em> in R. Functions are the tools you use to get the job done. For example, the <code>plot()</code> function can be used to create graphs. R is an open source programming language, meaning anyone can create their own functions and bundle them up in a collection known as a <em>package</em>.</p>
 <p><strong>Comments</strong></p>
 <p>All programming languages allow the user to write comments on their code to assist in readability and structure. In R, a comment is defined as a line beginning with a <code>#</code>. Any characters written after the <code>#</code> are ignored by R and not executed. It’s good practice to get into the habit of commenting your R code as it will likely save you (or someone else!) a lot of time later down the track.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="GettingStarted.html#cb1-1" tabindex="-1"></a><span class="co"># This is a comment!</span></span>
-<span id="cb1-2"><a href="GettingStarted.html#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># You can load packages with the library() function</span></span>
-<span id="cb1-3"><a href="GettingStarted.html#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="GettingStarted.html#cb1-4" tabindex="-1"></a><span class="co"># Inspect your data with the head() function</span></span>
-<span id="cb1-5"><a href="GettingStarted.html#cb1-5" tabindex="-1"></a><span class="fu">head</span>(iris)</span>
-<span id="cb1-6"><a href="GettingStarted.html#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="GettingStarted.html#cb1-7" tabindex="-1"></a><span class="co"># Create a graph using the ggplot() function</span></span>
-<span id="cb1-8"><a href="GettingStarted.html#cb1-8" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
-<span id="cb1-9"><a href="GettingStarted.html#cb1-9" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb1-10"><a href="GettingStarted.html#cb1-10" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="GettingStarted.html#cb1-1" aria-hidden="true"></a><span class="co"># This is a comment!</span></span>
+<span id="cb1-2"><a href="GettingStarted.html#cb1-2" aria-hidden="true"></a><span class="kw">library</span>(tidyverse) <span class="co"># You can load packages with the library() function</span></span>
+<span id="cb1-3"><a href="GettingStarted.html#cb1-3" aria-hidden="true"></a></span>
+<span id="cb1-4"><a href="GettingStarted.html#cb1-4" aria-hidden="true"></a><span class="co"># Inspect your data with the head() function</span></span>
+<span id="cb1-5"><a href="GettingStarted.html#cb1-5" aria-hidden="true"></a><span class="kw">head</span>(iris)</span>
+<span id="cb1-6"><a href="GettingStarted.html#cb1-6" aria-hidden="true"></a></span>
+<span id="cb1-7"><a href="GettingStarted.html#cb1-7" aria-hidden="true"></a><span class="co"># Create a graph using the ggplot() function</span></span>
+<span id="cb1-8"><a href="GettingStarted.html#cb1-8" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> iris, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Petal.Length, <span class="dt">y =</span> Petal.Width, <span class="dt">colour =</span> Species)) <span class="op">+</span></span>
+<span id="cb1-9"><a href="GettingStarted.html#cb1-9" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb1-10"><a href="GettingStarted.html#cb1-10" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>()</span></code></pre></div>
 
 <div class="rmdtip2">
 To comment multiple lines of code at once in R Studio, press<code>Command + Shift + C</code>on MacOS or<code>Control + Shift + C</code>on Windows
@@ -440,7 +412,7 @@ To comment multiple lines of code at once in R Studio, press<code>Command + Shif
 </ul>
 </div>
 </div>
-<div id="unzipping-files" class="section level3 unnumbered hasAnchor">
+<div id="unzipping-files" class="section level3 unnumbered hasAnchor" number="">
 <h3>Unzipping files<a href="GettingStarted.html#unzipping-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Many of the module resources found in this workbook are downloaded as ‘zipped’ (i.e. compressed) files. ‘Unzipping’ (i.e. extracting) these files is simple.</p>
 On MacOS, simply double click the ‘zipped’ file:
@@ -529,7 +501,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

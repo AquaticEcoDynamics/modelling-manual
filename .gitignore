@@ -5,4 +5,8 @@
 
 docs/.DS_Store
 .DS_Store
-.DS_Store
+_bookdown_files/
+docs/Environmental-Dynamics-Workbook_files/
+docs/*.html
+docs/*.json
+docs/libs/

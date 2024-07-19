@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Style Guide | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Style Guide | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
@@ -48,28 +48,28 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<link href="libs/panelset-0.3.0/panelset.css" rel="stylesheet" />
-<script src="libs/panelset-0.3.0/panelset.js"></script>
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+<script src="libs/panelset-0.2.6/panelset.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.2.2/leaflet.js"></script>
-<script src="libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
-<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -87,7 +87,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -121,7 +120,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -134,7 +133,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -148,32 +147,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -228,7 +201,6 @@ div.csl-indent {
 <li class="part"><span><b>II Weekly Modules</b></span></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html"><i class="fa fa-check"></i>Module 1: Modelling in Excel</a>
 <ul>
-<li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_2"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_3"><i class="fa fa-check"></i>What are environmental flows?</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_4"><i class="fa fa-check"></i>Flow diversion case study: Robe Lakes</a></li>
 <li class="chapter" data-level="" data-path="M1_1.html"><a href="M1_1.html#M1_5"><i class="fa fa-check"></i>Module resources</a></li>
@@ -385,20 +357,20 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="StyleGuide" class="section level1 unnumbered hasAnchor">
+<div id="StyleGuide" class="section level1 unnumbered hasAnchor" number="">
 <h1>Style Guide<a href="StyleGuide.html#StyleGuide" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="text" class="section level2 unnumbered hasAnchor">
+<div id="text" class="section level2 unnumbered hasAnchor" number="">
 <h2>Text<a href="StyleGuide.html#text" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="units" class="section level3 unnumbered hasAnchor">
+<div id="units" class="section level3 unnumbered hasAnchor" number="">
 <h3>Units<a href="StyleGuide.html#units" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Leave a space between a numeral and a unit. For example, 100 m<sup>3</sup>, not 100m<sup>3</sup>. For inverse units use a slash or a negative power, but be consistent throughout your text. For example 100 L/d or 100 L d<sup>-1</sup>. Pay attention to capital letters: there is a billion-fold difference between mL and ML (millilitres and megalitres). Do not leave a space between a numeral and %. For example, 100%, not 100 %.</p>
 <p>Capital M as a unit is known as molar. It is an abbreviation of mol L<sup>-1</sup>. mM is the same as mmol L<sup>-1</sup>, or 1 <span class="math inline">\(\times\)</span> 10<sup>-3</sup> M.</p>
 </div>
-<div id="chemicals" class="section level3 unnumbered hasAnchor">
+<div id="chemicals" class="section level3 unnumbered hasAnchor" number="">
 <h3>Chemicals<a href="StyleGuide.html#chemicals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Elements, compounds and molecules do not start with capital letters. An abbreviation or a chemical symbol has capital letters. Multiple elements in a compound have a subscript and charged molecules have a superscript. For example, carbonate, CO<sub>3</sub><sup>2-</sup>.</p>
 </div>
-<div id="fonts" class="section level3 unnumbered hasAnchor">
+<div id="fonts" class="section level3 unnumbered hasAnchor" number="">
 <h3>Fonts<a href="StyleGuide.html#fonts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pick an appropriate Seriff or Sans-Seriff font with a size of <strong>12pt</strong>. Commonly used fonts include Arial, Helvetica, Times New Roman and Garamond.</p>
 <center>
@@ -409,7 +381,7 @@ div.csl-indent {
 <img src="images/styleguide/bad-fonts.png" style="width:35.0%" />
 </center>
 </div>
-<div id="paragraphs" class="section level3 unnumbered hasAnchor">
+<div id="paragraphs" class="section level3 unnumbered hasAnchor" number="">
 <h3>Paragraphs<a href="StyleGuide.html#paragraphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Format your paragraphs with the following:</p>
 <ul>
@@ -430,17 +402,17 @@ div.csl-indent {
 </center>
 </div>
 </div>
-<div id="figures" class="section level2 unnumbered hasAnchor">
+<div id="figures" class="section level2 unnumbered hasAnchor" number="">
 <h2>Figures<a href="StyleGuide.html#figures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="positioning" class="section level3 unnumbered hasAnchor">
+<div id="positioning" class="section level3 unnumbered hasAnchor" number="">
 <h3>Positioning<a href="StyleGuide.html#positioning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Put the figure after it is referred to in the text for the first time, so that the figure is below. Refer to every figure and make sure the figure caption is updated to the right number.</p>
 </div>
-<div id="d" class="section level3 unnumbered hasAnchor">
+<div id="d" class="section level3 unnumbered hasAnchor" number="">
 <h3>3D<a href="StyleGuide.html#d" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Do not use 3D plots to visualise your data! They easily misrepresent data and, more often than not, look visually jarring. They can be appropriate for certain types of scatterplots or surface plots when there is a third dimension to the data.</p>
 </div>
-<div id="colour" class="section level3 unnumbered hasAnchor">
+<div id="colour" class="section level3 unnumbered hasAnchor" number="">
 <h3>Colour<a href="StyleGuide.html#colour" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Rarely are the defaults the best choice for your figure.</p>
 <p>When selecting a colour palette:</p>
@@ -451,11 +423,11 @@ div.csl-indent {
 <li><p>Do not put a border around the figure</p></li>
 </ul>
 </div>
-<div id="captions" class="section level3 unnumbered hasAnchor">
+<div id="captions" class="section level3 unnumbered hasAnchor" number="">
 <h3>Captions<a href="StyleGuide.html#captions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Captions are positioned below a figure and above a table. They contain a useful description to assist the interpretation of the figure or table. Do not include a title as your caption renders this redundant!</p>
 </div>
-<div id="timeseries-axis" class="section level3 unnumbered hasAnchor">
+<div id="timeseries-axis" class="section level3 unnumbered hasAnchor" number="">
 <h3>Timeseries axis<a href="StyleGuide.html#timeseries-axis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you have a date axis, arrange the dates so that they can be read.</p>
 <p><img src="images/styleguide/Goodgraphs/Slide4.PNG" style="width:80.0%" /></p>
@@ -463,21 +435,21 @@ div.csl-indent {
 <p>If you have a timespan of many years, do not include days and months in the date tick label. For example, between 1950 and 2000, it does not matter to the reader that a point occurred on 1 January.</p>
 <p><img src="images/styleguide/Goodgraphs/Slide5.PNG" style="width:80.0%" /></p>
 </div>
-<div id="multipanel-plots" class="section level3 unnumbered hasAnchor">
+<div id="multipanel-plots" class="section level3 unnumbered hasAnchor" number="">
 <h3>Multipanel plots<a href="StyleGuide.html#multipanel-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="unnecessary-regressions" class="section level3 unnumbered hasAnchor">
+<div id="unnecessary-regressions" class="section level3 unnumbered hasAnchor" number="">
 <h3>Unnecessary regressions<a href="StyleGuide.html#unnecessary-regressions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Do not include a trendline for a series of data that you have calculated yourself. If y = 2x, and you calculate y over a series of x values, a linear regression of this calculation will give you a formula of 2x, with an r<sup>2</sup> of 1. This regression is not helpful.</p>
 <p><img src="images/styleguide/Goodgraphs/Slide3.PNG" style="width:80.0%" /></p>
 </div>
-<div id="good-graphs" class="section level3 unnumbered hasAnchor">
+<div id="good-graphs" class="section level3 unnumbered hasAnchor" number="">
 <h3>Good graphs<a href="StyleGuide.html#good-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Include axis labels, with units. Use a legend if you have more than one data series. Spread your tick marks out nicely. Use black lines for the axes and black font for the text.</p>
 <p><img src="images/styleguide/Goodgraphs/Slide1.PNG" style="width:80.0%" /></p>
 <p><img src="images/styleguide/Goodgraphs/Slide2.PNG" style="width:80.0%" /></p>
 </div>
-<div id="bad-graphs" class="section level3 unnumbered hasAnchor">
+<div id="bad-graphs" class="section level3 unnumbered hasAnchor" number="">
 <h3>Bad graphs<a href="StyleGuide.html#bad-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The following graphs leave a lot to be desired! They misrepresent data, lack critical details, and are visually jarring. Take a look at each and read the marker’s feedback to get an idea of how your graphs will be assessed.</p>
 <p><strong>Figure 1:</strong></p>
@@ -512,7 +484,7 @@ div.csl-indent {
 <li>Pie charts are a poor choice of visualisation for comparing numbers. The human eye is much less able to distinguish differences of scale for data represented as sectors of a circle compared to rectangles on a bar chart</li>
 </ul>
 </div>
-<div id="superfluous-images" class="section level3 unnumbered hasAnchor">
+<div id="superfluous-images" class="section level3 unnumbered hasAnchor" number="">
 <h3>Superfluous images<a href="StyleGuide.html#superfluous-images" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Unless specified, your assessments are not picture books! Do not use figures to arbitrarily lengthen your report and add visual clutter. Justify the purpose of each figure you include. When used well, figures should support your writing and illustrate key points to the reader.</p>
 <center>
@@ -520,7 +492,7 @@ div.csl-indent {
 </center>
 </div>
 </div>
-<div id="tables" class="section level2 unnumbered hasAnchor">
+<div id="tables" class="section level2 unnumbered hasAnchor" number="">
 <h2>Tables<a href="StyleGuide.html#tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>All tables must be styled as per the following:</p>
 <ul>
@@ -538,7 +510,7 @@ div.csl-indent {
 <p><img src="images/styleguide/table.png" width="100%" data-action="zoom" /></p>
 </center>
 </div>
-<div id="referencing" class="section level2 unnumbered hasAnchor">
+<div id="referencing" class="section level2 unnumbered hasAnchor" number="">
 <h2>Referencing<a href="StyleGuide.html#referencing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When completing academic work it is essential that you refer to the sources of information within your text, and professionally adhere to referencing standards. Marks will be deducted for inadequate, or poor quality referencing. Complete details of these works should be arranged alphabetically in a reference list at the end of any document or report you submit.</p>
 <p>You are permitted to use Harvard or APA reference style. The choice is up to you as long as it is used consistently throughout the document.</p>
@@ -591,7 +563,7 @@ div.csl-indent {
 <p>There is a strong concensus in the literature (Andrews, 2015; Brown &amp; Baldwin, 2012; Carter et al., 2016).</p>
 </blockquote>
 </div>
-<div id="submissions" class="section level2 unnumbered hasAnchor">
+<div id="submissions" class="section level2 unnumbered hasAnchor" number="">
 <h2>Submissions<a href="StyleGuide.html#submissions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When uploading your assessments, only submit your work in PDF format - not Word’s <em>.docx</em>. In Word, you can export your documents to PDF via <em>File -&gt; Save As… -&gt; File Format -&gt; PDF -&gt; Save</em>.</p>
 <center>
@@ -672,7 +644,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
