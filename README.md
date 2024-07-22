@@ -47,5 +47,5 @@ directory are:
 ### Deployment
 
 A GitHub Actions deployment workflow with build the book from scratch and add 
-the generated website files to the `_book` directory of the `gh-pages` branch.
+the generated website files to the root of the `gh-pages` branch.
 This is where GitHub Pages looks when hosting the website.
