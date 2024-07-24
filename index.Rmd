@@ -19,7 +19,7 @@ xaringanExtra::use_panelset()
 xaringanExtra::style_panelset_tabs(font_family = "inherit")
 ```
 
-Welcome to the Environmental Dynamics Workbook in 2024! This workbook supplements the practical component of the Environmental Dynamics unit and is designed to develop your ability to model environmental systems. 
+Welcome to the Environmental Dynamics Workbook! This workbook supplements the practical component of the Environmental Dynamics unit and is designed to develop your ability to model environmental systems. 
 
 Each practical class has a corresponding module that will be added to the workbook as the semester progresses. If you are at all unfamiliar with using Excel or R, please visit the [Getting Started](#GettingStarted) section of this workbook before commencing the first module. 
 
