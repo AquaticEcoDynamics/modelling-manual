@@ -41,5 +41,6 @@ Please contact your Unit Coordinator or tutor for queries relating to this workb
 12) [Final Project](#FinalProject)
 13) [Learning the Tidyverse](#tidyverse)
 14) [Learning the base plot](#baseplot)
-15) [Modelling Quokkas in R](#quokkas)   
-16) [References](#references)
+15) [Excel basics](#excelbasics)
+16) [Modelling Quokkas in R](#quokkas)   
+17) [References](#references)

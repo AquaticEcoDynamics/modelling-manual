@@ -1,0 +1,76 @@
+<!-- # (PART)  Supporting Material {-}  -->
+
+# Learning Excel basics {#excelbasics .unnumbered}
+
+If you have not used Excel before, don't panic. You will be good at Excel by the end of the day and very good by the end of the semester. There are many resources online that can help you learn Excel. If you type your question into Google, you have a good chance of finding the answer.
+
+On this page, some of the major basics are listed.
+
+## Excel = giant calculator {-}
+
+Excel is a giant calculator. If you click in a cell and type '=', you can then do a calculation in that cell. For example, type '= 1 / (1 + 1)' then Enter (or Return) and the answer will be in that cell.
+
+You can type all basic mathematical terms: 
+
+' + - * / ^
+
+as well as using brackets to set the order of operations:
+
+1 / (1+1) = 0.5
+
+(1/1) + 1 = 2
+
+as well as inbuilt functions:
+
+=log() =average() =max() =min()
+
+## Cells {-}
+
+As well as typing values into a cell, you can also type cells into cells. Excel is a grid of letters (across) and numbers (down). In cell A1, the topleftmost cell, you can type '= 1 / (1 + 1)'. Then in cell B2 you can type '= A2 * 2'.
+
+If you click in the margin, you can select an entire row or column. 
+
+## Plus cursor {-}
+
+If you cursor is a big white plus sign, it is going to highlight a cell, or several cells if you drag it across several cells.
+
+In the bottom right corner of any cell with data in it, you will see a smaller black plus sign. This small black plus will copy the value or the formula from that cell to a neighbouring cell. This is handy because it allows you to copy a cell without retyping everything.
+
+In some cases you can double click the small black plus and this will fill in many cells at once. If there is a column of values to the left of a cell, you can double click the black plus and it will fill the cells below.
+
+## Fixed cells {-}
+
+If you reference another cell and then drag the formula around, the referenced cells will also move. If you want a referenced cell to be fixed in place, you can use the $ symbol. You can also press F4 to cycle through all of the $ options. 
+
+If you reference '$A$1', you will always reference 'A1'.
+
+If you reference 'A$1', you will always reference row 1, and column A will change.
+
+If you reference '$A1', you will always reference column A, and row 1 will change.
+
+## Formatting {-}
+
+Excel is Microsoft software. You can use all of the standard formatting tools to help organise your spreadsheet. You can change the cell colour, font colour, bold font, font size, left-right alignment etc.
+
+If you click between the cell indices, say on the line between A and B, you can drag the with of the column right or left to make it larger or smaller. Similiarly, you can drag the line down and up between 1 and 2 to make the row larger or smaller. If you double click, the cell size will fit the largest value in the column or row. If a number is to long to be displayed in a cell, you will see '########'. If you want to see the value, expand the column until the number is visible.
+
+You can format a number on the ribbon 'Home', under the section 'Number', using the dropdown. A cell defaults to 'General' but you can change it to be, for example, a number, text or a date. You can change the number of decimal places that are displayed using the left and right buttons. 
+
+## Freeze the view of the cells {-}
+
+You can 'freeze' the view of some cells so that they are always visible as you scroll around the spreadsheet. Look for the 'View' pane, then 'Window', then find the dropdown button 'Freeze Panes'. If you have one cell selected, then both the rows and columns will be frozen above and to the left of that cell. If you select a row by clicking in the margin, you can freeze just the rows above (and not the columns). 
+
+You would do this, for example, if you wand to view the column headings of a long time series as you scroll down the spreadsheet. 
+
+## IF() statements {-}
+
+There is a good explanation of IF() and nested IF() in the Module 1 exercise. The basic format has three terms in it, separated by commas:
+
+IF( if this condition is true , then do this , otherwise do this )
+
+In terms of 'doing this', you can make the result a value (3.2) another cell (A$1), a function (A$1 * 3.2), or some text ("this was true"). If you want one of the conditions to be 'do nothing', you can make the result '0', or blank text (""). 
+
+## A chart {-}
+
+To make a chart, go to Insert, Charts, then the dropdown button. The Scatter chart is the most reliable to set up and you can change its format later using Chart Design, Type, Change Chart Type. You can also format all aspects of the chart with the pane on the right hand side of the screen. Look at the Style Guide page to see a good format for your chart. 
+
