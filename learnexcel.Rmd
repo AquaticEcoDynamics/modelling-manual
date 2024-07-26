@@ -56,11 +56,13 @@ If you click between the cell indices, say on the line between A and B, you can 
 
 You can format a number on the ribbon 'Home', under the section 'Number', using the dropdown. A cell defaults to 'General' but you can change it to be, for example, a number, text or a date. You can change the number of decimal places that are displayed using the left and right buttons. 
 
-## Freeze the view of the cells {-}
+## View of the cells {-}
 
 You can 'freeze' the view of some cells so that they are always visible as you scroll around the spreadsheet. Look for the 'View' pane, then 'Window', then find the dropdown button 'Freeze Panes'. If you have one cell selected, then both the rows and columns will be frozen above and to the left of that cell. If you select a row by clicking in the margin, you can freeze just the rows above (and not the columns). 
 
 You would do this, for example, if you wand to view the column headings of a long time series as you scroll down the spreadsheet. 
+
+You can also zoom in and out of the spreadsheet, as you would in any Microsoft program. The cells get bigger or smaller. You can do it by using the zoom bar in the bottom right of the screen, or using Ctrl and scrolling on the mouse. 
 
 ## IF() statements {-}
 
