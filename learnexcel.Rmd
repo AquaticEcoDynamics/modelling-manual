@@ -62,7 +62,7 @@ You can 'freeze' the view of some cells so that they are always visible as you s
 
 You would do this, for example, if you wand to view the column headings of a long time series as you scroll down the spreadsheet. 
 
-You can also zoom in and out of the spreadsheet, as you would in any Microsoft program. The cells get bigger or smaller. You can do it by using the zoom bar in the bottom right of the screen, or using Ctrl and scrolling on the mouse. 
+You can also zoom in and out of the spreadsheet, as you would in any Microsoft program. The cells get bigger or smaller. You can do it by using the zoom bar in the bottom right of the screen, or using Ctrl and scrolling with your mouse. 
 
 ## IF() statements {-}
 
