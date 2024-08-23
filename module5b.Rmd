@@ -2,7 +2,7 @@
 
 ### Objectives {#M5B_2 -}
 
-To setup a nutrient export model to compare the effect of Best Management Practices (BMP's) on nutrient loads from a catchment with mixed land use.
+To setup a nutrient export model to compare the effect of best management practices (BMPs) on nutrient loads from a catchment with mixed land use.
 
 ### Before you start {#M5b_before_start -}
 
