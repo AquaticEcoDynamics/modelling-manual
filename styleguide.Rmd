@@ -26,9 +26,9 @@ Do not use stylised fonts - you know the ones!
 
 Format your paragraphs with the following:
 
--   **Line spacing:** 1.5pt
--   **Section headings:** 14pt font size and in bold
--   **Margins:** 2cm margins on all sides i.e. top, bottom, left, and right margins
+-   **Line spacing:** 1.5 pt
+-   **Section headings:** 14 pt font size and in bold
+-   **Margins:** 2 cm margins on all sides i.e. top, bottom, left, and right margins
 
 <center>![](images/styleguide/paragraph.png){width="80%"}</center>
 
