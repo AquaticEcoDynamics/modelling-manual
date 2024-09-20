@@ -32,7 +32,30 @@ Design a conceptual model for your project. Decide on the boundary conditions, i
 
 ## Two-pager/Pitch {-}
 
-Write up your plan for the model in two pages. Include a short introduction of background material. Sketch the interactions between the variables in the system. This two-pager will help you commit to your model, it will help you think it through from beginning to end, and it will give the tutors an overview of your work. 
+Write up your plan for the model in two pages. Include a short introduction of background material. This two-pager will help you commit to your model, it will help you think it through from beginning to end, and it will give the tutors an overview of your work. 
+
+This should outline the:
+
+• proposed title
+
+• model context (2-3 sentences) with references
+
+• conceptual model diagram 
+
+• state variables being considered (what is being simulated)
+
+• major parameters (e.g. growth rate, carrying capacity, catchment area) identified, without exact values. Consider a sensitivity assessment of some parameters.
+
+• external drivers (boundary conditions) and scenarios, e.g. climate scenarios
+
+• estimated time frame of simulation (e.g., 1 year, 10 years etc.), spatial extent and spatial dimensions
+
+• key reference(s) you are reading to guide your model approach/setup
+
+There is a rubric attached to the submission link. 
+
+The point of this exercise is to plan out and consider your model direction. It is okay if you change from this submission as you learn more and move through the model process.
+
 
 ## Idealised Prototype {-}
 
