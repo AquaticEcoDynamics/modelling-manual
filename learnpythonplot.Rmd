@@ -61,6 +61,23 @@ Display a header of the data.
 print(env_flow)
 ``` 
 
+```
+            date  totalDischarge
+0     1992-01-01          26.599
+1     1992-01-02          26.849
+2     1992-01-03          27.274
+3     1992-01-04          26.988
+4     1992-01-05          26.463
+...          ...             ...
+6935  2010-12-27          20.005
+6936  2010-12-28          20.116
+6937  2010-12-29          19.736
+6938  2010-12-30          19.828
+6939  2010-12-31          19.617
+
+[6940 rows x 2 columns]
+```
+
 #### Format the date {-}
 
 Format the date in a way that looks good in the figure. Capital Y means a year with four digits, lower case y would be two digits. 'for t' means to apply this command to each line. This is like a 'for loop' in R. In python this is referred to as 'list comprehension'. 'strptime' is a standard formatting for dates and times, converting text strings into a 'date time object'.
@@ -90,6 +107,10 @@ Apply the 'savefig' command to the 'fig' object that we created above.
 ax.plot(env_flow["date"], env_flow["totalDischarge"])
 fig.savefig("env_flow.png")
 ```
+
+<center>
+![](images/learnpythonplot/py_env_flow_0.png){width=100%}
+</center>
     
 This should save a figure as a .png file, 'env_flow.png', to your working directory. See if you can open it and take a look at it. 
 
@@ -103,17 +124,25 @@ ax.plot(env_flow["date"], env_flow["totalDischarge"], color="green")
 fig.savefig("env_flow.png")
 ```
 
+<center>
+![](images/learnpythonplot/py_env_flow_1.png){width=100%}
+</center>
+
 #### Fix the labels {-}
 
 Add labels to the axes, using the set_xlabel command. Make the labels bold using the parameter 'fontweight'. 
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
 fig, ax = plt.subplots(figsize=(10, 6))
-ax.plot(env_flow["date"], env_flow["totalDischarge"], color="blue")
-ax.set_xlabel("Date",fontweight="bold")
-ax.set_ylabel("Total Discharge (ML)",fontweight="bold)
+ax.plot(env_flow["date"], env_flow["totalDischarge"], color="green")
+ax.set_xlabel("Date", fontweight="bold")
+ax.set_ylabel("Total Discharge (ML)", fontweight="bold")
 fig.savefig("env_flow.png")
 ```
+
+<center>
+![](images/learnpythonplot/py_env_flow_2.png){width=100%}
+</center>
 
 ### Visualising Diversion Scenarios {-}
 
@@ -138,6 +167,10 @@ ax.set_ylabel("Total Discharge (ML)", fontweight='bold')
 fig.savefig("env_flow.png")
 ```
 
+<center>
+![](images/learnpythonplot/py_env_flow_3.png){width=100%}
+</center>
+
 #### Add a legend to the diversion scenario {-}
 
 Add the legend to the diversion scenario. 
@@ -145,8 +178,6 @@ Add the legend to the diversion scenario.
 ```{python, eval=FALSE, python.reticulate=FALSE} 
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.plot(env_flow["date"], env_flow["totalDischarge"])
-
-start_date = datetime.strptime("1992-01-01", "%Y-%m-%d")
 
 rect = patches.Rectangle(
     xy=(mdates.date2num(env_flow["date"][0]), 50), # This is the bottom left-hand corner
@@ -165,6 +196,9 @@ plt.legend()
 fig.savefig("env_flow.png")
 ```
 
+<center>
+![](images/learnpythonplot/py_env_flow_4.png){width=100%}
+</center>
 
 ### Exercise: which language is better? {-} 
 Start an argument with the person sitting next to you. Is R or python easier to use?
