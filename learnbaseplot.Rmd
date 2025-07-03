@@ -1,6 +1,6 @@
 <!-- # (PART)  Supporting Material {-}  -->
 
-<!-- # Learning the Base Plotting {#tidyverse2 .unnumbered} -->
+<!-- # Learning the Base Plotting {#baseplot .unnumbered} -->
 # Learning to use the base plot {#baseplot .unnumbered}
 
 As an alternative to ggplot and tidyverse, there are other basic plotting functions that you might prefer. This module takes you through a few basic plotting functions. It starts in the same way as the tidyverse module, using the same dataset.

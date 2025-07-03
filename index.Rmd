@@ -39,7 +39,7 @@ Please contact your Unit Coordinator or tutor for queries relating to this workb
 10) [Module 6 - River Pollution](#M6_1)
 11) [Module 7 - Lake Ecosystem Dynamics](#M7_1)
 12) [Final Project](#FinalProject)
-13) [Learning the Tidyverse](#tidyverse)
+13) [Learning the Tidyverse](#tidyverse2)
 14) [Learning the base plot](#baseplot)
 15) [Learning to plot with python](#pythonplot)
 16) [Excel basics](#excelbasics)
