@@ -8,7 +8,7 @@ name: bookdown
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       RENV_PATHS_ROOT: ~/.local/share/renv
@@ -23,6 +23,7 @@ jobs:
       
       - name: Install pandoc and gdal dependencies
         run: |
+          sudo apt-get update
           sudo apt-get install -y pandoc
           sudo apt-get install -y pandoc-citeproc
           sudo apt-get install gdal-bin proj-bin libgdal-dev libproj-dev
