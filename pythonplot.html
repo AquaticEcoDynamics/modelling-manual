@@ -418,13 +418,27 @@ import pandas as pd</code></pre>
 <h4>Inspect the data<a href="pythonplot.html#inspect-the-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Display a header of the data.</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="pythonplot.html#cb68-1" aria-hidden="true"></a><span class="bu">print</span>(env_flow)</span></code></pre></div>
+<pre><code>            date  totalDischarge
+0     1992-01-01          26.599
+1     1992-01-02          26.849
+2     1992-01-03          27.274
+3     1992-01-04          26.988
+4     1992-01-05          26.463
+...          ...             ...
+6935  2010-12-27          20.005
+6936  2010-12-28          20.116
+6937  2010-12-29          19.736
+6938  2010-12-30          19.828
+6939  2010-12-31          19.617
+
+[6940 rows x 2 columns]</code></pre>
 </div>
 <div id="format-the-date-2" class="section level4 unnumbered hasAnchor" number="">
 <h4>Format the date<a href="pythonplot.html#format-the-date-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Format the date in a way that looks good in the figure. Capital Y means a year with four digits, lower case y would be two digits. ‘for t’ means to apply this command to each line. This is like a ‘for loop’ in R. In python this is referred to as ‘list comprehension’. ‘strptime’ is a standard formatting for dates and times, converting text strings into a ‘date time object’.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="pythonplot.html#cb69-1" aria-hidden="true"></a>env_flow[<span class="st">&quot;date&quot;</span>] <span class="op">=</span> [</span>
-<span id="cb69-2"><a href="pythonplot.html#cb69-2" aria-hidden="true"></a>    datetime.strptime(t, <span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st">&quot;</span>) <span class="cf">for</span> t <span class="kw">in</span> env_flow[<span class="st">&quot;date&quot;</span>]</span>
-<span id="cb69-3"><a href="pythonplot.html#cb69-3" aria-hidden="true"></a>]</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="pythonplot.html#cb70-1" aria-hidden="true"></a>env_flow[<span class="st">&quot;date&quot;</span>] <span class="op">=</span> [</span>
+<span id="cb70-2"><a href="pythonplot.html#cb70-2" aria-hidden="true"></a>    datetime.strptime(t, <span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st">&quot;</span>) <span class="cf">for</span> t <span class="kw">in</span> env_flow[<span class="st">&quot;date&quot;</span>]</span>
+<span id="cb70-3"><a href="pythonplot.html#cb70-3" aria-hidden="true"></a>]</span></code></pre></div>
 </div>
 </div>
 <div id="plotting-with-matplotlib" class="section level3 unnumbered hasAnchor" number="">
@@ -432,75 +446,88 @@ import pandas as pd</code></pre>
 <div id="create-figure-and-axes-objects" class="section level4 unnumbered hasAnchor" number="">
 <h4>Create Figure and Axes objects<a href="pythonplot.html#create-figure-and-axes-objects" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The ‘fig’ is our figure object, and the ‘ax’ is our axis object. We are naming them and assigning properties to them in this step. ‘plt.subplots’ is a function from the python <em>matplotlib</em> library.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="pythonplot.html#cb70-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="pythonplot.html#cb71-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span></code></pre></div>
 </div>
 <div id="plot-the-data-to-the-axes-object-ax" class="section level4 unnumbered hasAnchor" number="">
 <h4>Plot the data to the Axes object (<code>ax</code>)<a href="pythonplot.html#plot-the-data-to-the-axes-object-ax" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Apply the ‘plot’ command to the ‘ax’ object that we created above.
 Apply the ‘savefig’ command to the ‘fig’ object that we created above.</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="pythonplot.html#cb71-1" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
-<span id="cb71-2"><a href="pythonplot.html#cb71-2" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="pythonplot.html#cb72-1" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
+<span id="cb72-2"><a href="pythonplot.html#cb72-2" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<center>
+<img src="images/learnpythonplot/py_env_flow_0.png" style="width:100.0%" />
+</center>
 <p>This should save a figure as a .png file, ‘env_flow.png’, to your working directory. See if you can open it and take a look at it.</p>
 </div>
 <div id="change-the-colour-1" class="section level4 unnumbered hasAnchor" number="">
 <h4>Change the colour<a href="pythonplot.html#change-the-colour-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Now that your basic plot is working, you can start editing it. It defaults to a light blue line: let’s change it to a green line by adding the parameter ‘color’ to the ‘plot’ method, to the ‘ax’ object.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="pythonplot.html#cb72-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb72-2"><a href="pythonplot.html#cb72-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>], color<span class="op">=</span><span class="st">&quot;green&quot;</span>)</span>
-<span id="cb72-3"><a href="pythonplot.html#cb72-3" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="pythonplot.html#cb73-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb73-2"><a href="pythonplot.html#cb73-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>], color<span class="op">=</span><span class="st">&quot;green&quot;</span>)</span>
+<span id="cb73-3"><a href="pythonplot.html#cb73-3" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<center>
+<img src="images/learnpythonplot/py_env_flow_1.png" style="width:100.0%" />
+</center>
 </div>
 <div id="fix-the-labels-1" class="section level4 unnumbered hasAnchor" number="">
 <h4>Fix the labels<a href="pythonplot.html#fix-the-labels-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Add labels to the axes, using the set_xlabel command. Make the labels bold using the parameter ‘fontweight’.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="pythonplot.html#cb73-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb73-2"><a href="pythonplot.html#cb73-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>], color<span class="op">=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb73-3"><a href="pythonplot.html#cb73-3" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>,fontweight<span class="op">=</span><span class="st">&quot;bold&quot;</span>)</span>
-<span id="cb73-4"><a href="pythonplot.html#cb73-4" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>,fontweight<span class="op">=</span><span class="st">&quot;bold)</span></span>
-<span id="cb73-5"><a href="pythonplot.html#cb73-5" aria-hidden="true"></a><span class="st">fig.savefig(&quot;</span>env_flow.png<span class="st">&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="pythonplot.html#cb74-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb74-2"><a href="pythonplot.html#cb74-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>], color<span class="op">=</span><span class="st">&quot;green&quot;</span>)</span>
+<span id="cb74-3"><a href="pythonplot.html#cb74-3" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb74-4"><a href="pythonplot.html#cb74-4" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb74-5"><a href="pythonplot.html#cb74-5" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<center>
+<img src="images/learnpythonplot/py_env_flow_2.png" style="width:100.0%" />
+</center>
 </div>
 </div>
 <div id="visualising-diversion-scenarios-1" class="section level3 unnumbered hasAnchor" number="">
 <h3>Visualising Diversion Scenarios<a href="pythonplot.html#visualising-diversion-scenarios-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Add a pale red box to show the flow smaller than 550 ML.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="pythonplot.html#cb74-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb74-2"><a href="pythonplot.html#cb74-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
-<span id="cb74-3"><a href="pythonplot.html#cb74-3" aria-hidden="true"></a></span>
-<span id="cb74-4"><a href="pythonplot.html#cb74-4" aria-hidden="true"></a>rect <span class="op">=</span> patches.Rectangle(</span>
-<span id="cb74-5"><a href="pythonplot.html#cb74-5" aria-hidden="true"></a>    xy<span class="op">=</span>(mdates.date2num(env_flow[<span class="st">&quot;date&quot;</span>][<span class="dv">0</span>]), <span class="dv">50</span>), <span class="co"># This is the bottom left-hand corner</span></span>
-<span id="cb74-6"><a href="pythonplot.html#cb74-6" aria-hidden="true"></a>    width<span class="op">=</span><span class="bu">len</span>(env_flow[<span class="st">&quot;date&quot;</span>]), <span class="co"># This is the length of this list (number of dates)</span></span>
-<span id="cb74-7"><a href="pythonplot.html#cb74-7" aria-hidden="true"></a>    height<span class="op">=</span><span class="dv">550</span>, <span class="co"># This is the volume of flow in ML</span></span>
-<span id="cb74-8"><a href="pythonplot.html#cb74-8" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
-<span id="cb74-9"><a href="pythonplot.html#cb74-9" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
-<span id="cb74-10"><a href="pythonplot.html#cb74-10" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
-<span id="cb74-11"><a href="pythonplot.html#cb74-11" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>, <span class="co"># This is the opacity of the colour, scaling from 0 to 1.</span></span>
-<span id="cb74-12"><a href="pythonplot.html#cb74-12" aria-hidden="true"></a>)</span>
-<span id="cb74-13"><a href="pythonplot.html#cb74-13" aria-hidden="true"></a>ax.add_patch(rect)</span>
-<span id="cb74-14"><a href="pythonplot.html#cb74-14" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
-<span id="cb74-15"><a href="pythonplot.html#cb74-15" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
-<span id="cb74-16"><a href="pythonplot.html#cb74-16" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
-<div id="add-a-legend-to-the-diversion-scenario" class="section level4 unnumbered hasAnchor" number="">
-<h4>Add a legend to the diversion scenario<a href="pythonplot.html#add-a-legend-to-the-diversion-scenario" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Add the legend to the diversion scenario.</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="pythonplot.html#cb75-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb75-2"><a href="pythonplot.html#cb75-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
 <span id="cb75-3"><a href="pythonplot.html#cb75-3" aria-hidden="true"></a></span>
-<span id="cb75-4"><a href="pythonplot.html#cb75-4" aria-hidden="true"></a>start_date <span class="op">=</span> datetime.strptime(<span class="st">&quot;1992-01-01&quot;</span>, <span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st">&quot;</span>)</span>
-<span id="cb75-5"><a href="pythonplot.html#cb75-5" aria-hidden="true"></a></span>
-<span id="cb75-6"><a href="pythonplot.html#cb75-6" aria-hidden="true"></a>rect <span class="op">=</span> patches.Rectangle(</span>
-<span id="cb75-7"><a href="pythonplot.html#cb75-7" aria-hidden="true"></a>    xy<span class="op">=</span>(mdates.date2num(env_flow[<span class="st">&quot;date&quot;</span>][<span class="dv">0</span>]), <span class="dv">50</span>), <span class="co"># This is the bottom left-hand corner</span></span>
-<span id="cb75-8"><a href="pythonplot.html#cb75-8" aria-hidden="true"></a>    width<span class="op">=</span><span class="bu">len</span>(env_flow[<span class="st">&quot;date&quot;</span>]), <span class="co"># This is the length of this list (number of dates)</span></span>
-<span id="cb75-9"><a href="pythonplot.html#cb75-9" aria-hidden="true"></a>    height<span class="op">=</span><span class="dv">550</span>, <span class="co"># This is the volume of flow in ML</span></span>
-<span id="cb75-10"><a href="pythonplot.html#cb75-10" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
-<span id="cb75-11"><a href="pythonplot.html#cb75-11" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
-<span id="cb75-12"><a href="pythonplot.html#cb75-12" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
-<span id="cb75-13"><a href="pythonplot.html#cb75-13" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>,</span>
-<span id="cb75-14"><a href="pythonplot.html#cb75-14" aria-hidden="true"></a>    label<span class="op">=</span><span class="st">&quot;Diversion Scenario 1&quot;</span> <span class="co"># This is the text in the label</span></span>
-<span id="cb75-15"><a href="pythonplot.html#cb75-15" aria-hidden="true"></a>)</span>
-<span id="cb75-16"><a href="pythonplot.html#cb75-16" aria-hidden="true"></a>ax.add_patch(rect)</span>
-<span id="cb75-17"><a href="pythonplot.html#cb75-17" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
-<span id="cb75-18"><a href="pythonplot.html#cb75-18" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
-<span id="cb75-19"><a href="pythonplot.html#cb75-19" aria-hidden="true"></a>plt.legend()</span>
-<span id="cb75-20"><a href="pythonplot.html#cb75-20" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<span id="cb75-4"><a href="pythonplot.html#cb75-4" aria-hidden="true"></a>rect <span class="op">=</span> patches.Rectangle(</span>
+<span id="cb75-5"><a href="pythonplot.html#cb75-5" aria-hidden="true"></a>    xy<span class="op">=</span>(mdates.date2num(env_flow[<span class="st">&quot;date&quot;</span>][<span class="dv">0</span>]), <span class="dv">50</span>), <span class="co"># This is the bottom left-hand corner</span></span>
+<span id="cb75-6"><a href="pythonplot.html#cb75-6" aria-hidden="true"></a>    width<span class="op">=</span><span class="bu">len</span>(env_flow[<span class="st">&quot;date&quot;</span>]), <span class="co"># This is the length of this list (number of dates)</span></span>
+<span id="cb75-7"><a href="pythonplot.html#cb75-7" aria-hidden="true"></a>    height<span class="op">=</span><span class="dv">550</span>, <span class="co"># This is the volume of flow in ML</span></span>
+<span id="cb75-8"><a href="pythonplot.html#cb75-8" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
+<span id="cb75-9"><a href="pythonplot.html#cb75-9" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
+<span id="cb75-10"><a href="pythonplot.html#cb75-10" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
+<span id="cb75-11"><a href="pythonplot.html#cb75-11" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>, <span class="co"># This is the opacity of the colour, scaling from 0 to 1.</span></span>
+<span id="cb75-12"><a href="pythonplot.html#cb75-12" aria-hidden="true"></a>)</span>
+<span id="cb75-13"><a href="pythonplot.html#cb75-13" aria-hidden="true"></a>ax.add_patch(rect)</span>
+<span id="cb75-14"><a href="pythonplot.html#cb75-14" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb75-15"><a href="pythonplot.html#cb75-15" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb75-16"><a href="pythonplot.html#cb75-16" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<center>
+<img src="images/learnpythonplot/py_env_flow_3.png" style="width:100.0%" />
+</center>
+<div id="add-a-legend-to-the-diversion-scenario" class="section level4 unnumbered hasAnchor" number="">
+<h4>Add a legend to the diversion scenario<a href="pythonplot.html#add-a-legend-to-the-diversion-scenario" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Add the legend to the diversion scenario.</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="pythonplot.html#cb76-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb76-2"><a href="pythonplot.html#cb76-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
+<span id="cb76-3"><a href="pythonplot.html#cb76-3" aria-hidden="true"></a></span>
+<span id="cb76-4"><a href="pythonplot.html#cb76-4" aria-hidden="true"></a>rect <span class="op">=</span> patches.Rectangle(</span>
+<span id="cb76-5"><a href="pythonplot.html#cb76-5" aria-hidden="true"></a>    xy<span class="op">=</span>(mdates.date2num(env_flow[<span class="st">&quot;date&quot;</span>][<span class="dv">0</span>]), <span class="dv">50</span>), <span class="co"># This is the bottom left-hand corner</span></span>
+<span id="cb76-6"><a href="pythonplot.html#cb76-6" aria-hidden="true"></a>    width<span class="op">=</span><span class="bu">len</span>(env_flow[<span class="st">&quot;date&quot;</span>]), <span class="co"># This is the length of this list (number of dates)</span></span>
+<span id="cb76-7"><a href="pythonplot.html#cb76-7" aria-hidden="true"></a>    height<span class="op">=</span><span class="dv">550</span>, <span class="co"># This is the volume of flow in ML</span></span>
+<span id="cb76-8"><a href="pythonplot.html#cb76-8" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
+<span id="cb76-9"><a href="pythonplot.html#cb76-9" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
+<span id="cb76-10"><a href="pythonplot.html#cb76-10" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
+<span id="cb76-11"><a href="pythonplot.html#cb76-11" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>,</span>
+<span id="cb76-12"><a href="pythonplot.html#cb76-12" aria-hidden="true"></a>    label<span class="op">=</span><span class="st">&quot;Diversion Scenario 1&quot;</span> <span class="co"># This is the text in the label</span></span>
+<span id="cb76-13"><a href="pythonplot.html#cb76-13" aria-hidden="true"></a>)</span>
+<span id="cb76-14"><a href="pythonplot.html#cb76-14" aria-hidden="true"></a>ax.add_patch(rect)</span>
+<span id="cb76-15"><a href="pythonplot.html#cb76-15" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb76-16"><a href="pythonplot.html#cb76-16" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb76-17"><a href="pythonplot.html#cb76-17" aria-hidden="true"></a>plt.legend()</span>
+<span id="cb76-18"><a href="pythonplot.html#cb76-18" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<center>
+<img src="images/learnpythonplot/py_env_flow_4.png" style="width:100.0%" />
+</center>
 </div>
 </div>
 <div id="exercise-which-language-is-better" class="section level3 unnumbered hasAnchor" number="">
