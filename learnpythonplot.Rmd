@@ -23,14 +23,14 @@ As an alternative to the R base plot, ggplot and tidyverse, you can learn to plo
 #### Load the necessary packages {-}
 Add these commands to the top of your python file.
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
 import pandas as pd
 import matplotlib.pyplot as plt 
 import matplotlib.dates as mdates 
 import matplotlib.patches as patches
 ```
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
 from datetime import datetime
 ```
 
@@ -47,7 +47,7 @@ C:\Users\Jimmy\AppData\python\pip3.exe
 #### Import the spreadsheet {-}
 Import the spreadsheet by adding then running this command:
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
  env_flow = pd.read_excel("envFlowData.xls")
 # env_flow = pd.read_excel("C:/Dan/Uni/Teaching/2025/ENVT3362/ENVT3362_workshop_2envFlowData.xls")
 ```
@@ -56,21 +56,21 @@ Import the spreadsheet by adding then running this command:
 # Import the spreadsheet
 Load the spreadsheet into your python environment.
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
 env_flow = pd.read_excel("envFlowData.xls")
 ```
 
 # Inspect the data
 Display a header of the data.
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
 print(env_flow)
 ``` 
 
 # Format the date
 Format the date in a way that looks good in the figure. Capital Y means a year with four digits, lower case y would be two digits. 'for t' means to apply this command to each line. This is like a 'for loop' in R. In python this is referred to as 'list comprehension'. 'strptime' is a standard formatting for dates and times, converting text strings into a 'date time object'.
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
 env_flow["date"] = [
     datetime.strptime(t, "%Y-%m-%d") for t in env_flow["date"]
 ]
@@ -79,7 +79,7 @@ env_flow["date"] = [
 # Create Figure and Axes objects
 The 'fig' is our figure object, and the 'ax' is our axis object. We are naming them and assigning properties to them in this step. 'plt.subplots' is a function from the python *matplotlib* library. 
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
 fig, ax = plt.subplots(figsize=(10, 6))
 ```
 
@@ -87,7 +87,7 @@ fig, ax = plt.subplots(figsize=(10, 6))
 Apply the 'plot' command to the 'ax' object that we created above.
 Apply the 'savefig' command to the 'fig' object that we created above.
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
 ax.plot(env_flow["date"], env_flow["totalDischarge"])
 fig.savefig("env_flow.png")
 ```
@@ -97,7 +97,7 @@ This should save a figure as a .png file, 'env_flow.png', to your working direct
 # Change the colour
 Now that your basic plot is working, you can start editing it. It defaults to a light blue line: let's change it to a green line by adding the parameter 'color' to the 'plot' method, to the 'ax' object.
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.plot(env_flow["date"], env_flow["totalDischarge"], color="green")
 fig.savefig("env_flow.png")
@@ -106,7 +106,7 @@ fig.savefig("env_flow.png")
 # Fix the labels
 Add labels to the axes, using the set_xlabel command. Make the labels bold using the parameter 'fontweight'. 
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.plot(env_flow["date"], env_flow["totalDischarge"], color="blue")
 ax.set_xlabel("Date",fontweight="bold")
@@ -118,7 +118,7 @@ fig.savefig("env_flow.png")
 
 Add a pale red box to show the flow smaller than 550 ML. 
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.plot(env_flow["date"], env_flow["totalDischarge"])
 
@@ -141,7 +141,7 @@ fig.savefig("env_flow.png")
 
 Add the legend to the diversion scenario. 
 
-```{python, eval=FALSE} 
+```{python, eval=FALSE, python.reticulate=FALSE} 
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.plot(env_flow["date"], env_flow["totalDischarge"])
 
