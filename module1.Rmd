@@ -38,15 +38,15 @@ What happens if we divert freshwater away from a coastal lake system? How much f
 
 In this exercise we use a real data-set from the Robe Lakes system in South Australia to explore this question.
 
-<center>
-```{r map7-1, fig.cap="Explore the case study area with this interactive map.", out.width='100%', out.height='350px', echo=FALSE, message=FALSE, warning=FALSE}
-library(leaflet)
-library(magrittr)
-leaflet::leaflet() %>%
-  leaflet::setView(lat = -37.170055016065895, lng = 139.78148241493437, zoom = 15) %>%
-  leaflet::addProviderTiles(providers$Esri.WorldImagery)
-```
-</center>
+<!-- <center> -->
+<!-- ```{r map7-1, fig.cap="Explore the case study area with this interactive map.", out.width='100%', out.height='350px', echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- library(leaflet) -->
+<!-- library(magrittr) -->
+<!-- leaflet::leaflet() %>% -->
+<!--   leaflet::setView(lat = -37.170055016065895, lng = 139.78148241493437, zoom = 15) %>% -->
+<!--   leaflet::addProviderTiles(providers$Esri.WorldImagery) -->
+<!-- ``` -->
+<!-- </center> -->
 
 We can  plan for e-water requirements to a highly valued system using scenario modelling, and the concept of a "flow-response model" (or flow-response relationship). In this case we look at an example in South Australia where an assessment for water diversion is being undertaken, and we seek to look at what impact this might have on the salinity of a coastal lake. In other words, if we change the flow regime, what will the response be. In this case, salinity is an environmental indicator of ecological requirements.
 
