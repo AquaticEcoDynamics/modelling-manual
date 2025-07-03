@@ -1,5 +1,3 @@
-<!-- # (PART)  Supporting Material {-}  -->
-
 # Learning Excel basics {#excelbasics .unnumbered}
 
 If you have not used Excel before, don't panic. You will be good at Excel by the end of the day and very good by the end of the semester. There are many resources online that can help you learn Excel. If you type your question into Google, you have a good chance of finding the answer.

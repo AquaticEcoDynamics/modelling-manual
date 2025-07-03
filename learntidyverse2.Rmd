@@ -1,6 +1,5 @@
-<!-- # (PART)  Supporting Material {-}  -->
+# (PART)  Assessment {-} 
 
-<!-- # Learning the Base Plotting {#tidyverse2 .unnumbered} -->
 # Learning the Tidyverse2 {#tidyverse2 .unnumbered}
 
 ## Visualising Module 1 Flow Data {-}

@@ -1,15 +1,12 @@
-<!-- # (PART)  Supporting Material {-}  -->
-
-<!-- # Learning Python Plotting {#pythonplot .unnumbered} -->
 # Learning to plot with python {#pythonplot .unnumbered}
 
-As an alternative to the R base plot, ggplot and tidyverse, you can learn to plot with a similar language, python. This module takes you through a few basic plotting functions, using the same dataset.
+Introduce Python...
 
 ## Visualising Module 1 Flow Data {-}
 
 ### Setting up {-}
 
-#### Creating an R Studio project {-}
+#### Creating a `.py` file with VS Code {-}
 
 1) Refer to the Getting Started section, to install python and its packages, and Visual Studio Code (VSC)
 2) Open Visual Studio Code, the go *File -> Open Folder* then open the folder where you will store your files for this exercise (*ENVT3362_workshop_2*)
@@ -21,6 +18,7 @@ As an alternative to the R base plot, ggplot and tidyverse, you can learn to plo
 ### Importing and formatting the data {-}
 
 #### Load the necessary packages {-}
+
 Add these commands to the top of your python file.
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
@@ -28,46 +26,43 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 import matplotlib.dates as mdates 
 import matplotlib.patches as patches
-```
 
-```{python, eval=FALSE, python.reticulate=FALSE} 
 from datetime import datetime
 ```
 
-Run these lines by pressing Shift Enter, one by one.
+Run these lines by pressing `Shift Enter`, one by one.
 
-If this doesn't work, it may be that the location of your python files is not being found. To fix this, in the VSC powershell terminal, use a python command starting with the location of your python program location. For example
+If this doesn't work, it may be that the location of your python files is not being found. To fix this, in the VSC powershell terminal, use a python command starting with the location of your python program location. For example:
 
+```
 C:\Users\Jimmy\AppData\python\python.exe 
 import pandas as pd
-
-Similarly you may need to specify the whole file path to pip in powershell, for example
-C:\Users\Jimmy\AppData\python\pip3.exe 
-
-#### Import the spreadsheet {-}
-Import the spreadsheet by adding then running this command:
-
-```{python, eval=FALSE, python.reticulate=FALSE} 
- env_flow = pd.read_excel("envFlowData.xls")
-# env_flow = pd.read_excel("C:/Dan/Uni/Teaching/2025/ENVT3362/ENVT3362_workshop_2envFlowData.xls")
 ```
 
+Similarly you may need to specify the whole file path to pip in powershell, for example:
 
-# Import the spreadsheet
+```
+C:\Users\Jimmy\AppData\python\pip3.exe 
+```
+
+#### Import the spreadsheet {-}
+
 Load the spreadsheet into your python environment.
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
 env_flow = pd.read_excel("envFlowData.xls")
 ```
 
-# Inspect the data
+#### Inspect the data {-}
+
 Display a header of the data.
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
 print(env_flow)
 ``` 
 
-# Format the date
+#### Format the date {-}
+
 Format the date in a way that looks good in the figure. Capital Y means a year with four digits, lower case y would be two digits. 'for t' means to apply this command to each line. This is like a 'for loop' in R. In python this is referred to as 'list comprehension'. 'strptime' is a standard formatting for dates and times, converting text strings into a 'date time object'.
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
@@ -76,14 +71,18 @@ env_flow["date"] = [
 ]
 ```
 
-# Create Figure and Axes objects
+### Plotting with matplotlib {-}
+
+#### Create Figure and Axes objects {-}
+
 The 'fig' is our figure object, and the 'ax' is our axis object. We are naming them and assigning properties to them in this step. 'plt.subplots' is a function from the python *matplotlib* library. 
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
 fig, ax = plt.subplots(figsize=(10, 6))
 ```
 
-# Plot the data to the Axes object (ax)
+#### Plot the data to the Axes object (`ax`) {-}
+
 Apply the 'plot' command to the 'ax' object that we created above.
 Apply the 'savefig' command to the 'fig' object that we created above.
 
@@ -94,7 +93,8 @@ fig.savefig("env_flow.png")
     
 This should save a figure as a .png file, 'env_flow.png', to your working directory. See if you can open it and take a look at it. 
 
-# Change the colour
+#### Change the colour {-}
+
 Now that your basic plot is working, you can start editing it. It defaults to a light blue line: let's change it to a green line by adding the parameter 'color' to the 'plot' method, to the 'ax' object.
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
@@ -103,7 +103,8 @@ ax.plot(env_flow["date"], env_flow["totalDischarge"], color="green")
 fig.savefig("env_flow.png")
 ```
 
-# Fix the labels
+#### Fix the labels {-}
+
 Add labels to the axes, using the set_xlabel command. Make the labels bold using the parameter 'fontweight'. 
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
@@ -114,7 +115,7 @@ ax.set_ylabel("Total Discharge (ML)",fontweight="bold)
 fig.savefig("env_flow.png")
 ```
 
-# Visualising Diversion Scenarios
+### Visualising Diversion Scenarios {-}
 
 Add a pale red box to show the flow smaller than 550 ML. 
 
@@ -137,7 +138,7 @@ ax.set_ylabel("Total Discharge (ML)", fontweight='bold')
 fig.savefig("env_flow.png")
 ```
 
-# Add a legend to the diversion scenario
+#### Add a legend to the diversion scenario {-}
 
 Add the legend to the diversion scenario. 
 
@@ -165,7 +166,7 @@ fig.savefig("env_flow.png")
 ```
 
 
-## Exercise: which language is better? {-} 
+### Exercise: which language is better? {-} 
 Start an argument with the person sitting next to you. Is R or python easier to use?
 
 
