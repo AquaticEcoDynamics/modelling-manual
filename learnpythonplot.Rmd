@@ -1,9 +1,9 @@
 <!-- # (PART)  Supporting Material {-}  -->
 
 <!-- # Learning the Base Plotting {#tidyverse2 .unnumbered} -->
-# Learning to use the base plot {#pythonplot .unnumbered}
+# Learning to plot with python {#pythonplot .unnumbered}
 
-As an alternative to ggplot and tidyverse, there are other basic plotting functions that you might prefer. This module takes you through a few basic plotting functions. It starts in the same way as the tidyverse module, using the same dataset.
+As an alternative to the R base plot, ggplot and tidyverse, you can learn to plot with a similar language, python. This module takes you through a few basic plotting functions, using the same dataset.
 
 ## Visualising Module 1 Flow Data {-}
 
@@ -11,37 +11,71 @@ As an alternative to ggplot and tidyverse, there are other basic plotting functi
 
 #### Creating an R Studio project {-}
 
-1) Open R Studio
-2) Go *File -> New Project -> New Directory -> New Project*
-3) *Directory name:* ENVT3362_workshop_2
-4) *Create project as a subdirectory of:* Wherever you store your ENVT3362 files!
-5) Click *Create project*
-5) Download the spreadsheet for this workshop [here](envFlowData.xls)
-6) Move this to your *ENVT3362_workshop_2* directory
+1) Refer to the Getting Started section, to install python and its packages, and Visual Studio Code (VSC)
+2) Open Visual Studio Code, the go *File -> Open Folder* then open the folder where you will store your files for this exercise (*ENVT3362_workshop_2*)
+3) Download the spreadsheet for this workshop [here](envFlowData.xls)
+4) Move this to your *ENVT3362_workshop_2* directory
+5) Make a new python file in VSC. Go *File -> New File -> New python file* and save a file as a '.py'
 
 ### Importing and formatting the data {-}
 
 #### Load the necessary packages {-}
+Add these commands to the top of your python file.
 
-- readxl and lubridate need to be loaded separately 
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-library(readxl)
-library(lubridate)
+``` {python} 
+import pandas as pd
+import matplotlib.pyplot as plt 
+import matplotlib.dates as mdates 
 ```
+ Run these lines by pressing Shift Enter, one by one.
 
 #### Import the spreadsheet {-}
+Import the spreadsheet by adding then running this command:
 
-- The `path` argument is relative to you R Studio project file
-- `sheet` specifies which Excel sheet to read
-
-```{r message=FALSE, warning=FALSE, include=FALSE}
-envFlow  <- read_xls(path = "data/workshop2/envFlowData.xls", sheet = 1)
+``` {python} 
+env_flow = pd.read_excel("envFlowData.xls")
 ```
 
-```{r eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
-envFlow  <- read_xls(path = "envFlowData.xls", sheet = 1)
+
+# Load the necessary packages
+``` {python} 
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 ```
+
+``` {python} 
+from datetime import datetime
+```
+
+# import the spreadsheet
+
+``` {python} 
+env_flow = pd.read_excel("envFlowData.xls")
+```
+
+# inspect the data
+
+``` {python} 
+print(env_flow)
+``` 
+
+# format the date
+env_flow["date"] = [
+    datetime.strptime(t, "%Y-%m-%d") for t in env_flow["date"]
+]
+
+# Create Figure and Axes objects
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot the data to the Axes object
+ax.plot(env_flow["date"], env_flow["totalDischarge"])
+plt.show()
+
+
+
+
+
 
 #### Inspect the data {-}
 
@@ -381,3 +415,5 @@ par(mar=c(4,4,1,1))
 box(bty="o")
 ```    
 
+## Exercise: which language is better? {-} 
+Start an argument with the person sitting next to you. Is R or python easier to use?

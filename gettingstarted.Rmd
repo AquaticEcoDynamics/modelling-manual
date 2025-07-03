@@ -82,3 +82,14 @@ On Windows, click 'Extract All' and follow the prompt:
 </video>
 </center>
 <br>
+
+
+### Installing python {-}
+
+If you do not already have python3 installed, install it. Your mac might already have python2, but you should install python3. 
+
+Go to the website and download the installer.
+
+https://www.python.org/downloads/
+
+Save it anywhere on your computer. Open the installer and choose 'Customize Installation', accept the defaults and click 'Next', then select the folder where you would like to install the program. Don't install it on a network drive or Dropbox folder or some other place prone to failure.
