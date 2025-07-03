@@ -328,19 +328,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#setting-up-2"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#importing-and-formatting-the-data-2"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#plotting-with-matplotlib"><i class="fa fa-check"></i>Plotting with matplotlib</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#visualising-diversion-scenarios-1"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#exercise-which-language-is-better"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="import-the-spreadsheet-3.html"><a href="import-the-spreadsheet-3.html"><i class="fa fa-check"></i><b>1</b> Import the spreadsheet</a></li>
-<li class="chapter" data-level="2" data-path="inspect-the-data-2.html"><a href="inspect-the-data-2.html"><i class="fa fa-check"></i><b>2</b> Inspect the data</a></li>
-<li class="chapter" data-level="3" data-path="format-the-date-2.html"><a href="format-the-date-2.html"><i class="fa fa-check"></i><b>3</b> Format the date</a></li>
-<li class="chapter" data-level="4" data-path="create-figure-and-axes-objects.html"><a href="create-figure-and-axes-objects.html"><i class="fa fa-check"></i><b>4</b> Create Figure and Axes objects</a></li>
-<li class="chapter" data-level="5" data-path="plot-the-data-to-the-axes-object-ax.html"><a href="plot-the-data-to-the-axes-object-ax.html"><i class="fa fa-check"></i><b>5</b> Plot the data to the Axes object (ax)</a></li>
-<li class="chapter" data-level="6" data-path="change-the-colour-1.html"><a href="change-the-colour-1.html"><i class="fa fa-check"></i><b>6</b> Change the colour</a></li>
-<li class="chapter" data-level="7" data-path="fix-the-labels-1.html"><a href="fix-the-labels-1.html"><i class="fa fa-check"></i><b>7</b> Fix the labels</a></li>
-<li class="chapter" data-level="8" data-path="visualising-diversion-scenarios-1.html"><a href="visualising-diversion-scenarios-1.html"><i class="fa fa-check"></i><b>8</b> Visualising Diversion Scenarios</a></li>
-<li class="chapter" data-level="9" data-path="add-a-legend-to-the-diversion-scenario.html"><a href="add-a-legend-to-the-diversion-scenario.html"><i class="fa fa-check"></i><b>9</b> Add a legend to the diversion scenario</a>
-<ul>
-<li class="chapter" data-level="" data-path="add-a-legend-to-the-diversion-scenario.html"><a href="add-a-legend-to-the-diversion-scenario.html#exercise-which-language-is-better"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="excelbasics.html"><a href="excelbasics.html"><i class="fa fa-check"></i>Learning Excel basics</a>
 <ul>
@@ -405,16 +396,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="figure"><span style="display:block;" id="fig:figM4-1"></span>
 <img src="images/module4/picture1.jpg" alt="Bleached coral (foreground) and normal coral (background). CC BY 3.0, https://en.wikipedia.org/w/index.php?curid=32829631" width="77%" data-action="zoom" />
 <p class="caption">
-Figure 0.3: Bleached coral (foreground) and normal coral (background). CC BY 3.0, <a href="https://en.wikipedia.org/w/index.php?curid=32829631" class="uri">https://en.wikipedia.org/w/index.php?curid=32829631</a>
+Figure 3: Bleached coral (foreground) and normal coral (background). CC BY 3.0, <a href="https://en.wikipedia.org/w/index.php?curid=32829631" class="uri">https://en.wikipedia.org/w/index.php?curid=32829631</a>
 </p>
 </div>
 </center>
-<p>The major variables are given in Table <a href="M4_1.html#tab:tabM4-1">0.5</a>. Given any two of the variables on the left hand column, the other four can be calculated.</p>
+<p>The major variables are given in Table <a href="M4_1.html#tab:tabM4-1">5</a>. Given any two of the variables on the left hand column, the other four can be calculated.</p>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:tabM4-1">Table 0.5: </span>Major variables
+<span id="tab:tabM4-1">Table 5: </span>Major variables
 </caption>
 <tbody>
 <tr>
@@ -479,62 +470,62 @@ You can use either Excel or R for this module.
 </div>
 <div id="M4_4" class="section level3 unnumbered hasAnchor" number="">
 <h3>Exercise 1<a href="M4_1.html#M4_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In the first exercise, we set pH to be 8.3 and atmospheric CO<sub>2</sub> gas to be 3.5×10<sup>-4</sup> atmospheres, and calculate the other variables based on these two. CO<sub>2</sub> gas dissolves in water according to Equation <a href="M4_1.html#eq:module4-1">(0.18)</a>. The dissolved CO<sub>2</sub> easily dissociates into carbonic acid according to Equation <a href="M4_1.html#eq:module4-2">(0.19)</a>. For simplicity, we will go straight from atmospheric CO<sub>2</sub> to H<sub>2</sub>CO<sub>3</sub>*, which is the sum of dissolved CO<sub>2</sub> and carbonic acid, using Equation <a href="M4_1.html#eq:module4-3">(0.20)</a>.</p>
+<p>In the first exercise, we set pH to be 8.3 and atmospheric CO<sub>2</sub> gas to be 3.5×10<sup>-4</sup> atmospheres, and calculate the other variables based on these two. CO<sub>2</sub> gas dissolves in water according to Equation <a href="M4_1.html#eq:module4-1">(18)</a>. The dissolved CO<sub>2</sub> easily dissociates into carbonic acid according to Equation <a href="M4_1.html#eq:module4-2">(19)</a>. For simplicity, we will go straight from atmospheric CO<sub>2</sub> to H<sub>2</sub>CO<sub>3</sub>*, which is the sum of dissolved CO<sub>2</sub> and carbonic acid, using Equation <a href="M4_1.html#eq:module4-3">(20)</a>.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-3" id="eq:module4-2" id="eq:module4-1">\[\begin{align*}
 {CO}_{2(\text{gas})}&amp;\rightleftarrows{CO}_{2(\text{dissolved})} 
-\tag{0.18} \\
+\tag{18} \\
 {CO}_{2(\text{dissolved})}+H_2O&amp;\rightleftarrows H_2{CO}_3 
-\tag{0.19} \\
+\tag{19} \\
 {CO}_{2(\text{gas})}+H_2O&amp;\rightleftarrows \color{#ED7D31}{H_2CO_3^\ast} \hspace{3em} K_{H} = 3.39×10^{-2} 
-\tag{0.20} \\
+\tag{20} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
-<p>The carbonic acid dissociates into a hydrogen ion (H<sup>+</sup>, or proton) and a bicarbonate ion (HCO<sub>3</sub><sup>-</sup>), according to Equation <a href="M4_1.html#eq:module4-4">(0.21)</a>. The bicarbonate further dissociates into carbonate (CO<sub>3</sub><sup>2-</sup>) and another hydrogen ion, as shown in Equation <a href="M4_1.html#eq:module4-5">(0.22)</a>. The release of these two hydrogen ions is what creates the acidity of the ocean.</p>
+<p>The carbonic acid dissociates into a hydrogen ion (H<sup>+</sup>, or proton) and a bicarbonate ion (HCO<sub>3</sub><sup>-</sup>), according to Equation <a href="M4_1.html#eq:module4-4">(21)</a>. The bicarbonate further dissociates into carbonate (CO<sub>3</sub><sup>2-</sup>) and another hydrogen ion, as shown in Equation <a href="M4_1.html#eq:module4-5">(22)</a>. The release of these two hydrogen ions is what creates the acidity of the ocean.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-5" id="eq:module4-4">\[\begin{align*}
 \color{#ED7D31}{H_2CO_3^\ast} &amp;\rightleftarrows \color{#00B050}{HCO_3^-}+\color{#FF0000}{H^+} \hspace{3em}  K_{1} = 5×10^{-7}   
-\tag{0.21} \\
+\tag{21} \\
 \color{#00B050}{HCO_3^{-}} &amp;\rightleftarrows  \color{#5B9BD5}{{CO}_3^{2-}}+\color{#FF0000}{H^+} \hspace{3em}    K_{2} = 5×10^{-11}
-\tag{0.22} \\
+\tag{22} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
-<p>Total carbon, <span class="math inline">\(C_{T}\)</span>, is defined as the sum of these carbonate species. Alkalinity is defined as the sum of the charged carbonate species and the balance of hydrogen ions and hydroxide (OH<sup>-</sup>), as shown in Equations <a href="M4_1.html#eq:module4-6">(0.23)</a> and <a href="M4_1.html#eq:module4-7">(0.24)</a>. (Remember that alkalinity is the opposite of acidity.)</p>
+<p>Total carbon, <span class="math inline">\(C_{T}\)</span>, is defined as the sum of these carbonate species. Alkalinity is defined as the sum of the charged carbonate species and the balance of hydrogen ions and hydroxide (OH<sup>-</sup>), as shown in Equations <a href="M4_1.html#eq:module4-6">(23)</a> and <a href="M4_1.html#eq:module4-7">(24)</a>. (Remember that alkalinity is the opposite of acidity.)</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-7" id="eq:module4-6">\[\begin{align*}
 C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2-}}\right]+\left[\color{#ED7D31}{H_2{CO}_3^\ast}\right]
-\tag{0.23} \\
+\tag{23} \\
 \left[Alk\right]&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+2\left[\color{#5B9BD5}{{CO}_3^{2-}}\right]+\left[{OH}^-\right]-\left[\color{#FF0000}{H^+}\right]  
-\tag{0.24} \\
+\tag{24} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
-<p>The concentration of hydroxide can be found by rearranging Equation <a href="M4_1.html#eq:module4-8">(0.25)</a> to Equation <a href="M4_1.html#eq:module4-9">(0.26)</a> and using the dissociation constant of water, <span class="math inline">\(K_W\)</span>, and the hydrogen ion concentration.</p>
+<p>The concentration of hydroxide can be found by rearranging Equation <a href="M4_1.html#eq:module4-8">(25)</a> to Equation <a href="M4_1.html#eq:module4-9">(26)</a> and using the dissociation constant of water, <span class="math inline">\(K_W\)</span>, and the hydrogen ion concentration.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-9" id="eq:module4-8">\[\begin{align*}
 [OH^{-}][\color{#FF0000}{H^{+}}] &amp;= K_{W} \hspace{3em} K_{W} = 1×10^{-14}
-\tag{0.25} \\
+\tag{25} \\
 [OH^{-}]&amp;=\frac{K_{W}}{[\color{#FF0000}{H^{+}]}}
-\tag{0.26} \\
+\tag{26} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
 <p>Open the Excel spreadsheet or R project and examine the tab or script <code>Initial CO2</code>. The chemical equations and constants are given to you already. The variables that we are forcing to be constant in Excel are
 <span style="color: #A5A5A5;">coloured grey</span>. Enter the equations for Exercise 1 into the <span style="color: #FFD966;">yellow boxes</span>.</p>
-<p>If we assume that calcium ion concentration does not vary much in this system, we can force it to be 5×10<sup>-4</sup> mol L<sup>-1</sup>. Calcium carbonate (CaCO<sub>3</sub>) precipitation or dissolution is governed by the ratio (<span class="math inline">\(\mathrm{\Omega}\)</span>) of Ca<sup>2+</sup> concentration and CO<sub>3</sub><sup>2-</sup> concentration to the solubility constant, <span class="math inline">\(K_{sp}\)</span>, according to Equations <a href="M4_1.html#eq:module4-10">(0.27)</a> and <a href="M4_1.html#eq:module4-11">(0.28)</a>. If  is greater than 1, then precipitation is favourable, and conversely, if  is less than 1, dissolution is favourable.</p>
+<p>If we assume that calcium ion concentration does not vary much in this system, we can force it to be 5×10<sup>-4</sup> mol L<sup>-1</sup>. Calcium carbonate (CaCO<sub>3</sub>) precipitation or dissolution is governed by the ratio (<span class="math inline">\(\mathrm{\Omega}\)</span>) of Ca<sup>2+</sup> concentration and CO<sub>3</sub><sup>2-</sup> concentration to the solubility constant, <span class="math inline">\(K_{sp}\)</span>, according to Equations <a href="M4_1.html#eq:module4-10">(27)</a> and <a href="M4_1.html#eq:module4-11">(28)</a>. If  is greater than 1, then precipitation is favourable, and conversely, if  is less than 1, dissolution is favourable.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-11" id="eq:module4-10">\[\begin{align*}
 {CO}_3^{2-} &amp;+{Ca}^{2+}\rightleftarrows CaCO_3 \hspace{3em} K_{sp} = 1\times 10^{-8.4}
-\tag{0.27} \\
+\tag{27} \\
 \mathrm{\Omega} &amp;=\frac{[Ca^{2+}][CO_{3}^{2-}]}{[K_{sp\space CaCO_{3}}]}
-\tag{0.28} \\
+\tag{28} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
@@ -542,26 +533,26 @@ C_T&amp;=\left[\color{#00B050}{{HCO}_3^-}\right]+\left[\color{#5B9BD5}{{CO}_3^{2
 </div>
 <div id="M4_5" class="section level3 unnumbered hasAnchor" number="">
 <h3>Exercise 2<a href="M4_1.html#M4_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In this exercise you will construct a double-logarithmic plot of this system, holding CO2 constant and varying the pH. Go to the second tab in Excel and copy the equations over from the first tab. Or in R, you can run a <em>for loop</em> to calculate the different concentrations for each of the different pHs. Then you will have some of the major variables converted to logarithms. Next you can make an x y scatter plot. If you add the data correctly, you should get a plot that looks like Figure <a href="M4_1.html#fig:figM4-2">0.4</a>.</p>
+<p>In this exercise you will construct a double-logarithmic plot of this system, holding CO2 constant and varying the pH. Go to the second tab in Excel and copy the equations over from the first tab. Or in R, you can run a <em>for loop</em> to calculate the different concentrations for each of the different pHs. Then you will have some of the major variables converted to logarithms. Next you can make an x y scatter plot. If you add the data correctly, you should get a plot that looks like Figure <a href="M4_1.html#fig:figM4-2">4</a>.</p>
 <center>
 <div class="figure"><span style="display:block;" id="fig:figM4-2"></span>
 <img src="images/module4/picture2.png" alt="Double logarithmic plot of the equilibrium composition of seawater in our model. Adapted from @stumm1996." width="90%" data-action="zoom" />
 <p class="caption">
-Figure 0.4: Double logarithmic plot of the equilibrium composition of seawater in our model. Adapted from <span class="citation">Stumm and Morgan (<a href="#ref-stumm1996" role="doc-biblioref">1996</a>)</span>.
+Figure 4: Double logarithmic plot of the equilibrium composition of seawater in our model. Adapted from <span class="citation">Stumm and Morgan (<a href="#ref-stumm1996" role="doc-biblioref">1996</a>)</span>.
 </p>
 </div>
 </center>
 </div>
 <div id="M4_6" class="section level3 unnumbered hasAnchor" number="">
 <h3>Exercise 3<a href="M4_1.html#M4_6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This is the cool part. Here we are going to calculate a new pH given an increased atmospheric CO<sub>2</sub> concentration. Given that we calculated the concentrations of all the other species according to the initial distribution in Exercise 1, we now hold them all constant, while increasing CO<sub>2</sub> and calculating H<sup>+</sup> (and therefore pH). This is not simple, because H<sup>+</sup> concentration is tightly bound up with the concentrations of all other species, and so we cannot simply work backwards from any one equation alone. However, there is a quadratic Equation <a href="M4_1.html#eq:module4-12">(0.29)</a> that we can solve for H<sup>+</sup> , using a fixed <span class="math inline">\(C_{T}\)</span>, rearranged to Equation <a href="M4_1.html#eq:module4-13">(0.30)</a>.</p>
+<p>This is the cool part. Here we are going to calculate a new pH given an increased atmospheric CO<sub>2</sub> concentration. Given that we calculated the concentrations of all the other species according to the initial distribution in Exercise 1, we now hold them all constant, while increasing CO<sub>2</sub> and calculating H<sup>+</sup> (and therefore pH). This is not simple, because H<sup>+</sup> concentration is tightly bound up with the concentrations of all other species, and so we cannot simply work backwards from any one equation alone. However, there is a quadratic Equation <a href="M4_1.html#eq:module4-12">(29)</a> that we can solve for H<sup>+</sup> , using a fixed <span class="math inline">\(C_{T}\)</span>, rearranged to Equation <a href="M4_1.html#eq:module4-13">(30)</a>.</p>
 <center>
 <br>
 <span class="math display" id="eq:module4-13" id="eq:module4-12">\[\begin{align*}
 {\left[\color{#FF0000}{H^+}\right]^2C}_T &amp;=\color{#ED7D31}{H_2{CO}_3^\ast}\left(\left[\color{#FF0000}{H^+}\right]^2+K_1\left[\color{#FF0000}{H^+}\right]+K_1K_2\right)  
-\tag{0.29} \\
+\tag{29} \\
 \left[\color{#FF0000}{H^+}\right] &amp;=\sqrt[2]{\frac{\color{#ED7D31}{H_2{CO}_3^\ast}}{C_T}\left(\left[\color{#FF0000}{H^+}\right]^2+K_1\left[\color{#FF0000}{H^+}\right]+K_1K_2\right)}   
-\tag{0.30} \\
+\tag{30} \\
 \end{align*}\]</span>
 </center>
 <p><br></p>
@@ -570,11 +561,11 @@ Figure 0.4: Double logarithmic plot of the equilibrium composition of seawater i
 <br>
 <span class="math display" id="eq:module4-14">\[\begin{equation}
 \left[\color{#FF0000}{{H^+}_{i}}\right] = \sqrt[2]{\frac{\color{#ED7D31}{H_2{CO}_3^\ast}}{C_T}}\left(\left[\color{#FF0000}{{H^+}_{i-1}}\right]^2+K_1\left[\color{#FF0000}{{H^+}_{i-1}}\right]+K_1K_2\right)
-\tag{0.31}
+\tag{31}
 \end{equation}\]</span>
 </center>
 <p><br></p>
-<p>Go to the third tab and copy over all of the equations from Exercise 1. The <span style="color: #A5A5A5;">grey boxes</span> are the values that we will hold constant, and the first guess for H<sup>+</sup>, based on the H<sup>+</sup> in Exercise 1. You can alter the CO<sub>2</sub> concentration using the CO<sub>2</sub> multiplier cell and your rapidly developing Excel and R skills. If you want to double CO<sub>2</sub> concentration, type 2 into the multiplier cell. If you want to keep it at present levels, type 1. Repeat the calculation of Equation <a href="M4_1.html#eq:module4-13">(0.30)</a> over successive iterations, using the answer from the previous iteration as your guess for the next iteration. Eventually, the difference between your guesses will become very small and you can settle on a constant pH. (This is roughly how equilibrium-solving computer programs solve complex biogeochemical interactions, often with many more interacting variables than this.)
+<p>Go to the third tab and copy over all of the equations from Exercise 1. The <span style="color: #A5A5A5;">grey boxes</span> are the values that we will hold constant, and the first guess for H<sup>+</sup>, based on the H<sup>+</sup> in Exercise 1. You can alter the CO<sub>2</sub> concentration using the CO<sub>2</sub> multiplier cell and your rapidly developing Excel and R skills. If you want to double CO<sub>2</sub> concentration, type 2 into the multiplier cell. If you want to keep it at present levels, type 1. Repeat the calculation of Equation <a href="M4_1.html#eq:module4-13">(30)</a> over successive iterations, using the answer from the previous iteration as your guess for the next iteration. Eventually, the difference between your guesses will become very small and you can settle on a constant pH. (This is roughly how equilibrium-solving computer programs solve complex biogeochemical interactions, often with many more interacting variables than this.)
 Don’t forget that your successive iterations, are not time steps, like we had in previous weeks. Rather, they are just guesses at the right number that only exist in the model. Your final answer is the only one that has a real scientific meaning. If you want to determine the pH over a range of CO<sub>2</sub> concentrations, you will need to repeat the calculation over ~10 rows, and save your results each time.</p>
 <video width="75%" controls loop="true" style="display: block; margin-left: auto; margin-right: auto;">
 <source src="images/module4/video2-og.mp4" type="video/mp4"/>
@@ -593,7 +584,7 @@ Big questions: if you increase CO<sub>2</sub>, does the pH rise or fall? Does Ca
 <div class="figure"><span style="display:block;" id="fig:figM4-3"></span>
 <img src="images/module4/picture3.png" alt="Changes in global average surface pH and saturation state with respect to aragonite in the Southern Ocean under various SRES scenarios." width="60%" data-action="zoom" />
 <p class="caption">
-Figure 0.5: Changes in global average surface pH and saturation state with respect to aragonite in the Southern Ocean under various SRES scenarios.
+Figure 5: Changes in global average surface pH and saturation state with respect to aragonite in the Southern Ocean under various SRES scenarios.
 </p>
 </div>
 </center>

@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="baseplot.html"/>
-<link rel="next" href="import-the-spreadsheet-3.html"/>
+<link rel="next" href="excelbasics.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -328,19 +328,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#setting-up-2"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#importing-and-formatting-the-data-2"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#plotting-with-matplotlib"><i class="fa fa-check"></i>Plotting with matplotlib</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#visualising-diversion-scenarios-1"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#exercise-which-language-is-better"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="import-the-spreadsheet-3.html"><a href="import-the-spreadsheet-3.html"><i class="fa fa-check"></i><b>1</b> Import the spreadsheet</a></li>
-<li class="chapter" data-level="2" data-path="inspect-the-data-2.html"><a href="inspect-the-data-2.html"><i class="fa fa-check"></i><b>2</b> Inspect the data</a></li>
-<li class="chapter" data-level="3" data-path="format-the-date-2.html"><a href="format-the-date-2.html"><i class="fa fa-check"></i><b>3</b> Format the date</a></li>
-<li class="chapter" data-level="4" data-path="create-figure-and-axes-objects.html"><a href="create-figure-and-axes-objects.html"><i class="fa fa-check"></i><b>4</b> Create Figure and Axes objects</a></li>
-<li class="chapter" data-level="5" data-path="plot-the-data-to-the-axes-object-ax.html"><a href="plot-the-data-to-the-axes-object-ax.html"><i class="fa fa-check"></i><b>5</b> Plot the data to the Axes object (ax)</a></li>
-<li class="chapter" data-level="6" data-path="change-the-colour-1.html"><a href="change-the-colour-1.html"><i class="fa fa-check"></i><b>6</b> Change the colour</a></li>
-<li class="chapter" data-level="7" data-path="fix-the-labels-1.html"><a href="fix-the-labels-1.html"><i class="fa fa-check"></i><b>7</b> Fix the labels</a></li>
-<li class="chapter" data-level="8" data-path="visualising-diversion-scenarios-1.html"><a href="visualising-diversion-scenarios-1.html"><i class="fa fa-check"></i><b>8</b> Visualising Diversion Scenarios</a></li>
-<li class="chapter" data-level="9" data-path="add-a-legend-to-the-diversion-scenario.html"><a href="add-a-legend-to-the-diversion-scenario.html"><i class="fa fa-check"></i><b>9</b> Add a legend to the diversion scenario</a>
-<ul>
-<li class="chapter" data-level="" data-path="add-a-legend-to-the-diversion-scenario.html"><a href="add-a-legend-to-the-diversion-scenario.html#exercise-which-language-is-better"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="excelbasics.html"><a href="excelbasics.html"><i class="fa fa-check"></i>Learning Excel basics</a>
 <ul>
@@ -383,13 +374,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="pythonplot" class="section level1 unnumbered hasAnchor" number="">
 <h1>Learning to plot with python<a href="pythonplot.html#pythonplot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>As an alternative to the R base plot, ggplot and tidyverse, you can learn to plot with a similar language, python. This module takes you through a few basic plotting functions, using the same dataset.</p>
+<p>Introduce Python…</p>
 <div id="visualising-module-1-flow-data-2" class="section level2 unnumbered hasAnchor" number="">
 <h2>Visualising Module 1 Flow Data<a href="pythonplot.html#visualising-module-1-flow-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="setting-up-2" class="section level3 unnumbered hasAnchor" number="">
 <h3>Setting up<a href="pythonplot.html#setting-up-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="creating-an-r-studio-project-2" class="section level4 unnumbered hasAnchor" number="">
-<h4>Creating an R Studio project<a href="pythonplot.html#creating-an-r-studio-project-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="creating-a-.py-file-with-vs-code" class="section level4 unnumbered hasAnchor" number="">
+<h4>Creating a <code>.py</code> file with VS Code<a href="pythonplot.html#creating-a-.py-file-with-vs-code" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
 <li>Refer to the Getting Started section, to install python and its packages, and Visual Studio Code (VSC)</li>
 <li>Open Visual Studio Code, the go <em>File -&gt; Open Folder</em> then open the folder where you will store your files for this exercise (<em>ENVT3362_workshop_2</em>)</li>
@@ -408,21 +399,114 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="pythonplot.html#cb64-1" aria-hidden="true"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb64-2"><a href="pythonplot.html#cb64-2" aria-hidden="true"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
 <span id="cb64-3"><a href="pythonplot.html#cb64-3" aria-hidden="true"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates </span>
-<span id="cb64-4"><a href="pythonplot.html#cb64-4" aria-hidden="true"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> patches</span></code></pre></div>
-<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="pythonplot.html#cb65-1" aria-hidden="true"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span></code></pre></div>
-<p>Run these lines by pressing Shift Enter, one by one.</p>
-<p>If this doesn’t work, it may be that the location of your python files is not being found. To fix this, in the VSC powershell terminal, use a python command starting with the location of your python program location. For example</p>
-<p>C:.exe
-import pandas as pd</p>
-<p>Similarly you may need to specify the whole file path to pip in powershell, for example
-C:3.exe</p>
+<span id="cb64-4"><a href="pythonplot.html#cb64-4" aria-hidden="true"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> patches</span>
+<span id="cb64-5"><a href="pythonplot.html#cb64-5" aria-hidden="true"></a></span>
+<span id="cb64-6"><a href="pythonplot.html#cb64-6" aria-hidden="true"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span></code></pre></div>
+<p>Run these lines by pressing <code>Shift Enter</code>, one by one.</p>
+<p>If this doesn’t work, it may be that the location of your python files is not being found. To fix this, in the VSC powershell terminal, use a python command starting with the location of your python program location. For example:</p>
+<pre><code>C:\Users\Jimmy\AppData\python\python.exe 
+import pandas as pd</code></pre>
+<p>Similarly you may need to specify the whole file path to pip in powershell, for example:</p>
+<pre><code>C:\Users\Jimmy\AppData\python\pip3.exe </code></pre>
 </div>
 <div id="import-the-spreadsheet-2" class="section level4 unnumbered hasAnchor" number="">
 <h4>Import the spreadsheet<a href="pythonplot.html#import-the-spreadsheet-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Import the spreadsheet by adding then running this command:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="pythonplot.html#cb66-1" aria-hidden="true"></a> env_flow <span class="op">=</span> pd.read_excel(<span class="st">&quot;envFlowData.xls&quot;</span>)</span>
-<span id="cb66-2"><a href="pythonplot.html#cb66-2" aria-hidden="true"></a><span class="co"># env_flow = pd.read_excel(&quot;C:/Dan/Uni/Teaching/2025/ENVT3362/ENVT3362_workshop_2envFlowData.xls&quot;)</span></span></code></pre></div>
+<p>Load the spreadsheet into your python environment.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="pythonplot.html#cb67-1" aria-hidden="true"></a>env_flow <span class="op">=</span> pd.read_excel(<span class="st">&quot;envFlowData.xls&quot;</span>)</span></code></pre></div>
 </div>
+<div id="inspect-the-data-2" class="section level4 unnumbered hasAnchor" number="">
+<h4>Inspect the data<a href="pythonplot.html#inspect-the-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Display a header of the data.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="pythonplot.html#cb68-1" aria-hidden="true"></a><span class="bu">print</span>(env_flow)</span></code></pre></div>
+</div>
+<div id="format-the-date-2" class="section level4 unnumbered hasAnchor" number="">
+<h4>Format the date<a href="pythonplot.html#format-the-date-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Format the date in a way that looks good in the figure. Capital Y means a year with four digits, lower case y would be two digits. ‘for t’ means to apply this command to each line. This is like a ‘for loop’ in R. In python this is referred to as ‘list comprehension’. ‘strptime’ is a standard formatting for dates and times, converting text strings into a ‘date time object’.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="pythonplot.html#cb69-1" aria-hidden="true"></a>env_flow[<span class="st">&quot;date&quot;</span>] <span class="op">=</span> [</span>
+<span id="cb69-2"><a href="pythonplot.html#cb69-2" aria-hidden="true"></a>    datetime.strptime(t, <span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st">&quot;</span>) <span class="cf">for</span> t <span class="kw">in</span> env_flow[<span class="st">&quot;date&quot;</span>]</span>
+<span id="cb69-3"><a href="pythonplot.html#cb69-3" aria-hidden="true"></a>]</span></code></pre></div>
+</div>
+</div>
+<div id="plotting-with-matplotlib" class="section level3 unnumbered hasAnchor" number="">
+<h3>Plotting with matplotlib<a href="pythonplot.html#plotting-with-matplotlib" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="create-figure-and-axes-objects" class="section level4 unnumbered hasAnchor" number="">
+<h4>Create Figure and Axes objects<a href="pythonplot.html#create-figure-and-axes-objects" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The ‘fig’ is our figure object, and the ‘ax’ is our axis object. We are naming them and assigning properties to them in this step. ‘plt.subplots’ is a function from the python <em>matplotlib</em> library.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="pythonplot.html#cb70-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span></code></pre></div>
+</div>
+<div id="plot-the-data-to-the-axes-object-ax" class="section level4 unnumbered hasAnchor" number="">
+<h4>Plot the data to the Axes object (<code>ax</code>)<a href="pythonplot.html#plot-the-data-to-the-axes-object-ax" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Apply the ‘plot’ command to the ‘ax’ object that we created above.
+Apply the ‘savefig’ command to the ‘fig’ object that we created above.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="pythonplot.html#cb71-1" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
+<span id="cb71-2"><a href="pythonplot.html#cb71-2" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<p>This should save a figure as a .png file, ‘env_flow.png’, to your working directory. See if you can open it and take a look at it.</p>
+</div>
+<div id="change-the-colour-1" class="section level4 unnumbered hasAnchor" number="">
+<h4>Change the colour<a href="pythonplot.html#change-the-colour-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now that your basic plot is working, you can start editing it. It defaults to a light blue line: let’s change it to a green line by adding the parameter ‘color’ to the ‘plot’ method, to the ‘ax’ object.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="pythonplot.html#cb72-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb72-2"><a href="pythonplot.html#cb72-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>], color<span class="op">=</span><span class="st">&quot;green&quot;</span>)</span>
+<span id="cb72-3"><a href="pythonplot.html#cb72-3" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+</div>
+<div id="fix-the-labels-1" class="section level4 unnumbered hasAnchor" number="">
+<h4>Fix the labels<a href="pythonplot.html#fix-the-labels-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Add labels to the axes, using the set_xlabel command. Make the labels bold using the parameter ‘fontweight’.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="pythonplot.html#cb73-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb73-2"><a href="pythonplot.html#cb73-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>], color<span class="op">=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb73-3"><a href="pythonplot.html#cb73-3" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>,fontweight<span class="op">=</span><span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb73-4"><a href="pythonplot.html#cb73-4" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>,fontweight<span class="op">=</span><span class="st">&quot;bold)</span></span>
+<span id="cb73-5"><a href="pythonplot.html#cb73-5" aria-hidden="true"></a><span class="st">fig.savefig(&quot;</span>env_flow.png<span class="st">&quot;)</span></span></code></pre></div>
+</div>
+</div>
+<div id="visualising-diversion-scenarios-1" class="section level3 unnumbered hasAnchor" number="">
+<h3>Visualising Diversion Scenarios<a href="pythonplot.html#visualising-diversion-scenarios-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Add a pale red box to show the flow smaller than 550 ML.</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="pythonplot.html#cb74-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb74-2"><a href="pythonplot.html#cb74-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
+<span id="cb74-3"><a href="pythonplot.html#cb74-3" aria-hidden="true"></a></span>
+<span id="cb74-4"><a href="pythonplot.html#cb74-4" aria-hidden="true"></a>rect <span class="op">=</span> patches.Rectangle(</span>
+<span id="cb74-5"><a href="pythonplot.html#cb74-5" aria-hidden="true"></a>    xy<span class="op">=</span>(mdates.date2num(env_flow[<span class="st">&quot;date&quot;</span>][<span class="dv">0</span>]), <span class="dv">50</span>), <span class="co"># This is the bottom left-hand corner</span></span>
+<span id="cb74-6"><a href="pythonplot.html#cb74-6" aria-hidden="true"></a>    width<span class="op">=</span><span class="bu">len</span>(env_flow[<span class="st">&quot;date&quot;</span>]), <span class="co"># This is the length of this list (number of dates)</span></span>
+<span id="cb74-7"><a href="pythonplot.html#cb74-7" aria-hidden="true"></a>    height<span class="op">=</span><span class="dv">550</span>, <span class="co"># This is the volume of flow in ML</span></span>
+<span id="cb74-8"><a href="pythonplot.html#cb74-8" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
+<span id="cb74-9"><a href="pythonplot.html#cb74-9" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
+<span id="cb74-10"><a href="pythonplot.html#cb74-10" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
+<span id="cb74-11"><a href="pythonplot.html#cb74-11" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>, <span class="co"># This is the opacity of the colour, scaling from 0 to 1.</span></span>
+<span id="cb74-12"><a href="pythonplot.html#cb74-12" aria-hidden="true"></a>)</span>
+<span id="cb74-13"><a href="pythonplot.html#cb74-13" aria-hidden="true"></a>ax.add_patch(rect)</span>
+<span id="cb74-14"><a href="pythonplot.html#cb74-14" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb74-15"><a href="pythonplot.html#cb74-15" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb74-16"><a href="pythonplot.html#cb74-16" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<div id="add-a-legend-to-the-diversion-scenario" class="section level4 unnumbered hasAnchor" number="">
+<h4>Add a legend to the diversion scenario<a href="pythonplot.html#add-a-legend-to-the-diversion-scenario" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Add the legend to the diversion scenario.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="pythonplot.html#cb75-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb75-2"><a href="pythonplot.html#cb75-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
+<span id="cb75-3"><a href="pythonplot.html#cb75-3" aria-hidden="true"></a></span>
+<span id="cb75-4"><a href="pythonplot.html#cb75-4" aria-hidden="true"></a>start_date <span class="op">=</span> datetime.strptime(<span class="st">&quot;1992-01-01&quot;</span>, <span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st">&quot;</span>)</span>
+<span id="cb75-5"><a href="pythonplot.html#cb75-5" aria-hidden="true"></a></span>
+<span id="cb75-6"><a href="pythonplot.html#cb75-6" aria-hidden="true"></a>rect <span class="op">=</span> patches.Rectangle(</span>
+<span id="cb75-7"><a href="pythonplot.html#cb75-7" aria-hidden="true"></a>    xy<span class="op">=</span>(mdates.date2num(env_flow[<span class="st">&quot;date&quot;</span>][<span class="dv">0</span>]), <span class="dv">50</span>), <span class="co"># This is the bottom left-hand corner</span></span>
+<span id="cb75-8"><a href="pythonplot.html#cb75-8" aria-hidden="true"></a>    width<span class="op">=</span><span class="bu">len</span>(env_flow[<span class="st">&quot;date&quot;</span>]), <span class="co"># This is the length of this list (number of dates)</span></span>
+<span id="cb75-9"><a href="pythonplot.html#cb75-9" aria-hidden="true"></a>    height<span class="op">=</span><span class="dv">550</span>, <span class="co"># This is the volume of flow in ML</span></span>
+<span id="cb75-10"><a href="pythonplot.html#cb75-10" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
+<span id="cb75-11"><a href="pythonplot.html#cb75-11" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
+<span id="cb75-12"><a href="pythonplot.html#cb75-12" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
+<span id="cb75-13"><a href="pythonplot.html#cb75-13" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>,</span>
+<span id="cb75-14"><a href="pythonplot.html#cb75-14" aria-hidden="true"></a>    label<span class="op">=</span><span class="st">&quot;Diversion Scenario 1&quot;</span> <span class="co"># This is the text in the label</span></span>
+<span id="cb75-15"><a href="pythonplot.html#cb75-15" aria-hidden="true"></a>)</span>
+<span id="cb75-16"><a href="pythonplot.html#cb75-16" aria-hidden="true"></a>ax.add_patch(rect)</span>
+<span id="cb75-17"><a href="pythonplot.html#cb75-17" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb75-18"><a href="pythonplot.html#cb75-18" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb75-19"><a href="pythonplot.html#cb75-19" aria-hidden="true"></a>plt.legend()</span>
+<span id="cb75-20"><a href="pythonplot.html#cb75-20" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="exercise-which-language-is-better" class="section level3 unnumbered hasAnchor" number="">
+<h3>Exercise: which language is better?<a href="pythonplot.html#exercise-which-language-is-better" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Start an argument with the person sitting next to you. Is R or python easier to use?</p>
+
 </div>
 </div>
 </div>
@@ -434,7 +518,7 @@ C:3.exe</p>
         </div>
       </div>
 <a href="baseplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="import-the-spreadsheet-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="excelbasics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

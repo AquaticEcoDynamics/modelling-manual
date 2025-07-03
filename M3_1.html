@@ -328,19 +328,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#setting-up-2"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#importing-and-formatting-the-data-2"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#plotting-with-matplotlib"><i class="fa fa-check"></i>Plotting with matplotlib</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#visualising-diversion-scenarios-1"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#exercise-which-language-is-better"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="import-the-spreadsheet-3.html"><a href="import-the-spreadsheet-3.html"><i class="fa fa-check"></i><b>1</b> Import the spreadsheet</a></li>
-<li class="chapter" data-level="2" data-path="inspect-the-data-2.html"><a href="inspect-the-data-2.html"><i class="fa fa-check"></i><b>2</b> Inspect the data</a></li>
-<li class="chapter" data-level="3" data-path="format-the-date-2.html"><a href="format-the-date-2.html"><i class="fa fa-check"></i><b>3</b> Format the date</a></li>
-<li class="chapter" data-level="4" data-path="create-figure-and-axes-objects.html"><a href="create-figure-and-axes-objects.html"><i class="fa fa-check"></i><b>4</b> Create Figure and Axes objects</a></li>
-<li class="chapter" data-level="5" data-path="plot-the-data-to-the-axes-object-ax.html"><a href="plot-the-data-to-the-axes-object-ax.html"><i class="fa fa-check"></i><b>5</b> Plot the data to the Axes object (ax)</a></li>
-<li class="chapter" data-level="6" data-path="change-the-colour-1.html"><a href="change-the-colour-1.html"><i class="fa fa-check"></i><b>6</b> Change the colour</a></li>
-<li class="chapter" data-level="7" data-path="fix-the-labels-1.html"><a href="fix-the-labels-1.html"><i class="fa fa-check"></i><b>7</b> Fix the labels</a></li>
-<li class="chapter" data-level="8" data-path="visualising-diversion-scenarios-1.html"><a href="visualising-diversion-scenarios-1.html"><i class="fa fa-check"></i><b>8</b> Visualising Diversion Scenarios</a></li>
-<li class="chapter" data-level="9" data-path="add-a-legend-to-the-diversion-scenario.html"><a href="add-a-legend-to-the-diversion-scenario.html"><i class="fa fa-check"></i><b>9</b> Add a legend to the diversion scenario</a>
-<ul>
-<li class="chapter" data-level="" data-path="add-a-legend-to-the-diversion-scenario.html"><a href="add-a-legend-to-the-diversion-scenario.html#exercise-which-language-is-better"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="excelbasics.html"><a href="excelbasics.html"><i class="fa fa-check"></i>Learning Excel basics</a>
 <ul>
@@ -417,7 +408,7 @@ To simplify the model further, we assume the Earth emits outgoing (longwave) rad
 <center>
 <span class="math display" id="eq:module3-1">\[\begin{equation}
 E = \sigma T^{4}
-\tag{0.9}
+\tag{9}
 \end{equation}\]</span>
 </center>
 <p>where, <span class="math inline">\(\sigma\)</span> = Stefan-Boltzmann constant (5.67x10<sup>-8</sup>), and <span class="math inline">\(T\)</span> = Temperature (in degrees Kelvin).</p>
@@ -425,7 +416,7 @@ E = \sigma T^{4}
 <center>
 <span class="math display" id="eq:module3-2">\[\begin{equation}
 E_{\text{out}} = \sigma 4\pi r^{2} T^{4}
-\tag{0.10}
+\tag{10}
 \end{equation}\]</span>
 </center>
 <p>where, <span class="math inline">\(r\)</span> = Radius of the Earth (in m).</p>
@@ -436,7 +427,7 @@ E_{\text{out}} = \sigma 4\pi r^{2} T^{4}
 <center>
 <span class="math display" id="eq:module3-3">\[\begin{equation}
 E_{\text{abs}} = S\pi r^{2} (1-a)
-\tag{0.11}
+\tag{11}
 \end{equation}\]</span>
 </center>
 <p>where, <span class="math inline">\(S\)</span> = incoming solar radiation: the “solar constant” (1367 W/m<sup>2</sup>) .</p>
@@ -445,7 +436,7 @@ E_{\text{abs}} = S\pi r^{2} (1-a)
 <h4>Exercises<a href="M3_1.html#M3_6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
 <li><p>Using the concept of an energy balance (i.e. energy in = energy out), rearrange the equations to find the Earth’s temperature, <span class="math inline">\(T\)</span>.</p></li>
-<li><p>In Excel, construct a simple spreadsheet and fill in the blank cells of Table <a href="M3_1.html#tab:tabM3-1">0.1</a> to calculate the mean temperature of the Earth using the equation from Q1, assuming an albedo of 0.33 (including in °C and °F):</p>
+<li><p>In Excel, construct a simple spreadsheet and fill in the blank cells of Table <a href="M3_1.html#tab:tabM3-1">1</a> to calculate the mean temperature of the Earth using the equation from Q1, assuming an albedo of 0.33 (including in °C and °F):</p>
 <ol style="list-style-type: lower-alpha">
 <li>The current mean temperature of the Earth is 288K (15°C). Does this simple model over or under predict the Earth’s temperature? What important factor is missing from this model?</li>
 </ol></li>
@@ -454,7 +445,7 @@ E_{\text{abs}} = S\pi r^{2} (1-a)
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:tabM3-1">Table 0.1: </span>Fill in the blank cells to calculate the mean temperature of the Earth.
+<span id="tab:tabM3-1">Table 1: </span>Fill in the blank cells to calculate the mean temperature of the Earth.
 </caption>
 <thead>
 <tr>
@@ -543,13 +534,13 @@ Mean temperature of Earth
 <p>Remember: <span class="math inline">\(K = °C + 273.2\)</span> and <span class="math inline">\(°F = 1.8°C + 32\)</span></p>
 </div>
 <ol start="3" style="list-style-type: decimal">
-<li>Test the sensitivity of this model to the choice of albedo. Using values from 0.3 to 0.7 in Table <a href="M3_1.html#tab:tabM3-2">0.2</a>, calculate and plot T (°C)</li>
+<li>Test the sensitivity of this model to the choice of albedo. Using values from 0.3 to 0.7 in Table <a href="M3_1.html#tab:tabM3-2">2</a>, calculate and plot T (°C)</li>
 </ol>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:tabM3-2">Table 0.2: </span>Test the sensitivity of this model.
+<span id="tab:tabM3-2">Table 2: </span>Test the sensitivity of this model.
 </caption>
 <thead>
 <tr>
@@ -658,7 +649,7 @@ Stefan-Boltzmann constant
 <center>
 <span class="math display" id="eq:module3-4">\[\begin{equation}
 E_{\text{out}} = x + yT
-\tag{0.12}
+\tag{12}
 \end{equation}\]</span>
 </center>
 <p>Where, <span class="math inline">\(x = 204\)</span> W/m<sup>2</sup>, and <span class="math inline">\(y = 2.17\)</span> W/m<sup>2</sup>/°C.</p>
@@ -666,7 +657,7 @@ E_{\text{out}} = x + yT
 <center>
 <span class="math display" id="eq:module3-5">\[\begin{equation}
 \pi r^{2} S (1-a) = 4\pi r^{2}(x+yT)
-\tag{0.13}
+\tag{13}
 \end{equation}\]</span>
 </center>
 <div id="M3_8" class="section level4 unnumbered hasAnchor" number="">
@@ -683,7 +674,7 @@ E_{\text{out}} = x + yT
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:tabM3-3">Table 0.3: </span>Estimate <span class="math inline">\(T\)</span> for a range of albedo values.
+<span id="tab:tabM3-3">Table 3: </span>Estimate <span class="math inline">\(T\)</span> for a range of albedo values.
 </caption>
 <thead>
 <tr>
@@ -790,7 +781,7 @@ y
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:435px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:tabM3-4">Table 0.4: </span>Energy balance model of Earth’s atmosphere.
+<span id="tab:tabM3-4">Table 4: </span>Energy balance model of Earth’s atmosphere.
 </caption>
 <thead>
 <tr>
@@ -966,7 +957,7 @@ Energy leaves these the system by three routes:</p>
 <center>
 <span class="math display" id="eq:module3-6">\[\begin{equation}
 S_{av} + W = a_{p}S_{av} + \sigma T_{u}^{4} + (1 − \varepsilon)\sigma T_{s}^{4}
-\tag{0.14}
+\tag{14}
 \end{equation}\]</span>
 </center>
 <p><br></p>
@@ -981,7 +972,7 @@ The upper layer loses energy by thermal radiation upward to outer space <strong>
 <center>
 <span class="math display" id="eq:module3-7">\[\begin{equation}
 k_{u}S_{av} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
-\tag{0.15}
+\tag{15}
 \end{equation}\]</span>
 </center>
 <p><br></p>
@@ -998,7 +989,7 @@ k_{u}S_{av} + \sigma T_{l}^{4} + 0.5L = 2\sigma T_{u}^{4}
 <center>
 <span class="math display" id="eq:module3-8">\[\begin{equation}
 k_{l}S_{av} + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2\sigma T_{l}^{4}
-\tag{0.16}
+\tag{16}
 \end{equation}\]</span>
 </center>
 <p><br></p>
@@ -1006,19 +997,19 @@ k_{l}S_{av} + \sigma T_{u}^{4} + \varepsilon \sigma T_{s}^{4} + 0.5L + H + W = 2
 <div id="M3_11" class="section level4 unnumbered hasAnchor" number="">
 <h4>Exercise 2<a href="M3_1.html#M3_11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><strong>Solve these equations to find a formula for surface temperature <span class="math inline">\(T_{s}\)</span>:</strong></p>
-<p>Equations <a href="M3_1.html#eq:module3-6">(0.14)</a> to <a href="M3_1.html#eq:module3-8">(0.16)</a> are a system of three equations in three unknowns: the temperatures <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and <span class="math inline">\(T_{s}\)</span>. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:</p>
+<p>Equations <a href="M3_1.html#eq:module3-6">(14)</a> to <a href="M3_1.html#eq:module3-8">(16)</a> are a system of three equations in three unknowns: the temperatures <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and <span class="math inline">\(T_{s}\)</span>. The other quantities are parameters whose values must be given. The values of temperatures can be found via the following steps:</p>
 <ol style="list-style-type: decimal">
-<li>Rearrange Equation <a href="M3_1.html#eq:module3-6">(0.14)</a> for <span class="math inline">\(\sigma T_{u}^{4}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
-<li>Rearrange Equation <a href="M3_1.html#eq:module3-7">(0.15)</a> for <span class="math inline">\(\sigma T_{l}^{4}\)</span> in terms of <span class="math inline">\(T_{u}\)</span> and parameters.</li>
+<li>Rearrange Equation <a href="M3_1.html#eq:module3-6">(14)</a> for <span class="math inline">\(\sigma T_{u}^{4}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
+<li>Rearrange Equation <a href="M3_1.html#eq:module3-7">(15)</a> for <span class="math inline">\(\sigma T_{l}^{4}\)</span> in terms of <span class="math inline">\(T_{u}\)</span> and parameters.</li>
 <li>Substitute the results of step 1 into the results of step 2 to give an equation for <span class="math inline">\(\sigma T_{l}^{4}\)</span> in terms of <span class="math inline">\(T_{s}\)</span> and parameters.</li>
-<li>Rearrange Equation <a href="M3_1.html#eq:module3-8">(0.16)</a> for <span class="math inline">\(\varepsilon\sigma T_{s}^{4}\)</span> in terms <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and parameters.</li>
+<li>Rearrange Equation <a href="M3_1.html#eq:module3-8">(16)</a> for <span class="math inline">\(\varepsilon\sigma T_{s}^{4}\)</span> in terms <span class="math inline">\(T_{l}\)</span>, <span class="math inline">\(T_{u}\)</span>, and parameters.</li>
 <li>Put the results of steps 1 and 3 into the results of step 4 and simplify to give the equation for <span class="math inline">\(T_{s}\)</span> as a function of parameters:</li>
 </ol>
 <br>
 <center>
 <span class="math display" id="eq:module3-9">\[\begin{equation}
 T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S_{av}-1.5L-H+2W}{(3-2\varepsilon)\sigma}]^{\frac{1}{4}}
-\tag{0.17}
+\tag{17}
 \end{equation}\]</span>
 </center>
 <p><br></p>
@@ -1027,7 +1018,7 @@ T_{s} = [\frac{(3-3a_{p}-2k_{u}-k_{l})S_{av}-1.5L-H+2W}{(3-2\varepsilon)\sigma}]
 Show your workings!
 </div>
 <p><br></p>
-<p>Using the values given in Table <a href="M3_1.html#tab:tabM3-4">0.4</a>, what value do you derive for <span class="math inline">\(T_{s}\)</span>?</p>
+<p>Using the values given in Table <a href="M3_1.html#tab:tabM3-4">4</a>, what value do you derive for <span class="math inline">\(T_{s}\)</span>?</p>
 <p>How close is this to the actual value of 290K?</p>
 </div>
 <div id="M3_12" class="section level4 unnumbered hasAnchor" number="">

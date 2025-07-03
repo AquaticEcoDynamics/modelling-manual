@@ -71,12 +71,3 @@ eq:module6-3
 eq:module6-4
 fig:figM6-1
 fig:figM6-2
-import-the-spreadsheet-3
-inspect-the-data-2
-format-the-date-2
-create-figure-and-axes-objects
-plot-the-data-to-the-axes-object-ax
-change-the-colour-1
-fix-the-labels-1
-visualising-diversion-scenarios-1
-add-a-legend-to-the-diversion-scenario

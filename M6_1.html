@@ -328,19 +328,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#setting-up-2"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#importing-and-formatting-the-data-2"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#plotting-with-matplotlib"><i class="fa fa-check"></i>Plotting with matplotlib</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#visualising-diversion-scenarios-1"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#exercise-which-language-is-better"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="import-the-spreadsheet-3.html"><a href="import-the-spreadsheet-3.html"><i class="fa fa-check"></i><b>1</b> Import the spreadsheet</a></li>
-<li class="chapter" data-level="2" data-path="inspect-the-data-2.html"><a href="inspect-the-data-2.html"><i class="fa fa-check"></i><b>2</b> Inspect the data</a></li>
-<li class="chapter" data-level="3" data-path="format-the-date-2.html"><a href="format-the-date-2.html"><i class="fa fa-check"></i><b>3</b> Format the date</a></li>
-<li class="chapter" data-level="4" data-path="create-figure-and-axes-objects.html"><a href="create-figure-and-axes-objects.html"><i class="fa fa-check"></i><b>4</b> Create Figure and Axes objects</a></li>
-<li class="chapter" data-level="5" data-path="plot-the-data-to-the-axes-object-ax.html"><a href="plot-the-data-to-the-axes-object-ax.html"><i class="fa fa-check"></i><b>5</b> Plot the data to the Axes object (ax)</a></li>
-<li class="chapter" data-level="6" data-path="change-the-colour-1.html"><a href="change-the-colour-1.html"><i class="fa fa-check"></i><b>6</b> Change the colour</a></li>
-<li class="chapter" data-level="7" data-path="fix-the-labels-1.html"><a href="fix-the-labels-1.html"><i class="fa fa-check"></i><b>7</b> Fix the labels</a></li>
-<li class="chapter" data-level="8" data-path="visualising-diversion-scenarios-1.html"><a href="visualising-diversion-scenarios-1.html"><i class="fa fa-check"></i><b>8</b> Visualising Diversion Scenarios</a></li>
-<li class="chapter" data-level="9" data-path="add-a-legend-to-the-diversion-scenario.html"><a href="add-a-legend-to-the-diversion-scenario.html"><i class="fa fa-check"></i><b>9</b> Add a legend to the diversion scenario</a>
-<ul>
-<li class="chapter" data-level="" data-path="add-a-legend-to-the-diversion-scenario.html"><a href="add-a-legend-to-the-diversion-scenario.html#exercise-which-language-is-better"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="excelbasics.html"><a href="excelbasics.html"><i class="fa fa-check"></i>Learning Excel basics</a>
 <ul>
@@ -401,7 +392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <center>
 <span class="math display" id="eq:module6-1">\[\begin{equation}
 \frac{\delta C}{\delta t} = D_{d}\frac{\delta^{2} C}{\delta x^{2}} - u \frac{\delta C}{\delta x} + S + R
-\tag{0.54}
+\tag{54}
 \end{equation}\]</span>
 </center>
 <p>where the left hand side (LHS) is the “unsteady” term (<span class="math inline">\(C\)</span> change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and <span class="math inline">\(S\)</span> is a source term, and <span class="math inline">\(R\)</span> is a reaction term. We use a partial deriviative (“curly <span class="math inline">\(\delta\)</span>”) since <span class="math inline">\(C\)</span> is now varying in both space and time.</p>
@@ -409,21 +400,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <center>
 <span class="math display" id="eq:module6-2">\[\begin{equation}
 \frac{C^{t+1}_{x}-C^{t}_{x}}{\Delta t}=D_{d} \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}-u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}+R_{x}+S_{x}
-\tag{0.55}
+\tag{55}
 \end{equation}\]</span>
 </center>
 <p>Where the <span class="math inline">\(t\)</span> subscript is referring to timestep, and the <span class="math inline">\(x\)</span> subscript refers to the space increment/position. For the case of oxygen we assume that <span class="math inline">\(R\)</span> is accounting for oxygen input from the atmosphere and consumption by bacteria (called the Biochemical Oxygen Demand, BOD), then:</p>
 <center>
 <span class="math display" id="eq:module6-3">\[\begin{equation}
 R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
-\tag{0.56}
+\tag{56}
 \end{equation}\]</span>
 </center>
 <p>Where the first term is atmospheric exchange (<span class="math inline">\(k_a\)</span> is the rate of re-aeration and <span class="math inline">\(C_a\)</span> is the saturation value of oxygen) and the second term is the bacterial consumption (described by <span class="math inline">\(k_{BOD}\)</span> which is in units of day<sup>-1</sup>). We can solve for the forward timestep at any position along the river by computing:</p>
 <center>
 <span class="math display" id="eq:module6-4">\[\begin{equation}
 \small{C_{x}^{t+1}=\color{#898989}{C_{x}^{t}}+ \left [ \color{#3A88FE}{D_d \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}}-\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}} + \color{#77BB41}{k_{a}(C_{a}-C_{x}^{t})}-\color{#B18CFE}{k_{BOD}C_{x}^t}  \right ]\Delta t+\color{#D58400}{S_{x}}}
-\tag{0.57}
+\tag{57}
 \end{equation}\]</span>
 </center>
 
@@ -487,7 +478,7 @@ To prevent negative O<sub>2</sub> concentration (in otherwords, we can’t take 
 <div class="figure"><span style="display:block;" id="fig:figM6-1"></span>
 <img src="images/module6/picture2.png" alt="Advection and dispersion of O~2~ in a river of length $x$. Note, in this figure $W_c$ refers to our wastewater plume (click [here](https://hydrologie.org/BIB/Publ_UNESCO/SR_999_E_2005.pdf) for image source)." width="60%" data-action="zoom" />
 <p class="caption">
-Figure 0.8: Advection and dispersion of O<sub>2</sub> in a river of length <span class="math inline">\(x\)</span>. Note, in this figure <span class="math inline">\(W_c\)</span> refers to our wastewater plume (click <a href="https://hydrologie.org/BIB/Publ_UNESCO/SR_999_E_2005.pdf">here</a> for image source).
+Figure 8: Advection and dispersion of O<sub>2</sub> in a river of length <span class="math inline">\(x\)</span>. Note, in this figure <span class="math inline">\(W_c\)</span> refers to our wastewater plume (click <a href="https://hydrologie.org/BIB/Publ_UNESCO/SR_999_E_2005.pdf">here</a> for image source).
 </p>
 </div>
 </center>
@@ -517,7 +508,7 @@ Figure 0.8: Advection and dispersion of O<sub>2</sub> in a river of length <span
 <div class="figure"><span style="display:block;" id="fig:figM6-2"></span>
 <img src="images/module6/picture1.png" alt="A plume of coloured dye dispersing through a river." width="100%" data-action="zoom" />
 <p class="caption">
-Figure 0.9: A plume of coloured dye dispersing through a river.
+Figure 9: A plume of coloured dye dispersing through a river.
 </p>
 </div>
 </center>
