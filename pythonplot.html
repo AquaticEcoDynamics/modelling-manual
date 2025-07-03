@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Learning to use the base plot | Environmental Dynamics Workbook</title>
+  <title>Learning to plot with python | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Learning to use the base plot | Environmental Dynamics Workbook" />
+  <meta property="og:title" content="Learning to plot with python | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The online Environmental Dynamics Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Learning to use the base plot | Environmental Dynamics Workbook" />
+  <meta name="twitter:title" content="Learning to plot with python | Environmental Dynamics Workbook" />
   
   <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
   
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="baseplot.html"/>
-<link rel="next" href="excelbasics.html"/>
+<link rel="next" href="import-the-spreadsheet-3.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -55,15 +55,6 @@
 <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
 <script src="libs/panelset-0.2.6/panelset.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
 <script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
@@ -171,6 +162,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#installing-python"><i class="fa fa-check"></i>Installing python</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="StyleGuide.html"><a href="StyleGuide.html"><i class="fa fa-check"></i>Style Guide</a>
 <ul>
@@ -330,25 +322,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#make-an-annual-column-chart"><i class="fa fa-check"></i>Make an annual column chart</a></li>
 <li class="chapter" data-level="" data-path="baseplot.html"><a href="baseplot.html#make-a-multi-plot-figure"><i class="fa fa-check"></i>Make a multi-plot figure</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html"><i class="fa fa-check"></i>Learning to use the base plot</a>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html"><i class="fa fa-check"></i>Learning to plot with python</a>
 <ul>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#visualising-module-1-flow-data-2"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a>
 <ul>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#setting-up-2"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#importing-and-formatting-the-data-2"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#graphing-with-base-plot-1"><i class="fa fa-check"></i>Graphing with base plot</a>
-<ul>
-<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#call-plot-1"><i class="fa fa-check"></i>Call <code>plot()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#call-plot-and-then-start-again-1"><i class="fa fa-check"></i>Call <code>plot()</code> and then start again</a>
+<li class="chapter" data-level="1" data-path="import-the-spreadsheet-3.html"><a href="import-the-spreadsheet-3.html"><i class="fa fa-check"></i><b>1</b> Import the spreadsheet</a></li>
+<li class="chapter" data-level="2" data-path="inspect-the-data-2.html"><a href="inspect-the-data-2.html"><i class="fa fa-check"></i><b>2</b> Inspect the data</a></li>
+<li class="chapter" data-level="3" data-path="format-the-date-2.html"><a href="format-the-date-2.html"><i class="fa fa-check"></i><b>3</b> Format the date</a></li>
+<li class="chapter" data-level="4" data-path="create-figure-and-axes-objects.html"><a href="create-figure-and-axes-objects.html"><i class="fa fa-check"></i><b>4</b> Create Figure and Axes objects</a></li>
+<li class="chapter" data-level="5" data-path="plot-the-data-to-the-axes-object-ax.html"><a href="plot-the-data-to-the-axes-object-ax.html"><i class="fa fa-check"></i><b>5</b> Plot the data to the Axes object (ax)</a></li>
+<li class="chapter" data-level="6" data-path="change-the-colour-1.html"><a href="change-the-colour-1.html"><i class="fa fa-check"></i><b>6</b> Change the colour</a></li>
+<li class="chapter" data-level="7" data-path="fix-the-labels-1.html"><a href="fix-the-labels-1.html"><i class="fa fa-check"></i><b>7</b> Fix the labels</a></li>
+<li class="chapter" data-level="8" data-path="visualising-diversion-scenarios-1.html"><a href="visualising-diversion-scenarios-1.html"><i class="fa fa-check"></i><b>8</b> Visualising Diversion Scenarios</a></li>
+<li class="chapter" data-level="9" data-path="add-a-legend-to-the-diversion-scenario.html"><a href="add-a-legend-to-the-diversion-scenario.html"><i class="fa fa-check"></i><b>9</b> Add a legend to the diversion scenario</a>
 <ul>
-<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#axis-and-mtext-1"><i class="fa fa-check"></i>Axis and mtext</a></li>
-<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#legend-1"><i class="fa fa-check"></i>Legend</a></li>
-<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#add-a-polygon-1"><i class="fa fa-check"></i>Add a polygon</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#make-an-annual-column-chart-1"><i class="fa fa-check"></i>Make an annual column chart</a></li>
-<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#make-a-multi-plot-figure-1"><i class="fa fa-check"></i>Make a multi-plot figure</a></li>
+<li class="chapter" data-level="" data-path="add-a-legend-to-the-diversion-scenario.html"><a href="add-a-legend-to-the-diversion-scenario.html#exercise-which-language-is-better"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="excelbasics.html"><a href="excelbasics.html"><i class="fa fa-check"></i>Learning Excel basics</a>
 <ul>
@@ -390,8 +382,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="pythonplot" class="section level1 unnumbered hasAnchor" number="">
-<h1>Learning to use the base plot<a href="pythonplot.html#pythonplot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>As an alternative to ggplot and tidyverse, there are other basic plotting functions that you might prefer. This module takes you through a few basic plotting functions. It starts in the same way as the tidyverse module, using the same dataset.</p>
+<h1>Learning to plot with python<a href="pythonplot.html#pythonplot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>As an alternative to the R base plot, ggplot and tidyverse, you can learn to plot with a similar language, python. This module takes you through a few basic plotting functions, using the same dataset.</p>
 <div id="visualising-module-1-flow-data-2" class="section level2 unnumbered hasAnchor" number="">
 <h2>Visualising Module 1 Flow Data<a href="pythonplot.html#visualising-module-1-flow-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="setting-up-2" class="section level3 unnumbered hasAnchor" number="">
@@ -399,13 +391,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="creating-an-r-studio-project-2" class="section level4 unnumbered hasAnchor" number="">
 <h4>Creating an R Studio project<a href="pythonplot.html#creating-an-r-studio-project-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
-<li>Open R Studio</li>
-<li>Go <em>File -&gt; New Project -&gt; New Directory -&gt; New Project</em></li>
-<li><em>Directory name:</em> ENVT3362_workshop_2</li>
-<li><em>Create project as a subdirectory of:</em> Wherever you store your ENVT3362 files!</li>
-<li>Click <em>Create project</em></li>
+<li>Refer to the Getting Started section, to install python and its packages, and Visual Studio Code (VSC)</li>
+<li>Open Visual Studio Code, the go <em>File -&gt; Open Folder</em> then open the folder where you will store your files for this exercise (<em>ENVT3362_workshop_2</em>)</li>
 <li>Download the spreadsheet for this workshop <a href="envFlowData.xls">here</a></li>
 <li>Move this to your <em>ENVT3362_workshop_2</em> directory</li>
+<li>Make a new python file in VSC. Go <em>File -&gt; New File -&gt; New python file</em> and save a file as a ‘.py’</li>
+<li>Open two new terminals. Open one as python and one as powershell.</li>
 </ol>
 </div>
 </div>
@@ -413,310 +404,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>Importing and formatting the data<a href="pythonplot.html#importing-and-formatting-the-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="load-the-necessary-packages-2" class="section level4 unnumbered hasAnchor" number="">
 <h4>Load the necessary packages<a href="pythonplot.html#load-the-necessary-packages-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li>readxl and lubridate need to be loaded separately</li>
-</ul>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="pythonplot.html#cb64-1" aria-hidden="true"></a><span class="kw">library</span>(readxl)</span>
-<span id="cb64-2"><a href="pythonplot.html#cb64-2" aria-hidden="true"></a><span class="kw">library</span>(lubridate)</span></code></pre></div>
+<p>Add these commands to the top of your python file.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="pythonplot.html#cb64-1" aria-hidden="true"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb64-2"><a href="pythonplot.html#cb64-2" aria-hidden="true"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
+<span id="cb64-3"><a href="pythonplot.html#cb64-3" aria-hidden="true"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates </span>
+<span id="cb64-4"><a href="pythonplot.html#cb64-4" aria-hidden="true"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> patches</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="pythonplot.html#cb65-1" aria-hidden="true"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span></code></pre></div>
+<p>Run these lines by pressing Shift Enter, one by one.</p>
+<p>If this doesn’t work, it may be that the location of your python files is not being found. To fix this, in the VSC powershell terminal, use a python command starting with the location of your python program location. For example</p>
+<p>C:.exe
+import pandas as pd</p>
+<p>Similarly you may need to specify the whole file path to pip in powershell, for example
+C:3.exe</p>
 </div>
 <div id="import-the-spreadsheet-2" class="section level4 unnumbered hasAnchor" number="">
 <h4>Import the spreadsheet<a href="pythonplot.html#import-the-spreadsheet-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li>The <code>path</code> argument is relative to you R Studio project file</li>
-<li><code>sheet</code> specifies which Excel sheet to read</li>
-</ul>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="pythonplot.html#cb65-1" aria-hidden="true"></a>envFlow  &lt;-<span class="st"> </span><span class="kw">read_xls</span>(<span class="dt">path =</span> <span class="st">&quot;envFlowData.xls&quot;</span>, <span class="dt">sheet =</span> <span class="dv">1</span>)</span></code></pre></div>
-</div>
-<div id="inspect-the-data-2" class="section level4 unnumbered hasAnchor" number="">
-<h4>Inspect the data<a href="pythonplot.html#inspect-the-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li><code>head()</code> prints the first few observations</li>
-<li>What data type is <code>date</code>?</li>
-</ul>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="pythonplot.html#cb66-1" aria-hidden="true"></a><span class="kw">head</span>(envFlow)</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 2
-##   date       totalDischarge
-##   &lt;chr&gt;               &lt;dbl&gt;
-## 1 1992-01-01           26.6
-## 2 1992-01-02           26.8
-## 3 1992-01-03           27.3
-## 4 1992-01-04           27.0
-## 5 1992-01-05           26.5
-## 6 1992-01-06           26.8</code></pre>
-</div>
-<div id="format-the-date-2" class="section level4 unnumbered hasAnchor" number="">
-<h4>Format the date<a href="pythonplot.html#format-the-date-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li>Use lubridate’s <code>ymd()</code> function to overwrite the existing <code>date</code> variable and convert the <strong>character</strong> data to <strong>date</strong> data</li>
-</ul>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="pythonplot.html#cb68-1" aria-hidden="true"></a>envFlow<span class="op">$</span>date &lt;-<span class="st"> </span><span class="kw">ymd</span>(envFlow<span class="op">$</span>date)</span></code></pre></div>
-</div>
-<div id="inspect-the-data-again-2" class="section level4 unnumbered hasAnchor" number="">
-<h4>Inspect the data again<a href="pythonplot.html#inspect-the-data-again-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li>Notice the change in data type of <code>date</code></li>
-</ul>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="pythonplot.html#cb69-1" aria-hidden="true"></a><span class="kw">head</span>(envFlow)</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 2
-##   date       totalDischarge
-##   &lt;date&gt;              &lt;dbl&gt;
-## 1 1992-01-01           26.6
-## 2 1992-01-02           26.8
-## 3 1992-01-03           27.3
-## 4 1992-01-04           27.0
-## 5 1992-01-05           26.5
-## 6 1992-01-06           26.8</code></pre>
+<p>Import the spreadsheet by adding then running this command:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="pythonplot.html#cb66-1" aria-hidden="true"></a> env_flow <span class="op">=</span> pd.read_excel(<span class="st">&quot;envFlowData.xls&quot;</span>)</span>
+<span id="cb66-2"><a href="pythonplot.html#cb66-2" aria-hidden="true"></a><span class="co"># env_flow = pd.read_excel(&quot;C:/Dan/Uni/Teaching/2025/ENVT3362/ENVT3362_workshop_2envFlowData.xls&quot;)</span></span></code></pre></div>
 </div>
 </div>
-</div>
-<div id="graphing-with-base-plot-1" class="section level2 unnumbered hasAnchor" number="">
-<h2>Graphing with base plot<a href="pythonplot.html#graphing-with-base-plot-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Simply using the ‘plot’ function will make a default points plot. The plot does not look good, however, the function is convenient for checking your data quickly.</p>
-<div id="call-plot-1" class="section level3 unnumbered hasAnchor" number="">
-<h3>Call <code>plot()</code><a href="pythonplot.html#call-plot-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="pythonplot.html#cb71-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow) </span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
-<p><code>plot</code> defaults to a points plot, but we can quickly change it to a line plot using the argument <code>type = "l"</code>.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="pythonplot.html#cb72-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>) </span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
-<p>Just as with ggplot, we can access the R database of standard colours.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="pythonplot.html#cb73-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
-<p>By default it is selecting x and y from columns 1 and 2.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="pythonplot.html#cb74-1" aria-hidden="true"></a><span class="kw">plot</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>date, <span class="dt">y=</span>envFlow<span class="op">$</span>totalDischarge    ,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
-<p>If you had several columns, you could choose which to plot on the y axis. We can make a new variable, say, double flow. A new line can be appended to the original plot using the <code>lines</code> function.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="pythonplot.html#cb75-1" aria-hidden="true"></a>doubleflow =<span class="st"> </span>envFlow<span class="op">$</span>totalDischarge <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb75-2"><a href="pythonplot.html#cb75-2" aria-hidden="true"></a><span class="kw">plot</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>date, <span class="dt">y=</span>envFlow<span class="op">$</span>totalDischarge    ,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
-<span id="cb75-3"><a href="pythonplot.html#cb75-3" aria-hidden="true"></a><span class="kw">lines</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>date, <span class="dt">y=</span>doubleflow, <span class="dt">col=</span><span class="st">&quot;red4&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
-<p>To plot a subset of the data, use the square brackets to select indices, say, points 100 to 800.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="pythonplot.html#cb76-1" aria-hidden="true"></a>doubleflow =<span class="st"> </span>envFlow<span class="op">$</span>totalDischarge <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb76-2"><a href="pythonplot.html#cb76-2" aria-hidden="true"></a><span class="kw">plot</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>date[<span class="dv">100</span><span class="op">:</span><span class="dv">800</span>], <span class="dt">y=</span>envFlow<span class="op">$</span>totalDischarge[<span class="dv">100</span><span class="op">:</span><span class="dv">800</span>]    ,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
-<p>Similarly, the limits of the axes can be set with the <code>xlim</code> and <code>ylim</code> arguments.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="pythonplot.html#cb77-1" aria-hidden="true"></a><span class="kw">plot</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>date, <span class="dt">y=</span>envFlow<span class="op">$</span>totalDischarge    </span>
-<span id="cb77-2"><a href="pythonplot.html#cb77-2" aria-hidden="true"></a>     ,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span></span>
-<span id="cb77-3"><a href="pythonplot.html#cb77-3" aria-hidden="true"></a>     ,<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">date</span>(<span class="st">&quot;2000-01-01&quot;</span>),<span class="kw">date</span>(<span class="st">&quot;2005-01-01&quot;</span>))</span>
-<span id="cb77-4"><a href="pythonplot.html#cb77-4" aria-hidden="true"></a>     ,<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1500</span>)</span>
-<span id="cb77-5"><a href="pythonplot.html#cb77-5" aria-hidden="true"></a>     )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
-</div>
-</div>
-<div id="call-plot-and-then-start-again-1" class="section level2 unnumbered hasAnchor" number="">
-<h2>Call <code>plot()</code> and then start again<a href="pythonplot.html#call-plot-and-then-start-again-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The base plot is convenient, however, to make it look good, sometimes it is easier to plot it as a blank and add each element in separately. Just as “l” was the argument for lines, “n” is an argument for no plot. We can even turn off the axes and titles.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="pythonplot.html#cb78-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow,<span class="dt">type=</span><span class="st">&quot;n&quot;</span></span>
-<span id="cb78-2"><a href="pythonplot.html#cb78-2" aria-hidden="true"></a>     ,<span class="dt">axes=</span>F</span>
-<span id="cb78-3"><a href="pythonplot.html#cb78-3" aria-hidden="true"></a>     ,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span></span>
-<span id="cb78-4"><a href="pythonplot.html#cb78-4" aria-hidden="true"></a>     ,<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">date</span>(<span class="st">&quot;2000-01-01&quot;</span>),<span class="kw">date</span>(<span class="st">&quot;2005-01-01&quot;</span>))</span>
-<span id="cb78-5"><a href="pythonplot.html#cb78-5" aria-hidden="true"></a>     )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
-<p>Then we can add all the elements back in. The plot is still open so it will plot everything to the blank plot.</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="pythonplot.html#cb79-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow,<span class="dt">type=</span><span class="st">&quot;n&quot;</span></span>
-<span id="cb79-2"><a href="pythonplot.html#cb79-2" aria-hidden="true"></a>     ,<span class="dt">axes=</span>F</span>
-<span id="cb79-3"><a href="pythonplot.html#cb79-3" aria-hidden="true"></a>     ,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span></span>
-<span id="cb79-4"><a href="pythonplot.html#cb79-4" aria-hidden="true"></a>     ,<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">date</span>(<span class="st">&quot;2000-01-01&quot;</span>),<span class="kw">date</span>(<span class="st">&quot;2005-01-01&quot;</span>))</span>
-<span id="cb79-5"><a href="pythonplot.html#cb79-5" aria-hidden="true"></a>     )</span>
-<span id="cb79-6"><a href="pythonplot.html#cb79-6" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,envFlow<span class="op">$</span>totalDischarge,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
-<span id="cb79-7"><a href="pythonplot.html#cb79-7" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,doubleflow,<span class="dt">col=</span><span class="st">&quot;red4&quot;</span>)</span>
-<span id="cb79-8"><a href="pythonplot.html#cb79-8" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
-<div id="axis-and-mtext-1" class="section level3 unnumbered hasAnchor" number="">
-<h3>Axis and mtext<a href="pythonplot.html#axis-and-mtext-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We can put the axis and axis labels back in using the functions ‘axis’ and ‘mtext’. They both have the <code>side</code> argument:</p>
-<p>1 = bottom, 2 = left, 3 = top, 4 = right</p>
-<p>The font size defaults to 1, but we can adjust it using the argument <code>cex</code>. The distance from the axis is set using <code>line</code>. the <code>expression</code> function allows formatting of text, such as subscripts and superscripts.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="pythonplot.html#cb80-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow,<span class="dt">type=</span><span class="st">&quot;n&quot;</span></span>
-<span id="cb80-2"><a href="pythonplot.html#cb80-2" aria-hidden="true"></a>     ,<span class="dt">axes=</span>F</span>
-<span id="cb80-3"><a href="pythonplot.html#cb80-3" aria-hidden="true"></a>     ,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span></span>
-<span id="cb80-4"><a href="pythonplot.html#cb80-4" aria-hidden="true"></a>     ,<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">date</span>(<span class="st">&quot;2000-01-01&quot;</span>),<span class="kw">date</span>(<span class="st">&quot;2005-01-01&quot;</span>))</span>
-<span id="cb80-5"><a href="pythonplot.html#cb80-5" aria-hidden="true"></a>     )</span>
-<span id="cb80-6"><a href="pythonplot.html#cb80-6" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,envFlow<span class="op">$</span>totalDischarge,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
-<span id="cb80-7"><a href="pythonplot.html#cb80-7" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,doubleflow,<span class="dt">col=</span><span class="st">&quot;red4&quot;</span>)</span>
-<span id="cb80-8"><a href="pythonplot.html#cb80-8" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span>
-<span id="cb80-9"><a href="pythonplot.html#cb80-9" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">1</span>,<span class="dt">text=</span><span class="st">&quot;Date&quot;</span>,<span class="dt">line=</span><span class="dv">2</span>)</span>
-<span id="cb80-10"><a href="pythonplot.html#cb80-10" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">2</span>,<span class="dt">text=</span><span class="kw">expression</span>(<span class="st">&quot;Flow (ML d&quot;</span><span class="op">^-</span><span class="dv">1</span><span class="op">*</span><span class="st">&quot;)&quot;</span>),<span class="dt">line=</span><span class="dv">2</span>)</span>
-<span id="cb80-11"><a href="pythonplot.html#cb80-11" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
-<p>The date axis needs to be formatted, then the <code>axis.Date</code> function is used. This step is clunky compared to ggplot.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="pythonplot.html#cb81-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow,<span class="dt">type=</span><span class="st">&quot;n&quot;</span></span>
-<span id="cb81-2"><a href="pythonplot.html#cb81-2" aria-hidden="true"></a>     ,<span class="dt">axes=</span>F</span>
-<span id="cb81-3"><a href="pythonplot.html#cb81-3" aria-hidden="true"></a>     ,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span></span>
-<span id="cb81-4"><a href="pythonplot.html#cb81-4" aria-hidden="true"></a>     ,<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">date</span>(<span class="st">&quot;2000-01-01&quot;</span>),<span class="kw">date</span>(<span class="st">&quot;2005-01-01&quot;</span>))</span>
-<span id="cb81-5"><a href="pythonplot.html#cb81-5" aria-hidden="true"></a>     )</span>
-<span id="cb81-6"><a href="pythonplot.html#cb81-6" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,envFlow<span class="op">$</span>totalDischarge,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
-<span id="cb81-7"><a href="pythonplot.html#cb81-7" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,doubleflow,<span class="dt">col=</span><span class="st">&quot;red4&quot;</span>)</span>
-<span id="cb81-8"><a href="pythonplot.html#cb81-8" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span>
-<span id="cb81-9"><a href="pythonplot.html#cb81-9" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">1</span>,<span class="dt">text=</span><span class="st">&quot;Date&quot;</span>,<span class="dt">line=</span><span class="dv">2</span>)</span>
-<span id="cb81-10"><a href="pythonplot.html#cb81-10" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">2</span>,<span class="dt">text=</span><span class="kw">expression</span>(<span class="st">&quot;Flow (ML d&quot;</span><span class="op">^-</span><span class="dv">1</span><span class="op">*</span><span class="st">&quot;)&quot;</span>),<span class="dt">line=</span><span class="dv">2</span>)</span>
-<span id="cb81-11"><a href="pythonplot.html#cb81-11" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</span>
-<span id="cb81-12"><a href="pythonplot.html#cb81-12" aria-hidden="true"></a>x.axis&lt;-<span class="kw">as.Date</span>(<span class="kw">seq</span>(<span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="kw">max</span>(envFlow<span class="op">$</span>date),<span class="dt">by=</span><span class="dv">3</span><span class="op">*</span><span class="dv">365</span>),<span class="dt">format=</span><span class="st">&quot;%Y&quot;</span>)</span>
-<span id="cb81-13"><a href="pythonplot.html#cb81-13" aria-hidden="true"></a><span class="kw">axis.Date</span>(<span class="dt">at=</span>x.axis,<span class="dt">side=</span><span class="dv">1</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-75-1.png" width="672" /></p>
-</div>
-<div id="legend-1" class="section level3 unnumbered hasAnchor" number="">
-<h3>Legend<a href="pythonplot.html#legend-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Add a legend using the <code>legend</code> function. You can search for its details. In this case, <code>topleft</code> is the position, inset by 0.1; the <code>legend</code> argument is the text, <code>col</code> is the sequence of colours, and pch is the symbol.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="pythonplot.html#cb82-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow,<span class="dt">type=</span><span class="st">&quot;n&quot;</span></span>
-<span id="cb82-2"><a href="pythonplot.html#cb82-2" aria-hidden="true"></a>     ,<span class="dt">axes=</span>F</span>
-<span id="cb82-3"><a href="pythonplot.html#cb82-3" aria-hidden="true"></a>     ,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span></span>
-<span id="cb82-4"><a href="pythonplot.html#cb82-4" aria-hidden="true"></a>     ,<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">date</span>(<span class="st">&quot;2000-01-01&quot;</span>),<span class="kw">date</span>(<span class="st">&quot;2005-01-01&quot;</span>))</span>
-<span id="cb82-5"><a href="pythonplot.html#cb82-5" aria-hidden="true"></a>     )</span>
-<span id="cb82-6"><a href="pythonplot.html#cb82-6" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,envFlow<span class="op">$</span>totalDischarge,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
-<span id="cb82-7"><a href="pythonplot.html#cb82-7" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,doubleflow,<span class="dt">col=</span><span class="st">&quot;red4&quot;</span>)</span>
-<span id="cb82-8"><a href="pythonplot.html#cb82-8" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span>
-<span id="cb82-9"><a href="pythonplot.html#cb82-9" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">1</span>,<span class="dt">text=</span><span class="st">&quot;Date&quot;</span>,<span class="dt">line=</span><span class="dv">2</span>)</span>
-<span id="cb82-10"><a href="pythonplot.html#cb82-10" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">2</span>,<span class="dt">text=</span><span class="kw">expression</span>(<span class="st">&quot;Flow (ML d&quot;</span><span class="op">^-</span><span class="dv">1</span><span class="op">*</span><span class="st">&quot;)&quot;</span>),<span class="dt">line=</span><span class="dv">2</span>)</span>
-<span id="cb82-11"><a href="pythonplot.html#cb82-11" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</span>
-<span id="cb82-12"><a href="pythonplot.html#cb82-12" aria-hidden="true"></a>x.axis&lt;-<span class="kw">as.Date</span>(<span class="kw">seq</span>(<span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="kw">max</span>(envFlow<span class="op">$</span>date),<span class="dt">by=</span><span class="dv">3</span><span class="op">*</span><span class="dv">365</span>),<span class="dt">format=</span><span class="st">&quot;%Y&quot;</span>)</span>
-<span id="cb82-13"><a href="pythonplot.html#cb82-13" aria-hidden="true"></a><span class="kw">axis.Date</span>(<span class="dt">at=</span>x.axis,<span class="dt">side=</span><span class="dv">1</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</span>
-<span id="cb82-14"><a href="pythonplot.html#cb82-14" aria-hidden="true"></a><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">inset=</span><span class="fl">0.1</span></span>
-<span id="cb82-15"><a href="pythonplot.html#cb82-15" aria-hidden="true"></a>       ,<span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Flow&quot;</span>,<span class="st">&quot;Doubleflow&quot;</span>)</span>
-<span id="cb82-16"><a href="pythonplot.html#cb82-16" aria-hidden="true"></a>       ,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;dodgerblue3&quot;</span>,<span class="st">&quot;red4&quot;</span>)</span>
-<span id="cb82-17"><a href="pythonplot.html#cb82-17" aria-hidden="true"></a>       ,<span class="dt">pch=</span><span class="dv">16</span> </span>
-<span id="cb82-18"><a href="pythonplot.html#cb82-18" aria-hidden="true"></a>       ,<span class="dt">cex =</span> <span class="fl">0.7</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
-</div>
-<div id="add-a-polygon-1" class="section level3 unnumbered hasAnchor" number="">
-<h3>Add a polygon<a href="pythonplot.html#add-a-polygon-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We can add a polygon that represents the threshold above, say, 500 ML. The <code>polygon</code> function draws a polygon of any shape, by listing a sequence of the x and y values of a polygon. For example, imagine</p>
-<ul>
-<li><p>it started at 0,0,</p></li>
-<li><p>then you drew a line along the x axis to x = 10, y still = 0,</p></li>
-<li><p>then you drew a line up from x still = 10 and y = 3,</p></li>
-<li><p>then backwards along the x direction from y still = 3, x = 0 again.</p></li>
-</ul>
-<p>The polygon joins all of these points. These could also be expressed as a matrix</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="pythonplot.html#cb83-1" aria-hidden="true"></a>x=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
-<span id="cb83-2"><a href="pythonplot.html#cb83-2" aria-hidden="true"></a>y=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb83-3"><a href="pythonplot.html#cb83-3" aria-hidden="true"></a>this.matrix&lt;-<span class="kw">matrix</span>(<span class="dt">ncol =</span> <span class="dv">2</span></span>
-<span id="cb83-4"><a href="pythonplot.html#cb83-4" aria-hidden="true"></a>                    ,<span class="dt">nrow=</span> <span class="dv">4</span></span>
-<span id="cb83-5"><a href="pythonplot.html#cb83-5" aria-hidden="true"></a>                    ,<span class="dt">data=</span><span class="kw">c</span>(x,y)</span>
-<span id="cb83-6"><a href="pythonplot.html#cb83-6" aria-hidden="true"></a>       )</span>
-<span id="cb83-7"><a href="pythonplot.html#cb83-7" aria-hidden="true"></a><span class="kw">colnames</span>(this.matrix)=<span class="kw">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>)</span></code></pre></div>
-<p>In our flow plot, we use dates as the x values and the range 0 to 500 ML.</p>
-<p>The <code>adjustcolor</code> function allows us to make a new colour, as a variable called ‘polygoncolour’. The argument <code>alpha</code> sets the opacity, where 0 is completely transparent and 1 is completely opaque.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="pythonplot.html#cb84-1" aria-hidden="true"></a>polygoncolour&lt;-<span class="kw">adjustcolor</span>(<span class="st">&quot;red&quot;</span>,<span class="dt">alpha=</span><span class="fl">0.33</span>)</span></code></pre></div>
-<p>If we stick it all together:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="pythonplot.html#cb85-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow,<span class="dt">type=</span><span class="st">&quot;n&quot;</span></span>
-<span id="cb85-2"><a href="pythonplot.html#cb85-2" aria-hidden="true"></a>     ,<span class="dt">axes=</span>F</span>
-<span id="cb85-3"><a href="pythonplot.html#cb85-3" aria-hidden="true"></a>     ,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span></span>
-<span id="cb85-4"><a href="pythonplot.html#cb85-4" aria-hidden="true"></a>)</span>
-<span id="cb85-5"><a href="pythonplot.html#cb85-5" aria-hidden="true"></a>polygoncolour&lt;-<span class="kw">adjustcolor</span>(<span class="st">&quot;red&quot;</span>,<span class="dt">alpha=</span><span class="fl">0.25</span>)</span>
-<span id="cb85-6"><a href="pythonplot.html#cb85-6" aria-hidden="true"></a><span class="kw">polygon</span>(<span class="dt">x =</span> <span class="kw">c</span>( envFlow<span class="op">$</span>date[<span class="kw">which</span>(envFlow<span class="op">$</span>date<span class="op">==</span><span class="st">&quot;1992-01-01&quot;</span>)]</span>
-<span id="cb85-7"><a href="pythonplot.html#cb85-7" aria-hidden="true"></a>              ,envFlow<span class="op">$</span>date[<span class="kw">which</span>(envFlow<span class="op">$</span>date<span class="op">==</span><span class="st">&quot;2010-12-31&quot;</span>)]</span>
-<span id="cb85-8"><a href="pythonplot.html#cb85-8" aria-hidden="true"></a>              ,envFlow<span class="op">$</span>date[<span class="kw">which</span>(envFlow<span class="op">$</span>date<span class="op">==</span><span class="st">&quot;2010-12-31&quot;</span>)]</span>
-<span id="cb85-9"><a href="pythonplot.html#cb85-9" aria-hidden="true"></a>              ,envFlow<span class="op">$</span>date[<span class="kw">which</span>(envFlow<span class="op">$</span>date<span class="op">==</span><span class="st">&quot;1992-01-01&quot;</span>)]</span>
-<span id="cb85-10"><a href="pythonplot.html#cb85-10" aria-hidden="true"></a>              )</span>
-<span id="cb85-11"><a href="pythonplot.html#cb85-11" aria-hidden="true"></a>        ,<span class="dt">y=</span><span class="kw">c</span>(<span class="dv">50</span>,<span class="dv">50</span>,<span class="dv">550</span>,<span class="dv">550</span>)</span>
-<span id="cb85-12"><a href="pythonplot.html#cb85-12" aria-hidden="true"></a>        ,<span class="dt">col=</span>polygoncolour</span>
-<span id="cb85-13"><a href="pythonplot.html#cb85-13" aria-hidden="true"></a>        ,<span class="dt">lty =</span> <span class="dv">0</span>)</span>
-<span id="cb85-14"><a href="pythonplot.html#cb85-14" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,envFlow<span class="op">$</span>totalDischarge,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
-<span id="cb85-15"><a href="pythonplot.html#cb85-15" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,doubleflow,<span class="dt">col=</span><span class="st">&quot;red4&quot;</span>)</span>
-<span id="cb85-16"><a href="pythonplot.html#cb85-16" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span>
-<span id="cb85-17"><a href="pythonplot.html#cb85-17" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">1</span>,<span class="dt">text=</span><span class="st">&quot;Date&quot;</span>,<span class="dt">line=</span><span class="dv">2</span>)</span>
-<span id="cb85-18"><a href="pythonplot.html#cb85-18" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">2</span>,<span class="dt">text=</span><span class="kw">expression</span>(<span class="st">&quot;Flow (ML d&quot;</span><span class="op">^-</span><span class="dv">1</span><span class="op">*</span><span class="st">&quot;)&quot;</span>),<span class="dt">line=</span><span class="dv">2</span>)</span>
-<span id="cb85-19"><a href="pythonplot.html#cb85-19" aria-hidden="true"></a>x.axis&lt;-<span class="kw">as.Date</span>(<span class="kw">seq</span>(<span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="kw">max</span>(envFlow<span class="op">$</span>date),<span class="dt">by=</span><span class="dv">3</span><span class="op">*</span><span class="dv">365</span>),<span class="dt">format=</span><span class="st">&quot;%Y&quot;</span>);</span>
-<span id="cb85-20"><a href="pythonplot.html#cb85-20" aria-hidden="true"></a><span class="kw">axis.Date</span>(<span class="dt">at=</span>x.axis,<span class="dt">side=</span><span class="dv">1</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</span>
-<span id="cb85-21"><a href="pythonplot.html#cb85-21" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</span>
-<span id="cb85-22"><a href="pythonplot.html#cb85-22" aria-hidden="true"></a><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">inset=</span><span class="fl">0.1</span></span>
-<span id="cb85-23"><a href="pythonplot.html#cb85-23" aria-hidden="true"></a>       ,<span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Flow&quot;</span>,<span class="st">&quot;Doubleflow&quot;</span>)</span>
-<span id="cb85-24"><a href="pythonplot.html#cb85-24" aria-hidden="true"></a>       ,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;dodgerblue3&quot;</span>,<span class="st">&quot;red4&quot;</span>)</span>
-<span id="cb85-25"><a href="pythonplot.html#cb85-25" aria-hidden="true"></a>       ,<span class="dt">pch=</span><span class="dv">16</span> )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
-</div>
-</div>
-<div id="make-an-annual-column-chart-1" class="section level2 unnumbered hasAnchor" number="">
-<h2>Make an annual column chart<a href="pythonplot.html#make-an-annual-column-chart-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We can make an annual summary then plot it as a column chart. The years of the date column can be isolated by formatting the $date column with the <code>format</code> function, and setting the argument to <code>"%Y"</code>, which means year.</p>
-<p>The <code>rowsum</code> function sums rows of a matrix (there is also a function called <code>colsum</code>). The first argument is the matrix column to be summed. The second argument is how to group the rows that are summed, i.e. it will look for values that are the same. Here we can make a new matrix called <code>envFlow.by.year</code>.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="pythonplot.html#cb86-1" aria-hidden="true"></a>envFlow.by.year&lt;-<span class="kw">rowsum</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>totalDischarge</span>
-<span id="cb86-2"><a href="pythonplot.html#cb86-2" aria-hidden="true"></a>                    ,<span class="dt">group=</span><span class="kw">format</span>(envFlow<span class="op">$</span>date,<span class="st">&quot;%Y&quot;</span>)  )</span></code></pre></div>
-<p>The <code>barplot</code> function creates a column chart. The <code>height</code> argument is the matrix to plot. The <code>beside</code> argument is set to <code>TRUE</code> so that there are separate columns for each year. The <code>names.arg</code> argument sets the labels of the x axis. The other arguments are for formatting, which you can change as you like.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="pythonplot.html#cb87-1" aria-hidden="true"></a>envFlow.by.year&lt;-<span class="kw">rowsum</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>totalDischarge</span>
-<span id="cb87-2"><a href="pythonplot.html#cb87-2" aria-hidden="true"></a>                    ,<span class="dt">group=</span><span class="kw">format</span>(envFlow<span class="op">$</span>date,<span class="st">&quot;%Y&quot;</span>)  )</span>
-<span id="cb87-3"><a href="pythonplot.html#cb87-3" aria-hidden="true"></a><span class="kw">barplot</span>(envFlow.by.year,<span class="dt">beside =</span> <span class="ot">TRUE</span></span>
-<span id="cb87-4"><a href="pythonplot.html#cb87-4" aria-hidden="true"></a>        ,<span class="dt">space=</span><span class="fl">0.1</span></span>
-<span id="cb87-5"><a href="pythonplot.html#cb87-5" aria-hidden="true"></a>        ,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span></span>
-<span id="cb87-6"><a href="pythonplot.html#cb87-6" aria-hidden="true"></a>        ,<span class="dt">border =</span> <span class="ot">NA</span></span>
-<span id="cb87-7"><a href="pythonplot.html#cb87-7" aria-hidden="true"></a>        ,<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">max</span>(envFlow.by.year)<span class="op">*</span><span class="fl">1.1</span>)</span>
-<span id="cb87-8"><a href="pythonplot.html#cb87-8" aria-hidden="true"></a>        ,<span class="dt">cex.axis =</span> <span class="fl">0.7</span>,<span class="dt">cex.names =</span> <span class="fl">0.7</span>, </span>
-<span id="cb87-9"><a href="pythonplot.html#cb87-9" aria-hidden="true"></a>        ,<span class="dt">names.arg =</span> <span class="kw">rownames</span>(envFlow.by.year )</span>
-<span id="cb87-10"><a href="pythonplot.html#cb87-10" aria-hidden="true"></a>        ,<span class="dt">xlab =</span> <span class="st">&quot;Year&quot;</span></span>
-<span id="cb87-11"><a href="pythonplot.html#cb87-11" aria-hidden="true"></a>        ,<span class="dt">ylab =</span> <span class="st">&quot;Anual flow (ML)&quot;</span></span>
-<span id="cb87-12"><a href="pythonplot.html#cb87-12" aria-hidden="true"></a>        )</span>
-<span id="cb87-13"><a href="pythonplot.html#cb87-13" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
-</div>
-<div id="make-a-multi-plot-figure-1" class="section level2 unnumbered hasAnchor" number="">
-<h2>Make a multi-plot figure<a href="pythonplot.html#make-a-multi-plot-figure-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can make one figure that has several plots in it. One way to do this is to use the <code>mfrow</code> function. This sets a blank grid where the figures will be written. The arguments are the number of rows and columns that the figures are written into. To put a figure in a particular spot in this blank grid, the <code>mfg</code> function is used. The arguments in this function also correspond to the row and column. You can add white space around each figure using the <code>mar</code> function. Its arguments correspond to the number of lines below, left, above and right of the figure.</p>
-<p>For example, to make two figures above and below, in two rows, use <code>mfrow</code> 2,1. Alternatively, to make two figures left and right, in two columns, use <code>mfrow</code> 1,2.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="pythonplot.html#cb88-1" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))</span>
-<span id="cb88-2"><a href="pythonplot.html#cb88-2" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mfg=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb88-3"><a href="pythonplot.html#cb88-3" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="fl">0.5</span>,<span class="dv">1</span>))</span>
-<span id="cb88-4"><a href="pythonplot.html#cb88-4" aria-hidden="true"></a><span class="kw">plot</span>(envFlow,<span class="dt">type=</span><span class="st">&quot;n&quot;</span></span>
-<span id="cb88-5"><a href="pythonplot.html#cb88-5" aria-hidden="true"></a>     ,<span class="dt">axes=</span>F</span>
-<span id="cb88-6"><a href="pythonplot.html#cb88-6" aria-hidden="true"></a>     ,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span></span>
-<span id="cb88-7"><a href="pythonplot.html#cb88-7" aria-hidden="true"></a>     ,<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">date</span>(<span class="st">&quot;1992-01-01&quot;</span>),<span class="kw">date</span>(<span class="st">&quot;2010-12-31&quot;</span>))</span>
-<span id="cb88-8"><a href="pythonplot.html#cb88-8" aria-hidden="true"></a>)</span>
-<span id="cb88-9"><a href="pythonplot.html#cb88-9" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,envFlow<span class="op">$</span>totalDischarge,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
-<span id="cb88-10"><a href="pythonplot.html#cb88-10" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span>
-<span id="cb88-11"><a href="pythonplot.html#cb88-11" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">1</span>,<span class="dt">text=</span><span class="st">&quot;Year&quot;</span>,<span class="dt">line=</span><span class="dv">3</span>)</span>
-<span id="cb88-12"><a href="pythonplot.html#cb88-12" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">2</span>,<span class="dt">text=</span><span class="kw">expression</span>(<span class="st">&quot;Flow (ML d&quot;</span><span class="op">^-</span><span class="dv">1</span><span class="op">*</span><span class="st">&quot;)&quot;</span>),<span class="dt">line=</span><span class="dv">3</span>)</span>
-<span id="cb88-13"><a href="pythonplot.html#cb88-13" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">cex.axis=</span><span class="fl">0.7</span>)</span>
-<span id="cb88-14"><a href="pythonplot.html#cb88-14" aria-hidden="true"></a>x.axis&lt;-<span class="kw">as.Date</span>(<span class="kw">seq</span>(<span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="kw">max</span>(envFlow<span class="op">$</span>date),<span class="dt">by=</span><span class="dv">1</span><span class="op">*</span><span class="dv">365</span>),<span class="dt">format=</span><span class="st">&quot;%Y&quot;</span>)</span>
-<span id="cb88-15"><a href="pythonplot.html#cb88-15" aria-hidden="true"></a><span class="kw">axis.Date</span>(<span class="dt">at=</span>x.axis,<span class="dt">side=</span><span class="dv">1</span>,<span class="dt">cex.axis=</span><span class="fl">0.7</span>)</span>
-<span id="cb88-16"><a href="pythonplot.html#cb88-16" aria-hidden="true"></a></span>
-<span id="cb88-17"><a href="pythonplot.html#cb88-17" aria-hidden="true"></a></span>
-<span id="cb88-18"><a href="pythonplot.html#cb88-18" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mfg=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))</span>
-<span id="cb88-19"><a href="pythonplot.html#cb88-19" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="fl">0.5</span>,<span class="dv">1</span>))</span>
-<span id="cb88-20"><a href="pythonplot.html#cb88-20" aria-hidden="true"></a>      <span class="kw">barplot</span>(<span class="dt">height=</span>envFlow.by.year,<span class="dt">beside =</span> T</span>
-<span id="cb88-21"><a href="pythonplot.html#cb88-21" aria-hidden="true"></a>              ,<span class="dt">space=</span><span class="fl">0.1</span></span>
-<span id="cb88-22"><a href="pythonplot.html#cb88-22" aria-hidden="true"></a>              ,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span></span>
-<span id="cb88-23"><a href="pythonplot.html#cb88-23" aria-hidden="true"></a>              ,<span class="dt">border =</span> <span class="ot">NA</span></span>
-<span id="cb88-24"><a href="pythonplot.html#cb88-24" aria-hidden="true"></a>              ,<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">max</span>(envFlow.by.year)<span class="op">*</span><span class="fl">1.1</span>)</span>
-<span id="cb88-25"><a href="pythonplot.html#cb88-25" aria-hidden="true"></a>              ,<span class="dt">cex.axis =</span> <span class="fl">0.7</span>,<span class="dt">cex.names =</span> <span class="fl">0.7</span>, </span>
-<span id="cb88-26"><a href="pythonplot.html#cb88-26" aria-hidden="true"></a>              ,<span class="dt">names.arg =</span> <span class="kw">rownames</span>(envFlow.by.year )</span>
-<span id="cb88-27"><a href="pythonplot.html#cb88-27" aria-hidden="true"></a>              ,<span class="dt">xlab =</span> <span class="st">&quot;Year&quot;</span></span>
-<span id="cb88-28"><a href="pythonplot.html#cb88-28" aria-hidden="true"></a>              ,<span class="dt">ylab =</span> <span class="st">&quot;Anual flow (ML)&quot;</span></span>
-<span id="cb88-29"><a href="pythonplot.html#cb88-29" aria-hidden="true"></a>      )</span>
-<span id="cb88-30"><a href="pythonplot.html#cb88-30" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="pythonplot.html#cb89-1" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb89-2"><a href="pythonplot.html#cb89-2" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mfg=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb89-3"><a href="pythonplot.html#cb89-3" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb89-4"><a href="pythonplot.html#cb89-4" aria-hidden="true"></a><span class="kw">plot</span>(envFlow,<span class="dt">type=</span><span class="st">&quot;n&quot;</span></span>
-<span id="cb89-5"><a href="pythonplot.html#cb89-5" aria-hidden="true"></a>     ,<span class="dt">axes=</span>F</span>
-<span id="cb89-6"><a href="pythonplot.html#cb89-6" aria-hidden="true"></a>     ,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span></span>
-<span id="cb89-7"><a href="pythonplot.html#cb89-7" aria-hidden="true"></a>     ,<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">date</span>(<span class="st">&quot;1992-01-01&quot;</span>),<span class="kw">date</span>(<span class="st">&quot;2010-12-31&quot;</span>))</span>
-<span id="cb89-8"><a href="pythonplot.html#cb89-8" aria-hidden="true"></a>)</span>
-<span id="cb89-9"><a href="pythonplot.html#cb89-9" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,envFlow<span class="op">$</span>totalDischarge,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
-<span id="cb89-10"><a href="pythonplot.html#cb89-10" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span>
-<span id="cb89-11"><a href="pythonplot.html#cb89-11" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">1</span>,<span class="dt">text=</span><span class="st">&quot;Year&quot;</span>,<span class="dt">line=</span><span class="dv">3</span>)</span>
-<span id="cb89-12"><a href="pythonplot.html#cb89-12" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">2</span>,<span class="dt">text=</span><span class="kw">expression</span>(<span class="st">&quot;Flow (ML d&quot;</span><span class="op">^-</span><span class="dv">1</span><span class="op">*</span><span class="st">&quot;)&quot;</span>),<span class="dt">line=</span><span class="dv">3</span>)</span>
-<span id="cb89-13"><a href="pythonplot.html#cb89-13" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">cex.axis=</span><span class="fl">0.7</span>)</span>
-<span id="cb89-14"><a href="pythonplot.html#cb89-14" aria-hidden="true"></a>x.axis&lt;-<span class="kw">as.Date</span>(<span class="kw">seq</span>(<span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="kw">max</span>(envFlow<span class="op">$</span>date),<span class="dt">by=</span><span class="dv">1</span><span class="op">*</span><span class="dv">365</span>),<span class="dt">format=</span><span class="st">&quot;%Y&quot;</span>)</span>
-<span id="cb89-15"><a href="pythonplot.html#cb89-15" aria-hidden="true"></a><span class="kw">axis.Date</span>(<span class="dt">at=</span>x.axis,<span class="dt">side=</span><span class="dv">1</span>,<span class="dt">cex.axis=</span><span class="fl">0.7</span>)</span>
-<span id="cb89-16"><a href="pythonplot.html#cb89-16" aria-hidden="true"></a></span>
-<span id="cb89-17"><a href="pythonplot.html#cb89-17" aria-hidden="true"></a></span>
-<span id="cb89-18"><a href="pythonplot.html#cb89-18" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mfg=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb89-19"><a href="pythonplot.html#cb89-19" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb89-20"><a href="pythonplot.html#cb89-20" aria-hidden="true"></a>      <span class="kw">barplot</span>(<span class="dt">height=</span>envFlow.by.year,<span class="dt">beside =</span> T</span>
-<span id="cb89-21"><a href="pythonplot.html#cb89-21" aria-hidden="true"></a>              ,<span class="dt">space=</span><span class="fl">0.1</span></span>
-<span id="cb89-22"><a href="pythonplot.html#cb89-22" aria-hidden="true"></a>              ,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span></span>
-<span id="cb89-23"><a href="pythonplot.html#cb89-23" aria-hidden="true"></a>              ,<span class="dt">border =</span> <span class="ot">NA</span></span>
-<span id="cb89-24"><a href="pythonplot.html#cb89-24" aria-hidden="true"></a>              ,<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">max</span>(envFlow.by.year)<span class="op">*</span><span class="fl">1.1</span>)</span>
-<span id="cb89-25"><a href="pythonplot.html#cb89-25" aria-hidden="true"></a>              ,<span class="dt">cex.axis =</span> <span class="fl">0.7</span>,<span class="dt">cex.names =</span> <span class="fl">0.7</span>, </span>
-<span id="cb89-26"><a href="pythonplot.html#cb89-26" aria-hidden="true"></a>              ,<span class="dt">names.arg =</span> <span class="kw">rownames</span>(envFlow.by.year )</span>
-<span id="cb89-27"><a href="pythonplot.html#cb89-27" aria-hidden="true"></a>              ,<span class="dt">xlab =</span> <span class="st">&quot;Year&quot;</span></span>
-<span id="cb89-28"><a href="pythonplot.html#cb89-28" aria-hidden="true"></a>              ,<span class="dt">ylab =</span> <span class="st">&quot;Anual flow (ML)&quot;</span></span>
-<span id="cb89-29"><a href="pythonplot.html#cb89-29" aria-hidden="true"></a>      )</span>
-<span id="cb89-30"><a href="pythonplot.html#cb89-30" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
-
-<!-- # (PART)  Supporting Material {-}  -->
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script>
@@ -727,7 +434,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="baseplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="excelbasics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="import-the-spreadsheet-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Environmental Dynamics Workbook</title>
+  <title>9 Add a legend to the diversion scenario | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Environmental Dynamics Workbook" />
+  <meta property="og:title" content="9 Add a legend to the diversion scenario | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The online Environmental Dynamics Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Environmental Dynamics Workbook" />
+  <meta name="twitter:title" content="9 Add a legend to the diversion scenario | Environmental Dynamics Workbook" />
   
   <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="GettingStarted.html"/>
+<link rel="prev" href="visualising-diversion-scenarios-1.html"/>
+<link rel="next" href="excelbasics.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -381,40 +381,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Environmental Dynamics Workbook</h1>
-<p class="author"><em>Matt Hipsey, Dan Paraska, Alanna Kursar, Giles Knight</em></p>
-<p class="date"><em>Last updated: 2025-07-03</em></p>
-</div>
-<div id="intro" class="section level1 unnumbered hasAnchor" number="">
-<h1>Introduction<a href="index.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Welcome to the Environmental Dynamics Workbook! This workbook supplements the practical component of the Environmental Dynamics unit and is designed to develop your ability to model environmental systems.</p>
-<p>Each practical class has a corresponding module that will be added to the workbook as the semester progresses. If you are at all unfamiliar with using Excel or R, please visit the <a href="GettingStarted.html#GettingStarted">Getting Started</a> section of this workbook before commencing the first module.</p>
-<p>Please contact your Unit Coordinator or tutor for queries relating to this workbook, or refer to the Unit Outline on LMS for matters relating to the unit’s structure.</p>
-<div id="contents" class="section level4 unnumbered hasAnchor" number="">
-<h4>Contents<a href="index.html#contents" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ol style="list-style-type: decimal">
-<li><a href="index.html#intro">Introduction</a></li>
-<li><a href="GettingStarted.html#GettingStarted">Getting Started</a></li>
-<li><a href="StyleGuide.html#StyleGuide">Style Guide</a></li>
-<li><a href="M1_1.html#M1_1">Module 1 - Modelling in Excel</a></li>
-<li><a href="M2_1.html#M2_1">Module 2 - Biogeochemistry</a></li>
-<li><a href="M3_1.html#M3_1">Module 3 - Climate Modeling</a></li>
-<li><a href="M4_1.html#M4_1">Module 4 - Oceanic Acidification</a></li>
-<li><a href="M5A_1.html#M5A_1">Module 5a - Catchment Water Balance</a></li>
-<li><a href="%7B#M5B_1">Module 5b - Land Use and Nutrient Management</a></li>
-<li><a href="M6_1.html#M6_1">Module 6 - River Pollution</a></li>
-<li><a href="M7_1.html#M7_1">Module 7 - Lake Ecosystem Dynamics</a></li>
-<li><a href="FinalProject.html#FinalProject">Final Project</a></li>
-<li><a href="tidyverse.html#tidyverse">Learning the Tidyverse</a></li>
-<li><a href="baseplot.html#baseplot">Learning the base plot</a></li>
-<li><a href="pythonplot.html#pythonplot">Learning to plot with python</a></li>
-<li><a href="excelbasics.html#excelbasics">Excel basics</a></li>
-<li><a href="quokkas.html#quokkas">Modelling Quokkas in R</a><br />
-</li>
-<li><a href="references.html#references">References</a></li>
-</ol>
+<div id="add-a-legend-to-the-diversion-scenario" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> Add a legend to the diversion scenario<a href="add-a-legend-to-the-diversion-scenario.html#add-a-legend-to-the-diversion-scenario" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Add the legend to the diversion scenario.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb75-2"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
+<span id="cb75-3"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-3" aria-hidden="true"></a></span>
+<span id="cb75-4"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-4" aria-hidden="true"></a>start_date <span class="op">=</span> datetime.strptime(<span class="st">&quot;1992-01-01&quot;</span>, <span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st">&quot;</span>)</span>
+<span id="cb75-5"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-5" aria-hidden="true"></a></span>
+<span id="cb75-6"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-6" aria-hidden="true"></a>rect <span class="op">=</span> patches.Rectangle(</span>
+<span id="cb75-7"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-7" aria-hidden="true"></a>    xy<span class="op">=</span>(mdates.date2num(env_flow[<span class="st">&quot;date&quot;</span>][<span class="dv">0</span>]), <span class="dv">50</span>), <span class="co"># This is the bottom left-hand corner</span></span>
+<span id="cb75-8"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-8" aria-hidden="true"></a>    width<span class="op">=</span><span class="bu">len</span>(env_flow[<span class="st">&quot;date&quot;</span>]), <span class="co"># This is the length of this list (number of dates)</span></span>
+<span id="cb75-9"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-9" aria-hidden="true"></a>    height<span class="op">=</span><span class="dv">550</span>, <span class="co"># This is the volume of flow in ML</span></span>
+<span id="cb75-10"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-10" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
+<span id="cb75-11"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-11" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
+<span id="cb75-12"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-12" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
+<span id="cb75-13"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-13" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>,</span>
+<span id="cb75-14"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-14" aria-hidden="true"></a>    label<span class="op">=</span><span class="st">&quot;Diversion Scenario 1&quot;</span> <span class="co"># This is the text in the label</span></span>
+<span id="cb75-15"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-15" aria-hidden="true"></a>)</span>
+<span id="cb75-16"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-16" aria-hidden="true"></a>ax.add_patch(rect)</span>
+<span id="cb75-17"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-17" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb75-18"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-18" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb75-19"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-19" aria-hidden="true"></a>plt.legend()</span>
+<span id="cb75-20"><a href="add-a-legend-to-the-diversion-scenario.html#cb75-20" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<div id="exercise-which-language-is-better" class="section level2 unnumbered hasAnchor" number="">
+<h2>Exercise: which language is better?<a href="add-a-legend-to-the-diversion-scenario.html#exercise-which-language-is-better" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Start an argument with the person sitting next to you. Is R or python easier to use?</p>
 
+<!-- # (PART)  Supporting Material {-}  -->
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script>
@@ -424,8 +418,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="GettingStarted.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="visualising-diversion-scenarios-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="excelbasics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
