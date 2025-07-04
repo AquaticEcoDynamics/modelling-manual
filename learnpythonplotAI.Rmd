@@ -1,6 +1,6 @@
-# Learning to plot with python {#pythonplot .unnumbered}
+# Learning to plot with python and AI {#pythonplotAI .unnumbered}
 
-In this module, we follow a similar process to [plotting with R](#baseplot) and [R tidyverse](#tidyverse).
+Introduce AI ...
 
 ## Visualising Module 1 Flow Data {-}
 

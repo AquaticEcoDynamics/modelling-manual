@@ -16,6 +16,7 @@ rmd_files: ["index.Rmd",
             "learntidyverse.Rmd",
             "learnbaseplot.Rmd",
             "learnpythonplot.Rmd",
+            "learnpythonplotAI.Rmd",
             "learnexcel.Rmd",
             "modelquokkas.Rmd",
             "references.Rmd"]
