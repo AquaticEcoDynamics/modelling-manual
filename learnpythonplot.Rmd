@@ -8,7 +8,7 @@ Introduce Python...
 
 #### Creating a `.py` file with VS Code {-}
 
-1) Refer to the Getting Started section, to install python and its packages, and Visual Studio Code (VSC)
+1) Refer to the [Getting Started](#GettingStarted) section, to install python and its packages, and Visual Studio Code (VSC)
 2) Open Visual Studio Code, the go *File -> Open Folder* then open the folder where you will store your files for this exercise (*ENVT3362_workshop_2*)
 3) Download the spreadsheet for this workshop [here](envFlowData.xls)
 4) Move this to your *ENVT3362_workshop_2* directory
