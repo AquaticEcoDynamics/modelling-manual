@@ -329,7 +329,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#setting-up-2"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#importing-and-formatting-the-data-2"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#plotting-with-matplotlib"><i class="fa fa-check"></i>Plotting with matplotlib</a></li>
-<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#visualising-diversion-scenarios-1"><i class="fa fa-check"></i>Visualising Diversion Scenarios</a></li>
+<li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#visualising-diversion-scenarios-1"><i class="fa fa-check"></i>Visualising diversion scenarios</a></li>
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#exercise-which-language-is-better"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
 </ul></li>
 </ul></li>
@@ -382,12 +382,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="creating-a-.py-file-with-vs-code" class="section level4 unnumbered hasAnchor" number="">
 <h4>Creating a <code>.py</code> file with VS Code<a href="pythonplot.html#creating-a-.py-file-with-vs-code" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
-<li>Refer to the <a href="GettingStarted.html#GettingStarted">Getting Started</a> section, to install python and its packages, and Visual Studio Code (VSC)</li>
+<li>Refer to the <a href="GettingStarted.html#GettingStarted">Getting Started</a> section, to install python and its packages, as well as Visual Studio Code (VSC)</li>
 <li>Open Visual Studio Code, the go <em>File -&gt; Open Folder</em> then open the folder where you will store your files for this exercise (<em>ENVT3362_workshop_2</em>)</li>
 <li>Download the spreadsheet for this workshop <a href="envFlowData.xls">here</a></li>
 <li>Move this to your <em>ENVT3362_workshop_2</em> directory</li>
 <li>Make a new python file in VSC. Go <em>File -&gt; New File -&gt; New python file</em> and save a file as a ‘.py’</li>
-<li>Open two new terminals. Open one as python and one as powershell.</li>
+<li>Open two new terminals in VSC. Open one as python and one as Powershell.</li>
+<li>To use python in the python terminal, use a python command (e.g. ‘plot’). To use it in the Powershell terminal, first write ‘python’ and then the python command (e.g. ‘python plot’). If VSC cannot find python, write the whole path to where python is installed on your computer (e.g. ‘C:.exe plot’).</li>
 </ol>
 </div>
 </div>
@@ -395,15 +396,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>Importing and formatting the data<a href="pythonplot.html#importing-and-formatting-the-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="load-the-necessary-packages-2" class="section level4 unnumbered hasAnchor" number="">
 <h4>Load the necessary packages<a href="pythonplot.html#load-the-necessary-packages-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Add these commands to the top of your python file.</p>
+<p>Add these commands to the top of your python file. These are python packages that we are loading with the command ‘import’. This is similar to the R function ‘library()’. The ‘as’ command gives a shorter name to the package, which we can choose, for future reference throughout the script.</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="pythonplot.html#cb64-1" aria-hidden="true"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb64-2"><a href="pythonplot.html#cb64-2" aria-hidden="true"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
 <span id="cb64-3"><a href="pythonplot.html#cb64-3" aria-hidden="true"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates </span>
 <span id="cb64-4"><a href="pythonplot.html#cb64-4" aria-hidden="true"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> patches</span>
 <span id="cb64-5"><a href="pythonplot.html#cb64-5" aria-hidden="true"></a></span>
 <span id="cb64-6"><a href="pythonplot.html#cb64-6" aria-hidden="true"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span></code></pre></div>
-<p>Run these lines by pressing <code>Shift Enter</code>, one by one.</p>
-<p>If this doesn’t work, it may be that the location of your python files is not being found. To fix this, in the VSC powershell terminal, use a python command starting with the location of your python program location. For example:</p>
+<p>Run these lines by pressing <code>Shift Enter</code>, one by one. This is the equivalent of <code>Ctrl Enter</code> in R.</p>
+<p>If importing these packages does not work, it may be that the location of your python files is not being found. To fix this, in the VSC Powershell terminal, use a python command starting with the location of your python program location. For example:</p>
 <pre><code>C:\Users\Jimmy\AppData\python\python.exe 
 import pandas as pd</code></pre>
 <p>Similarly you may need to specify the whole file path to pip in powershell, for example:</p>
@@ -411,7 +412,7 @@ import pandas as pd</code></pre>
 </div>
 <div id="import-the-spreadsheet-2" class="section level4 unnumbered hasAnchor" number="">
 <h4>Import the spreadsheet<a href="pythonplot.html#import-the-spreadsheet-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Load the spreadsheet into your python environment.</p>
+<p>Load the spreadsheet into your python environment. In this command, pd refers to the ‘pandas’ package, ‘read_excel’ is a python function that converts Excel to python, ‘env_flow’ is the name of the variable that we will use from now on and ‘envFlowData.xlsx’ is the name of the file that you downloaded.</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="pythonplot.html#cb67-1" aria-hidden="true"></a>env_flow <span class="op">=</span> pd.read_excel(<span class="st">&quot;envFlowData.xls&quot;</span>)</span></code></pre></div>
 </div>
 <div id="inspect-the-data-2" class="section level4 unnumbered hasAnchor" number="">
@@ -471,7 +472,7 @@ Apply the ‘savefig’ command to the ‘fig’ object that we created above.</
 </div>
 <div id="fix-the-labels-1" class="section level4 unnumbered hasAnchor" number="">
 <h4>Fix the labels<a href="pythonplot.html#fix-the-labels-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Add labels to the axes, using the set_xlabel command. Make the labels bold using the parameter ‘fontweight’.</p>
+<p>Add labels to the axes, using the ‘set_xlabel’ command. Make the labels bold using the parameter ‘fontweight’.</p>
 <div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="pythonplot.html#cb74-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb74-2"><a href="pythonplot.html#cb74-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>], color<span class="op">=</span><span class="st">&quot;green&quot;</span>)</span>
 <span id="cb74-3"><a href="pythonplot.html#cb74-3" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&quot;bold&quot;</span>)</span>
@@ -483,8 +484,8 @@ Apply the ‘savefig’ command to the ‘fig’ object that we created above.</
 </div>
 </div>
 <div id="visualising-diversion-scenarios-1" class="section level3 unnumbered hasAnchor" number="">
-<h3>Visualising Diversion Scenarios<a href="pythonplot.html#visualising-diversion-scenarios-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Add a pale red box to show the flow smaller than 550 ML.</p>
+<h3>Visualising diversion scenarios<a href="pythonplot.html#visualising-diversion-scenarios-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Add a pale red box to show the flow smaller than 550 ML. With ‘rect’ we set all the properties of the box, and then with ‘add_patch’ we add the ‘rect’ box to our ‘ax’ object.</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="pythonplot.html#cb75-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb75-2"><a href="pythonplot.html#cb75-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
 <span id="cb75-3"><a href="pythonplot.html#cb75-3" aria-hidden="true"></a></span>
@@ -506,7 +507,7 @@ Apply the ‘savefig’ command to the ‘fig’ object that we created above.</
 </center>
 <div id="add-a-legend-to-the-diversion-scenario" class="section level4 unnumbered hasAnchor" number="">
 <h4>Add a legend to the diversion scenario<a href="pythonplot.html#add-a-legend-to-the-diversion-scenario" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Add the legend to the diversion scenario.</p>
+<p>Add the legend to the diversion scenario, using the ‘legend’ command, which we apply to our ‘plt’ object.</p>
 <div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="pythonplot.html#cb76-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb76-2"><a href="pythonplot.html#cb76-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
 <span id="cb76-3"><a href="pythonplot.html#cb76-3" aria-hidden="true"></a></span>
@@ -517,7 +518,7 @@ Apply the ‘savefig’ command to the ‘fig’ object that we created above.</
 <span id="cb76-8"><a href="pythonplot.html#cb76-8" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
 <span id="cb76-9"><a href="pythonplot.html#cb76-9" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
 <span id="cb76-10"><a href="pythonplot.html#cb76-10" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
-<span id="cb76-11"><a href="pythonplot.html#cb76-11" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>,</span>
+<span id="cb76-11"><a href="pythonplot.html#cb76-11" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>, <span class="co"># This is the opacity of the colour, scaling from 0 to 1.</span></span>
 <span id="cb76-12"><a href="pythonplot.html#cb76-12" aria-hidden="true"></a>    label<span class="op">=</span><span class="st">&quot;Diversion Scenario 1&quot;</span> <span class="co"># This is the text in the label</span></span>
 <span id="cb76-13"><a href="pythonplot.html#cb76-13" aria-hidden="true"></a>)</span>
 <span id="cb76-14"><a href="pythonplot.html#cb76-14" aria-hidden="true"></a>ax.add_patch(rect)</span>
