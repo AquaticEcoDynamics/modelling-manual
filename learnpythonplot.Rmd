@@ -8,18 +8,19 @@ Introduce Python...
 
 #### Creating a `.py` file with VS Code {-}
 
-1) Refer to the [Getting Started](#GettingStarted) section, to install python and its packages, and Visual Studio Code (VSC)
+1) Refer to the [Getting Started](#GettingStarted) section, to install python and its packages, as well as Visual Studio Code (VSC)
 2) Open Visual Studio Code, the go *File -> Open Folder* then open the folder where you will store your files for this exercise (*ENVT3362_workshop_2*)
 3) Download the spreadsheet for this workshop [here](envFlowData.xls)
 4) Move this to your *ENVT3362_workshop_2* directory
 5) Make a new python file in VSC. Go *File -> New File -> New python file* and save a file as a '.py'
-6) Open two new terminals. Open one as python and one as powershell.
+6) Open two new terminals in VSC. Open one as python and one as Powershell.
+7) To use python in the python terminal, use a python command (e.g. 'plot'). To use it in the Powershell terminal, first write 'python' and then the python command (e.g. 'python plot'). If VSC cannot find python, write the whole path to where python is installed on your computer  (e.g. 'C:\Users\Jimmy\AppData\python\python.exe plot'). 
 
 ### Importing and formatting the data {-}
 
 #### Load the necessary packages {-}
 
-Add these commands to the top of your python file.
+Add these commands to the top of your python file. These are python packages that we are loading with the command 'import'. This is similar to the R function 'library()'. The 'as' command gives a shorter name to the package, which we can choose, for future reference throughout the script. 
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
 import pandas as pd
@@ -30,9 +31,9 @@ import matplotlib.patches as patches
 from datetime import datetime
 ```
 
-Run these lines by pressing `Shift Enter`, one by one.
+Run these lines by pressing `Shift Enter`, one by one. This is the equivalent of `Ctrl Enter` in R.
 
-If this doesn't work, it may be that the location of your python files is not being found. To fix this, in the VSC powershell terminal, use a python command starting with the location of your python program location. For example:
+If importing these packages does not work, it may be that the location of your python files is not being found. To fix this, in the VSC Powershell terminal, use a python command starting with the location of your python program location. For example:
 
 ```
 C:\Users\Jimmy\AppData\python\python.exe 
@@ -47,7 +48,7 @@ C:\Users\Jimmy\AppData\python\pip3.exe
 
 #### Import the spreadsheet {-}
 
-Load the spreadsheet into your python environment.
+Load the spreadsheet into your python environment. In this command, pd refers to the 'pandas' package, 'read_excel' is a python function that converts Excel to python, 'env_flow' is the name of the variable that we will use from now on and 'envFlowData.xlsx' is the name of the file that you downloaded. 
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
 env_flow = pd.read_excel("envFlowData.xls")
@@ -130,7 +131,7 @@ fig.savefig("env_flow.png")
 
 #### Fix the labels {-}
 
-Add labels to the axes, using the set_xlabel command. Make the labels bold using the parameter 'fontweight'. 
+Add labels to the axes, using the 'set_xlabel' command. Make the labels bold using the parameter 'fontweight'. 
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -144,9 +145,9 @@ fig.savefig("env_flow.png")
 ![](images/learnpythonplot/py_env_flow_2.png){width=100%}
 </center>
 
-### Visualising Diversion Scenarios {-}
+### Visualising diversion scenarios {-}
 
-Add a pale red box to show the flow smaller than 550 ML. 
+Add a pale red box to show the flow smaller than 550 ML. With 'rect' we set all the properties of the box, and then with 'add_patch' we add the 'rect' box to our 'ax' object.
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -173,7 +174,7 @@ fig.savefig("env_flow.png")
 
 #### Add a legend to the diversion scenario {-}
 
-Add the legend to the diversion scenario. 
+Add the legend to the diversion scenario, using the 'legend' command, which we apply to our 'plt' object. 
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -186,7 +187,7 @@ rect = patches.Rectangle(
     linewidth=1, 
     edgecolor='red', 
     facecolor='red',
-    alpha=0.25,
+    alpha=0.25, # This is the opacity of the colour, scaling from 0 to 1.
     label="Diversion Scenario 1" # This is the text in the label
 )
 ax.add_patch(rect)
