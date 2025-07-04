@@ -341,9 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#setting-up-3"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#importing-and-formatting-the-data-3"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
-<li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#plotting-with-matplotlib-1"><i class="fa fa-check"></i>Plotting with matplotlib</a></li>
-<li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#visualising-diversion-scenarios-2"><i class="fa fa-check"></i>Visualising diversion scenarios</a></li>
-<li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#exercise-which-language-is-better-1"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
+<li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#plotting-with-matplotlib-via-copilot"><i class="fa fa-check"></i>Plotting with matplotlib via Copilot</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="excelbasics.html"><a href="excelbasics.html"><i class="fa fa-check"></i>Learning Excel basics</a>
@@ -395,7 +393,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="creating-a-.py-file-with-vs-code-1" class="section level4 unnumbered hasAnchor" number="">
 <h4>Creating a <code>.py</code> file with VS Code<a href="pythonplotAI.html#creating-a-.py-file-with-vs-code-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
-<li>Refer to the <a href="GettingStarted.html#GettingStarted">Getting Started</a> section, to install python and its packages, as well as Visual Studio Code (VSC)</li>
+<li>Refer to the <a href="GettingStarted.html#GettingStarted">Getting Started</a> section, to install python and its packages, as well as Visual Studio Code (VSC). Refer to the Chatbot section of Getting Started to set up Copilot in VSC.</li>
 <li>Open Visual Studio Code, the go <em>File -&gt; Open Folder</em> then open the folder where you will store your files for this exercise (<em>ENVT3362_workshop_2</em>)</li>
 <li>Download the spreadsheet for this workshop <a href="envFlowData.xls">here</a></li>
 <li>Move this to your <em>ENVT3362_workshop_2</em> directory</li>
@@ -425,128 +423,16 @@ import pandas as pd</code></pre>
 </div>
 <div id="import-the-spreadsheet-3" class="section level4 unnumbered hasAnchor" number="">
 <h4>Import the spreadsheet<a href="pythonplotAI.html#import-the-spreadsheet-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Load the spreadsheet into your python environment. In this command, pd refers to the ‘pandas’ package, ‘read_excel’ is a python function that converts Excel to python, ‘env_flow’ is the name of the variable that we will use from now on and ‘envFlowData.xlsx’ is the name of the file that you downloaded.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a href="pythonplotAI.html#cb80-1" aria-hidden="true"></a>env_flow <span class="op">=</span> pd.read_excel(<span class="st">&quot;envFlowData.xls&quot;</span>)</span></code></pre></div>
+<p>Drag the ‘envFlowData.xlsx’ spreadsheet into the Copilot chat window. Copliot can now read the spreadsheet and it will offer you some options for how to summarise this data. It should be able to read the column headings. (There is a limit to the file size and the number of data points that the chat can handle.)</p>
 </div>
 <div id="inspect-the-data-3" class="section level4 unnumbered hasAnchor" number="">
 <h4>Inspect the data<a href="pythonplotAI.html#inspect-the-data-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Display a header of the data.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="pythonplotAI.html#cb81-1" aria-hidden="true"></a><span class="bu">print</span>(env_flow)</span></code></pre></div>
-<pre><code>            date  totalDischarge
-0     1992-01-01          26.599
-1     1992-01-02          26.849
-2     1992-01-03          27.274
-3     1992-01-04          26.988
-4     1992-01-05          26.463
-...          ...             ...
-6935  2010-12-27          20.005
-6936  2010-12-28          20.116
-6937  2010-12-29          19.736
-6938  2010-12-30          19.828
-6939  2010-12-31          19.617
-
-[6940 rows x 2 columns]</code></pre>
-</div>
-<div id="format-the-date-3" class="section level4 unnumbered hasAnchor" number="">
-<h4>Format the date<a href="pythonplotAI.html#format-the-date-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Format the date in a way that looks good in the figure. Capital Y means a year with four digits, lower case y would be two digits. ‘for t’ means to apply this command to each line. This is like a ‘for loop’ in R. In python this is referred to as ‘list comprehension’. ‘strptime’ is a standard formatting for dates and times, converting text strings into a ‘date time object’.</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="pythonplotAI.html#cb83-1" aria-hidden="true"></a>env_flow[<span class="st">&quot;date&quot;</span>] <span class="op">=</span> [</span>
-<span id="cb83-2"><a href="pythonplotAI.html#cb83-2" aria-hidden="true"></a>    datetime.strptime(t, <span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st">&quot;</span>) <span class="cf">for</span> t <span class="kw">in</span> env_flow[<span class="st">&quot;date&quot;</span>]</span>
-<span id="cb83-3"><a href="pythonplotAI.html#cb83-3" aria-hidden="true"></a>]</span></code></pre></div>
+<p>Display a header of the data, by asking Copilot to display a header of the data.</p>
 </div>
 </div>
-<div id="plotting-with-matplotlib-1" class="section level3 unnumbered hasAnchor" number="">
-<h3>Plotting with matplotlib<a href="pythonplotAI.html#plotting-with-matplotlib-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="create-figure-and-axes-objects-1" class="section level4 unnumbered hasAnchor" number="">
-<h4>Create Figure and Axes objects<a href="pythonplotAI.html#create-figure-and-axes-objects-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The ‘fig’ is our figure object, and the ‘ax’ is our axis object. We are naming them and assigning properties to them in this step. ‘plt.subplots’ is a function from the python <em>matplotlib</em> library.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="pythonplotAI.html#cb84-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span></code></pre></div>
-</div>
-<div id="plot-the-data-to-the-axes-object-ax-1" class="section level4 unnumbered hasAnchor" number="">
-<h4>Plot the data to the Axes object (<code>ax</code>)<a href="pythonplotAI.html#plot-the-data-to-the-axes-object-ax-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Apply the ‘plot’ command to the ‘ax’ object that we created above.
-Apply the ‘savefig’ command to the ‘fig’ object that we created above.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="pythonplotAI.html#cb85-1" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
-<span id="cb85-2"><a href="pythonplotAI.html#cb85-2" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
-<center>
-<img src="images/learnpythonplot/py_env_flow_0.png" style="width:100.0%" />
-</center>
-<p>This should save a figure as a .png file, ‘env_flow.png’, to your working directory. See if you can open it and take a look at it.</p>
-</div>
-<div id="change-the-colour-2" class="section level4 unnumbered hasAnchor" number="">
-<h4>Change the colour<a href="pythonplotAI.html#change-the-colour-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Now that your basic plot is working, you can start editing it. It defaults to a light blue line: let’s change it to a green line by adding the parameter ‘color’ to the ‘plot’ method, to the ‘ax’ object.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="pythonplotAI.html#cb86-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb86-2"><a href="pythonplotAI.html#cb86-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>], color<span class="op">=</span><span class="st">&quot;green&quot;</span>)</span>
-<span id="cb86-3"><a href="pythonplotAI.html#cb86-3" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
-<center>
-<img src="images/learnpythonplot/py_env_flow_1.png" style="width:100.0%" />
-</center>
-</div>
-<div id="fix-the-labels-2" class="section level4 unnumbered hasAnchor" number="">
-<h4>Fix the labels<a href="pythonplotAI.html#fix-the-labels-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Add labels to the axes, using the ‘set_xlabel’ command. Make the labels bold using the parameter ‘fontweight’.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="pythonplotAI.html#cb87-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb87-2"><a href="pythonplotAI.html#cb87-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>], color<span class="op">=</span><span class="st">&quot;green&quot;</span>)</span>
-<span id="cb87-3"><a href="pythonplotAI.html#cb87-3" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&quot;bold&quot;</span>)</span>
-<span id="cb87-4"><a href="pythonplotAI.html#cb87-4" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&quot;bold&quot;</span>)</span>
-<span id="cb87-5"><a href="pythonplotAI.html#cb87-5" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
-<center>
-<img src="images/learnpythonplot/py_env_flow_2.png" style="width:100.0%" />
-</center>
-</div>
-</div>
-<div id="visualising-diversion-scenarios-2" class="section level3 unnumbered hasAnchor" number="">
-<h3>Visualising diversion scenarios<a href="pythonplotAI.html#visualising-diversion-scenarios-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Add a pale red box to show the flow smaller than 550 ML. With ‘rect’ we set all the properties of the box, and then with ‘add_patch’ we add the ‘rect’ box to our ‘ax’ object.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="pythonplotAI.html#cb88-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb88-2"><a href="pythonplotAI.html#cb88-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
-<span id="cb88-3"><a href="pythonplotAI.html#cb88-3" aria-hidden="true"></a></span>
-<span id="cb88-4"><a href="pythonplotAI.html#cb88-4" aria-hidden="true"></a>rect <span class="op">=</span> patches.Rectangle(</span>
-<span id="cb88-5"><a href="pythonplotAI.html#cb88-5" aria-hidden="true"></a>    xy<span class="op">=</span>(mdates.date2num(env_flow[<span class="st">&quot;date&quot;</span>][<span class="dv">0</span>]), <span class="dv">50</span>), <span class="co"># This is the bottom left-hand corner</span></span>
-<span id="cb88-6"><a href="pythonplotAI.html#cb88-6" aria-hidden="true"></a>    width<span class="op">=</span><span class="bu">len</span>(env_flow[<span class="st">&quot;date&quot;</span>]), <span class="co"># This is the length of this list (number of dates)</span></span>
-<span id="cb88-7"><a href="pythonplotAI.html#cb88-7" aria-hidden="true"></a>    height<span class="op">=</span><span class="dv">550</span>, <span class="co"># This is the volume of flow in ML</span></span>
-<span id="cb88-8"><a href="pythonplotAI.html#cb88-8" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
-<span id="cb88-9"><a href="pythonplotAI.html#cb88-9" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
-<span id="cb88-10"><a href="pythonplotAI.html#cb88-10" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
-<span id="cb88-11"><a href="pythonplotAI.html#cb88-11" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>, <span class="co"># This is the opacity of the colour, scaling from 0 to 1.</span></span>
-<span id="cb88-12"><a href="pythonplotAI.html#cb88-12" aria-hidden="true"></a>)</span>
-<span id="cb88-13"><a href="pythonplotAI.html#cb88-13" aria-hidden="true"></a>ax.add_patch(rect)</span>
-<span id="cb88-14"><a href="pythonplotAI.html#cb88-14" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
-<span id="cb88-15"><a href="pythonplotAI.html#cb88-15" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
-<span id="cb88-16"><a href="pythonplotAI.html#cb88-16" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
-<center>
-<img src="images/learnpythonplot/py_env_flow_3.png" style="width:100.0%" />
-</center>
-<div id="add-a-legend-to-the-diversion-scenario-1" class="section level4 unnumbered hasAnchor" number="">
-<h4>Add a legend to the diversion scenario<a href="pythonplotAI.html#add-a-legend-to-the-diversion-scenario-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Add the legend to the diversion scenario, using the ‘legend’ command, which we apply to our ‘plt’ object.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="pythonplotAI.html#cb89-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb89-2"><a href="pythonplotAI.html#cb89-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
-<span id="cb89-3"><a href="pythonplotAI.html#cb89-3" aria-hidden="true"></a></span>
-<span id="cb89-4"><a href="pythonplotAI.html#cb89-4" aria-hidden="true"></a>rect <span class="op">=</span> patches.Rectangle(</span>
-<span id="cb89-5"><a href="pythonplotAI.html#cb89-5" aria-hidden="true"></a>    xy<span class="op">=</span>(mdates.date2num(env_flow[<span class="st">&quot;date&quot;</span>][<span class="dv">0</span>]), <span class="dv">50</span>), <span class="co"># This is the bottom left-hand corner</span></span>
-<span id="cb89-6"><a href="pythonplotAI.html#cb89-6" aria-hidden="true"></a>    width<span class="op">=</span><span class="bu">len</span>(env_flow[<span class="st">&quot;date&quot;</span>]), <span class="co"># This is the length of this list (number of dates)</span></span>
-<span id="cb89-7"><a href="pythonplotAI.html#cb89-7" aria-hidden="true"></a>    height<span class="op">=</span><span class="dv">550</span>, <span class="co"># This is the volume of flow in ML</span></span>
-<span id="cb89-8"><a href="pythonplotAI.html#cb89-8" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
-<span id="cb89-9"><a href="pythonplotAI.html#cb89-9" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
-<span id="cb89-10"><a href="pythonplotAI.html#cb89-10" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
-<span id="cb89-11"><a href="pythonplotAI.html#cb89-11" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>, <span class="co"># This is the opacity of the colour, scaling from 0 to 1.</span></span>
-<span id="cb89-12"><a href="pythonplotAI.html#cb89-12" aria-hidden="true"></a>    label<span class="op">=</span><span class="st">&quot;Diversion Scenario 1&quot;</span> <span class="co"># This is the text in the label</span></span>
-<span id="cb89-13"><a href="pythonplotAI.html#cb89-13" aria-hidden="true"></a>)</span>
-<span id="cb89-14"><a href="pythonplotAI.html#cb89-14" aria-hidden="true"></a>ax.add_patch(rect)</span>
-<span id="cb89-15"><a href="pythonplotAI.html#cb89-15" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
-<span id="cb89-16"><a href="pythonplotAI.html#cb89-16" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
-<span id="cb89-17"><a href="pythonplotAI.html#cb89-17" aria-hidden="true"></a>plt.legend()</span>
-<span id="cb89-18"><a href="pythonplotAI.html#cb89-18" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
-<center>
-<img src="images/learnpythonplot/py_env_flow_4.png" style="width:100.0%" />
-</center>
-</div>
-</div>
-<div id="exercise-which-language-is-better-1" class="section level3 unnumbered hasAnchor" number="">
-<h3>Exercise: which language is better?<a href="pythonplotAI.html#exercise-which-language-is-better-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Start an argument with the person sitting next to you. Is R or python easier to use?</p>
+<div id="plotting-with-matplotlib-via-copilot" class="section level3 unnumbered hasAnchor" number="">
+<h3>Plotting with matplotlib via Copilot<a href="pythonplotAI.html#plotting-with-matplotlib-via-copilot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Follow the steps of the previous exercises to generate python scripts that plot this dataset.</p>
 
 </div>
 </div>
