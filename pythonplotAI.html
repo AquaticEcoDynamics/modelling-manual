@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Module 6: River Pollution | Environmental Dynamics Workbook</title>
+  <title>Learning to plot with python and AI | Environmental Dynamics Workbook</title>
   <meta name="description" content="The online Environmental Dynamics Workbook" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Module 6: River Pollution | Environmental Dynamics Workbook" />
+  <meta property="og:title" content="Learning to plot with python and AI | Environmental Dynamics Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The online Environmental Dynamics Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Module 6: River Pollution | Environmental Dynamics Workbook" />
+  <meta name="twitter:title" content="Learning to plot with python and AI | Environmental Dynamics Workbook" />
   
   <meta name="twitter:description" content="The online Environmental Dynamics Workbook" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="M5B_1.html"/>
-<link rel="next" href="M7_1.html"/>
+<link rel="prev" href="pythonplot.html"/>
+<link rel="next" href="excelbasics.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -383,190 +383,170 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="M6_1" class="section level1 unnumbered hasAnchor" number="">
-<h1>Module 6: River Pollution<a href="M6_1.html#M6_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="M6_2" class="section level3 unnumbered hasAnchor" number="">
-<h3>Objectives<a href="M6_1.html#M6_2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In this module you will setup an “advection-dispersion-reaction” equation for a river system to demonstrate the combination of <strong>temporal and spatial</strong> finite differencing, in one dimension.</p>
-</div>
-<div id="M6_before_start" class="section level3 unnumbered hasAnchor" number="">
-<h3>Before you start<a href="M6_1.html#M6_before_start" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li>Review the mixing in the environment lecture</li>
-<li>Undertake the lecture’s lake oxygen worked example</li>
-</ul>
-</div>
-<div id="M6_3" class="section level3 unnumbered hasAnchor" number="">
-<h3>Advection-Dispersion Reaction<a href="M6_1.html#M6_3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Mixing in environmental waters is described based on the currents and turbulence in the water - in simple terms we refer to these as advection and dispersion.</p>
-<p>The advection-dispersion reaction equation for the concentration of a substance <span class="math inline">\(C\)</span>, is defined as:</p>
-<center>
-<span class="math display" id="eq:module6-1">\[\begin{equation}
-\frac{\delta C}{\delta t} = D_{d}\frac{\delta^{2} C}{\delta x^{2}} - u \frac{\delta C}{\delta x} + S + R
-\tag{54}
-\end{equation}\]</span>
-</center>
-<p>where the left hand side (LHS) is the “unsteady” term (<span class="math inline">\(C\)</span> change in time), the first term on the right hand side (RHS) is the dispersion/mixing term, the second term on the RHS is the advection/movement term and <span class="math inline">\(S\)</span> is a source term, and <span class="math inline">\(R\)</span> is a reaction term. We use a partial deriviative (“curly <span class="math inline">\(\delta\)</span>”) since <span class="math inline">\(C\)</span> is now varying in both space and time.</p>
-<p>In this exercise we numerically solve the 1-dimensional, advective-dispersive transport of oxygen in a river. To solve this equation numerically, we must “discretise” the partial derivatives using finite difference methods, here done according to the FTCS scheme (refer to lecture!):</p>
-<center>
-<span class="math display" id="eq:module6-2">\[\begin{equation}
-\frac{C^{t+1}_{x}-C^{t}_{x}}{\Delta t}=D_{d} \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}-u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}+R_{x}+S_{x}
-\tag{55}
-\end{equation}\]</span>
-</center>
-<p>Where the <span class="math inline">\(t\)</span> subscript is referring to timestep, and the <span class="math inline">\(x\)</span> subscript refers to the space increment/position. For the case of oxygen we assume that <span class="math inline">\(R\)</span> is accounting for oxygen input from the atmosphere and consumption by bacteria (called the Biochemical Oxygen Demand, BOD), then:</p>
-<center>
-<span class="math display" id="eq:module6-3">\[\begin{equation}
-R_x=k_a\left(C_a-C_x^t\right)-k_{BOD}C_x^t
-\tag{56}
-\end{equation}\]</span>
-</center>
-<p>Where the first term is atmospheric exchange (<span class="math inline">\(k_a\)</span> is the rate of re-aeration and <span class="math inline">\(C_a\)</span> is the saturation value of oxygen) and the second term is the bacterial consumption (described by <span class="math inline">\(k_{BOD}\)</span> which is in units of day<sup>-1</sup>). We can solve for the forward timestep at any position along the river by computing:</p>
-<center>
-<span class="math display" id="eq:module6-4">\[\begin{equation}
-\small{C_{x}^{t+1}=\color{#898989}{C_{x}^{t}}+ \left [ \color{#3A88FE}{D_d \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}}-\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}} + \color{#77BB41}{k_{a}(C_{a}-C_{x}^{t})}-\color{#B18CFE}{k_{BOD}C_{x}^t}  \right ]\Delta t+\color{#D58400}{S_{x}}}
-\tag{57}
-\end{equation}\]</span>
-</center>
-
-<div class="rmdnote2">
-<p>Previous <span class="math inline">\(C\)</span> concentration: <span class="math inline">\(\color{#898989}{C_{x}^{t}}\)</span></p>
-<p>Diffusion: <span class="math inline">\(\color{#3A88FE}{D_d \frac{C_{x+1}^{t}-2C_{x}^{t}+C_{x-1}^{t}}{\Delta x^{2}}}\)</span></p>
-<p>Advection: <span class="math inline">\(\color{#FF2600}{u_{x}^{t} \frac{C_{x+1}^{t}-C_{x-1}^{t}}{2\Delta x}}\)</span></p>
-<p>Atmospherical exchange: <span class="math inline">\(\color{#77BB41}{k_{a}(C_{a}-C_{x}^{t})}\)</span></p>
-<p>Biological O<sub>2</sub> demand: <span class="math inline">\(\color{#B18CFE}{k_{BOD}C_{x}^{t}}\)</span></p>
-<p>O<sub>2</sub> source/sink: <span class="math inline">\(\color{#D58400}{S_{x}}\)</span></p>
-</div>
-<p>To solve this the user specifies the initial oxygen concentration (<span class="math inline">\(C_0\)</span>), river velocity (<span class="math inline">\(u\)</span>) as a function of distance, grid length (<span class="math inline">\(L\)</span>), grid spacing (<span class="math inline">\(\Delta x\)</span>), simulation period (<span class="math inline">\(T\)</span>), time step (<span class="math inline">\(\Delta t\)</span>). The calculation should then compute the change in oxygen as a function of distance and time.</p>
-<video width="100%" controls>
-<source src="images/module6/video1.mp4" type="video/mp4"/>
-</video>
-<p>Extra sources or sinks of oxygen can by added into the domain based on the <span class="math inline">\(S\)</span> term. We will first set up the model to have no <span class="math inline">\(S\)</span> inputs along the side of the river, but in the last task we add a low oxygen discharge somewhere along the river (ie. a pipe outflow).</p>
-</div>
-<div id="M6_4" class="section level3 unnumbered hasAnchor" number="">
-<h3>Module Resources<a href="M6_1.html#M6_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Download the Excel spreadsheet and R files for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
-
-<div class="rmdnote2">
-You can use either Excel or R for this module.
-</div>
-</div>
-<div id="M6_5" class="section level3 unnumbered hasAnchor" number="">
-<h3>Exercises<a href="M6_1.html#M6_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="M6_7" class="section level4 unnumbered hasAnchor" number="">
-<h4>Setting up the Model<a href="M6_1.html#M6_7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="pythonplotAI" class="section level1 unnumbered hasAnchor" number="">
+<h1>Learning to plot with python and AI<a href="pythonplotAI.html#pythonplotAI" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Introduce AI …</p>
+<div id="visualising-module-1-flow-data-3" class="section level2 unnumbered hasAnchor" number="">
+<h2>Visualising Module 1 Flow Data<a href="pythonplotAI.html#visualising-module-1-flow-data-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="setting-up-3" class="section level3 unnumbered hasAnchor" number="">
+<h3>Setting up<a href="pythonplotAI.html#setting-up-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="creating-a-.py-file-with-vs-code-1" class="section level4 unnumbered hasAnchor" number="">
+<h4>Creating a <code>.py</code> file with VS Code<a href="pythonplotAI.html#creating-a-.py-file-with-vs-code-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
-<li>Draw the schematic of the conceptual model by hand, showing the spatial discretisation, boundaries, sources, reactions, and a little animal swimming in the river.</li>
-<li>Start with the provided spreadsheet or R script, and implement the above expression. Set up the spreadsheet to assume a river of length (<span class="math inline">\(L\)</span>) ~5 km. You will need to select an <span class="math inline">\(x\)</span> increment (<span class="math inline">\(\Delta x\)</span>).</li>
+<li>Refer to the <a href="GettingStarted.html#GettingStarted">Getting Started</a> section, to install python and its packages, as well as Visual Studio Code (VSC)</li>
+<li>Open Visual Studio Code, the go <em>File -&gt; Open Folder</em> then open the folder where you will store your files for this exercise (<em>ENVT3362_workshop_2</em>)</li>
+<li>Download the spreadsheet for this workshop <a href="envFlowData.xls">here</a></li>
+<li>Move this to your <em>ENVT3362_workshop_2</em> directory</li>
+<li>Make a new python file in VSC. Go <em>File -&gt; New File -&gt; New python file</em> and save a file as a ‘.py’</li>
+<li>Open two new terminals in VSC. Open one as python and one as Powershell.</li>
+<li>To use python in the python terminal, use a python command (e.g. ‘plot’). To use it in the Powershell terminal, first write ‘python’ and then the python command (e.g. ‘python plot’). If VSC cannot find python, write the whole path to where python is installed on your computer (e.g. ‘C:.exe plot’).</li>
 </ol>
+</div>
+</div>
+<div id="importing-and-formatting-the-data-3" class="section level3 unnumbered hasAnchor" number="">
+<h3>Importing and formatting the data<a href="pythonplotAI.html#importing-and-formatting-the-data-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="load-the-necessary-packages-3" class="section level4 unnumbered hasAnchor" number="">
+<h4>Load the necessary packages<a href="pythonplotAI.html#load-the-necessary-packages-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Add these commands to the top of your python file. These are python packages that we are loading with the command ‘import’. This is similar to the R function ‘library()’. The ‘as’ command gives a shorter name to the package, which we can choose, for future reference throughout the script.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="pythonplotAI.html#cb77-1" aria-hidden="true"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb77-2"><a href="pythonplotAI.html#cb77-2" aria-hidden="true"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
+<span id="cb77-3"><a href="pythonplotAI.html#cb77-3" aria-hidden="true"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates </span>
+<span id="cb77-4"><a href="pythonplotAI.html#cb77-4" aria-hidden="true"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> patches</span>
+<span id="cb77-5"><a href="pythonplotAI.html#cb77-5" aria-hidden="true"></a></span>
+<span id="cb77-6"><a href="pythonplotAI.html#cb77-6" aria-hidden="true"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span></code></pre></div>
+<p>Run these lines by pressing <code>Shift Enter</code>, one by one. This is the equivalent of <code>Ctrl Enter</code> in R.</p>
+<p>If importing these packages does not work, it may be that the location of your python files is not being found. To fix this, in the VSC Powershell terminal, use a python command starting with the location of your python program location. For example:</p>
+<pre><code>C:\Users\Jimmy\AppData\python\python.exe 
+import pandas as pd</code></pre>
+<p>Similarly you may need to specify the whole file path to pip in powershell, for example:</p>
+<pre><code>C:\Users\Jimmy\AppData\python\pip3.exe </code></pre>
+</div>
+<div id="import-the-spreadsheet-3" class="section level4 unnumbered hasAnchor" number="">
+<h4>Import the spreadsheet<a href="pythonplotAI.html#import-the-spreadsheet-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Load the spreadsheet into your python environment. In this command, pd refers to the ‘pandas’ package, ‘read_excel’ is a python function that converts Excel to python, ‘env_flow’ is the name of the variable that we will use from now on and ‘envFlowData.xlsx’ is the name of the file that you downloaded.</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a href="pythonplotAI.html#cb80-1" aria-hidden="true"></a>env_flow <span class="op">=</span> pd.read_excel(<span class="st">&quot;envFlowData.xls&quot;</span>)</span></code></pre></div>
+</div>
+<div id="inspect-the-data-3" class="section level4 unnumbered hasAnchor" number="">
+<h4>Inspect the data<a href="pythonplotAI.html#inspect-the-data-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Display a header of the data.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="pythonplotAI.html#cb81-1" aria-hidden="true"></a><span class="bu">print</span>(env_flow)</span></code></pre></div>
+<pre><code>            date  totalDischarge
+0     1992-01-01          26.599
+1     1992-01-02          26.849
+2     1992-01-03          27.274
+3     1992-01-04          26.988
+4     1992-01-05          26.463
+...          ...             ...
+6935  2010-12-27          20.005
+6936  2010-12-28          20.116
+6937  2010-12-29          19.736
+6938  2010-12-30          19.828
+6939  2010-12-31          19.617
 
-<div class="rmdtip2">
-In Excel, time is going down the rows and distance (space) is going along the columns.
+[6940 rows x 2 columns]</code></pre>
 </div>
-<ol start="3" style="list-style-type: decimal">
-<li>Set the initial condition (<span class="math inline">\(C_0\)</span>) row to be 10 mg O<sub>2</sub>/L – i.e. the whole river starts at 10 mg/L in each cell.</li>
-<li>Once you see the formula is working in the first time-step, then copy the formula along the length of the river. You will need to set a downstream boundary condition (at the the position where <span class="math inline">\(x = L\)</span>, the last column). For this we will set a “zero-derivative” condition <span class="math inline">\(– \frac{\delta C}{\delta x} = 0\)</span>. Therefore <span class="math inline">\(C_n = C_{n-1}\)</span>, where <span class="math inline">\(n\)</span> is the last cell of the river length.</li>
-<li>Copy the first time row down for all the time-steps (simulate several days in total).</li>
-<li>Plot the oxygen concentration as a function of distance for several times during the simulation.</li>
-</ol>
-<video width="100%" loop="TRUE" controls="TRUE">
-<source src="images/module6/video2.mp4" type="video/mp4"/>
-</video>
-<ol start="7" style="list-style-type: decimal">
-<li>For Excel users, Set up conditional formatting to help visualise the concentration change through space and time</li>
-</ol>
+<div id="format-the-date-3" class="section level4 unnumbered hasAnchor" number="">
+<h4>Format the date<a href="pythonplotAI.html#format-the-date-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Format the date in a way that looks good in the figure. Capital Y means a year with four digits, lower case y would be two digits. ‘for t’ means to apply this command to each line. This is like a ‘for loop’ in R. In python this is referred to as ‘list comprehension’. ‘strptime’ is a standard formatting for dates and times, converting text strings into a ‘date time object’.</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="pythonplotAI.html#cb83-1" aria-hidden="true"></a>env_flow[<span class="st">&quot;date&quot;</span>] <span class="op">=</span> [</span>
+<span id="cb83-2"><a href="pythonplotAI.html#cb83-2" aria-hidden="true"></a>    datetime.strptime(t, <span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st">&quot;</span>) <span class="cf">for</span> t <span class="kw">in</span> env_flow[<span class="st">&quot;date&quot;</span>]</span>
+<span id="cb83-3"><a href="pythonplotAI.html#cb83-3" aria-hidden="true"></a>]</span></code></pre></div>
 </div>
-<div id="M6_8" class="section level4 unnumbered hasAnchor" number="">
-<h4>Modelling a Wastewater Plume<a href="M6_1.html#M6_8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ol start="8" style="list-style-type: decimal">
-<li>Implement at <span class="math inline">\(x \approx 1500\text{m}\)</span> a wastewater plume entering the river – do this by reducing the <span class="math inline">\(C\)</span> at the relevant <span class="math inline">\(x\)</span> cell by 3 mg/L (or less if the <span class="math inline">\(C\)</span> is already below 3). This is done by adding the extra “<span class="math inline">\(S\)</span>” term of -3 to the appropriate <span class="math inline">\(x\)</span>-cell formula, and copying the formula down through time. Plot and note how the oxygen recovers downstream of the low oxygen inflow plume.</li>
-</ol>
-
-<div class="rmdtip2">
-To prevent negative O<sub>2</sub> concentration (in otherwords, we can’t take more than is available) we cap the solution to be greater than 0. Preventing negatives can be done as: <code>=MAX(equation, 0 )</code>
 </div>
+<div id="plotting-with-matplotlib-1" class="section level3 unnumbered hasAnchor" number="">
+<h3>Plotting with matplotlib<a href="pythonplotAI.html#plotting-with-matplotlib-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="create-figure-and-axes-objects-1" class="section level4 unnumbered hasAnchor" number="">
+<h4>Create Figure and Axes objects<a href="pythonplotAI.html#create-figure-and-axes-objects-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The ‘fig’ is our figure object, and the ‘ax’ is our axis object. We are naming them and assigning properties to them in this step. ‘plt.subplots’ is a function from the python <em>matplotlib</em> library.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="pythonplotAI.html#cb84-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span></code></pre></div>
+</div>
+<div id="plot-the-data-to-the-axes-object-ax-1" class="section level4 unnumbered hasAnchor" number="">
+<h4>Plot the data to the Axes object (<code>ax</code>)<a href="pythonplotAI.html#plot-the-data-to-the-axes-object-ax-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Apply the ‘plot’ command to the ‘ax’ object that we created above.
+Apply the ‘savefig’ command to the ‘fig’ object that we created above.</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="pythonplotAI.html#cb85-1" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
+<span id="cb85-2"><a href="pythonplotAI.html#cb85-2" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
 <center>
-<div class="figure"><span style="display:block;" id="fig:figM6-1"></span>
-<img src="images/module6/picture2.png" alt="Advection and dispersion of O~2~ in a river of length $x$. Note, in this figure $W_c$ refers to our wastewater plume (click [here](https://hydrologie.org/BIB/Publ_UNESCO/SR_999_E_2005.pdf) for image source)." width="60%" data-action="zoom" />
-<p class="caption">
-Figure 8: Advection and dispersion of O<sub>2</sub> in a river of length <span class="math inline">\(x\)</span>. Note, in this figure <span class="math inline">\(W_c\)</span> refers to our wastewater plume (click <a href="https://hydrologie.org/BIB/Publ_UNESCO/SR_999_E_2005.pdf">here</a> for image source).
-</p>
-</div>
+<img src="images/learnpythonplot/py_env_flow_0.png" style="width:100.0%" />
 </center>
-<ol start="9" style="list-style-type: decimal">
-<li>The above example should show the low oxygen water diffusing into the river environment. The default velocity in this river was 0.2 m/s which is not very fast. Increase the velocity (<span class="math inline">\(U\)</span>) in all cells to 1.2 m/s and see how the shape of the waste water plume changes. Now the advection term will be more significant, you should see the plume moving more strongly down stream.</li>
-</ol>
+<p>This should save a figure as a .png file, ‘env_flow.png’, to your working directory. See if you can open it and take a look at it.</p>
 </div>
-<div id="M6_9" class="section level4 unnumbered hasAnchor" number="">
-<h4>Modelling an O<sub>2</sub> Drop<a href="M6_1.html#M6_9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ol start="10" style="list-style-type: decimal">
-<li>Change the upstream boundary concentration at <span class="math inline">\(x = 0\)</span>, to include a sudden drop in oxygen for a period of 0.5 hour. Plot how this signal propagates through the river domain during and after the period where the upstream condition drops – can you see the low oxygen pulse moving through the river? How does this concentration profile vary if the diffusivity is different?</li>
-</ol>
-</div>
-<div id="M6_10" class="section level4 unnumbered hasAnchor" number="">
-<h4>Modelling your own Scenario<a href="M6_1.html#M6_10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<video width="100%" loop="TRUE" controls="TRUE">
-<source src="images/module6/video3.mp4" type="video/mp4"/>
-</video>
-<ol start="11" style="list-style-type: decimal">
-<li>Create your own environmental scenario using this model, make a brief description of it, calculate a result and if necessary, express the result with a figure.</li>
-</ol>
-
-<div class="rmdtip2">
-<p>If you see fluctuating negative and positive concentrations, you might have numerical instability. Adjust your <span class="math inline">\(\Delta t\)</span> or <span class="math inline">\(\Delta x\)</span>.</p>
-</div>
+<div id="change-the-colour-2" class="section level4 unnumbered hasAnchor" number="">
+<h4>Change the colour<a href="pythonplotAI.html#change-the-colour-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now that your basic plot is working, you can start editing it. It defaults to a light blue line: let’s change it to a green line by adding the parameter ‘color’ to the ‘plot’ method, to the ‘ax’ object.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="pythonplotAI.html#cb86-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb86-2"><a href="pythonplotAI.html#cb86-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>], color<span class="op">=</span><span class="st">&quot;green&quot;</span>)</span>
+<span id="cb86-3"><a href="pythonplotAI.html#cb86-3" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
 <center>
-<div class="figure"><span style="display:block;" id="fig:figM6-2"></span>
-<img src="images/module6/picture1.png" alt="A plume of coloured dye dispersing through a river." width="100%" data-action="zoom" />
-<p class="caption">
-Figure 9: A plume of coloured dye dispersing through a river.
-</p>
-</div>
+<img src="images/learnpythonplot/py_env_flow_1.png" style="width:100.0%" />
 </center>
 </div>
-</div>
-<div id="M6_6" class="section level3 unnumbered hasAnchor" number="">
-<h3>Submission<a href="M6_1.html#M6_6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="redbox2">
-<p><strong>Submit properly formatted graphs and tables of the following sections of the lab:</strong></p>
-<ol style="list-style-type: decimal">
-<li>Clear photograph or page scan of your <strong>hand drawn conceptual model</strong> of the river with all the oxygen transport processes labelled.</li>
-<li>A plot of oxygen concentration at several times <strong>plotted for all distance of the river</strong>.</li>
-<li>A plot of oxygen concentration at several points of the river <strong>plotted for all time</strong>.</li>
-<li>A plot of the oxygen concentration with the upstream boundary drop at several points of the river <strong>plotted for all time</strong>.</li>
-<li>A plot of the oxygen concentration with the wastewater plume at several times <strong>plotted for all distance of the river</strong>.</li>
-</ol>
+<div id="fix-the-labels-2" class="section level4 unnumbered hasAnchor" number="">
+<h4>Fix the labels<a href="pythonplotAI.html#fix-the-labels-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Add labels to the axes, using the ‘set_xlabel’ command. Make the labels bold using the parameter ‘fontweight’.</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="pythonplotAI.html#cb87-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb87-2"><a href="pythonplotAI.html#cb87-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>], color<span class="op">=</span><span class="st">&quot;green&quot;</span>)</span>
+<span id="cb87-3"><a href="pythonplotAI.html#cb87-3" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb87-4"><a href="pythonplotAI.html#cb87-4" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb87-5"><a href="pythonplotAI.html#cb87-5" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
 <center>
-<img src="images/module6/table-plot.png" style="width:100.0%" />
+<img src="images/learnpythonplot/py_env_flow_2.png" style="width:100.0%" />
 </center>
-<ol start="6" style="list-style-type: decimal">
-<li>A plot of your own individual environmental scenario.
-<ul>
-<li>Don’t plot too many lines – only several are necessary and use your judgement to select how many show the results well whilst the plot still clear and easy to understand.</li>
-<li>Make sure your axes are well labelled and clear to read. If abbreviating oxygen, include a subscript in O<sub>2</sub>.</li>
-</ul></li>
-</ol>
-<p>These are to be uploaded as per the formatting specified in the <a href="StyleGuide.html#StyleGuide">Style Guide</a>. Marks will be deducted for incorrect formatting.
-<!--
-These are in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
-
-**General professional formatting guidelines:**
-
-- All figures are to have adequate captions explaining them
-- For graphs, figure captions go below the plot
-- For tables, the caption goes above the table
-- Make sure figures and their text size is readable
-
-**Excel hints:**
-
-- When there is a caption for a plot, you remove the title
-- Remove the plot border and gridlines
-- Make sure both axes have visible lines and tick marks
-- Units need to be noted properly with the axis label - 'Temperature (°C)'
-- Round numbers to be reasonable
---></p>
 </div>
+</div>
+<div id="visualising-diversion-scenarios-2" class="section level3 unnumbered hasAnchor" number="">
+<h3>Visualising diversion scenarios<a href="pythonplotAI.html#visualising-diversion-scenarios-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Add a pale red box to show the flow smaller than 550 ML. With ‘rect’ we set all the properties of the box, and then with ‘add_patch’ we add the ‘rect’ box to our ‘ax’ object.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="pythonplotAI.html#cb88-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb88-2"><a href="pythonplotAI.html#cb88-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
+<span id="cb88-3"><a href="pythonplotAI.html#cb88-3" aria-hidden="true"></a></span>
+<span id="cb88-4"><a href="pythonplotAI.html#cb88-4" aria-hidden="true"></a>rect <span class="op">=</span> patches.Rectangle(</span>
+<span id="cb88-5"><a href="pythonplotAI.html#cb88-5" aria-hidden="true"></a>    xy<span class="op">=</span>(mdates.date2num(env_flow[<span class="st">&quot;date&quot;</span>][<span class="dv">0</span>]), <span class="dv">50</span>), <span class="co"># This is the bottom left-hand corner</span></span>
+<span id="cb88-6"><a href="pythonplotAI.html#cb88-6" aria-hidden="true"></a>    width<span class="op">=</span><span class="bu">len</span>(env_flow[<span class="st">&quot;date&quot;</span>]), <span class="co"># This is the length of this list (number of dates)</span></span>
+<span id="cb88-7"><a href="pythonplotAI.html#cb88-7" aria-hidden="true"></a>    height<span class="op">=</span><span class="dv">550</span>, <span class="co"># This is the volume of flow in ML</span></span>
+<span id="cb88-8"><a href="pythonplotAI.html#cb88-8" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
+<span id="cb88-9"><a href="pythonplotAI.html#cb88-9" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
+<span id="cb88-10"><a href="pythonplotAI.html#cb88-10" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
+<span id="cb88-11"><a href="pythonplotAI.html#cb88-11" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>, <span class="co"># This is the opacity of the colour, scaling from 0 to 1.</span></span>
+<span id="cb88-12"><a href="pythonplotAI.html#cb88-12" aria-hidden="true"></a>)</span>
+<span id="cb88-13"><a href="pythonplotAI.html#cb88-13" aria-hidden="true"></a>ax.add_patch(rect)</span>
+<span id="cb88-14"><a href="pythonplotAI.html#cb88-14" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb88-15"><a href="pythonplotAI.html#cb88-15" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb88-16"><a href="pythonplotAI.html#cb88-16" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<center>
+<img src="images/learnpythonplot/py_env_flow_3.png" style="width:100.0%" />
+</center>
+<div id="add-a-legend-to-the-diversion-scenario-1" class="section level4 unnumbered hasAnchor" number="">
+<h4>Add a legend to the diversion scenario<a href="pythonplotAI.html#add-a-legend-to-the-diversion-scenario-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Add the legend to the diversion scenario, using the ‘legend’ command, which we apply to our ‘plt’ object.</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="pythonplotAI.html#cb89-1" aria-hidden="true"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb89-2"><a href="pythonplotAI.html#cb89-2" aria-hidden="true"></a>ax.plot(env_flow[<span class="st">&quot;date&quot;</span>], env_flow[<span class="st">&quot;totalDischarge&quot;</span>])</span>
+<span id="cb89-3"><a href="pythonplotAI.html#cb89-3" aria-hidden="true"></a></span>
+<span id="cb89-4"><a href="pythonplotAI.html#cb89-4" aria-hidden="true"></a>rect <span class="op">=</span> patches.Rectangle(</span>
+<span id="cb89-5"><a href="pythonplotAI.html#cb89-5" aria-hidden="true"></a>    xy<span class="op">=</span>(mdates.date2num(env_flow[<span class="st">&quot;date&quot;</span>][<span class="dv">0</span>]), <span class="dv">50</span>), <span class="co"># This is the bottom left-hand corner</span></span>
+<span id="cb89-6"><a href="pythonplotAI.html#cb89-6" aria-hidden="true"></a>    width<span class="op">=</span><span class="bu">len</span>(env_flow[<span class="st">&quot;date&quot;</span>]), <span class="co"># This is the length of this list (number of dates)</span></span>
+<span id="cb89-7"><a href="pythonplotAI.html#cb89-7" aria-hidden="true"></a>    height<span class="op">=</span><span class="dv">550</span>, <span class="co"># This is the volume of flow in ML</span></span>
+<span id="cb89-8"><a href="pythonplotAI.html#cb89-8" aria-hidden="true"></a>    linewidth<span class="op">=</span><span class="dv">1</span>, </span>
+<span id="cb89-9"><a href="pythonplotAI.html#cb89-9" aria-hidden="true"></a>    edgecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>, </span>
+<span id="cb89-10"><a href="pythonplotAI.html#cb89-10" aria-hidden="true"></a>    facecolor<span class="op">=</span><span class="st">&#39;red&#39;</span>,</span>
+<span id="cb89-11"><a href="pythonplotAI.html#cb89-11" aria-hidden="true"></a>    alpha<span class="op">=</span><span class="fl">0.25</span>, <span class="co"># This is the opacity of the colour, scaling from 0 to 1.</span></span>
+<span id="cb89-12"><a href="pythonplotAI.html#cb89-12" aria-hidden="true"></a>    label<span class="op">=</span><span class="st">&quot;Diversion Scenario 1&quot;</span> <span class="co"># This is the text in the label</span></span>
+<span id="cb89-13"><a href="pythonplotAI.html#cb89-13" aria-hidden="true"></a>)</span>
+<span id="cb89-14"><a href="pythonplotAI.html#cb89-14" aria-hidden="true"></a>ax.add_patch(rect)</span>
+<span id="cb89-15"><a href="pythonplotAI.html#cb89-15" aria-hidden="true"></a>ax.set_xlabel(<span class="st">&quot;Date&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb89-16"><a href="pythonplotAI.html#cb89-16" aria-hidden="true"></a>ax.set_ylabel(<span class="st">&quot;Total Discharge (ML)&quot;</span>, fontweight<span class="op">=</span><span class="st">&#39;bold&#39;</span>)</span>
+<span id="cb89-17"><a href="pythonplotAI.html#cb89-17" aria-hidden="true"></a>plt.legend()</span>
+<span id="cb89-18"><a href="pythonplotAI.html#cb89-18" aria-hidden="true"></a>fig.savefig(<span class="st">&quot;env_flow.png&quot;</span>)</span></code></pre></div>
+<center>
+<img src="images/learnpythonplot/py_env_flow_4.png" style="width:100.0%" />
+</center>
+</div>
+</div>
+<div id="exercise-which-language-is-better-1" class="section level3 unnumbered hasAnchor" number="">
+<h3>Exercise: which language is better?<a href="pythonplotAI.html#exercise-which-language-is-better-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Start an argument with the person sitting next to you. Is R or python easier to use?</p>
 
+</div>
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script>
@@ -576,8 +556,8 @@ These are in a word doc or PDF format. No screenshots of figures from Excel/Exce
           </div>
         </div>
       </div>
-<a href="M5B_1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="M7_1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="pythonplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="excelbasics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

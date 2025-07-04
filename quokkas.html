@@ -333,6 +333,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="pythonplot.html"><a href="pythonplot.html#exercise-which-language-is-better"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html"><i class="fa fa-check"></i>Learning to plot with python and AI</a>
+<ul>
+<li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#visualising-module-1-flow-data-3"><i class="fa fa-check"></i>Visualising Module 1 Flow Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#setting-up-3"><i class="fa fa-check"></i>Setting up</a></li>
+<li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#importing-and-formatting-the-data-3"><i class="fa fa-check"></i>Importing and formatting the data</a></li>
+<li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#plotting-with-matplotlib-1"><i class="fa fa-check"></i>Plotting with matplotlib</a></li>
+<li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#visualising-diversion-scenarios-2"><i class="fa fa-check"></i>Visualising diversion scenarios</a></li>
+<li class="chapter" data-level="" data-path="pythonplotAI.html"><a href="pythonplotAI.html#exercise-which-language-is-better-1"><i class="fa fa-check"></i>Exercise: which language is better?</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="excelbasics.html"><a href="excelbasics.html"><i class="fa fa-check"></i>Learning Excel basics</a>
 <ul>
 <li class="chapter" data-level="" data-path="excelbasics.html"><a href="excelbasics.html#excel-giant-calculator"><i class="fa fa-check"></i>Excel = giant calculator</a></li>
@@ -346,7 +357,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html"><i class="fa fa-check"></i>Modelling Quokkas in R</a>
 <ul>
-<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#setting-up-3"><i class="fa fa-check"></i>Setting up</a></li>
+<li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#setting-up-4"><i class="fa fa-check"></i>Setting up</a></li>
 <li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#modelling"><i class="fa fa-check"></i>Modelling</a></li>
 <li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#speeding-things-up"><i class="fa fa-check"></i>Speeding things up</a></li>
 <li class="chapter" data-level="" data-path="quokkas.html"><a href="quokkas.html#visualise-the-modelled-populations-with-ggplot"><i class="fa fa-check"></i>Visualise the modelled populations with ggplot</a></li>
@@ -374,23 +385,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="quokkas" class="section level1 unnumbered hasAnchor" number="">
 <h1>Modelling Quokkas in R<a href="quokkas.html#quokkas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="setting-up-3" class="section level3 unnumbered hasAnchor" number="">
-<h3>Setting up<a href="quokkas.html#setting-up-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="setting-up-4" class="section level3 unnumbered hasAnchor" number="">
+<h3>Setting up<a href="quokkas.html#setting-up-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="create-a-new-r-script" class="section level4 unnumbered hasAnchor" number="">
 <h4>Create a new R script<a href="quokkas.html#create-a-new-r-script" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Go <em>File -&gt; New File -&gt; R Script</em></li>
 <li>Load the tidyverse</li>
 </ul>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="quokkas.html#cb77-1" aria-hidden="true"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="quokkas.html#cb90-1" aria-hidden="true"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
 </div>
 <div id="declare-the-constants-as-variables" class="section level4 unnumbered hasAnchor" number="">
 <h4>Declare the constants as variables<a href="quokkas.html#declare-the-constants-as-variables" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="quokkas.html#cb78-1" aria-hidden="true"></a>birthRate  &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb78-2"><a href="quokkas.html#cb78-2" aria-hidden="true"></a>deathRate  &lt;-<span class="st"> </span><span class="fl">0.1</span></span>
-<span id="cb78-3"><a href="quokkas.html#cb78-3" aria-hidden="true"></a>timestep  &lt;-<span class="st"> </span><span class="dv">1</span> <span class="co"># i.e. 1 year</span></span>
-<span id="cb78-4"><a href="quokkas.html#cb78-4" aria-hidden="true"></a>timeMax &lt;-<span class="st"> </span><span class="dv">30</span></span>
-<span id="cb78-5"><a href="quokkas.html#cb78-5" aria-hidden="true"></a>carryCap  &lt;-<span class="st"> </span><span class="dv">10000</span></span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="quokkas.html#cb91-1" aria-hidden="true"></a>birthRate  &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb91-2"><a href="quokkas.html#cb91-2" aria-hidden="true"></a>deathRate  &lt;-<span class="st"> </span><span class="fl">0.1</span></span>
+<span id="cb91-3"><a href="quokkas.html#cb91-3" aria-hidden="true"></a>timestep  &lt;-<span class="st"> </span><span class="dv">1</span> <span class="co"># i.e. 1 year</span></span>
+<span id="cb91-4"><a href="quokkas.html#cb91-4" aria-hidden="true"></a>timeMax &lt;-<span class="st"> </span><span class="dv">30</span></span>
+<span id="cb91-5"><a href="quokkas.html#cb91-5" aria-hidden="true"></a>carryCap  &lt;-<span class="st"> </span><span class="dv">10000</span></span></code></pre></div>
 </div>
 <div id="create-a-new-data-frame-of-the-initial-values" class="section level4 unnumbered hasAnchor" number="">
 <h4>Create a new data frame of the initial values<a href="quokkas.html#create-a-new-data-frame-of-the-initial-values" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -399,14 +410,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>year</code>, <code>relativeCarryCap</code>, <code>quokkaRate</code>, and <code>quokkaRate</code> will be created as new columns in that table</li>
 <li>Inspect <code>model</code> with the <code>head()</code> function</li>
 </ul>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="quokkas.html#cb79-1" aria-hidden="true"></a>model  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</span>
-<span id="cb79-2"><a href="quokkas.html#cb79-2" aria-hidden="true"></a>    <span class="dt">year =</span> <span class="dv">1</span>,</span>
-<span id="cb79-3"><a href="quokkas.html#cb79-3" aria-hidden="true"></a>    <span class="dt">relativeCarryCap  =</span> <span class="ot">NA</span>,</span>
-<span id="cb79-4"><a href="quokkas.html#cb79-4" aria-hidden="true"></a>    <span class="dt">quokkaRate =</span> <span class="ot">NA</span>,</span>
-<span id="cb79-5"><a href="quokkas.html#cb79-5" aria-hidden="true"></a>    <span class="dt">quokkaPop =</span> <span class="dv">5</span></span>
-<span id="cb79-6"><a href="quokkas.html#cb79-6" aria-hidden="true"></a>)</span>
-<span id="cb79-7"><a href="quokkas.html#cb79-7" aria-hidden="true"></a></span>
-<span id="cb79-8"><a href="quokkas.html#cb79-8" aria-hidden="true"></a><span class="kw">head</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="quokkas.html#cb92-1" aria-hidden="true"></a>model  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</span>
+<span id="cb92-2"><a href="quokkas.html#cb92-2" aria-hidden="true"></a>    <span class="dt">year =</span> <span class="dv">1</span>,</span>
+<span id="cb92-3"><a href="quokkas.html#cb92-3" aria-hidden="true"></a>    <span class="dt">relativeCarryCap  =</span> <span class="ot">NA</span>,</span>
+<span id="cb92-4"><a href="quokkas.html#cb92-4" aria-hidden="true"></a>    <span class="dt">quokkaRate =</span> <span class="ot">NA</span>,</span>
+<span id="cb92-5"><a href="quokkas.html#cb92-5" aria-hidden="true"></a>    <span class="dt">quokkaPop =</span> <span class="dv">5</span></span>
+<span id="cb92-6"><a href="quokkas.html#cb92-6" aria-hidden="true"></a>)</span>
+<span id="cb92-7"><a href="quokkas.html#cb92-7" aria-hidden="true"></a></span>
+<span id="cb92-8"><a href="quokkas.html#cb92-8" aria-hidden="true"></a><span class="kw">head</span>(model)</span></code></pre></div>
 <pre><code>##   year relativeCarryCap quokkaRate quokkaPop
 ## 1    1               NA         NA         5</code></pre>
 </div>
@@ -419,36 +430,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>year</code>takes a value of 2</li>
 </ul>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="quokkas.html#cb81-1" aria-hidden="true"></a>year &lt;-<span class="st"> </span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="quokkas.html#cb94-1" aria-hidden="true"></a>year &lt;-<span class="st"> </span><span class="dv">2</span></span></code></pre></div>
 <ul>
 <li><code>relativeCarryCap</code> is the result of the previous quokka population divided by the carrying capacity</li>
 <li><code>model$quokkaPop[1]</code> specifies the population in the previous row (row 1) i.e. the previous time step</li>
 </ul>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="quokkas.html#cb82-1" aria-hidden="true"></a>relativeCarryCap  &lt;-<span class="st">  </span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]<span class="op">/</span>carryCap</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="quokkas.html#cb95-1" aria-hidden="true"></a>relativeCarryCap  &lt;-<span class="st">  </span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]<span class="op">/</span>carryCap</span></code></pre></div>
 <ul>
 <li><code>quokkaRate</code> and <code>quokkaPop</code> are calculated in the same fashion i.e. using the constants and values in the previous row of the <code>model</code> data frame</li>
 </ul>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="quokkas.html#cb83-1" aria-hidden="true"></a>quokkaRate &lt;-<span class="st"> </span>timestep<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span>relativeCarryCap)<span class="op">*</span>birthRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]<span class="op">-</span>(deathRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]))</span>
-<span id="cb83-2"><a href="quokkas.html#cb83-2" aria-hidden="true"></a></span>
-<span id="cb83-3"><a href="quokkas.html#cb83-3" aria-hidden="true"></a>quokkaPop &lt;-<span class="st">  </span>quokkaRate<span class="op">+</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="quokkas.html#cb96-1" aria-hidden="true"></a>quokkaRate &lt;-<span class="st"> </span>timestep<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span>relativeCarryCap)<span class="op">*</span>birthRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]<span class="op">-</span>(deathRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]))</span>
+<span id="cb96-2"><a href="quokkas.html#cb96-2" aria-hidden="true"></a></span>
+<span id="cb96-3"><a href="quokkas.html#cb96-3" aria-hidden="true"></a>quokkaPop &lt;-<span class="st">  </span>quokkaRate<span class="op">+</span>model<span class="op">$</span>quokkaPop[<span class="dv">1</span>]</span></code></pre></div>
 <ul>
 <li>Next, we’ll create an identical data frame to <code>model</code> with our new values</li>
 </ul>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="quokkas.html#cb84-1" aria-hidden="true"></a>model_temp  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</span>
-<span id="cb84-2"><a href="quokkas.html#cb84-2" aria-hidden="true"></a>        <span class="dt">year =</span> year,</span>
-<span id="cb84-3"><a href="quokkas.html#cb84-3" aria-hidden="true"></a>        <span class="dt">relativeCarryCap =</span> relativeCarryCap,</span>
-<span id="cb84-4"><a href="quokkas.html#cb84-4" aria-hidden="true"></a>        <span class="dt">quokkaRate =</span> quokkaRate,</span>
-<span id="cb84-5"><a href="quokkas.html#cb84-5" aria-hidden="true"></a>        <span class="dt">quokkaPop =</span> quokkaPop</span>
-<span id="cb84-6"><a href="quokkas.html#cb84-6" aria-hidden="true"></a>    )</span>
-<span id="cb84-7"><a href="quokkas.html#cb84-7" aria-hidden="true"></a></span>
-<span id="cb84-8"><a href="quokkas.html#cb84-8" aria-hidden="true"></a><span class="kw">head</span>(model_temp)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="quokkas.html#cb97-1" aria-hidden="true"></a>model_temp  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</span>
+<span id="cb97-2"><a href="quokkas.html#cb97-2" aria-hidden="true"></a>        <span class="dt">year =</span> year,</span>
+<span id="cb97-3"><a href="quokkas.html#cb97-3" aria-hidden="true"></a>        <span class="dt">relativeCarryCap =</span> relativeCarryCap,</span>
+<span id="cb97-4"><a href="quokkas.html#cb97-4" aria-hidden="true"></a>        <span class="dt">quokkaRate =</span> quokkaRate,</span>
+<span id="cb97-5"><a href="quokkas.html#cb97-5" aria-hidden="true"></a>        <span class="dt">quokkaPop =</span> quokkaPop</span>
+<span id="cb97-6"><a href="quokkas.html#cb97-6" aria-hidden="true"></a>    )</span>
+<span id="cb97-7"><a href="quokkas.html#cb97-7" aria-hidden="true"></a></span>
+<span id="cb97-8"><a href="quokkas.html#cb97-8" aria-hidden="true"></a><span class="kw">head</span>(model_temp)</span></code></pre></div>
 <pre><code>##   year relativeCarryCap quokkaRate quokkaPop
 ## 1    2            5e-04     4.4975    9.4975</code></pre>
 <ul>
 <li>We can append this time step to <code>model</code> by using the <code>rbind()</code> function</li>
 </ul>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="quokkas.html#cb86-1" aria-hidden="true"></a>model  &lt;-<span class="st"> </span><span class="kw">rbind</span>(model,model_temp)</span>
-<span id="cb86-2"><a href="quokkas.html#cb86-2" aria-hidden="true"></a><span class="kw">head</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="quokkas.html#cb99-1" aria-hidden="true"></a>model  &lt;-<span class="st"> </span><span class="kw">rbind</span>(model,model_temp)</span>
+<span id="cb99-2"><a href="quokkas.html#cb99-2" aria-hidden="true"></a><span class="kw">head</span>(model)</span></code></pre></div>
 <pre><code>##   year relativeCarryCap quokkaRate quokkaPop
 ## 1    1               NA         NA    5.0000
 ## 2    2            5e-04     4.4975    9.4975</code></pre>
@@ -457,31 +468,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="speeding-things-up" class="section level3 unnumbered hasAnchor" number="">
 <h3>Speeding things up<a href="quokkas.html#speeding-things-up" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Want to repeat that process for the next 29 time steps? Probably not. Let’s create a loop that iterates through each year, calculates the new values, and appends them to the <code>model</code> data frame.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="quokkas.html#cb88-1" aria-hidden="true"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span>timeMax){</span>
-<span id="cb88-2"><a href="quokkas.html#cb88-2" aria-hidden="true"></a></span>
-<span id="cb88-3"><a href="quokkas.html#cb88-3" aria-hidden="true"></a>    year  &lt;-<span class="st"> </span>i</span>
-<span id="cb88-4"><a href="quokkas.html#cb88-4" aria-hidden="true"></a>    relativeCarryCap  &lt;-<span class="st">  </span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="op">/</span>carryCap</span>
-<span id="cb88-5"><a href="quokkas.html#cb88-5" aria-hidden="true"></a>    quokkaRate =<span class="st"> </span>timestep<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span>relativeCarryCap)<span class="op">*</span>birthRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="op">-</span>(deathRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]))</span>
-<span id="cb88-6"><a href="quokkas.html#cb88-6" aria-hidden="true"></a>    quokkaPop =<span class="st"> </span>quokkaRate<span class="op">+</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]</span>
-<span id="cb88-7"><a href="quokkas.html#cb88-7" aria-hidden="true"></a></span>
-<span id="cb88-8"><a href="quokkas.html#cb88-8" aria-hidden="true"></a>    model_temp  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</span>
-<span id="cb88-9"><a href="quokkas.html#cb88-9" aria-hidden="true"></a>        <span class="dt">year =</span> year,</span>
-<span id="cb88-10"><a href="quokkas.html#cb88-10" aria-hidden="true"></a>        <span class="dt">relativeCarryCap =</span> relativeCarryCap,</span>
-<span id="cb88-11"><a href="quokkas.html#cb88-11" aria-hidden="true"></a>        <span class="dt">quokkaRate =</span> quokkaRate,</span>
-<span id="cb88-12"><a href="quokkas.html#cb88-12" aria-hidden="true"></a>        <span class="dt">quokkaPop =</span> quokkaPop</span>
-<span id="cb88-13"><a href="quokkas.html#cb88-13" aria-hidden="true"></a>    )</span>
-<span id="cb88-14"><a href="quokkas.html#cb88-14" aria-hidden="true"></a></span>
-<span id="cb88-15"><a href="quokkas.html#cb88-15" aria-hidden="true"></a>    model  &lt;-<span class="st"> </span><span class="kw">rbind</span>(model,model_temp)</span>
-<span id="cb88-16"><a href="quokkas.html#cb88-16" aria-hidden="true"></a></span>
-<span id="cb88-17"><a href="quokkas.html#cb88-17" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="quokkas.html#cb101-1" aria-hidden="true"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span>timeMax){</span>
+<span id="cb101-2"><a href="quokkas.html#cb101-2" aria-hidden="true"></a></span>
+<span id="cb101-3"><a href="quokkas.html#cb101-3" aria-hidden="true"></a>    year  &lt;-<span class="st"> </span>i</span>
+<span id="cb101-4"><a href="quokkas.html#cb101-4" aria-hidden="true"></a>    relativeCarryCap  &lt;-<span class="st">  </span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="op">/</span>carryCap</span>
+<span id="cb101-5"><a href="quokkas.html#cb101-5" aria-hidden="true"></a>    quokkaRate =<span class="st"> </span>timestep<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span>relativeCarryCap)<span class="op">*</span>birthRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]<span class="op">-</span>(deathRate<span class="op">*</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]))</span>
+<span id="cb101-6"><a href="quokkas.html#cb101-6" aria-hidden="true"></a>    quokkaPop =<span class="st"> </span>quokkaRate<span class="op">+</span>model<span class="op">$</span>quokkaPop[i<span class="dv">-1</span>]</span>
+<span id="cb101-7"><a href="quokkas.html#cb101-7" aria-hidden="true"></a></span>
+<span id="cb101-8"><a href="quokkas.html#cb101-8" aria-hidden="true"></a>    model_temp  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</span>
+<span id="cb101-9"><a href="quokkas.html#cb101-9" aria-hidden="true"></a>        <span class="dt">year =</span> year,</span>
+<span id="cb101-10"><a href="quokkas.html#cb101-10" aria-hidden="true"></a>        <span class="dt">relativeCarryCap =</span> relativeCarryCap,</span>
+<span id="cb101-11"><a href="quokkas.html#cb101-11" aria-hidden="true"></a>        <span class="dt">quokkaRate =</span> quokkaRate,</span>
+<span id="cb101-12"><a href="quokkas.html#cb101-12" aria-hidden="true"></a>        <span class="dt">quokkaPop =</span> quokkaPop</span>
+<span id="cb101-13"><a href="quokkas.html#cb101-13" aria-hidden="true"></a>    )</span>
+<span id="cb101-14"><a href="quokkas.html#cb101-14" aria-hidden="true"></a></span>
+<span id="cb101-15"><a href="quokkas.html#cb101-15" aria-hidden="true"></a>    model  &lt;-<span class="st"> </span><span class="kw">rbind</span>(model,model_temp)</span>
+<span id="cb101-16"><a href="quokkas.html#cb101-16" aria-hidden="true"></a></span>
+<span id="cb101-17"><a href="quokkas.html#cb101-17" aria-hidden="true"></a>}</span></code></pre></div>
 </div>
 <div id="visualise-the-modelled-populations-with-ggplot" class="section level3 unnumbered hasAnchor" number="">
 <h3>Visualise the modelled populations with ggplot<a href="quokkas.html#visualise-the-modelled-populations-with-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="quokkas.html#cb89-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>model,<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>year,<span class="dt">y=</span>quokkaPop))<span class="op">+</span></span>
-<span id="cb89-2"><a href="quokkas.html#cb89-2" aria-hidden="true"></a><span class="st">    </span><span class="kw">geom_line</span>()<span class="op">+</span></span>
-<span id="cb89-3"><a href="quokkas.html#cb89-3" aria-hidden="true"></a><span class="st">    </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Year&quot;</span>, <span class="dt">y=</span><span class="st">&quot;Quokka population&quot;</span>)<span class="op">+</span></span>
-<span id="cb89-4"><a href="quokkas.html#cb89-4" aria-hidden="true"></a><span class="st">    </span><span class="kw">theme_light</span>()</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="quokkas.html#cb102-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>model,<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>year,<span class="dt">y=</span>quokkaPop))<span class="op">+</span></span>
+<span id="cb102-2"><a href="quokkas.html#cb102-2" aria-hidden="true"></a><span class="st">    </span><span class="kw">geom_line</span>()<span class="op">+</span></span>
+<span id="cb102-3"><a href="quokkas.html#cb102-3" aria-hidden="true"></a><span class="st">    </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Year&quot;</span>, <span class="dt">y=</span><span class="st">&quot;Quokka population&quot;</span>)<span class="op">+</span></span>
+<span id="cb102-4"><a href="quokkas.html#cb102-4" aria-hidden="true"></a><span class="st">    </span><span class="kw">theme_light</span>()</span></code></pre></div>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
 
 </div>
 </div>
