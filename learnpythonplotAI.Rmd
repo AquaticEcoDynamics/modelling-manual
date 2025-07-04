@@ -1,6 +1,6 @@
 # Learning to plot with python and AI {#pythonplotAI .unnumbered}
 
-Introduce AI ...
+In this exercise we use a chatbot to make python plots. This follows on from the section on [python plotting](#pythonplot). Once you have python installed on your computer and you are comfortable with making basic python plots with the Module 1 flow data.
 
 ## Visualising Module 1 Flow Data {-}
 
@@ -20,7 +20,7 @@ Introduce AI ...
 
 #### Load the necessary packages {-}
 
-Add these commands to the top of your python file. These are python packages that we are loading with the command 'import'. This is similar to the R function 'library()'. The 'as' command gives a shorter name to the package, which we can choose, for future reference throughout the script. 
+This section should be the same as the setup for the [python plotting](#pythonplot) exercise. Add these commands to the top of your python file. These are python packages that we are loading with the command 'import'. This is similar to the R function 'library()'. The 'as' command gives a shorter name to the package, which we can choose, for future reference throughout the script. 
 
 ```{python, eval=FALSE, python.reticulate=FALSE} 
 import pandas as pd

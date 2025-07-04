@@ -2,6 +2,11 @@
 
 <h2>Tools You'll Need</h2>
 
+### Visual Studio Code {-} 
+
+Visual Studio Code (VSC) is a text editor that is also a convenient way to view and organise your files. VSC has extensions for other programs that you will use use in this unit, such as RStudio, python and Copilot.
+
+
 ### Excel {-} 
 
 Excel is available on all computer laboratory PC's and can be freely downloaded to personal devices [here](http://portal.office.com). You should already feel confident using Excel from your previous units, however if you need further guidance please visit UWA's resources:
@@ -93,3 +98,8 @@ Go to the website and download the installer.
 https://www.python.org/downloads/
 
 Save it anywhere on your computer. Open the installer and choose 'Customize Installation', accept the defaults and click 'Next', then select the folder where you would like to install the program. Don't install it on a network drive or Dropbox folder or some other place prone to failure.
+
+### Setting up the chatbot {-}
+
+One way to access Microsoft Copilot is through Github. Copilot is a chatbot interface that accesses AI programs such as GPT, Claude and Gemini. If you sign up for [Github](https://github.com/education/students) and verify that you are a student, you should get access to Github Pro and Copilot. 
+Go to Github and sign up for a student version of Github Pro. 
