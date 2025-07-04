@@ -6,7 +6,6 @@
 
 Visual Studio Code (VSC) is a text editor that is also a convenient way to view and organise your files. VSC has extensions for other programs that you will use use in this unit, such as RStudio, python and Copilot.
 
-
 ### Excel {-} 
 
 Excel is available on all computer laboratory PC's and can be freely downloaded to personal devices [here](http://portal.office.com). You should already feel confident using Excel from your previous units, however if you need further guidance please visit UWA's resources:
@@ -101,5 +100,6 @@ Save it anywhere on your computer. Open the installer and choose 'Customize Inst
 
 ### Setting up the chatbot {-}
 
-One way to access Microsoft Copilot is through Github. Copilot is a chatbot interface that accesses AI programs such as GPT, Claude and Gemini. If you sign up for [Github](https://github.com/education/students) and verify that you are a student, you should get access to Github Pro and Copilot. 
-Go to Github and sign up for a student version of Github Pro. 
+One way to access Microsoft Copilot is through Github. Copilot is a chatbot interface that accesses AI programs such as GPT, Claude and Gemini. If you sign up for [Github](https://github.com/education/students) and verify that you are a student, you can get access to Github Pro and Copilot. Go to Github and sign up for a student version of Github Pro. 
+
+In VSC, add the extension for Copilot. You can see the Copilot window in VSC by going to *View -> Appearance -> Secondary Side Bar*. The Copilot window appears in the bottom right. In the top left of this right hand side bar, there are three dots, which you can use to switch between the chat and 'Open Editors'. 
