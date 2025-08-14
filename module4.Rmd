@@ -205,9 +205,11 @@ knitr::include_graphics("images/module4/picture3.png")
 ```
 </center>
 
-Go to the [Plot Digitizer website](https://sourceforge.net/projects/plotdigitizer/files/) and download the program.
+You can get the data from this figure by uploading it into the [Plot Digitizer web app](https://plotdigitizer.com/app). 
 
-Open the IPCC image in Plot Digitizer. The program guides you through the steps you need to take: read the command at the bottom of the screen (for example, “Choose most negative end of x-axis”) and click “Done” when you have finished. It will be easiest if you make a point every 10 years. Save each dataset as a separate csv file and then combine the results in one sheet. If your x-axis points line up nicely enough, you can re-plot the data.
+(If you want to download the program to work offline, go to the [Plot Digitizer website](https://sourceforge.net/projects/plotdigitizer/files/) and download the program.)
+
+When this image is loaded into the digitizer, drag the little blue circles for X1 and X2 to the limits of the x axis (2000 and 2100). Type the x axis limits to the panel on the right. You can then set the x axis to be a date axis, using the dropdown. Drag the little red circles the limits of one of the y axes. Enter the limits of the y axes, as seen in the figure, into the panel on the right. Pick one of the coloured lines and add points by clicking along the line. Your points should appear on the left panel. It will be easiest if you make a point every 10 years. If your x-axis points line up nicely enough, you can re-plot the data. You can export the data using one of the grey buttons in the top left, for example, copying it into Excel, or downloading it as a csv. Digitise all three of the datasets, CO~2~, pH and omega, and use the same IPCC model for each. 
 
 ```{r M4Vid1, echo=FALSE, message=FALSE, warning=FALSE}
 htmltools::tags$video(
@@ -220,15 +222,43 @@ htmltools::tags$video(
   )
 ```
 
-Compare these results with your own results. You will notice the IPCC data graphed over time. Our model depicts an increasing CO2 environment via the multiplier. The fundamental relationships between these variables is similar - an increasing CO~2~ world leads to increased ocean acidification and decreased pH.
+Compare these results with your own results. You will notice the IPCC data graphed over time. Our model depicts an increasing CO~2~ environment via the multiplier. The fundamental relationships between these variables is similar - an increasing CO~2~ world leads to increased ocean acidification and decreased pH.
 
-Remember back to Module 1 where we modelled salinity values from flow. Let's do something similar here to predict year from our CO~2~, Omega, and pH. Correlate the IPCC data of CO~2~/Year, pH/Year, and Omega/Year (i.e. use a scatterplot and add a trendline). Use these equations to generate modelled year values for our Exercise 3 model. Compare and contrast your results with a plot each for CO~2~, pH, and Omega.
+Remember back to Module 1 where we modelled salinity values from flow. Let's do something similar here to make a statistical relationship between year and CO~2~, Omega, and pH. Correlate the IPCC data of CO~2~/Year, pH/Year, and Omega/Year (i.e. use a scatterplot and add a trendline). Use these equations to generate modelled year values for our Exercise 3 model. Finally, you need to predict pH and Omega values from CO~2~ values.
 
 ```{block, tipM4-1, type='rmdtip2'}
 You will need to convert atm to µatm and multiply Omega by 100 to create a percentage!
 ```
 
-### Submission {#M4_8 -}
+### Exercise 5 {#M4_8 -} Optional
+
+In this exercise, repeat Exercise 4 using help from AI. You can use an AI chatbot in any way that works well for you, including:
+
+- ChatGPT or another large language model in a web browser
+- the Microsoft Copilot app
+- Copilot in Teams / chat
+- Copilot in Visual Studio Code
+
+Repeat Exercise 4 with the following steps:
+
+- load the image into the chatbot
+- tell the chatbot to digitise one of the lines of the data
+- tell the chatbot to digitise all three of the datasets
+
+You can then export that data from the chatbot to Excel and process it there.
+Alternatively, you can proceed within the chatbot and tell it to create a statistical relationship between CO~2~ and pH and CO~2~ and omega. 
+
+You can tell the chatbot to create plots of CO~2~ on the x axis and the other variables on the y axis. It will try to create the plot using python. Please see the instructions in the Supporting Material on learning to plot with python, and learning to plot with python and AI.  
+
+Finally, you can add your data from the main exercise of this module to the data from the IPCC image. Load your data into the chatbot and tell it to plot both datasets on the same figure. 
+
+```{block, tipM4-2, type='rmdtip2'}
+Writing good prompts is key to either getting AI to do good work for us, or having a frustrating argument with your computer. You need to guide the chatbot through the steps at the right pace.
+```
+
+
+
+### Submission {#M4_9 -}
 :::: {.redbox2}
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**

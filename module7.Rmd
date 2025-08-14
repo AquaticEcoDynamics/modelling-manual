@@ -26,10 +26,10 @@ As you work through this chapter you may find it helpful to refer to some of the
 Lake Stratification:
 
 -   Hand drawn diagram of the lake and any variables you used
--   Plots of the water balance
--   Plots of the heat fluxes
--   Plots of the temperature at different layers
--   Plots of the shallower lake
+-   Plots of the water balance using Excel
+-   Plots of the heat fluxes using Excel
+-   Plots of the temperature at different layers using Excel
+-   Plots of the shallower lake using Excel
 
 The Ecosystem Model:
 
