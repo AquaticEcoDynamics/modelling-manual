@@ -230,7 +230,7 @@ Remember back to Module 1 where we modelled salinity values from flow. Let's do 
 You will need to convert atm to µatm and multiply Omega by 100 to create a percentage!
 ```
 
-### Exercise 5 {#M4_8 -} Optional
+### Exercise 5 (Optional) {#M4_8 -}
 
 In this exercise, repeat Exercise 4 using help from AI. You can use an AI chatbot in any way that works well for you, including:
 
