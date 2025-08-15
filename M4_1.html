@@ -635,7 +635,7 @@ Figure 5: Changes in global average surface pH and saturation state with respect
 <source src="images/module4/video1.mp4" type="video/mp4"/>
 </video>
 <p>Compare these results with your own results. You will notice the IPCC data graphed over time. Our model depicts an increasing CO<sub>2</sub> environment via the multiplier. The fundamental relationships between these variables is similar - an increasing CO<sub>2</sub> world leads to increased ocean acidification and decreased pH.</p>
-<p>Remember back to Module 1 where we modelled salinity values from flow. Let’s do something similar here to make a statistical relationship between year and CO<sub>2</sub>, Omega, and pH. Correlate the IPCC data of CO<sub>2</sub>/Year, pH/Year, and Omega/Year (i.e. use a scatterplot and add a trendline). Use these equations to generate modelled year values for our Exercise 3 model. Finally, you need to predict pH and Omega values from CO<sub>2</sub> values.</p>
+<p>Remember back to Module 1 where we modelled salinity values from flow. Let’s do something similar here to make a statistical relationship between year and CO<sub>2</sub> from the IPCC data of CO<sub>2</sub>/Year (i.e. use a scatterplot and add a trendline). Use the equation to generate modelled year values for our Exercise 3 model (i.e., we will find out the years that correpsond with our modelled CO2 levels). Finally, you need to predict pH and Omega values from CO<sub>2</sub> values.</p>
 <div class="rmdtip2">
 <p>
 You will need to convert atm to µatm and multiply Omega by 100 to
@@ -659,9 +659,16 @@ create a percentage!
 <li>tell the chatbot to digitise all three of the datasets</li>
 </ul>
 <p>You can then export that data from the chatbot to Excel and process it there.</p>
-<p>We can get further assistance by proceeding within the chatbot and tell it to create the statistical relationship between CO<sub>2</sub> and pH and CO<sub>2</sub> and omega.</p>
-<p>You can tell the chatbot to create plots of CO<sub>2</sub> on the x axis and the other variables on the y axis. It will try to create the plot using python. Please see the instructions in the Supporting Material on learning to plot with python, and learning to plot with python and AI.</p>
+<p>We can get further assistance by proceeding within the chatbot and tell it to create the statistical relationship between CO<sub>2</sub> and Year - so we can find the years that align with our model CO2 concentration levels. You can tell the chatbot to create plots of CO<sub>2</sub> on the x axis and Year on the y axis. It will try to create the plot using python.</p>
 <p>Finally, you can add your data from the main exercise of this module to the data from the IPCC image. Load your data into the chatbot and tell it to plot both data-sets on the same figure.</p>
+<center>
+<div class="figure"><span style="display:block;" id="fig:figM4-4"></span>
+<img src="images/module4/ai_co2.png" alt="Example AI generated plot." width="60%" data-action="zoom" />
+<p class="caption">
+Figure 6: Example AI generated plot.
+</p>
+</div>
+</center>
 <div class="rmdtip2">
 <p>
 Writing good prompts is key to either getting AI to do good work for
@@ -700,6 +707,9 @@ the work reproducible.
 </li>
 </ul>
 <p>
+<br>
+</p>
+<p>
 For example (you would need to update the <strong>bold items</strong>
 to be specific in your prompt):
 </p>
@@ -716,18 +726,38 @@ scenario of my choice every 10 years (2000, <strong>20XX, …,
 (ipcc_digitized_combined.csv with columns Variable ∈
 {<strong>var1,var2,var3</strong>}, Scenario=<chosen>, Year, Value).
 Plots for <strong>var1, var2, and var3</strong> showing the
-reconstruction for the chosen scenario. Linear regressions <strong>Year
-~ var1</strong>, <strong>Year ~ var2</strong>, and <strong>Year ~
-var3</strong> using the chosen scenario, reporting slope, intercept, and
-R², plus scatter-with-fit plots. If I provide a CSV with columns
-<strong>Year_model (optional), CO2_uatm, pH, and Omega_pct</strong>, use
-the regression equations to predict Year from each variable, compare the
-predictions with the extracted scenario data (variable and year), save a
-comparison CSV, and include comparison plots. Display all results inline
-and then provide Python code (pandas, numpy, matplotlib) that reproduces
-the CSVs and plots from the returned tables.
+reconstruction for the chosen scenario. Make a linear regression for
+<strong>Year ~ var1</strong> using the chosen scenario, reporting slope,
+intercept, and R², plus a scatter-with-fit plot. If I provide a CSV with
+columns <strong>CO2_uatm, pH, and Aragonite_pct</strong>, use the
+regression equation to predict Year from CO2_uatm, and compare the
+predictions with the extracted scenario data (variable and year) by
+creating comparison plots (where data from the CSV is plotted as circle
+markers and the digitised SRES data is as lines; use “My Model” and
+“IPCC <scenario>” as legend entries respectively). Also provide the data
+as CSVs. Display all results inline and then provide Python code
+(pandas, numpy, matplotlib) that reproduces the CSVs and plots from the
+returned tables.
 </p>
 </blockquote>
+<p>
+<br>
+</p>
+<p>
+NOTE: You will most likely find that there are some aspects that
+don’t look right! e.g. the digitised data may not actually look accurate
+when you comapre to what you manually digitised, or other issues will
+pop up! In fact, even if you do the same prompt sequence twice you’ll
+likely get different results 😱 . This is why we ask to receive the
+python script, as in most circumstances you would then use this as a
+<strong>starting point</strong> for your own work, and you would
+carefully refine the script and data to ensure it was accurate.
+</p>
+<p>
+Please see the instructions in the Supporting Material on <a
+href="#pythonplot">learning to plot with python</a>, and <a
+href="#pythonplotAI">learning to plot with python and AI</a>.
+</p>
 </div>
 </div>
 <div id="M4_9" class="section level3 unnumbered hasAnchor">
