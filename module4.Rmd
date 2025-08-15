@@ -232,9 +232,9 @@ You will need to convert atm to µatm and multiply Omega by 100 to create a perc
 
 ### Exercise 5 (Optional) {#M4_8 -}
 
-In this exercise, repeat Exercise 4 using help from AI. You can use an AI chatbot in any way that works well for you, including:
+In this exercise, we will explore the use of AI to assist with the jobs of digitising the and making comparison plots. TO do this we will repeat Exercise 4 using help an AI chatbot in any way that works well for you. Options can include:
 
-- ChatGPT or another large language model in a web browser
+- ChatGPT, or another large language model in a web browser
 - the Microsoft Copilot app
 - Copilot in Teams / chat
 - Copilot in Visual Studio Code
@@ -246,28 +246,32 @@ Repeat Exercise 4 with the following steps:
 - tell the chatbot to digitise all three of the datasets
 
 You can then export that data from the chatbot to Excel and process it there.
-Alternatively, you can proceed within the chatbot and tell it to create a statistical relationship between CO~2~ and pH and CO~2~ and omega. 
 
+We can get further assistance by proceeding within the chatbot and tell it to create the statistical relationship between CO~2~ and pH and CO~2~ and omega. 
+  
 You can tell the chatbot to create plots of CO~2~ on the x axis and the other variables on the y axis. It will try to create the plot using python. Please see the instructions in the Supporting Material on learning to plot with python, and learning to plot with python and AI.  
 
-Finally, you can add your data from the main exercise of this module to the data from the IPCC image. Load your data into the chatbot and tell it to plot both datasets on the same figure. 
+Finally, you can add your data from the main exercise of this module to the data from the IPCC image. Load your data into the chatbot and tell it to plot both data-sets on the same figure. 
 
 ```{block, tipM4-2, type='rmdtip2'}
-Writing good prompts is key to either getting AI to do good work for us, or having a frustrating argument with your computer. You need to guide the chatbot through the steps at the right pace.
+Writing good prompts is key to either getting AI to do good work for us, or having a frustrating argument with your computer. You need to set the context and guide the chatbot through the steps, at the right pace.
 
 Try writing one complete prompt that tells the chatbot how to do all of the steps.
 
 - Paragraph 1 – Context and Task
-  Describe what the figure or dataset contains and clearly state what needs to be extracted or analysed.
+  Describe what the figure or dataset contains and clearly state what you need to have extracted or analysed.
 - Paragraph 2 – Assumptions
   Explain how to handle missing or unclear information so the task can still be completed.
 - Paragraph 3 – Required Outputs
-  List all deliverables in detail, including file formats, content, and any analyses or visualizations required.
+  List your required deliverables in detail, including file formats, content, and any analyses or visualizations.
 - Paragraph 4 – Optional Comparison Step
   Describe what to do if additional data is provided, including how to compare or combine it with the extracted results.
 - Paragraph 5 – Output Format and Code
-  Explain how the results should be presented and specify any requirements for providing code or making the work reproducible.
+  Explain how the results should be presented and specify any requirements for providing code, or making the work reproducible.
 
+For example (you would need to update the **bold items** to be specific in your prompt):
+
+> I will provide an IPCC figure with three panels: **var1 (units), var2, and var3 (units)** for multiple SRES scenarios from 2000 to **2XXX**. Visually extract data points from a scenario of my choice every 10 years (2000, **20XX, …, 2XXX**). If axis ticks cannot be read, use default ranges: CO2 **XX–XX**, pH **X.X to X.X** (inverted), Omega **XX–160**. Return: Three CSVs for the chosen scenario (**var1.csv, var2.csv, var3.csv**) and a combined CSV (ipcc_digitized_combined.csv with columns Variable ∈ {**var1,var2,var3**}, Scenario=<chosen>, Year, Value). Plots for **var1, var2, and var3** showing the reconstruction for the chosen scenario. Linear regressions **Year ~ var1**, **Year ~ var2**, and **Year ~ var3** using the chosen scenario, reporting slope, intercept, and R², plus scatter-with-fit plots. If I provide a CSV with columns **Year_model (optional), CO2_uatm, pH, and Omega_pct**, use the regression equations to predict Year from each variable, compare the predictions with the extracted scenario data (variable and year), save a comparison CSV, and include comparison plots. Display all results inline and then provide Python code (pandas, numpy, matplotlib) that reproduces the CSVs and plots from the returned tables.
 ```
 
 
