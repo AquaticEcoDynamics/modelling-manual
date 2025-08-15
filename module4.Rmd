@@ -254,6 +254,20 @@ Finally, you can add your data from the main exercise of this module to the data
 
 ```{block, tipM4-2, type='rmdtip2'}
 Writing good prompts is key to either getting AI to do good work for us, or having a frustrating argument with your computer. You need to guide the chatbot through the steps at the right pace.
+
+Try writing one complete prompt that tells the chatbot how to do all of the steps.
+
+- Paragraph 1 – Context and Task
+  Describe what the figure or dataset contains and clearly state what needs to be extracted or analysed.
+- Paragraph 2 – Assumptions
+  Explain how to handle missing or unclear information so the task can still be completed.
+- Paragraph 3 – Required Outputs
+  List all deliverables in detail, including file formats, content, and any analyses or visualizations required.
+- Paragraph 4 – Optional Comparison Step
+  Describe what to do if additional data is provided, including how to compare or combine it with the extracted results.
+- Paragraph 5 – Output Format and Code
+  Explain how the results should be presented and specify any requirements for providing code or making the work reproducible.
+
 ```
 
 
