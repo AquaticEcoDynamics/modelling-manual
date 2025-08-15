@@ -232,7 +232,7 @@ You will need to convert atm to µatm and multiply Omega by 100 to create a perc
 
 ### Exercise 5 (Optional) {#M4_8 -}
 
-In this exercise, we will explore the use of AI to assist with the jobs of digitising the and making comparison plots. To do this we will repeat Exercise 4 using help an AI chatbot in any way that works well for you. Options can include:
+In this exercise, we will explore the use of AI to assist with the jobs of digitising the data and making comparison plots. To do this we will repeat Exercise 4 using help from an AI chatbot in any way that works well for you. Options can include:
 
 - ChatGPT, or another large language model in a web browser
 - the Microsoft Copilot app
@@ -262,15 +262,15 @@ Writing good prompts is key to either getting AI to do good work for us, or havi
 
 Try writing one complete prompt that tells the chatbot how to do all of the steps.
 
-- Paragraph 1 – Context and Task
+- Paragraph 1 – Context and Task: 
   Describe what the figure or dataset contains and clearly state what you need to have extracted or analysed.
-- Paragraph 2 – Assumptions
+- Paragraph 2 – Assumptions: 
   Explain how to handle missing or unclear information so the task can still be completed.
-- Paragraph 3 – Required Outputs
+- Paragraph 3 – Required Outputs: 
   List your required deliverables in detail, including file formats, content, and any analyses or visualizations.
-- Paragraph 4 – Optional Comparison Step
+- Paragraph 4 – Optional Comparison Step: 
   Describe what to do if additional data is provided, including how to compare or combine it with the extracted results.
-- Paragraph 5 – Output Format and Code
+- Paragraph 5 – Output Format and Code: 
   Explain how the results should be presented and specify any requirements for providing code, or making the work reproducible.
 
 <br>
@@ -281,7 +281,7 @@ For example (you would need to update the **bold items** to be specific in your 
 
 <br>
 
-NOTE: You will most likely find that there are some aspects that don't look right! e.g. the digitised data may not actually look accurate when you comapre to what you manually digitised, or other issues will pop up! In fact, even if you do the same prompt sequence twice you'll likely get different results 😱 . This is why we ask to receive the python script, as in most circumstances you would then use this as a **starting point** for your own work, and you would carefully refine the script and data to ensure it was accurate.
+NOTE: You will most likely find that there are some aspects that don't look right! e.g. the digitised data may not actually look accurate when you comapre to what you manually digitised, or other issues will pop up! In fact, even if you do the same prompt sequence twice you'll likely get different results 😱 . This is why we ask to receive the python script, as in most circumstances you would then use this as a **starting point** for your own work, and you would carefully refine the script and data to ensure it was accurate. 
 
 Please see the instructions in the Supporting Material on [learning to plot with python](#pythonplot), and [learning to plot with python and AI](#pythonplotAI). 
 
