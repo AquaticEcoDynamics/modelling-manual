@@ -161,11 +161,11 @@ kable(
 See how dairy has the highest alpha? This means it produces the most $P$ of all 4 classes.
 ```
 
-#### Calculate phosphate export load {#M5B_8 -}
+#### Calculate phosphate export load {#M5B_9 -}
 
 7) Compute the $P_{load}$ at the catchment outlet in kg/day. Also, work out the cumulative load (this will come in handy to coampre scenarios; we call it a mass curve) 
 
-#### Consider 2 management scenarios {#M5B_9 -}
+#### Consider 2 management scenarios {#M5B_10 -}
 
 Finally, let’s run 2 management scenarios:
 
@@ -181,7 +181,7 @@ Change the land use fractions manually. They still have to add up to 1, so chang
 Use an IF statement to put a conditional cap on your dairy phosphorous concentration 
 ```
 
-### Submission {#M5B_10 -}
+### Submission {#M5B_11 -}
 :::: {.redbox2}
 
 **Submit properly formatted graphs and tables of the following sections of the lab:**
