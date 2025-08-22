@@ -1,7 +1,7 @@
 Parameters for catchment model: ,"<span style=""color: #9BBB59;"">Catchment value</span> "
 "Sub catchment area, $A$ (km^2^)",50
 "Soil depth, $D$",10 (m)
-"Baseflow coefficient, $\alpha_s$ (range)",5e3 to 5e4
+"Baseflow coefficient, $\alpha_s$ (range)",5.0E3 to 5.0E4
 "Field capacity, $\theta_{fc}$ (range)",0.08 to 0.15
 "Infilt. capacity, $I_{max}$ (range)",0.01 to 0.3
 "Deep rooted vegetation fraction, $M$ (range)",0.42 to 0.65
