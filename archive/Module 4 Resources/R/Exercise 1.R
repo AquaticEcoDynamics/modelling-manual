@@ -22,14 +22,12 @@ KSPCaCO3<-1*10^-8.4; Ca2<-5*10^-4
 # Normal Calculations
 pH<- 8.3
 H<-    # mol L^-1
-  OH<-   # mol L^-1  
-  CO2<- 3.5E-4 #atm
+OH<-   # mol L^-1  
+CO2<- 3.5E-4 #atm
 H2CO3<-      # mol L^-1
-  HCO3<-       # mol L^-1
-  CO32<-       # mol L^-1
-  Ca2<-5E-4    # mol L^-1
+HCO3<-       # mol L^-1
+CO32<-       # mol L^-1
+Ca2<-5E-4    # mol L^-1
 omega<-
-  CT<-         # mol L^-1
-  Alk<-        # mol L^-1
-  
-  
+CT<-         # mol L^-1
+Alk<-        # mol L^-1
