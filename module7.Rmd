@@ -27,7 +27,7 @@ Lake Stratification:
 
 -   Hand drawn diagram of the lake and any variables you used
 -   Plots of the water balance using Excel
--   Plots of the heat fluxes using Excel
+<!-- -   Plots of the heat fluxes using Excel -->
 -   Plots of the temperature at different layers using Excel
 -   Plots of the shallower lake using Excel
 
