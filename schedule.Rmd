@@ -1,0 +1,484 @@
+# Schedule {#schedule -}
+
+The teaching schedule for **ENVT3362 Environmental Dynamics** is shown below. Seminars run on Thursdays and practicals on Fridays. Assessment due dates are highlighted in the final column.
+
+```{=html}
+<style>
+  /* All rules scoped to .envt-schedule so nothing leaks into the rest of the book */
+  .envt-schedule * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .envt-schedule {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10px;
+    background: #fff;
+    padding: 16px;
+    color: #1a1a2e;
+    width: 100%;
+    max-width: 760px;
+    margin: 1em 0;
+  }
+
+  .envt-schedule h1 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    color: #003087;
+  }
+
+  .envt-schedule p.subtitle {
+    font-size: 8.5px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+  .envt-schedule .table-wrap {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  }
+
+  .envt-schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+  }
+
+  /* Header */
+  .envt-schedule thead th {
+    background: #003087;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 6px 8px;
+    text-align: left;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+  .envt-schedule thead th:last-child { border-right: none; }
+
+  /* Body cells */
+  .envt-schedule tbody td {
+    padding: 5px 7px;
+    vertical-align: top;
+    border-bottom: 1px solid #e8eaf0;
+    border-right: 1px solid #e8eaf0;
+    line-height: 1.4;
+  }
+  .envt-schedule tbody td:last-child { border-right: none; }
+
+  /* Row types */
+  .envt-schedule tr.teaching:nth-child(odd)  td { background: #fff; }
+  .envt-schedule tr.teaching:nth-child(even) td { background: #f7f8fc; }
+
+  .envt-schedule tr.break td {
+    background: #fafafa;
+    color: #999;
+    font-style: italic;
+  }
+
+  .envt-schedule tr.exam td {
+    background: #f0f4ff;
+    color: #333;
+  }
+
+  /* Week label */
+  .envt-schedule .week-cell { white-space: nowrap; }
+  .envt-schedule .cal-week {
+    font-size: 7.5px;
+    color: #999;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .envt-schedule .date-range {
+    font-weight: 600;
+    font-size: 9px;
+    color: #003087;
+    margin-top: 1px;
+  }
+
+  /* Week badge */
+  .envt-schedule .wk-badge {
+    display: inline-block;
+    background: #003087;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  /* Seminar topic */
+  .envt-schedule .topic-title { font-weight: 600; color: #003087; }
+  .envt-schedule .topic-sub   { color: #333; margin-top: 1px; }
+
+  /* Due items */
+  .envt-schedule .due-cell { min-width: 0; }
+  .envt-schedule .due-item {
+    display: inline-block;
+    background: #d64000;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    line-height: 1.35;
+    margin-bottom: 2px;
+  }
+  .envt-schedule .due-item.secondary { background: #e07a00; }
+  .envt-schedule .due-item.pink      { background: #c2185b; }
+
+  /* Break / exam labels */
+  .envt-schedule .row-label {
+    font-size: 7.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+  .envt-schedule .row-label.study { background: #e0e0e0; color: #555; }
+  .envt-schedule .row-label.exam  { background: #c7d4f5; color: #1a3a8f; }
+
+  /* Day labels in header */
+  .envt-schedule .day-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-top: 2px;
+  }
+
+  /* Project theme tags */
+  .envt-schedule .tags { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; margin-top: 4px; }
+  .envt-schedule .tags-label { font-size: 8px; font-weight: 600; color: #bbb; white-space: nowrap; }
+  .envt-schedule .tag {
+    font-size: 7.5px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 1px 5px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .envt-schedule .tag.marine  { background: #d0eaf8; color: #005f8e; }
+  .envt-schedule .tag.climate { background: #fde4d8; color: #b03a1a; }
+  .envt-schedule .tag.ecology { background: #d4eddf; color: #1e6b3c; }
+  .envt-schedule .tag.land    { background: #ede3d4; color: #6b4a22; }
+  .envt-schedule .tag.water   { background: #cceef8; color: #005f7a; }
+  .envt-schedule .tag.sustain { background: #e4d9f5; color: #4a2080; }
+
+  /* Tutorial sky-blue */
+  .envt-schedule .tutorial .wk-badge    { background: #0ea5e9; }
+  .envt-schedule .tutorial .topic-title { color: #0284c7; }
+
+  /* Skills column */
+  .envt-schedule tbody td:nth-child(5) { font-size: 9px; font-style: italic; color: #444; }
+</style>
+
+<div class="envt-schedule">
+
+<h1>ENVT3362 : Environmental Dynamics</h1>
+<p class="subtitle">Teaching schedule · Semester 2, 2026 · Seminar: Thursday · Practical: Friday</p>
+
+<div class="table-wrap">
+<table>
+<colgroup>
+  <col style="width:82px">
+  <col style="width:32px">
+  <col style="width:30%">
+  <col style="width:22%">
+  <col>
+  <col style="width:74px">
+</colgroup>
+<thead>
+  <tr>
+    <th>Week</th>
+    <th>#</th>
+    <th>Weekly Seminar Topic<span class="day-label">Thursday</span></th>
+    <th>Practical<span class="day-label">Friday</span></th>
+    <th>Skill Development</th>
+    <th>Due Items</th>
+  </tr>
+</thead>
+<tbody>
+
+  <!-- Teaching Week 1 -->
+  <tr class="teaching">
+    <td class="week-cell">
+      <div class="cal-week">Wk 30</div>
+      <div class="date-range">20–24 Jul</div>
+    </td>
+    <td><span class="wk-badge">1</span></td>
+    <td>
+      <div class="topic-title">Environmental dynamics</div>
+      <div class="topic-sub">Introduction, concepts, model approaches, model conceptualisation, "systems thinking"</div>
+    </td>
+    <td>Assessing impact of a flow diversion</td>
+    <td>Scenario modelling in Excel<br>Reporting style</td>
+    <td class="due-cell"></td>
+  </tr>
+
+  <!-- Teaching Week 2 -->
+  <tr class="teaching">
+    <td class="week-cell">
+      <div class="cal-week">Wk 31</div>
+      <div class="date-range">27–31 Jul</div>
+    </td>
+    <td><span class="wk-badge">2</span></td>
+    <td>
+      <div class="topic-title">Environmental analysis and modelling</div>
+      <div class="topic-sub">Nature and purpose of environmental modelling. Top-down vs Bottom-up. Using Ordinary Differential Equations (ODEs) to simulate changing variables (e.g. Quokkas)</div>
+    </td>
+    <td>ODE model of sediment bioreactions</td>
+    <td>Dynamic modelling in R<br>Using the R tidyverse</td>
+    <td class="due-cell"></td>
+  </tr>
+
+  <!-- Teaching Week 3 -->
+  <tr class="teaching">
+    <td class="week-cell">
+      <div class="cal-week">Wk 32</div>
+      <div class="date-range">3–7 Aug</div>
+    </td>
+    <td><span class="wk-badge">3</span></td>
+    <td>
+      <div class="topic-title">Climate model fundamentals</div>
+      <div class="topic-sub">Planetary energy balance</div>
+    </td>
+    <td>Sensitivity of planetary energy budget</td>
+    <td>Steady-state model<br>Using R baseplot</td>
+    <td class="due-cell"></td>
+  </tr>
+
+  <!-- Teaching Week 4 -->
+  <tr class="teaching">
+    <td class="week-cell">
+      <div class="cal-week">Wk 33</div>
+      <div class="date-range">10–14 Aug</div>
+    </td>
+    <td><span class="wk-badge">4</span></td>
+    <td>
+      <div class="topic-title">Forecasting climate futures</div>
+      <div class="topic-sub">Coupled climate and ocean models (GCMs). Forecasting climate change impacts</div>
+    </td>
+    <td>Ocean acidification forecast</td>
+    <td>Equilibrium model<br>Using Python matplotlib and AI-chat</td>
+    <td class="due-cell"><span class="due-item secondary" style="font-style:italic">Working group registration</span></td>
+  </tr>
+
+  <!-- Teaching Week 5 -->
+  <tr class="teaching">
+    <td class="week-cell">
+      <div class="cal-week">Wk 34</div>
+      <div class="date-range">17–21 Aug</div>
+    </td>
+    <td><span class="wk-badge">5</span></td>
+    <td>
+      <div class="topic-title">Catchments and water</div>
+      <div class="topic-sub">Water balance, land-use change and pollutant export. Project Introduction</div>
+    </td>
+    <td>Catchment land-use</td>
+    <td>Lumped modelling and management scenario testing</td>
+    <td class="due-cell"><span class="due-item">Assess 1<br>Weeks 1–4 due</span></td>
+  </tr>
+
+  <!-- Teaching Week 6 -->
+  <tr class="teaching">
+    <td class="week-cell">
+      <div class="cal-week">Wk 35</div>
+      <div class="date-range">24–28 Aug</div>
+    </td>
+    <td><span class="wk-badge">6</span></td>
+    <td>
+      <div class="topic-title">Habitat and ecosystems</div>
+      <div class="topic-sub">Lotka-Volterra, habitat suitability and species distribution modelling</div>
+    </td>
+    <td>Ecological forecasting</td>
+    <td>Calibration and ensemble predictions</td>
+    <td class="due-cell"></td>
+  </tr>
+
+  <!-- Study Break -->
+  <tr class="break">
+    <td class="week-cell">
+      <div class="cal-week">Wk 36</div>
+      <div class="date-range">31 Aug – 4 Sep</div>
+    </td>
+    <td><span class="row-label study">Break</span></td>
+    <td colspan="3" style="color:#bbb;">— Mid-semester study break —</td>
+    <td class="due-cell"><span class="due-item secondary">Project topic registered</span></td>
+  </tr>
+
+  <!-- Teaching Week 7 -->
+  <tr class="teaching">
+    <td class="week-cell">
+      <div class="cal-week">Wk 37</div>
+      <div class="date-range">7–11 Sep</div>
+    </td>
+    <td><span class="wk-badge">7</span></td>
+    <td>
+      <div class="topic-title">Rivers and coasts</div>
+      <div class="topic-sub">Transport and mixing in the environment</div>
+    </td>
+    <td>1D coastal pollution model</td>
+    <td>Spatio-temporal model and numerical methods</td>
+    <td class="due-cell"></td>
+  </tr>
+
+  <!-- Teaching Week 8 -->
+  <tr class="teaching tutorial">
+    <td class="week-cell">
+      <div class="cal-week">Wk 38</div>
+      <div class="date-range">14–18 Sep</div>
+    </td>
+    <td><span class="wk-badge">8</span></td>
+    <td>
+      <div class="topic-title">Project tutorial I</div>
+      <div class="topic-sub">Problem conceptualisation and hypothesis creation</div>
+      <div class="tags">
+        <span class="tags-label">Working groups:</span>
+        <span class="tag marine">marine</span>
+        <span class="tag climate">climate</span>
+        <span class="tag ecology">ecology</span>
+        <span class="tag land">land</span>
+        <span class="tag water">water</span>
+        <span class="tag sustain">sustain</span>
+      </div>
+    </td>
+    <td>WQ time-series modelling</td>
+    <td>Machine learning</td>
+    <td class="due-cell"><span class="due-item">Assess 1<br>Weeks 5–7 due</span></td>
+  </tr>
+
+  <!-- Teaching Week 9 -->
+  <tr class="teaching tutorial">
+    <td class="week-cell">
+      <div class="cal-week">Wk 39</div>
+      <div class="date-range">21–25 Sep</div>
+    </td>
+    <td><span class="wk-badge">9</span></td>
+    <td>
+      <div class="topic-title">Project tutorial II</div>
+      <div class="topic-sub">Conceptual model creation and data sourcing</div>
+      <div class="tags">
+        <span class="tags-label">Working groups:</span>
+        <span class="tag marine">marine</span>
+        <span class="tag climate">climate</span>
+        <span class="tag ecology">ecology</span>
+        <span class="tag land">land</span>
+        <span class="tag water">water</span>
+        <span class="tag sustain">sustain</span>
+      </div>
+    </td>
+    <td>Lake ecosystem dynamics</td>
+    <td>Coupled-dynamic modelling and assessment</td>
+    <td class="due-cell"></td>
+  </tr>
+
+  <!-- Teaching Week 10 -->
+  <tr class="teaching tutorial">
+    <td class="week-cell">
+      <div class="cal-week">Wk 40</div>
+      <div class="date-range">28 Sep – 2 Oct</div>
+    </td>
+    <td><span class="wk-badge">10</span></td>
+    <td>
+      <div class="topic-title">Project tutorial III</div>
+      <div class="topic-sub">PYP: Pitch your project</div>
+      <div class="tags">
+        <span class="tags-label">Working groups:</span>
+        <span class="tag marine">marine</span>
+        <span class="tag climate">climate</span>
+        <span class="tag ecology">ecology</span>
+        <span class="tag land">land</span>
+        <span class="tag water">water</span>
+        <span class="tag sustain">sustain</span>
+      </div>
+    </td>
+    <td>Limits of acceptable change</td>
+    <td>Scenario testing</td>
+    <td class="due-cell"><span class="due-item pink">Assess 2a<br>Project pitch</span></td>
+  </tr>
+
+  <!-- Teaching Week 11 -->
+  <tr class="teaching tutorial">
+    <td class="week-cell">
+      <div class="cal-week">Wk 41</div>
+      <div class="date-range">5–9 Oct</div>
+    </td>
+    <td><span class="wk-badge">11</span></td>
+    <td>
+      <div class="topic-title">Project tutorial IV</div>
+      <div class="topic-sub">Model hackathon</div>
+      <div class="tags">
+        <span class="tags-label">Working groups:</span>
+        <span class="tag marine">marine</span>
+        <span class="tag climate">climate</span>
+        <span class="tag ecology">ecology</span>
+        <span class="tag land">land</span>
+        <span class="tag water">water</span>
+        <span class="tag sustain">sustain</span>
+      </div>
+    </td>
+    <td>Drop-in session</td>
+    <td>Discipline</td>
+    <td class="due-cell"><span class="due-item">Assess 1<br>Weeks 8–10 due</span></td>
+  </tr>
+
+  <!-- Teaching Week 12 -->
+  <tr class="teaching tutorial">
+    <td class="week-cell">
+      <div class="cal-week">Wk 42</div>
+      <div class="date-range">12–16 Oct</div>
+    </td>
+    <td><span class="wk-badge">12</span></td>
+    <td>
+      <div class="topic-title">Project tutorial V</div>
+      <div class="topic-sub">Report writing</div>
+      <div class="tags">
+        <span class="tags-label">Working groups:</span>
+        <span class="tag marine">marine</span>
+        <span class="tag climate">climate</span>
+        <span class="tag ecology">ecology</span>
+        <span class="tag land">land</span>
+        <span class="tag water">water</span>
+        <span class="tag sustain">sustain</span>
+      </div>
+    </td>
+    <td>No session</td>
+    <td>Stamina</td>
+    <td class="due-cell"></td>
+  </tr>
+
+  <!-- SWOT VAC -->
+  <tr class="break">
+    <td class="week-cell">
+      <div class="cal-week">Wk 43</div>
+      <div class="date-range">19–23 Oct</div>
+    </td>
+    <td><span class="row-label study">SWOT VAC</span></td>
+    <td colspan="3" style="color:#bbb;">— Study break (no classes) —</td>
+    <td class="due-cell"></td>
+  </tr>
+
+  <!-- Exam Period -->
+  <tr class="exam">
+    <td class="week-cell">
+      <div class="cal-week">Wk 44–45</div>
+      <div class="date-range">26 Oct – 6 Nov</div>
+    </td>
+    <td><span class="row-label exam">Exams</span></td>
+    <td colspan="3" style="color:#555;">— Examination period —</td>
+    <td class="due-cell"><span class="due-item pink">Assess 2b<br>Model report</span></td>
+  </tr>
+
+</tbody>
+</table>
+</div>
+
+</div>
+```

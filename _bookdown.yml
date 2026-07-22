@@ -2,6 +2,7 @@ book_filename: Environmental Dynamics Workbook
 output_dir: docs
 delete_merged_file: true
 rmd_files: ["index.Rmd",
+            "schedule.Rmd",
             "gettingstarted.Rmd",
             "styleguide.Rmd",
             "module1.Rmd",

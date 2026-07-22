@@ -1,3 +1,6 @@
+/* --- Pressbooks-style typography (free Google Fonts) --- */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap');
+
 .rmdcaution, .rmdimportant, .rmdnote, .rmdtip, .rmdwarning {
   padding: 1em 1em 1em 4em;
   margin-bottom: 10px;
@@ -126,7 +129,21 @@ div.rmdquestion::before {
   font-weight: bold;
   margin-bottom: 0.25em;
 }
-body {font-family: Arial;}
+/* ---- Typography: Encode Sans body / Raleway headings (matches JMU) ---- */
+body,
+.book.font-family-0,
+.book.font-family-1,
+.book .book-body .page-wrapper .page-inner section.normal {
+  font-family: 'Encode Sans', sans-serif;
+}
+.book .book-body .page-inner h1,
+.book .book-body .page-inner h2,
+.book .book-body .page-inner h3,
+.book .book-body .page-inner h4,
+.book .book-body .page-inner h5,
+.book .book-body .page-inner h6 {
+  font-family: 'Raleway', sans-serif;
+}
 
 /* Fix panelset css */
 
