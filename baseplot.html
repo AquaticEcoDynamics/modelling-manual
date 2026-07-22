@@ -471,32 +471,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="call-plot" class="section level3 unnumbered hasAnchor" number="">
 <h3>Call <code>plot()</code><a href="baseplot.html#call-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="baseplot.html#cb45-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow) </span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
 <p><code>plot</code> defaults to a points plot, but we can quickly change it to a line plot using the argument <code>type = "l"</code>.</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="baseplot.html#cb46-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>) </span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
 <p>Just as with ggplot, we can access the R database of standard colours.</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="baseplot.html#cb47-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
 <p>By default it is selecting x and y from columns 1 and 2.</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="baseplot.html#cb48-1" aria-hidden="true"></a><span class="kw">plot</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>date, <span class="dt">y=</span>envFlow<span class="op">$</span>totalDischarge    ,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
 <p>If you had several columns, you could choose which to plot on the y axis. We can make a new variable, say, double flow. A new line can be appended to the original plot using the <code>lines</code> function.</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="baseplot.html#cb49-1" aria-hidden="true"></a>doubleflow =<span class="st"> </span>envFlow<span class="op">$</span>totalDischarge <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span>
 <span id="cb49-2"><a href="baseplot.html#cb49-2" aria-hidden="true"></a><span class="kw">plot</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>date, <span class="dt">y=</span>envFlow<span class="op">$</span>totalDischarge    ,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
 <span id="cb49-3"><a href="baseplot.html#cb49-3" aria-hidden="true"></a><span class="kw">lines</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>date, <span class="dt">y=</span>doubleflow, <span class="dt">col=</span><span class="st">&quot;red4&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 <p>To plot a subset of the data, use the square brackets to select indices, say, points 100 to 800.</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="baseplot.html#cb50-1" aria-hidden="true"></a>doubleflow =<span class="st"> </span>envFlow<span class="op">$</span>totalDischarge <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span>
 <span id="cb50-2"><a href="baseplot.html#cb50-2" aria-hidden="true"></a><span class="kw">plot</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>date[<span class="dv">100</span><span class="op">:</span><span class="dv">800</span>], <span class="dt">y=</span>envFlow<span class="op">$</span>totalDischarge[<span class="dv">100</span><span class="op">:</span><span class="dv">800</span>]    ,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 <p>Similarly, the limits of the axes can be set with the <code>xlim</code> and <code>ylim</code> arguments.</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="baseplot.html#cb51-1" aria-hidden="true"></a><span class="kw">plot</span>(<span class="dt">x=</span>envFlow<span class="op">$</span>date, <span class="dt">y=</span>envFlow<span class="op">$</span>totalDischarge    </span>
 <span id="cb51-2"><a href="baseplot.html#cb51-2" aria-hidden="true"></a>     ,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span></span>
 <span id="cb51-3"><a href="baseplot.html#cb51-3" aria-hidden="true"></a>     ,<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">date</span>(<span class="st">&quot;2000-01-01&quot;</span>),<span class="kw">date</span>(<span class="st">&quot;2005-01-01&quot;</span>))</span>
 <span id="cb51-4"><a href="baseplot.html#cb51-4" aria-hidden="true"></a>     ,<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1500</span>)</span>
 <span id="cb51-5"><a href="baseplot.html#cb51-5" aria-hidden="true"></a>     )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
 </div>
 </div>
 <div id="call-plot-and-then-start-again" class="section level2 unnumbered hasAnchor" number="">
@@ -507,7 +507,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb52-3"><a href="baseplot.html#cb52-3" aria-hidden="true"></a>     ,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span></span>
 <span id="cb52-4"><a href="baseplot.html#cb52-4" aria-hidden="true"></a>     ,<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">date</span>(<span class="st">&quot;2000-01-01&quot;</span>),<span class="kw">date</span>(<span class="st">&quot;2005-01-01&quot;</span>))</span>
 <span id="cb52-5"><a href="baseplot.html#cb52-5" aria-hidden="true"></a>     )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 <p>Then we can add all the elements back in. The plot is still open so it will plot everything to the blank plot.</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="baseplot.html#cb53-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow,<span class="dt">type=</span><span class="st">&quot;n&quot;</span></span>
 <span id="cb53-2"><a href="baseplot.html#cb53-2" aria-hidden="true"></a>     ,<span class="dt">axes=</span>F</span>
@@ -517,7 +517,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb53-6"><a href="baseplot.html#cb53-6" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,envFlow<span class="op">$</span>totalDischarge,<span class="dt">col=</span><span class="st">&quot;dodgerblue3&quot;</span>)</span>
 <span id="cb53-7"><a href="baseplot.html#cb53-7" aria-hidden="true"></a><span class="kw">lines</span>(envFlow<span class="op">$</span>date,doubleflow,<span class="dt">col=</span><span class="st">&quot;red4&quot;</span>)</span>
 <span id="cb53-8"><a href="baseplot.html#cb53-8" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
 <div id="axis-and-mtext" class="section level3 unnumbered hasAnchor" number="">
 <h3>Axis and mtext<a href="baseplot.html#axis-and-mtext" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can put the axis and axis labels back in using the functions ‘axis’ and ‘mtext’. They both have the <code>side</code> argument:</p>
@@ -534,7 +534,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb54-9"><a href="baseplot.html#cb54-9" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">1</span>,<span class="dt">text=</span><span class="st">&quot;Date&quot;</span>,<span class="dt">line=</span><span class="dv">2</span>)</span>
 <span id="cb54-10"><a href="baseplot.html#cb54-10" aria-hidden="true"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">2</span>,<span class="dt">text=</span><span class="kw">expression</span>(<span class="st">&quot;Flow (ML d&quot;</span><span class="op">^-</span><span class="dv">1</span><span class="op">*</span><span class="st">&quot;)&quot;</span>),<span class="dt">line=</span><span class="dv">2</span>)</span>
 <span id="cb54-11"><a href="baseplot.html#cb54-11" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <p>The date axis needs to be formatted, then the <code>axis.Date</code> function is used. This step is clunky compared to ggplot.</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="baseplot.html#cb55-1" aria-hidden="true"></a><span class="kw">plot</span>(envFlow,<span class="dt">type=</span><span class="st">&quot;n&quot;</span></span>
 <span id="cb55-2"><a href="baseplot.html#cb55-2" aria-hidden="true"></a>     ,<span class="dt">axes=</span>F</span>
@@ -549,7 +549,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb55-11"><a href="baseplot.html#cb55-11" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</span>
 <span id="cb55-12"><a href="baseplot.html#cb55-12" aria-hidden="true"></a>x.axis&lt;-<span class="kw">as.Date</span>(<span class="kw">seq</span>(<span class="kw">min</span>(envFlow<span class="op">$</span>date),<span class="kw">max</span>(envFlow<span class="op">$</span>date),<span class="dt">by=</span><span class="dv">3</span><span class="op">*</span><span class="dv">365</span>),<span class="dt">format=</span><span class="st">&quot;%Y&quot;</span>)</span>
 <span id="cb55-13"><a href="baseplot.html#cb55-13" aria-hidden="true"></a><span class="kw">axis.Date</span>(<span class="dt">at=</span>x.axis,<span class="dt">side=</span><span class="dv">1</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 </div>
 <div id="legend" class="section level3 unnumbered hasAnchor" number="">
 <h3>Legend<a href="baseplot.html#legend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -572,7 +572,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb56-16"><a href="baseplot.html#cb56-16" aria-hidden="true"></a>       ,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;dodgerblue3&quot;</span>,<span class="st">&quot;red4&quot;</span>)</span>
 <span id="cb56-17"><a href="baseplot.html#cb56-17" aria-hidden="true"></a>       ,<span class="dt">pch=</span><span class="dv">16</span> </span>
 <span id="cb56-18"><a href="baseplot.html#cb56-18" aria-hidden="true"></a>       ,<span class="dt">cex =</span> <span class="fl">0.7</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 </div>
 <div id="add-a-polygon" class="section level3 unnumbered hasAnchor" number="">
 <h3>Add a polygon<a href="baseplot.html#add-a-polygon" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -620,7 +620,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb59-23"><a href="baseplot.html#cb59-23" aria-hidden="true"></a>       ,<span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Flow&quot;</span>,<span class="st">&quot;Doubleflow&quot;</span>)</span>
 <span id="cb59-24"><a href="baseplot.html#cb59-24" aria-hidden="true"></a>       ,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;dodgerblue3&quot;</span>,<span class="st">&quot;red4&quot;</span>)</span>
 <span id="cb59-25"><a href="baseplot.html#cb59-25" aria-hidden="true"></a>       ,<span class="dt">pch=</span><span class="dv">16</span> )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 </div>
 </div>
 <div id="make-an-annual-column-chart" class="section level2 unnumbered hasAnchor" number="">
@@ -643,7 +643,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb61-11"><a href="baseplot.html#cb61-11" aria-hidden="true"></a>        ,<span class="dt">ylab =</span> <span class="st">&quot;Anual flow (ML)&quot;</span></span>
 <span id="cb61-12"><a href="baseplot.html#cb61-12" aria-hidden="true"></a>        )</span>
 <span id="cb61-13"><a href="baseplot.html#cb61-13" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 </div>
 <div id="make-a-multi-plot-figure" class="section level2 unnumbered hasAnchor" number="">
 <h2>Make a multi-plot figure<a href="baseplot.html#make-a-multi-plot-figure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -679,7 +679,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb62-28"><a href="baseplot.html#cb62-28" aria-hidden="true"></a>              ,<span class="dt">ylab =</span> <span class="st">&quot;Anual flow (ML)&quot;</span></span>
 <span id="cb62-29"><a href="baseplot.html#cb62-29" aria-hidden="true"></a>      )</span>
 <span id="cb62-30"><a href="baseplot.html#cb62-30" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="baseplot.html#cb63-1" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
 <span id="cb63-2"><a href="baseplot.html#cb63-2" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mfg=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
 <span id="cb63-3"><a href="baseplot.html#cb63-3" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
@@ -710,7 +710,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb63-28"><a href="baseplot.html#cb63-28" aria-hidden="true"></a>              ,<span class="dt">ylab =</span> <span class="st">&quot;Anual flow (ML)&quot;</span></span>
 <span id="cb63-29"><a href="baseplot.html#cb63-29" aria-hidden="true"></a>      )</span>
 <span id="cb63-30"><a href="baseplot.html#cb63-30" aria-hidden="true"></a><span class="kw">box</span>(<span class="dt">bty=</span><span class="st">&quot;o&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 
 </div>
 </div>

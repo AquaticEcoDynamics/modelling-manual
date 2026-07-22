@@ -478,7 +478,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="call-ggplot" class="section level4 unnumbered hasAnchor" number="">
 <h4>Call <code>ggplot()</code><a href="tidyverse.html#call-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="tidyverse.html#cb10-1" aria-hidden="true"></a><span class="kw">ggplot</span>() </span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 <div id="define-the-data-and-mapping" class="section level4 unnumbered hasAnchor" number="">
 <h4>Define the data and mapping<a href="tidyverse.html#define-the-data-and-mapping" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -486,7 +486,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The aesthetics (<code>aes()</code>) provide the mapping between variables in the data and the plot’s visual properties</li>
 </ul>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tidyverse.html#cb11-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) </span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="add-a-geometry-layer" class="section level4 unnumbered hasAnchor" number="">
 <h4>Add a geometry layer<a href="tidyverse.html#add-a-geometry-layer" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -495,7 +495,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tidyverse.html#cb12-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
 <span id="cb12-2"><a href="tidyverse.html#cb12-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>() </span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="change-the-geometry" class="section level4 unnumbered hasAnchor" number="">
 <h4>Change the geometry<a href="tidyverse.html#change-the-geometry" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -504,7 +504,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tidyverse.html#cb13-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
 <span id="cb13-2"><a href="tidyverse.html#cb13-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 <div id="change-the-colour" class="section level4 unnumbered hasAnchor" number="">
 <h4>Change the colour<a href="tidyverse.html#change-the-colour" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -513,14 +513,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="tidyverse.html#cb14-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
 <span id="cb14-2"><a href="tidyverse.html#cb14-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 </div>
 <div id="fix-the-labels" class="section level4 unnumbered hasAnchor" number="">
 <h4>Fix the labels<a href="tidyverse.html#fix-the-labels" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tidyverse.html#cb15-1" aria-hidden="true"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> envFlow, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
 <span id="cb15-2"><a href="tidyverse.html#cb15-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
 <span id="cb15-3"><a href="tidyverse.html#cb15-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>)</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
 <div id="change-the-theme" class="section level4 unnumbered hasAnchor" number="">
 <h4>Change the theme<a href="tidyverse.html#change-the-theme" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -528,7 +528,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-2"><a href="tidyverse.html#cb16-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&quot;dodgerblue3&quot;</span>) <span class="op">+</span></span>
 <span id="cb16-3"><a href="tidyverse.html#cb16-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Total Discharge (ML)&quot;</span>) <span class="op">+</span></span>
 <span id="cb16-4"><a href="tidyverse.html#cb16-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_light</span>()</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
 <div id="customise-the-theme" class="section level4 unnumbered hasAnchor" number="">
 <h4>Customise the theme<a href="tidyverse.html#customise-the-theme" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -540,7 +540,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-6"><a href="tidyverse.html#cb17-6" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
 <span id="cb17-7"><a href="tidyverse.html#cb17-7" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
 <span id="cb17-8"><a href="tidyverse.html#cb17-8" aria-hidden="true"></a>  )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 <div id="save-the-plot" class="section level4 unnumbered hasAnchor" number="">
 <h4>Save the plot<a href="tidyverse.html#save-the-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -573,7 +573,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb19-6"><a href="tidyverse.html#cb19-6" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
 <span id="cb19-7"><a href="tidyverse.html#cb19-7" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
 <span id="cb19-8"><a href="tidyverse.html#cb19-8" aria-hidden="true"></a>  )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 </div>
 <div id="add-a-second-geometry" class="section level4 unnumbered hasAnchor" number="">
 <h4>Add a second geometry<a href="tidyverse.html#add-a-second-geometry" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -589,7 +589,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb20-7"><a href="tidyverse.html#cb20-7" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
 <span id="cb20-8"><a href="tidyverse.html#cb20-8" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
 <span id="cb20-9"><a href="tidyverse.html#cb20-9" aria-hidden="true"></a>  )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 </div>
 <div id="customise-the-geometry" class="section level4 unnumbered hasAnchor" number="">
 <h4>Customise the geometry<a href="tidyverse.html#customise-the-geometry" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -605,7 +605,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb21-10"><a href="tidyverse.html#cb21-10" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
 <span id="cb21-11"><a href="tidyverse.html#cb21-11" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
 <span id="cb21-12"><a href="tidyverse.html#cb21-12" aria-hidden="true"></a>  )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 </div>
 <div id="add-a-legend" class="section level4 unnumbered hasAnchor" number="">
 <h4>Add a legend<a href="tidyverse.html#add-a-legend" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -625,7 +625,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb22-10"><a href="tidyverse.html#cb22-10" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
 <span id="cb22-11"><a href="tidyverse.html#cb22-11" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
 <span id="cb22-12"><a href="tidyverse.html#cb22-12" aria-hidden="true"></a>  )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 </div>
 <div id="customise-the-legend" class="section level4 unnumbered hasAnchor" number="">
 <h4>Customise the legend<a href="tidyverse.html#customise-the-legend" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -646,7 +646,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb23-12"><a href="tidyverse.html#cb23-12" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
 <span id="cb23-13"><a href="tidyverse.html#cb23-13" aria-hidden="true"></a>    <span class="dt">legend.title =</span> <span class="kw">element_blank</span>()</span>
 <span id="cb23-14"><a href="tidyverse.html#cb23-14" aria-hidden="true"></a>  )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 </div>
 <div id="move-the-legend" class="section level4 unnumbered hasAnchor" number="">
 <h4>Move the legend<a href="tidyverse.html#move-the-legend" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -666,7 +666,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb24-14"><a href="tidyverse.html#cb24-14" aria-hidden="true"></a>    <span class="dt">legend.position =</span> <span class="st">&quot;top&quot;</span>,</span>
 <span id="cb24-15"><a href="tidyverse.html#cb24-15" aria-hidden="true"></a>    <span class="dt">legend.justification =</span> <span class="st">&quot;right&quot;</span></span>
 <span id="cb24-16"><a href="tidyverse.html#cb24-16" aria-hidden="true"></a>  )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 </div>
 <div id="save-the-plot-1" class="section level4 unnumbered hasAnchor" number="">
 <h4>Save the plot<a href="tidyverse.html#save-the-plot-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -795,7 +795,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb35-5"><a href="tidyverse.html#cb35-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">totalDischarge =</span> <span class="kw">sum</span>(totalDischarge)) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb35-6"><a href="tidyverse.html#cb35-6" aria-hidden="true"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> totalDischarge)) <span class="op">+</span></span>
 <span id="cb35-7"><a href="tidyverse.html#cb35-7" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&quot;dodgerblue3&quot;</span>) </span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 </div>
 <div id="apply-the-previous-theme" class="section level4 unnumbered hasAnchor" number="">
 <h4>Apply the previous theme<a href="tidyverse.html#apply-the-previous-theme" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -812,7 +812,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb36-11"><a href="tidyverse.html#cb36-11" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
 <span id="cb36-12"><a href="tidyverse.html#cb36-12" aria-hidden="true"></a>    <span class="dt">axis.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
 <span id="cb36-13"><a href="tidyverse.html#cb36-13" aria-hidden="true"></a>  )</span></code></pre></div>
-<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="Environmental-Dynamics-Workbook_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 </div>
 <div id="recap" class="section level4 unnumbered hasAnchor" number="">
 <h4>Recap<a href="tidyverse.html#recap" class="anchor-section" aria-label="Anchor link to header"></a></h4>
