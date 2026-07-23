@@ -64,6 +64,8 @@ Download the Excel spreadsheet for this module by clicking the download button i
 Before you begin, open the **Setup** sheet and enter your Student ID in the highlighted cell. This personalises your dataset, so your results are unique to you — always report the numbers from *your* workbook.
 
 Note also that the discharge record contains occasional sensor-gap flags (`-9999`). As with real environmental data, inspect and handle these appropriately before calculating statistics or plotting.
+
+If you feel unfamiliar with Excel, refer to this [getting started page](#excelbasics).
 ```
 
 ### Exercises {#M1_6 -}
