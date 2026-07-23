@@ -36,6 +36,10 @@ In the Murray-Darling Basin ([MDB](https://www.mdba.gov.au/importance-murray-dar
 
 What happens if we divert freshwater away from a coastal lake system? How much flow diversion is "acceptable"? 
 
+<center>
+![Figure 1: Drain L inflows (yellow arrow) will be diverted (blue arrow)](images/module1/picture1.jpeg){width=750px}
+</center>
+
 In this exercise we use a real data-set from the Robe Lakes system in South Australia to explore this question.
 
 <!-- <center> -->
@@ -51,10 +55,6 @@ In this exercise we use a real data-set from the Robe Lakes system in South Aust
 We can  plan for e-water requirements to a highly valued system using scenario modelling, and the concept of a "flow-response model" (or flow-response relationship). In this case we look at an example in South Australia where an assessment for water diversion is being undertaken, and we seek to look at what impact this might have on the salinity of a coastal lake. In other words, if we change the flow regime, what will the response be. In this case, salinity is an environmental indicator of ecological requirements.
 
 Specifically in this example, we assess the impact of diverting water from "Drain L", thereby reducing water to the Robe Lakes. Before we assess our diversion scenario, we must first analyse the historical flow data, to understand the historical flow regime.
-
-<center>
-![Figure 1: Drain L inflows (yellow arrow) will be diverted (blue arrow)](images/module1/picture1.jpeg){width=750px}
-</center>
 
 ### Module resources {#M1_5 -}
 
@@ -247,5 +247,5 @@ spreadsheets to be uploaded
 
 
 ```{block2, noteM1-1, type='rmdnote2'}
-Professional presentation of your results is important. Explore the [short tutorial](#tidyverse) in the Supporting Material section to improve your data viz skills with R's tidyverse package.
+Professional presentation of results is important in science. Whilst we like Excel as a tool, for those wishing to take their data skills to the next level, explore [this short tutorial](#tidyverse) in the Supporting Material section on how to improve your data viz skills using R's tidyverse package. This is not an assessed component, but note we will use R in future modules.
 ```
