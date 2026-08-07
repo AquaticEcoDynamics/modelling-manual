@@ -13,7 +13,7 @@
 
 ### Module resources {#M2_14 -}
 
-Download the Excel spreadsheet for this module by clicking the download button in the <i class="fa fa-download" aria-hidden="true"></i>.
+There is no template for this module.
 
 <!--There are no module resources needed for these exercises! But please refer to the supporting information on LMS (Assignment 1/Week3) prior to commencing.-->
 
