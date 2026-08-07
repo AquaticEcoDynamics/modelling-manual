@@ -265,7 +265,7 @@ Here:
 
 - $\varepsilon$ is the fraction of surface radiation absorbed in the atmosphere (emissivity),
 - $\sigma$ is the Stefan-Boltzmann constant, and,
-- $T_{u}$ is the surface temperature (absolute). Thus, the energy balance for the whole system is:
+- $T_{s}$ is the surface temperature (absolute). Thus, the energy balance for the whole system is:
 
 <br>
 <center>
