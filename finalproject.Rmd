@@ -18,11 +18,19 @@ knitr::include_graphics("images/finalproject/journey.png")
 
 During the first eight weeks, start to think of ideas for your project. As you work on the weekly exercises, consider how you could make a similar model. Also think about an environmental system that you are interested in, or that you have experience with from other units in your degree. Consider what you might like to do next year, whether it is research honours or a career, and whether this project can be a step towards this.
 
+```{block2, projectideas, type='rmdtip2'}
+Stuck for a starting point? Browse the [**Project Ideas dashboard**](ProjectIdeas/) — 73 topics across 10 themes, from coral bleaching to pit lakes to urban heat. Each one sets out the question, a suggested modelling approach, where to get the data, and a few references to read.
+
+You do not have to take one of these. A topic of your own is always welcome — talk to the unit coordinator.
+```
+
 ## Research & Discovery {-}
 
 **Complete by: Week 8-9**
 
 Commit to a main idea that you would like to pursue. Find some key references for background information and data that you can compare with your simulation. Discuss your ideas with the tutors.
+
+Every topic in the [Project Ideas dashboard](ProjectIdeas/) ends with a short reference list, including one paper chosen to show you *how to build the model* rather than to describe the system. That is a good place to see the level of detail expected here.
 
 ## Conceptual Model & Plan {-}
 

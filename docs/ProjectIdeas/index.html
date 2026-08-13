@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ENVT3362 — Project Ideas</title>
+<meta name="description" content="Browse modelling project ideas for ENVT3362 Environmental Dynamics at UWA." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===================== HOME (categories) ===================== -->
+<section id="home" class="screen is-active">
+  <header class="hero">
+    <p class="eyebrow">ENVT3362 Environmental Dynamics · Final Project</p>
+    <h1 class="hero-title">Project Ideas</h1>
+    <p class="hero-sub">
+      Every project is a modelling project: build or adapt a model of an environmental
+      system, drive it with real data, and use it to answer a question. Browse by theme,
+      then open a topic to see the question, a suggested approach, and where to get data.
+      Treat these as starting points — bring your own twist, or your own topic entirely.
+    </p>
+    <div class="searchwrap">
+      <!-- placeholder is rewritten by app.js with the live topic count -->
+    <input id="search" type="search" placeholder="Search all topics — try &ldquo;heatwave&rdquo;, &ldquo;GLM&rdquo;, &ldquo;carbon&rdquo;&hellip;"
+             autocomplete="off" aria-label="Search topics" />
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="results" class="results" hidden></div>
+    <nav id="cat-grid" class="cat-grid" aria-label="Project themes"></nav>
+  </main>
+
+  <footer class="site-footer">
+    <p>Photographs are from Wikimedia Commons under Creative Commons or public-domain
+       licences; each is credited on its topic page.</p>
+    <p><a href="https://aquaticecodynamics.github.io/modelling-manual/FinalProject.html">&larr; Back to the Final Project page</a></p>
+  </footer>
+</section>
+
+<!-- ===================== CATEGORY (topic list) ===================== -->
+<section id="category" class="screen">
+  <div id="cat-bg" class="cat-bg"></div>
+  <div class="cat-scrim"></div>
+  <div class="wrap cat-wrap">
+    <button class="back-btn" data-go="#/">&lsaquo; All themes</button>
+    <header class="cat-header">
+      <h2 id="cat-title"></h2>
+      <p id="cat-blurb"></p>
+      <p id="cat-count" class="cat-count"></p>
+    </header>
+    <div id="topic-grid" class="topic-grid"></div>
+  </div>
+</section>
+
+<!-- ===================== TOPIC (detail) ===================== -->
+<section id="topic" class="screen">
+  <div class="wrap topic-wrap">
+    <button id="topic-back" class="back-btn" data-go="#/">&lsaquo; Back</button>
+    <p id="topic-crumb" class="crumb"></p>
+    <h2 id="topic-title" class="topic-title"></h2>
+
+    <div id="montage" class="montage"></div>
+
+    <div class="topic-body">
+      <section class="block">
+        <h3>The question</h3>
+        <div id="topic-context"></div>
+      </section>
+      <section class="block">
+        <h3>A way in</h3>
+        <div id="topic-approach"></div>
+      </section>
+      <section class="block">
+        <h3>Where the data is</h3>
+        <div id="topic-data"></div>
+      </section>
+      <section class="block">
+        <h3>Reading to get you started</h3>
+        <div id="topic-reading"></div>
+        <p id="modelref" class="modelref"></p>
+      </section>
+      <section id="linkblock" class="block">
+        <h3>Links</h3>
+        <ul id="topic-links" class="linklist"></ul>
+      </section>
+      <section id="refblock" class="block refs">
+        <h3>References</h3>
+        <ol id="topic-refs" class="reflist"></ol>
+      </section>
+      <section id="creditblock" class="block credits">
+        <h3>Image credits</h3>
+        <ul id="topic-credits" class="creditlist"></ul>
+      </section>
+    </div>
+
+    <nav class="topic-nav">
+      <button id="prev-topic" class="nav-btn"></button>
+      <button id="next-topic" class="nav-btn"></button>
+    </nav>
+  </div>
+</section>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div id="lightbox" class="lightbox" hidden>
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <img id="lb-img" alt="" />
+  <p id="lb-cap" class="lb-cap"></p>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
