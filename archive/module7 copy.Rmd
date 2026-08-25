@@ -25,7 +25,7 @@ htmltools::tags$video(
   width='100%', 
   controls=NA,
   htmltools::tags$source(
-    src='images/module7/video1.mp4',
+    src='images/module9/video1.mp4',
     type="video/mp4"
   )
   )
@@ -122,7 +122,7 @@ Once the model has run, you can inspect the results. There are three ways to loo
 
 <center>
 ```{r figM7-1, echo=FALSE, fig.cap="Schematic diagram of water balance components.", out.width = '75%',out.extra='data-action="zoom"'}
-knitr::include_graphics("images/module7/picture2.png")
+knitr::include_graphics("images/module9/picture2.png")
 ```
 </center>
 
@@ -132,7 +132,7 @@ knitr::include_graphics("images/module7/picture2.png")
 
 <center>
 ```{r figM7-2, echo=FALSE, fig.cap="Schematic diagram of surface heat fluxes impacting lake water temperature. For a description of the heat flux terms refer to the [GLM paper](https://gmd.copernicus.org/articles/12/473/2019/)", out.width = '75%', out.extra='data-action="zoom"'}
-knitr::include_graphics("images/module7/picture3.png")
+knitr::include_graphics("images/module9/picture3.png")
 ```
 </center>
 
@@ -172,7 +172,7 @@ For future activities make sure you change back to 43m.
 <center>
 
 ```{r figM7-3, echo=FALSE, fig.cap="", out.width = '75%', out.extra='data-action="zoom"'}
-knitr::include_graphics("images/module7/picture1.jpg")
+knitr::include_graphics("images/module9/picture1.jpg")
 ```
 
 </center>
@@ -195,8 +195,8 @@ library(kableExtra)
 library(hablar)
 library(dplyr)
 options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
-module7_1 <- read.csv("tables/module7/table1.csv", check.names=FALSE) 
-kable(module7_1, format = "html", escape = F, align = "c", caption = "Water quality variables and their descriptions.") %>%
+module9_1 <- read.csv("tables/module9/table1.csv", check.names=FALSE) 
+kable(module9_1, format = "html", escape = F, align = "c", caption = "Water quality variables and their descriptions.") %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "25em") %>%
   column_spec(2, width_min = "25em") %>%
@@ -337,8 +337,8 @@ library(kableExtra)
 library(hablar)
 library(dplyr)
 options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
-module7_2 <- read.csv("tables/module7/table2.csv", check.names=FALSE) 
-kable(module7_2, format = "html", escape = F, align = "c") %>%
+module9_2 <- read.csv("tables/module9/table2.csv", check.names=FALSE) 
+kable(module9_2, format = "html", escape = F, align = "c") %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "10em") %>%
   column_spec(2, width_min = "10em") %>%
@@ -368,8 +368,8 @@ library(kableExtra)
 library(hablar)
 library(dplyr)
 options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
-module7_3 <- read.csv("tables/module7/table3.csv", check.names=FALSE) 
-kable(module7_3, format = "html", escape = F, align = "c") %>%
+module9_3 <- read.csv("tables/module9/table3.csv", check.names=FALSE) 
+kable(module9_3, format = "html", escape = F, align = "c") %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "10em") %>%
   column_spec(2, width_min = "10em") %>%

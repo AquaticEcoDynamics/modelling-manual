@@ -1,0 +1,15 @@
+# Module 10: Scenario Assessment {#M10_1 -}
+
+```{block2, hintM10_1, type='rmdnote2'}
+This module is still being prepared and will be released before the practical class.
+```
+
+### Objectives {#M10_2 -}
+
+### Before you start {#M10_before_start -}
+
+### Module Resources {#M10_3 -}
+
+### Exercises {#M10_4 -}
+
+### Submission {#M10_5 -}

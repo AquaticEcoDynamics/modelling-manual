@@ -1,0 +1,15 @@
+# Module 8: Time Series Modelling {#M8_1 -}
+
+```{block2, hintM8_1, type='rmdnote2'}
+This module is still being prepared and will be released before the practical class.
+```
+
+### Objectives {#M8_2 -}
+
+### Before you start {#M8_before_start -}
+
+### Module Resources {#M8_3 -}
+
+### Exercises {#M8_4 -}
+
+### Submission {#M8_5 -}

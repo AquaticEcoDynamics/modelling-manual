@@ -1,0 +1,65 @@
+# Module 9: Lake Ecosystem Dynamics {#M9_1 .unnumbered}
+
+### Objectives {#M9_2 .unnumbered}
+
+To use the GLM model to investigate water quality modelling in lakes and to incorporate a coupled hydrodynamic-biogeochemical model.
+
+### Before you start {#M9_before_start -}
+
+- Review modelling aquatic systems lecture
+
+### Module Resources {#M9_3 .unnumbered}
+
+This week, you'll be working through the [**GLM Workbook**](https://aquaticecodynamics.github.io/glm-workbook/). If you're not already familiar with GLM, start by reading the [Getting Started](https://aquaticecodynamics.github.io/glm-workbook/GettingStarted.html), [File Structure](https://aquaticecodynamics.github.io/glm-workbook/glm-file-structure.html), and [Running GLM](https://aquaticecodynamics.github.io/glm-workbook/running-glm.html) chapters.
+
+Your task will be to complete the **Warm Lake Case Study**. 
+
+```{block2, hintM9_1, type='rmdtip2'}
+As you work through this chapter you may find it helpful to refer to some of the Exercises in the GLM workbook.
+```
+
+### Submission {#M9_13 .unnumbered}
+
+::: {.redbox2}
+**Submit properly formatted graphs and tables of the following sections of the lab:**
+
+Lake Stratification:
+
+-   Hand drawn diagram of the lake and any variables you used
+-   Plots of the water balance using Excel
+<!-- -   Plots of the heat fluxes using Excel -->
+-   Plots of the temperature at different layers using Excel
+-   Plots of the shallower lake using Excel
+
+The Ecosystem Model:
+
+-   Hand drawn diagram of the lake with any variables you used
+-   Interesting plot of the selected variables
+-   Any results of the higher air temperature and changed water clarity
+
+Assessing Error & Sensitivity:
+
+-   Temperature error assessment
+-   Temperature and phytoplankton sensitivity assessment
+-   Tables for submission
+
+These are to be uploaded as per the formatting specified in the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
+<!--
+These are to be uploaded in a word doc or PDF format. No screenshots of figures from Excel/Excel spreadsheets to be uploaded
+
+**General professional formatting guidelines:**
+
+-   All figures are to have adequate captions explaining them
+-   For graphs, figure captions go below the plot
+-   For tables, the caption goes above the table
+-   Make sure figures and their text size is readable
+
+**Excel hints:**
+
+-   When there is a caption for a plot, you remove the title
+-   Remove the plot border and gridlines
+-   Make sure both axes have visible lines and tick marks
+-   Units need to be noted properly with the axis label - 'Temperature (°C)'
+-   Round numbers to be reasonable
+-->
+:::
