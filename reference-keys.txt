@@ -66,9 +66,9 @@ eq:module5b-3
 eq:module5b-4
 tab:module5b-1
 tab:module5b-2
-eq:module6-1
-eq:module6-2
-eq:module6-3
-eq:module6-4
-fig:figM6-1
-fig:figM6-2
+eq:module7-1
+eq:module7-2
+eq:module7-3
+eq:module7-4
+fig:figM7-1
+fig:figM7-2
