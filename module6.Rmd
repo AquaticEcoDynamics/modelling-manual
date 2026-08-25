@@ -62,6 +62,4 @@ A forecast without uncertainty is just a guess. When you write up your results, 
 - All discussion questions answered, for Activities A, B and C
 - The plots you generated in the app inserted at the points indicated in the template
 - Your comparison of the first and second forecasts
-
-Figures and tables are to be formatted as per the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
 :::
