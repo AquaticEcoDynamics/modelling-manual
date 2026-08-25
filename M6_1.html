@@ -264,7 +264,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_3"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_4"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_5"><i class="fa fa-check"></i>Submission</a></li>
+<li class="chapter" data-level="" data-path="M6_1.html"><a href="M6_1.html#M6_8"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="M7_1.html"><a href="M7_1.html"><i class="fa fa-check"></i>Module 7: River Pollution</a>
 <ul>
@@ -411,24 +411,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="M6_1" class="section level1 unnumbered hasAnchor" number="">
 <h1>Module 6: Ecological Forecasting<a href="M6_1.html#M6_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-
-<div class="rmdnote2">
-This module is still being prepared and will be released before the practical class.
-</div>
 <div id="M6_2" class="section level3 unnumbered hasAnchor" number="">
 <h3>Objectives<a href="M6_1.html#M6_2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To use an ecological forecasting model to predict lake primary productivity, and to work through the <em>iterative forecasting cycle</em> of building a model, forecasting with uncertainty, assessing the forecast against observations, and updating the model.</p>
+<p>By the end of this module you should be able to:</p>
+<ul>
+<li>describe an ecological forecast and the iterative forecasting cycle</li>
+<li>explore and visualise ecological monitoring data</li>
+<li>calibrate a simple model of primary productivity and use it to generate a forecast <strong>with uncertainty</strong></li>
+<li>adjust model parameters and inputs to see how they affect forecast performance</li>
+<li>compare forecasts between sites in different ecoclimatic regions</li>
+</ul>
 </div>
 <div id="M6_before_start" class="section level3 unnumbered hasAnchor" number="">
 <h3>Before you start<a href="M6_1.html#M6_before_start" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Review the habitat and ecosystems lecture</li>
+<li>Think about forecasts you already rely on (weather, bushfire, algal bloom warnings) — what makes them useful, and how is their uncertainty communicated?</li>
+</ul>
 </div>
 <div id="M6_3" class="section level3 unnumbered hasAnchor" number="">
 <h3>Module Resources<a href="M6_1.html#M6_3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This week you’ll be working through the <strong>Macrosystems EDDIE</strong> module <a href="https://macrosystemseddie.shinyapps.io/module5/"><strong>Introduction to Ecological Forecasting</strong></a>, which runs in your browser — there is nothing to install.</p>
+<p>The module uses data from the <a href="https://www.neonscience.org/">National Ecological Observatory Network (NEON)</a> to forecast chlorophyll-<em>a</em> at a lake site of your choosing, driven by NOAA weather forecasts.</p>
+<p>Start on the <strong>Introduction</strong> tab and <strong>download the report template</strong> — this is the worksheet you will complete as you go and submit at the end of the module.</p>
+
+<div class="rmdnote2">
+The app runs on a public server, so it can be slow at busy times and it will disconnect if you leave it idle. Fill in the report template and save the plots <strong>as you go</strong> rather than leaving it to the end of the class.
+</div>
 </div>
 <div id="M6_4" class="section level3 unnumbered hasAnchor" number="">
 <h3>Exercises<a href="M6_1.html#M6_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Work through the three activities in order, answering the questions in the report template as you go.</p>
+<div id="M6_5" class="section level4 unnumbered hasAnchor" number="">
+<h4>Activity A: Visualise Data &amp; Build Model<a href="M6_1.html#M6_5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Select a NEON lake site and read the site information.</li>
+<li>Explore the variables measured at that site, and the relationships between them and chlorophyll-<em>a</em>.</li>
+<li>Work through the nutrient–phytoplankton model, then <strong>calibrate</strong> it so that the simulated chlorophyll-<em>a</em> matches the observations.</li>
+</ol>
 </div>
-<div id="M6_5" class="section level3 unnumbered hasAnchor" number="">
-<h3>Submission<a href="M6_1.html#M6_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="M6_6" class="section level4 unnumbered hasAnchor" number="">
+<h4>Activity B: Generate &amp; Assess Forecast<a href="M6_1.html#M6_6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol start="4" style="list-style-type: decimal">
+<li>Examine the NOAA weather forecast for your site and convert it into model inputs.</li>
+<li>Generate a forecast of chlorophyll-<em>a</em> that includes uncertainty, and note which sources of uncertainty matter most.</li>
+<li>Assess how well the forecast performed once observations become available.</li>
+</ol>
+</div>
+<div id="M6_7" class="section level4 unnumbered hasAnchor" number="">
+<h4>Activity C: Complete the Forecast Cycle<a href="M6_1.html#M6_7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol start="7" style="list-style-type: decimal">
+<li>Update your model parameters using the new observations, and generate a second forecast.</li>
+<li>Compare the two forecasts — did completing the cycle improve the forecast?</li>
+</ol>
+
+<div class="rmdtip2">
+A forecast without uncertainty is just a guess. When you write up your results, comment on the <em>width</em> of the forecast envelope as well as the position of the central line.
+</div>
+</div>
+</div>
+<div id="M6_8" class="section level3 unnumbered hasAnchor" number="">
+<h3>Submission<a href="M6_1.html#M6_8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="redbox2">
+<p><strong>Submit the completed report template from the module:</strong></p>
+<ul>
+<li>All discussion questions answered, for Activities A, B and C</li>
+<li>The plots you generated in the app inserted at the points indicated in the template</li>
+<li>Your comparison of the first and second forecasts</li>
+</ul>
+<p>Figures and tables are to be formatted as per the <a href="StyleGuide.html#StyleGuide">Style Guide</a>. Marks will be deducted for incorrect formatting.</p>
+</div>
 
 </div>
 </div>
