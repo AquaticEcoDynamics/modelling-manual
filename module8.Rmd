@@ -1,15 +1,61 @@
 # Module 8: Time Series Modelling {#M8_1 -}
 
-```{block2, hintM8_1, type='rmdnote2'}
-This module is still being prepared and will be released before the practical class.
-```
-
 ### Objectives {#M8_2 -}
+
+To use statistical and machine learning models to analyse high-frequency environmental time series, and to ask: **how can we use time series models to understand and predict ecosystem conditions?**
+
+By the end of this module you should be able to:
+
+- explore relationships between ecological variables in environmental case studies
+- understand the structure of several time series models, including machine learning models
+- fit time series models to environmental data and assess the importance of driver variables
+- process an environmental dataset into the standard format needed to train and test a model
+- compare models on their **out-of-sample** predictions
 
 ### Before you start {#M8_before_start -}
 
+- Revisit your Module 6 forecast — there you calibrated a process-based model; here you let the data pick the structure
+- Have a think about what "a good model" means when you can always add more predictors
+
 ### Module Resources {#M8_3 -}
+
+This week you'll be working through the **Macrosystems EDDIE** module [**Time Series Modeling and Prediction of Environmental Data**](https://macrosystemseddie.shinyapps.io/module11/), which runs in your browser — there is nothing to install.
+
+Start on the **Introduction** tab and **download the student handout** — this is the worksheet you will complete as you go and submit at the end of the module.
+
+```{block2, hintM8_1, type='rmdnote2'}
+The app saves your progress through Activity A, but **not** through Activities B and C, because those use uploaded data. Download your plots and fill in the handout as you go — if the session drops, that work is gone.
+```
 
 ### Exercises {#M8_4 -}
 
-### Submission {#M8_5 -}
+Work through the three activities in order, answering the questions in the handout as you go.
+
+#### Activity A: Visualise Data & Fit a Model {#M8_5 -}
+
+1) Choose one of the environmental case studies and visualise its data — look at the response variable through time and its relationship with the candidate drivers.
+2) Fit a time series model to the case study, then assess it: how well does it reproduce the observations, and which driver variables matter?
+
+#### Activity B: Bring Your Own Data {#M8_6 -}
+
+3) Choose a second dataset from the module, or upload your own, and get it into the standardised format the app expects.
+4) Fit and assess a time series model for this new dataset.
+
+```{block2, hintM8_2, type='rmdtip2'}
+Most of the work in time series modelling is getting the data into shape — consistent time steps, sensible units, and gaps handled explicitly. Note down anything you had to fix.
+```
+
+#### Activity C: Compare Models {#M8_7 -}
+
+5) Fit several more models to your Activity B dataset, including at least one machine learning model.
+6) Compare the models on data they were **not** trained on, and decide which you would use to predict future conditions — and why.
+
+### Submission {#M8_8 -}
+
+::: {.redbox2}
+**Submit the completed student handout from the module:**
+
+- All questions answered, for Activities A, B and C
+- The plots you generated in the app inserted at the points indicated in the handout
+- Your model comparison, with a short justification of the model you would choose
+:::
