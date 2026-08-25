@@ -281,7 +281,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="M8_1.html"><a href="M8_1.html#M8_before_start"><i class="fa fa-check"></i>Before you start</a></li>
 <li class="chapter" data-level="" data-path="M8_1.html"><a href="M8_1.html#M8_3"><i class="fa fa-check"></i>Module Resources</a></li>
 <li class="chapter" data-level="" data-path="M8_1.html"><a href="M8_1.html#M8_4"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="M8_1.html"><a href="M8_1.html#M8_5"><i class="fa fa-check"></i>Submission</a></li>
+<li class="chapter" data-level="" data-path="M8_1.html"><a href="M8_1.html#M8_8"><i class="fa fa-check"></i>Submission</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="M9_1.html"><a href="M9_1.html"><i class="fa fa-check"></i>Module 9: Lake Ecosystem Dynamics</a>
 <ul>
@@ -411,24 +411,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="M8_1" class="section level1 unnumbered hasAnchor" number="">
 <h1>Module 8: Time Series Modelling<a href="M8_1.html#M8_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-
-<div class="rmdnote2">
-This module is still being prepared and will be released before the practical class.
-</div>
 <div id="M8_2" class="section level3 unnumbered hasAnchor" number="">
 <h3>Objectives<a href="M8_1.html#M8_2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To use statistical and machine learning models to analyse high-frequency environmental time series, and to ask: <strong>how can we use time series models to understand and predict ecosystem conditions?</strong></p>
+<p>By the end of this module you should be able to:</p>
+<ul>
+<li>explore relationships between ecological variables in environmental case studies</li>
+<li>understand the structure of several time series models, including machine learning models</li>
+<li>fit time series models to environmental data and assess the importance of driver variables</li>
+<li>process an environmental dataset into the standard format needed to train and test a model</li>
+<li>compare models on their <strong>out-of-sample</strong> predictions</li>
+</ul>
 </div>
 <div id="M8_before_start" class="section level3 unnumbered hasAnchor" number="">
 <h3>Before you start<a href="M8_1.html#M8_before_start" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Revisit your Module 6 forecast — there you calibrated a process-based model; here you let the data pick the structure</li>
+<li>Have a think about what “a good model” means when you can always add more predictors</li>
+</ul>
 </div>
 <div id="M8_3" class="section level3 unnumbered hasAnchor" number="">
 <h3>Module Resources<a href="M8_1.html#M8_3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This week you’ll be working through the <strong>Macrosystems EDDIE</strong> module <a href="https://macrosystemseddie.shinyapps.io/module11/"><strong>Time Series Modeling and Prediction of Environmental Data</strong></a>, which runs in your browser — there is nothing to install.</p>
+<p>Start on the <strong>Introduction</strong> tab and <strong>download the student handout</strong> — this is the worksheet you will complete as you go and submit at the end of the module.</p>
+
+<div class="rmdnote2">
+The app saves your progress through Activity A, but <strong>not</strong> through Activities B and C, because those use uploaded data. Download your plots and fill in the handout as you go — if the session drops, that work is gone.
+</div>
 </div>
 <div id="M8_4" class="section level3 unnumbered hasAnchor" number="">
 <h3>Exercises<a href="M8_1.html#M8_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Work through the three activities in order, answering the questions in the handout as you go.</p>
+<div id="M8_5" class="section level4 unnumbered hasAnchor" number="">
+<h4>Activity A: Visualise Data &amp; Fit a Model<a href="M8_1.html#M8_5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Choose one of the environmental case studies and visualise its data — look at the response variable through time and its relationship with the candidate drivers.</li>
+<li>Fit a time series model to the case study, then assess it: how well does it reproduce the observations, and which driver variables matter?</li>
+</ol>
 </div>
-<div id="M8_5" class="section level3 unnumbered hasAnchor" number="">
-<h3>Submission<a href="M8_1.html#M8_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="M8_6" class="section level4 unnumbered hasAnchor" number="">
+<h4>Activity B: Bring Your Own Data<a href="M8_1.html#M8_6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol start="3" style="list-style-type: decimal">
+<li>Choose a second dataset from the module, or upload your own, and get it into the standardised format the app expects.</li>
+<li>Fit and assess a time series model for this new dataset.</li>
+</ol>
+
+<div class="rmdtip2">
+Most of the work in time series modelling is getting the data into shape — consistent time steps, sensible units, and gaps handled explicitly. Note down anything you had to fix.
+</div>
+</div>
+<div id="M8_7" class="section level4 unnumbered hasAnchor" number="">
+<h4>Activity C: Compare Models<a href="M8_1.html#M8_7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol start="5" style="list-style-type: decimal">
+<li>Fit several more models to your Activity B dataset, including at least one machine learning model.</li>
+<li>Compare the models on data they were <strong>not</strong> trained on, and decide which you would use to predict future conditions — and why.</li>
+</ol>
+</div>
+</div>
+<div id="M8_8" class="section level3 unnumbered hasAnchor" number="">
+<h3>Submission<a href="M8_1.html#M8_8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="redbox2">
+<p><strong>Submit the completed student handout from the module:</strong></p>
+<ul>
+<li>All questions answered, for Activities A, B and C</li>
+<li>The plots you generated in the app inserted at the points indicated in the handout</li>
+<li>Your model comparison, with a short justification of the model you would choose</li>
+</ul>
+</div>
 
 </div>
 </div>
