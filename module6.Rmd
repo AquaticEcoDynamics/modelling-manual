@@ -1,15 +1,67 @@
 # Module 6: Ecological Forecasting {#M6_1 -}
 
-```{block2, hintM6_1, type='rmdnote2'}
-This module is still being prepared and will be released before the practical class.
-```
-
 ### Objectives {#M6_2 -}
+
+To use an ecological forecasting model to predict lake primary productivity, and to work through the *iterative forecasting cycle* of building a model, forecasting with uncertainty, assessing the forecast against observations, and updating the model.
+
+By the end of this module you should be able to:
+
+- describe an ecological forecast and the iterative forecasting cycle
+- explore and visualise ecological monitoring data
+- calibrate a simple model of primary productivity and use it to generate a forecast **with uncertainty**
+- adjust model parameters and inputs to see how they affect forecast performance
+- compare forecasts between sites in different ecoclimatic regions
 
 ### Before you start {#M6_before_start -}
 
+- Review the habitat and ecosystems lecture
+- Think about forecasts you already rely on (weather, bushfire, algal bloom warnings) — what makes them useful, and how is their uncertainty communicated?
+
 ### Module Resources {#M6_3 -}
+
+This week you'll be working through the **Macrosystems EDDIE** module [**Introduction to Ecological Forecasting**](https://macrosystemseddie.shinyapps.io/module5/), which runs in your browser — there is nothing to install.
+
+The module uses data from the [National Ecological Observatory Network (NEON)](https://www.neonscience.org/) to forecast chlorophyll-*a* at a lake site of your choosing, driven by NOAA weather forecasts.
+
+Start on the **Introduction** tab and **download the report template** — this is the worksheet you will complete as you go and submit at the end of the module.
+
+```{block2, hintM6_1, type='rmdnote2'}
+The app runs on a public server, so it can be slow at busy times and it will disconnect if you leave it idle. Fill in the report template and save the plots **as you go** rather than leaving it to the end of the class.
+```
 
 ### Exercises {#M6_4 -}
 
-### Submission {#M6_5 -}
+Work through the three activities in order, answering the questions in the report template as you go.
+
+#### Activity A: Visualise Data & Build Model {#M6_5 -}
+
+1) Select a NEON lake site and read the site information.
+2) Explore the variables measured at that site, and the relationships between them and chlorophyll-*a*.
+3) Work through the nutrient–phytoplankton model, then **calibrate** it so that the simulated chlorophyll-*a* matches the observations.
+
+#### Activity B: Generate & Assess Forecast {#M6_6 -}
+
+4) Examine the NOAA weather forecast for your site and convert it into model inputs.
+5) Generate a forecast of chlorophyll-*a* that includes uncertainty, and note which sources of uncertainty matter most.
+6) Assess how well the forecast performed once observations become available.
+
+#### Activity C: Complete the Forecast Cycle {#M6_7 -}
+
+7) Update your model parameters using the new observations, and generate a second forecast.
+8) Compare the two forecasts — did completing the cycle improve the forecast?
+
+```{block2, hintM6_2, type='rmdtip2'}
+A forecast without uncertainty is just a guess. When you write up your results, comment on the *width* of the forecast envelope as well as the position of the central line.
+```
+
+### Submission {#M6_8 -}
+
+::: {.redbox2}
+**Submit the completed report template from the module:**
+
+- All discussion questions answered, for Activities A, B and C
+- The plots you generated in the app inserted at the points indicated in the template
+- Your comparison of the first and second forecasts
+
+Figures and tables are to be formatted as per the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
+:::
