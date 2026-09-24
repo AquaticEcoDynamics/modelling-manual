@@ -30,7 +30,7 @@ Water Level & Balance (Exercise 1):
 
 Water Heating & Stratification (Exercise 2):
 
-<!-- -   Plots of the heat fluxes using Excel -->
+-   Plots of the heat fluxes using Excel
 -   Plots of the temperature at different layers using Excel
 
 Updating Initial Height Conditions (Exercise 3):
