@@ -10,12 +10,12 @@ To use the GLM model to investigate water quality modelling in lakes and to inco
 
 ### Module Resources {#M9_3 .unnumbered}
 
-This week, you'll be working through the [**GLM Workbook**](https://aquaticecodynamics.github.io/glm-workbook/). If you're not already familiar with GLM, start by reading the [Getting Started](https://aquaticecodynamics.github.io/glm-workbook/GettingStarted.html), [File Structure](https://aquaticecodynamics.github.io/glm-workbook/glm-file-structure.html), and [Running GLM](https://aquaticecodynamics.github.io/glm-workbook/running-glm.html) chapters.
+This week, you'll be working through the [**GLM Workbook**](https://aquaticecodynamics.github.io/glm-workbook/). If you're not already familiar with GLM, start by reading the [Setup](https://aquaticecodynamics.github.io/glm-workbook/setup.html), [File Structure](https://aquaticecodynamics.github.io/glm-workbook/glm-file-structure.html), and [Running GLM](https://aquaticecodynamics.github.io/glm-workbook/running-glm.html) chapters.
 
-Your task will be to complete the **Warm Lake Case Study**. 
+Your task will be to complete the first portion of the Case Study Exercises, from [Exercise 1: Water Level & Balance](https://aquaticecodynamics.github.io/glm-workbook/WaterBalance.html) up to and including [Exercise 6: Sensitivity Index (SI)](https://aquaticecodynamics.github.io/glm-workbook/sensitivity-index-si.html), as applied to the **WarmLake** case study. The optional phytoplankton section at the end of Exercise 6 is not required.
 
 ```{block2, hintM9_1, type='rmdtip2'}
-As you work through this chapter you may find it helpful to refer to some of the Exercises in the GLM workbook.
+Exercises 7 onwards (Warming Air Scenario, Changing Morphometry and the GLM + Python bonus exercise) are not required this week, but you may find them useful for your final project.
 ```
 
 ### Submission {#M9_13 .unnumbered}
@@ -23,24 +23,32 @@ As you work through this chapter you may find it helpful to refer to some of the
 ::: {.redbox2}
 **Submit properly formatted graphs and tables of the following sections of the lab:**
 
-Lake Stratification:
+Water Level & Balance (Exercise 1):
 
 -   Hand drawn diagram of the lake and any variables you used
 -   Plots of the water balance using Excel
+
+Water Heating & Stratification (Exercise 2):
+
 <!-- -   Plots of the heat fluxes using Excel -->
 -   Plots of the temperature at different layers using Excel
+
+Updating Initial Height Conditions (Exercise 3):
+
 -   Plots of the shallower lake using Excel
 
-The Ecosystem Model:
+Error Assessment (Exercise 4):
+
+-   Temperature error assessment
+
+Adding Water Quality Models (Exercise 5):
 
 -   Hand drawn diagram of the lake with any variables you used
 -   Interesting plot of the selected variables
--   Any results of the higher air temperature and changed water clarity
 
-Assessing Error & Sensitivity:
+Sensitivity Index (Exercise 6):
 
--   Temperature error assessment
--   Temperature and phytoplankton sensitivity assessment
+-   Temperature sensitivity assessment
 -   Tables for submission
 
 These are to be uploaded as per the formatting specified in the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
