@@ -1,15 +1,41 @@
 # Module 10: Scenario Assessment {#M10_1 -}
 
-```{block2, hintM10_1, type='rmdnote2'}
-This module is still being prepared and will be released before the practical class.
-```
-
 ### Objectives {#M10_2 -}
+
+To use the coupled GLM-AED model of a tropical reservoir to build up a water quality model one module at a time, and to explore the feedbacks between dissolved oxygen, nutrients, phytoplankton and zooplankton under different nutrient load scenarios.
 
 ### Before you start {#M10_before_start -}
 
+- Complete [Module 9](#M9_1) (GLM Workbook Exercises 1–6), as this module builds on the stratification and water quality concepts covered there
+
 ### Module Resources {#M10_3 -}
+
+This week, you'll be working through the [**Tropical Reservoir Water Quality Workbook (GLM-AED)**](TropicalReservoir-Workbook.html){target="_blank"}, using the **TropicalReservoir** case study from the GLM case studies folder.
+
+```{block2, hintM10_1, type='rmdtip2'}
+The workbook opens as a separate page in a new tab. Use the menu on its left-hand side to move between the cases.
+```
 
 ### Exercises {#M10_4 -}
 
+Work through the workbook, setting up a new folder for each case:
+
+-   [Case 0 – Base: Dissolved oxygen](TropicalReservoir-Workbook.html#case0){target="_blank"}
+-   [Case 1 – Add nutrients, organic matter and silica](TropicalReservoir-Workbook.html#case1){target="_blank"}
+-   [Case 2 – Add diatoms](TropicalReservoir-Workbook.html#case2){target="_blank"}
+-   [Case 3 – Three phyto groups](TropicalReservoir-Workbook.html#case3){target="_blank"}
+-   [Case 4 – Nutrient load scenarios](TropicalReservoir-Workbook.html#case4){target="_blank"}
+-   [Case 5 – Add zooplankton](TropicalReservoir-Workbook.html#case5){target="_blank"} (optional)
+
 ### Submission {#M10_5 -}
+
+::: {.redbox2}
+**Submit one document that contains:**
+
+-   Answers to all questions in Cases 0–4, numbered by case and question (for example, Case 2 – Q1)
+-   The seven plots listed in the workbook's [Final submission](TropicalReservoir-Workbook.html#submission){target="_blank"} section
+
+Case 5 (zooplankton) is optional and does not need to be submitted.
+
+These are to be uploaded as per the formatting specified in the [Style Guide](#StyleGuide). Marks will be deducted for incorrect formatting.
+:::
